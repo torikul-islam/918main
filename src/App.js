@@ -22,7 +22,7 @@ class App extends Component {
         <Navbar />
         <main className="container">
           <Switch>
-            <Route path="/" component={Home} />
+            <Route path="/" component={Home} exact />
             <Route path="/workspace" component={Workspace} exact />
             <Route path="/explore" component={Explore} exact />
           </Switch>
