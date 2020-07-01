@@ -1,0 +1,21 @@
+.ins-area {
+  background: #ebeae8;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.inspired {
+  padding: 75px 0;
+}
+ul li {
+  display: inline;
+  margin-right: 43px;
+}
+.slider img {
+  width: 100%;
+  height: 269px;
+}
+.slide-desc {
+  text-align: center;
+  font-family: helvetica-light;
+  font-size: 18px;
+}

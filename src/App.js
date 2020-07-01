@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar2 />
+        <Navbar />
         <main>
           <Switch>
             <Route path="/" component={Home} exact />

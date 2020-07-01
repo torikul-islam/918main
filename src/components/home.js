@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './home.css';
 import PostSlide from '../components/common/postSlide';
+import Inspired from './inspired';
 
 
 
@@ -13,6 +14,7 @@ class Home extends Component {
         return (
             <div>
                 <PostSlide />
+                <Inspired />
             </div>
         );
     }
