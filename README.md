@@ -2,7 +2,7 @@
 
 New React.js Project for Client
 
-# installing process
+# Installing process
 
 At first clone the project, get into the project directory, then follow below instruction.
 
