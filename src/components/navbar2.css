@@ -1,0 +1,27 @@
+.nav-secondary {
+  background: #ffffff;
+  padding: 27px 0;
+}
+.nav-secondary .logo img {
+  width: 268px;
+  height: 62px;
+  margin-right: 84px;
+}
+.nav-secondary ul li {
+  vertical-align: middle;
+}
+.font-hel {
+  font-family: "helvetica-light";
+  font-size: 18px;
+  color: #111111 !important;
+}
+.signup {
+  background: #030303;
+  color: #ffffff;
+  border-radius: 21px 21px;
+  padding: 5px 16px;
+  font-family: "Helvetica-bold";
+}
+.nav-right ul li {
+  display: inline-block;
+}
