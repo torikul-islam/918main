@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import AwesomeTitle from './awesomeTitle';
+import HeaderHome from './headerHome';
 import './navbar2.css';
 
 
@@ -23,16 +23,17 @@ class Navbar2 extends Component {
                                     <img src={require('../Asset/Images/Logo.png')} alt="" />
                                 </li>
                                 <li className="nav-item font-hel">
-                                    <div className="nav-link">Workspace</div>
+                                    <NavLink className="nav-link" to="/workspace" exact>workspace</NavLink>
                                 </li>
                                 <li className="nav-item font-hel">
-                                    <div className="nav-link" to="/explore" >Explore</div>
+                                    <NavLink className="nav-link" to="/explore" exact>explore</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <div className="nav-link" >
                                         <div className='signup'>
-                                            Sign Up
-                                    </div>
+                                            <NavLink className="nav-link" to="/explored" exact>Sign Up</NavLink>
+
+                                        </div>
                                     </div>
 
                                 </li>
@@ -41,7 +42,7 @@ class Navbar2 extends Component {
                     </nav>
                 </div>
 
-                <AwesomeTitle />
+                <HeaderHome />
             </div>
 
 

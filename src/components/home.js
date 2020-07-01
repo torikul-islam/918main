@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './home.css';
+import PostSlide from '../components/common/postSlide';
 
 
 
@@ -10,12 +11,8 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="home-area">
-                <div className="container">
-                    <h2>Your Home Decorating Hub</h2>
-                    <p>Here, you’ll find all of the resources you <br/>
-                     need to make decorating not only easier, <br/> but also fun!</p>
-                </div>                
+            <div>
+                <PostSlide />
             </div>
         );
     }

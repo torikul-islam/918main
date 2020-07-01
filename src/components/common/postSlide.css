@@ -1,0 +1,10 @@
+.image-post-slide img {
+    width: 100%;
+    height: auto;
+}
+.image-post-slide {
+    text-align: center;
+}
+.image-post-slide h6 {
+    margin-top: 15px;
+}

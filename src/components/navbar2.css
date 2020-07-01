@@ -10,16 +10,17 @@
 .nav-secondary ul li {
   vertical-align: middle;
 }
-.font-hel {
+.font-hel a {
   font-family: "helvetica-light";
   font-size: 18px;
   color: #111111 !important;
+  line-height: 33px;
 }
-.signup {
+.signup .nav-link {
   background: #030303;
   color: #ffffff;
   border-radius: 21px 21px;
-  padding: 5px 16px;
+  padding: 5px 16px !important;
   font-family: "Helvetica-bold";
 }
 .nav-right ul li {
