@@ -1,1 +1,18 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+.home-area {
+    background-image: url(/static/media/home-bg.65f60d94.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+}
+.home-area h2 {
+    padding-top: 100px;
+    font-family: 'Playfair Display', serif;
+}
+.home-area p {
+    color: #090909;
+    line-height: 20px;
+}

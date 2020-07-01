@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <>
         <Navbar />
-        <main className="container">
+        <main>
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/workspace" component={Workspace} exact />
