@@ -1,8 +1,31 @@
-body {
-  margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+@font-face {
+  font-family: "helvetica-light";
+  src: url("../src/Asset/Fonts/Helvetica-Font/helvetica-light.ttf");
+  font-weight: light;
+}
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url("../src/Asset/Fonts/Helvetica-Font/Helvetica-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../src/Asset/Fonts/Helvetica-Font/Helvetica.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Helvetica-BoldOblique";
+  src: url("../src/Asset/Fonts/Helvetica-Font/Helvetica-BoldOblique.ttf");
+}
+@font-face {
+  font-family: "helvetica-compressed";
+  src: url("../src/Asset/Fonts/Helvetica-Font/helvetica-compressed.otf");
+}
+@font-face {
+  font-family: "Helvetica-Oblique";
+  src: url("../src/Asset/Fonts/Helvetica-Font/Helvetica-Oblique.ttf");
+}
+@font-face {
+  font-family: "helvetica-rounded-bold";
+  src: url("../src/Asset/Fonts/Helvetica-Font/helvetica-rounded-bold.otf");
 }
