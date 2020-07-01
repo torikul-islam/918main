@@ -1,0 +1,100 @@
+@font-face{
+    font-family: "Helvetica";
+    src: url("./Helvetica-Font/Helvetica.ttf");
+}
+
+@font-face{
+    font-family: "Helvetica-Bold";
+    src: url("./Helvetica-Font/Helvetica-Bold.ttf");
+}
+@font-face{
+    font-family: "Helvetica-light";
+    src: url("./Helvetica-Font/helvetica-light.ttf");
+}
+@font-face{
+    font-family: "Helvetica-BoldOblique";
+    src: url("./Helvetica-Font/Helvetica-BoldOblique.ttf");
+}
+@font-face{
+    font-family: "Helvetica-compressed";
+    src: url("./Helvetica-Font/helvetica-compressed.otf");
+}
+@font-face{
+    font-family: "Helvetica-Oblique";
+    src: url("./Helvetica-Font/Helvetica-Oblique.ttf");
+}
+@font-face{
+    font-family: "Helvetica-rounded-bold";
+    src: url("./Helvetica-Font/helvetica-rounded-bold.otf");
+}
+@font-face{
+    font-family: "MADECoachellaBlack";
+    src: url("./made-coachella/MADECoachellaBlack.otf");
+}
+
+@font-face{
+    font-family: "MADECoachellaBold";
+    src: url("./made-coachella/MADECoachellaBold.otf");
+}
+
+@font-face{
+    font-family: "MADECoachellaLight";
+    src: url("./made-coachella/MADECoachellaLight.otf");
+}
+
+@font-face{
+    font-family: "MADECoachellaMedium";
+    src: url("./made-coachella/MADECoachellaMedium.otf");
+}
+
+@font-face{
+    font-family: "MADECoachellaRegular";
+    src: url("./made-coachella/MADECoachellaRegular.otf");
+}
+
+@font-face{
+    font-family: "MADECoachellaThin";
+    src: url("./made-coachella/MADECoachellaThin.otf");
+}
+
+@font-face{
+    font-family: "PlayfairDisplay-Black";
+    src: url("./Playfair_Display/PlayfairDisplay-Black.ttf");
+}
+
+@font-face{
+    font-family: "PlayfairDisplay-BlackItalic";
+    src: url("./Playfair_Display/PlayfairDisplay-BlackItalic.ttf");
+}
+
+@font-face{
+    font-family: "PlayfairDisplay-Bold";
+    src: url("./Playfair_Display/PlayfairDisplay-Bold.ttf");
+}
+
+@font-face{
+    font-family: "PlayfairDisplay-BoldItalic";
+    src: url("./Playfair_Display/PlayfairDisplay-BoldItalic.ttf");
+}
+
+@font-face{
+    font-family: "PlayfairDisplay-Italic";
+    src: url("./Playfair_Display/PlayfairDisplay-Italic.ttf");
+}
+@font-face{
+    font-family: "PlayfairDisplay-Medium";
+    src: url("./Playfair_Display/PlayfairDisplay-Medium.ttf");
+}
+@font-face{
+    font-family: "PlayfairDisplay-MediumItalic";
+    src: url("./Playfair_Display/PlayfairDisplay-MediumItalic.ttf");
+}
+@font-face{
+    font-family: "PlayfairDisplay-Regular";
+    src: url("./Playfair_Display/PlayfairDisplay-Regular.ttf");
+}
+@font-face{
+    font-family: "PlayfairDisplay-SemiBold";
+    src: url("./Playfair_Display/PlayfairDisplay-SemiBold.ttf");
+}
+
