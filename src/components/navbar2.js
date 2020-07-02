@@ -42,7 +42,6 @@ class Navbar2 extends Component {
                     </nav>
                 </div>
 
-                <HeaderHome />
             </div>
 
 

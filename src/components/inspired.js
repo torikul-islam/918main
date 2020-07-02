@@ -14,7 +14,7 @@ class Inspired extends Component {
                 <div className='container inspired' >
                     <h2 className='ins-title'>Be Inspired</h2>
 
-                    <div className='tab-index '>
+                    <div className='tab-index'>
                         <ul className='tabs list-unstyled'>
                             <li className='l-room'>LIVING ROOM</li>
                             <li className='b-room'>BEDROOM</li>

@@ -7,7 +7,7 @@
 .inspired {
   padding: 75px 0;
 }
-ul li {
+.tab-index > ul li {
   display: inline;
   margin-right: 43px;
 }

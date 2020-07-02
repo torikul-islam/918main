@@ -87,3 +87,37 @@
     margin: auto; */
   margin-top: 45px;
 }
+
+/* home menu css :start */
+
+.home-menu .logo img {
+  width: 268px;
+  height: 62px;
+  margin-right: 84px;
+  margin-top: 20px;
+}
+#menu > ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#menu > ul li {
+  padding: 0 29px;
+}
+#menu .signup {
+  background: #090808;
+  border-radius: 21px 21px;
+  padding: 5px 16px !important;
+  font-family: "Helvetica-bold";
+  font-weight: bold;
+}
+
+#menu .signup a {
+  color: #ffffff;
+}
+.menu-item .menu-link {
+  text-decoration: none;
+}
+
+/* end home menu css :start */

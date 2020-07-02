@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './headerHome.css';
+
+
+
+
+
 class HeaderHome extends Component {
     constructor(props) {
         super(props);
@@ -9,6 +15,45 @@ class HeaderHome extends Component {
         return (
             <>
                 <div className="home-area">
+
+
+                    <div className='container-fluid' >
+                        <div className='container' id='menu'>
+                            <ul className="home-menu">
+                                <li className='logo'>
+                                    <img src={require('../Asset/Images/Logo.png')} alt="" />
+                                </li>
+                                <li className="menu-item font-hel">
+                                    <a className="menu-link" href="#">workspace</a>
+                                </li>
+                                <li className="menu-item font-hel">
+                                    <a className="menu-link" href="#">explore</a>
+                                </li>
+                                <li className="menu-item signup">
+                                    <a className="menu-link" href="#">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <div className="container">
                         <h2>Your Home Decorating Hub</h2>
                         <p>Here, you’ll find all of the resources you <br />
