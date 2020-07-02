@@ -2,8 +2,8 @@
   background: #ebeae8;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  /* margin: 40px 0; */
-  margin-bottom: 40px;
+  /* margin: 40px 0; 
+  margin-bottom: 40px;*/
   margin-top: -18px;
 }
 .inspired {
@@ -12,6 +12,8 @@
 .tab-index > ul li {
   display: inline;
   margin-right: 43px;
+  font-family: "helvetica-light";
+  font-size: 18px;
 }
 .slider img {
   width: 100%;
@@ -21,9 +23,11 @@
   text-align: center;
   font-family: helvetica-light;
   font-size: 18px;
+  color: #4f4f4f;
+  margin-top: 15px;
 }
 .arrow-slide img {
-  width: 30px;
+  width: 25px;
   height: auto;
 }
 
@@ -32,10 +36,11 @@
   top: 35%;
 }
 .arrow-left.arrow-slide {
-  left: -45px;
+  left: -40px;
 }
 .slider {
   position: relative;
+  margin-top: 25px;
 }
 .inspired h2.ins-title {
   color: #030303;

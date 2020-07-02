@@ -18,10 +18,16 @@ class footer extends Component {
                         </div>
 
                         <div className='col-lg-4'>
-                            <h2 className='f-contact'>Contact</h2>
+                            <ul className="contact-menu">
+                                <li>Contact</li>
+                                <li>About Us</li>
+                            </ul>
                         </div>
                         <div className='col-lg-4'>
-                            <h2 className='about-us'>About Us</h2>
+                            <ul className="subscribe">
+                                <li><img src={require('../../Asset/Images/mail.png')} alt="mail.png" /></li>
+                                <li className="subslist">Subscribe</li>
+                            </ul>
                         </div>
 
                     </div>

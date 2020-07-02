@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './headerHome.css';
 
 
@@ -20,21 +20,37 @@ class HeaderHome extends Component {
                     <div className='container-fluid' >
                         <div className='container-menu' id='menu'>
                             <ul className="home-menu">
-                                <li className="sarch">
-                                    <img src={require('../Asset/Images/search.png')} alt="search.png" />
-                                </li>
-                                <li className='logo'>
-                                    <img src={require('../Asset/Images/Logo.png')} alt="" />
-                                </li>
-                                <li className="menu-item font-hel">
-                                    <a className="menu-link" href="#">workspace</a>
-                                </li>
-                                <li className="menu-item font-hel">
-                                    <a className="menu-link" href="#">explore</a>
-                                </li>
-                                <li className="menu-item signup">
-                                    <a className="menu-link" href="#">Sign Up</a>
-                                </li>
+                                <div className="search-float">
+                                    <li className="sarch">
+                                        <img src={require('../Asset/Images/search.png')} alt="search.png" />
+                                    </li>
+                                </div>
+                                <div className="logo-width">
+                                    <li className='logo'>
+                                        <NavLink className="nav-link" to="/" exact >
+                                            <img src={require('../Asset/Images/logo-white.png')} alt="logo-white.png" />
+                                        </NavLink>
+                                    </li>
+                                </div>
+                                <div className="menu-float">
+                                    <li className="menu-item font-hel">
+                                        <NavLink className="nav-link" to="/workspace" exact >workspace</NavLink>
+                                    </li>
+                                    <li className="menu-item font-hel">
+                                        <NavLink className="nav-link" to="/explore" exact >explore</NavLink>
+                                    </li>
+                                    <li className="menu-item signup">
+                                        <NavLink className="nav-link" to="/SignUp" exact >Sign Up</NavLink>
+                                    </li>
+                                    <span className="menu-icon">
+                                        <li className="menu-item man">
+                                            <img src={require('../Asset/Images/man.png')} alt="man.png" />
+                                        </li>
+                                        <li className="menu-item shop">
+                                            <img src={require('../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
+                                        </li>
+                                    </span>
+                                </div>
                             </ul>
                         </div>
                     </div>

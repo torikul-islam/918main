@@ -100,19 +100,30 @@
 /* home menu css :start */
 
 .home-menu .logo img {
-  width: 268px;
-  height: 62px;
+  width: 255px;
+  height: 60px;
+  /* margin-left: 50px;
   margin-right: 84px;
-  margin-top: 20px;
+  margin-top: 20px; */
+}
+#menu > ul li.logo a.nav-link {
+  padding-top: 0;
 }
 #menu > ul {
   list-style: none;
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center; */
+  margin: 0;
+  padding: 0;
+}
+li.sarch img {
+  width: 20px;
+  height: auto;
 }
 #menu > ul li {
-  padding: 0 29px;
+  padding-right: 25px;
+  display: inline-block;
 }
 #menu .signup {
   background: #090808;
@@ -120,6 +131,7 @@
   padding: 5px 16px !important;
   font-family: "Helvetica-bold";
   font-weight: bold;
+  margin-right: 50px;
 }
 
 #menu .signup a {
@@ -128,5 +140,41 @@
 .menu-item .menu-link {
   text-decoration: none;
 }
-
+div.menu-float {
+  float: right;
+  width: 34%;
+}
+div.search-float {
+  width: 30%;
+  float: left;
+  text-align: left;
+}
+div.search-float li.sarch {
+  margin-left: 15px;
+}
+div.logo-width {
+  width: 36%;
+  margin: auto;
+  text-align: center;
+  float: left;
+}
+.menu-icon li.menu-item.shop {
+  padding-right: 0 !important;
+}
+.menu-icon li.menu-item.man {
+  padding-right: 10px !important;
+}
+li.menu-item.man img, li.menu-item.shop img {
+  width: 20px;
+  height: auto;
+}
+div.menu-icon li {
+  padding: 0 5px !important;
+}
+div.menu-icon {
+  padding-right: 10px;
+}
+div#menu {
+  padding-top: 34px;
+}
 /* end home menu css :start */

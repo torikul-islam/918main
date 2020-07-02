@@ -16,11 +16,14 @@ background-color:#c7c5bf;
   padding-right: 0px !important;
 }
 .footer-main {
-  padding: 30px 0;
+  padding: 30px 0 20px;
 }
 
 #footer ul {
   list-style: none;
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 .footer-left h3 {
   font-family: "PlayfairDisplay-Bold";
@@ -43,4 +46,33 @@ background-color:#c7c5bf;
 }
 .f-contact {
   text-align: right;
+}
+ul.contact-menu li {
+  display: inline-block;
+  margin-right: 35px;
+  color: #010101;
+  font-size: 18px;
+  font-family: "Playfair Display";
+}
+ul.subscribe {
+  float: right !important;
+}
+ul.contact-menu {
+  text-align: center;
+  float: none !important;
+}
+ul.subscribe li {
+  display: inline-block;
+  margin-right: 10px;
+  font-family: "helvetica-light";
+  font-size: 18px;
+  color: #010101;
+}
+ul.subscribe li img{
+  width: 28px;
+  height: auto;
+}
+ul.subscribe li.subslist {
+  margin-top: 2px;
+  float: right;
 }

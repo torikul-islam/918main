@@ -17,6 +17,8 @@
   font-size: 18px;
   color: #111111 !important;
   line-height: 33px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .signup .nav-link {
   background: #030303;
