@@ -7,7 +7,7 @@ class HeaderHome extends Component {
     }
     render() {
         return (
-            <main>
+            <>
                 <div className="home-area">
                     <div className="container">
                         <h2>Your Home Decorating Hub</h2>
@@ -77,7 +77,7 @@ class HeaderHome extends Component {
                         </div>
                     </div>
                 </div>
-            </main>
+            </>
         );
     }
 }

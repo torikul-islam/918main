@@ -3,8 +3,9 @@ import './footer.css'
 class footer extends Component {
     render() {
         return (
-            <div className='footer'> 
-                <div style={{marginLeft:40}}> <text className='quick-Link'>Quick Links</text>
+            <div className='footer'>
+                <div style={{ marginLeft: 40 }}>
+                    <div className='quick-Link'>Quick Links</div>
                     <div> Links 1</div>
                     <div>Links 1</div>
                     <div>Links 1</div>

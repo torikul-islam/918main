@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './home.css';
 import PostSlide from '../components/common/postSlide';
 import Inspired from './inspired';
+import HeaderHome from './headerHome';
+import './home.css';
 
 
 
@@ -10,12 +11,15 @@ class Home extends Component {
         super(props);
         this.state = {}
     }
+
     render() {
         return (
-            <div>
+            <>
+                <HeaderHome />
                 <PostSlide />
                 <Inspired />
-            </div>
+                <PostSlide />
+            </>
         );
     }
 }
