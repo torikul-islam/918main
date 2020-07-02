@@ -7,4 +7,11 @@
 }
 .image-post-slide h6 {
     margin-top: 15px;
+    font-size: 18px;
+    font-family: "Playfair Display";
+}
+.image-post-slide p {
+    color: #4f4f4f;
+    font-size: 18px;
+    font-family: "helvetica-light";
 }

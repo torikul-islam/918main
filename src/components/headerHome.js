@@ -18,8 +18,11 @@ class HeaderHome extends Component {
 
 
                     <div className='container-fluid' >
-                        <div className='container' id='menu'>
+                        <div className='container-menu' id='menu'>
                             <ul className="home-menu">
+                                <li className="sarch">
+                                    <img src={require('../Asset/Images/search.png')} alt="search.png" />
+                                </li>
                                 <li className='logo'>
                                     <img src={require('../Asset/Images/Logo.png')} alt="" />
                                 </li>

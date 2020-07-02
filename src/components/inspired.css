@@ -2,7 +2,9 @@
   background: #ebeae8;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  margin: 40px 0;
+  /* margin: 40px 0; */
+  margin-bottom: 40px;
+  margin-top: -18px;
 }
 .inspired {
   padding: 75px 0;
@@ -19,4 +21,23 @@
   text-align: center;
   font-family: helvetica-light;
   font-size: 18px;
+}
+.arrow-slide img {
+  width: 30px;
+  height: auto;
+}
+
+.arrow-slide {
+  position: absolute;
+  top: 35%;
+}
+.arrow-left.arrow-slide {
+  left: -45px;
+}
+.slider {
+  position: relative;
+}
+.inspired h2.ins-title {
+  color: #030303;
+  font-family: "Playfair Display";
 }

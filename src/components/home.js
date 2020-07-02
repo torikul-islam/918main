@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PostSlide from '../components/common/postSlide';
 import Inspired from './inspired';
 import HeaderHome from './headerHome';
+import LearnButton from './common/learnButton'
 import './home.css';
 
 
@@ -17,6 +18,7 @@ class Home extends Component {
             <>
                 <HeaderHome />
                 <PostSlide />
+                <LearnButton />
                 <Inspired />
                 <PostSlide />
             </>

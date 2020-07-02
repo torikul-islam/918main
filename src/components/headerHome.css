@@ -20,11 +20,17 @@
 }
 .home-area h2 {
   padding-top: 100px;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display";
 }
 .home-area p {
   color: #090909;
   line-height: 20px;
+}
+.text-furniture p {
+  color: #4f4f4f;
+  font-family: "helvetica-light";
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .nav-secondary.container-fluid {
@@ -50,7 +56,7 @@
 .icons-header-lights h5 {
   color: #111111;
   font-size: 18px;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display";
   margin-top: 15px;
 }
 .readytocreate {
@@ -58,13 +64,13 @@
   text-align: center;
 }
 .readytocreate h5 {
-  font-size: 24px;
+  font-size: 22px;
   color: #030303;
   font-family: "helvetica-light";
 }
 .moodboard button {
   background: #030303;
-  color: #ffffff;
+  color: #fcfaf9;
   border-radius: 21px 21px;
   padding: 5px 16px !important;
   font-family: "Helvetica-bold";
@@ -80,7 +86,10 @@
 }
 .text-furniture {
   text-align: center;
-  margin-top: 30%;
+  margin-top: 20%;
+}
+.text-furniture h4 {
+  font-family: "Playfair Display";
 }
 .width-color-fill {
   /* width: 75%;
