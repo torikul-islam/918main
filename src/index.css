@@ -29,3 +29,8 @@
   font-family: "helvetica-rounded-bold";
   src: url("../src/Asset/Fonts/Helvetica-Font/helvetica-rounded-bold.otf");
 }
+
+@font-face {
+  font-family: "PlayfairDisplay-Bold";
+  src: url("../src/Asset/Fonts/Playfair_Display/PlayfairDisplay-Bold.ttf");
+}

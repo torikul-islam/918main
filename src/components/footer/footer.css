@@ -1,4 +1,4 @@
-@import '../../Asset/Fonts/fonts.css';
+/* @import '../../Asset/Fonts/fonts.css';
 .footer {
 background-color:#c7c5bf;
 }
@@ -8,4 +8,39 @@ background-color:#c7c5bf;
     font-family: "MADECoachellaRegular";
     font-size: 20px;
 }
+ */
 
+#footer {
+  background: #c7c5bf;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.footer-main {
+  padding: 30px 0;
+}
+
+#footer ul {
+  list-style: none;
+}
+.footer-left h3 {
+  font-family: "PlayfairDisplay-Bold";
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.footer-link {
+  padding-left: 0;
+  text-align: right;
+  font-family: "helvetica-light";
+  font-weight: light;
+  font-size: 16px;
+}
+.f-contact,
+.about-us {
+  font-family: "PlayfairDisplay-Bold";
+  font-weight: bold;
+  font-size: 24px;
+}
+.f-contact {
+  text-align: right;
+}
