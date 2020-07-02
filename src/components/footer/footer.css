@@ -1,0 +1,11 @@
+@import '../../Asset/Fonts/fonts.css';
+.footer {
+background-color:#c7c5bf;
+}
+
+.quick-Link{
+    color:#000;
+    font-family: "MADECoachellaRegular";
+    font-size: 20px;
+}
+
