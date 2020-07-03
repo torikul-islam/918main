@@ -14,6 +14,7 @@ import './App.css';
 import Signup from './components/auth/signup';
 import LoginNext from './components/auth/loginNext';
 import BoardName from './components/auth/boardName';
+import CreateBoard from './components/auth/createBoard';
 
 
 
@@ -40,6 +41,7 @@ class App extends Component {
             <Route path="/signup" component={Signup} exact />
             <Route path="/login-next" component={LoginNext} exact />
             <Route path="/board-name" component={BoardName} exact />
+            <Route path="/create-board" component={CreateBoard} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
           </Switch>
         </main>

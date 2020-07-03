@@ -1,0 +1,54 @@
+.create-board {
+  max-width: 800px;
+  max-height: 660px;
+  margin: auto;
+  -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+  box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+}
+.cb-back img {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+.cb-back {
+  position: relative;
+}
+.form-cb-board {
+  text-align: center;
+  padding: 60px 77px 0 77px;
+}
+.form-cb-board h3 {
+  padding-bottom: 50px;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #010101;
+  font-weight: 700;
+  font-family: "PlayfairDisplay-Bold";
+}
+.cb-btn {
+  padding-bottom: 40px;
+}
+.cb-input-area {
+  max-width: 280px;
+  margin: auto;
+}
+.cb-input {
+  padding-bottom: 30px;
+}
+.form-cb-board .have-account {
+  text-align: center;
+}
+.form-cb-board .have-account h4,
+.form-cb-board .have-account h3 {
+  letter-spacing: 1px;
+  color: #030303;
+  font-family: "helvetica-light";
+  font-size: 20px;
+}
+.form-cb-board .have-account h4 {
+  font-weight: 300;
+}
+.form-cb-board .have-account h3 {
+  font-weight: 700;
+}
