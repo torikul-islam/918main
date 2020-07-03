@@ -3,10 +3,10 @@ import './goBtn.css';
 
 
 
-const GoBtn = () => {
+const GoBtn = ({ text = 'Go' }) => {
     return (
         <div className='go-btn'>
-            <button type='button'>Go</button>
+            <button type='button'>{text}</button>
         </div>
     );
 }

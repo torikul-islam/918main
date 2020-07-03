@@ -1,0 +1,32 @@
+.board-name {
+  max-width: 600px;
+  max-height: 500px;
+  margin: auto;
+  -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+  box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+}
+.board-back img {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+.board-back {
+  position: relative;
+}
+.form-board {
+  margin: auto;
+  width: 100%;
+  padding: 80px 112px;
+}
+.form-board h3 {
+  padding-bottom: 50px;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #010101;
+  font-weight: 700;
+  font-family: "PlayfairDisplay-Bold";
+}
+.next-btn {
+  padding-top: 30px;
+}
