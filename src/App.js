@@ -12,6 +12,7 @@ import LearnPage from './components/learnpage';
 import Footer from './components/footer/footer';
 import './App.css';
 import Signup from './components/auth/signup';
+import LoginNext from './components/auth/loginNext';
 
 
 
@@ -36,6 +37,7 @@ class App extends Component {
             <Route path="/ContactUs" component={ContactUs} exact />
             <Route path="/Shop" component={Shop} exact />
             <Route path="/signup" component={Signup} exact />
+            <Route path="/login-next" component={LoginNext} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
           </Switch>
         </main>

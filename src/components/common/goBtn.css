@@ -1,0 +1,16 @@
+.go-btn button {
+  background: #030303;
+  color: #fcfaf9;
+  border-radius: 25px 25px;
+  padding: 5px 41px;
+  font-family: "Helvetica-bold";
+  font-size: 24px;
+  border: none;
+  /* margin-top: 10px; */
+}
+.go-btn {
+  text-align: center;
+}
+.go-btn button:focus {
+  outline: none;
+}

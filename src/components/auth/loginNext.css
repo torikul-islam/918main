@@ -1,0 +1,61 @@
+.login-next {
+  max-width: 800px;
+  max-height: 600px;
+  margin: auto;
+  border: 1px solid #dfe1e5;
+}
+
+.login-next .cross-icon {
+  position: relative;
+}
+
+.login-next .cross-icon img {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  z-index: 1;
+}
+.login-next .mf-left {
+  padding: 55px;
+  background: #ffffff;
+}
+
+.mf-left h2 {
+  font-size: 36px;
+  color: #030303;
+  font-weight: 700;
+  font-family: "PlayfairDisplay-Bold";
+}
+.mf-left p {
+  max-width: 331px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #030303;
+  font-weight: 300;
+  font-family: "helvetica-light";
+  text-align: center;
+  padding-bottom: 25px;
+}
+.mf-right {
+  width: 100%;
+  height: 100%;
+  padding: 30px 25px;
+  background: #f4f3f3;
+  text-align: center;
+}
+.skip,
+.continue {
+  padding: 65px 0 0 0;
+}
+.skip h6,
+.continue h6 {
+  font-size: 24px;
+  font-family: "helvetica-light";
+  text-align: center;
+  margin: auto;
+  padding-bottom: 25px;
+  letter-spacing: 1px;
+  color: #030303;
+  font-weight: 300;
+  max-width: 211px;
+}
