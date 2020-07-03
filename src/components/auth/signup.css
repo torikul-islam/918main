@@ -12,6 +12,15 @@
   box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
 }
 
+.auth-signup .cross-icon {
+  position: relative;
+}
+
+.auth-signup .cross-icon img {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
 .desc {
   background: linear-gradient(to right, #f4f3f3 50%, #ffffff 0%);
   height: 100%;
@@ -83,15 +92,6 @@
   margin-bottom: 31px;
 }
 
-.signup-right .sign-icon {
-  position: relative;
-}
-
-.signup-right .sign-icon img {
-  position: absolute;
-  top: 30px;
-  right: 15px;
-}
 .signup-form input:focus,
 .signup-form .btn:focus {
   outline: none;

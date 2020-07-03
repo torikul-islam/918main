@@ -20,6 +20,9 @@ class Signup extends Component {
         return (
             <div className='container'>
                 <div className='auth-signup'>
+                    <div className='cross-icon'>
+                        <img src={require('../../Asset/Icons/cross.png')} alt="" />
+                    </div>
                     <div className='row desc'>
                         <div className='col-lg-6 signup-left'>
                             <h2>Create a free account.</h2>
@@ -35,9 +38,7 @@ class Signup extends Component {
                             </div>
                         </div>
                         <div className='col-lg-6 signup-right'>
-                            <div className='sign-icon'>
-                                <img src={require('../../Asset/Icons/cross.png')} alt="" />
-                            </div>
+
                             <div className='signup-form'>
 
                                 <form onSubmit={this.handleSubmit}>
