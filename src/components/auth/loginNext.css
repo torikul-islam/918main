@@ -2,7 +2,9 @@
   max-width: 800px;
   max-height: 600px;
   margin: auto;
-  border: 1px solid #dfe1e5;
+  -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
+  box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
 }
 
 .login-next .cross-icon {
