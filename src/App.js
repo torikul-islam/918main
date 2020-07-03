@@ -8,6 +8,7 @@ import Navbar2 from './components/navbar2';
 import AboutUS from './components/about_us/AboutUs';
 import ContactUs from './components/contact_us/ContactUs';
 import Shop from './components/shop/Shop';
+import LearnPage from './components/learnpage';
 import Footer from './components/footer/footer';
 import './App.css';
 
@@ -26,6 +27,7 @@ class App extends Component {
       <>
         <main>
           <Switch>
+            <Route path="/" component={LearnPage} exact />
             <Route path="/" component={Home} exact />
             <Route path="/workspace" component={Workspace} exact />
             <Route path="/explore" component={Explore} exact />

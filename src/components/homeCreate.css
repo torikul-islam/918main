@@ -1,0 +1,17 @@
+.read-more button{
+    background: #030303;
+    color: #fcfaf9;
+    border-radius: 21px 21px;
+    padding: 5px 16px !important;
+    font-family: "Helvetica-bold";
+    border: none;
+    margin-top: 10px;
+}
+.craete-img img {
+    width: 100%;
+    height: 400px;
+}
+
+.craete-text {
+    text-align: center;
+}
