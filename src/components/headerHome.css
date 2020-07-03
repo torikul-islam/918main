@@ -18,13 +18,23 @@
   background-position: center center;
   text-align: center;
 }
-.home-area h2 {
-  padding-top: 100px;
+.home-text h2 {
+  margin-top: 110px;
+  font-size: 48px;
+  letter-spacing: 2px;
+  line-height: 12px;
+  color: #111111;
+  font-weight: 700;
   font-family: "Playfair Display";
 }
-.home-area p {
+.home-text p {
+  padding-top: 42px;
+  font-size: 24px;
+  letter-spacing: 1px;
   color: #090909;
-  line-height: 20px;
+  font-weight: 300;
+  font-family: "Helvetica-light";
+  text-align: center;
 }
 .text-furniture p {
   color: #4f4f4f;
@@ -164,7 +174,8 @@ div.logo-width {
 .menu-icon li.menu-item.man {
   padding-right: 10px !important;
 }
-li.menu-item.man img, li.menu-item.shop img {
+li.menu-item.man img,
+li.menu-item.shop img {
   width: 20px;
   height: auto;
 }

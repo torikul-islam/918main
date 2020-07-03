@@ -15,8 +15,6 @@ class HeaderHome extends Component {
         return (
             <>
                 <div className="home-area">
-
-
                     <div className='container-fluid' >
                         <div className='container-menu' id='menu'>
                             <ul className="home-menu">
@@ -58,27 +56,15 @@ class HeaderHome extends Component {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div className="container">
-                        <h2>Your Home Decorating Hub</h2>
-                        <p>Here, you’ll find all of the resources you <br />
-                        need to make decorating not only easier, <br /> but also fun!</p>
+                        <div className='home-text'>
+                            <h2>Your Home Decorating Hub</h2>
+                            <p>Here, you’ll find all of the resources <br />
+                            you need to make decorating not only <br /> easier, but also fun! </p>
+                        </div>
                     </div>
                 </div>
+
                 <div className="icon-books">
                     <div className="container">
                         <div className="row">

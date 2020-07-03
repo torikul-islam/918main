@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import './footer.css'
+
+
+
+
+
 class footer extends Component {
     render() {
         return (
@@ -26,7 +31,7 @@ class footer extends Component {
                         <div className='col-sm-4'>
                             <ul className="subscribe">
                                 <li><img src={require('../../Asset/Images/mail.png')} alt="mail.png" /></li>
-                                <li className="subslist">Subscribe</li>
+                                <li className="sublist">Subscribe</li>
                             </ul>
                         </div>
 
