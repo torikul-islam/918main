@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import HeaderShop from './headerShop';
-import ShopSlide from '../shop/shopSlide';
-import ShopInspired from '../shop/shopInspired';
-import TabShop from '../shop/tabShop';
-import ShopThreeSlide from '../shop/shopThreeSlide'
-import '../shop/Shop.css';
+import ShopSlide from '../inspired/shopSlide';
+import ShopInspired from '../inspired/shopInspired';
+import TabShop from '../inspired/tabShop';
+import ShopThreeSlide from '../inspired/shopThreeSlide'
+import '../inspired/inspired.css';
 
-class Shop extends Component {
+class Inspired extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -29,4 +29,4 @@ class Shop extends Component {
     }
 }
 
-export default Shop;
+export default Inspired;

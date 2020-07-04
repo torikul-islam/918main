@@ -1,0 +1,38 @@
+.list-furniture ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin: 45px 0;
+}
+.list-furniture {}
+
+.list-furniture h4 {
+    text-align: center;
+    /* border-bottom: 2px solid red; */
+    /* border-width: 30px; */
+    position: relative;
+}
+
+.list-furniture h4:before {
+    content: "";
+    position: absolute;
+    width: 105px;
+    height: 4px;
+    margin-left: -23px;
+    background: #d7d5d5;
+    top: 36px;
+    }
+.list-furniture ul li {
+    display: inline-block;
+    padding: 0 18px;
+}
+
+span.bar {
+    width: 16%;
+    height: 3px;
+    background: #d7d5d5;
+    margin: auto;
+    display: block;
+    margin-bottom: 25px;
+}

@@ -75,13 +75,13 @@ class HeaderHome extends Component {
                                 </div>
                             </div>
                             <div className="col-sm-3 padding-zero">
-                                <div className="learn icons-header-lights">
+                                <div className="inspired learn icons-header-lights">
                                     <img src={require('../Asset/Images/learn.png')} alt="learn.png" />
                                     <h5>Learn.</h5>
                                 </div>
                             </div>
                             <div className="col-sm-3 padding-right-zero">
-                                <div className="shop icons-header-lights">
+                                <div className="inspired shop icons-header-lights">
                                     <img src={require('../Asset/Images/shop.png')} alt="shop.png" />
                                     <h5>Shop.</h5>
                                 </div>
