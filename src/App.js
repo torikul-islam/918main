@@ -17,6 +17,7 @@ import CreateBoard from './components/onboard/createBoard';
 import OnboardQ1 from './components/onboard/onboardQ1';
 import OnboardQ2 from './components/onboard/onboardQ2';
 import OnboardQ3 from './components/onboard/onboardQ3';
+import Inspired from './components/inspired/inspired';
 
 
 
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/onboard-q1" component={OnboardQ1} exact />
             <Route path="/onboard-q2" component={OnboardQ2} exact />
             <Route path="/onboard-q3" component={OnboardQ3} exact />
+            <Route path="/inspired" component={Inspired} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
           </Switch>
         </main>
