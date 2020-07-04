@@ -15,6 +15,8 @@ import LoginNext from './components/auth/loginNext';
 import BoardName from './components/onboard/boardName';
 import CreateBoard from './components/onboard/createBoard';
 import OnboardQ1 from './components/onboard/onboardQ1';
+import OnboardQ2 from './components/onboard/onboardQ2';
+import OnboardQ3 from './components/onboard/onboardQ3';
 
 
 
@@ -43,6 +45,8 @@ class App extends Component {
             <Route path="/board-name" component={BoardName} exact />
             <Route path="/create-board" component={CreateBoard} exact />
             <Route path="/onboard-q1" component={OnboardQ1} exact />
+            <Route path="/onboard-q2" component={OnboardQ2} exact />
+            <Route path="/onboard-q3" component={OnboardQ3} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
           </Switch>
         </main>
