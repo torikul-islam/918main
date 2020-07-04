@@ -1,0 +1,6 @@
+.cus-checkbox .cus-checkbox-label {
+  margin: 0px 0 12px 32px !important;
+}
+input[type="checkbox"] {
+  transform: scale(1.7);
+}

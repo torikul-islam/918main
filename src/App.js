@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
-import Navbar from './components/navbar';
 import Home from './components/home';
 import Workspace from './components/workspace';
 import Explore from './components/explore';
@@ -13,8 +12,9 @@ import Footer from './components/footer/footer';
 import './App.css';
 import Signup from './components/auth/signup';
 import LoginNext from './components/auth/loginNext';
-import BoardName from './components/auth/boardName';
-import CreateBoard from './components/auth/createBoard';
+import BoardName from './components/onboard/boardName';
+import CreateBoard from './components/onboard/createBoard';
+import OnboardQ1 from './components/onboard/onboardQ1';
 
 
 
@@ -42,6 +42,7 @@ class App extends Component {
             <Route path="/login-next" component={LoginNext} exact />
             <Route path="/board-name" component={BoardName} exact />
             <Route path="/create-board" component={CreateBoard} exact />
+            <Route path="/onboard-q1" component={OnboardQ1} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
           </Switch>
         </main>
