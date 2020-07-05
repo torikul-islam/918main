@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import '../Asset/Fonts/fonts.css';
 .home-area:before {
   background: #e7e7e9;
   content: "";

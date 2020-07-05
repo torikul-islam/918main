@@ -69,25 +69,25 @@ class HeaderHome extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-3">
-                                <div className="inspired icons-header-lights">
+                                <div className="icons-header-lights">
                                     <img src={require('../Asset/Images/light-bulb.png')} alt="light-bulb.png" />
                                     <h5>Be inspired.</h5>
                                 </div>
                             </div>
                             <div className="col-sm-3 padding-zero">
-                                <div className="inspired learn icons-header-lights">
+                                <div className="learn icons-header-lights">
                                     <img src={require('../Asset/Images/learn.png')} alt="learn.png" />
                                     <h5>Learn.</h5>
                                 </div>
                             </div>
                             <div className="col-sm-3 padding-right-zero">
-                                <div className="inspired shop icons-header-lights">
+                                <div className="shop icons-header-lights">
                                     <img src={require('../Asset/Images/shop.png')} alt="shop.png" />
                                     <h5>Shop.</h5>
                                 </div>
                             </div>
                             <div className="col-sm-3">
-                                <div className="inspired icons-header-lights">
+                                <div className="icons-header-lights">
                                     <img src={require('../Asset/Images/design.png')} alt="design.png" />
                                     <h5>Design.</h5>
                                 </div>
