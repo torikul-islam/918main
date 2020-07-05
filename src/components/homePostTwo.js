@@ -10,7 +10,7 @@ class HomePostTwo extends Component {
     }
     render() {
         return (
-            <div className='homecreate'>
+            <div className='homecreate twoSlide'>
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-6">

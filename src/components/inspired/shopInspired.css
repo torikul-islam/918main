@@ -14,7 +14,7 @@
 .slide-desc {
   text-align: center;
   font-family: helvetica-light;
-  font-size: 18px;
+  font-size: 18pt;
   color: #4f4f4f;
   margin-top: 15px;
 }
@@ -45,6 +45,14 @@
 }
 .tab-index .slider p {
   color: #4f4f4f;
-  font-size: 18px;
+  font-size: 20pt;
   font-family: "helvetica-light";
+  line-height: normal;
+}
+.tab-index .slider h3 {
+  color: #030303;
+  font-family: PlayfairDisplay-Bold;
+  font-size: 24pt;
+  line-height: normal;
+  margin-top: 30px;
 }

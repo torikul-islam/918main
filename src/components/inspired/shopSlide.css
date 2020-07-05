@@ -7,14 +7,22 @@
 }
 .image-post-slide h6 {
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 20pt;
     font-family: "Playfair Display";
     line-height: 24px;
+    color: #030303;
 }
 .image-post-slide p {
-    color: #4f4f4f;
-    font-size: 18px;
     font-family: "helvetica-light";
+    color: #030303;
+    font-size: 18pt;
+    line-height: normal;
+}
+.image-post-slide span {
+    font-family: "helvetica-light";
+    color: #4f4f4f;
+    font-size: 18pt;
+    line-height: normal;
 }
 .post-slide-main {
     margin: 30px 0 45px;

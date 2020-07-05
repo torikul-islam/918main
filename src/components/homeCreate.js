@@ -12,6 +12,14 @@ class HomeCreate extends Component {
         return (
             <div className='homecreate'>
                 <div className="container">
+                    <div className="list-furniture">
+                        <ul>
+                            <li>ROOM</li>
+                            <li>STYLING</li>
+                            <li>BUYER’S GUIDE</li>
+                            <li>DESIGN 101</li>
+                        </ul>
+                    </div>
                     <div className="row">
                         <div className="col-sm-6">
                             <div className="craete-img">
@@ -19,10 +27,11 @@ class HomeCreate extends Component {
                             </div>
                         </div>
                         <div className="col-sm-6">
+
                             <div className="craete-text">
                                 <h5>Studio McGee</h5>
                                 <h2>The beautiful homes<br />and how to create <br />them.</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do se ultrices gravida</p>
+                                <p>Lorem ipsum dolor sit <br /> amet, consectetur  adipisc-<br />ing elit, sed do se ultrices<br /> gravida</p>
                                 <div className="read-more">
                                     <button>Read More</button>
                                 </div>

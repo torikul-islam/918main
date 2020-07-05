@@ -1,11 +1,11 @@
 .ins-title {
     color: #030303;
-    font-family: "Playfair Display";
-    font-size: 2rem;
+    font-family: "PlayfairDisplay-Bold";
+    font-size: 40pt;
   }
   span.berSlide {
     display: inline-block;
-    width: 84%;
+    width: 77%;
     height: 3px;
     background: #d7d5d5;
     margin-left: 30px;
@@ -13,6 +13,6 @@
   
   span.trending {
     float: left;
-    margin-top: 6px;
-    width: 13%;
+    margin-top: 15px;
+    width: 20%;
   }

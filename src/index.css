@@ -33,3 +33,8 @@
   font-family: "PlayfairDisplay-Bold";
   src: url("../src/Asset/Fonts/Playfair_Display/PlayfairDisplay-Bold.ttf");
 }
+
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  src: url("../src/Asset/Fonts/Playfair_Display/PlayfairDisplay-Regular.ttf");
+}

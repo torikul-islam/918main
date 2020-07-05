@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import inspiredSlide from '../Asset/Images/inspired_slide_item.png'
+import inspiredSlide from '../Asset/Images/inspired_slide_item.png';
+import TitleWithBer from '../components/shop/titleWithBer'
 import './threeSlide.css';
 
 
@@ -12,7 +13,7 @@ class ThreeSlide extends Component {
         return (
             <div className='container-fluid ins-area'>
                 <div className='container inspired' >
-                    <h2 className='ins-title'>Recommended Reading.</h2>
+                    <TitleWithBer />
 
                     <div className='tab-index'>
                         <div className='slider'>

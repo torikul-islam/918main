@@ -2,16 +2,37 @@
     width: 100%;
     height: auto;
 }
-.read-more button{
+.read-more button {
     background: #030303;
     color: #fcfaf9;
-    border-radius: 21px 21px;
-    padding: 5px 16px !important;
+    border-radius: 50px;
+    padding: 5px 25px !important;
     font-family: "Helvetica-bold";
     border: none;
     margin-top: 10px;
+    font-size: 24pt;
 }
 .learn-text{
     text-align: center;
 }
+.learn-text h3 {
+    font-size: 36pt;
+    color: #030303;
+    font-family: PlayfairDisplay-Regular;
+}
 
+.learn-text h5 {
+    font-family: helvetica-light;
+    color: #4f4f4f;
+    font-size: 18pt;
+}
+.learn-text h2 {
+    font-family: PlayfairDisplay-Bold;
+    color: #030303;
+    font-size: 36pt;
+}
+.learn-text p {
+    font-family: "helvetica-light";
+    color: #030303;
+    font-size: 24pt;
+}

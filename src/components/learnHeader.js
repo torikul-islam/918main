@@ -16,8 +16,8 @@ class LearnHeader extends Component {
                                 <div className="learn-text">
                                     <h3>Learn</h3>
                                     <h5>Studio McGee</h5>
-                                    <h2>The beautiful homes<br />and how to create <br />them.</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do se ultrices gravida</p>
+                                    <h2>The beautiful homes<br/>and how to create <br/>them.</h2>
+                                    <p>Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit, sed do se ultrices gravida</p>
                                     <div className="read-more">
                                         <button>Learn More</button>
                                     </div>
