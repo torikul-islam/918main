@@ -1,5 +1,5 @@
 .onboard-q2 {
-  padding: 10px 50px 20px 50px;
+  padding: 20px 50px 20px 50px;
   max-width: 800px;
   max-height: 800px;
   margin: auto;
@@ -15,4 +15,17 @@
 .onboard-item {
   margin: auto;
   text-align: center;
+}
+
+h6{
+  font-family: "Helvetica";
+}
+/* h7{
+  font-family: "Helvetica";
+} */
+.Skip-btn{
+  padding: 10px 10px;
+}
+.Skip-btn-style{
+  padding: 20px;
 }

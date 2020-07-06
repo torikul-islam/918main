@@ -15,7 +15,7 @@ class OnboardQ2 extends Component {
         return (
             <div className='container'>
                 <div className='onboard-q2'>
-                    <div>logo</div>
+                    {/* <div>logo</div> */}
 
                     <div className='onboard-q1-main'>
                         <div className='like-to-work'>
@@ -26,9 +26,9 @@ class OnboardQ2 extends Component {
                             <div className='row'>
                                 {Array(12).fill().map((_, i) => i + 1).map((item, i) =>
                                     <div className='col-sm-3' key={i}>
-                                        <div className='onboard-item'>
+                                        <div className='onboard-item text-center'>
                                             <img src={require('../../Asset/Images/onboard_item4.png')} alt="" />
-                                            <h6>Farmhouse {i + 1}</h6>
+                                            <h6 className="text-center"> Farmhouse {i + 1}</h6>
                                         </div>
                                     </div>
                                 )}

@@ -30,7 +30,7 @@
   padding-bottom: 40px;
 }
 .cb-input-area {
-  max-width: 280px;
+  max-width: 240px;
   margin: auto;
 }
 .cb-input {
@@ -39,11 +39,16 @@
 .form-cb-board .have-account {
   text-align: center;
 }
-.form-cb-board .have-account h4,
+.form-cb-board .have-account h4{
+  letter-spacing: 1px;
+  color: #030303;
+  font-family: "Helvetica";
+  font-size: 18px;
+}
 .form-cb-board .have-account h3 {
   letter-spacing: 1px;
   color: #030303;
-  font-family: "helvetica-light";
+  font-family: "Helvetica-Bold";
   font-size: 20px;
 }
 .form-cb-board .have-account h4 {
@@ -51,4 +56,8 @@
 }
 .form-cb-board .have-account h3 {
   font-weight: 700;
+}
+
+input::placeholder{
+  text-align: left;
 }
