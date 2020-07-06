@@ -14,12 +14,17 @@ class BoardName extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
     };
+    clickBoardName = () => {
+        this.props.openModal('createBoard')
+    }
 
     render() {
+        const { closeModal, } = this.props;
+
         return (
             <div className='container'>
                 <div className='board-name'>
-                    <div className='board-back'>
+                    <div className='board-back' onClick={closeModal}>
                         <img src={require('../../Asset/Icons/cross.png')} alt="" />
                     </div>
                     <div className='form-board'>
@@ -28,8 +33,7 @@ class BoardName extends Component {
                             <Input name='name' id='name' placeholder='Enter Name' />
 
                             <div className='next-btn'>
-                                <GoBtn text='Next' />
-
+                                <GoBtn text='Next' onClick={this.clickBoardName} />
                             </div>
                         </form>
                     </div>

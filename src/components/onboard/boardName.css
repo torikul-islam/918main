@@ -1,9 +1,10 @@
-@import '../../Asset/Fonts/fonts.css';
+@import "../../Asset/Fonts/fonts.css";
 
 .board-name {
   max-width: 600px;
   max-height: 500px;
   margin: auto;
+  background: #ffffff;
   -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
@@ -34,19 +35,16 @@
   padding-top: 30px;
 }
 
-input::placeholder {  
-                  
-  /* Firefox, Chrome, Opera */ 
-  text-align: center; 
+input::placeholder {
+  /* Firefox, Chrome, Opera */
+  text-align: center;
   font-family: "Helvetica";
-} 
-input::first-line {  
-                  
-  /* Firefox, Chrome, Opera */ 
+}
+input::first-line {
+  /* Firefox, Chrome, Opera */
   font-family: "Helvetica";
-} 
+}
 
 input {
-  text-align: center ; 
- 
+  text-align: center;
 }

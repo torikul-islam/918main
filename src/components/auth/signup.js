@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from '../common/modal/modal';
 import './signup.css';
+
+
 
 class Signup extends Component {
     constructor(props) {
@@ -10,16 +13,21 @@ class Signup extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.openModal('loginNext');
     };
 
 
     render() {
+        const { name } = this.state;
+        const { closeModal } = this.props;
+
         return (
             <div className='container'>
                 <div className='auth-signup'>
-                    <div className='cross-icon'>
+                    <div className='cross-icon' onClick={closeModal}>
                         <img src={require('../../Asset/Icons/cross.png')} alt="" />
                     </div>
+
                     <div className='row'>
                         <div className='col-sm-6'>
                             <div className='signup-left'>
@@ -39,17 +47,20 @@ class Signup extends Component {
                         <div className='col-sm-6'>
                             <div className='signup-right'>
                                 <div className='signup-form'>
-
-                                    <form onSubmit={this.handleSubmit}>
+                                    <form onSubmit={this.handleSubmit} >
                                         <div className="form-group">
-                                            <input type="email" className="form-control" id="email" placeholder="Email" autoComplete='off' />
+                                            <input
+                                                type="email"
+                                                className="form-control"
+                                                id="email"
+                                                placeholder="Email"
+                                                autoComplete='off' />
                                         </div>
                                         <div className="form-group">
                                             <input type="password" className="form-control" id="password" placeholder="Password" autoComplete='off' />
                                         </div>
-                                        <button type="button" className="btn btn-signup">Sign Up</button>
+                                        <button type="submit" className="btn btn-signup">Sign Up</button>
                                     </form>
-
                                 </div>
                             </div>
                         </div>

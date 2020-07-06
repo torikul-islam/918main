@@ -11,6 +11,11 @@ class OnboardQ2 extends Component {
         super(props);
         this.state = {}
     }
+
+    submitOnboardQ2 = () => {
+        this.props.openModal('onboardQ3');
+    };
+
     render() {
         return (
             <div className='container'>
@@ -35,7 +40,7 @@ class OnboardQ2 extends Component {
                             </div>
                         </div>
 
-                        <GoBtn text='Next' />
+                        <GoBtn text='Next' onClick={this.submitOnboardQ2} />
                     </div>
 
 

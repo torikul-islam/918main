@@ -10,12 +10,16 @@ class OnboardQ3 extends Component {
         super(props);
         this.state = {}
     }
+
+    submitOnboardQ3 = () => {
+        this.props.openModal('boardName');
+    };
+
+
     render() {
         return (
             <div className='container'>
                 <div className='onboard-q2'>
-                    
-
                     <div className='onboard-q1-main'>
                         <div className='like-to-work'>
                             <h2>Are there specific pieces you're looking for?</h2>
@@ -33,8 +37,8 @@ class OnboardQ3 extends Component {
                                 )}
                             </div>
                         </div>
-                        <GoBtn text='Next' />
-                        <div className="text-center"><text className="Skip-btn-style"> Skip </text></div>
+                        <GoBtn text='Next' onClick={this.submitOnboardQ3} />
+                        <div className="text-center"><span className="Skip-btn-style"> Skip </span></div>
                     </div>
                 </div>
             </div>

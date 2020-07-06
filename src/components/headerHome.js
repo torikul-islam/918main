@@ -12,6 +12,7 @@ class HeaderHome extends Component {
         this.state = {}
     }
     render() {
+        const { openModal } = this.props;
         return (
             <>
                 <div className="home-area">
@@ -37,8 +38,8 @@ class HeaderHome extends Component {
                                     <li className="menu-item font-hel">
                                         <NavLink className="nav-link" to="/explore" exact >explore</NavLink>
                                     </li>
-                                    <li className="menu-item signup">
-                                        <NavLink className="nav-link" to="/SignUp" exact >Sign Up</NavLink>
+                                    <li className="menu-item signup" onClick={() => openModal('signup')}>
+                                        <div className="nav-link" >Sign Up</div>
                                     </li>
                                     <span className="menu-icon">
                                         <li className="menu-item man">

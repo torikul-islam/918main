@@ -3,6 +3,7 @@
   max-width: 800px;
   max-height: 800px;
   margin: auto;
+  background: #ffffff;
   -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
@@ -17,15 +18,15 @@
   text-align: center;
 }
 
-h6{
+h6 {
   font-family: "Helvetica";
 }
 /* h7{
   font-family: "Helvetica";
 } */
-.Skip-btn{
+.Skip-btn {
   padding: 10px 10px;
 }
-.Skip-btn-style{
+.Skip-btn-style {
   padding: 20px;
 }

@@ -1,20 +1,8 @@
-/* .auth-signup {
-  max-width: 700px;
-  max-height: 500px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
-  -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
-  box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
-} */
 .auth-signup {
   max-width: 700px;
   max-height: 500px;
   margin: auto;
+  background: #ffffff;
   -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
@@ -28,6 +16,7 @@
   position: absolute;
   top: 30px;
   right: 15px;
+  z-index: 10;
 }
 
 .signup-left {
@@ -63,13 +52,11 @@
   padding: 10px 0;
 }
 .signup-left > ul {
-  /* vertical-align: middle;
-  list-style-image: url(../../Asset/Icons/checked.png); */
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.signup-left > ul li img{
+.signup-left > ul li img {
   width: 27px;
   height: auto;
 }

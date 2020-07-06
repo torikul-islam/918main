@@ -2,6 +2,7 @@
   max-width: 800px;
   max-height: 660px;
   margin: auto;
+  background: #ffffff;
   -webkit-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
   box-shadow: -2px 10px 117px -5px rgba(0, 0, 0, 0.29);
@@ -39,7 +40,7 @@
 .form-cb-board .have-account {
   text-align: center;
 }
-.form-cb-board .have-account h4{
+.form-cb-board .have-account h4 {
   letter-spacing: 1px;
   color: #030303;
   font-family: "Helvetica";
@@ -58,6 +59,6 @@
   font-weight: 700;
 }
 
-input::placeholder{
+input::placeholder {
   text-align: left;
 }

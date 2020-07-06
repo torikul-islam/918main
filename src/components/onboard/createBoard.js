@@ -16,10 +16,11 @@ class CreateBoard extends Component {
     };
 
     render() {
+        const { closeModal } = this.props;
         return (
             <div className='container'>
                 <div className='create-board'>
-                    <div className='cb-back'>
+                    <div className='cb-back' onClick={closeModal}>
                         <img src={require('../../Asset/Icons/cross.png')} alt="" />
                     </div>
                     <div className='form-cb-board'>

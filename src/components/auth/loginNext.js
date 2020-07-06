@@ -8,11 +8,28 @@ class LoginNext extends Component {
         super(props);
         this.state = {}
     }
+
+
+    clickBoard = () => {
+        this.props.openModal('boardName');
+    };
+
+    clickContinue = () => {
+        this.props.history.push('/explore');
+    };
+
+    clickAnsQues = () => {
+        this.props.openModal('onboardQ1');
+    };
+
+
     render() {
+        const { closeModal } = this.props;
+
         return (
             <div className='container'>
                 <div className='login-next'>
-                    <div className='cross-icon'>
+                    <div className='cross-icon' onClick={closeModal}>
                         <img src={require('../../Asset/Icons/cross.png')} alt="" />
                     </div>
 
@@ -30,7 +47,7 @@ class LoginNext extends Component {
                                     recommendations!
                                 </p>
 
-                                <GoBtn />
+                                <GoBtn onClick={this.clickAnsQues} />
                             </div>
                         </div>
                         <div className='col-sm-5'>
@@ -39,11 +56,11 @@ class LoginNext extends Component {
                                     <h6>
                                         You can also skip the questions and just get started.
                                     </h6>
-                                    <GoBtn />
+                                    <GoBtn onClick={this.clickBoard} />
                                 </div>
                                 <div className='continue'>
                                     <h6>Click here to continue browsing.</h6>
-                                    <GoBtn />
+                                    <GoBtn onClick={this.clickContinue} />
                                 </div>
                             </div>
                         </div>
