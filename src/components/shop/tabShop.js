@@ -9,7 +9,7 @@ class TabShop extends Component {
 
     render() {
         return (
-            <main>
+            <>
                 <div className="list-furniture">
                     <div className="container">
                         <div className="row">
@@ -26,7 +26,7 @@ class TabShop extends Component {
                         </div>
                     </div>
                 </div>
-            </main>
+            </>
         );
     }
 }

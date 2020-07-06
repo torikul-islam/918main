@@ -1,0 +1,9 @@
+@import '../../Asset/Fonts/fonts.css';
+.img-about img {
+    width: 100%;
+    height: 450px;
+}
+
+.text-about {
+    text-align: center;
+}
