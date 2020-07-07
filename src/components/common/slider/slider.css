@@ -99,8 +99,8 @@ span.bar {
 }
 
 .image-slide img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 315px;
 }
 .image-slide {
   text-align: center;

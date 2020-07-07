@@ -16,8 +16,7 @@ import OnboardQ2 from './onboard/onboardQ2';
 import OnboardQ3 from './onboard/onboardQ3';
 import SliderPost from './common/slider/sliderPost';
 import Slider4 from './common/slider/slider4';
-import shopData from '../testDate/shop.json';
-import inspiredData from '../testDate/inspired.json';
+import axios from 'axios';
 
 
 
@@ -47,8 +46,9 @@ class Home extends Component {
         this.setState({ modal });
     };
 
-    componentDidMount() {
-        this.setState({ shop: shopData, inspired: inspiredData });
+    async componentDidMount() {
+        await this.getInspiredData();
+        await this.getShopData();
     }
 
     onPageChange = (type) => {
@@ -58,6 +58,16 @@ class Home extends Component {
             this.setState({ currentPage: this.state.currentPage + 1 })
         }
     }
+
+    getShopData = async () => {
+        const { data } = await axios.get('/products/');
+        this.setState({ shop: data })
+    };
+
+    getInspiredData = async () => {
+        const { data } = await axios.get('/inspirations/');
+        this.setState({ inspired: data })
+    };
 
     render() {
         const { isOpen, name } = this.state.modal;
