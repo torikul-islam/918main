@@ -1,0 +1,17 @@
+.arrow-slide img {
+  width: 25px;
+  height: auto;
+}
+
+.arrow-slide {
+  position: absolute;
+  /* top: 35%; */
+}
+.arrow-left.arrow-slide {
+  left: -40px !important;
+}
+
+.slide-main {
+  position: relative;
+  /* margin-top: 25px; */
+}

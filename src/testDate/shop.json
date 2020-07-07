@@ -1,0 +1,1593 @@
+{
+  "count": 2747,
+  "next": "https://nineoneeightstaging.herokuapp.com/products/?page=2",
+  "previous": null,
+  "results": [
+    {
+      "uuid": "00fff1f9-ab68-49cd-abc3-5aec133b5169",
+      "name": "Corded Minimalist Geo Pillow Cover",
+      "ref_url": "https://www.westelm.com/products/corded-minimalist-geo-pillow-cover-t4805/?pkey=cpillows&isx=0.0.15001",
+      "ref_img": "https://www.westelm.com/weimgs/rk/images/wcm/products/201951/0029/corded-minimalist-geo-pillow-cover-o.jpg",
+      "image_one_url": "https://www.westelm.com/weimgs/rk/images/wcm/products/201951/0029/corded-minimalist-geo-pillow-cover-o.jpg",
+      "image_two_url": null,
+      "price": "29.00",
+      "retailer": "West Elm",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        },
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        },
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "01048597-7fae-4d2e-a5f0-5f5a2a0d7da3",
+      "name": "Perlita Striped Throw Pillow Cover",
+      "ref_url": "https://www.wayfair.com/decor-pillows/pdp/wrought-studio-perlita-striped-throw-pillow-cover-w002173434.html?piid=100273899%2C100334483",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/70879223/resize-h800-w800%5Ecompr-r85/9168/91685443/Perlita+Striped+Throw+Pillow+Cover.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/70879223/resize-h800-w800%5Ecompr-r85/9168/91685443/Perlita+Striped+Throw+Pillow+Cover.jpg",
+      "image_two_url": "https://secure.img1-fg.wfcdn.com/im/13055131/resize-h800-w800%5Ecompr-r85/9907/99073886/Perlita+Striped+Throw+Pillow+Cover.jpg",
+      "price": "35.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "0110e496-f142-4e70-b403-fa0fbcae6db6",
+      "name": "Framed Painting Print on Canvas in Orange",
+      "ref_url": "https://www.wayfair.com/decor-pillows/pdp/langley-street-framed-painting-print-on-canvas-in-orange-lgly1346.html",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/95694189/resize-h800-w800%5Ecompr-r85/2951/29518777/Framed+Painting+Print+on+Canvas+in+Orange.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/95694189/resize-h800-w800%5Ecompr-r85/2951/29518777/Framed+Painting+Print+on+Canvas+in+Orange.jpg",
+      "image_two_url": null,
+      "price": "109.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 2,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "1e507f9c-721d-4841-8371-dc35c31bcf65",
+          "name": "Orange",
+          "hex_value": "f19718"
+        }
+      ],
+      "piece": {
+        "id": 18,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:07.648163Z",
+        "uuid": "58800bb2-db7c-4f45-8fea-4b1bf04939f8",
+        "name": "Art",
+        "piece_category": 2,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "01367406-36d5-453b-987a-b3c23751ccce",
+      "name": "Saranda Driftwood Gray 48\" Round Dining Table",
+      "ref_url": "https://www.pier1.com/saranda--driftwood-gray-48-round-dining-table/4191564.html?cgid=dining-tables#nav=top&start=0&sz=100&showAll=100&origin=gridswatch",
+      "ref_img": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dwb4409ff5/images/4191564/4191564_1.jpg?sw=1500&sh=1500",
+      "image_one_url": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dwb4409ff5/images/4191564/4191564_1.jpg?sw=1500&sh=1500",
+      "image_two_url": null,
+      "price": "599.99",
+      "retailer": "Pier 1",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 10,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:09:20.709512Z",
+        "uuid": "54bacca8-30a0-4b22-b482-c92620aa7a28",
+        "name": "Dining Table",
+        "piece_category": 1,
+        "rooms": [2]
+      }
+    },
+    {
+      "uuid": "01c4dfb2-0bf9-46b0-9f1d-6f996d71b4b5",
+      "name": "Whitewash Tan 7.4\" Wood Vase",
+      "ref_url": "https://www.pier1.com/whitewash-tan-wood-vases/PS172060.html?cgid=vases-decorative-bowls#nav=top&start=0&sz=180&showAll=210&origin=gridswatch",
+      "ref_img": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dw7f6a9049/images/4197427/4197427_1.jpg?sw=768&sh=768",
+      "image_one_url": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dw7f6a9049/images/4197427/4197427_1.jpg?sw=768&sh=768",
+      "image_two_url": null,
+      "price": "24.99",
+      "retailer": "Pier 1",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        },
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 43,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:06.944129Z",
+        "uuid": "4df1bff9-160a-46c9-ac57-ef02160595cc",
+        "name": "Vase",
+        "piece_category": 2,
+        "rooms": [1, 2, 4, 5, 6, 8]
+      }
+    },
+    {
+      "uuid": "0330933d-15ab-48b7-80f3-356d27cc9120",
+      "name": "Cleo Hand-Knotted Rug",
+      "ref_url": "https://www.potterybarn.com/products/cleo-hand-knotted-rug-neutral-multi/?pkey=call-rugs&isx=0.1",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/1503/img50o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/1503/img50o.jpg",
+      "image_two_url": null,
+      "price": "1399.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 17,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:17.079944Z",
+        "uuid": "1e2566c9-7ba1-41f0-8b42-9c02ae229ec8",
+        "name": "Rug",
+        "piece_category": 5,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "042bc65a-a678-43ce-b154-79e1f25c4af1",
+      "name": "Varnamtown Task Chair, Sherpa",
+      "ref_url": "https://www.wayfair.com/furniture/pdp/ebern-designs-varnamtown-task-chair-w002995079.html",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/46744827/resize-h800-w800%5Ecompr-r85/1107/110742793/Varnamtown+Task+Chair.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/46744827/resize-h800-w800%5Ecompr-r85/1107/110742793/Varnamtown+Task+Chair.jpg",
+      "image_two_url": "https://secure.img1-fg.wfcdn.com/im/89990262/resize-h800-w800%5Ecompr-r85/1107/110742798/Varnamtown+Task+Chair.jpg",
+      "price": "155.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 13,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:59.635661Z",
+        "uuid": "eec603ef-99e0-42c8-8895-9ec92ef62448",
+        "name": "Desk Chair",
+        "piece_category": 1,
+        "rooms": [6]
+      }
+    },
+    {
+      "uuid": "0438b25d-13c9-4649-9b93-05b442a85504",
+      "name": "Lenox Swivel Office Chair",
+      "ref_url": "https://www.westelm.com/products/lenox-office-chair-h4080/?pkey=coffice-chairs&isx=0.0.0",
+      "ref_img": "https://www.westelm.com/weimgs/rk/images/wcm/products/201941/0008/lenox-swivel-office-chair-o.jpg",
+      "image_one_url": "https://www.westelm.com/weimgs/rk/images/wcm/products/201941/0008/lenox-swivel-office-chair-o.jpg",
+      "image_two_url": null,
+      "price": "349.00",
+      "retailer": "West Elm",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 13,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:59.635661Z",
+        "uuid": "eec603ef-99e0-42c8-8895-9ec92ef62448",
+        "name": "Desk Chair",
+        "piece_category": 1,
+        "rooms": [6]
+      }
+    },
+    {
+      "uuid": "0483a701-cbaf-497c-8a72-d917da17fe70",
+      "name": "Channel-tufted Occasional Chair",
+      "ref_url": "https://www.anthropologie.com/shop/channel-tufted-occasional-chair?FABRIC=VV0066&LEG=WNUT&QUANTITY=1&SIZE=0000&category=furniture-chairs",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/52706207-0000-VV0066-WNUT_b?$a15-mto-product$&hei=900&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/52706207-0000-VV0066-WNUT_b?$a15-mto-product$&hei=900&qlt=80&fit=constrain",
+      "image_two_url": null,
+      "price": "1048.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 6,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "05051fe6-3b73-4b53-9c96-bb4577f2188f",
+          "name": "Purple",
+          "hex_value": "8251cb"
+        },
+        {
+          "id": 7,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "4877b7bc-6628-42e9-9ca0-91eaeb5d59eb",
+          "name": "Pink",
+          "hex_value": "e9ade3"
+        }
+      ],
+      "piece": {
+        "id": 2,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:41.023026Z",
+        "uuid": "011f782d-67d8-4cab-bfc5-2096279faa1c",
+        "name": "Accent Chair",
+        "piece_category": 1,
+        "rooms": [1, 5, 6, 7]
+      }
+    },
+    {
+      "uuid": "04d05754-3ee5-401a-bb01-68ee02272ea7",
+      "name": "Dortha Moroccan Style Rug, Ivory And Black",
+      "ref_url": "https://www.luluandgeorgia.com/dortha-moroccan-style-rug-ivory-and-black",
+      "ref_img": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/d/o/dortha-rug-ivory-and-black_6.jpg",
+      "image_one_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/d/o/dortha-rug-ivory-and-black_6.jpg",
+      "image_two_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/d/o/dortha-rug-ivory-and-black_3_2.jpg",
+      "price": "2165.00",
+      "retailer": "Lulu & Georgia",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 17,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:17.079944Z",
+        "uuid": "1e2566c9-7ba1-41f0-8b42-9c02ae229ec8",
+        "name": "Rug",
+        "piece_category": 5,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "04eec8e6-331b-49f6-b2cf-7e253a7745ea",
+      "name": "Rhys Chair",
+      "ref_url": "https://www.anthropologie.com/shop/rhys-chair4?category=furniture-chairs",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/53930624-0000-LT0070-WWAL_b2?$a15-mto-carousel$&hei=640&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/53930624-0000-LT0070-WWAL_b2?$a15-mto-carousel$&hei=640&qlt=80&fit=constrain",
+      "image_two_url": "https://s7d5.scene7.com/is/image/Anthropologie/53930624-0000-LT0070-WWAL_b?$a15-mto-carousel$&hei=640&qlt=80&fit=constrain",
+      "price": "2298.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 2,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:41.023026Z",
+        "uuid": "011f782d-67d8-4cab-bfc5-2096279faa1c",
+        "name": "Accent Chair",
+        "piece_category": 1,
+        "rooms": [1, 5, 6, 7]
+      }
+    },
+    {
+      "uuid": "0564155d-7975-44e9-86c4-65fbea20398e",
+      "name": "Farmhouse Wood Canopy Bed",
+      "ref_url": "https://www.potterybarn.com/products/farmhouse-canopy-bed/?pkey=cbeds-headboards&isx=0.0",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/4403/img90o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/4403/img90o.jpg",
+      "image_two_url": null,
+      "price": "1699.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 7,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:09:45.666420Z",
+        "uuid": "40445720-b8f3-4a56-8f9c-6ff6dd2a94b9",
+        "name": "Bed",
+        "piece_category": 1,
+        "rooms": [5]
+      }
+    },
+    {
+      "uuid": "05a099f3-b322-481d-a189-a3bfe1778fa2",
+      "name": "Charcoal Leaves Framed Print",
+      "ref_url": "https://www.potterybarn.com/products/charcoal-leaves-print/?pkey=call-art&isx=0.3",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/0398/charcoal-leaves-framed-print-o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/0398/charcoal-leaves-framed-print-o.jpg",
+      "image_two_url": null,
+      "price": "199.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        },
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 18,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:07.648163Z",
+        "uuid": "58800bb2-db7c-4f45-8fea-4b1bf04939f8",
+        "name": "Art",
+        "piece_category": 2,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "05b0dce2-a10b-42c3-af69-9eacaa051709",
+      "name": "Cassidy Bolster Back Dove Sofa",
+      "ref_url": "https://www.cb2.com/cassidy-bolster-back-dove-sofa/s371663",
+      "ref_img": "https://cb2.scene7.com/is/image/CB2/item_590_146_1905_0?o9JyonuPT5OxnLH8FYNs?wid=180&hei=180",
+      "image_one_url": "https://cb2.scene7.com/is/image/CB2/item_590_146_1905_0?o9JyonuPT5OxnLH8FYNs?wid=180&hei=180",
+      "image_two_url": null,
+      "price": "1699.00",
+      "retailer": "CB3",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 1,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:46.094033Z",
+        "uuid": "0668d528-0953-4f05-8ded-a7881900940f",
+        "name": "Sofa",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "05dd00e5-c578-4ba5-9d29-435376e9a23a",
+      "name": "Earthenware Amphora Pot",
+      "ref_url": "https://www.wisteria.com/earthenware-amphora-pot?quantity=1",
+      "ref_img": "https://www.wisteria.com/Products/T22471_04.jpg?resizeid=5&resizeh=1200&resizew=1200",
+      "image_one_url": "https://www.wisteria.com/Products/T22471_04.jpg?resizeid=5&resizeh=1200&resizew=1200",
+      "image_two_url": "https://www.wisteria.com/Products/T22471_01.jpg?resizeid=5&resizeh=1200&resizew=1200",
+      "price": "95.00",
+      "retailer": "Wisteria",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 43,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:06.944129Z",
+        "uuid": "4df1bff9-160a-46c9-ac57-ef02160595cc",
+        "name": "Vase",
+        "piece_category": 2,
+        "rooms": [1, 2, 4, 5, 6, 8]
+      }
+    },
+    {
+      "uuid": "0627e672-7260-4a13-a986-c6fc1a44f7b9",
+      "name": "Handwoven Rattan Planter",
+      "ref_url": "https://www.potterybarn.com/products/wicker-cachepot-planter/?pkey=cplanters-garden&isx=0.0",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202008/0080/img63o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202008/0080/img63o.jpg",
+      "image_two_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202008/0051/wicker-planters-o.jpg",
+      "price": "29.50",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 45,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:02:41.927600Z",
+        "uuid": "6f4bb195-a6c0-4a50-a1ac-9cb63ea933c1",
+        "name": "Planter",
+        "piece_category": 2,
+        "rooms": [1, 9]
+      }
+    },
+    {
+      "uuid": "068762e9-fd6f-4d92-bd92-33e297b61e7e",
+      "name": "Totem Vase",
+      "ref_url": "https://www.westelm.com/products/totem-vases-d4396/?pkey=cvases-botanicals&isx=0.0.3200",
+      "ref_img": "https://www.westelm.com/weimgs/rk/images/wcm/products/202012/0023/img7o.jpg",
+      "image_one_url": "https://www.westelm.com/weimgs/rk/images/wcm/products/202012/0023/img7o.jpg",
+      "image_two_url": null,
+      "price": "34.00",
+      "retailer": "West Elm",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        }
+      ],
+      "piece": {
+        "id": 43,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:06.944129Z",
+        "uuid": "4df1bff9-160a-46c9-ac57-ef02160595cc",
+        "name": "Vase",
+        "piece_category": 2,
+        "rooms": [1, 2, 4, 5, 6, 8]
+      }
+    },
+    {
+      "uuid": "06a06c4b-accf-429a-94e7-2f43ccdb05b8",
+      "name": "Sunken Treasure Framed Canvas by Mary Elizabeth Peterson",
+      "ref_url": "https://www.potterybarn.com/products/sunken-treasure-mary-elizabeth-peterson-wall-art/?pkey=call-art&isx=0.2",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/2354/img58o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202009/2354/img58o.jpg",
+      "image_two_url": null,
+      "price": "279.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 18,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:07.648163Z",
+        "uuid": "58800bb2-db7c-4f45-8fea-4b1bf04939f8",
+        "name": "Art",
+        "piece_category": 2,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "06e40e14-734b-4d53-945b-bdeb4d6660e7",
+      "name": "Eustace Cotton Throw Pillow",
+      "ref_url": "https://www.wayfair.com/decor-pillows/pdp/highland-dunes-eustace-cotton-throw-pillow-w000924014.html?piid=638297247",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/70179304/resize-h800-w800%5Ecompr-r85/6482/64822452/Eustace+Cotton+Throw+Pillow.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/70179304/resize-h800-w800%5Ecompr-r85/6482/64822452/Eustace+Cotton+Throw+Pillow.jpg",
+      "image_two_url": null,
+      "price": "28.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        },
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "07231353-1872-41ef-9bed-46d2fb5e1320",
+      "name": "Nausica Drum Coffee Table, Reclaimed Oak",
+      "ref_url": "https://www.luluandgeorgia.com/nausica-drum-coffee-table-reclaimed-oak",
+      "ref_img": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/u/w/uwes-255_frt_1.jpg",
+      "image_one_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/u/w/uwes-255_frt_1.jpg",
+      "image_two_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/u/w/uwes-255_det_4.jpg",
+      "price": "1750.00",
+      "retailer": "Lulu & Georgia",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        }
+      ],
+      "piece": {
+        "id": 3,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:29.412554Z",
+        "uuid": "074f41b9-20e2-4850-b8cb-2de8fb3600a0",
+        "name": "Coffee Table",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "076b4c71-49d6-4f89-8d69-450e56c01a1c",
+      "name": "Tinsley Rectangle Coffee Table",
+      "ref_url": "https://www.burkedecor.com/collections/coffee-tables/products/tinsley-rectangle-coffee-table-by-bd-studio",
+      "ref_img": "https://cdn.shopify.com/s/files/1/0153/0623/products/NBWY-160_FRT_1_1024x1024.jpg?v=1584293037",
+      "image_one_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/NBWY-160_FRT_1_1024x1024.jpg?v=1584293037",
+      "image_two_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/NBWY-160_PRM_1_9e5966a6-44c2-492e-93be-fad61ce42990_1024x1024.jpg?v=1584293037",
+      "price": "860.00",
+      "retailer": "Burke Decor",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        }
+      ],
+      "piece": {
+        "id": 3,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:29.412554Z",
+        "uuid": "074f41b9-20e2-4850-b8cb-2de8fb3600a0",
+        "name": "Coffee Table",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "07ca2855-6d07-4309-b2f8-5df1eeed9791",
+      "name": "Alain Square Coffee Table, Bluestone",
+      "ref_url": "https://www.luluandgeorgia.com/alain-square-coffee-table-bluestone",
+      "ref_img": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/c/i/cimp-301_frt_1.jpg",
+      "image_one_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/c/i/cimp-301_frt_1.jpg",
+      "image_two_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/c/i/cimp-301_prm_2.jpg",
+      "price": "870.00",
+      "retailer": "Lulu & Georgia",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        }
+      ],
+      "piece": {
+        "id": 3,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:29.412554Z",
+        "uuid": "074f41b9-20e2-4850-b8cb-2de8fb3600a0",
+        "name": "Coffee Table",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "07df7f7d-ae30-4748-b8e3-016ceb1bc36a",
+      "name": "Bunglo Accra Pillow",
+      "ref_url": "https://www.anthropologie.com/shop/bunglo-accra-pillow2?category=SEARCHRESULTS&color=041&searchparams=q%3DBunglo%2520Accra%2520Pillow&type=STANDARD&size=One%20Size&quantity=1",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/51427953_041_m?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/51427953_041_m?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_two_url": null,
+      "price": "138.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "0816b3ea-a99b-4116-8d44-077147554fd1",
+      "name": "Brown Hand Woven Nila Pillow",
+      "ref_url": "https://www.kirklands.com/product/Home-Decor-Pillows/Pillows/Brown-Hand-Woven-Nila-Pillow/pc/2284/c/2307/267738.uts",
+      "ref_img": "https://images.kirklands.com/is/image/Kirklands/217955?$tProduct$",
+      "image_one_url": "https://images.kirklands.com/is/image/Kirklands/217955?$tProduct$",
+      "image_two_url": null,
+      "price": "44.99",
+      "retailer": "Kirklands",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "081a61f3-338f-44c0-9349-1bd1e484b562",
+      "name": "Louisiana Cabinet",
+      "ref_url": "https://www.burkedecor.com/collections/cabinets-shelving-bookcases/products/louisiana-cabinet",
+      "ref_img": "https://cdn.shopify.com/s/files/1/0153/0623/products/ZEN_0255_20copy-700x700_1024x1024.jpg?v=1579139395",
+      "image_one_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/ZEN_0255_20copy-700x700_1024x1024.jpg?v=1579139395",
+      "image_two_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/ZEN_0260_20copy-700x700_1024x1024.jpg?v=1579139395",
+      "price": "1604.00",
+      "retailer": "Burke Decor",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        }
+      ],
+      "piece": {
+        "id": 16,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:34.926276Z",
+        "uuid": "7e6a262d-472d-4ed4-8001-c92de1a478e4",
+        "name": "Storage",
+        "piece_category": 1,
+        "rooms": [1, 2, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "08bcd6ee-b005-4a84-978e-ae300303732a",
+      "name": "Chunky Handknit Throw",
+      "ref_url": "https://www.potterybarn.com/products/chunky-hand-knit-throw/?pkey=cthrows-blankets&isx=0.0",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202012/0088/chunky-handknit-throw-1-o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202012/0088/chunky-handknit-throw-1-o.jpg",
+      "image_two_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202012/0001/chunky-handknit-throw-o.jpg",
+      "price": "149.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 40,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:48.439008Z",
+        "uuid": "97d896dc-5fb9-4c15-a52d-a81a99655a82",
+        "name": "Throw",
+        "piece_category": 2,
+        "rooms": [1, 5]
+      }
+    },
+    {
+      "uuid": "097b8d9d-ea65-4795-a988-ef188734d05c",
+      "name": "Wheatley Natural Rattan Dining Chair",
+      "ref_url": "https://www.pier1.com/wheatley-natural-rattan-dining-chair/4172583.html?cgid=dining-chairs#nav=left&origin=gridswatch",
+      "ref_img": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dwbdd4f864/images/4172583/4172583_1.jpg?sw=1500&sh=1500",
+      "image_one_url": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dwbdd4f864/images/4172583/4172583_1.jpg?sw=1500&sh=1500",
+      "image_two_url": "https://www.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/dwd40e84ae/images/4172583/4172583_2.jpg?sw=1500&sh=1500",
+      "price": "199.99",
+      "retailer": "Pier 1",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 11,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:09:14.710473Z",
+        "uuid": "1ec02912-6f69-4805-a41f-bf26df90c5e7",
+        "name": "Dining Chair",
+        "piece_category": 1,
+        "rooms": [2]
+      }
+    },
+    {
+      "uuid": "09ea16b8-4353-436f-9d8b-0dd964f28352",
+      "name": "Southcrest Wicker Stacking Patio Club Chair - Gray - Threshold",
+      "ref_url": "https://www.target.com/p/southcrest-wicker-stacking-patio-club-chair-gray-threshold-8482/-/A-76389733",
+      "ref_img": "https://target.scene7.com/is/image/Target/GUEST_1aead6b8-f09f-49f3-a9f7-8878b0813670?fmt=pjpeg&wid=1400&qlt=80",
+      "image_one_url": "https://target.scene7.com/is/image/Target/GUEST_1aead6b8-f09f-49f3-a9f7-8878b0813670?fmt=pjpeg&wid=1400&qlt=80",
+      "image_two_url": "https://target.scene7.com/is/image/Target/GUEST_e425af27-e4cc-4b72-80cc-7e97c646b2a2?fmt=pjpeg&wid=1400&qlt=80",
+      "price": "85.00",
+      "retailer": "Target",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 51,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:01:47.687592Z",
+        "uuid": "f80bad1f-94a2-40e4-9b3b-50ea5368b90e",
+        "name": "Outdoor Dining Chair",
+        "piece_category": 7,
+        "rooms": [9]
+      }
+    },
+    {
+      "uuid": "09edc24a-d48f-4f76-bc34-e22c9a9f709d",
+      "name": "Lumbar Pillow",
+      "ref_url": "https://www.wayfair.com/decor-pillows/pdp/inspire-me-home-decor-lumbar-pillow-imhd1003.html",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/87635726/resize-h800-w800%5Ecompr-r85/4559/45598671/Lumbar+Pillow.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/87635726/resize-h800-w800%5Ecompr-r85/4559/45598671/Lumbar+Pillow.jpg",
+      "image_two_url": null,
+      "price": "27.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "0a393d3e-d91c-4d8b-84d6-59f846f358da",
+      "name": "Hardy Leather Bar & Counter Stools",
+      "ref_url": "https://www.potterybarn.com/products/hardy-leather-bar-stool/?pkey=cbarstools&isx=0.0",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202007/0023/img14o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202007/0023/img14o.jpg",
+      "image_two_url": null,
+      "price": "449.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 41,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:29.002758Z",
+        "uuid": "af33dd79-f27c-4122-860f-3dddddb62219",
+        "name": "Stool",
+        "piece_category": 1,
+        "rooms": [3]
+      }
+    },
+    {
+      "uuid": "0a7778c5-1e4f-4b18-b3eb-8561b06be91a",
+      "name": "Ankara Table Lamp",
+      "ref_url": "https://www.luluandgeorgia.com/ankara-table-lamp",
+      "ref_img": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/a/n/ankara-table-lamp.jpg",
+      "image_one_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/a/n/ankara-table-lamp.jpg",
+      "image_two_url": null,
+      "price": "236.00",
+      "retailer": "Lulu & Georgia",
+      "colors": [
+        {
+          "id": 13,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "0e27f6a4-33d3-441c-b6ad-fc6704dec9ac",
+          "name": "Gold",
+          "hex_value": "c7b06a"
+        }
+      ],
+      "piece": {
+        "id": 35,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:04:58.098344Z",
+        "uuid": "b8ec2a18-1bb1-4d35-a174-9597ad814500",
+        "name": "Table Lamp",
+        "piece_category": 3,
+        "rooms": [1, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "0aa97c69-79b2-4bbd-a3a7-d835fbb5b102",
+      "name": "Bluma Chunky Knit Tassel Throws",
+      "ref_url": "https://www.potterybarn.com/products/bluma-chunky-knit-tassel-throw/?pkey=cthrows-blankets&isx=0.0&group=1&sku=8637698",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/201946/0050/bluma-chunky-knit-tassel-throw-o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/201946/0050/bluma-chunky-knit-tassel-throw-o.jpg",
+      "image_two_url": null,
+      "price": "119.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 40,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:48.439008Z",
+        "uuid": "97d896dc-5fb9-4c15-a52d-a81a99655a82",
+        "name": "Throw",
+        "piece_category": 2,
+        "rooms": [1, 5]
+      }
+    },
+    {
+      "uuid": "0aabf71c-ffac-4e75-8992-bd6ddd7a43ce",
+      "name": "Jake Slipcovered Outdoor Sofa",
+      "ref_url": "https://www.potterybarn.com/products/jake-upholstered-outdoor-sofa/?pkey=coutdoor-lounge-furniture&isx=0.0",
+      "ref_img": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202014/0008/jake-slipcovered-outdoor-sofa-o.jpg",
+      "image_one_url": "https://www.potterybarn.com/pbimgs/rk/images/dp/wcm/202014/0008/jake-slipcovered-outdoor-sofa-o.jpg",
+      "image_two_url": null,
+      "price": "3749.00",
+      "retailer": "Pottery Barn",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 46,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:02:14.557646Z",
+        "uuid": "87cd67ae-293c-4fba-824c-e3d9cc983689",
+        "name": "Outdoor Sofa",
+        "piece_category": 7,
+        "rooms": [9]
+      }
+    },
+    {
+      "uuid": "0af63f3f-b4f0-4221-8b3c-cef162d6e9dc",
+      "name": "Habitat Sectional In Bennett Moon",
+      "ref_url": "https://www.burkedecor.com/collections/sofas/products/habitat-sectional-in-bennett-moon",
+      "ref_img": "https://cdn.shopify.com/s/files/1/0153/0623/products/UATR-018-925_FRT_1_1024x1024.jpg?v=1571710463",
+      "image_one_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/UATR-018-925_FRT_1_1024x1024.jpg?v=1571710463",
+      "image_two_url": null,
+      "price": "4040.00",
+      "retailer": "Burke Decor",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        },
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 1,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:46.094033Z",
+        "uuid": "0668d528-0953-4f05-8ded-a7881900940f",
+        "name": "Sofa",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "0bacda57-c0f1-4d30-a005-1c15439be179",
+      "name": "Augustine Sofa In Sapphire Navy",
+      "ref_url": "https://www.burkedecor.com/collections/sofas/products/augustine-sofa-in-sapphire-navy",
+      "ref_img": "https://cdn.shopify.com/s/files/1/0153/0623/products/CGRY-013-519_FRT_1_0.75x_1024x1024.jpg?v=1588110092",
+      "image_one_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/CGRY-013-519_FRT_1_0.75x_1024x1024.jpg?v=1588110092",
+      "image_two_url": null,
+      "price": "2210.00",
+      "retailer": "Burke Decor",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 1,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:46.094033Z",
+        "uuid": "0668d528-0953-4f05-8ded-a7881900940f",
+        "name": "Sofa",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "0bb21c44-e7c3-43cc-83a8-3a6e84ae492b",
+      "name": "Asymmetrical Serpentine Sofa",
+      "ref_url": "https://www.anthropologie.com/shop/asymmetrical-serpentine-sofa?FABRIC=VE0105&LEG=MBRS&QUANTITY=1&SIZE=1098&category=sofas-settees-sectionals",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/52024254-1098-VE0105-MBRS_b2?$a15-mto-carousel-zoom$&scl=1&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/52024254-1098-VE0105-MBRS_b2?$a15-mto-carousel-zoom$&scl=1&qlt=80&fit=constrain",
+      "image_two_url": null,
+      "price": "2798.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 1,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:46.094033Z",
+        "uuid": "0668d528-0953-4f05-8ded-a7881900940f",
+        "name": "Sofa",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "0bdc49e5-99dd-4716-90a7-af37a13e830a",
+      "name": "Dariel Rattan Rectangular Tray",
+      "ref_url": "https://www.wayfair.com/decor-pillows/pdp/bay-isle-home-dariel-rattan-rectangular-tray-w001917094.html?piid=1615830751",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/57980167/resize-h800-w800%5Ecompr-r85/7186/71863221/Dariel+Rattan+Rectangular+Tray.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/57980167/resize-h800-w800%5Ecompr-r85/7186/71863221/Dariel+Rattan+Rectangular+Tray.jpg",
+      "image_two_url": "https://secure.img1-fg.wfcdn.com/im/46179825/resize-h800-w800%5Ecompr-r85/7186/71863229/Dariel+Rattan+Rectangular+Tray.jpg",
+      "price": "95.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        },
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 21,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:23.788184Z",
+        "uuid": "19e351b7-a915-4a84-99c6-a780f13c6807",
+        "name": "Decor",
+        "piece_category": 2,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      }
+    },
+    {
+      "uuid": "0c22c0fd-ed1f-43e9-ba4a-1f91aeb0b7f5",
+      "name": "Arden Side Table In White Design By Redford House",
+      "ref_url": "https://www.burkedecor.com/collections/side-tables/products/arden-side-table-in-white-design-by-redford-house",
+      "ref_img": "https://cdn.shopify.com/s/files/1/0153/0623/products/Arden_Side_Table_white_1024x1024.jpg?v=1571708970",
+      "image_one_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/Arden_Side_Table_white_1024x1024.jpg?v=1571708970",
+      "image_two_url": null,
+      "price": "825.00",
+      "retailer": "Burke Decor",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        }
+      ],
+      "piece": {
+        "id": 4,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:23.584030Z",
+        "uuid": "31e3086b-86ed-48f3-b3e6-7838ace05acd",
+        "name": "Side Table",
+        "piece_category": 1,
+        "rooms": [1]
+      }
+    },
+    {
+      "uuid": "0c2c5afd-322b-4dd9-8c23-db4bc241d1fb",
+      "name": "Fairmont Steel Patio Dining Table Black - Threshold",
+      "ref_url": "https://www.target.com/p/fairmont-steel-patio-dining-table-black-threshold-8482/-/A-51427962",
+      "ref_img": "https://target.scene7.com/is/image/Target/GUEST_a99cdcc0-efff-402e-ac8e-2900b816be1c?fmt=pjpeg&wid=1400&qlt=80",
+      "image_one_url": "https://target.scene7.com/is/image/Target/GUEST_a99cdcc0-efff-402e-ac8e-2900b816be1c?fmt=pjpeg&wid=1400&qlt=80",
+      "image_two_url": "https://target.scene7.com/is/image/Target/GUEST_f0b59412-c19f-408a-8dc7-2ddbaa24bd0d?fmt=pjpeg&wid=1400&qlt=80",
+      "price": "300.00",
+      "retailer": "Target",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        }
+      ],
+      "piece": {
+        "id": 48,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:02:06.073744Z",
+        "uuid": "a9211aa3-faec-47b9-9e66-acfd817cee99",
+        "name": "Outdoor Dining Table",
+        "piece_category": 7,
+        "rooms": [9]
+      }
+    },
+    {
+      "uuid": "0c67c2ac-5a6e-4430-a76d-1bdc6ce9137e",
+      "name": "Belknap Woven Diamond Scatter Rug Cream - Threshold",
+      "ref_url": "https://www.target.com/p/belknap-woven-diamond-scatter-rug-cream-threshold/-/A-78427490?preselect=77604788#lnk=sametab",
+      "ref_img": "https://target.scene7.com/is/image/Target/GUEST_e22ef691-36d9-4b74-a081-52832dd01ed2?fmt=pjpeg&wid=1400&qlt=80",
+      "image_one_url": "https://target.scene7.com/is/image/Target/GUEST_e22ef691-36d9-4b74-a081-52832dd01ed2?fmt=pjpeg&wid=1400&qlt=80",
+      "image_two_url": "https://target.scene7.com/is/image/Target/GUEST_f5c8a6cf-24be-4f68-950b-2b537693a53b?fmt=pjpeg&wid=1400&qlt=80",
+      "price": "199.99",
+      "retailer": "Target",
+      "colors": [
+        {
+          "id": 11,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e54629d7-f741-4e45-a5e7-7aebe67f6d32",
+          "name": "Neutral",
+          "hex_value": "f1efea"
+        }
+      ],
+      "piece": {
+        "id": 17,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:17.079944Z",
+        "uuid": "1e2566c9-7ba1-41f0-8b42-9c02ae229ec8",
+        "name": "Rug",
+        "piece_category": 5,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "0c92f95a-f47b-400d-98d4-790b4e96ca73",
+      "name": "Ilda Table Lamp, Ash",
+      "ref_url": "https://www.luluandgeorgia.com/ilda-table-lamp-ash",
+      "ref_img": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/l/1/l1373-ash.jpg",
+      "image_one_url": "https://d3tt7xf0u0byqe.cloudfront.net/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/l/1/l1373-ash.jpg",
+      "image_two_url": null,
+      "price": "500.00",
+      "retailer": "Lulu & Georgia",
+      "colors": [
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 35,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:04:58.098344Z",
+        "uuid": "b8ec2a18-1bb1-4d35-a174-9597ad814500",
+        "name": "Table Lamp",
+        "piece_category": 3,
+        "rooms": [1, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "0cbad4d6-0577-4cf4-ad06-8c6c25fc7f72",
+      "name": "Hesson Dining Table",
+      "ref_url": "https://www.wayfair.com/furniture/pdp/george-oliver-hesson-dining-table-w000158515.html?piid=771721115",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/80896518/resize-h800-w800%5Ecompr-r85/2889/28892455/Hesson+Dining+Table.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/80896518/resize-h800-w800%5Ecompr-r85/2889/28892455/Hesson+Dining+Table.jpg",
+      "image_two_url": "https://secure.img1-fg.wfcdn.com/im/37651083/resize-h800-w800%5Ecompr-r85/2889/28892450/Hesson+Dining+Table.jpg",
+      "price": "499.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        }
+      ],
+      "piece": {
+        "id": 10,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:09:20.709512Z",
+        "uuid": "54bacca8-30a0-4b22-b482-c92620aa7a28",
+        "name": "Dining Table",
+        "piece_category": 1,
+        "rooms": [2]
+      }
+    },
+    {
+      "uuid": "0d30d5f4-c1ef-4cba-882c-576542bd8f3f",
+      "name": "Caitlin Wilson Ribbon Trim Pillow With Tassels",
+      "ref_url": "https://www.anthropologie.com/shop/caitlin-wilson-ribbon-trim-pillow-with-tassels?category=SEARCHRESULTS&color=040&searchparams=q%3DCaitlin%2520Wilson%2520Ribbon%2520Trim%2520Pillow%2520with%2520Tassels&type=STANDARD&quantity=1",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/51543122_040_m?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/51543122_040_m?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_two_url": null,
+      "price": "78.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "0d3dd65d-2259-4d71-b46a-f36673846d0c",
+      "name": "ZanowitZ Stacking Patio Dining Chair (Set of 2)",
+      "ref_url": "https://www.wayfair.com/outdoor/pdp/bay-isle-home-zanowitz-stacking-patio-dining-chair-w000112233.html",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/52219562/resize-h800-w800%5Ecompr-r85/6415/64154281/ZanowitZ+Stacking+Patio+Dining+Chair.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/52219562/resize-h800-w800%5Ecompr-r85/6415/64154281/ZanowitZ+Stacking+Patio+Dining+Chair.jpg",
+      "image_two_url": "https://secure.img1-fg.wfcdn.com/im/54014094/resize-h800-w800%5Ecompr-r85/6409/64092172/ZanowitZ+Stacking+Patio+Dining+Chair.jpg",
+      "price": "249.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        },
+        {
+          "id": 15,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "07d658e9-7231-4566-95cb-d0f3a55f53e8",
+          "name": "Grey",
+          "hex_value": "7a7c81"
+        }
+      ],
+      "piece": {
+        "id": 51,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:01:47.687592Z",
+        "uuid": "f80bad1f-94a2-40e4-9b3b-50ea5368b90e",
+        "name": "Outdoor Dining Chair",
+        "piece_category": 7,
+        "rooms": [9]
+      }
+    },
+    {
+      "uuid": "0d50fff8-7161-429d-b3f5-4d8682546c09",
+      "name": "Caitlin Wilson Navy Gingham Pillow",
+      "ref_url": "https://www.anthropologie.com/shop/caitlin-wilson-navy-gingham-pillow?category=SEARCHRESULTS&color=049&searchparams=q%3DCaitlin%2520Wilson%2520Navy%2520Gingham%2520Pillow&type=STANDARD&quantity=1",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/50801257_049_m?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/50801257_049_m?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_two_url": null,
+      "price": "78.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 5,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "e6febabc-d95a-4134-a05e-993ccb265c85",
+          "name": "Blue",
+          "hex_value": "1245c6"
+        }
+      ],
+      "piece": {
+        "id": 19,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:07:57.490977Z",
+        "uuid": "71f83a68-13f6-45bc-9740-47e601934a27",
+        "name": "Pillow",
+        "piece_category": 2,
+        "rooms": [1, 5, 7]
+      }
+    },
+    {
+      "uuid": "0db056f3-167a-491b-9927-5129ab4b009c",
+      "name": "Deodat Oval Dining Table",
+      "ref_url": "https://www.westelm.com/products/deodat-oval-dining-table-h5324/?pkey=cdining-tables&isx=0.0.24075",
+      "ref_img": "https://www.westelm.com/weimgs/rk/images/wcm/products/202007/0030/deodat-oval-dining-table-o.jpg",
+      "image_one_url": "https://www.westelm.com/weimgs/rk/images/wcm/products/202007/0030/deodat-oval-dining-table-o.jpg",
+      "image_two_url": null,
+      "price": "1839.00",
+      "retailer": "West Elm",
+      "colors": [
+        {
+          "id": 8,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "b6771116-05d7-4d4d-ad70-f08978cbec16",
+          "name": "Brown",
+          "hex_value": "907f78"
+        }
+      ],
+      "piece": {
+        "id": 10,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:09:20.709512Z",
+        "uuid": "54bacca8-30a0-4b22-b482-c92620aa7a28",
+        "name": "Dining Table",
+        "piece_category": 1,
+        "rooms": [2]
+      }
+    },
+    {
+      "uuid": "0de24b21-141a-4897-9030-55e4507f977f",
+      "name": "Black Form Wall Art",
+      "ref_url": "https://www.anthropologie.com/shop/black-form-wall-art?category=decor-art&color=001",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/47318423_001_b2?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/47318423_001_b2?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_two_url": "https://s7d5.scene7.com/is/image/Anthropologie/47318423_001_b?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "price": "398.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        },
+        {
+          "id": 10,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "379ffa64-ca94-45e9-8d1d-04147997ad68",
+          "name": "White",
+          "hex_value": "fdfdfd"
+        }
+      ],
+      "piece": {
+        "id": 18,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:07.648163Z",
+        "uuid": "58800bb2-db7c-4f45-8fea-4b1bf04939f8",
+        "name": "Art",
+        "piece_category": 2,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    },
+    {
+      "uuid": "0eb2b3fe-26c7-4e26-9bfb-d747a0b42b25",
+      "name": "Sophie Faux Fur Throw Throw",
+      "ref_url": "https://www.anthropologie.com/shop/sophie-faux-fur-throw-blanket?category=SEARCHRESULTS&color=010&searchparams=q%3DSophie%2520Faux%2520Fur%2520Throw%2520Throw&type=STANDARD&size=One%20Size&quantity=1",
+      "ref_img": "https://s7d5.scene7.com/is/image/Anthropologie/51561926_067_b?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_one_url": "https://s7d5.scene7.com/is/image/Anthropologie/51561926_067_b?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "image_two_url": "https://s7d5.scene7.com/is/image/Anthropologie/51561926_067_b11?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain",
+      "price": "98.00",
+      "retailer": "Anthropologie",
+      "colors": [
+        {
+          "id": 7,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "4877b7bc-6628-42e9-9ca0-91eaeb5d59eb",
+          "name": "Pink",
+          "hex_value": "e9ade3"
+        }
+      ],
+      "piece": {
+        "id": 40,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:03:48.439008Z",
+        "uuid": "97d896dc-5fb9-4c15-a52d-a81a99655a82",
+        "name": "Throw",
+        "piece_category": 2,
+        "rooms": [1, 5]
+      }
+    },
+    {
+      "uuid": "0f58dc38-f946-45ca-ba1d-bb24c9acdb7e",
+      "name": "Laurel Console Table",
+      "ref_url": "https://www.burkedecor.com/collections/console-tables/products/laurel-console-table",
+      "ref_img": "https://cdn.shopify.com/s/files/1/0153/0623/products/LVR00268_1-700x700_1024x1024.jpg?v=1579139378",
+      "image_one_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/LVR00268_1-700x700_1024x1024.jpg?v=1579139378",
+      "image_two_url": "https://cdn.shopify.com/s/files/1/0153/0623/products/LVR00268-700x700_1024x1024.jpg?v=1579139378",
+      "price": "1098.00",
+      "retailer": "Burke Decor",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        }
+      ],
+      "piece": {
+        "id": 5,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:10:09.122764Z",
+        "uuid": "7448b188-b7f4-4083-8af9-580f1c94f004",
+        "name": "Console Table",
+        "piece_category": 1,
+        "rooms": [8, 1, 2]
+      }
+    },
+    {
+      "uuid": "0fedf956-24ae-438e-b4f6-b102bcae7c16",
+      "name": "Bedolla' - Picture Frame Graphic Art Print on Wood",
+      "ref_url": "https://www.wayfair.com/decor-pillows/pdp/mercury-row-bedolla-picture-frame-graphic-art-print-on-wood-mcrw6167.html?piid=24023175",
+      "ref_img": "https://secure.img1-fg.wfcdn.com/im/21376559/resize-h800-w800%5Ecompr-r85/9677/96778933/%2527Bedolla%2527+-+Picture+Frame+Graphic+Art+Print+on+Wood.jpg",
+      "image_one_url": "https://secure.img1-fg.wfcdn.com/im/21376559/resize-h800-w800%5Ecompr-r85/9677/96778933/%2527Bedolla%2527+-+Picture+Frame+Graphic+Art+Print+on+Wood.jpg",
+      "image_two_url": "https://secure.img1-fg.wfcdn.com/im/91699340/resize-h800-w800%5Ecompr-r85/7276/72762443/%2527Bedolla%2527+-+Picture+Frame+Graphic+Art+Print+on+Wood.jpg",
+      "price": "66.99",
+      "retailer": "Wayfair",
+      "colors": [
+        {
+          "id": 9,
+          "created_at": "2020-02-12T07:20:30Z",
+          "updated_at": "2020-02-12T07:20:30Z",
+          "uuid": "f7f1156a-8e35-4b23-90c9-e32f9e3649b0",
+          "name": "Black",
+          "hex_value": "202000"
+        }
+      ],
+      "piece": {
+        "id": 18,
+        "created_at": "2020-02-12T07:20:30Z",
+        "updated_at": "2020-05-28T17:08:07.648163Z",
+        "uuid": "58800bb2-db7c-4f45-8fea-4b1bf04939f8",
+        "name": "Art",
+        "piece_category": 2,
+        "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostSlide from '../components/common/postSlide';
+// import PostSlide from '../components/common/postSlide';
 import Inspired from './inspired';
 import HeaderHome from './headerHome';
 import LearnButton from './common/learnButton';
@@ -14,6 +14,12 @@ import CreateBoard from './onboard/createBoard';
 import OnboardQ1 from './onboard/onboardQ1';
 import OnboardQ2 from './onboard/onboardQ2';
 import OnboardQ3 from './onboard/onboardQ3';
+import SliderPost from './common/slider/sliderPost';
+import Slider4 from './common/slider/slider4';
+import shopData from '../testDate/shop.json';
+import inspiredData from '../testDate/inspired.json';
+
+
 
 
 class Home extends Component {
@@ -23,7 +29,9 @@ class Home extends Component {
             modal: {
                 isOpen: false,
                 name: null
-            }
+            },
+            currentPage: 0,
+            pageSize: 4
         }
     }
 
@@ -39,15 +47,31 @@ class Home extends Component {
         this.setState({ modal });
     };
 
+    componentDidMount() {
+        this.setState({ shop: shopData, inspired: inspiredData });
+    }
 
+    onPageChange = (type) => {
+        if (type === '-') {
+            this.setState({ currentPage: this.state.currentPage - 1 })
+        } else {
+            this.setState({ currentPage: this.state.currentPage + 1 })
+        }
+    }
 
     render() {
         const { isOpen, name } = this.state.modal;
+        const { shop, pageSize, currentPage, inspired } = this.state;
 
         return (
             <>
                 <HeaderHome openModal={this.openModal} />
-                <PostSlide />
+                <SliderPost />
+                <Slider4 title='Be Inspired' data={inspired && inspired.results.slice(0, 4)} />
+
+                <Slider4 title='shop' data={shop && shop.results.slice(0, 4)} />
+
+                {/* <PostSlide />
                 <LearnButton />
                 <Inspired />
                 <SeeMoreButton />
@@ -55,7 +79,7 @@ class Home extends Component {
                 <LearnButton />
                 <Inspired />
                 <SeeMoreButton />
-                <PostSlide />
+                <PostSlide /> */}
 
                 {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={this.openModal} closeModal={this.closeModal} />} />}
                 {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext {...this.props} openModal={this.openModal} closeModal={this.closeModal} />} />}
