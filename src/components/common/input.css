@@ -13,3 +13,6 @@
   outline: none;
   box-shadow: none;
 }
+.invalid-feedback {
+  display: block !important;
+}

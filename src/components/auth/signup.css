@@ -112,3 +112,7 @@
 .signup-form .btn-signup:hover {
   color: #fcfaf9;
 }
+
+.success-mess {
+  color: green;
+}
