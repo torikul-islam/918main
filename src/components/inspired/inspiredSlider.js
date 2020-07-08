@@ -17,7 +17,7 @@ class InspiredSlider extends Component {
     }
 
     componentDidMount() {
-        this.setState({ inspired: inspiredTestDate })
+        this.setState({ inspired: inspiredTestDate.results })
     }
 
     onPageChange = (page) => {
@@ -31,8 +31,7 @@ class InspiredSlider extends Component {
 
     render() {
         const { inspired, currentPage, pageSize } = this.state;
-
-        const inspiredPaginate = inspired && paginate(inspired.results, currentPage, pageSize);
+        const inspiredPaginate = inspired && paginate(inspired, currentPage, pageSize);
 
         return (
             <div className="inspired-slider">
@@ -56,7 +55,7 @@ class InspiredSlider extends Component {
                             <Slider4 data={inspiredPaginate} />
 
                             <Pagination
-                                itemsCount={inspired.results.length || 6}
+                                itemsCount={inspired.length}
                                 currentPage={currentPage}
                                 pageSize={pageSize}
                                 onPageChange={this.onPageChange}

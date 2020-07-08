@@ -47,16 +47,20 @@ class ShopSlide extends Component {
                             </ul>
                         </div>
                     </div>
-                    {shop && <div className='row'>
-                        <Slider4 data={paginateShop} />
 
-                        <Pagination
-                            itemsCount={shop.results.length}
-                            currentPage={currentPage}
-                            pageSize={pageSize}
-                            onPageChange={this.onPageChange}
-                        />
-                    </div>}
+                    <div className='slider-main'>
+                        {shop && <div className='row'>
+                            <Slider4 data={paginateShop} />
+
+                            <Pagination
+                                itemsCount={shop.results.length}
+                                currentPage={currentPage}
+                                pageSize={pageSize}
+                                onPageChange={this.onPageChange}
+                            />
+                        </div>}
+                    </div>
+
                 </div>
             </div>
         );
