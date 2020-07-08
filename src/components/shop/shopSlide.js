@@ -4,6 +4,7 @@ import Pagination from '../common/pagination';
 import './shopSlide.css';
 import shopTestData from '../../testData/shop.json';
 import paginate from '../../utils/paginate';
+import GoBtn from '../common/goBtn';
 
 
 
@@ -51,7 +52,6 @@ class ShopSlide extends Component {
                     <div className='slider-main'>
                         {shop && <div className='row'>
                             <Slider4 data={paginateShop} />
-
                             <Pagination
                                 itemsCount={shop.results.length}
                                 currentPage={currentPage}
@@ -61,6 +61,10 @@ class ShopSlide extends Component {
                         </div>}
                     </div>
 
+                </div>
+
+                <div className="shop-more">
+                    <GoBtn text="Shop More" />
                 </div>
             </div>
         );

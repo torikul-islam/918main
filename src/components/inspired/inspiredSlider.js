@@ -4,6 +4,7 @@ import './inspiredSlider.css';
 import inspiredTestDate from '../../testData/inspired.json';
 import Slider4 from '../common/slider/slider4';
 import paginate from '../../utils/paginate';
+import GoBtn from '../common/goBtn';
 
 
 
@@ -65,11 +66,11 @@ class InspiredSlider extends Component {
 
 
                 </div>
+
+                <div className="inspired-more">
+                    <GoBtn text="See More" />
+                </div>
             </div>
-
-
-
-
         );
     }
 }

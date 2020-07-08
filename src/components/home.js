@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-// import PostSlide from '../components/common/postSlide';
-import Inspired from './inspired';
 import HeaderHome from './headerHome';
-import LearnButton from './common/learnButton';
-import SeeMoreButton from './seeMoreButton';
-import './home.css';
-
 import Modal from './common/modal/modal';
 import Signup from './auth/signup';
 import LoginNext from './auth/loginNext';
@@ -19,6 +13,7 @@ import axios from 'axios';
 import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
 import roomsTestData from '../../src/testData/rooms.json';
+import './home.css';
 
 
 class Home extends Component {
@@ -74,12 +69,19 @@ class Home extends Component {
         const { postDate } = this.state;
         return (
             <>
-                <HeaderHome openModal={this.openModal} />
-                <SliderPost data={postDate && postDate.results} />
+                <HeaderHome data={postDate && postDate.results.slice(0, 1)} openModal={this.openModal} />
+
+
+                <InspiredSlider />
+
+                <SliderPost data={postDate && postDate.results.slice(1, 5)} />
 
                 <ShopSlide />
 
-                <InspiredSlider />
+
+                <SliderPost data={postDate && postDate.results.slice(5, 9)} />
+
+                <SliderPost data={postDate && postDate.results.slice(9, 13)} />
 
 
                 {/* <PostSlide />

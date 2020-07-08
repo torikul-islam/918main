@@ -12,7 +12,7 @@ class HeaderHome extends Component {
         this.state = {}
     }
     render() {
-        const { openModal } = this.props;
+        const { openModal, data } = this.props;
         return (
             <>
                 <div className="home-area">
@@ -53,9 +53,6 @@ class HeaderHome extends Component {
                             </ul>
                         </div>
                     </div>
-
-
-
 
                     <div className="container">
                         <div className='home-text'>
@@ -111,22 +108,22 @@ class HeaderHome extends Component {
                             </div>
                         </div>
 
-                        {/* <div className="width-color-fill">
+                        {data && <div className="width-color-fill">
                             <div className="row">
                                 <div className="col-sm-8">
                                     <div className="image-bg">
-                                        <img src={require('../Asset/Images/Color_Fill_10.png')} alt="Color_Fill_10.png" />
+                                        <img src={data[0].ref_img || ""} alt="Color_Fill_10.png" />
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
                                     <div className="text-furniture">
-                                        <p>Studio McGee</p>
-                                        <h4>Why You <br />Shouldn’t Buy the <br />Furniture Set.</h4>
-                                        <p>Such a great design rule!<br /> Do Not buy all matching<br /> pieces!</p>
+                                        <p>{data[0].source || ""}</p>
+                                        <h4>{data[0].title || ""}</h4>
+                                        <p>{data[0].content || ""}</p>
                                     </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>}
                     </div>
                 </div>
             </>

@@ -46,7 +46,7 @@ class Inspired extends Component {
                                         <img src={require('../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
                                     </div>
                                     <div className="arrow-right arrow-slide">
-                                    <img src={require('../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
+                                        <img src={require('../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
                                     </div>
                                 </div>
                             </div>
