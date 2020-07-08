@@ -17,6 +17,7 @@
   top: 30px;
   right: 15px;
   z-index: 10;
+  cursor: pointer;
 }
 
 .signup-left {
@@ -92,6 +93,7 @@
   padding: 5px 0;
   color: #222;
   margin-bottom: 31px;
+  text-align: left;
 }
 
 .signup-form input:focus,

@@ -81,7 +81,7 @@ class Home extends Component {
 
                 <SliderPost data={postDate && postDate.results.slice(5, 9)} />
 
-                <SliderPost data={postDate && postDate.results.slice(9, 13)} />
+                {/* <SliderPost data={postDate && postDate.results.slice(9, 13)} /> */}
 
 
                 {/* <PostSlide />

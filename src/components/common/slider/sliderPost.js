@@ -20,7 +20,9 @@ const SliderPost = ({ data }) => {
                     )}
                 </div>
             </div>
-            <GoBtn text='Learn More' />
+            <div className="slider_button">
+                <GoBtn text='Learn More' />
+            </div>
         </section>
     );
 }

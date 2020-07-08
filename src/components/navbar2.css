@@ -26,6 +26,7 @@
   border-radius: 21px 21px;
   padding: 5px 16px !important;
   font-family: "Helvetica-bold";
+  cursor: pointer;
 }
 .nav-right ul li {
   display: inline-block;

@@ -1,29 +1,42 @@
 .inspired-slider ul {
   list-style: none;
-  margin: 0;
   padding: 0;
-  margin: 45px 0;
+  margin: 10px 0 40px;
+  position: relative;
 }
 
 .inspired-slider h4 {
   position: relative;
-  font-size: 36pt;
+  font-size: 40pt;
   color: #030303;
-  font-family: "PlayfairDisplay-Regular";
+  font-family: "PlayfairDisplay-Bold";
 }
 
 .inspired-slider {
   margin-top: 40px;
+  background-color: #ebeae8;
+  padding: 45px 0;
 }
-.inspired-slider h4:before {
+.inspired-more {
+  position: relative;
+}
+
+.inspired-more .go-btn {
+  position: absolute;
+  left: 43%;
+  top: 15px;
+}
+.inspired-slider ul:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 3px;
   background: #d7d5d5;
-  top: 70px;
+  top: 45px;
 }
 .inspired-slider ul li {
   display: inline-block;
   padding: 0 35px 0 0;
+  font-family: "helvetica-light";
+  font-size: 18pt;
 }

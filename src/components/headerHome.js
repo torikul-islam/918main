@@ -119,7 +119,7 @@ class HeaderHome extends Component {
                                     <div className="text-furniture">
                                         <p>{data[0].source || ""}</p>
                                         <h4>{data[0].title || ""}</h4>
-                                        <p>{data[0].content || ""}</p>
+                                        <span>{data[0].content || ""}</span>
                                     </div>
                                 </div>
                             </div>

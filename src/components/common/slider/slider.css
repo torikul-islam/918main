@@ -1,15 +1,12 @@
 /* slider post css start  */
-.image-post-slide img {
-  width: 100%;
-  height: auto;
-}
+
 .image-post-slide {
   text-align: center;
 }
 .image-post-slide h6 {
   margin-top: 15px;
-  font-size: 18px;
-  font-family: "Playfair Display";
+  font-size: 24pt;
+  font-family: "PlayfairDisplay-Bold";
 }
 .image-post-slide p {
   font-family: "helvetica-light";
@@ -24,23 +21,28 @@
   line-height: normal;
 }
 .post-slide-main {
-  margin: 30px 0 45px;
+  margin: 60px 0 45px;
+}
+.slider_button {
+  position: relative;
+}
+
+.slider_button .go-btn {
+  position: absolute;
+  left: 42%;
+  top: 15px;
 }
 /* end slider post css  */
 
 /* slider 3 css start */
 .image-post-slide img {
   width: 100%;
-  height: auto;
+  height: 300px;
 }
 .image-post-slide {
   text-align: center;
 }
-.image-post-slide h6 {
-  margin-top: 15px;
-  font-size: 18px;
-  font-family: "Playfair Display";
-}
+
 .image-post-slide p {
   font-family: "helvetica-light";
   color: #030303;
@@ -53,9 +55,7 @@
   font-size: 18pt;
   line-height: normal;
 }
-.post-slide-main {
-  margin: 30px 0 45px;
-}
+
 
 /* end slider 3 css  */
 
@@ -79,9 +79,9 @@ span.bar {
 }
 .image-slide h6 {
   margin-top: 15px;
-  font-size: 18px;
-  font-family: "Playfair Display";
-  color: #030303;
+  font-size: 18pt;
+  font-family: "helvetica-light";
+  color: #4f4f4f;
 }
 .image-slide p {
   color: #4f4f4f;

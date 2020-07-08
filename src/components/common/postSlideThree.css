@@ -1,15 +1,8 @@
-.image-post-slide img {
-    width: 100%;
-    height: auto;
-}
+
 .image-post-slide {
     text-align: center;
 }
-.image-post-slide h6 {
-    margin-top: 15px;
-    font-size: 18px;
-    font-family: "Playfair Display";
-}
+
 .image-post-slide p {
     font-family: "helvetica-light";
     color: #030303;
@@ -21,7 +14,4 @@
     color: #4f4f4f;
     font-size: 18pt;
     line-height: normal;
-}
-.post-slide-main {
-    margin: 30px 0 45px;
 }

@@ -1,16 +1,8 @@
-.image-post-slide img {
-  width: 100%;
-  height: auto;
-}
+
 .image-post-slide {
   text-align: center;
 }
-.image-post-slide h6 {
-  margin-top: 15px;
-  font-size: 18px;
-  font-family: "Playfair Display";
-  color: #030303;
-}
+
 .image-post-slide p {
   color: #4f4f4f;
   font-size: 20pt;
@@ -22,40 +14,48 @@
   font-size: 18pt;
   line-height: normal;
 }
-.post-slide-main {
-  margin: 30px 0 45px;
-}
+
 
 /* shop slider start  */
 .shop-slider ul {
   list-style: none;
-  margin: 0;
   padding: 0;
-  margin: 45px 0;
+  margin: 15px 0 40px;
+  position: relative;
 }
 
 .shop-slider h4 {
   position: relative;
-  font-size: 36pt;
+  font-size: 40pt;
   color: #030303;
-  font-family: "PlayfairDisplay-Regular";
+  font-family: "PlayfairDisplay-Bold";
 }
 
 .shop-slider {
-  margin-top: 40px;
+  padding: 40px 0;
+  background-color: #eceae9;
 }
-.shop-slider h4:before {
+.shop-slider ul:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 3px;
   background: #d7d5d5;
-  top: 70px;
+  top: 40px;
 }
 .shop-slider ul li {
   display: inline-block;
   padding: 0 35px 0 0;
+  font-size: 18pt;
+  font-family: "helvetica-light";
 }
 .slider-main {
   position: relative;
+}
+.shop-more {
+  position: relative;
+}
+.shop-more .go-btn {
+  position: absolute;
+  left: 42%;
 }
