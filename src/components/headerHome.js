@@ -110,7 +110,8 @@ class HeaderHome extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="width-color-fill">
+
+                        {/* <div className="width-color-fill">
                             <div className="row">
                                 <div className="col-sm-8">
                                     <div className="image-bg">
@@ -125,7 +126,7 @@ class HeaderHome extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </>

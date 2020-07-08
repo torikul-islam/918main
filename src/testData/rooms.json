@@ -1,0 +1,507 @@
+{
+  "count": 123,
+  "next": "https://www.918main.com/resources/?page=2",
+  "previous": null,
+  "results": [
+    {
+      "uuid": "341176f0-b52a-4d35-b59d-4b8d623d8ce4",
+      "source": "Studio Mcgee",
+      "title": "WHY YOU SHOULDN'T BUY THE FURNITURE SET",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/why-you-shouldnt-buy-the-furniture-set",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1583768948327-VIJ128IBSBJP0NMUZKYU/ke17ZwdGBToddI8pDm48kLIu5KTdDTvffgU1dgbw9sYUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2La61fv-9Rv_JZpLnUufXS_jREVypl8OQxDwlqlc8R5hm0nepH0bYFh4DTA4Bp5g2/Why+You+Shouldn%27t+Buy+The+Furniture+Set?format=750w",
+      "content": "Oh, man... if there is one place to start, this is it! Look at all of the inspiration images that you love. Do you see any matching sets? Probably not. Let Studio McGee tell you why mixing and matching is the best move!",
+      "design_challenges": [4, 6],
+      "rooms": [1, 2, 5]
+    },
+    {
+      "uuid": "35023335-dc71-4f12-bd56-76a0029d5837",
+      "source": "Studio McGee",
+      "title": "7 THINGS WE’VE LEARNED ABOUT DESIGNING LIVING ROOMS",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2019/8/29/7-things-weve-learned-about-designing-living-rooms",
+      "ref_img": "https://d28m5bx785ox17.cloudfront.net/v1/img/Z8uT1meqt5lgY_YMlE6UqXUwDPCOpJ069bFu-7JwuUU=/d/xl",
+      "content": "If you're looking for a quick Interior Design 101, this article is a great place to start! You'll have some ground lessons to implement as you're building your room right away!",
+      "design_challenges": [4, 6],
+      "rooms": [1]
+    },
+    {
+      "uuid": "3cbcc24e-43b2-4f31-8256-3b86a7b6c3a6",
+      "source": "Studio McGee",
+      "title": "5 WAYS TO BRING YOUR KITCHEN TO LIFE",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/5-ways-to-bring-your-kitchen-to-life",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1579823841379-5OACV05A9MZON5LPHSI2/ke17ZwdGBToddI8pDm48kP2hPf9oB6ZtMEW12NEL9W0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2jVZrnmb1MEH47ITLa0rwYCfn0NI0R8ttDZhDaCB0965m0nepH0bYFh4DTA4Bp5g2/Monica-Wang-Photo-5_preview-1.jpg?format=750w",
+      "content": "The kitchen is often the last place we think of styling, but there are some quick and easy things you can do to spruce it up!",
+      "design_challenges": [4],
+      "rooms": [3]
+    },
+    {
+      "uuid": "44a1b67c-7dea-446d-b745-4d53511f1f30",
+      "source": "Room For Tuesday",
+      "title": "DESIGNER TRICK : TIPS FOR GETTING SCALE RIGHT",
+      "ref_url": "https://roomfortuesday.com/designer-trick-tips-for-getting-scale-right/",
+      "ref_img": "https://i0.wp.com/roomfortuesday.com/wp-content/uploads/2019/05/Designer-Trick-Getting-the-Scale-Correct.jpg?w=1000&ssl=1",
+      "content": "You guys, this is a biggie in the world of interior design! The size of things can make or break a room, so it's important that you pay close attention to the scale of the pieces that you want to buy. Read through for tips on how to get it right!",
+      "design_challenges": [1, 3, 6],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "67cb99af-185a-48eb-94f8-1597cb77a33f",
+      "source": "Studio McGee",
+      "title": "WHAT RUG TEXTURE IS RIGHT FOR MY SPACE?",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2019/8/13/rug-by-texture",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1565733508674-NFN22JBRF1J7LUVNJNXM/ke17ZwdGBToddI8pDm48kLD6So_3jpmsdsDjJoK45ZAUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2Di3pnDvlm_hxmMNfIXHDhcGCOqYXF8s82CXmo3Dh2_EKMshLAGzx4R3EDFOm1kBS/image-asset.png?format=1000w",
+      "content": "Need help deciding what material of rug is best for your space? Find tips here!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "81a6a8de-45b4-48e8-bcda-5222712aaba9",
+      "source": "Lark & Linen",
+      "title": "QUICK DESIGN TIP: HOW HIGH DO YOU HANG CURTAINS?",
+      "ref_url": "http://www.jacquelynclark.com/2019/06/14/quick-design-tip-high-hang-curtains/",
+      "ref_img": "http://www.jacquelynclark.com/wp-content/uploads/2019/06/how-high-hang-curtains.png",
+      "content": "It might sound strange, but how you hang your curtains can have a profound effect on how your entire space looks and feels. High and wide is the answer. Check out Lark & Linen for some specifics that you can put into action. It's worth moving your rod even if you've already hung one.",
+      "design_challenges": [4],
+      "rooms": [1, 5, 6]
+    },
+    {
+      "uuid": "8393a665-2fc2-4f53-9696-64368d0fc5f4",
+      "source": "Studio McGee",
+      "title": "HOW TO: SHELF STYLING",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2016/11/2/how-to-style-a-bookshelf?rq=how%20to",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1478116627874-5OIS0PUTA7YNG5BJX7O6/ke17ZwdGBToddI8pDm48kA4EAtFZg8J_3ltYhAMhjn17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmnm4Ek6c6YJYE3gl9iwgPJNf18K5Eai3g4fs5GYkpumEXbpg1_2wU2E5bKfIlNLWp/image-asset.jpeg?format=1500w",
+      "content": "Part science, part art. It's not all having a 'good eye!' Let Studio McGee give you some great tips to pulling off the perfect shelfie.",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "b8406c1c-a58a-4687-980c-98ed014234aa",
+      "source": "Emily Henderson",
+      "title": "THE RULES TO PICKING THE MOST COMFORTABLE SOFA (PLUS THE ONES WE CAN GUARANTEE)",
+      "ref_url": "https://stylebyemilyhenderson.com/blog/best-comfortable-sofa-review",
+      "ref_img": "https://stylebyemilyhenderson.com/wp-content/uploads/2020/04/Brady-Tolbert_OKA_1.jpg",
+      "content": "We LOVE, LOVE, LOVE this article from Emily Henderson. It can be scary to consider buying a sofa online, or even when you HAVE sat in it. Let Emily share with you her team's secrets to getting the most comfortable sofas along with their recommendations. Must read if you're buying a sofa!",
+      "design_challenges": [4, 6],
+      "rooms": [1]
+    },
+    {
+      "uuid": "bf9fb9e6-e2c2-4a4c-aa48-f2c362f38bcb",
+      "source": "My Domaine",
+      "title": "THIS IS HOW TO CHOOSE THE RIGHT WHITE PAINT, ACCORDING TO DESIGNERS",
+      "ref_url": "https://www.mydomaine.com/how-to-choose-White-paint-4776835",
+      "ref_img": "https://www.mydomaine.com/thmb/jZ7zA27f7KK_jYFuhA3WeupIY1k=/950x0/filters:no_upscale():max_bytes(150000):strip_icc()/cdn.cliqueinc.com__cache__posts__270499__emily-henderson-master-bedroom-270499-1539908870820-image.700x0c-36f273e77ce04b5e9ccfbe1b1604b0c3.jpg",
+      "content": "How is it possible that there are hundreds of different shades of white paint alone?! This article has great insight into some of the most popular whites - like s white with gray undertones is ideal for spaces with natural light. Who knew?!",
+      "design_challenges": [4, 5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "c069f456-bcdc-472e-aa67-d664071c15ab",
+      "source": "Studio McGee",
+      "title": "RUG GUIDE: SIMPLE TIPS FOR EACH ROOM",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/our-guide-to-rugs",
+      "ref_img": "https://d28m5bx785ox17.cloudfront.net/v1/img/5OdBRWxa-kvKn_oD535NyPPzfEsvBbjRUMjVRph5mUw=/d/xl",
+      "content": "Placement, size, material! How do I know which is going to be the right one? We most often see rugs that are too small, so let Studio McGee help answer your toughest rug questions!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "c3e95fb8-8459-4903-ad5f-b1e715ad5b88",
+      "source": "House Beautiful",
+      "title": "12 TOP TIPS TO STYLING YOUR HOME LIKE YOU'VE HIRED AN INTERIOR DESIGNER",
+      "ref_url": "https://www.housebeautiful.com/uk/decorate/looks/news/a2546/how-to-style-home-like-hired-interior-designer/",
+      "ref_img": "https://hips.hearstapps.com/housebeautiful.cdnds.net/17/17/640x492/gallery-1456506708-pink-living-room.jpg?resize=980:*",
+      "content": "Personality, drama and mixing things up all play a part in creating a unique space! ",
+      "design_challenges": [4, 6],
+      "rooms": []
+    },
+    {
+      "uuid": "d6e20a2a-8abc-43ee-a197-5d39598b68de",
+      "source": "Room For Tuesday",
+      "title": "DESIGNER TRICK : CHOOSING THE PERFECT PAINT COLOR",
+      "ref_url": "https://roomfortuesday.com/designer-trick-choosing-the-perfect-paint-color/",
+      "ref_img": "https://i1.wp.com/roomfortuesday.com/wp-content/uploads/2019/08/How-to-Choose-Paint-Colors.jpg?w=1000&ssl=1",
+      "content": "So much goodness in this post! If you're trying to select a paint, Room For Tuesday has been there, done that and shares her secrets (like choosing paint as the last piece of your puzzle!)",
+      "design_challenges": [5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "de6c42ae-af85-40d6-b8b2-2ac9c08fec41",
+      "source": "Room For Tuesday",
+      "title": "FAVORITE PAINT COLORS (AS SEEN THROUGHOUT MY HOME)",
+      "ref_url": "https://roomfortuesday.com/favorite-paint-colors-as-seen-throughout-my-home/",
+      "ref_img": "https://i0.wp.com/roomfortuesday.com/wp-content/uploads/2019/10/Hallway-Paint-Colors.jpg?w=1000&ssl=1",
+      "content": "Want to see real life examples of walls, ceiling and trim colors? This great post by Room For Tuesday shows you exact colors that were used in tons of spaces. Great read!",
+      "design_challenges": [4, 5],
+      "rooms": [1, 4, 5, 6]
+    },
+    {
+      "uuid": "e952cc47-7690-4d99-8373-9bae584a5393",
+      "source": "Studio McGee",
+      "title": "TIPS FOR STYLING OBJECTS",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2020/2/7/tips-for-styling-objects",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1581115723305-FK9UP6JFUW0MRU67KDWS/ke17ZwdGBToddI8pDm48kInUiVkPVfkfmvRTu0g-42J7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UQfxdCL-V3ntQt8EVPQzCyZD2vMuF5Ev1emVAn6xzf8QBsc6d8xABtQMYHwnG515BA/studiomcgee_beckhamproject_006.jpg?format=750w",
+      "content": "Who else dreams of their bookshelves and coffee tables being perfectly styled? It can be hard to pull everything together, so take our advice and read through these tips from Studio McGee. You'll have some great tools to getting the look yourself!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "f0afb389-73e1-42ad-9657-81ef95ddae8e",
+      "source": "My Domaine",
+      "title": "THE PROS FROM BENJAMIN MOORE ANSWER ALL YOUR BURNING PAINT QUESTIONS",
+      "ref_url": "https://www.mydomaine.com/benjamin-moore-paint-questions",
+      "ref_img": "https://www.mydomaine.com/thmb/GMMxVLmUlPG9rJBZvbp_zNHGCtE=/800x0/filters:no_upscale():max_bytes(150000):strip_icc()/cdn.cliqueinc.com__cache__posts__270159__benjamin-moore-paint-questions-270159-1539626151619-main.700x0c-e7ef0ebc9abc4ac5a998ef85ee8d1c80.jpg",
+      "content": "What is the best paint for a dark bedroom? If you're painting your walls white, should you paint the trim the same color of white? Read through for tips from Benjamin Moore.",
+      "design_challenges": [5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "9c700338-ce0a-41a8-91c6-06e7c7b7295c",
+      "source": "Style By Emily Henderson",
+      "title": "WHY ARE SOME ROOMS HARD TO DESIGN AND OTHERS SO EASY?",
+      "ref_url": "https://stylebyemilyhenderson.com/blog/hard-to-design-rooms",
+      "ref_img": "https://stylebyemilyhenderson.com/wp-content/uploads/2020/06/Sara-Tramp-Living-Room-Dining-Room-TV-Room-LoRes-11.jpg",
+      "content": "Some spaces are just HARD! Find out why and how Emily Henderson thinks about them.",
+      "design_challenges": [1, 3, 4],
+      "rooms": [1, 2, 5, 6, 7]
+    },
+    {
+      "uuid": "43e3a853-fb93-4ade-8bd5-3522edb5f76c",
+      "source": "Studio McGee",
+      "title": "How to Mix Metal Finishes",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2017/5/31/how-to-mix-metal-finishes",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1591911044786-XS5Q9JZLQD8NXI8XSI63/ke17ZwdGBToddI8pDm48kI-NA-hRR9A1Yx4L4zDSBgl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmG94TGNuzCcCPVStE9JyN8KmvyUpKrFdNdgBu_gonFO-KY4FMkE2_BW0B6s3J2pdc/How+to+Mix+Metal+Finishes?format=1500w",
+      "content": "Yes, you can do it, but there are some rules to follow.",
+      "design_challenges": [8, 4, 6],
+      "rooms": [3, 4]
+    },
+    {
+      "uuid": "0c085fae-7d24-43de-ad18-486898784852",
+      "source": "Studio McGee",
+      "title": "HOW TO STYLE YOUR ENTRYWAY CONSOLE",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/howtostyleaconsole",
+      "ref_img": "https://d28m5bx785ox17.cloudfront.net/v1/img/a3Ynpxg_DgBj5ejMx1b-V0WUGru2WOFWIC6Xkc8e7_c=/d/xl",
+      "content": "It's the first impression of your home for guests, so take the time to make it count!",
+      "design_challenges": [4],
+      "rooms": [8]
+    },
+    {
+      "uuid": "0ddba8ce-3b0b-4612-808d-862b3541bfff",
+      "source": "Studio McGee",
+      "title": "LIVING ROOM ORGANIZATION Q&A WITH THE HOME EDIT",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/living-room-organization-the-home-edit",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1578340163355-1WHNIDNBNB3WDY48NN8Q/ke17ZwdGBToddI8pDm48kDEDYh4Y0JGhR6hzuwcJ44gUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcz6bs2FkMoqlrQIzq4g5ogDqXr_T7rMikH_TfPkEE4wwzGwe9KEhUq6A0DxOZf-75/DSCF4959-1-1024x683.jpg?format=1500w",
+      "content": "Kids toys, blankets, cords - Ugh! They can all keep your perfectly styled living room from living its best life. Read through for great tips on keeping everything in its place.",
+      "design_challenges": [7],
+      "rooms": [1]
+    },
+    {
+      "uuid": "0f1ef1cd-d437-4f2c-9fda-efbc883d48f0",
+      "source": "Studio McGee",
+      "title": "HOW-TO TACKLE A BIG BLANK WALL",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2019/8/26/how-to-fill-a-wall",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1566838034333-ZX1H18J8J57323N8R3U1/ke17ZwdGBToddI8pDm48kH0fOPcaNHrcGgSs7OUJ5ZkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2_VOmu81VRLsNubBE2fzDjeWQwPWPgsHZix02nkA5QxakL3r1G49e-3ZnDLNRdB_t/Moody%2C%2Btextured%2C%2Brustic%2Binspired%2Bliving%2Broom%2Bin%2Bmountain%2Bhome%2Bin%2BUtah%2B-%2BStudio%2BMcGee%2BDesign-1.jpg?format=1500w",
+      "content": "This is a common design dilemma. What do you do with all of that space? Click through to find out!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "21aa102d-cc18-441a-af4e-838f384c8443",
+      "source": "Wit & Delight",
+      "title": "KID + PET-FRIENDLY FURNITURE THAT STANDS THE TEST OF WEAR AND TEAR",
+      "ref_url": "https://witanddelight.com/2019/06/kid-pet-friendly-furniture-that-stands-the-test-of-wear-and-tear/",
+      "ref_img": "https://witanddelight.com/content/uploads/2019/06/StudioSiteImages_2.jpg",
+      "content": "This is one of the top questions that interior designers get. Will it stand up to my pets/kids? Here are a few recommended fabric choices to make sure your new pieces hold up!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "3179d6aa-55a1-43cc-97b7-1caa2f926008",
+      "source": "Freshome",
+      "title": "HOW TO MAKE YOUR HOME LOOK LIKE YOU HIRED AN INTERIOR DESIGNER",
+      "ref_url": "https://freshome.com/inspiration/how-to-make-your-home-look-like-you-hired-an-interior-designer/",
+      "ref_img": "https://freshome.com/wp-content/uploads/2014/07/GettyImages-1181691218.jpg",
+      "content": "So you've found some things that you like, but how do you take it to the next level? Great tips here on what designers do to make a nice space a gorgeous space!",
+      "design_challenges": [4, 6],
+      "rooms": [1, 2, 3, 4, 5, 6, 8]
+    },
+    {
+      "uuid": "32ba0755-343f-485f-ae70-1bc209c2f025",
+      "source": "Wit & Delight",
+      "title": "OUR COMPREHENSIVE GUIDE TO SELECTING THE PERFECT TILE",
+      "ref_url": "https://witanddelight.com/2019/04/our-comprehensive-guide-to-selecting-the-perfect-tile/",
+      "ref_img": "https://witanddelight.com/content/uploads//2019/04/5042b75e1faaadc1992786355da27954-1.jpg",
+      "content": "Tile can literally make or break a room, so make sure that you're getting it right with some advice from Wit & Delight!",
+      "design_challenges": [8],
+      "rooms": [3, 4]
+    },
+    {
+      "uuid": "37691b5d-a2a5-4762-abea-38a2deec4e96",
+      "source": "Room For Tuesday",
+      "title": "MY FAVORITE SOURCES FOR DIGITAL / PRINTABLE ART",
+      "ref_url": "https://roomfortuesday.com/my-favorite-sources-for-digital-printable-art/",
+      "ref_img": "https://i1.wp.com/roomfortuesday.com/wp-content/uploads/2020/03/Art-Prints-in-Bedroom.jpg?w=1000&ssl=1",
+      "content": "Must read if you're looking for inexpensive art! Digital downloads are such a great way to get unique but afforadable pieces! Especially if you're doing a gallery wall!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 4, 5, 6, 7]
+    },
+    {
+      "uuid": "3ce0cab6-202f-48e9-8b9f-0dd4b1b3c67e",
+      "source": "Studio Mcgee",
+      "title": "HOW TO PICK BARSTOOLS & COUNTER STOOLS",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/how-to-pick-the-right-barstools-counter-stools",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1579640912730-WQK97VJ7GZBS7Y7YOWP5/ke17ZwdGBToddI8pDm48kJi6ojuLdCKy0RTEDpm_f-4UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2WN9zXVAzFxPIawXX9RLMOQUUbRrEuzZ3D68XrFf1WF-btxPRH917Fz9Qv_NunPol/How+To+Pick+The+Right+Barstools+%26+Counter+Stools?format=1500w",
+      "content": "Not sure which stools willl look good in your kitchen? Read this for tips on how a designer thinks about choosing them!",
+      "design_challenges": [4, 6],
+      "rooms": [3]
+    },
+    {
+      "uuid": "46a21332-e908-47ee-a2c0-445a5adaa966",
+      "source": "Magnolia",
+      "title": "A GUIDE TO NEUTRAL PAINT COLORS",
+      "ref_url": "https://magnolia.com/a-guide-to-neutral-paint-colors/",
+      "ref_img": "https://magnolia.com/wp-content/uploads/2019/08/image15-1-1280x0-c-default.jpg?x92700",
+      "content": "Did you know that Chip and Joanna have their own paint line? Find out what ones they recommend!",
+      "design_challenges": [5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "5289d537-1c24-4ccb-9f2f-72a6b0806732",
+      "source": "Lark & Linen",
+      "title": "HOW TO DECORATE AROUND A TV: A FOOLPROOF GUIDE",
+      "ref_url": "http://www.jacquelynclark.com/2018/11/21/how-to-decorate-around-a-tv/",
+      "ref_img": "http://www.jacquelynclark.com/wp-content/uploads/2018/11/Decorating-Around-a-TV_3-1080x1636.jpg",
+      "content": "This question comes up often when designing living rooms. How do you decorate around a TV? Lark & Linen has a few great tips to making it feel like a little less of an eyesore.",
+      "design_challenges": [4],
+      "rooms": [1, 5]
+    },
+    {
+      "uuid": "5be7b580-fd0c-4251-b37f-4dafa367e4fb",
+      "source": "My Domaine",
+      "title": "THESE 15 LAYOUT MISTAKES ARE MAKING YOUR ROOM LOOK CHEAPER",
+      "ref_url": "https://www.mydomaine.com/layout-mistakes-4687349",
+      "ref_img": "https://www.mydomaine.com/thmb/wt-s47CLhwsOqVerlDMqr5NOnqs=/950x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignedbyJessBungeforEHD_PhotobySaraTramp_1-13f65f725020461993f7113110a57383.jpg",
+      "content": "Find out how the size and placement of your pieces can go a long way in creating the right feel in a room.",
+      "design_challenges": [1],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "631efeb7-d058-4dd3-91ea-18c884616171",
+      "source": "Studio McGee",
+      "title": "HOW TO HANG ART CORRECTLY - 3 SIMPLE TIPS",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2017/4/6/hanging-art",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1571428697741-IR24LYYRYKUGDNJYHTTB/ke17ZwdGBToddI8pDm48kLIu5KTdDTvffgU1dgbw9sYUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2La61fv-9Rv_JZpLnUufXS_jREVypl8OQxDwlqlc8R5hm0nepH0bYFh4DTA4Bp5g2/Hanging+Artwork+tips.?format=750w",
+      "content": "Where and how you hang your art can make a huge difference in a space feeling balanced and pulled together. Check out these tips from Studio McGee on how and where to hang your art (including gallery walls!).",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "6b96d8d2-3c09-45a2-8f3e-b41ae8a9453a",
+      "source": "Room For Tuesday",
+      "title": "DESIGNER TRICK : FLOOR PLANNING",
+      "ref_url": "https://roomfortuesday.com/designer-trick-floor-planning/",
+      "ref_img": "https://i1.wp.com/roomfortuesday.com/wp-content/uploads/2020/02/Designer-Trick-Floor-Planning.jpg?w=1000&ssl=1",
+      "content": "Have an awkward layout, need help figuring out where things should go or want to make sure your pieces are going to fit? Try your hand at space planning! Room For Tuesday lays out several different (FREE!) programs that you can use to try different space configurations. We've tried HomeStyler, Icovia and Floor Planner. Don't be intimidated- they are all pretty user friendly!",
+      "design_challenges": [1, 3],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "6d0b5f5c-82c0-461f-a21d-2114bcc1ce3f",
+      "source": "My Domaine",
+      "title": "THIS IS THE BIGGEST MISTAKE PEOPLE MAKE WHEN CHOOSING A PAINT COLOR",
+      "ref_url": "https://www.mydomaine.com/paint-color-mistakes",
+      "ref_img": "https://www.mydomaine.com/thmb/gQJGJg9k0UCVs0Q2gvQGyuq6cqM=/800x0/filters:no_upscale():max_bytes(150000):strip_icc()/cdn.cliqueinc.com__cache__posts__274287__paint-color-mistakes-274287-1544044613821-image.700x0c-f2125089bc1149848c9e4139ab43d693.jpg",
+      "content": "Sheens, finishes, cools, warms... there's so much to consider! Let a pro help you destress the process!",
+      "design_challenges": [5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "6d6c2815-42e5-4bc8-9bea-bc46329919dc",
+      "source": "My Domaine",
+      "title": "A COLOR EXPERT'S 7 STEP GUIDE TO PICKING THE PERFECT PAINT COLOR, STRESS-FREE",
+      "ref_url": "https://www.mydomaine.com/how-to-pick-paint-colors",
+      "ref_img": "https://www.mydomaine.com/thmb/hI8l1RqPuVm1cBDLwSLbu_bz-Nc=/800x0/filters:no_upscale():max_bytes(150000):strip_icc()/cdn.cliqueinc.com__cache__posts__277032__how-to-pick-paint-colors-277032-1549477714389-image.700x0c-f9b0421eb7d747cd8f8e3903231245dd.jpg",
+      "content": "Everything from colors to moods and lighting can affect which paint you should choose. Click through for a crash course from designers!",
+      "design_challenges": [4, 5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "747dc804-faa2-45c0-9f32-210bfec175d0",
+      "source": "Driven By Decor",
+      "title": "PILLOWS 101: HOW TO CHOOSE & ARRANGE THROW PILLOWS",
+      "ref_url": "https://www.drivenbydecor.com/what-size-how-choose-arrange-throw-pillows/",
+      "ref_img": "https://www.drivenbydecor.com/wp-content/uploads/2017/02/tips-choosing-sizes-throw-pillows-inserts.jpg",
+      "content": "Inserts, sizes, chopping and shopping. This helps answer all of your pillow questions!",
+      "design_challenges": [4],
+      "rooms": [1]
+    },
+    {
+      "uuid": "77df6d34-392c-42a8-bb44-360cc680de41",
+      "source": "Lark & Linen",
+      "title": "MY VERY BEST TIPS & TRICKS TO STYLING A BEAUTIFUL ROOM",
+      "ref_url": "http://www.jacquelynclark.com/2018/02/22/how-to-style-a-room/",
+      "ref_img": "http://www.jacquelynclark.com/wp-content/uploads/2018/02/bright-living-room.jpg",
+      "content": "Need some quick tips to making your home look like a designer styled it? Check out these easy to implement suggestions from Lark & Linen.",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7]
+    },
+    {
+      "uuid": "7f11520d-4019-47f6-b5d9-ae365dfa3653",
+      "source": "Lorri Dyner Design",
+      "title": "HOW MUCH DOES IT (REALLY) COST TO DECORATE?",
+      "ref_url": "https://www.lorridynerdesign.com/keeping-it-real-how-much-does-it-really-cost-to-decorate/",
+      "ref_img": "https://www.lorridynerdesign.com/wp-content/uploads/2014/11/white-ikea-living-room.jpg",
+      "content": "If you have no clue how much things cost, or you want help estimating a budget, this post has great estimates for pieces that you may likely need at a few different price and quality points.",
+      "design_challenges": [2],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "817a47df-8944-4954-a354-3900256b940a",
+      "source": "Real Simple",
+      "title": "5 FOOLPROOF TIPS FOR MIXING AND MATCHING PATTERNS",
+      "ref_url": "https://www.realsimple.com/home-organizing/decorating/mix-match-patterns",
+      "ref_img": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.realsimple.com%2Fsites%2Fdefault%2Ffiles%2F1473800332%2Fmixing-patterns.jpg",
+      "content": "Love pattern, but don't know how to mix them in your space? Try these formulas from textile designer, Rebecca Atwood. You'll be a mix-master in no time!",
+      "design_challenges": [4],
+      "rooms": [1, 5]
+    },
+    {
+      "uuid": "8bd2b728-2626-4fd1-8b08-a02826eca9ed",
+      "source": "Domino",
+      "title": "10 APPS THAT WILL MAKE YOU FEEL LIKE AN INTERIOR DESIGNER",
+      "ref_url": "https://www.domino.com/content/best-home-design-apps/",
+      "ref_img": "https://img2.domino.com/dom/image/upload/c_limit,w_1200,h_1000,q_auto:best,dpr_auto/i/best-apps-for-designers-domino-1.jpg",
+      "content": "From finding your style to shopping to painting, these apps will help you get it all done.",
+      "design_challenges": [4, 6],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "8dd52d90-df41-4283-a457-4ec33ffe9b41",
+      "source": "My Domaine",
+      "title": "SORRY, THESE 5 DESIGN MISTAKES ARE MAKING YOUR LIVING ROOM LOOK CHEAP",
+      "ref_url": "https://www.mydomaine.com/small-living-room-mistakes-4689123",
+      "ref_img": "https://www.mydomaine.com/thmb/GJ0FGh50fC8VPSD5wPTtmT_et9U=/950x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignbyEmilyHendersonDesignPhotographerbySaraTramp_180-a2734daa2a94482185f8c7bf84ff4bf9.jpg",
+      "content": "It's all about scale. Really. The size of the pieces that you buy makes a big impact on your space. Read through for tips on how to do it right.",
+      "design_challenges": [4],
+      "rooms": [1]
+    },
+    {
+      "uuid": "96098674-8b6b-4f8d-972e-db54e168ca92",
+      "source": "My Domaine",
+      "title": "HOW TO CHOOSE THE RIGHT PAINT COLOR FOR EVERY ROOM",
+      "ref_url": "https://www.mydomaine.com/how-to-choose-a-paint-colour-1",
+      "ref_img": "https://www.mydomaine.com/thmb/lRbn4aXwyqTE9szkJLonGLwjPCI=/800x0/filters:no_upscale():max_bytes(150000):strip_icc()/cdn.cliqueinc.com__cache__posts__260605__how-to-choose-the-right-paint-colour-for-every-room-2823822.700x0c-8328faf7fa6f422c85a676927826ce68.jpg",
+      "content": "Choosing the right paint color can be so daunting! This article pulls together great advice for how to think about paint for your whole home down to single rooms.",
+      "design_challenges": [5],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "9cb61169-34f4-4bfa-ae7f-a4f15ef2a6fa",
+      "source": "Studio McGee",
+      "title": "BEDROOM STYLING BASICS",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/bedroomtstylingbasics",
+      "ref_img": "https://d28m5bx785ox17.cloudfront.net/v1/img/ctOQTTosZQ1FBwvGlVYPx_2yvbhiRDAeLeZv2Frwcf8=/d/xl",
+      "content": "Learn how to balance everything that your bedroom needs to be - comfortable, but pretty.",
+      "design_challenges": [4],
+      "rooms": [5]
+    },
+    {
+      "uuid": "ab57cccf-1d6c-48d9-9388-b0a7f56f20bd",
+      "source": "Studio Mcgee",
+      "title": "THE BEST WHITE PAINT COLORS FOR EVERY HOME",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/the-best-white-paint-colors-for-every-home",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1582742689858-YK6NZKW2U0BTDD2XRPB4/ke17ZwdGBToddI8pDm48kE9ZQ7YkBz-QXTtFJVYr4OR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTeJP41c5Gv_zVVerNLpzJbpA9oZ5BAlSuQMzE-ynLJS6ocgBwzfqAGPb50PTeYDYw/The+Best+White+Paint+Colors+For+Every+Home?format=1500w",
+      "content": "Like the bright and airy look? A nice coat of white paint is the first step to acheiving the look. BUT, which white paint you choose can make all the difference. Learn how designer Shea McGee chooses white paints for her clients!",
+      "design_challenges": [4, 5, 6],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "b1b408aa-fdca-48fd-9765-5ff07ac6201e",
+      "source": "Studio McGee",
+      "title": "HOW TO DECORATE THE AREA ABOVE YOUR BED",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2017/9/5/above-the-bed-styling",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1578434473330-ZAD1AK3M52SBICAFCGL4/ke17ZwdGBToddI8pDm48kP2hPf9oB6ZtMEW12NEL9W0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z2jVZrnmb1MEH47ITLa0rwYCfn0NI0R8ttDZhDaCB0965m0nepH0bYFh4DTA4Bp5g2/studiomcgee_lakehouse_205.jpg?format=1500w",
+      "content": "Do you HAVE to put art above your bed? Not necessarily. Studio McGee gives us a few different options to consider when filling that blank space.",
+      "design_challenges": [4],
+      "rooms": [5]
+    },
+    {
+      "uuid": "bc04f536-be0a-4afa-b5a0-fa0c937f511c",
+      "source": "Studio Mcgee",
+      "title": "THE PILLOW SIZE GUIDE",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2019/5/22/pillow-size-guide",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1586292688769-LMK1IA4J2TOUL0P0P7Y6/ke17ZwdGBToddI8pDm48kMJS3NMfUP0FErxLQEoFcDlZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxfg_IjQpf4zMM1bujJWLvuhsGIlM98zOPpSZGJgzDhrgUZCNpJi-1ntDyyL8xbYCo/Beck%2BPines%2B3-50.jpg?format=1500w",
+      "content": "This is such an important read if you find yourself drawn to the perfect pillow combos. Size is an important part of getting the look right! Typically, you don't want anything smaller than a 20x20 (besides a lumbar). Read what the pros have to say!",
+      "design_challenges": [4, 6],
+      "rooms": [1, 5]
+    },
+    {
+      "uuid": "bd79cf1f-7cdc-47f4-8ecf-c6042593325b",
+      "source": "Studio McGee",
+      "title": "DESIGN HACKS FOR A KID'S SPACE",
+      "ref_url": "https://www.studio-mcgee.com/studioblog/2019/9/18/how-to-kids-space",
+      "ref_img": "https://images.squarespace-cdn.com/content/v1/53744d2fe4b0a52017d9e3d4/1568836117053-FP1W5EM4IGUDPURQ1YKH/ke17ZwdGBToddI8pDm48kI-NA-hRR9A1Yx4L4zDSBgl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmG94TGNuzCcCPVStE9JyN8KmvyUpKrFdNdgBu_gonFO-KY4FMkE2_BW0B6s3J2pdc/call-190815-MCGEE-1016.jpg?format=1500w",
+      "content": "Storage and playfulness are key components in any room. Hear what else Studio McGee recommends for designing spaces for your little ones.",
+      "design_challenges": [4],
+      "rooms": [7]
+    },
+    {
+      "uuid": "cf8771d6-d928-4776-bf03-97de391bec37",
+      "source": "Room For Tuesday",
+      "title": "DESIGNER TRICK : EXAMINE A ROOM IN 2D",
+      "ref_url": "https://roomfortuesday.com/designer-trick/",
+      "ref_img": "https://i0.wp.com/roomfortuesday.com/wp-content/uploads/2019/04/Designer-Trick-Examine-a-Room-in-2D.jpg?w=1000&ssl=1",
+      "content": "We love this tip! If you get stuck styling your room, take a photo and examine the photo, rather than staring at your room. It's amazing what you'll notice that needs to be changed!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "uuid": "d08cf234-1d16-4511-9333-b799ceaa79ef",
+      "source": "My Domaine",
+      "title": "ONE STUDIO APARTMENT 4 WAYS—FOLLOW OUR STYLISH GUIDE",
+      "ref_url": "https://www.mydomaine.com/studio-apArtment-floor-plans",
+      "ref_img": "https://www.mydomaine.com/thmb/YLjsDhn2gtVQP6KlPpFsOcmST3Y=/950x0/filters:no_upscale():max_bytes(150000):strip_icc()/7-Loft-Bed-Doubles-Your-Space-58767f025f9b584db3aa1d56.jpg",
+      "content": "Have a studio apartment and need ideas for furniture arrangement? Check out the different iterations one New Yorker went through in hers.",
+      "design_challenges": [1],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "d7bcd6f2-d2ae-4083-abd6-78e130c62399",
+      "source": "Magnolia",
+      "title": "CHOOSING THE BEST RUG FOR YOUR SPACE",
+      "ref_url": "https://magnolia.com/best-rug-for-your-space/",
+      "ref_img": "https://magnolia.com/wp-content/uploads/2018/10/RugBuyingGuide10.3-01.jpg",
+      "content": "We know Joanna Gaines has been choosing rugs for quite some time, so find out her tried and true tips to picking the right one for you!",
+      "design_challenges": [4],
+      "rooms": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "uuid": "e0b136e6-877c-4576-9e31-aa27f605c600",
+      "source": "Studio Mcgee",
+      "title": "HOW TO STYLE YOUR THROW PILLOWS",
+      "ref_url": "https://www.youtube.com/watch?v=nrRmOCqRjEk",
+      "ref_img": "https://witanddelight.com/content/uploads/2019/06/StudioSiteImages_2.jpg",
+      "content": "People often call lighting the jewelry of a room, but we think pillows are! They are like choosing earrings. Are you going bold to make a statement, or small and quiet to let everything else shine? Styling them just so makes a big difference!",
+      "design_challenges": [4],
+      "rooms": [1]
+    },
+    {
+      "uuid": "e506a7f8-9ddb-4c45-8272-04115be7f1e1",
+      "source": "Apt2B",
+      "title": "UNDERSTANDING FABRIC",
+      "ref_url": "https://www.apt2b.com/blogs/apt2b/understanding-fabric",
+      "ref_img": "https://storage.googleapis.com/apt2b-wp/media/2018/09/IMG_7558-e1537312152688-700x700.jpg",
+      "content": "Get schooled in what common fabric types are and how they'll hold up in your space.",
+      "design_challenges": [4],
+      "rooms": [1]
+    },
+    {
+      "uuid": "f029ecc0-efb9-420a-be6d-c338582eb3c5",
+      "source": "Insider",
+      "title": "INTERIOR DESIGNERS REVEAL 12 WAYS TO MAKE YOUR HOME LOOK BETTER WITHOUT BUYING ANYTHING",
+      "ref_url": "https://www.insider.com/make-home-look-better-for-free-without-buying-anything",
+      "ref_img": "https://witanddelight.com/content/uploads/2019/06/StudioSiteImages_2.jpg",
+      "content": "This is a good read in that it hits on some extremely easy things you can do in your home that will make a big impact towards creating an elevated space. Things like decluttering, hiding cords and rearranging are all the first things a designer will tell you to consider.",
+      "design_challenges": [4, 6],
+      "rooms": [1, 2, 3, 4, 5, 6, 8]
+    }
+  ]
+}

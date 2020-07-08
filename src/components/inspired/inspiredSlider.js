@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import Slider4 from '../common/slider/slider4';
 import Pagination from '../common/pagination';
-import './shopSlide.css';
-import shopTestData from '../../testData/shop.json';
+import './inspiredSlider.css';
+import inspiredTestDate from '../../testData/inspired.json';
+import Slider4 from '../common/slider/slider4';
 import paginate from '../../utils/paginate';
 
 
 
-
-class ShopSlide extends Component {
+class InspiredSlider extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +17,7 @@ class ShopSlide extends Component {
     }
 
     componentDidMount() {
-        this.setState({ shop: shopTestData })
+        this.setState({ inspired: inspiredTestDate })
     }
 
     onPageChange = (page) => {
@@ -29,15 +28,18 @@ class ShopSlide extends Component {
         }
     }
 
+
     render() {
-        const { shop, currentPage, pageSize } = this.state;
-        const paginateShop = shop && paginate(shop.results, currentPage, pageSize);
+        const { inspired, currentPage, pageSize } = this.state;
+
+        const inspiredPaginate = inspired && paginate(inspired.results, currentPage, pageSize);
+
         return (
-            <div className="shop-slider">
+            <div className="inspired-slider">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">
-                            <h4>Shop</h4>
+                            <h4>Be Inspired</h4>
                             <ul>
                                 <li>FURNITURE</li>
                                 <li>DECOR</li>
@@ -47,20 +49,30 @@ class ShopSlide extends Component {
                             </ul>
                         </div>
                     </div>
-                    {shop && <div className='row'>
-                        <Slider4 data={paginateShop} />
 
-                        <Pagination
-                            itemsCount={shop.results.length}
-                            currentPage={currentPage}
-                            pageSize={pageSize}
-                            onPageChange={this.onPageChange}
-                        />
-                    </div>}
+                    <div className='slider-main'>
+                        {inspired && <div className='row'>
+
+                            <Slider4 data={inspiredPaginate} />
+
+                            <Pagination
+                                itemsCount={inspired.results.length || 6}
+                                currentPage={currentPage}
+                                pageSize={pageSize}
+                                onPageChange={this.onPageChange}
+                            />
+                        </div>}
+                    </div>
+
+
                 </div>
             </div>
+
+
+
+
         );
     }
 }
 
-export default ShopSlide;
+export default InspiredSlider;

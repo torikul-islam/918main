@@ -15,10 +15,10 @@ import OnboardQ1 from './onboard/onboardQ1';
 import OnboardQ2 from './onboard/onboardQ2';
 import OnboardQ3 from './onboard/onboardQ3';
 import SliderPost from './common/slider/sliderPost';
-import Slider4 from './common/slider/slider4';
 import axios from 'axios';
-
-
+import ShopSlide from './shop/shopSlide';
+import InspiredSlider from './inspired/inspiredSlider';
+import roomsTestData from '../../src/testData/rooms.json';
 
 
 class Home extends Component {
@@ -46,9 +46,9 @@ class Home extends Component {
         this.setState({ modal });
     };
 
-    async componentDidMount() {
-        await this.getInspiredData();
-        await this.getShopData();
+    componentDidMount() {
+        this.setState({ postDate: roomsTestData });
+
     }
 
     onPageChange = (type) => {
@@ -71,15 +71,16 @@ class Home extends Component {
 
     render() {
         const { isOpen, name } = this.state.modal;
-        const { shop, pageSize, currentPage, inspired } = this.state;
-
+        const { postDate } = this.state;
         return (
             <>
                 <HeaderHome openModal={this.openModal} />
-                <SliderPost />
-                <Slider4 title='Be Inspired' data={inspired && inspired.results.slice(0, 4)} />
+                <SliderPost data={postDate && postDate.results} />
 
-                <Slider4 title='shop' data={shop && shop.results.slice(0, 4)} />
+                <ShopSlide />
+
+                <InspiredSlider />
+
 
                 {/* <PostSlide />
                 <LearnButton />
