@@ -20,7 +20,8 @@ import OnboardQ3 from './components/onboard/onboardQ3';
 import Inspired from './components/inspired/inspired';
 import Account from './components/account/account';
 import InspirationDetails from './components/InspirationDetails/inspirationDetails'; 
-import Blog from './components/blog/blog'
+import Blog from './components/blog/blog';
+import Looks from './components/looks/looks'
 
 
 
@@ -56,6 +57,7 @@ class App extends Component {
             <Route path="/inspirationDetails" component={InspirationDetails} exact />
             <Route path="/blog" component={Blog} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
+            <Route path="/looks" component={Looks} exact />
           </Switch>
         </main>
         <Footer />
