@@ -2,7 +2,7 @@ import http from "./httpService";
 
 
 function login(email, password) {
-    return http.post('/login', { email, password });
+    return http.post('/login/', { email, password });
 };
 
 

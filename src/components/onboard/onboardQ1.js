@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Checkbox from '../common/checkbox';
-import './onboardQ1.css';
 import GoBtn from '../common/goBtn';
+import './onboardQ1.css';
+import chuckRooms from '../../utils/chunkRooms';
+import { getAllRooms } from '../../services/roomServices';
 
 
 
@@ -9,14 +11,15 @@ import GoBtn from '../common/goBtn';
 class OnboardQ1 extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+
+        }
     }
 
-    submitOnboardQ1 = () => {
-        this.props.openModal('onboardQ2')
-    };
 
     render() {
+        const { rooms, submitCheckbox, onCheck, errors } = this.props;
+        const chunkRooms = chuckRooms(rooms);
 
         return (
             <div className='container'>
@@ -25,37 +28,34 @@ class OnboardQ1 extends Component {
                         <img src={require('../../Asset/Images/Logo.png')} className="img-fluid" alt="Responsive image" style={{ width: 160 }} />
                     </div>
 
-
                     <div className='onboard-q1-main'>
                         <div className='like-to-work'>
                             <h2>What room would you like to work on ?</h2>
                             <p>You'll create new boards for each room. so choose the room you'd like to start with!</p>
                         </div>
-                        <div className='row my-5 q1-checkbox-area'>
-                            <div className='col-sm-6'>
-                                <div className='q1-check-left'>
-                                    <Checkbox id="l_room" name="l_room" label='Living Room' />
-                                    <Checkbox id="d_room" name="d_room" label='Dining Room' />
-                                    <Checkbox id="kitchen" name="kitchen" label='Kitchen' />
-                                    <Checkbox id="bedroom" name="bedroom" label='Bedroom' />
-                                    <Checkbox id="bathroom" name="bathroom" label='Bathroom' />
-                                </div>
-                            </div>
-                            <div className='col-sm-6'>
-                                <Checkbox id="office" name="office" label='Office' />
-                                <Checkbox id="kid_room" name="kid_room" label="Kid's Room" />
-                                <Checkbox id="entryway" name="entryway" label='Entryway' />
-                                <Checkbox id="outdoor" name="outdoor" label='Outdoor' />
 
+                        <form onSubmit={submitCheckbox}>
+                            {errors['checkbox'] && <p className='ck-error'>{errors['checkbox']}</p>}
+                            <div className='row my-5 q1-checkbox-area'>
+                                {chunkRooms.map((item, i) =>
+                                    <div className='col-sm-6' key={i} >
+                                        {item.map(val =>
+                                            <Checkbox
+                                                onChange={onCheck}
+                                                key={val.uuid}
+                                                id={val.pk}
+                                                name={val.pk}
+                                                label={val.name} />
+                                        )}
+                                    </div>
+                                )}
                             </div>
-                        </div>
+                            <GoBtn text='Next' type='submit' />
+                        </form>
 
-                        <GoBtn text='Next' onClick={this.submitOnboardQ1} />
                     </div>
-
-
-
                 </div>
+
             </div>
         );
     }

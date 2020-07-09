@@ -28,18 +28,13 @@
   font-family: "Helvetica";
   text-align: center;
 }
-.q1-check-left {
-  margin: auto;
-}
+
 .q1-checkbox-area {
   padding: 0px 0 0 60px;
   font-family: Helvetica;
   font-weight: 300;
   font-size: 18px;
 }
-
-/* p {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-} */
+.ck-error {
+  color: red;
+}

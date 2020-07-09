@@ -19,7 +19,7 @@ class LoginNext extends Component {
     };
 
     clickAnsQues = () => {
-        this.props.openModal('onboardQ1');
+        this.props.openModal('onboard');
     };
 
 
@@ -47,7 +47,7 @@ class LoginNext extends Component {
                                     recommendations!
                                 </p>
 
-                                <GoBtn onClick={this.clickAnsQues} />
+                                <GoBtn text='Go' onClick={this.clickAnsQues} />
                             </div>
                         </div>
                         <div className='col-sm-5'>
@@ -56,11 +56,11 @@ class LoginNext extends Component {
                                     <h6>
                                         You can also skip the questions and just get started.
                                     </h6>
-                                    <GoBtn onClick={this.clickBoard} />
+                                    <GoBtn text='Go' onClick={this.clickBoard} />
                                 </div>
                                 <div className='continue'>
                                     <h6>Click here to continue browsing.</h6>
-                                    <GoBtn onClick={this.clickContinue} />
+                                    <GoBtn text='Go' onClick={this.clickContinue} />
                                 </div>
                             </div>
                         </div>

@@ -13,6 +13,8 @@ import axios from 'axios';
 import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
 import roomsTestData from '../../src/testData/rooms.json';
+import Onboard from './onboard/onboard';
+import { getAllRooms } from '../services/roomServices';
 import './home.css';
 
 
@@ -21,11 +23,9 @@ class Home extends Component {
         super(props);
         this.state = {
             modal: {
-                isOpen: false,
-                name: null
-            },
-            currentPage: 0,
-            pageSize: 4
+                isOpen: true,
+                name: 'onboard'
+            }
         }
     }
 
@@ -43,7 +43,6 @@ class Home extends Component {
 
     componentDidMount() {
         this.setState({ postDate: roomsTestData });
-
     }
 
     onPageChange = (type) => {
@@ -64,9 +63,12 @@ class Home extends Component {
         this.setState({ inspired: data })
     };
 
+
+
     render() {
         const { isOpen, name } = this.state.modal;
-        const { postDate } = this.state;
+        const { postDate, rooms } = this.state;
+
         return (
             <>
                 <HeaderHome data={postDate && postDate.results.slice(0, 1)} openModal={this.openModal} />
@@ -98,9 +100,9 @@ class Home extends Component {
                 {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext {...this.props} openModal={this.openModal} closeModal={this.closeModal} />} />}
                 {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={this.openModal} closeModal={this.closeModal} />} />}
                 {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={this.openModal} closeModal={this.closeModal} />} />}
-                {name === 'onboardQ1' && <Modal isOpen={isOpen} childComp={<OnboardQ1 openModal={this.openModal} closeModal={this.closeModal} />} />}
-                {name === 'onboardQ2' && <Modal isOpen={isOpen} childComp={<OnboardQ2 openModal={this.openModal} closeModal={this.closeModal} />} />}
-                {name === 'onboardQ3' && <Modal isOpen={isOpen} childComp={<OnboardQ3 openModal={this.openModal} closeModal={this.closeModal} />} />}
+                {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={this.openModal} closeModal={this.closeModal} />} />}
+                {/* {name === 'onboardQ2' && <Modal isOpen={isOpen} childComp={<OnboardQ2 openModal={this.openModal} closeModal={this.closeModal} />} />} */}
+                {/* {name === 'onboardQ3' && <Modal isOpen={isOpen} childComp={<OnboardQ3 openModal={this.openModal} closeModal={this.closeModal} />} />} */}
             </>
         );
     }

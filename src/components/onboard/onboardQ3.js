@@ -11,12 +11,10 @@ class OnboardQ3 extends Component {
         this.state = {}
     }
 
-    submitOnboardQ3 = () => {
-        this.props.openModal('boardName');
-    };
 
 
     render() {
+        const { openModal, filterRoom } = this.props;
         return (
             <div className='container'>
                 <div className='onboard-q2'>
@@ -25,19 +23,20 @@ class OnboardQ3 extends Component {
                             <h2>Are there specific pieces you're looking for?</h2>
                             <p>(Choose as many as you'd like.)</p>
                         </div>
+
                         <div className='row my-4'>
                             <div className='row'>
-                                {Array(12).fill().map((_, i) => i + 1).map((item, i) =>
+                                {filterRoom && filterRoom.map((item, i) =>
                                     <div className='col-sm-3' key={i}>
                                         <div className='onboard-item'>
-                                            <img src={require('../../Asset/Images/onboard_item4.png')} alt="" />
-                                            <h6>Diving table {i + 1}</h6>
+                                            <img src={item.ref_img} alt="" />
+                                            <h6>{item.designed_by}</h6>
                                         </div>
                                     </div>
                                 )}
                             </div>
                         </div>
-                        <GoBtn text='Next' onClick={this.submitOnboardQ3} />
+                        <GoBtn text='Next' onClick={() => openModal('boardName')} />
                         <div className="text-center"><span className="Skip-btn-style"> Skip </span></div>
                     </div>
                 </div>

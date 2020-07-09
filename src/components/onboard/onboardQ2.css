@@ -17,6 +17,10 @@
   margin: auto;
   text-align: center;
 }
+.onboard-item img {
+  width: 100%;
+  height: 115px;
+}
 
 h6 {
   font-family: "Helvetica";

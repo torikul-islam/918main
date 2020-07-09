@@ -12,11 +12,10 @@ class OnboardQ2 extends Component {
         this.state = {}
     }
 
-    submitOnboardQ2 = () => {
-        this.props.openModal('onboardQ3');
-    };
 
     render() {
+        const { submitFilterRoom, filterRoom } = this.props
+
         return (
             <div className='container'>
                 <div className='onboard-q2'>
@@ -27,24 +26,24 @@ class OnboardQ2 extends Component {
                             <h2>Which images best represent your style?</h2>
                             <p> (Choose up to 3. Don't get stuck here! If you're unsure, we can help you figure it out later!)</p>
                         </div>
-                        <div className='row my-4'>
-                            <div className='row'>
-                                {Array(12).fill().map((_, i) => i + 1).map((item, i) =>
-                                    <div className='col-sm-3' key={i}>
-                                        <div className='onboard-item text-center'>
-                                            <img src={require('../../Asset/Images/onboard_item4.png')} alt="" />
-                                            <h6 className="text-center"> Farmhouse {i + 1}</h6>
+
+                        <form onSubmit={submitFilterRoom}>
+                            <div className='row my-4'>
+                                <div className='row'>
+                                    {filterRoom && filterRoom.map((item, i) =>
+                                        <div className='col-sm-3' key={i}>
+                                            <div className='onboard-item text-center'>
+                                                <img src={item.ref_img} alt="" />
+                                                <h6 className="text-center">{item.designed_by}</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
                             </div>
-                        </div>
+                            <GoBtn text='Next' type='submit' />
+                        </form>
 
-                        <GoBtn text='Next' onClick={this.submitOnboardQ2} />
                     </div>
-
-
-
                 </div>
             </div>
         );
