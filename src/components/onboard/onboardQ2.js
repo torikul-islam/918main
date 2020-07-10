@@ -14,7 +14,7 @@ class OnboardQ2 extends Component {
 
 
     render() {
-        const { submitFilterRoom, filterRoom } = this.props
+        const { submitStyle, styles } = this.props
 
         return (
             <div className='container'>
@@ -27,14 +27,14 @@ class OnboardQ2 extends Component {
                             <p> (Choose up to 3. Don't get stuck here! If you're unsure, we can help you figure it out later!)</p>
                         </div>
 
-                        <form onSubmit={submitFilterRoom}>
+                        <form onSubmit={submitStyle}>
                             <div className='row my-4'>
                                 <div className='row'>
-                                    {filterRoom && filterRoom.map((item, i) =>
+                                    {styles && styles.map((item, i) =>
                                         <div className='col-sm-3' key={i}>
                                             <div className='onboard-item text-center'>
                                                 <img src={item.ref_img} alt="" />
-                                                <h6 className="text-center">{item.designed_by}</h6>
+                                                <h6 className="text-center">{item.name}</h6>
                                             </div>
                                         </div>
                                     )}

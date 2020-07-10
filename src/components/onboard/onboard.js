@@ -4,7 +4,9 @@ import Modal from '../common/modal/modal';
 import OnboardQ2 from './onboardQ2';
 import OnboardQ3 from './onboardQ3';
 import roomService from '../../services/roomServices';
-import chuckRooms from '../../utils/chunkRooms';
+import styleService from '../../services/styleServices';
+import styleServices from '../../services/styleServices';
+import roomServices from '../../services/roomServices';
 
 
 
@@ -61,6 +63,7 @@ class Onboard extends Component {
                 }
             ],
             filterRoom: [],
+            styles: [],
             errors: {},
             boardNo: 1,
             checkBoxes: []
@@ -92,18 +95,29 @@ class Onboard extends Component {
             this.setState({ errors });
         } else {
             try {
-                const { data } = await roomService.getRoomsByIds(checkBoxes.join(','));
-                this.setState({ filterRoom: data.results, boardNo: 2 });
+                const { data } = await styleServices.getAllStyle();
+                this.setState({ styles: data.results, boardNo: 2 });
             } catch (ex) {
                 const errors = this.state.errors;
-                errors['filterRoom'] = 'Rooms filtering error';
+                errors['style'] = 'Failed to get styles';
                 this.setState({ errors });
             }
         }
     };
 
-    submitFilterRoom = () => {
-        this.setState({ boardNo: 3 })
+    submitStyle = async (e) => {
+        e.preventDefault();
+        const { checkBoxes, errors } = this.state;
+
+        try {
+            const { data } = await roomServices.getRoomsByIds(checkBoxes.join(','));
+            this.setState({ filterRoom: data.results, boardNo: 3 });
+        } catch (ex) {
+            const errors = this.state.errors;
+            errors['style'] = 'Failed to get styles';
+            this.setState({ errors });
+        }
+
     };
 
     onCheck = (e) => {
@@ -120,13 +134,13 @@ class Onboard extends Component {
     }
 
     render() {
-        const { rooms, boardNo, filterRoom, errors } = this.state;
+        const { rooms, boardNo, filterRoom, errors, styles } = this.state;
 
         return (
             <>
                 {boardNo === 1 && <OnboardQ1 errors={errors} onCheck={this.onCheck} rooms={rooms} submitCheckbox={this.submitCheckbox} />}
-                {boardNo === 2 && <OnboardQ2 filterRoom={filterRoom.slice(0, 12)} submitFilterRoom={this.submitFilterRoom} />}
-                {boardNo === 3 && <OnboardQ3  {...this.props} filterRoom={filterRoom.slice(12, 24)} onClick={this.handelClick} />}
+                {boardNo === 2 && <OnboardQ2 styles={styles} submitStyle={this.submitStyle} />}
+                {boardNo === 3 && <OnboardQ3  {...this.props} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
             </>
         );
     }

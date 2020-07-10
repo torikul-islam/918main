@@ -14,7 +14,6 @@ import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
 import roomsTestData from '../../src/testData/rooms.json';
 import Onboard from './onboard/onboard';
-import { getAllRooms } from '../services/roomServices';
 import './home.css';
 
 
@@ -24,7 +23,7 @@ class Home extends Component {
         this.state = {
             modal: {
                 isOpen: true,
-                name: 'onboard'
+                name: 'loginNext'
             }
         }
     }
