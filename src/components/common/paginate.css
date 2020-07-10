@@ -6,11 +6,14 @@
 .arrow-slide {
   position: absolute;
   /* top: 35%; */
+  cursor: pointer;
 }
 .arrow-left.arrow-slide {
   left: -40px !important;
 }
-
+.arrow-slide.disabled {
+  cursor: not-allowed;
+}
 .slide-main {
   position: relative;
   /* margin-top: 25px; */

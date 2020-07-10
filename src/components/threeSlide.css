@@ -27,9 +27,6 @@
   position: absolute;
   top: 35%;
 }
-.arrow-left.arrow-slide {
-  left: -40px;
-}
 .slider {
   position: relative;
   margin-top: 25px;
