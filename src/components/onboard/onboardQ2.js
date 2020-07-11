@@ -28,7 +28,7 @@ class OnboardQ2 extends Component {
                         </div>
 
                         <form onSubmit={submitStyle}>
-                            <div className='row my-4'>
+                            <div className='row my-4 width_fixed'>
                                 <div className='row'>
                                     {styles && styles.map((item, i) =>
                                         <div className='col-sm-3' key={i}>

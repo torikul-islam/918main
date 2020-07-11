@@ -24,7 +24,7 @@ class OnboardQ3 extends Component {
                             <p>(Choose as many as you'd like.)</p>
                         </div>
 
-                        <div className='row my-4'>
+                        <div className='row my-4 width_fixed'>
                             <div className='row'>
                                 {filterRoom && filterRoom.map((item, i) =>
                                     <div className='col-sm-3' key={i}>
