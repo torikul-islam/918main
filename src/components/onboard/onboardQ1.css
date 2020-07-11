@@ -40,3 +40,12 @@
 .ck-error {
   color: red;
 }
+.onboard-q1-main form {
+  overflow-y: scroll;
+  max-height: 400px;
+  /* overflow-x: hidden; */
+}
+.width_fixed{
+  width: 90%;
+  margin: auto !important;
+}
