@@ -1,55 +1,37 @@
-import React, { Component } from 'react';
-import inspiredSlide from '../Asset/Images/inspired_slide_item.png'
+import React from 'react';
 import './homePostTwo.css';
 
 
-class HomePostTwo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        return (
-            <div className='homecreate twoSlide'>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-6">
+
+
+const HomePostTwo = ({ data }) => {
+    return (
+        <div className='homecreate twoSlide'>
+            <div className="container">
+                <div className="row">
+                    {data.map((item, i) =>
+                        <div className="col-sm-6" key={i} >
                             <div className="row">
                                 <div className="col-sm-6">
                                     <div className="craete-img">
-                                        <img src={inspiredSlide} alt="inspiredSlide" />
+                                        <img src={item.ref_img} alt="" />
                                     </div>
                                 </div>
                                 <div className="col-sm-6">
                                     <div className="craete-text">
-                                        <h5>Studio McGee</h5>
-                                        <h2>The beautiful homes<br />and how to create <br />them.</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do se ultrices gravida</p>
+                                        <h5>{item.source}</h5>
+                                        <h2>{item.title}</h2>
+                                        <p>{item.content}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-sm-6">
-                            <div className="row">
-                                <div className="col-sm-6">
-                                    <div className="craete-img">
-                                        <img src={inspiredSlide} alt="inspiredSlide" />
-                                    </div>
-                                </div>
-                                <div className="col-sm-6">
-                                    <div className="craete-text">
-                                        <h5>Studio McGee</h5>
-                                        <h2>The beautiful homes<br />and how to create <br />them.</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do se ultrices gravida</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    )}
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default HomePostTwo;
+

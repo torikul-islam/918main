@@ -13,7 +13,6 @@ class Navbar2 extends Component {
     render() {
         return (
             <div className='nav-secondary container-fluid'>
-
                 <div className='container'>
                     <nav className="navbar navbar-expand-lg ">
                         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -40,10 +39,7 @@ class Navbar2 extends Component {
                         </div>
                     </nav>
                 </div>
-
             </div>
-
-
         );
     }
 }
