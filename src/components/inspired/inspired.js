@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import HeaderShop from './headerShop';
+import HeaderShop from './headerInspired';
 import ShopSlide from '../inspired/shopSlide';
 import ShopInspired from '../inspired/shopInspired';
 import TabShop from '../inspired/tabShop';
-import ShopThreeSlide from '../inspired/shopThreeSlide'
 import '../inspired/inspired.css';
+
+
 
 class Inspired extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class Inspired extends Component {
                     <ShopSlide />
                     <ShopInspired />
                     <ShopSlide />
-                    <ShopThreeSlide />
+                    {/* <ShopThreeSlide /> */}
                     <ShopSlide />
                     <ShopSlide />
                 </>

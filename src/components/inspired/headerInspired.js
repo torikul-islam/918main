@@ -6,7 +6,7 @@ import './headerShop.css';
 
 
 
-class HeaderShop extends Component {
+class HeaderInspired extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -55,7 +55,7 @@ class HeaderShop extends Component {
                     <div className="container">
                         <div className='home-text'>
                             <h2>Shop designer curated products!</h2>
-                            <p>We know that decision paralysis is real,<br/> so we’ve made it easier by selecting the <br/>
+                            <p>We know that decision paralysis is real,<br /> so we’ve made it easier by selecting the <br />
                              best of the best!  </p>
                         </div>
                     </div>
@@ -65,4 +65,4 @@ class HeaderShop extends Component {
     }
 }
 
-export default HeaderShop;
+export default HeaderInspired;

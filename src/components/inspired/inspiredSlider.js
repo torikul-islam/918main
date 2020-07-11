@@ -52,9 +52,7 @@ class InspiredSlider extends Component {
 
                     <div className='slider-main'>
                         {inspired && <div className='row'>
-
                             <Slider4 data={inspiredPaginate} />
-
                             <Pagination
                                 itemsCount={inspired.length}
                                 currentPage={currentPage}

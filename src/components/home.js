@@ -23,7 +23,7 @@ class Home extends Component {
         this.state = {
             modal: {
                 isOpen: true,
-                name: 'loginNext'
+                name: null
             }
         }
     }
