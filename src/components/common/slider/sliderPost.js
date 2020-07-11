@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GoBtn from '../goBtn';
 import './slider.css';
 
@@ -21,7 +22,9 @@ const SliderPost = ({ data }) => {
                 </div>
             </div>
             <div className="slider_button">
-                <GoBtn text='Learn More' />
+                <Link to='/learn-more'>
+                    <GoBtn text='Learn More' />
+                </Link>
             </div>
         </section>
     );
