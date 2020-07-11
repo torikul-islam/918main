@@ -1,0 +1,40 @@
+.ins-area {
+  background: #f6f6f6;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.inspired {
+  padding: 75px 0;
+}
+
+.slider img {
+  width: 100%;
+  height: 269px;
+}
+.slide-desc {
+  text-align: center;
+  font-family: helvetica-light;
+  font-size: 18pt;
+  color: #4f4f4f;
+  margin-top: 15px;
+}
+.arrow-slide img {
+  width: 25px;
+  height: auto;
+}
+
+.arrow-slide {
+  position: absolute;
+  top: 35%;
+}
+.arrow-left.arrow-slide {
+  left: -40px;
+}
+.slider {
+  position: relative;
+  margin-top: 25px;
+}
+.inspired h2.ins-title {
+  color: #030303;
+  font-family: "Playfair Display";
+}

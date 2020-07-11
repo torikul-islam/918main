@@ -5,8 +5,13 @@
 }
 .image-post-slide h6 {
   margin-top: 15px;
-  font-size: 24pt;
+  font-size: 22pt;
   font-family: "PlayfairDisplay-Bold";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .image-post-slide p {
   font-family: "helvetica-light";
@@ -55,7 +60,6 @@
   font-size: 18pt;
   line-height: normal;
 }
-
 
 /* end slider 3 css  */
 

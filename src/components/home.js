@@ -23,7 +23,7 @@ class Home extends Component {
         this.state = {
             modal: {
                 isOpen: true,
-                name: 'loginNext'
+                name: null
             }
         }
     }
@@ -63,7 +63,6 @@ class Home extends Component {
     };
 
 
-
     render() {
         const { isOpen, name } = this.state.modal;
         const { postDate, rooms } = this.state;
@@ -72,15 +71,16 @@ class Home extends Component {
             <>
                 <HeaderHome data={postDate && postDate.results.slice(0, 1)} openModal={this.openModal} />
 
+                <SliderPost data={postDate && postDate.results.slice(1, 5)} />
 
                 <InspiredSlider />
 
-                <SliderPost data={postDate && postDate.results.slice(1, 5)} />
+                <SliderPost data={postDate && postDate.results.slice(5, 9)} />
 
                 <ShopSlide />
 
 
-                <SliderPost data={postDate && postDate.results.slice(5, 9)} />
+                <SliderPost data={postDate && postDate.results.slice(9, 13)} />
 
                 {/* <SliderPost data={postDate && postDate.results.slice(9, 13)} /> */}
 
