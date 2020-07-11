@@ -11,6 +11,7 @@
   position: absolute;
   top: 10px;
   left: 20px;
+  cursor: pointer;
 }
 .cb-back {
   position: relative;
@@ -31,7 +32,7 @@
   padding-bottom: 40px;
 }
 .cb-input-area {
-  max-width: 240px;
+  max-width: 300px;
   margin: auto;
 }
 .cb-input {
@@ -39,6 +40,7 @@
 }
 .form-cb-board .have-account {
   text-align: center;
+  margin-top: 30px !important;
 }
 .form-cb-board .have-account h4 {
   letter-spacing: 1px;
@@ -51,6 +53,7 @@
   color: #030303;
   font-family: "Helvetica-Bold";
   font-size: 20px;
+  cursor: pointer;
 }
 .form-cb-board .have-account h4 {
   font-weight: 300;
