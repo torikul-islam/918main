@@ -24,7 +24,7 @@ class OnboardQ1 extends Component {
         return (
             <div className='container'>
                 <div className='onboard-q1'>
-                    <div className="text-center" style={{ marginBottom: 100 }}>
+                    <div className="text-center onborad-margin" style={{ marginBottom: 100 }}>
                         <img src={require('../../Asset/Images/Logo.png')} className="img-fluid" alt="Responsive image" style={{ width: 160 }} />
                     </div>
 

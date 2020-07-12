@@ -2,10 +2,10 @@
     .modal.show{
         overflow-y: scroll;
     }
-    .auth-signup {
+    .auth-signup , .onboard-q1{
          max-height: 100% !important;
     }
-    .signup-form {
+    .signup-form, .onboard-q1 {
         padding: 10px 20px !important;
     }
     .have-account {
@@ -13,5 +13,29 @@
     }
     button.btn.btn-signup {
         width: 100%;
+    }
+    .q1-checkbox-area{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .like-to-work p {
+        padding: 0 !important;
+    }
+    .onboard-q2 {
+        padding: 25px 0 !important;
+    }
+    .login-next .mf-left {
+        padding: 55px 20px !important;
+    }
+    .mf-left h2 {
+        font-size: 30px !important;
+        text-align: center !important;
+    }
+    .mf-left p {
+        font-size: 24px !important;
+        letter-spacing: initial;
+    }
+    .onboard-item img {
+        height: 166px !important;
     }
 }

@@ -240,4 +240,24 @@ div#menu {
 .image-bg img {
   height: 350px;
 }
+.mf-left h2 {
+  font-size: 26px;
+}
+.mf-right {
+  padding-top: 0;
+}
+.login-next .cross-icon img {
+  top: 20px !important;
+  right: 20px !important;
+}
+.form-board, .form-cb-board {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+.mf-right .skip {
+  padding-top: 10px;
+}
+.skip h6, .continue h6{
+  max-width: 100%;
+}
 }

@@ -21,9 +21,13 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            // modal: {
+            //     isOpen: true,
+            //     name: null
+            // }
             modal: {
                 isOpen: true,
-                name: null
+                name: 'loginNext'
             }
         }
     }
