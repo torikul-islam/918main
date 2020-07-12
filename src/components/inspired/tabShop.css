@@ -36,3 +36,27 @@ span.bar {
     display: block;
     margin-bottom: 25px;
 }
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .list-furniture ul{
+        display: flex;
+        overflow: scroll;
+    }
+    .craete-text{
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .homecreate.twoSlide .craete-img img {
+        width: 100%;
+        height: 250px !important;
+        object-fit: initial;
+    }
+    .craete-text h5 {
+        margin-top: 20px;
+    }
+    .image-post-slide span {
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    
+}
