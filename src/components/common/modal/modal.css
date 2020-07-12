@@ -1,0 +1,14 @@
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .modal.show{
+        overflow-y: scroll;
+    }
+    .auth-signup {
+         max-height: 100% !important;
+    }
+    .signup-form {
+        padding: 10px 20px;
+    }
+    .have-account {
+        margin-top: 20px;
+    }
+}
