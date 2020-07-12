@@ -19,6 +19,7 @@ class ShopSlide extends Component {
     }
 
     componentDidMount() {
+        window.addEventListener("resize", this.handleResize);
         this.setState({ shop: shopTestData })
     }
 
@@ -30,6 +31,16 @@ class ShopSlide extends Component {
         }
     }
 
+    handleResize = () => {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            this.setState({ pageSize: 1 });
+        } else if (width <= '1024' && width >= '768') {
+            this.setState({ pageSize: 2 });
+        } else {
+            this.setState({ pageSize: 4 });
+        }
+    }
     render() {
         const { shop, currentPage, pageSize } = this.state;
         const paginateShop = shop && paginate(shop.results, currentPage, pageSize);

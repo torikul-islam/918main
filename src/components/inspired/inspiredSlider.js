@@ -18,7 +18,18 @@ class InspiredSlider extends Component {
     }
 
     componentDidMount() {
+        window.addEventListener("resize", this.handleResize);
         this.setState({ inspired: inspiredTestDate.results })
+    }
+    handleResize = () => {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            this.setState({ pageSize: 1 });
+        } else if (width <= '1024' && width >= '768') {
+            this.setState({ pageSize: 2 });
+        } else {
+            this.setState({ pageSize: 4 });
+        }
     }
 
     onPageChange = (page) => {
