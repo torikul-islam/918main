@@ -201,4 +201,36 @@ div#menu {
   .home-area {
     height: 40vh;
 }
+div#menu {
+  display: none;
+}
+.home-text h2 {
+  font-size: 26pt;
+  margin-top: 0;
+  padding-top: 40px;
+}
+.home-text p {
+  font-size: 15pt;
+  padding-top: 0;
+  line-height: normal;
+}
+.readytocreate {
+  float: none;
+}
+.moodboard {
+  text-align: center;
+}
+.slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
+  left: 22% !important;
+}
+.inspired-slider ul, .shop-slider ul {
+  overflow: scroll;
+  display: flex;
+}
+.arrow-right.arrow-slide{
+  right: 0;
+}
+.arrow-left.arrow-slide {
+  left: 0px !important;
+}
 }

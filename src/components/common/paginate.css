@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 .arrow-left.arrow-slide {
-  left: -40px !important;
+  left: -40px;
 }
 .arrow-slide.disabled {
   cursor: not-allowed;
