@@ -6,9 +6,12 @@
          max-height: 100% !important;
     }
     .signup-form {
-        padding: 10px 20px;
+        padding: 10px 20px !important;
     }
     .have-account {
-        margin-top: 20px;
+        margin-top: 20px !important;
+    }
+    button.btn.btn-signup {
+        width: 100%;
     }
 }
