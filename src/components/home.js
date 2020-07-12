@@ -26,8 +26,8 @@ class Home extends Component {
             //     name: null
             // }
             modal: {
-                isOpen: true,
-                name: 'loginNext'
+                isOpen: false,
+                name: null
             }
         }
     }

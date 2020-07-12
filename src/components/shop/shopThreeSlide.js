@@ -13,14 +13,14 @@ class ShopThreeSlide extends Component {
         return (
             <div className='container-fluid ins-area'>
                 <div className='container inspired' >
-                <TitleWithBer />
+                    <TitleWithBer text='Looks' />
 
                     <div className='tab-index'>
                         <div className='slider'>
                             <div className='row'>
                                 <div className='col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1'>
                                     <img src={inspiredSlide} alt="" />
-                                     <div className='slide-desc'> Mountain Chic </div>
+                                    <div className='slide-desc'> Mountain Chic </div>
                                 </div>
                                 <div className='col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1'>
                                     <img src={inspiredSlide} alt="" />

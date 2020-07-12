@@ -1,57 +1,28 @@
 import React, { Component } from 'react';
-import inspiredSlide from '../../Asset/Images/inspired_slide_item.png'
-import './shopInspired.css';
 import TitleWithBer from '../shop/titleWithBer'
+import Pagination from '../common/pagination';
+import paginate from '../../utils/paginate';
+import TrendingSlider from '../common/slider/trendingSlider';
+import './shopInspired.css';
 
-class ShopInspired extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        return (
-            <div className='container-fluid ins-area'>
-                <div className='container inspired' >
-                    <TitleWithBer />
-                    <div className='tab-index'>
-                        <div className='slider'>
-                            <div className='row'>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1'>
-                                    <img src={inspiredSlide} alt="" />
-                                    <h6>Retailer</h6>
-                                    <p>$523</p>
-                                </div>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1' >
-                                    <img src={inspiredSlide} alt="" />
-                                    <h6>Retailer</h6>
-                                    <p>$523</p>
-                                </div>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1'>
-                                    <img src={inspiredSlide} alt="" />
-                                    <h6>Retailer</h6>
-                                    <p>$523</p>
-                                </div>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1'>
-                                    <img src={inspiredSlide} alt="" />
-                                    <h6>Retailer</h6>
-                                    <p>$523</p>
-                                </div>
-                                <div className="arrows">
-                                    <div className="arrow-left arrow-slide">
-                                        <img src={require('../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
-                                    </div>
-                                    <div className="arrow-right arrow-slide">
-                                        <img src={require('../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+const ShopInspired = ({ data, pageSize, currentPage, onPageChange }) => {
+    const paginateDate = paginate(data, currentPage, pageSize);
+    return (
+        <div className='container-fluid ins-area'>
+            <div className='container inspired' >
+                <TitleWithBer text='Trending' />
+                <div className='tab-index slider'>
+                    <div className="row">
+                        <TrendingSlider data={paginateDate} />
+                        <Pagination itemsCount={data.length} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
                     </div>
-
                 </div>
+
+
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default ShopInspired;

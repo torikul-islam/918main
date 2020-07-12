@@ -5,6 +5,7 @@ import inspiredTestDate from '../../testData/inspired.json';
 import Slider4 from '../common/slider/slider4';
 import paginate from '../../utils/paginate';
 import GoBtn from '../common/goBtn';
+import { Link } from 'react-router-dom';
 
 
 
@@ -70,12 +71,12 @@ class InspiredSlider extends Component {
                             />
                         </div>}
                     </div>
-
-
                 </div>
 
                 <div className="inspired-more">
-                    <GoBtn text="See More" />
+                    <Link to='/inspired-more'>
+                        <GoBtn text="See More" />
+                    </Link>
                 </div>
             </div>
         );
