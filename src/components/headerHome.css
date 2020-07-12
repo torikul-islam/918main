@@ -85,6 +85,9 @@
   margin-top: 10px;
   font-size: 24px;
 }
+.moodboard button:focus {
+  outline: none;
+}
 .own-design {
   padding: 40px 0 30px;
 }
