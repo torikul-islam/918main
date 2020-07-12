@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Navbar from '../navbar';
+import Navbar2 from '../navbar2';
 import "../about_us/aboutStory.css"
 
 class AboutStory extends Component {
     render() {
         return (
             <div>
-                <Navbar {...this.props} />
+                <Navbar2 />
                 <div className="list-furniture">
                     <div className="container">
                         <div className="row">

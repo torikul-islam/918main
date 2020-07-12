@@ -18,7 +18,7 @@ class Navbar2 extends Component {
                         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                             <ul className="navbar-nav">
                                 <li className='nav-item logo'>
-                                    <img src={require('../Asset/Images/Logo.png')} alt="" />
+                                <Link className="navbar-brand" to="/"> <img src={require('../Asset/Images/Logo.png')} alt="" /></Link>
                                 </li>
                                 <li className="nav-item font-hel">
                                     <NavLink className="nav-link" to="/workspace" exact>workspace</NavLink>
