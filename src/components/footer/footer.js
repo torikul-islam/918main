@@ -9,7 +9,7 @@ class footer extends Component {
     render() {
         return (
 
-            <div className='container-fluid' id='footer'>
+            <div id='footer'>
                 <div className='container'>
                     <div className='row footer-main'>
                         <div className='col-sm-4 footer-left'>
@@ -22,13 +22,13 @@ class footer extends Component {
                             </ul>
                         </div>
 
-                        <div className='col-sm-4'>
+                        <div className='col-sm-4 footer-middle'>
                             <ul className="contact-menu">
                                 <li>Contact</li>
                                 <li>About Us</li>
                             </ul>
                         </div>
-                        <div className='col-sm-4'>
+                        <div className='col-sm-4 footer-right'>
                             <ul className="subscribe">
                                 <li><img src={require('../../Asset/Images/mail.png')} alt="mail.png" /></li>
                                 <li className="sublist">Subscribe</li>

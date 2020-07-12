@@ -233,4 +233,7 @@ div#menu {
 .arrow-left.arrow-slide {
   left: 0px !important;
 }
+.image-bg img {
+  height: 350px;
+}
 }

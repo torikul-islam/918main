@@ -1,4 +1,4 @@
-#footer {
+ #footer {
   background: #c7c5bf;
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -9,7 +9,6 @@
 
 #footer ul {
   list-style: none;
-  float: left;
   margin: 0;
   padding: 0;
 }
@@ -20,21 +19,19 @@
 }
 
 .footer-link {
-  padding-left: 0;
-  text-align: right;
   font-family: "helvetica-light";
-  font-weight: light;
   font-size: 16px;
 }
-.f-contact,
+/* .f-contact,
 .about-us {
   font-family: "PlayfairDisplay-Bold";
   font-weight: bold;
   font-size: 24px;
 }
-.f-contact {
+ul.contact-menu li {
   text-align: right;
-}
+} */
+
 ul.contact-menu li {
   display: inline-block;
   margin-right: 35px;
@@ -43,11 +40,11 @@ ul.contact-menu li {
   font-family: "Playfair Display";
 }
 ul.subscribe {
-  float: right !important;
+  float: right;
 }
 ul.contact-menu {
   text-align: center;
-  float: none !important;
+  float: none;
 }
 ul.subscribe li {
   display: inline-block;
@@ -63,4 +60,27 @@ ul.subscribe li img {
 ul.subscribe li.subslist {
   margin-top: 2px;
   float: right;
+} 
+
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+  .footer-left {
+    width: 29.33% !important;
+    float: left;
+  }
+  
+  .footer-middle {
+    width: 28.33% !important;
+    float: left;
+  }
+  ul.contact-menu li {
+    margin-right: 0;
+  }
+  .footer-right {
+    width: 42.3% !important;
+    float: left;
+  }
+  .footer-main {
+    padding-top: 50px;
+}
 }
