@@ -36,7 +36,7 @@ class ShopSlide extends Component {
         if (width <= '767') {
             this.setState({ pageSize: 1 });
         } else if (width <= '1024' && width >= '768') {
-            this.setState({ pageSize: 2 });
+            this.setState({ pageSize: 3 });
         } else {
             this.setState({ pageSize: 4 });
         }
