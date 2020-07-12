@@ -43,3 +43,6 @@
   color: #4f4f4f;
   margin-top: 15px;
 }
+.ins-area.margin-zero{
+  margin-top: 0 !important;
+}

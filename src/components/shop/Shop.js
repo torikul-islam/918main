@@ -3,7 +3,8 @@ import HeaderShop from './headerShop';
 import ShopSlide from '../shop/shopSlide';
 import ShopInspired from '../shop/shopInspired';
 import TabShop from '../shop/tabShop';
-import ShopThreeSlide from '../shop/shopThreeSlide'
+import ShopThreeSlide from '../shop/shopThreeSlide';
+import ShopTab from '../shop/shoptab';
 import '../shop/Shop.css';
 
 class Shop extends Component {
@@ -14,9 +15,10 @@ class Shop extends Component {
     render() {
         return (
             <div>
-                <>
+                <> 
                     <HeaderShop />
                     <TabShop />
+                    <ShopTab/>
                     <ShopSlide />
                     <ShopInspired />
                     <ShopSlide />
