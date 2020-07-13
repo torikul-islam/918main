@@ -1,4 +1,3 @@
-
 .image-post-slide {
   text-align: center;
 }
@@ -9,20 +8,15 @@
   font-family: "helvetica-light";
 }
 .shop-slider.bg_shop {
-  background: #fff;
+  background: #ebeae8;
 }
-
 
 /* shop slider start  */
 
-
-
-
 .shop-slider {
   padding: 40px 0;
-  background-color: #eceae9;
+  background-color: #ebeae8;
 }
-
 
 .slider-main {
   position: relative;

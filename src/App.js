@@ -45,7 +45,7 @@ class App extends Component {
             <Route path="/explore" component={Explore} exact />
             <Route path="/AboutUS" component={AboutUS} exact />
             <Route path="/ContactUs" component={ContactUs} exact />
-            <Route path="/Shop" component={Shop} exact />
+            <Route path="/shop-more" component={Shop} exact />
             <Route path="/signup" component={Signup} exact />
             <Route path="/login-next" component={LoginNext} exact />
             <Route path="/board-name" component={BoardName} exact />
