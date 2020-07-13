@@ -9,8 +9,12 @@
     font-size: 20pt;
     text-align: center;
     font-family: "PlayfairDisplay-Bold";
-    margin: 35px 0 30px;
+    margin-bottom: 30px;
 }
-.bg-color{
+.titles-section{
     background-color: #eae9e9;
+    height: 100%;
+}
+.account-title {
+    padding: 35px 0;
 }

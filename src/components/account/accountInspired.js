@@ -17,22 +17,22 @@ class ShopInspired extends Component {
                     <div className='tab-index'>
                         <div className='slider'>
                             <div className='row'>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1'>
+                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <h6>Retailer</h6>
                                     <p>$523</p>
                                 </div>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1' >
+                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' >
                                     <img src={inspiredSlide} alt="" />
                                     <h6>Retailer</h6>
                                     <p>$523</p>
                                 </div>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1'>
+                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <h6>Retailer</h6>
                                     <p>$523</p>
                                 </div>
-                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-2 col-1'>
+                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <h6>Retailer</h6>
                                     <p>$523</p>
