@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./aboutInspiredItems";
+import "./aboutInspiredItems.css";
 import LearnMore from '../common/learnButton';
 
 class AboutInspiredItems extends Component {
@@ -9,61 +9,65 @@ class AboutInspiredItems extends Component {
                 <div className="aboutinspireditems">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-12 text-center">
+                            <div className="col-sm-12 text-center pt-5 pb-5">
                                 <h2>Decorating your home?</h2>
-                                <p>Here’s how we can help!</p>
+                                <span>Here’s how we can help!</span>
                             </div>
                         </div>
                         <div className="about-icons">
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <div className="iconLogo">
+                                    <div className="icons-header-lights">
                                         <img src={require('../../Asset/Images/light-bulb.png')} alt="inspired.png" />
+                                        <h5>Be inspired.</h5>
                                     </div>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut labore et dolore magna aliqua. </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <div className="iconLogo">
+                                    <div className="icons-header-lights">
                                         <img src={require('../../Asset/Images/learn.png')} alt="learn.png" />
+                                        <h5>Learn.</h5>
                                     </div>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut labore et dolore magna aliqua. </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <div className="iconLogo">
+                                    <div className="icons-header-lights">
                                         <img src={require('../../Asset/Images/shop.png')} alt="shop.png" />
+                                        <h5>Shop.</h5>
                                     </div>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut labore et dolore magna aliqua. </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <div className="iconLogo">
+                                    <div className="icons-header-lights">
                                         <img src={require('../../Asset/Images/design.png')} alt="design.png" />
+                                        <h5>Design.</h5>
                                     </div>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut labore et dolore magna aliqua. </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="ready for text-center">
+                            <div className="ready_for text-center pt-5 pb-5">
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <h4>Ready to get started?</h4>

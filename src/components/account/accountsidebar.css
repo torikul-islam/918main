@@ -1,0 +1,16 @@
+.emaillabel, .email, .account-title h5 {
+    color: #4f4f4f;
+    font-size: 20px;
+    font-family: "helvetica-light";
+    text-align: center;
+}
+.account-title h4 {
+    color: #030303;
+    font-size: 20pt;
+    text-align: center;
+    font-family: "PlayfairDisplay-Bold";
+    margin: 35px 0 30px;
+}
+.bg-color{
+    background-color: #eae9e9;
+}
