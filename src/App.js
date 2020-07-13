@@ -23,6 +23,7 @@ import InspirationDetails from './components/InspirationDetails/inspirationDetai
 import Blog from './components/blog/blog';
 import Looks from './components/looks/looks'
 import InspiredDetails from './components/inspired/inspiredDetails';
+import Adminhome from './components/admin/adminhome';
 
 
 
@@ -59,6 +60,7 @@ class App extends Component {
             <Route path="/blog" component={Blog} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
             <Route path="/looks" component={Looks} exact />
+            <Route path='/admin' component={Adminhome}/>
           </Switch>
         </main>
         <Footer />

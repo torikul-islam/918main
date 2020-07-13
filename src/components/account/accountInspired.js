@@ -11,7 +11,7 @@ class ShopInspired extends Component {
     }
     render() {
         return (
-            <div className='container-fluid'>
+            <div className='container-fluid bg-inspration'>
                  <TitleAccount />
                 <div className='container' >
                     <div className='tab-index'>
@@ -48,7 +48,7 @@ class ShopInspired extends Component {
                             </div>
                         </div>
                     </div>
-                    <hr />
+                    {/* <hr /> */}
                 </div>
             </div>
         );
