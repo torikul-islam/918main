@@ -21,10 +21,10 @@ class Navbar2 extends Component {
                                 <Link className="navbar-brand" to="/"> <img src={require('../Asset/Images/Logo.png')} alt="" /></Link>
                                 </li>
                                 <li className="nav-item font-hel">
-                                    <NavLink className="nav-link" to="/workspace" exact>workspace</NavLink>
+                                    <NavLink className="nav-link" to="/workspace" exact>Workspace</NavLink>
                                 </li>
                                 <li className="nav-item font-hel">
-                                    <NavLink className="nav-link" to="/explore" exact>explore</NavLink>
+                                    <NavLink className="nav-link" to="/explore" exact>Explore</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <div className="nav-link" >
