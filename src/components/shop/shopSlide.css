@@ -8,47 +8,22 @@
   font-size: 20pt;
   font-family: "helvetica-light";
 }
-.image-post-slide span {
-  font-family: "helvetica-light";
-  color: #4f4f4f;
-  font-size: 18pt;
-  line-height: normal;
+.shop-slider.bg_shop {
+  background: #fff;
 }
 
 
 /* shop slider start  */
-.shop-slider ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0 40px;
-  position: relative;
-}
 
-.shop-slider h4 {
-  position: relative;
-  font-size: 36px;
-  color: #030303;
-  font-family: "PlayfairDisplay-Bold";
-}
+
+
 
 .shop-slider {
   padding: 40px 0;
   background-color: #eceae9;
 }
-.shop-slider ul:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background: #d7d5d5;
-  top: 36px;
-}
-.shop-slider ul li {
-  display: inline-block;
-  padding: 0 35px 0 0;
-  font-size: 18px;
-  font-family: "helvetica-light";
-}
+
+
 .slider-main {
   position: relative;
 }

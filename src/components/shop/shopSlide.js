@@ -4,8 +4,6 @@ import Pagination from '../common/pagination';
 import './shopSlide.css';
 import shopTestData from '../../testData/shop.json';
 import paginate from '../../utils/paginate';
-import GoBtn from '../common/goBtn';
-
 
 
 
@@ -43,21 +41,8 @@ class ShopSlide extends Component {
         const { shop, currentPage, pageSize } = this.state;
         const paginateShop = shop && paginate(shop.results, currentPage, pageSize);
         return (
-            <div className="shop-slider">
+            <div className="shop-slider bg_shop">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12">
-                            <h4>Shop</h4>
-                            <ul>
-                                <li>FURNITURE</li>
-                                <li>DECOR</li>
-                                <li>RUGS</li>
-                                <li>BED &amp; BATH</li>
-                                <li>LIGHTING</li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <div className='slider-main'>
                         {shop && <div className='row'>
                             <Slider4 data={paginateShop} />
@@ -72,9 +57,7 @@ class ShopSlide extends Component {
 
                 </div>
 
-                <div className="shop-more">
-                    <GoBtn text="Shop More" />
-                </div>
+
             </div>
         );
     }

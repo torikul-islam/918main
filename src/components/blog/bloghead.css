@@ -7,13 +7,13 @@
     height: 400px;
 }
 .title-with-logo span.favIcon img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 .title-with-logo span.favIcon {
     position: absolute;
-    right: 30px;
-    top: 10px;
+    right: 35px;
+    top: 20px;
 }
 .title-with-logo img {
     width: 100%;
@@ -26,4 +26,33 @@
 }
 .product-price {
     text-align: center;
+}
+.text-blog-title h4 {
+    color: #030303;
+    font-size: 36pt;
+    text-align: center;
+    font-family: "PlayfairDisplay-Bold"; 
+}
+.title-with-logo p {
+    color: #030303;
+    font-size: 24px;
+    font-family: "helvetica-light";
+    text-align: center;
+}
+.heading-prodcut h4 {
+    font-size: 24px;
+    text-align: center;
+    font-family: "helvetica-light";
+}
+.product-price h4 {
+    color: #030303;
+    font-family: "PlayfairDisplay-Bold"; 
+    font-size: 24px;
+    margin: 10px 0;
+}
+.product-price h5 {
+    color: #030303;
+    font-family: "helvetica-light";
+    font-size: 20px;
+    margin-bottom: 35px;
 }

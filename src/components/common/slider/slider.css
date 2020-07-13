@@ -18,12 +18,12 @@
 .image-post-slide h6::first-letter{
   text-transform: capitalize;
 }
-.image-post-slide span {
+/* .image-post-slide span {
   font-family: "helvetica-light";
   color: #4f4f4f;
   font-size: 18pt;
   line-height: normal;
-}
+} */
 .post-slide-main {
   margin: 60px 0 45px;
 }
@@ -50,15 +50,10 @@
 .image-post-slide p {
   font-family: "helvetica-light";
   color: #030303;
-  font-size: 20pt;
+  font-size: 20px;
   line-height: normal;
 }
-.image-post-slide span {
-  font-family: "helvetica-light";
-  color: #4f4f4f;
-  font-size: 18pt;
-  line-height: normal;
-}
+
 
 /* end slider 3 css  */
 

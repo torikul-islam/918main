@@ -12,13 +12,20 @@
     margin-top:0px ;
 }
 .homecreate.twoSlide .craete-text h2 {
-    font-size: 24pt;
+    font-size: 24px;
 }
 .homecreate.twoSlide .craete-text p{
 
-    font-size: 20pt;
+    font-size: 20px;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .homecreate.twoSlide .craete-img img {
     width: 100%;
-    height: 370px !important;
+    height: 270px !important;
+    object-fit: contain;
 }

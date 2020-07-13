@@ -18,15 +18,15 @@ class ShopThreeSlide extends Component {
                     <div className='tab-index'>
                         <div className='slider'>
                             <div className='row'>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1'>
+                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <div className='slide-desc'> Mountain Chic </div>
                                 </div>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1'>
+                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <div className='slide-desc'> Mountain Chic </div>
                                 </div>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-3 col-1'>
+                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <div className='slide-desc'> Mountain Chic </div>
                                 </div>

@@ -10,7 +10,7 @@ class ShopInspired extends Component {
     }
     render() {
         return (
-            <div className='container-fluid ins-area'>
+            <div className='container-fluid ins-area margin-zero'>
                 <div className='container inspired' >
                     <TitleWithBer />
                     <div className='tab-index'>

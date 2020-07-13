@@ -1,38 +1,75 @@
 .learnbanner img {
     width: 100%;
-    height: auto;
+    height: 700px;
 }
 .read-more button {
     background: #030303;
     color: #fcfaf9;
     border-radius: 50px;
-    padding: 5px 25px !important;
+    padding: 8px 25px !important;
     font-family: "Helvetica-bold";
     border: none;
     margin-top: 10px;
-    font-size: 24pt;
+    font-size: 24px;
 }
 .learn-text{
     text-align: center;
+    margin-top: 60px;
 }
 .learn-text h3 {
-    font-size: 36pt;
+    font-size: 37px;
     color: #030303;
     font-family: PlayfairDisplay-Regular;
+    position: relative;
 }
+.learn-text h3:before {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: #d7d5d5;
+    top: 60px;
+}
+
 
 .learn-text h5 {
     font-family: helvetica-light;
     color: #4f4f4f;
-    font-size: 18pt;
+    font-size: 18px;
+    margin-top: 50px;
 }
 .learn-text h2 {
     font-family: PlayfairDisplay-Bold;
     color: #030303;
-    font-size: 36pt;
+    font-size: 44px;
+    text-transform: lowercase;
+}
+.learn-text h2::first-letter {
+    text-transform: capitalize;
 }
 .learn-text p {
     font-family: "helvetica-light";
     color: #030303;
-    font-size: 24pt;
+    font-size: 24px;
+    line-height: normal;
+    padding: 0 80px;
+}
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .learn-text h2 {
+        font-size: 26px;
+        margin: 16px 0;
+    }
+    .learn-text h3 {
+        font-size: 34px;
+    }
+    .learn-text p {
+        padding: 0
+    }
+    .read-more button {
+        margin-bottom: 25px;
+    }
+    .learnbanner img {
+        width: 100%;
+        height: 380px;
+    }
 }

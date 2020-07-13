@@ -6,4 +6,50 @@
 
 .text-about {
     text-align: center;
+    margin-top: 30%;
+}
+.text-about h2 {
+    text-align: center;
+    font-family: "PlayfairDisplay-Bold";
+    font-size: 36pt;
+    margin-bottom: 30px;
+}
+.text-about p {
+    font-family: "helvetica-light";
+    font-size: 24px;
+    line-height: normal;
+}
+.about-section{
+    margin-top: 50px;
+}
+.list-furniture.about-us h4:before {
+    width: 13%;
+    margin-left: 20px;
+}
+.about-img-section {
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .list-furniture.about-us h4:before {
+        width: 45%;
+    }
+    .text-about {
+        margin-top: 0;
+    }
+    .img-about img {
+        height: 245px;
+    }
+    .about-img-section .text-about {
+        margin-top: 30px;
+    }
+    .iconLogo p {
+        text-align: justify;
+    }
+    .aboutinspireditems h2, .ready_for h4, .text-about h2 {
+        font-size: 28pt;
+    }
+    .icons-header-lights h5 {
+        font-size: 26px;
+    }
 }
