@@ -15,10 +15,10 @@ class footer extends Component {
                         <div className='col-sm-4 footer-left'>
                             <h3>Quick Links</h3>
                             <ul className='footer-link'>
-                                <li className='footer-item'><Link to='/workspace' style={{ textDecoration: 'none', color:"#000" }}>Moodboard Creator</Link></li>
-                                <li className='footer-item'><Link to='/shop-more' style={{ textDecoration: 'none', color:"#000" }}>Shop</Link></li>
-                                <li className='footer-item'><Link to='/Learn-more' style={{ textDecoration: 'none', color:"#000" }}>Learn</Link></li>
-                                <li className='footer-item'><Link to='/inspired-more' style={{ textDecoration: 'none', color:"#000" }}>Be Inspired</Link></li>
+                                <li className='footer-item'><Link to='/workspace' style={{ textDecoration: 'none', color:"#4f4f4f" }}>Moodboard Creator</Link></li>
+                                <li className='footer-item'><Link to='/shop-more' style={{ textDecoration: 'none', color:"#4f4f4f" }}>Shop</Link></li>
+                                <li className='footer-item'><Link to='/Learn-more' style={{ textDecoration: 'none', color:"#4f4f4f" }}>Learn</Link></li>
+                                <li className='footer-item'><Link to='/inspired-more' style={{ textDecoration: 'none', color:"#4f4f4f" }}>Be Inspired</Link></li>
                             </ul>
                         </div>
 

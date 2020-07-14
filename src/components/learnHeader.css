@@ -33,13 +33,13 @@
 
 
 .learn-text h5 {
-    font-family: helvetica-light;
+    font-family: "Helvetica-light";
     color: #4f4f4f;
     font-size: 18px;
     margin-top: 50px;
 }
 .learn-text h2 {
-    font-family: PlayfairDisplay-Bold;
+    font-family: "PlayfairDisplay-Bold";
     color: #030303;
     font-size: 44px;
     text-transform: lowercase;
@@ -48,7 +48,7 @@
     text-transform: capitalize;
 }
 .learn-text p {
-    font-family: "helvetica-light";
+    font-family: "Helvetica-light";
     color: #030303;
     font-size: 24px;
     line-height: normal;

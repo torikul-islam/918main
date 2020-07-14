@@ -36,13 +36,13 @@
 .title-with-logo p {
     color: #030303;
     font-size: 24px;
-    font-family: "helvetica-light";
+    font-family: "Helvetica-light";
     text-align: center;
 }
 .heading-prodcut h4 {
     font-size: 24px;
     text-align: center;
-    font-family: "helvetica-light";
+    font-family: "Helvetica-light";
 }
 .product-price h4 {
     color: #030303;
@@ -52,7 +52,7 @@
 }
 .product-price h5 {
     color: #030303;
-    font-family: "helvetica-light";
+    font-family: "Helvetica-light";
     font-size: 20px;
     margin-bottom: 35px;
 }
