@@ -19,7 +19,6 @@ import OnboardQ2 from './components/onboard/onboardQ2';
 import OnboardQ3 from './components/onboard/onboardQ3';
 import InspiredMore from './components/inspired/inspiredMore';
 import Account from './components/account/account';
-import InspirationDetails from './components/InspirationDetails/inspirationDetails';
 import Blog from './components/blog/blog';
 import Looks from './components/looks/looks'
 import InspiredDetails from './components/inspired/inspiredDetails';
@@ -55,12 +54,11 @@ class App extends Component {
             <Route path="/onboard-q2" component={OnboardQ2} exact />
             <Route path="/onboard-q3" component={OnboardQ3} exact />
             <Route path="/account" component={Account} exact />
-            <Route path="/inspirationDetails" component={InspirationDetails} exact />
             <Route path="/inspired-more" component={InspiredMore} exact />
             <Route path="/blog" component={Blog} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
             <Route path="/looks" component={Looks} exact />
-            <Route path='/admin' component={Adminhome}/>
+            <Route path='/admin' component={Adminhome} />
           </Switch>
         </main>
         <Footer />
