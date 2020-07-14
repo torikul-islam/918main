@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './workspace.css';
+import Navbar2 from './navbar2';
 
 
 
@@ -11,6 +12,7 @@ class Workspace extends Component {
     render() {
         return (
             <div>
+                <Navbar2/>
                 workspace page render here...
             </div>
         );

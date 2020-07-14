@@ -33,17 +33,18 @@ class HeaderHome extends Component {
                                 </div>
                                 <div className="menu-float">
                                     <li className="menu-item font-hel">
-                                        <NavLink className="nav-link" to="/workspace" exact >workspace</NavLink>
+                                        <NavLink className="nav-link" to="/workspace" exact >Workspace</NavLink>
                                     </li>
                                     <li className="menu-item font-hel">
-                                        <NavLink className="nav-link" to="/explore" exact >explore</NavLink>
+                                        <NavLink className="nav-link" to="/explore" exact >Explore</NavLink>
                                     </li>
                                     <li className="menu-item signup" onClick={() => openModal('signup')}>
                                         <div className="nav-link" >Sign Up</div>
                                     </li>
                                     <span className="menu-icon">
-                                        <li className="menu-item man">
-                                            <img src={require('../Asset/Images/man.png')} alt="man.png" />
+                                        <li className="menu-item man"> <NavLink to="/account">
+                                        <img src={require('../Asset/Images/man.png')} alt="man.png" />
+                                        </NavLink>   
                                         </li>
                                         <li className="menu-item shop">
                                             <img src={require('../Asset/Images/black_shoping.png')} alt="black_shoping.png" />

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Navbar from '../navbar';
+import Navbar2 from '../navbar2';
 
 class ContactUs extends Component {
     render() {
         return (
             <div>
-                <Navbar {...this.props}/>
+                <Navbar2 {...this.props}/>
                 <div>This is Contact Us</div>
             </div>
         );

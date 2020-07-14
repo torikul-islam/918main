@@ -31,10 +31,10 @@ class HeaderInspired extends Component {
                             </div>
                             <div className="menu-float">
                                 <li className="menu-item font-hel">
-                                    <NavLink className="nav-link" to="/workspace" exact >workspace</NavLink>
+                                    <NavLink className="nav-link" to="/workspace" exact >Workspace</NavLink>
                                 </li>
                                 <li className="menu-item font-hel">
-                                    <NavLink className="nav-link" to="/explore" exact >explore</NavLink>
+                                    <NavLink className="nav-link" to="/explore" exact >Explore</NavLink>
                                 </li>
                                 <li className="menu-item signup">
                                     <NavLink className="nav-link" to="/SignUp" exact >Sign Up</NavLink>
