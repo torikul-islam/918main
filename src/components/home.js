@@ -5,30 +5,30 @@ import Signup from './auth/signup';
 import LoginNext from './auth/loginNext';
 import BoardName from './onboard/boardName';
 import CreateBoard from './onboard/createBoard';
-import OnboardQ1 from './onboard/onboardQ1';
-import OnboardQ2 from './onboard/onboardQ2';
-import OnboardQ3 from './onboard/onboardQ3';
 import SliderPost from './common/slider/sliderPost';
 import axios from 'axios';
 import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
-import roomsTestData from '../../src/testData/rooms.json';
 import Onboard from './onboard/onboard';
 import './home.css';
+import roomsTestData from '../../src/testData/rooms.json';
+import shopTestData from '../../src/testData/shop.json';
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // modal: {
-            //     isOpen: true,
-            //     name: null
-            // }
+
             modal: {
                 isOpen: false,
                 name: null
-            }
+            },
+            postDate: [],
+            rooms: [],
+            shop: [],
+            currentPage: 0,
+            pageSize: 4
         }
     }
 
@@ -45,11 +45,11 @@ class Home extends Component {
     };
 
     componentDidMount() {
-        this.setState({ postDate: roomsTestData });
+        this.setState({ postDate: roomsTestData.results, shop: shopTestData.results });
     }
 
-    onPageChange = (type) => {
-        if (type === '-') {
+    onPageChange = (val) => {
+        if (val === '-') {
             this.setState({ currentPage: this.state.currentPage - 1 })
         } else {
             this.setState({ currentPage: this.state.currentPage + 1 })
@@ -66,28 +66,23 @@ class Home extends Component {
         this.setState({ inspired: data })
     };
 
-
     render() {
         const { isOpen, name } = this.state.modal;
-        const { postDate, rooms } = this.state;
-
+        const { postDate, rooms, shop, currentPage, pageSize } = this.state;
         return (
             <>
-                <HeaderHome data={postDate && postDate.results.slice(0, 1)} openModal={this.openModal} />
-
-                <SliderPost data={postDate && postDate.results.slice(1, 5)} />
-
+                <HeaderHome data={postDate.slice(0, 1)} openModal={this.openModal} />
+                <SliderPost data={postDate.slice(1, 5)} />
                 <InspiredSlider />
+                <SliderPost data={postDate.slice(5, 9)} />
+                <ShopSlide data={shop} currentPage={currentPage} pageSize={pageSize} onPageChange={this.onPageChange} />
+                <SliderPost data={postDate && postDate.slice(9, 13)} />
 
-                <SliderPost data={postDate && postDate.results.slice(5, 9)} />
-
-                <ShopSlide />
 
 
-                <SliderPost data={postDate && postDate.results.slice(9, 13)} />
+                {/* blow are extra....*/}
 
                 {/* <SliderPost data={postDate && postDate.results.slice(9, 13)} /> */}
-
 
                 {/* <PostSlide />
                 <LearnButton />
