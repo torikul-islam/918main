@@ -1,3 +1,7 @@
-.headingLook h4 {
-    text-align: center;
+.look-head {
+  margin-bottom: 90px;
+}
+
+.heading-look h4 {
+  text-align: center;
 }

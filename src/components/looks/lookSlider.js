@@ -5,9 +5,10 @@ import paginate from '../../utils/paginate';
 
 
 
-function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
+function LookSlider({ data, currentPage, pageSize, onPageChange }) {
 
-    const paginateResource = paginate(resource, currentPage, pageSize);
+    const paginateResource = paginate(data, currentPage, pageSize);
+
     return (
         <div className='container'>
             <div className='row'>
@@ -20,14 +21,13 @@ function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
                         <div className='slider'>
                             <div className='row'>
                                 {paginateResource && paginateResource.map((item, i) =>
-                                    <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
+                                    <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12' key={i}>
                                         <img src={item.ref_img} alt="" />
-                                        <h6>{item.title}</h6>
-                                        <p>{item.source}</p>
+                                        <p>{item.retailer}</p>
                                     </div>
                                 )}
                                 <Pagination
-                                    itemsCount={resource.length}
+                                    itemsCount={data.length}
                                     pageSize={pageSize}
                                     currentPage={currentPage}
                                     onPageChange={onPageChange}
@@ -41,4 +41,4 @@ function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
     );
 }
 
-export default BlogSlider;
+export default LookSlider;

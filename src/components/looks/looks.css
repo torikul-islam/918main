@@ -1,0 +1,8 @@
+.looks-post img {
+  height: 323px;
+  width: 101%;
+  object-fit: cover;
+}
+.looks-post {
+  margin-bottom: 150px;
+}
