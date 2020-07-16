@@ -3,7 +3,7 @@ import Navbar from '../navbar2';
 import AccountArticles from './accoutArticles';
 import AccountLooks from './accoutLooks';
 import AccountProduct from './accoutProduct';
-import AccountInspiration from './accoutInsspiration';
+import AccountInspiration from './accountInspiration';
 import getUser from '../../services/userService';
 import './account.css';
 

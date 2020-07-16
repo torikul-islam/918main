@@ -3,7 +3,7 @@
 function paginate(items, currentPage, pageSize) {
     const startIndex = currentPage * pageSize;
 
-    return items.slice(startIndex, startIndex + pageSize)
+    return items.slice(startIndex, startIndex + pageSize);
 };
 
 export default paginate;

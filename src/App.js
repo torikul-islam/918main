@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/home';
 import Workspace from './components/workspace';
-import Explore from './components/explore';
-import Navbar2 from './components/navbar2';
 import AboutUS from './components/about_us/AboutUs';
 import ContactUs from './components/contact_us/ContactUs';
 import Shop from './components/shop/Shop';
@@ -21,8 +19,8 @@ import InspiredMore from './components/inspired/inspiredMore';
 import Account from './components/account/account';
 import Blog from './components/blog/blog';
 import Looks from './components/looks/looks'
-import InspiredDetails from './components/inspired/inspiredDetails';
 import Adminhome from './components/admin/adminhome';
+import InspirationDetails from './components/InspirationDetails/inspirationDetails';
 
 
 
@@ -54,6 +52,7 @@ class App extends Component {
             <Route path="/onboard-q2" component={OnboardQ2} exact />
             <Route path="/onboard-q3" component={OnboardQ3} exact />
             <Route path="/account" component={Account} exact />
+            <Route path="/inspired-details" component={InspirationDetails} exact />
             <Route path="/inspired-more" component={InspiredMore} exact />
             <Route path="/blog" component={Blog} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}

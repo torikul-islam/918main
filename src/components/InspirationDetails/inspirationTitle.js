@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import inspiredSlide from '../../Asset/Images/inspired_slide_item.png';
 import SaveBtn from '../common/learnButton'
-import './inspirationtitle.css';
+import './inspirationTitle.css';
 
 
-class Inspirationtitle extends Component {
+class InspirationTitle extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -17,7 +17,9 @@ class Inspirationtitle extends Component {
                         <div className="col-sm-4">
                             <div className="image-fav">
                                 <img src={inspiredSlide} alt="" />
-                                <span className="icon"><img src={require('../../Asset/Images/fav.png')} alt="fav.png" /></span>
+                                <span className="icon">
+                                    <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                                </span>
                             </div>
                         </div>
                         <div className="col-sm-8">
@@ -42,4 +44,4 @@ class Inspirationtitle extends Component {
     }
 }
 
-export default Inspirationtitle;
+export default InspirationTitle;

@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import './inspirationDetails.css';
-import Inspirationtitle from './inspirationtitle';
-import AccountInspired from '../account/accountInspired';
+import React, { useState, useEffect } from 'react';
+import InspirationTitle from './inspirationTitle';
 import Navbar from '../navbar2'
+import InspirationDetailsProduct from './inspirationDetailsProduct';
+import InspirationAlsoLike from './inspirationAlsoLike';
+import './inspirationDetails.css';
 
 
-class InspirationDetails extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        return (
-            <>
-                <Navbar />
-                <Inspirationtitle />
-                <AccountInspired />
-                <AccountInspired />
-            </>
-        );
-    }
+
+function InspirationDetails() {
+
+
+    return (
+        <>
+            <Navbar />
+            <InspirationTitle />
+            <InspirationDetailsProduct />
+            <InspirationAlsoLike />
+        </>
+    );
 }
+
 
 export default InspirationDetails;
