@@ -8,7 +8,7 @@ const PostSlideThree = ({ data }) => {
             <div className="container">
                 <div className="row">
                     {data && data.map((item, i) =>
-                        <div className="col-sm-4">
+                        <div className="col-sm-4" key={i}>
                             <div className="image-post-slide">
                                 <img src={item.ref_img} alt="" />
                                 <h3>{item.title}</h3>

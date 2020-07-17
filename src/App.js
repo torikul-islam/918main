@@ -20,6 +20,7 @@ import Blog from './components/blog/blog';
 import InspirationDetails from './components/InspirationDetails/inspirationDetails';
 import Looks from './components/looks/looks'
 import Adminhome from './components/admin/adminhome';
+import ProductDetails from './components/productDetails/productDetails';
 import './App.css';
 
 
@@ -53,6 +54,7 @@ class App extends Component {
             <Route path="/onboard-q3" component={OnboardQ3} exact />
             <Route path="/account" component={Account} exact />
             <Route path="/inspired-details" component={InspirationDetails} exact />
+            <Route path="/product-details" component={ProductDetails} exact />
             <Route path="/inspired-more" component={InspiredMore} exact />
             <Route path="/blog" component={Blog} exact />
             {/* <Route path="/navbar2" component={Navbar2} exact /> */}
