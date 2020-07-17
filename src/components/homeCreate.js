@@ -20,12 +20,12 @@ const HomeCreate = ({ data }) => {
                 <div className="row">
                     {data.map((item, i) =>
                         <div key={i}>
-                            <div className="col-sm-6">
+                            <div className="col-sm-6" style={{float:"left"}}>
                                 <div className="craete-img">
                                     <img src={item.ref_img} alt="" />
                                 </div>
                             </div>
-                            <div className="col-sm-6" key={i}>
+                            <div className="col-sm-6" key={i} style={{float:"right"}}>
                                 <div className="craete-text" >
                                     <h5>{item.source}</h5>
                                     <h2>{item.title}</h2>

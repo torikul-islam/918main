@@ -26,12 +26,19 @@
     outline: none;
 }
 
-.container.contact-form form h3, .contacti-input h3{
+.container.contact-form form h3{
     font-family: "PlayfairDisplay-Bold";
     color: #030303;
     font-size: 44px;
     margin-bottom: 70px;
     margin-top: 100px;
+}
+.contacti-input h3{
+    font-family: "PlayfairDisplay-Bold";
+    color: #030303;
+    font-size: 44px;
+    margin-bottom: 70px;
+    margin-top: 60px;
 }
 .container-inputflides {
     background: #ebeae8;
