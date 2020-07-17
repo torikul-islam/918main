@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import "./aboutInspiredItems.css";
 import LearnMore from '../common/learnButton';
+import "./aboutInspiredItems.css";
+
+
 
 class AboutInspiredItems extends Component {
     render() {

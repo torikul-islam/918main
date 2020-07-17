@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from '../navbar';
-import "../about_us/AboutUs.css"
-import AboutStory from "../about_us/aboutStory";
-import AboutInspiredItems from "../about_us/aboutInspiredItems"
+import AboutStory from "./aboutStory";
+import AboutInspiredItems from "./aboutInspiredItems"
+import "./AboutUs.css"
+
+
+
 
 class AboutUs extends Component {
     render() {

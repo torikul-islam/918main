@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar2 from '../navbar2';
-import "../about_us/aboutStory.css"
+import "./aboutStory.css"
 
 class AboutStory extends Component {
     render() {

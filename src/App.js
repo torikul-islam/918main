@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/home';
 import Workspace from './components/workspace';
-import AboutUS from './components/about_us/AboutUs';
-import ContactUs from './components/contact_us/ContactUs';
+import AboutUS from './components/aboutUs/AboutUs';
+import ContactUs from './components/contactUs/ContactUs';
 import Shop from './components/shop/Shop';
 import LearnPage from './components/learnpage';
 import Footer from './components/footer/footer';
-import './App.css';
 import Signup from './components/auth/signup';
 import LoginNext from './components/auth/loginNext';
 import BoardName from './components/onboard/boardName';
@@ -18,9 +17,10 @@ import OnboardQ3 from './components/onboard/onboardQ3';
 import InspiredMore from './components/inspired/inspiredMore';
 import Account from './components/account/account';
 import Blog from './components/blog/blog';
+import InspirationDetails from './components/InspirationDetails/inspirationDetails';
 import Looks from './components/looks/looks'
 import Adminhome from './components/admin/adminhome';
-import InspirationDetails from './components/InspirationDetails/inspirationDetails';
+import './App.css';
 
 
 

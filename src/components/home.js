@@ -37,9 +37,9 @@ function Home() {
 
     function onPageChange(val) {
         if (val === '-') {
-            this.setState({ currentPage: this.state.currentPage - 1 })
+            setCurrentPage(currentPage - 1)
         } else {
-            this.setState({ currentPage: this.state.currentPage + 1 })
+            setCurrentPage(currentPage + 1)
         }
     }
 
