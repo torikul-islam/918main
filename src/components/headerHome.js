@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './headerHome.css';
+import GoBtn from './common/goBtn';
 
 
 
@@ -100,7 +101,8 @@ const HeaderHome = ({ openModal, data }) => {
                         </div>
                         <div className="col-sm-6">
                             <div className='moodboard'>
-                                <button>Create a Moodboard</button>
+                               
+                               <Link to='/workspace'> <GoBtn text='Create a Moodboard'/></Link>
                             </div>
                         </div>
                     </div>

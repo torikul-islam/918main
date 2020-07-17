@@ -14,6 +14,7 @@ import roomsTestData from '../../src/testData/rooms.json';
 import shopTestData from '../../src/testData/shop.json';
 import './home.css';
 import roomServices from '../services/roomServices';
+import ShopThreeSlide from './shop/shopThreeSlide';
 
 
 
@@ -62,6 +63,7 @@ function Home() {
             <SliderPost data={post.slice(5, 9)} />
             <ShopSlide data={shop} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
             <SliderPost data={post.slice(9, 13)} />
+            <ShopThreeSlide/>
 
             {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
             {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext openModal={openModal} closeModal={closeModal} />} />}
