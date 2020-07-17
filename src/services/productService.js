@@ -2,7 +2,7 @@ import http from "./httpService";
 
 
 function getAllProducts() {
-    return http.get('/products/');
+    return http.get('products/');
 };
 
 
