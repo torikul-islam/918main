@@ -18,29 +18,30 @@
   font-size: 22px;
   text-align: right;
 }
+.footer-link{
+  text-align: right;
+}
 
-.footer-link {
+.footer-link li.footer-item a {
   font-family: "Helvetica";
   font-size: 16px;
-  color:#626161;
-  text-align: right;
+  color:#626161 !important;
 }
-/* .f-contact,
-.about-us {
-  font-family: "PlayfairDisplay-Bold";
-  font-weight: bold;
-  font-size: 24px;
+ul.contact-menu{
+  margin-top: 7% !important;
 }
-ul.contact-menu li {
-  text-align: right;
-} */
+ul.subscribe {
+  margin-top: 36% !important;
+}
 
 ul.contact-menu li {
   display: inline-block;
   margin-right: 35px;
-  color: #010101;
+}
+ul.contact-menu li a{
+  color: #010101 !important;
   font-size: 18px;
-  font-family: "Playfair Display";
+  font-family: "PlayfairDisplay-Bold";
 }
 ul.subscribe {
   float: right;
@@ -85,5 +86,11 @@ ul.subscribe li.subslist {
   }
   .footer-main {
     padding-top: 50px;
+}
+ul.contact-menu{
+  margin-top: 0% !important;
+}
+ul.subscribe {
+  margin-top: 0% !important;
 }
 }

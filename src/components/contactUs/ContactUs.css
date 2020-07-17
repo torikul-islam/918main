@@ -40,3 +40,9 @@
 .container-inputflides .contacti-input .form-group input {
     padding: 35px 30px;
 }
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .contacti-input h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}
