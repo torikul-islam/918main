@@ -28,10 +28,10 @@
   color:#626161 !important;
 }
 ul.contact-menu{
-  margin-top: 7% !important;
+  margin-top: 4% !important;
 }
 ul.subscribe {
-  margin-top: 35% !important;
+  margin-top: 20% !important;
 }
 
 ul.contact-menu li {
@@ -43,9 +43,9 @@ ul.contact-menu li a{
   font-size: 18px;
   font-family: "PlayfairDisplay-Bold";
 }
-ul.subscribe {
+/* ul.subscribe {
   float: right;
-}
+} */
 ul.contact-menu {
   text-align: center;
   float: none;
