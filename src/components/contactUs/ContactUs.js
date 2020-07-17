@@ -43,7 +43,7 @@ class ContactUs extends Component {
                 <div className="container-inputflides">
                     <div className="container">
                         <div className="contacti-input">
-                            <h3 className="text-center">We’d love to hear from you!</h3>
+                            <h3 className="text-center">Get on the list!</h3>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group">
