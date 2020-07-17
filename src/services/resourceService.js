@@ -2,7 +2,7 @@ import http from "./httpService";
 
 
 function getAllResources() {
-    return http.get('/resources/');
+    return http.get('resources/');
 };
 
 

@@ -2,7 +2,7 @@ import http from "./httpService";
 
 
 function getAllInspired() {
-    return http.get('/inspirations/');
+    return http.get('inspirations/');
 };
 
 
