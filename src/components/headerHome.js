@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './headerHome.css';
 import GoBtn from './common/goBtn';
-
+import Socailicon from './common/socialicons/socailicon'
+import Subscribe from './common/socialicons/subscribe'
 
 
 
@@ -40,7 +41,7 @@ const HeaderHome = ({ openModal, data }) => {
                                 <span className="menu-icon">
                                     <li className="menu-item man">
                                         <NavLink className="nav-link" to="/account" exact>
-                                        <img src={require('../Asset/Images/man.png')} alt="man.png" />
+                                            <img src={require('../Asset/Images/man.png')} alt="man.png" />
                                         </NavLink>
                                     </li>
                                     <li className="menu-item shop">
@@ -101,8 +102,8 @@ const HeaderHome = ({ openModal, data }) => {
                         </div>
                         <div className="col-sm-6">
                             <div className='moodboard'>
-                               
-                               <Link to='/workspace'> <GoBtn text='Create a Moodboard'/></Link>
+
+                                <Link to='/workspace'> <GoBtn text='Create a Moodboard' /></Link>
                             </div>
                         </div>
                     </div>
@@ -126,6 +127,8 @@ const HeaderHome = ({ openModal, data }) => {
                         </div>
                     )}
                 </div>
+                <Socailicon />
+                <Subscribe />
             </div>
         </>
     );

@@ -90,6 +90,7 @@
 }
 .own-design {
   padding: 40px 0 30px;
+  position: relative;
 }
 .image-bg img {
   width: 100%;
@@ -198,6 +199,17 @@ div.menu-icon {
 div#menu {
   padding-top: 34px;
 }
+.social-icons {
+  position: absolute;
+  right: 1%;
+  top: 50%;
+} 
+.subs-icons {
+  position: absolute;
+  left: 1%;
+  top: 50%;
+}
+
 /* end home menu css :start */
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
@@ -262,5 +274,8 @@ div#menu {
 }
 .skip h6, .continue h6{
   max-width: 100%;
+}
+.social-icons, .subs-icons{
+  display: none;
 }
 }

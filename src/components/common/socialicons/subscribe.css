@@ -1,0 +1,21 @@
+.subs-icons ul li.sbusc {
+    width: 25px;
+    transform: rotate(270deg);
+    margin-top: 65px;
+    font-size: 18px;
+    color: #030303;
+    font-family: "helvetica-light";
+}
+.subs-icons ul li.img_subs{
+    margin-top: 10px;
+}
+.subs-icons ul li.img_subs img{
+    width: 23px;
+    height: 31px;
+}
+.subs-icons ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: pointer;
+}
