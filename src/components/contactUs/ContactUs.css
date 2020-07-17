@@ -1,1 +1,42 @@
-@import '../../Asset/Fonts/fonts.css'
+@import '../../Asset/Fonts/fonts.css';
+.contact-form{
+    background: #fff;
+    margin-bottom: 5%;
+    width: 70%;
+}
+.contact-image{
+    text-align: center;
+}
+#textareaMessage{
+    min-height: 300px;
+    resize: none;
+    font-family: "Helvetica-light";
+}
+.container.contact-form form .form-group input {
+    border-radius: 0;
+    background: #f2f2f2;
+    border: none;
+    padding: 40px 30px;
+    font-family: "Helvetica-light";
+}
+.container.contact-form form .form-group input::placeholder, #textareaMessage::placeholder{
+    color: #000;
+}
+.container.contact-form form .form-group input:focus, #textareaMessage:focus{
+    outline: none;
+}
+
+.container.contact-form form h3, .contacti-input h3{
+    font-family: "PlayfairDisplay-Bold";
+    color: #030303;
+    font-size: 44px;
+    margin-bottom: 70px;
+    margin-top: 100px;
+}
+.container-inputflides {
+    background: #ebeae8;
+    padding: 30px 0 70px;
+}
+.container-inputflides .contacti-input .form-group input {
+    padding: 35px 30px;
+}
