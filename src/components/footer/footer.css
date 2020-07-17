@@ -32,6 +32,7 @@ ul.contact-menu{
 }
 ul.subscribe {
   margin-top: 20% !important;
+  cursor: pointer;
 }
 
 ul.contact-menu li {
