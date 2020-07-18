@@ -19,8 +19,8 @@ import './home.css';
 
 
 
-function Home() {
-    const [modal, setModal] = useState({ isOpen: false, name: null });
+function Home(props) {
+    const [modal, setModal] = useState({ isOpen: true, name: 'loginNext' });
     const [openMenu, setOpenMenu] = useState(false);
     const [post, setPost] = useState([]);
     // const [rooms, setRooms] = useState([]);
@@ -81,7 +81,7 @@ function Home() {
 
             {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
             {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
-            {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext {...props} openModal={openModal} closeModal={closeModal} />} />}
             {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
             {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
             {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />}
