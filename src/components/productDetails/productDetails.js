@@ -8,15 +8,15 @@ import ProductDetailsSliderPost from './productDetailsSliderPost';
 
 
 
-function Index(openModal, data, openMenu, handleOpenMenu ) {
+function ProductDetails({ openModal, addShoppingCard, openMenu, handleOpenMenu }) {
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
-            <ProductDetailsTitle />
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <ProductDetailsTitle addShoppingCard={addShoppingCard} />
             <ProductDetailsSlider />
             <ProductDetailsSliderPost />
         </>
     );
 }
 
-export default Index;
+export default ProductDetails;

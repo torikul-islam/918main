@@ -1,119 +1,120 @@
 ul.home-menu {
-    list-style: none;
-    width: 100%;
-    max-width: 100%;}
+  list-style: none;
+  width: 100%;
+  max-width: 100%;
+}
 
 ul.home-menu li {
-    display: inline-block;
-  
+  display: inline-block;
 }
 ul.home-menu li {
-    display: inline-block;
+  display: inline-block;
 }
 .menu-icon li.menu-item.man {
-    padding-right: 0px !important;
-    margin: 0;
+  padding-right: 0px !important;
+  margin: 0;
 }
-.disply-for-mobile{
-    display: none;
+.display-for-mobile {
+  display: none;
 }
-ul.home-menu li a{
-    color: #111111;
-    font-size: 18px;
-    font-family: "helvetica-light";
+ul.home-menu li a {
+  color: #111111;
+  font-size: 18px;
+  font-family: "helvetica-light";
 }
-@media screen and (max-width: 991px) and (min-width: 320px){
-div.search-float{
+@media screen and (max-width: 991px) and (min-width: 320px) {
+  div.search-float {
     width: 20% !important;
-}
-div.menu-float{
+  }
+  div.menu-float {
     width: 79% !important;
     padding-top: 5px;
-}
-ul.home-menu {
+  }
+  ul.home-menu {
     min-height: 300px;
-}
-#menu nav.navbar-expand-lg.navbar-light, #menu button.navbar-toggler {
+  }
+  #menu nav.navbar-expand-lg.navbar-light,
+  #menu button.navbar-toggler {
     float: right;
     width: 100%;
     text-align: right;
-}
-div#menu {
+  }
+  div#menu {
     width: 100%;
     position: absolute;
     right: 0;
     top: 0;
     padding-top: 0 !important;
     outline: none;
-}
-ul.home-menu li.logo {
+  }
+  ul.home-menu li.logo {
     display: none;
-}
-ul.home-menu li {
+  }
+  ul.home-menu li {
     display: block;
     margin-right: 20px;
-}
-#menu .signup {
+  }
+  #menu .signup {
     margin-right: 5px !important;
     width: 45%;
     float: right;
-}
-.icons-header-lights {
+  }
+  .icons-header-lights {
     margin-top: 25px !important;
-}
-#menu button.navbar-toggler{
+  }
+  #menu button.navbar-toggler {
     outline: none;
     border: none;
     margin-top: -55px;
     width: 100px;
-}
+  }
 
-.menu-icon li.menu-item.man{
+  .menu-icon li.menu-item.man {
     padding: 0 !important;
     margin-right: 5px;
-}
-span.menu-icon {
+  }
+  span.menu-icon {
     display: block;
     clear: both;
-}
-div.search-float li.sarch {
+  }
+  div.search-float li.search {
     margin-top: 10px;
-}
-.disply-for-mobile{
+  }
+  .display-for-mobile {
     display: block;
-}
-.logo-width.disply-for-mobile {
+  }
+  .logo-width.display-for-mobile {
     width: 60%;
-}
+  }
 
-.logo-width.disply-for-mobile img {
+  .logo-width.display-for-mobile img {
     width: 100%;
     height: auto;
-}
-.collapse.navbar-collapse.bg-lights.show {
+  }
+  .collapse.navbar-collapse.bg-lights.show {
     background: #f8f9fa !important;
-}
+  }
 }
 
-@media screen and (max-width: 991px) and (min-width: 768px){
-    .logo-width.disply-for-mobile {
-        width: 30%;
-    }
-    #menu .signup {
-        width: 20%;
-    }
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .logo-width.display-for-mobile {
+    width: 30%;
+  }
+  #menu .signup {
+    width: 20%;
+  }
 }
-@media screen and (max-width: 1024px) and (min-width: 992px){
-    div.menu-float {
-        width: 48% !important;
-    }
-    div.logo-width {
-        width: 32% !important;
-    }
-    div.search-float {
-        width: 20% !important;
-    }
-    #menu > ul li {
-        padding-right: 0 !important;
-    }
+@media screen and (max-width: 1024px) and (min-width: 992px) {
+  div.menu-float {
+    width: 48% !important;
+  }
+  div.logo-width {
+    width: 32% !important;
+  }
+  div.search-float {
+    width: 20% !important;
+  }
+  #menu > ul li {
+    padding-right: 0 !important;
+  }
 }

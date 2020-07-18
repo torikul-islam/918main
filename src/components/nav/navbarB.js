@@ -6,7 +6,7 @@ import './navbar.css';
 function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
     return (
         <div className='container-menu' id='menu'>
-            <div className="logo-width disply-for-mobile">
+            <div className="logo-width display-for-mobile">
                 <li className='logo'>
                     <Link className="nav-link" to="/" >
                         <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
@@ -20,7 +20,7 @@ function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
                 <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                     <ul className="home-menu">
                         <div className="search-float">
-                            <li className="sarch">
+                            <li className="search">
                                 <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                             </li>
                         </div>

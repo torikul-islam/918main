@@ -3,7 +3,7 @@ import './learnButton.css';
 
 
 
-const LearnButton = ({ text }) => {
+const LearnButton = () => {
     return (
         <div className="learn-more">
             <button>Learn More</button>

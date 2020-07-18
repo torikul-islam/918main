@@ -10,12 +10,17 @@ import './headerHome.css';
 
 
 
-const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu }) => {
+const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) => {
     return (
         <>
             <div className="home-area">
                 <div className='container-fluid' >
-                    <NavbarW openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
+                    <NavbarW
+                        openMenu={openMenu}
+                        handleOpenMenu={handleOpenMenu}
+                        openModal={openModal}
+                        clickCard={clickCard}
+                    />
                 </div>
 
                 <div className="container">

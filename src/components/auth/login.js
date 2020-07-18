@@ -21,6 +21,7 @@ function Login({ openModal, closeModal }) {
         e.preventDefault();
         try {
             const { data } = await login(user.username, user.password);
+            localStorage.setItem('token', data.token);
             setSuccess("Logged you in, please wait...");
             setTimeout(() => openModal('loginNext'), 3000)
         } catch (ex) {

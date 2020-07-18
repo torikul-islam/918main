@@ -1,16 +1,28 @@
-.arrowLeft img {
-    width: 16px;
-    height: auto;
+.shopping-card {
+  position: absolute;
+  right: 0;
+  background: #ffffff;
+  height: 100%;
+  display: none;
 }
-.arrowLayer img {
-    width: 30px;
-    height: auto;
-}
-.ShopingImg img {
-    width: 100%;
-    height: 350px;
+.card-show {
+  display: block;
+  opacity: 1;
 }
 
-.ShopingText {
-    text-align: center;
+.arrowLeft img {
+  width: 16px;
+  height: auto;
+}
+.arrowLayer img {
+  width: 30px;
+  height: auto;
+}
+.shopping-img img {
+  width: 100%;
+  height: 350px;
+}
+
+.shopping-text {
+  text-align: center;
 }

@@ -5,10 +5,12 @@ import '../nav/navbar.css'
 
 
 
-function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
+function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
+
+
     return (
         <div className='container-menu' id='menu'>
-            <div className="logo-width disply-for-mobile">
+            <div className="logo-width display-for-mobile">
                 <li className='logo'>
                     <Link className="nav-link" to="/" >
                         <img src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
@@ -22,7 +24,7 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
                 <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                     <ul className="home-menu">
                         <div className="search-float">
-                            <li className="sarch">
+                            <li className="search">
                                 <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                             </li>
                         </div>
@@ -49,7 +51,7 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
                                         <img src={require('../../Asset/Images/man.png')} alt="man.png" />
                                     </NavLink>
                                 </li>
-                                <li className="menu-item shop">
+                                <li className="menu-item shop" onClick={clickCard}>
                                     <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
                                 </li>
                             </span>

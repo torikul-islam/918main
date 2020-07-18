@@ -15,6 +15,7 @@ import shopTestData from '../../src/testData/shop.json';
 import roomServices from '../services/roomServices';
 import ShopThreeSlide from './shop/shopThreeSlide';
 import './home.css';
+import Card from './card/card';
 
 
 
@@ -70,8 +71,9 @@ function Home(props) {
 
     const { isOpen, name } = modal;
     return (
-        <>
-            <HeaderHome data={post.slice(0, 1)} openModal={openModal} handleOpenMenu={handleOpenMenu} openMenu={openMenu} />
+        <div className='home-wrapper'>
+            <Card isCardOpen={props.isCardOpen} itemControl={props.itemControl} shoppingCard={props.shoppingCard} clickCard={props.clickCard} />
+            <HeaderHome data={post.slice(0, 1)} clickCard={props.clickCard} openModal={openModal} handleOpenMenu={handleOpenMenu} openMenu={openMenu} />
             <SliderPost data={post.slice(1, 5)} />
             <InspiredSlider />
             <SliderPost data={post.slice(5, 9)} />
@@ -79,13 +81,14 @@ function Home(props) {
             <SliderPost data={post.slice(9, 13)} />
             <ShopThreeSlide />
 
+
             {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
             {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
             {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext {...props} openModal={openModal} closeModal={closeModal} />} />}
             {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
             {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
             {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />}
-        </>
+        </div>
     );
 }
 
