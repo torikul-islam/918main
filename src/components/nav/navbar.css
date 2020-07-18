@@ -1,0 +1,31 @@
+ul.home-menu {
+    list-style: none;
+    width: 100%;
+    max-width: 100%;}
+
+ul.home-menu li {
+    display: inline-block;
+  
+}
+ul.home-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.menu-icon li.menu-item.man {
+    padding-right: 0px !important;
+    margin: 0;
+}
+@media screen and (max-width: 767px) and (min-width: 320px){
+div.search-float, div.logo-width, div.menu-float{
+    width: 100%;
+}
+#menu nav.navbar-expand-lg.navbar-light, #menu button.navbar-toggler{
+    float: right;
+}
+div#menu {
+    padding-top: 34px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+}
