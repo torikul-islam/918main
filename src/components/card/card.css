@@ -1,0 +1,16 @@
+.arrowLeft img {
+    width: 16px;
+    height: auto;
+}
+.arrowLayer img {
+    width: 30px;
+    height: auto;
+}
+.ShopingImg img {
+    width: 100%;
+    height: 350px;
+}
+
+.ShopingText {
+    text-align: center;
+}
