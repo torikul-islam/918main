@@ -15,7 +15,7 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu }) => {
         <>
             <div className="home-area">
                 <div className='container-fluid' >
-                    <NavbarW openMenu={openMenu} handleOpenMenu={handleOpenMenu} />
+                    <NavbarW openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
                 </div>
 
                 <div className="container">
