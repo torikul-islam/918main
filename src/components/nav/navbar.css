@@ -15,17 +15,73 @@ ul.home-menu li {
     padding-right: 0px !important;
     margin: 0;
 }
-@media screen and (max-width: 767px) and (min-width: 320px){
-div.search-float, div.logo-width, div.menu-float{
-    width: 100%;
+.disply-for-mobile{
+    display: none;
 }
-#menu nav.navbar-expand-lg.navbar-light, #menu button.navbar-toggler{
+@media screen and (max-width: 767px) and (min-width: 320px){
+div.search-float{
+    width: 20% !important;
+}
+div.menu-float{
+    width: 79% !important;
+}
+ul.home-menu {
+    min-height: 300px;
+}
+#menu nav.navbar-expand-lg.navbar-light, #menu button.navbar-toggler {
     float: right;
+    width: 100%;
+    text-align: right;
 }
 div#menu {
-    padding-top: 34px;
+    width: 100%;
     position: absolute;
     right: 0;
     top: 0;
+    padding-top: 0 !important;
+    outline: none;
 }
+ul.home-menu li.logo {
+    display: none;
+}
+ul.home-menu li {
+    display: block;
+    margin-right: 27px;
+}
+#menu .signup {
+    margin-right: 5px !important;
+    width: 45%;
+    float: right;
+}
+.icons-header-lights {
+    margin-top: 25px !important;
+}
+#menu button.navbar-toggler{
+    outline: none;
+    border: none;
+    margin-top: -55px;
+}
+
+.menu-icon li.menu-item.man{
+    padding: 0 !important;
+}
+span.menu-icon {
+    display: block;
+    clear: both;
+}
+div.search-float li.sarch {
+    margin-top: 10px;
+}
+.disply-for-mobile{
+    display: block;
+}
+.logo-width.disply-for-mobile {
+    width: 60%;
+}
+
+.logo-width.disply-for-mobile img {
+    width: 100%;
+    height: auto;
+}
+
 }

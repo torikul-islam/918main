@@ -8,18 +8,18 @@ import '../nav/navbar.css'
 function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
     return (
         <div className='container-menu' id='menu'>
-            {/* <div className="logo-width">
-                            <li className='logo'>
-                                <NavLink className="nav-link" to="/" exact >
-                                    <img src={require('../Asset/Images/logo-white.png')} alt="logo-white.png" />
-                                </NavLink>
-                            </li>
-                        </div> */}
+            <div className="logo-width disply-for-mobile">
+                <li className='logo'>
+                    <NavLink className="nav-link" to="/" exact >
+                        <img src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
+                    </NavLink>
+                </li>
+            </div>
             <nav class="navbar-expand-lg navbar-light">
                 <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse ${openMenu ? 'show' : ''}`} id="navbarNav">
+                <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-light ${openMenu ? 'show' : ''}`} id="navbarNav">
                     <ul className="home-menu">
                         <div className="search-float">
                             <li className="sarch">
@@ -58,29 +58,6 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
                 </div>
             </nav>
         </div>
-
-        // <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        //                 <a class="navbar-brand" href="#">Navbar</a>
-        //                 <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        //                     <span class="navbar-toggler-icon"></span>
-        //                 </button>
-        //                 <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse ${openMenu ? 'show' : ''}`} id="navbarNav">
-        //                     <ul class="navbar-nav">
-        //                         <li class="nav-item active">
-        //                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        //                         </li>
-        //                         <li class="nav-item">
-        //                             <a class="nav-link" href="#">Features</a>
-        //                         </li>
-        //                         <li class="nav-item">
-        //                             <a class="nav-link" href="#">Pricing</a>
-        //                         </li>
-        //                         <li class="nav-item">
-        //                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        //                         </li>
-        //                     </ul>
-        //                 </div>
-        //             </nav>
     )
 }
 
