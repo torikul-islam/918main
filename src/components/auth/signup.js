@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../common/modal/modal';
 import Input from '../common/input';
-import GoBtn from '../common/goBtn';
 import { signup } from '../../services/authServices';
 import './signup.css';
 
-import axios from 'axios';
 
 
 class Signup extends Component {
@@ -44,7 +41,7 @@ class Signup extends Component {
 
     render() {
         const { username, password, email, errors, success } = this.state;
-        const { closeModal } = this.props;
+        const { closeModal, openModal } = this.props;
 
         return (
             <div className='container'>
@@ -65,7 +62,9 @@ class Signup extends Component {
                                 </ul>
                                 <div className='have-account'>
                                     <h6>Already have an account</h6>
-                                    <h3><Link to="#">Login</Link></h3>
+                                    <h3 onClick={() => openModal('login')}>
+                                        <Link to="">Login</Link>
+                                    </h3>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +89,7 @@ class Signup extends Component {
                                             id='email'
                                             type='email'
                                             placeholder='Email'
-                                            error={errors['email'] && errors['email'][0] || false}
+                                            error={errors['email'] && errors['email'][0]}
                                         />
                                         <Input
                                             onChange={this.handleChange}

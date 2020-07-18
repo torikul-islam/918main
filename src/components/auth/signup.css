@@ -29,8 +29,7 @@
   background: #f4f3f3;
   /* height: 100%; */
 }
-signup-bg
-.signup-left h2 {
+signup-bg .signup-left h2 {
   font-size: 24px;
   letter-spacing: 1px;
   color: #030303;
@@ -78,9 +77,9 @@ signup-bg
   font-family: "helvetica-light";
   margin-bottom: 0;
 }
-.have-account h3{
-    margin-top: 0;
-    line-height: 25px
+.have-account h3 {
+  margin-top: 0;
+  line-height: 25px;
 }
 .have-account h3 a {
   font-size: 18px;
@@ -129,4 +128,7 @@ signup-bg
 
 .success-mess {
   color: green;
+}
+.success-error {
+  color: red;
 }

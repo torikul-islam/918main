@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import HeaderHome from './headerHome';
 import Modal from './common/modal/modal';
 import Signup from './auth/signup';
+import Login from './auth/login';
 import LoginNext from './auth/loginNext';
 import BoardName from './onboard/boardName';
 import CreateBoard from './onboard/createBoard';
 import SliderPost from './common/slider/sliderPost';
-import axios from 'axios';
 import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
 import Onboard from './onboard/onboard';
 import roomsTestData from '../../src/testData/rooms.json';
 import shopTestData from '../../src/testData/shop.json';
-import './home.css';
 import roomServices from '../services/roomServices';
 import ShopThreeSlide from './shop/shopThreeSlide';
+import './home.css';
 
 
 
 
 function Home() {
-    const [modal, setModal] = useState({ isOpen: true, name: null });
+    const [modal, setModal] = useState({ isOpen: true, name: 'login' });
     const [post, setPost] = useState([]);
     // const [rooms, setRooms] = useState([]);
     const [shop, setShop] = useState([]);
@@ -63,9 +63,10 @@ function Home() {
             <SliderPost data={post.slice(5, 9)} />
             <ShopSlide data={shop} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
             <SliderPost data={post.slice(9, 13)} />
-            <ShopThreeSlide/>
+            <ShopThreeSlide />
 
             {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
             {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext openModal={openModal} closeModal={closeModal} />} />}
             {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
             {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
