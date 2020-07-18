@@ -22,12 +22,13 @@ ul.home-menu li a{
     font-size: 18px;
     font-family: "helvetica-light";
 }
-@media screen and (max-width: 767px) and (min-width: 320px){
+@media screen and (max-width: 991px) and (min-width: 320px){
 div.search-float{
     width: 20% !important;
 }
 div.menu-float{
     width: 79% !important;
+    padding-top: 5px;
 }
 ul.home-menu {
     min-height: 300px;
@@ -50,7 +51,7 @@ ul.home-menu li.logo {
 }
 ul.home-menu li {
     display: block;
-    margin-right: 27px;
+    margin-right: 20px;
 }
 #menu .signup {
     margin-right: 5px !important;
@@ -69,6 +70,7 @@ ul.home-menu li {
 
 .menu-icon li.menu-item.man{
     padding: 0 !important;
+    margin-right: 5px;
 }
 span.menu-icon {
     display: block;
@@ -91,4 +93,27 @@ div.search-float li.sarch {
 .collapse.navbar-collapse.bg-lights.show {
     background: #f8f9fa !important;
 }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px){
+    .logo-width.disply-for-mobile {
+        width: 30%;
+    }
+    #menu .signup {
+        width: 20%;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 992px){
+    div.menu-float {
+        width: 48% !important;
+    }
+    div.logo-width {
+        width: 32% !important;
+    }
+    div.search-float {
+        width: 20% !important;
+    }
+    #menu > ul li {
+        padding-right: 0 !important;
+    }
 }

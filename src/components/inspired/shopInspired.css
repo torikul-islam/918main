@@ -58,4 +58,11 @@
 .tab-index .slider h3::first-letter{
   text-transform: uppercase;
 }
-    
+@media screen and (max-width: 1024px) and (min-width: 768px){
+  .slider img {
+    height: 190px;
+}
+.arrow-slide img {
+  height: auto !important;
+}
+}   
