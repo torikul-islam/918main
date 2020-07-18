@@ -8,14 +8,14 @@ function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
         <div className='container-menu' id='menu'>
             <div className="logo-width disply-for-mobile">
                 <li className='logo'>
-                    <NavLink className="nav-link" to="/" exact >
+                    <Link className="nav-link" to="/" >
                         <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
-                    </NavLink>
+                    </Link>
                 </li>
             </div>
             <nav className="navbar-expand-lg navbar-light">
                 <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                     <ul className="home-menu">
@@ -26,9 +26,9 @@ function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
                         </div>
                         <div className="logo-width">
                             <li className='logo'>
-                                <NavLink className="nav-link" to="/" exact >
+                                <Link className="nav-link" to="/" >
                                     <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
-                                </NavLink>
+                                </Link>
                             </li>
                         </div>
                         <div className="menu-float">

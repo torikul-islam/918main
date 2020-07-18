@@ -10,7 +10,7 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
         <div className='container-menu' id='menu'>
             <div className="logo-width disply-for-mobile">
                 <li className='logo'>
-                    <Link className="nav-link" to="/" exact >
+                    <Link className="nav-link" to="/" >
                         <img src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
                     </Link>
                 </li>
@@ -28,9 +28,9 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
                         </div>
                         <div className="logo-width">
                             <li className='logo'>
-                                <NavLink className="nav-link" to="/" exact >
+                                <Link className="nav-link" to="/" >
                                     <img src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
-                                </NavLink>
+                                </Link>
                             </li>
                         </div>
                         <div className="menu-float">

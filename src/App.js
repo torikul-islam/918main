@@ -22,6 +22,7 @@ import Looks from './components/looks/looks'
 import Adminhome from './components/admin/adminhome';
 import ProductDetails from './components/productDetails/productDetails';
 import './App.css';
+import Card from './components/card/card';
 
 
 
@@ -39,6 +40,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/" component={Home} exact />
+            <Route path="/card" component={Card} exact />
             <Route path="/Learn-more" component={LearnPage} exact />
             <Route path="/workspace" component={Workspace} exact />
             <Route path="/explore" component={Home} exact />
