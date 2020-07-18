@@ -245,6 +245,7 @@ div#menu {
 .inspired-slider ul, .shop-slider ul {
   overflow: scroll;
   display: flex;
+  white-space: nowrap;
 }
 .arrow-right.arrow-slide{
   right: 0;
