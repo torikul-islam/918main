@@ -11,7 +11,7 @@ import '../inspired/inspired.css';
 
 
 function InspiredMore() {
-    const pageSize = 4;
+    const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [resource, setResource] = useState([]);
     const [product, setProduct] = useState([]);
@@ -32,6 +32,17 @@ function InspiredMore() {
             setProduct(data.results);
         })()
     }, []);
+
+    useEffect(() => window.addEventListener("resize", handleResize));
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(4)
+        }
+    }
 
     function onPageChange(val) {
         if (val === '-') {

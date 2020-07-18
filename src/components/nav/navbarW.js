@@ -10,9 +10,9 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
         <div className='container-menu' id='menu'>
             <div className="logo-width disply-for-mobile">
                 <li className='logo'>
-                    <NavLink className="nav-link" to="/" exact >
+                    <Link className="nav-link" to="/" exact >
                         <img src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
-                    </NavLink>
+                    </Link>
                 </li>
             </div>
             <nav class="navbar-expand-lg navbar-light">

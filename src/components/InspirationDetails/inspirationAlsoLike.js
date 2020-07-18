@@ -19,6 +19,18 @@ function InspirationAlsoLike() {
         })()
     }, []);
 
+    useEffect(() => window.addEventListener("resize", handleResize));
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(4)
+        }
+    }
+
+
     function onPageChange(val) {
         if (val === '-') {
             setCurrentPage(currentPage - 1)

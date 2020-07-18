@@ -20,6 +20,17 @@ function Looks() {
         })()
     }, []);
 
+
+    useEffect(() => window.addEventListener("resize", handleResize));
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(3)
+        }
+    }
     function onPageChange(val) {
         if (val === '-') {
             setCurrentPage(currentPage - 1)

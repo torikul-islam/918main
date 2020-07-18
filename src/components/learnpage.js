@@ -15,7 +15,7 @@ import './learnpage.css';
 
 
 function LearnPage() {
-    const pageSize = 3;
+    const [pageSize, setPageSize] = useState(4);
     const [rooms, setRooms] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
 
@@ -32,6 +32,17 @@ function LearnPage() {
             setCurrentPage(currentPage - 1);
         } else {
             setCurrentPage(currentPage + 1);
+        }
+    }
+
+    useEffect(() => window.addEventListener("resize", handleResize));
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(4)
         }
     }
     return (
