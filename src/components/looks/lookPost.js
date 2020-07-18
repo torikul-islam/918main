@@ -10,7 +10,8 @@ const LookPost = ({ product }) => {
                     {product && product.map((item, i) =>
                         <div className='col-sm-3' key={i}>
                             <img src={item.ref_img} alt="" />
-                            <p>{item.retailer}</p>
+                            <h6>{item.retailer}</h6>
+                            <h6>${item.price}</h6>
                         </div>
                     )}
                 </div>

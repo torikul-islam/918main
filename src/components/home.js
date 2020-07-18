@@ -20,7 +20,7 @@ import './home.css';
 
 
 function Home() {
-    const [modal, setModal] = useState({ isOpen: false, name: null });
+    const [modal, setModal] = useState({ isOpen: true, name: 'login' });
     const [openMenu, setOpenMenu] = useState(false);
     const [post, setPost] = useState([]);
     // const [rooms, setRooms] = useState([]);
