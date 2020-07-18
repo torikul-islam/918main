@@ -153,6 +153,8 @@ li.sarch img {
   font-family: "Helvetica-bold";
   font-weight: bold;
   margin-right: 50px;
+  color: #fff;
+  cursor: pointer;
 }
 
 #menu .signup a {
@@ -181,9 +183,6 @@ div.logo-width {
 }
 .menu-icon li.menu-item.shop {
   padding-right: 0 !important;
-}
-.menu-icon li.menu-item.man {
-  padding-right: 10px !important;
 }
 li.menu-item.man img,
 li.menu-item.shop img {

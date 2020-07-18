@@ -3,32 +3,59 @@ import { NavLink, Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB() {
+function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="navbar-brand" to="/">
-                {/* here imported black color logo */}
-                918 main
-                </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/" exact >Home</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/workspace" exact>workspace</NavLink>
-                    </li>
-
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/explore" exact>explore</NavLink>
-                    </li>
-                </ul>
+        <div className='container-menu' id='menu'>
+            <div className="logo-width disply-for-mobile">
+                <li className='logo'>
+                    <NavLink className="nav-link" to="/" exact >
+                        <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
+                    </NavLink>
+                </li>
             </div>
-        </nav>
+            <nav class="navbar-expand-lg navbar-light">
+                <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
+                    <ul className="home-menu">
+                        <div className="search-float">
+                            <li className="sarch">
+                                <img src={require('../../Asset/Images/search.png')} alt="search.png" />
+                            </li>
+                        </div>
+                        <div className="logo-width">
+                            <li className='logo'>
+                                <NavLink className="nav-link" to="/" exact >
+                                    <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
+                                </NavLink>
+                            </li>
+                        </div>
+                        <div className="menu-float">
+                            <li className="menu-item font-hel">
+                                <NavLink className="nav-link" to="/workspace" exact >Workspace</NavLink>
+                            </li>
+                            <li className="menu-item font-hel">
+                                <NavLink className="nav-link" to="/explore" exact >Explore</NavLink>
+                            </li>
+                            <li className="menu-item signup" onClick={() => openModal('signup')}>
+                                <div className="nav-link" >Sign Up</div>
+                            </li>
+                            <span className="menu-icon">
+                                <li className="menu-item man">
+                                    <NavLink className="nav-link" to="/account" exact>
+                                        <img src={require('../../Asset/Images/man.png')} alt="man.png" />
+                                    </NavLink>
+                                </li>
+                                <li className="menu-item shop">
+                                    <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
+                                </li>
+                            </span>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     )
 }
 

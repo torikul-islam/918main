@@ -9,7 +9,6 @@ ul.home-menu li {
 }
 ul.home-menu li {
     display: inline-block;
-    margin-right: 20px;
 }
 .menu-icon li.menu-item.man {
     padding-right: 0px !important;
@@ -17,6 +16,11 @@ ul.home-menu li {
 }
 .disply-for-mobile{
     display: none;
+}
+ul.home-menu li a{
+    color: #111111;
+    font-size: 18px;
+    font-family: "helvetica-light";
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
 div.search-float{
@@ -60,6 +64,7 @@ ul.home-menu li {
     outline: none;
     border: none;
     margin-top: -55px;
+    width: 100px;
 }
 
 .menu-icon li.menu-item.man{
@@ -83,5 +88,7 @@ div.search-float li.sarch {
     width: 100%;
     height: auto;
 }
-
+.collapse.navbar-collapse.bg-lights.show {
+    background: #f8f9fa !important;
+}
 }
