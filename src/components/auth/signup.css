@@ -88,7 +88,9 @@ signup-bg .signup-left h2 {
   font-family: "Helvetica-Bold";
   text-decoration: none;
 }
-
+.success-error {
+  font-size: 19px;
+}
 .signup-form {
   padding: 107px 20px;
   font-size: 18px;
