@@ -1,20 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import './headerHome.css';
 import GoBtn from './common/goBtn';
 import Socailicon from './common/socialicons/socailicon'
 import Subscribe from './common/socialicons/subscribe'
+import './headerHome.css';
 
 
 
 
 
-const HeaderHome = ({ openModal, data }) => {
+const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu }) => {
     return (
         <>
             <div className="home-area">
                 <div className='container-fluid' >
-                    <div className='container-menu' id='menu'>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse ${openMenu ? 'show' : ''}`} id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+
+
+                    {/* <div className='container-menu' id='menu'>
                         <ul className="home-menu">
                             <div className="search-float">
                                 <li className="sarch">
@@ -50,7 +75,7 @@ const HeaderHome = ({ openModal, data }) => {
                                 </span>
                             </div>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="container">

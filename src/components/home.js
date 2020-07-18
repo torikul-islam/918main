@@ -21,6 +21,7 @@ import './home.css';
 
 function Home() {
     const [modal, setModal] = useState({ isOpen: false, name: null });
+    const [openMenu, setOpenMenu] = useState(false);
     const [post, setPost] = useState([]);
     // const [rooms, setRooms] = useState([]);
     const [shop, setShop] = useState([]);
@@ -52,12 +53,14 @@ function Home() {
         })()
     }, []);
 
-
+    function handleOpenMenu() {
+        setOpenMenu(!openMenu)
+    }
 
     const { isOpen, name } = modal;
     return (
         <>
-            <HeaderHome data={post.slice(0, 1)} openModal={openModal} />
+            <HeaderHome data={post.slice(0, 1)} openModal={openModal} handleOpenMenu={handleOpenMenu} openMenu={openMenu} />
             <SliderPost data={post.slice(1, 5)} />
             <InspiredSlider />
             <SliderPost data={post.slice(5, 9)} />
