@@ -60,6 +60,7 @@ ul.home-menu li {
     outline: none;
     border: none;
     margin-top: -55px;
+    width: 100px;
 }
 
 .menu-icon li.menu-item.man{
@@ -83,5 +84,7 @@ div.search-float li.sarch {
     width: 100%;
     height: auto;
 }
-
+.collapse.navbar-collapse.bg-lights.show {
+    background: #f8f9fa !important;
+}
 }

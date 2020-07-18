@@ -19,7 +19,7 @@ function NavbarW({ openModal, data, openMenu, handleOpenMenu }) {
                 <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-light ${openMenu ? 'show' : ''}`} id="navbarNav">
+                <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                     <ul className="home-menu">
                         <div className="search-float">
                             <li className="sarch">
