@@ -16,7 +16,7 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu }) => {
         <>
             <div className="home-area">
                 <div className='container-fluid' >
-                    <NavbarW />
+                    <NavbarW openMenu={openMenu} handleOpenMenu={handleOpenMenu} />
                     {/* <div className='container-menu' id='menu'>
                         <ul className="home-menu">
                             <div className="search-float">
