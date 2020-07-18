@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import Navbar2 from '../navbar2';
+import NavbarB from '../nav/navbarB';
 import '../contactUs/ContactUs.css';
 import LearnButton from '../common/learnButton';
 
-class ContactUs extends Component {
-    render() {
+// class ContactUs extends Component {
+    const ContactUs = ({openModal, data, openMenu, handleOpenMenu  }) => {
+    
         return (
             <div>
-                <Navbar2 {...this.props} />
+                <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
                 <div className="container contact-form">
                     <form>
                         <h3 className="text-center">We’d love to hear from you!</h3>
@@ -62,6 +63,6 @@ class ContactUs extends Component {
             </div>
         );
     }
-}
+
 
 export default ContactUs;

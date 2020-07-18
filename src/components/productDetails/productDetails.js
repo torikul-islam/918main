@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar2 from '../navbar2';
+import NavbarB from '../nav/navbarB';
 import ProductDetailsTitle from './productDetailsTitle';
 import ProductDetailsSlider from './postDetailsSlider';
 import ProductDetailsSliderPost from './productDetailsSliderPost';
@@ -8,10 +8,10 @@ import ProductDetailsSliderPost from './productDetailsSliderPost';
 
 
 
-function Index() {
+function Index(openModal, data, openMenu, handleOpenMenu ) {
     return (
         <>
-            <Navbar2 />
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
             <ProductDetailsTitle />
             <ProductDetailsSlider />
             <ProductDetailsSliderPost />

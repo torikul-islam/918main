@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../navbar2';
+import NavbarB from '../nav/navbarB';
 import productService from '../../services/productService';
 import './bloghead.css';
 
 
 
-function BlogHead({ data, product }) {
+const BlogHead = ({ data, product, openModal, openMenu, handleOpenMenu  })=> {
     return (
         <>
-            <Navbar />
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
             <div div className="blog-area">
                 <div className="container">
                     <div className="row">

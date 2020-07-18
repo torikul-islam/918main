@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import './workspace.css';
-import Navbar2 from './navbar2';
+import NavbarB from './nav/navbarB';
 
 
 
-class Workspace extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        return (
-            <div>
-                <Navbar2/>
+const Workspace = ({ openModal, data, openMenu, handleOpenMenu }) => {
+    return (
+        <div>
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
                 workspace page render here...
-            </div>
-        );
-    }
+        </div>
+    );
 }
+
 
 export default Workspace;

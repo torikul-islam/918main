@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Navbar2 from '../navbar2';
+import NavbarB from '../nav/navbarB';
 import './lookHead.css';
 
 
 
-const LookHead = ({ data }) => {
+const LookHead = ({openModal, data, openMenu, handleOpenMenu  }) => {
     return (
         <>
-            <Navbar2 />
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
             {data.length > 0 && <div className="look-head">
                 <div className="container">
                     <div className="row">

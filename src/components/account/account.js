@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../navbar2';
+import NavbarB from '../nav/navbarB';
 import AccountArticles from './accoutArticles';
 import AccountLooks from './accoutLooks';
 import AccountProduct from './accoutProduct';
@@ -10,7 +10,7 @@ import './account.css';
 
 
 
-function Account() {
+const Account = ({ openModal, data, openMenu, handleOpenMenu }) => {
     const [user, setUser] = useState(false)
 
     useEffect(() => {
@@ -24,7 +24,7 @@ function Account() {
 
     return (
         <>
-            <Navbar />
+            <NavbarB />
             {user ? <div className='account-sidebar'>
                 <div className='container'>
                     <h4>My Likes</h4>

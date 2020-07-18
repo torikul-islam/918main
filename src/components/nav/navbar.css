@@ -9,7 +9,6 @@ ul.home-menu li {
 }
 ul.home-menu li {
     display: inline-block;
-    margin-right: 20px;
 }
 .menu-icon li.menu-item.man {
     padding-right: 0px !important;
@@ -17,6 +16,11 @@ ul.home-menu li {
 }
 .disply-for-mobile{
     display: none;
+}
+ul.home-menu li a{
+    color: #111111;
+    font-size: 18px;
+    font-family: "helvetica-light";
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
 div.search-float{

@@ -6,7 +6,7 @@ import HomeCreate from '../components/homeCreate';
 import PostSlideThree from '../components/common/postSlideThree';
 import HomePostTwo from '../components/homePostTwo';
 import resourceService from '../services/resourceService';
-import Navbar2 from './navbar2';
+import NavbarB from './nav/navbarB';
 import './learnpage.css';
 
 
@@ -14,7 +14,7 @@ import './learnpage.css';
 
 
 
-function LearnPage() {
+function LearnPage(openModal, data, openMenu, handleOpenMenu) {
     const pageSize = 3;
     const [rooms, setRooms] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
@@ -36,7 +36,7 @@ function LearnPage() {
     }
     return (
         <>
-            <Navbar2 />
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
             <LearnHeader data={rooms.slice(0, 1)} />
             <ThreeSlide data={rooms.slice(1,)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
             <HomeCreate data={rooms.slice(1, 2)} />
