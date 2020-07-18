@@ -41,7 +41,9 @@ class HeaderInspired extends Component {
                                 </li>
                                 <span className="menu-icon">
                                     <li className="menu-item man">
-                                        <img src={require('../../Asset/Images/man.png')} alt="man.png" />
+                                        <NavLink className="nav-link" to="/account" exact>
+                                            <img src={require('../../Asset/Images/man.png')} alt="man.png" />
+                                        </NavLink>
                                     </li>
                                     <li className="menu-item shop">
                                         <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
