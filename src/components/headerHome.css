@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 @import '../Asset/Fonts/fonts.css';
-.home-area:before {
+/* .home-area:before {
   background: #e7e7e9;
   content: "";
   width: 100%;
@@ -9,7 +9,7 @@
   left: 0;
   top: 20%;
   opacity: 0.1;
-}
+} */
 .home-area {
   background-image: url(../Asset/Images/home-bg.png);
   width: 100%;
@@ -208,7 +208,9 @@ div#menu {
   left: 1%;
   top: 50%;
 }
-
+.arrow-right.arrow-slide{
+  right: -35px;
+}
 /* end home menu css :start */
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {

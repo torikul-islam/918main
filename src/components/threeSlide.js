@@ -19,7 +19,7 @@ const ThreeSlide = ({ data, pageSize, currentPage, onPageChange }) => {
                     <div className='slider'>
                         <div className='row'>
                             {paginateData.map((item, i) =>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12' key={i}>
+                                <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                     <img src={item.ref_img} alt="" />
                                     <h3>{item.title}</h3>
                                     <p>{item.content.substr(0, 100)}</p>
