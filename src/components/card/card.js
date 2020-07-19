@@ -28,26 +28,29 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-6">
-                            <div className="shopping-Img">
-                                <img src={require('../../Asset/Images/inspired_slide_item.png')} alt="inspired_slide_item.png" />
-                            </div>
-                        </div>
                         {shoppingCard && shoppingCard.map((item, i) =>
-                            <div className="col-md-6" key={i}>
-                                <div className="Shopping-text">
-                                    <p>{item.retailer}</p>
-                                    <h5>{item.name}</h5>
-                                    <span>${item.price}</span>
-                                    <div className="quantity">
-                                        Quantity
-                                         <span onClick={() => itemControl(item, '+')}>+</span>
-                                        {item.quantity}
-                                        <span onClick={() => itemControl(item, '-')}>-</span>
+                            <>
+                                <div className="col-md-6">
+                                    <div className="shopping-img">
+                                        <img src={item.ref_img} alt="" />
                                     </div>
-                                    <LearMore />
                                 </div>
-                            </div>
+
+                                <div className="col-md-6" key={i}>
+                                    <div className="Shopping-text">
+                                        <p>{item.retailer}</p>
+                                        <h5>{item.name}</h5>
+                                        <span>${item.price}</span>
+                                        <div className="quantity">
+                                            Quantity
+                                         <span onClick={() => itemControl(item, '+')}>+</span>
+                                            {item.quantity}
+                                            <span onClick={() => itemControl(item, '-')}>-</span>
+                                        </div>
+                                        <LearMore />
+                                    </div>
+                                </div>
+                            </>
                         )}
                     </div>
                 </div>

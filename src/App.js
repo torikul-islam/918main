@@ -37,8 +37,9 @@ function App() {
   };
 
   function addShoppingCard(item) {
+    const card = [...shoppingCard]
     item.quantity = 1;
-    setShoppingCard([item, ...shoppingCard]);
+    setShoppingCard([item, ...card]);
   }
 
   function itemControl(item, ops) {
