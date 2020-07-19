@@ -71,8 +71,8 @@ function Home(props) {
 
     const { isOpen, name } = modal;
     return (
-        <div className='home-wrapper'>
-            <Card isCardOpen={props.isCardOpen} itemControl={props.itemControl} shoppingCard={props.shoppingCard} clickCard={props.clickCard} />
+        <div>
+            {/* <Card isCardOpen={props.isCardOpen} itemControl={props.itemControl} shoppingCard={props.shoppingCard} clickCard={props.clickCard} /> */}
             <HeaderHome data={post.slice(0, 1)} clickCard={props.clickCard} openModal={openModal} handleOpenMenu={handleOpenMenu} openMenu={openMenu} />
             <SliderPost data={post.slice(1, 5)} />
             <InspiredSlider />

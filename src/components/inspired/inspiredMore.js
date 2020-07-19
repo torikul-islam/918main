@@ -10,7 +10,7 @@ import '../inspired/inspired.css';
 
 
 
-function InspiredMore() {
+function InspiredMore({ clickCard }) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [resource, setResource] = useState([]);
@@ -53,7 +53,7 @@ function InspiredMore() {
     }
     return (
         <>
-            <HeaderShop />
+            <HeaderShop clickCard={clickCard} />
             <TabShop />
             <ShopSlide data={resource.slice(0, 4)} />
             <ShopInspired data={resource.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />

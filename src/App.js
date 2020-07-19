@@ -27,7 +27,7 @@ import './App.css';
 
 
 
-function App() {
+function App(props) {
   const [isCardOpen, setIsCardOpen] = useState(false);
   const [shoppingCard, setShoppingCard] = useState([]);
 
@@ -53,21 +53,22 @@ function App() {
     setShoppingCard(card)
   }
 
-  console.log(shoppingCard);
 
   return (
     <>
       <main>
+        <Card isCardOpen={isCardOpen} clickCard={clickCard} shoppingCard={shoppingCard} itemControl={itemControl} />
         <Switch>
           <Route path="/" render={(props) => <Home {...props}
             shoppingCard={shoppingCard} isCardOpen={isCardOpen} itemControl={itemControl} clickCard={clickCard} />} exact />
-          <Route path="/card" component={Card} exact />
-          <Route path="/Learn-more" component={LearnPage} exact />
+          {/* <Route path="/card" component={Card} exact /> */}
+          <Route path="/learn-more" render={(props) => <LearnPage {...props} clickCard={clickCard} />} exact />
           <Route path="/workspace" component={Workspace} exact />
-          <Route path="/explore" component={Home} exact />
+          <Route path="/explore" render={(props) => <Home {...props}
+            shoppingCard={shoppingCard} isCardOpen={isCardOpen} itemControl={itemControl} clickCard={clickCard} />} exact />
           <Route path="/AboutUS" component={AboutUS} exact />
           <Route path="/ContactUs" component={ContactUs} exact />
-          <Route path="/shop-more" component={Shop} exact />
+          <Route path="/shop-more" render={(props) => <Shop {...props} clickCard={clickCard} />} exact />
           <Route path="/signup" component={Signup} exact />
           <Route path="/login-next" component={LoginNext} exact />
           <Route path="/board-name" component={BoardName} exact />
@@ -76,12 +77,12 @@ function App() {
           <Route path="/onboard-q2" component={OnboardQ2} exact />
           <Route path="/onboard-q3" component={OnboardQ3} exact />
           <Route path="/account" component={Account} exact />
-          <Route path="/inspired-details" component={InspirationDetails} exact />
+          <Route path="/inspired-details" render={(props) => <InspirationDetails {...props} clickCard={clickCard} />} exact />
           <Route path="/product-details" render={(props) => <ProductDetails {...props} addShoppingCard={addShoppingCard} />} exact />
-          <Route path="/inspired-more" component={InspiredMore} exact />
-          <Route path="/blog" component={Blog} exact />
+          <Route path="/inspired-more" render={(props) => <InspiredMore {...props} clickCard={clickCard} />} exact />
+          <Route path="/blog" render={(props) => <Blog {...props} clickCard={clickCard} />} exact />
           {/* <Route path="/navbar2" component={Navbar2} exact /> */}
-          <Route path="/looks" component={Looks} exact />
+          <Route path="/looks" render={() => <Looks {...props} clickCard={clickCard} />} exact />
           <Route path='/admin' component={Adminhome} />
         </Switch>
       </main>

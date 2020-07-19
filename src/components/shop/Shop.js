@@ -14,7 +14,7 @@ import Looks from '../looks/looks';
 
 
 
-function Shop() {
+function Shop({ clickCard }) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [product, setProduct] = useState([]);
@@ -50,7 +50,7 @@ function Shop() {
 
     return (
         <>
-            <HeaderShop />
+            <HeaderShop clickCard={clickCard} />
             <TabShop />
             <ShopPost data={product.slice(0, 4)} />
             <ShopTrending data={product.slice(4,)} onPageChange={onPageChange} currentPage={currentPage} pageSize={pageSize} />

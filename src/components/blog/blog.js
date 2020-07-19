@@ -8,7 +8,7 @@ import './blog.css';
 
 
 
-function Blog() {
+function Blog({ clickCard }) {
     const [pageSize, setPageSize] = useState(4);
     const [resource, setResource] = useState([]);
     const [product, setProduct] = useState([]);
@@ -50,7 +50,7 @@ function Blog() {
     }
     return (
         <>
-            <BlogHead data={resource.slice(0, 1)} product={product.slice(0, 4)} />
+            <BlogHead clickCard={clickCard} data={resource.slice(0, 1)} product={product.slice(0, 4)} />
             <BlogSlider resource={resource.slice(1)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
         </>
     );

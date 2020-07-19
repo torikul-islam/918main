@@ -8,13 +8,14 @@ import HomePostTwo from '../components/homePostTwo';
 import resourceService from '../services/resourceService';
 import NavbarB from './nav/navbarB';
 import './learnpage.css';
+import Card from './card/card';
 
 
 
 
 
 
-function LearnPage({ handleOpenMenu, openMenu, openModal }) {
+function LearnPage({ handleOpenMenu, openMenu, openModal, clickCard }) {
     const [pageSize, setPageSize] = useState(4);
     const [rooms, setRooms] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
@@ -47,7 +48,7 @@ function LearnPage({ handleOpenMenu, openMenu, openModal }) {
     }
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <NavbarB clickCard={clickCard} openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
             <LearnHeader data={rooms.slice(0, 1)} />
             <ThreeSlide data={rooms.slice(1,)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
             <HomeCreate data={rooms.slice(1, 2)} />

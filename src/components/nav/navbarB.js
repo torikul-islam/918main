@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
+function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard }) {
     return (
         <div className='container-menu' id='menu'>
             <div className="logo-width display-for-mobile">
@@ -47,7 +47,7 @@ function NavbarB({ openModal, data, openMenu, handleOpenMenu }) {
                                         <img src={require('../../Asset/Images/man.png')} alt="man.png" />
                                     </NavLink>
                                 </li>
-                                <li className="menu-item shop">
+                                <li className="menu-item shop" onClick={clickCard}>
                                     <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
                                 </li>
                             </span>

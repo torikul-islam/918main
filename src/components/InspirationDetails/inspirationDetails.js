@@ -8,7 +8,7 @@ import './inspirationDetails.css';
 
 
 
-function InspirationDetails({ openModal, data, openMenu, handleOpenMenu }) {
+function InspirationDetails({ openModal, data, openMenu, handleOpenMenu, clickCard }) {
     const [inspired, setInspired] = useState([])
 
 
@@ -21,7 +21,7 @@ function InspirationDetails({ openModal, data, openMenu, handleOpenMenu }) {
 
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <NavbarB openMenu={openMenu} clickCard={clickCard} handleOpenMenu={handleOpenMenu} openModal={openModal} />
             <InspirationTitle />
             <InspirationDetailsProduct />
             <InspirationAlsoLike />

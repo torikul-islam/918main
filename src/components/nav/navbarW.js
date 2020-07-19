@@ -6,8 +6,6 @@ import '../nav/navbar.css'
 
 
 function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
-
-
     return (
         <div className='container-menu' id='menu'>
             <div className="logo-width display-for-mobile">

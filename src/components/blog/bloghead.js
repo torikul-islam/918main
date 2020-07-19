@@ -5,10 +5,10 @@ import './bloghead.css';
 
 
 
-const BlogHead = ({ data, product, openModal, openMenu, handleOpenMenu  })=> {
+const BlogHead = ({ data, product, openModal, openMenu, handleOpenMenu, clickCard }) => {
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
+            <NavbarB openMenu={openMenu} clickCard={clickCard} handleOpenMenu={handleOpenMenu} openModal={openModal} />
             <div div className="blog-area">
                 <div className="container">
                     <div className="row">
@@ -47,8 +47,7 @@ const BlogHead = ({ data, product, openModal, openMenu, handleOpenMenu  })=> {
                                 <h4>SHOP THIS ARTICLE</h4>
                             </div>
                             {product && product.map((item, i) =>
-
-                                <div className="product-price">
+                                <div className="product-price" key={i}>
                                     <img src={item.ref_img} alt="" />
                                     <h4>{item.retailer}</h4>
                                     <h5>${item.price}</h5>

@@ -8,10 +8,10 @@ import ProductDetailsSliderPost from './productDetailsSliderPost';
 
 
 
-function ProductDetails({ openModal, addShoppingCard, openMenu, handleOpenMenu }) {
+function ProductDetails({ openModal, addShoppingCard, openMenu, handleOpenMenu, clickCard }) {
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <NavbarB openMenu={openMenu} clickCard={clickCard} handleOpenMenu={handleOpenMenu} openModal={openModal} />
             <ProductDetailsTitle addShoppingCard={addShoppingCard} />
             <ProductDetailsSlider />
             <ProductDetailsSliderPost />
