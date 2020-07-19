@@ -6,6 +6,17 @@ import './bloghead.css';
 
 
 const BlogHead = ({ data, product, openModal, openMenu, handleOpenMenu, clickCard }) => {
+
+   
+    const Capitalize = (text) => {
+        let lowercase = text.toLowerCase();
+        if (typeof lowercase !== "string") return lowercase;
+        return lowercase.split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+      
+
     return (
         <>
             <NavbarB openMenu={openMenu} clickCard={clickCard} handleOpenMenu={handleOpenMenu} openModal={openModal} />
@@ -14,7 +25,7 @@ const BlogHead = ({ data, product, openModal, openMenu, handleOpenMenu, clickCar
                     <div className="row">
                         {data.length > 0 && <div div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
-                                <h4>{data[0].title}</h4>
+                                <h4>{Capitalize (data[0].title)}</h4>
                             </div>
                         </div>}
                     </div>

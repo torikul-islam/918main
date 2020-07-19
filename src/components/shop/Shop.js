@@ -18,7 +18,7 @@ function Shop({ clickCard }) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [product, setProduct] = useState([]);
-
+    const title = 'Shop';
 
     useEffect(() => {
         (async function () {
@@ -51,7 +51,7 @@ function Shop({ clickCard }) {
     return (
         <>
             <HeaderShop clickCard={clickCard} />
-            <TabShop />
+            <TabShop title={title}/>
             <ShopPost data={product.slice(0, 4)} />
             <ShopTrending data={product.slice(4,)} onPageChange={onPageChange} currentPage={currentPage} pageSize={pageSize} />
             <ShopPost data={product.slice(4, 8)} />

@@ -49,7 +49,7 @@ const HeaderInspired = ({ clickCard }) => {
             <div className="container">
                 <div className='home-text'>
                     <h2>Need ideas?</h2>
-                    <p>Be inspired by som of our favorite heme designs and designers!</p>
+                    <p>Be inspired by some of our favorite home designs and designers!</p>
                 </div>
             </div>
         </div>

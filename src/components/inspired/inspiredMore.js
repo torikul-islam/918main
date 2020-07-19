@@ -15,7 +15,7 @@ function InspiredMore({ clickCard }) {
     const [currentPage, setCurrentPage] = useState(0);
     const [resource, setResource] = useState([]);
     const [product, setProduct] = useState([]);
-
+    const title = 'Be Inspire';
 
 
     useEffect(() => {
@@ -54,7 +54,7 @@ function InspiredMore({ clickCard }) {
     return (
         <>
             <HeaderShop clickCard={clickCard} />
-            <TabShop />
+            <TabShop title={title} />
             <ShopSlide data={resource.slice(0, 4)} />
             <ShopInspired data={resource.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
             <ShopSlide data={resource.slice(8, 12)} />

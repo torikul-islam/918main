@@ -36,28 +36,36 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-3">
+                        <NavLink to='/inspired-more' style={styles.squre}>
                             <div className="icons-header-lights">
                                 <img src={require('../Asset/Images/light-bulb.png')} alt="light-bulb.png" />
                                 <h5>Be inspired.</h5>
                             </div>
+                            </NavLink>
                         </div>
                         <div className="col-sm-3 padding-zero">
-                            <div className="learn icons-header-lights">
+                        <NavLink to='/learn-more' style={styles.squre}>
+                                <div className="learn icons-header-lights">
                                 <img src={require('../Asset/Images/learn.png')} alt="learn.png" />
                                 <h5>Learn.</h5>
                             </div>
+                            </NavLink>
                         </div>
                         <div className="col-sm-3 padding-right-zero">
+                        <NavLink to='/shop-more' style={styles.squre}>
                             <div className="shop icons-header-lights">
                                 <img src={require('../Asset/Images/shop.png')} alt="shop.png" />
                                 <h5>Shop.</h5>
                             </div>
+                            </NavLink>
                         </div>
                         <div className="col-sm-3">
+                        <NavLink to='/workspace' style={styles.squre}>
                             <div className="icons-header-lights">
                                 <img src={require('../Asset/Images/design.png')} alt="design.png" />
                                 <h5>Design.</h5>
                             </div>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -102,6 +110,13 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
             </div>
         </>
     );
+}
+
+const styles={
+ squre:{
+    textDecoration: 'none'
+ }
+
 }
 
 export default HeaderHome;
