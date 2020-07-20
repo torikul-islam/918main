@@ -3,9 +3,8 @@ import HeaderHome from './headerHome';
 import SliderPost from './common/slider/sliderPost';
 import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
-import roomsTestData from '../../src/testData/rooms.json';
-import shopTestData from '../../src/testData/shop.json';
-import roomServices from '../services/roomServices';
+import resourceServices from '../services/resourceService';
+import productServices from '../services/productService';
 import ShopThreeSlide from './shop/shopThreeSlide';
 import './home.css';
 
@@ -29,9 +28,10 @@ function Home(props) {
 
     useEffect(() => {
         (async function () {
-            // const { data } = await productServices.getAllProducts();
-            setShop(shopTestData.results);
-            setPost(roomsTestData.results);
+            const { data } = await productServices.getAllProducts();
+            const { data: resource } = await resourceServices.getAllResources();
+            setShop(data.results);
+            setPost(resource.results);
         })()
     }, []);
 

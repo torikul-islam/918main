@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import BlogHead from '../blog/bloghead';
-import SliderPost from '../common/slider/sliderPost';
 import resourceServices from '../../services/resourceService';
 import productServices from '../../services/productService';
+import BlogHead from '../blog/blogHead';
 import BlogSlider from './blogSlider';
 import './blog.css';
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Checkbox from '../common/checkbox';
 import GoBtn from '../common/goBtn';
 import './onboardQ2.css';
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 
@@ -11,9 +11,9 @@ function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
         let lowercase = text.toLowerCase();
         if (typeof lowercase !== "string") return lowercase;
         return lowercase.split(' ')
-          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(' ');
-      }
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
     const paginateResource = paginate(resource, currentPage, pageSize);
     return (
         <div className='container'>

@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import HeaderShop from './headerShop';
-import ShopSlide from '../shop/shopSlide';
-import ShopInspired from '../shop/shopInspired';
 import TabShop from '../shop/tabShop';
-import ShopThreeSlide from '../shop/shopThreeSlide';
 import productServices from '../../services/productService';
-import '../shop/Shop.css';
-import ShopTab from './shoptab';
-import TrendingSlider from '../common/slider/trendingSlider';
 import ShopTrending from './shopTrending';
 import ShopPost from './shopPost';
-import Looks from '../looks/looks';
+import '../shop/Shop.css';
 
 
 
