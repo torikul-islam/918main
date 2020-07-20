@@ -3,7 +3,7 @@ import './board.css';
 
 const Board = props => {
     return (
-        <div>
+        <div className="container window">
             board
         </div>
     );
