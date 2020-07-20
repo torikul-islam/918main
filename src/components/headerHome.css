@@ -169,6 +169,7 @@ li.sarch img {
 div.menu-float {
   float: right;
   width: 34%;
+  text-align: center;
 }
 div.search-float {
   width: 30%;

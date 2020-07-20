@@ -5,13 +5,15 @@ import './navbar.css';
 
 function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard }) {
     return (
-        <div className='container-menu' id='menu'>
-            <div className="logo-width display-for-mobile">
-                <li className='logo'>
-                    <Link className="nav-link" to="/" >
-                        <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
-                    </Link>
-                </li>
+        <div className='container-fluid'>
+            <div className='container-menu' id='menu'>
+                <div className="logo-width display-for-mobile">
+                    <li className='logo'>
+                        <Link className="nav-link" to="/" >
+                            <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
+                        </Link>
+                    </li>
+                </div>
             </div>
             <nav className="navbar-expand-lg navbar-light">
                 <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
