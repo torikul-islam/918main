@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/home';
-import Workspace from './components/workspace';
+import Workspace from './components/workspace/workspace';
 import AboutUS from './components/aboutUs/AboutUs';
 import ContactUs from './components/contactUs/ContactUs';
 import Shop from './components/shop/Shop';

@@ -7,7 +7,7 @@ import './looks.css';
 
 
 
-function Looks({ openMenu, openModal, handleOpenMenu, clickCard }) {
+function Looks(props) {
     const [product, setProduct] = useState([]);
     const [pageSize, setPageSize] = useState(3);
     const [currentPage, setCurrentPage] = useState(0)
@@ -43,11 +43,8 @@ function Looks({ openMenu, openModal, handleOpenMenu, clickCard }) {
     return (
         <>
             <LookHead
-                openMenu={openMenu}
-                openModal={openModal}
-                handleOpenMenu={handleOpenMenu}
+                {...props}
                 data={product.slice(0, 1)}
-                clickCard={clickCard}
             />
             <LookPost
                 product={product.slice(1, 9)}

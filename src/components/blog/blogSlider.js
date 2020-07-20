@@ -7,6 +7,13 @@ import paginate from '../../utils/paginate';
 
 function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
 
+    const Capitalize = (text) => {
+        let lowercase = text.toLowerCase();
+        if (typeof lowercase !== "string") return lowercase;
+        return lowercase.split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
     const paginateResource = paginate(resource, currentPage, pageSize);
     return (
         <div className='container'>
@@ -22,7 +29,7 @@ function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
                                 {paginateResource && paginateResource.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                         <img src={item.ref_img} alt="" />
-                                        <h6>{item.title}</h6>
+                                        <h6>{Capitalize(item.title)}</h6>
                                         <p>{item.source}</p>
                                     </div>
                                 )}

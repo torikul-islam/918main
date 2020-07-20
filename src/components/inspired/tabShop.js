@@ -13,7 +13,7 @@ class TabShop extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">
-                            <h4>Shop</h4>
+                            <h4>{this.props.title}</h4>
                             <ul>
                                 <li>FURNITURE</li>
                                 <li>DECOR</li>

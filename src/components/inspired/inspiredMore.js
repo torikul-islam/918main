@@ -15,7 +15,7 @@ function InspiredMore(props) {
     const [currentPage, setCurrentPage] = useState(0);
     const [resource, setResource] = useState([]);
     const [product, setProduct] = useState([]);
-
+    const title = 'Be Inspire';
 
 
     useEffect(() => {
