@@ -11,7 +11,6 @@ import './home.css';
 
 
 function Home(props) {
-    const [modal, setModal] = useState({ isOpen: false, name: null });
     const [post, setPost] = useState([]);
     const [shop, setShop] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);

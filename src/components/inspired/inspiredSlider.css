@@ -40,3 +40,6 @@
   font-family: "Helvetica-light";
   font-size: 18px;
 }
+.inspired-slider ul li.active {
+  color: red;
+}

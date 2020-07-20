@@ -1,1 +1,6 @@
 @import "../src/Asset/Fonts/fonts.css";
+
+/* // global css declared below */
+.pointer {
+  cursor: pointer;
+}

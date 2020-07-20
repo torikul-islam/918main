@@ -1,0 +1,585 @@
+[
+  {
+    "pk": 1,
+    "name": "Sofa",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 2,
+    "name": "Accent Chair",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 3,
+    "name": "Coffee Table",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 4,
+    "name": "Side Table",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 5,
+    "name": "Console Table",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 6,
+    "name": "Bench",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 7,
+    "name": "Bed",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 8,
+    "name": "Nightstand",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 9,
+    "name": "Dresser",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 10,
+    "name": "Dining Table",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 11,
+    "name": "Dining Chair",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 12,
+    "name": "Desk",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 13,
+    "name": "Desk Chair",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 14,
+    "name": "Bookcase",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 15,
+    "name": "Crib",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 16,
+    "name": "Storage",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 17,
+    "name": "Rug",
+    "piece_category": {
+      "id": 5,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "32771629-52c8-4ebe-98dc-08a334f0a2d2",
+      "name": "Rugs"
+    }
+  },
+  {
+    "pk": 18,
+    "name": "Art",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 19,
+    "name": "Pillow",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 20,
+    "name": "Window Treatments",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 21,
+    "name": "Decor",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 22,
+    "name": "Duvet",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 23,
+    "name": "Quilt",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 24,
+    "name": "Sheets",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 25,
+    "name": "Mattress",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 26,
+    "name": "Towel",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 27,
+    "name": "Vanity",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 28,
+    "name": "Faucet",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 29,
+    "name": "Sink",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 30,
+    "name": "Hardware",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 31,
+    "name": "Bath Mat",
+    "piece_category": {
+      "id": 4,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "bd8f52be-d69c-4732-b8dd-f01851ffffea",
+      "name": "Bed & Bath"
+    }
+  },
+  {
+    "pk": 32,
+    "name": "Tile",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 33,
+    "name": "Overhead Light",
+    "piece_category": {
+      "id": 3,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "5b3965f9-4d7a-4fb0-af24-111e0452c451",
+      "name": "Lighting"
+    }
+  },
+  {
+    "pk": 34,
+    "name": "Floor Lamp",
+    "piece_category": {
+      "id": 3,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "5b3965f9-4d7a-4fb0-af24-111e0452c451",
+      "name": "Lighting"
+    }
+  },
+  {
+    "pk": 35,
+    "name": "Table Lamp",
+    "piece_category": {
+      "id": 3,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "5b3965f9-4d7a-4fb0-af24-111e0452c451",
+      "name": "Lighting"
+    }
+  },
+  {
+    "pk": 36,
+    "name": "Sconce",
+    "piece_category": {
+      "id": 3,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "5b3965f9-4d7a-4fb0-af24-111e0452c451",
+      "name": "Lighting"
+    }
+  },
+  {
+    "pk": 37,
+    "name": "Wallpaper",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 38,
+    "name": "Mirror",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 39,
+    "name": "Curtain",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 40,
+    "name": "Throw",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 41,
+    "name": "Stool",
+    "piece_category": {
+      "id": 1,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "b5704808-202d-44ad-b730-215449b9e49f",
+      "name": "Furniture"
+    }
+  },
+  {
+    "pk": 42,
+    "name": "Paint",
+    "piece_category": {
+      "id": 6,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "e7dc5138-2e4b-4bc4-ab3c-09f17e80eecb",
+      "name": "Paint"
+    }
+  },
+  {
+    "pk": 43,
+    "name": "Vase",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 44,
+    "name": "Basket",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 45,
+    "name": "Planter",
+    "piece_category": {
+      "id": 2,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "1a4c6961-f596-4b90-8b27-ba96feb6b536",
+      "name": "Accessories"
+    }
+  },
+  {
+    "pk": 46,
+    "name": "Outdoor Sofa",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 47,
+    "name": "Outdoor Accent Chair",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 48,
+    "name": "Outdoor Dining Table",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 49,
+    "name": "Outdoor Side Table",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 50,
+    "name": "Outdoor Coffee Table",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 51,
+    "name": "Outdoor Dining Chair",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 52,
+    "name": "Outdoor Pillow",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  },
+  {
+    "pk": 53,
+    "name": "Outdoor Rug",
+    "piece_category": {
+      "id": 7,
+      "created_at": "2020-02-12T07:20:30Z",
+      "updated_at": "2020-02-12T07:20:30Z",
+      "uuid": "de8e9759-ddf9-4c61-b031-5595f971b693",
+      "name": "Outdoor"
+    }
+  }
+]
