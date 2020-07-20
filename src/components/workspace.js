@@ -5,6 +5,9 @@ import NavbarB from './nav/navbarB';
 
 
 const Workspace = ({ openModal, openMenu, handleOpenMenu }) => {
+
+
+
     return (
         <div>
             <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />

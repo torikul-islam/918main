@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import HeaderShop from './headerInspired';
+import HeaderInspired from './headerInspired';
 import ShopSlide from './shopSlide';
 import ShopInspired from './shopInspired';
 import TabShop from './tabShop';
@@ -10,7 +10,7 @@ import '../inspired/inspired.css';
 
 
 
-function InspiredMore({ clickCard }) {
+function InspiredMore(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [resource, setResource] = useState([]);
@@ -53,7 +53,7 @@ function InspiredMore({ clickCard }) {
     }
     return (
         <>
-            <HeaderShop clickCard={clickCard} />
+            <HeaderInspired {...props} />
             <TabShop />
             <ShopSlide data={resource.slice(0, 4)} />
             <ShopInspired data={resource.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />

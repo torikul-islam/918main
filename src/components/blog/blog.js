@@ -8,7 +8,7 @@ import './blog.css';
 
 
 
-function Blog({ clickCard }) {
+function Blog({ clickCard, openMenu, openModal, handleOpenMenu }) {
     const [pageSize, setPageSize] = useState(4);
     const [resource, setResource] = useState([]);
     const [product, setProduct] = useState([]);
@@ -48,10 +48,22 @@ function Blog({ clickCard }) {
             setCurrentPage(currentPage + 1)
         }
     }
+
     return (
         <>
-            <BlogHead clickCard={clickCard} data={resource.slice(0, 1)} product={product.slice(0, 4)} />
-            <BlogSlider resource={resource.slice(1)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
+            <BlogHead
+                openMenu={openMenu}
+                openModal={openModal}
+                handleOpenMenu={handleOpenMenu}
+                clickCard={clickCard} data={resource.slice(0, 1)}
+                product={product.slice(0, 4)}
+            />
+            <BlogSlider
+                resource={resource.slice(1)}
+                currentPage={currentPage}
+                pageSize={pageSize}
+                onPageChange={onPageChange}
+            />
         </>
     );
 }

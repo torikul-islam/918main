@@ -31,6 +31,7 @@ function Login({ openModal, closeModal }) {
         }
     }
 
+
     const { username, password } = user;
     return (
         <div className='container'>
@@ -52,7 +53,7 @@ function Login({ openModal, closeModal }) {
                             <div className='have-account'>
                                 <h6>Already have an account</h6>
                                 <h3 onClick={() => openModal('signup')}>
-                                    <Link to="">Signup</Link>
+                                    <h6>Signup</h6>
                                 </h3>
                             </div>
                         </div>

@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import HeaderHome from './headerHome';
 import Modal from './common/modal/modal';
-import Signup from './auth/signup';
-import Login from './auth/login';
-import LoginNext from './auth/loginNext';
-import BoardName from './onboard/boardName';
-import CreateBoard from './onboard/createBoard';
+// import Signup from './auth/signup';
+// import Login from './auth/login';
+// import LoginNext from './auth/loginNext';
+// import BoardName from './onboard/boardName';
+// import CreateBoard from './onboard/createBoard';
+// import Onboard from './onboard/onboard';
 import SliderPost from './common/slider/sliderPost';
 import ShopSlide from './shop/shopSlide';
 import InspiredSlider from './inspired/inspiredSlider';
-import Onboard from './onboard/onboard';
 import roomsTestData from '../../src/testData/rooms.json';
 import shopTestData from '../../src/testData/shop.json';
 import roomServices from '../services/roomServices';
 import ShopThreeSlide from './shop/shopThreeSlide';
 import './home.css';
-import Card from './card/card';
-
 
 
 
 function Home(props) {
     const [modal, setModal] = useState({ isOpen: false, name: null });
-    const [openMenu, setOpenMenu] = useState(false);
+    // const [openMenu, setOpenMenu] = useState(false);
     const [post, setPost] = useState([]);
     // const [rooms, setRooms] = useState([]);
     const [shop, setShop] = useState([]);
@@ -30,13 +28,13 @@ function Home(props) {
     const [pageSize, setPageSize] = useState(4);
 
 
-    function openModal(name) {
-        setModal({ isOpen: true, name: name })
-    };
+    // function openModal(name) {
+    //     setModal({ isOpen: true, name: name })
+    // };
 
-    function closeModal() {
-        setModal({ isOpen: false, name: null })
-    };
+    // function closeModal() {
+    //     setModal({ isOpen: false, name: null })
+    // };
 
     function onPageChange(val) {
         if (val === '-') {
@@ -65,11 +63,12 @@ function Home(props) {
         }
     }
 
-    function handleOpenMenu() {
-        setOpenMenu(!openMenu)
-    }
+    // function handleOpenMenu() {
+    //     setOpenMenu(!openMenu)
+    // }
 
     const { isOpen, name } = modal;
+    const { openModal, openMenu, handleOpenMenu } = props;
     return (
         <div>
             {/* <Card isCardOpen={props.isCardOpen} itemControl={props.itemControl} shoppingCard={props.shoppingCard} clickCard={props.clickCard} /> */}
@@ -82,12 +81,12 @@ function Home(props) {
             <ShopThreeSlide />
 
 
-            {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
+            {/* {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
             {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
             {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext {...props} openModal={openModal} closeModal={closeModal} />} />}
             {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
             {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
-            {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />} */}
         </div>
     );
 }

@@ -46,9 +46,14 @@ function LearnPage({ handleOpenMenu, openMenu, openModal, clickCard }) {
             setPageSize(4)
         }
     }
+
     return (
         <>
-            <NavbarB clickCard={clickCard} openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <NavbarB
+                clickCard={clickCard}
+                openMenu={openMenu}
+                handleOpenMenu={handleOpenMenu}
+                openModal={openModal} />
             <LearnHeader data={rooms.slice(0, 1)} />
             <ThreeSlide data={rooms.slice(1,)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
             <HomeCreate data={rooms.slice(1, 2)} />
