@@ -1,17 +1,19 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
 function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard }) {
     return (
-        <div className='container-menu' id='menu'>
-            <div className="logo-width display-for-mobile">
-                <li className='logo'>
-                    <Link className="nav-link" to="/" >
-                        <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
-                    </Link>
-                </li>
+        <div className='container-fluid'>
+            <div className='container-menu' id='menu'>
+                <div className="logo-width display-for-mobile">
+                    <li className='logo'>
+                        <Link className="nav-link" to="/" >
+                            <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
+                        </Link>
+                    </li>
+                </div>
             </div>
             <nav className="navbar-expand-lg navbar-light">
                 <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,19 +35,19 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard }) {
                         </div>
                         <div className="menu-float">
                             <li className="menu-item font-hel">
-                                <NavLink className="nav-link" to="/workspace" exact >Workspace</NavLink>
+                                <Link className="nav-link" to="/workspace" exact >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
-                                <NavLink className="nav-link" to="/explore" exact >Explore</NavLink>
+                                <Link className="nav-link" to="/explore" exact >Explore</Link>
                             </li>
                             <li className="menu-item signup" onClick={() => openModal('signup')}>
                                 <div className="nav-link" >Sign Up</div>
                             </li>
                             <span className="menu-icon">
                                 <li className="menu-item man">
-                                    <NavLink className="nav-link" to="/account" exact>
+                                    <Link className="nav-link" to="/account" exact>
                                         <img src={require('../../Asset/Images/man.png')} alt="man.png" />
-                                    </NavLink>
+                                    </Link>
                                 </li>
                                 <li className="menu-item shop" onClick={clickCard}>
                                     <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />

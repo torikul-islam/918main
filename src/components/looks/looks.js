@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import LookHead from '../looks/lookHead';
 import LookPost from './lookPost';
 import productServices from '../../services/productService';
-import './looks.css';
 import LookSlider from './lookSlider';
+import './looks.css';
 
 
 
-function Looks() {
+function Looks(props) {
     const [product, setProduct] = useState([]);
     const [pageSize, setPageSize] = useState(3);
     const [currentPage, setCurrentPage] = useState(0)
@@ -42,9 +42,19 @@ function Looks() {
 
     return (
         <>
-            <LookHead data={product.slice(0, 1)} />
-            <LookPost product={product.slice(1, 9)} />
-            <LookSlider data={product} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
+            <LookHead
+                {...props}
+                data={product.slice(0, 1)}
+            />
+            <LookPost
+                product={product.slice(1, 9)}
+            />
+            <LookSlider
+                data={product}
+                currentPage={currentPage}
+                pageSize={pageSize}
+                onPageChange={onPageChange}
+            />
         </>
     );
 }

@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import HeaderShop from './headerShop';
-import ShopSlide from '../shop/shopSlide';
-import ShopInspired from '../shop/shopInspired';
 import TabShop from '../shop/tabShop';
-import ShopThreeSlide from '../shop/shopThreeSlide';
 import productServices from '../../services/productService';
-import '../shop/Shop.css';
-import ShopTab from './shoptab';
-import TrendingSlider from '../common/slider/trendingSlider';
 import ShopTrending from './shopTrending';
 import ShopPost from './shopPost';
-import Looks from '../looks/looks';
+import '../shop/Shop.css';
 
 
 
-function Shop({ clickCard }) {
+function Shop(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [product, setProduct] = useState([]);
@@ -50,8 +44,8 @@ function Shop({ clickCard }) {
 
     return (
         <>
-            <HeaderShop clickCard={clickCard} />
-            <TabShop title={title}/>
+            <HeaderShop {...props} />
+            <TabShop title={title} />
             <ShopPost data={product.slice(0, 4)} />
             <ShopTrending data={product.slice(4,)} onPageChange={onPageChange} currentPage={currentPage} pageSize={pageSize} />
             <ShopPost data={product.slice(4, 8)} />

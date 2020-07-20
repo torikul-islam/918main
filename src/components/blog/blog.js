@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import BlogHead from '../blog/bloghead';
-import SliderPost from '../common/slider/sliderPost';
 import resourceServices from '../../services/resourceService';
 import productServices from '../../services/productService';
+import BlogHead from '../blog/blogHead';
 import BlogSlider from './blogSlider';
 import './blog.css';
 
 
 
-function Blog({ clickCard }) {
+function Blog(props) {
     const [pageSize, setPageSize] = useState(4);
     const [resource, setResource] = useState([]);
     const [product, setProduct] = useState([]);
@@ -48,10 +47,20 @@ function Blog({ clickCard }) {
             setCurrentPage(currentPage + 1)
         }
     }
+
     return (
         <>
-            <BlogHead clickCard={clickCard} data={resource.slice(0, 1)} product={product.slice(0, 4)} />
-            <BlogSlider resource={resource.slice(1)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
+            <BlogHead
+                {...props}
+                data={resource.slice(0, 1)}
+                product={product.slice(0, 4)}
+            />
+            <BlogSlider
+                resource={resource.slice(1)}
+                currentPage={currentPage}
+                pageSize={pageSize}
+                onPageChange={onPageChange}
+            />
         </>
     );
 }

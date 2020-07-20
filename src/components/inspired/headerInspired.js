@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import NavbarB from '../nav/navbarB';
 import './headerShop.css';
 
 
 
-const HeaderInspired = ({ clickCard }) => {
+const HeaderInspired = ({ clickCard, openMenu, openModal, handleOpenMenu }) => {
     return (
         <div className="home-area">
-            <div className='container-fluid' >
+
+            <NavbarB
+                clickCard={clickCard}
+                openMenu={openMenu}
+                openModal={openModal}
+                handleOpenMenu={handleOpenMenu}
+            />
+            {/* <div className='container-fluid' >
                 <div className='container-menu' id='menu'>
                     <ul className="home-menu">
                         <div className="search-float">
@@ -45,7 +52,7 @@ const HeaderInspired = ({ clickCard }) => {
                         </div>
                     </ul>
                 </div>
-            </div>
+            </div> */}
             <div className="container">
                 <div className='home-text'>
                     <h2>Need ideas?</h2>

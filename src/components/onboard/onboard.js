@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import OnboardQ1 from './onboardQ1';
-import Modal from '../common/modal/modal';
 import OnboardQ2 from './onboardQ2';
 import OnboardQ3 from './onboardQ3';
 import roomService from '../../services/roomServices';
-import styleService from '../../services/styleServices';
+// import styleService from '../../services/styleServices';
 import styleServices from '../../services/styleServices';
 import roomServices from '../../services/roomServices';
-
 
 
 
@@ -15,53 +13,7 @@ class Onboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            rooms: [
-                {
-                    "pk": 1,
-                    "uuid": "d413110d-1ba7-4d4a-b7ee-5b9020902072",
-                    "name": "Living Room"
-                },
-                {
-                    "pk": 2,
-                    "uuid": "24396beb-2870-4242-8818-56a20b6b1f74",
-                    "name": "Dining Room"
-                },
-                {
-                    "pk": 3,
-                    "uuid": "2bbf7197-7d00-40e4-b307-a55bf86cca1b",
-                    "name": "Kitchen"
-                },
-                {
-                    "pk": 4,
-                    "uuid": "d190766e-f555-4939-929c-d02b70b7eefe",
-                    "name": "Bathroom"
-                },
-                {
-                    "pk": 5,
-                    "uuid": "0239a55d-0263-4a23-b17c-f2be30022d99",
-                    "name": "Bedroom"
-                },
-                {
-                    "pk": 6,
-                    "uuid": "3c3e8f05-ef89-42f9-afc9-511f8e019c7f",
-                    "name": "Office"
-                },
-                {
-                    "pk": 7,
-                    "uuid": "a9b9168f-13ee-4030-b452-445f9242cf40",
-                    "name": "Kids' Room"
-                },
-                {
-                    "pk": 8,
-                    "uuid": "efec1400-2543-496b-840b-22af91ac069a",
-                    "name": "Entryway"
-                },
-                {
-                    "pk": 9,
-                    "uuid": "a3c5dc23-17f9-4f1c-ae6b-702636089a3c",
-                    "name": "Outdoor"
-                }
-            ],
+            rooms: [],
             filterRoom: [],
             styles: [],
             errors: {},
@@ -71,13 +23,13 @@ class Onboard extends Component {
     }
 
     componentDidMount() {
-        // this.getRooms();
+        this.getRooms();
     }
 
     getRooms = async () => {
         try {
-            const { data: rooms } = await roomService.getAllRooms();
-            this.setState({ rooms });
+            const { data } = await roomService.getAllRooms();
+            this.setState({ rooms: data.results });
         } catch (ex) {
             const errors = this.state.errors;
             errors['rooms'] = "Failed to fetch get all rooms";
@@ -113,11 +65,9 @@ class Onboard extends Component {
             const { data } = await roomServices.getRoomsByIds(checkBoxes.join(','));
             this.setState({ filterRoom: data.results, boardNo: 3 });
         } catch (ex) {
-            const errors = this.state.errors;
             errors['style'] = 'Failed to get styles';
             this.setState({ errors });
         }
-
     };
 
     onCheck = (e) => {
