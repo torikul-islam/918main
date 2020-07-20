@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/home';
 import Workspace from './components/workspace/workspace';
 import AboutUS from './components/aboutUs/AboutUs';
 import ContactUs from './components/contactUs/ContactUs';
 import Shop from './components/shop/Shop';
-import LearnPage from './components/learnpage';
+import LearnPage from './components/learnPage';
 import Footer from './components/footer/footer';
-import OnboardQ1 from './components/onboard/onboardQ1';
-import OnboardQ2 from './components/onboard/onboardQ2';
-import OnboardQ3 from './components/onboard/onboardQ3';
 import InspiredMore from './components/inspired/inspiredMore';
 import Account from './components/account/account';
 import Blog from './components/blog/blog';
 import InspirationDetails from './components/InspirationDetails/inspirationDetails';
 import Looks from './components/looks/looks'
-import Adminhome from './components/admin/adminhome';
+import AdminHome from './components/admin/adminHome';
 import ProductDetails from './components/productDetails/productDetails';
 import Card from './components/card/card';
 import Modal from './components/common/modal/modal';
@@ -102,7 +99,8 @@ function App(props) {
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard}
-            shoppingCard={shoppingCard} isCardOpen={isCardOpen} itemControl={itemControl} />} exact />
+            shoppingCard={shoppingCard}
+            isCardOpen={isCardOpen} itemControl={itemControl} />} exact />
 
           <Route path="/AboutUS" component={AboutUS} exact />
 
@@ -116,6 +114,7 @@ function App(props) {
 
 
           <Route path="/account" component={Account} exact />
+
           <Route path="/inspired-details" render={(props) => <InspirationDetails
             {...props}
             openMenu={openMenu}
@@ -143,26 +142,13 @@ function App(props) {
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
-          <Route path='/admin' component={Adminhome} />
-
-
-          {/* unnecessary file remove it later. */}
-          {/* <Route path="/signup" component={Signup} exact />
-          <Route path="/login-next" component={LoginNext} exact />
-          <Route path="/board-name" component={BoardName} exact />
-          <Route path="/create-board" component={CreateBoard} exact />
-          <Route path="/onboard-q1" component={OnboardQ1} exact />
-          <Route path="/onboard-q2" component={OnboardQ2} exact />
-          <Route path="/onboard-q3" component={OnboardQ3} exact /> */}
-
-
+          <Route path='/admin' component={AdminHome} />
         </Switch>
-
 
       </main>
       {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
       {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
-      {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext {...props} openModal={openModal} closeModal={closeModal} />} />}
+      {name === 'loginNext' && <Modal isOpen={isOpen} childComp={< LoginNext openModal={openModal} closeModal={closeModal} />} />}
       {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
       {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
       {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />}

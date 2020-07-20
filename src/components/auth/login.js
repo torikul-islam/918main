@@ -53,7 +53,7 @@ function Login({ openModal, closeModal }) {
                             <div className='have-account'>
                                 <h6>Already have an account</h6>
                                 <h3 onClick={() => openModal('signup')}>
-                                    <h6>Signup</h6>
+                                    <p>Signup</p>
                                 </h3>
                             </div>
                         </div>
@@ -71,6 +71,7 @@ function Login({ openModal, closeModal }) {
                                         name='username'
                                         id='username'
                                         type='text'
+                                        autoComplete='off'
                                         placeholder='User name'
                                     />
                                     <Input
@@ -79,6 +80,7 @@ function Login({ openModal, closeModal }) {
                                         name='password'
                                         id='password'
                                         type='password'
+                                        autoComplete='off'
                                         placeholder='Password'
                                     />
                                     <button type="submit" className="btn btn-signup">Login</button>

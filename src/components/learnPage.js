@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar';
-import LearnHeader from '../components/learnHeader';
-import ThreeSlide from '../components/threeSlide';
-import HomeCreate from '../components/homeCreate';
-import PostSlideThree from '../components/common/postSlideThree';
-import HomePostTwo from '../components/homePostTwo';
+import LearnHeader from './learnHeader';
+import ThreeSlide from './threeSlide';
+import HomeCreate from './homeCreate';
+import PostSlideThree from './common/postSlideThree';
+import HomePostTwo from './homePostTwo';
 import resourceService from '../services/resourceService';
 import NavbarB from './nav/navbarB';
-import './learnpage.css';
-import Card from './card/card';
+import './learnPage.css';
 
 
 
 
 
 
-function LearnPage({ handleOpenMenu, openMenu, openModal, clickCard }) {
+function LearnPage(props) {
     const [pageSize, setPageSize] = useState(4);
     const [rooms, setRooms] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
@@ -49,11 +47,7 @@ function LearnPage({ handleOpenMenu, openMenu, openModal, clickCard }) {
 
     return (
         <>
-            <NavbarB
-                clickCard={clickCard}
-                openMenu={openMenu}
-                handleOpenMenu={handleOpenMenu}
-                openModal={openModal} />
+            <NavbarB {...props} />
             <LearnHeader data={rooms.slice(0, 1)} />
             <ThreeSlide data={rooms.slice(1,)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
             <HomeCreate data={rooms.slice(1, 2)} />
@@ -66,33 +60,3 @@ function LearnPage({ handleOpenMenu, openMenu, openModal, clickCard }) {
 }
 
 export default LearnPage;
-
-
-
-// class LearnPage extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-
-//         }
-//     }
-
-
-
-//     render() {
-//         return (
-//             <div>
-//                 <Navbar2 />
-//                 <LearnHeader />
-//                 <ThreeSlide />
-//                 <HomeCreate />
-//                 <PostSlideThree />
-//                 <HomePostTwo />
-//                 <HomePostTwo />
-//                 <PostSlideThree />
-//             </div>
-//         );
-//     }
-// }
-
-// export default LearnPage;

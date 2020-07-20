@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GoBtn from '../common/goBtn';
 import './loginNext.css';
-
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,11 +9,6 @@ import './loginNext.css';
 function LoginNext(props) {
     function clickBoard() {
         props.openModal('boardName');
-    };
-
-    function clickContinue() {
-        props.closeModal();
-        props.history.push('/explore');
     };
 
     function clickAnsQues() {
@@ -57,7 +51,9 @@ function LoginNext(props) {
                             </div>
                             <div className='continue'>
                                 <h6>Click here to continue browsing.</h6>
-                                <GoBtn text='Go' onClick={clickContinue} />
+                                <Link to='/explore'>
+                                    <GoBtn text='Go' onClick={() => props.closeModal()} />
+                                </Link>
                             </div>
                         </div>
                     </div>

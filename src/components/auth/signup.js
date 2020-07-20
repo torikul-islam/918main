@@ -56,7 +56,7 @@ function Signup(props) {
                             <div className='have-account'>
                                 <h6>Already have an account</h6>
                                 <h3 onClick={() => openModal('login')}>
-                                    <h6>Login</h6>
+                                    <p>Login</p>
                                 </h3>
                             </div>
                         </div>
@@ -73,6 +73,7 @@ function Signup(props) {
                                         id='username'
                                         type='text'
                                         placeholder='Name'
+                                        autoComplete='off'
                                         error={errors['username'] && errors['username'][0]}
                                     />
                                     <Input
@@ -82,6 +83,7 @@ function Signup(props) {
                                         id='email'
                                         type='email'
                                         placeholder='Email'
+                                        autoComplete='off'
                                         error={errors['email'] && errors['email'][0]}
                                     />
                                     <Input
@@ -91,6 +93,7 @@ function Signup(props) {
                                         id='password'
                                         type='password'
                                         placeholder='Password'
+                                        autoComplete='off'
                                         error={errors['password'] && errors['password'][0]}
                                     />
                                     <button type="submit" className="btn btn-signup">Sign Up</button>
