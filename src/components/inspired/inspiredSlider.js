@@ -65,6 +65,7 @@ function InspiredSlider(props) {
     function onItemSelect(item) {
         setSelectedItem(item.id);
         getPieces(item.id);
+        setCurrentPage(0);
     }
 
     const inspiredPaginate = inspired && paginate(inspired, currentPage, pageSize);
