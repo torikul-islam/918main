@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../common/pagination';
-import Slider4 from '../common/slider/slider4';
 import paginate from '../../utils/paginate';
 import GoBtn from '../common/goBtn';
 import { Link } from 'react-router-dom';

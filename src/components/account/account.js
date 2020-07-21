@@ -10,7 +10,7 @@ import './account.css';
 
 
 
-const Account = ({ openModal, data, openMenu, handleOpenMenu }) => {
+const Account = (props) => {
     const [user, setUser] = useState(false)
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Account = ({ openModal, data, openMenu, handleOpenMenu }) => {
 
     return (
         <>
-            <NavbarB />
+            <NavbarB {...props} />
             {user ? <div className='account-sidebar'>
                 <div className='container'>
                     <h4>My Likes</h4>
