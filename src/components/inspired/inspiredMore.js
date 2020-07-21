@@ -54,7 +54,7 @@ function InspiredMore(props) {
     return (
         <>
             <HeaderInspired {...props} />
-            <TabShop />
+            <TabShop title={title}/>
             <ShopSlide data={resource.slice(0, 4)} />
             <ShopInspired data={resource.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
             <ShopSlide data={resource.slice(8, 12)} />
