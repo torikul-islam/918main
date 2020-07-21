@@ -80,7 +80,7 @@ function InspiredSlider(props) {
                             {pieces.map(item =>
                                 <li
                                     onClick={() => onItemSelect(item)}
-                                    className={item.id === selectedItem ? 'pointer active' : 'pointer'}
+                                    className={item.id === selectedItem ? 'disable active' : 'pointer'}
                                     key={item.uuid}>{item.name.toUpperCase()}
                                 </li>)
                             }
