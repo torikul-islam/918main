@@ -118,7 +118,12 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             addShoppingCard={addShoppingCard} />} exact />
 
-          <Route path="/account" component={Account} exact />
+          {/* <Route path="/account" component={Account} exact /> */}
+          <Route path="/account" render={(props) => <Account {...props}
+            openMenu={openMenu}
+            openModal={openModal}
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard} />} exact />
 
           <Route path="/inspired-more" render={(props) => <InspiredMore {...props}
             openMenu={openMenu}

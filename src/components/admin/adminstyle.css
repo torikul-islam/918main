@@ -264,7 +264,7 @@ a.article, a.article:hover {
 
 .panel-header .btn-cover a{margin-top:15px;}
 
-.form-tools-cover{}
+
 .form-tools-cover label{font-weight:500;color:#6A6666;padding:10px 0;font-size:13px;}
 .form-tools-cover{margin-top:35px;}
 .form-tools-cover .input-group{width:100%;position:relative;}
@@ -294,7 +294,7 @@ a.article, a.article:hover {
 .file-upload-wrapper .left-section .input-file-cover{position:relative;}
 .file-upload-wrapper .left-section .input-file-cover input[type="file"]{cursor:pointer;opacity:0;display:inline-block;margin-top:25px;position:absolute;width:30%;top:-25px;background:red;height:38px;}
 .file-upload-wrapper .left-section .input-file-cover input[type="button"]{width:30%;margin:auto;background:#fff;border-radius:16px;border:1px solid #419CF5;color:#419CF5;}
-.file-upload-wrapper .right-section{}
+
 /**file-upload-wrapper close**/
 
 
@@ -313,9 +313,6 @@ a.article, a.article:hover {
 /** datatable start **/
 .table-wrapper{width:100%;margin-top:20px;}
 .table-wrapper input[type="text"]{border:1px solid #e7e7e7;outline:0;padding:5px;}
-.table{}
-.table thead{}
-.table thead tr{}
 .table thead tr th{font-weight:400;font-size:12px;}
 .table tbody tr td{font-weight:300;font-size:11px;}
 .table tbody tr td i{font-weight:300;font-size:15px;background:#fff;border:1px solid #e8e8e8;text-align:center;color:#222;width:28px;height:28px;padding-top:5px;border-radius:3px;}
@@ -361,10 +358,7 @@ table.dataTable {
 
 
 /** breadecrumbs **/
-.breadcrumb-wrapper{}
 .breadcrumb-wrapper ol.breadcrumb{background:transparent;}
-
-.payment-history-label{}
 .payment-history-label p{font-size:12px;}
 
 
@@ -403,7 +397,6 @@ table.dataTable {
 
 .modal-header{position:relative;}
 .modal-header a{position:absolute;right:10px;top:10px;}
-.modal-footer{}
 .modal-footer .button-cover{margin:0;}
 .close {
     color: #aaa;
@@ -518,9 +511,7 @@ table.dataTable {
 }
 
 @media only screen and (max-width: 768px) {
-  label span {
-   
-  }
+
 
   label.tab-label .fa {
     font-size: 16px;
@@ -606,7 +597,7 @@ table.dataTable {
 .notice-author-img-cover img{width:100%;border-radius:50%;border:1px solid #ddd;}
 p.author-name{font-size:13px;margin:15px 0 10px 0;}
 p.author-name span{color:#4FA1FF;font-weight:500;}
-.notice-desc{}
+
 .notice-desc p{font-size:14px;line-height:30px;}
 
 
@@ -617,7 +608,7 @@ p.author-name span{color:#4FA1FF;font-weight:500;}
 
 /** routin setup **/
 .routine-wrapper{  width:100%;}
-.single-day-wrapper{  }
+
 .day-wrapper{background:#f8f8f8; height:120px;text-align:center; padding:25px;}
 .day-wrapper h5{text-transform:uppercase;color:#222;font-size:13px;font-weight:300; padding-top:28px;}
 .day-wrapper p{text-transform:uppercase;color:#fff;font-size:10px;font-weight:300;padding:10px 0 0 0;}
@@ -625,11 +616,11 @@ p.author-name span{color:#4FA1FF;font-weight:500;}
 
 .single-routine-wrapper{margin-bottom:10px; width:100%; position:relative;}
 .single-routine-wrapper .time-wrapper p{font-size:12px;font-weight:300;}
-.single-routine-wrapper .edit-panel{width:100%;height:150px;background:rgba(44,62,80,0.0);position:absolute;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;top:0%;padding:15px;}
+.single-routine-wrapper .edit-panel{width:100%;height:150px;background:rgba(44,62,80,0.0);position:absolute; -webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;top:0%;padding:15px;}
 .single-routine-wrapper:hover .edit-panel{ transition:0.3s;top:0;}
 .single-routine-wrapper:hover .edit-panel h3{display:none;}
 .single-routine-wrapper .edit-panel h3{display:none;text-align:center;margin:35px 0;}
-.single-routine-wrapper .edit-panel h3 a{}
+
 .single-routine-wrapper .edit-panel h3 a i{background:#fff;color:#34495e;border-radius:50%;font-size:13px;padding:10px;}
 
 .time-wrapper{background:#f8f8f8;width:100%;text-align:center;}
@@ -683,10 +674,8 @@ p.author-name span{color:#4FA1FF;font-weight:500;}
 
 /** dropdown button **/
 .admin-dropdown-cover{position:relative;margin:15px 10px 10px 0;}
-.admin-dropdown-cover .dropdown-btn-cover{}
 .admin-dropdown-cover .dropdown-btn-cover a.dropdown-toggle{font-size:12px;background:#fff;border:0;color:#2C3E50;font-size:15px;}
 .admin-dropdown-cover .dropdown-btn-cover ul.dropdown-menu{width:300px;padding:0;margin:0;position:absolute;right:0;top:60px;left:-200px;}
-.admin-dropdown-cover .dropdown-btn-cover ul.dropdown-menu li{}
 .admin-dropdown-cover .dropdown-btn-cover ul.dropdown-menu li a{background:#fff;font-size:12px; color:#222;text-decoration:none;display:block;padding:15px 18px;transition:.3s all ease-in-out;}
 .admin-dropdown-cover .dropdown-btn-cover ul.dropdown-menu li p{font-size:12px;font-weight:500;color:#565656;padding:15px 15px;transition:.3s all ease-in-out;background:#ECF0F6;}
 .admin-dropdown-cover .dropdown-btn-cover ul.dropdown-menu li p i{margin-right:15px;}
