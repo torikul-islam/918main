@@ -3,6 +3,7 @@
     width: 500px;
     background-color: #fff;
     padding: 25px 10px;
+    margin: auto;
 }
 
 .shopModal{
@@ -10,6 +11,7 @@
     width: 80%;
     background-color: #fff;
     padding: 25px 10px;
+    margin: auto;
 }
 .image-post-slide {
     text-align: center;
