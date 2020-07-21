@@ -1,11 +1,11 @@
-.inspired-slider ul {
+.inspired-slider ul, ul.shopTab {
   list-style: none;
   padding: 0;
   margin: 10px 0 40px;
   position: relative;
 }
 
-.inspired-slider h4 {
+.inspired-slider h4, .shop-slider.bg_shop h4 {
   position: relative;
   font-size: 36px;
   color: #030303;
@@ -26,7 +26,7 @@
   left: 45%;
   top: 25px;
 }
-.inspired-slider ul:before {
+.inspired-slider ul:before, ul.shopTab::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -34,12 +34,21 @@
   background: #d7d5d5;
   top: 36px;
 }
-.inspired-slider ul li {
+.inspired-slider ul li, ul.shopTab li {
   display: inline-block;
-  padding: 0 35px 0 0;
+  margin: 0 35px 0 0;
   font-family: "Helvetica-light";
   font-size: 18px;
 }
 .inspired-slider ul li.active {
-  color: red;
+  position: relative;
+}
+.inspired-slider ul li.active::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 8px;
+  background: #d7d5d5;
+  top: 33px;
 }

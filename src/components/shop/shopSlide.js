@@ -17,7 +17,7 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange }) => {
                 <div className="row">
                     <div className="col-sm-12">
                         <h4>Shop</h4>
-                        <ul>
+                        <ul className="shopTab">
                             <li>SOFA</li>
                             <li>CHAIR</li>
                             <li>RUGS</li>
