@@ -12,7 +12,7 @@ function Shop(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [product, setProduct] = useState([]);
-    const title = 'Shop';
+
 
     useEffect(() => {
         (async function () {
@@ -45,7 +45,7 @@ function Shop(props) {
     return (
         <>
             <HeaderShop {...props} />
-            <TabShop title={title} />
+            <TabShop title="Shop" />
             <ShopPost data={product.slice(0, 4)} />
             <ShopTrending data={product.slice(4,)} onPageChange={onPageChange} currentPage={currentPage} pageSize={pageSize} />
             <ShopPost data={product.slice(4, 8)} />

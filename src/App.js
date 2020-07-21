@@ -112,31 +112,33 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-
-          <Route path="/account" component={Account} exact />
-
-          <Route path="/inspired-details" render={(props) => <InspirationDetails
-            {...props}
-            openMenu={openMenu}
-            openModal={openModal}
-            handleOpenMenu={handleOpenMenu}
-            clickCard={clickCard} />} exact />
-          <Route path="/product-details" render={(props) => <ProductDetails {...props}
+          <Route path="/product-details/:id" render={(props) => <ProductDetails {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             addShoppingCard={addShoppingCard} />} exact />
+
+          <Route path="/account" component={Account} exact />
+
           <Route path="/inspired-more" render={(props) => <InspiredMore {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
+
+          <Route path="/inspired-details/:id" render={(props) => <InspirationDetails
+            {...props}
+            openMenu={openMenu}
+            openModal={openModal}
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard} />} exact />
+
           <Route path="/blog" render={(props) => <Blog {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
-          {/* <Route path="/navbar2" component={Navbar2} exact /> */}
+
           <Route path="/looks" render={() => <Looks {...props}
             openMenu={openMenu}
             openModal={openModal}

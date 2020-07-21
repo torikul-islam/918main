@@ -88,17 +88,25 @@ function InspiredSlider(props) {
                     </div>
                 </div>
 
-                <div className='slider-main'>
-                    {inspired && <div className='row'>
-                        <Slider4 data={inspiredPaginate} />
+                {inspiredPaginate && <div className='slider-main'>
+                    <div className='row'>
+                        {inspiredPaginate.map(item =>
+                            <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid} >
+                                <div className="image-slide">
+                                    <Link to={`/inspired-details/${item.uuid}`}>
+                                        <img src={item.ref_img} alt="" />
+                                    </Link>
+                                    <h6>{item.designed_by}</h6>
+                                </div>
+                            </div>)}
                         <Pagination
                             itemsCount={inspired.length}
                             currentPage={currentPage}
                             pageSize={pageSize}
                             onPageChange={onPageChange}
                         />
-                    </div>}
-                </div>
+                    </div>
+                </div>}
             </div>
 
             <div className="inspired-more">
@@ -106,7 +114,7 @@ function InspiredSlider(props) {
                     <GoBtn text="See More" />
                 </Link>
             </div>
-        </div>
+        </div >
     );
 }
 

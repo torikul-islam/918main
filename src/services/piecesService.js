@@ -2,7 +2,7 @@ import http from "./httpService";
 
 
 function getAllPieces() {
-    return http.get('pieces/');
+    return http.get('/pieces/');
 };
 
 

@@ -2,7 +2,7 @@ import http from "./httpService";
 
 
 function getAllStyle() {
-    return http.get('styles/');
+    return http.get('/styles/');
 };
 
 

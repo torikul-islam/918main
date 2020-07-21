@@ -1,5 +1,6 @@
 import React from 'react';
 import './slider.css';
+import { Link } from 'react-router-dom';
 
 
 const Slider4 = ({ data }) => {
@@ -9,7 +10,9 @@ const Slider4 = ({ data }) => {
             {data && data.map(item =>
                 <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid}>
                     <div className="image-slide">
-                        <img src={item.ref_img} alt="" />
+                        <Link to={`/product-details/${item.uuid}`}>
+                            <img src={item.ref_img} alt="" />
+                        </Link>
                         <h6>{item.retailer || item.designed_by}</h6>
                         {item.price && <p>${item.price}</p>}
                     </div>

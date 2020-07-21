@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '../common/pagination';
-import productService from '../../services/productService';
+import resourceService from '../../services/resourceService';
 import paginate from '../../utils/paginate';
 
 
@@ -8,14 +8,14 @@ import paginate from '../../utils/paginate';
 
 function InspirationAlsoLike() {
     const [pageSize, setPageSize] = useState(4);
-    const [product, setProduct] = useState([]);
+    const [resource, setResource] = useState([]);
     const [currentPage, setCurrentPage] = useState(0)
 
 
     useEffect(() => {
         (async function () {
-            const { data } = await productService.getAllProducts();
-            setProduct(data.results);
+            const { data } = await resourceService.getAllResources();
+            setResource(data.results);
         })()
     }, []);
 
@@ -39,7 +39,7 @@ function InspirationAlsoLike() {
         }
     }
 
-    const paginateProd = paginate(product, currentPage, pageSize);
+    const paginateProd = paginate(resource, currentPage, pageSize);
 
     return (
         <div className='container'>
@@ -55,11 +55,11 @@ function InspirationAlsoLike() {
                                 {paginateProd && paginateProd.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                         <img src={item.ref_img} alt="" />
-                                        <p>${item.price}</p>
+                                        <p>{item.source}</p>
                                     </div>
                                 )}
                                 <Pagination
-                                    itemsCount={product.length}
+                                    itemsCount={resource.length}
                                     pageSize={pageSize}
                                     currentPage={currentPage}
                                     onPageChange={onPageChange}
