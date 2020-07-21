@@ -18,9 +18,16 @@ div.boards-fiter button.filter {
     font-size: 18px;
     font-family: "Helvetica-light";
 }
+.dragDrop {
+    border: 1px solid #e7e7e7;
+    padding: 14px 0px;
+}
 div.boards-fiter ul li {
     display: inline-block;
     margin-right: 10px;
+}
+div.boards-fiter ul li:last-child {
+    margin-right: 0px;
 }
 div.boards-fiter h4{
     font-family: "Helvetica-Bold";
