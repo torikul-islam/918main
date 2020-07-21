@@ -1,9 +1,47 @@
-.container-board{
-    
+div.boards-fiter ul, .bottom-icons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-
-.window{
-    height: 700px;
-    background-color: blueviolet;
-
+div.boards-fiter button.filter {
+    display: inherit;
+    margin: auto;
+    background: transparent;
+    border: none;
+    background-image: url(../../../Asset//Images/arrow-down.png);
+    background-repeat: no-repeat;
+    background-position: 135px 12px;
+    width: 100%;
+    background-size: 13px;
+    outline: none;
+    padding-right: 25px;
+    font-size: 18px;
+    font-family: "Helvetica-light";
+}
+div.boards-fiter ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+div.boards-fiter h4{
+    font-family: "Helvetica-Bold";
+    font-size: 20px;
+}
+div.boards-fiter li img {
+    width: 36px;
+    height: auto;
+    cursor: pointer;
+}
+.bottom-icons{
+    text-align: center;
+}
+.bottom-icons img {
+    width: 12px;
+    height: auto;
+}
+.bottom-icons ul li {
+    display: inline-block;
+    margin: 0 3px;
+}
+.middle-body{
+    min-height: 600px;
 }

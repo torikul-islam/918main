@@ -14,17 +14,34 @@
     text-align: center;
 }
 
-.image-post-slide p {
-    font-family: "Helvetica-light";
-    color: #030303;
-    font-size: 18px;
-    line-height: normal;
-    display: block;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-height: 60px;
+.workimage img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
 }
-
+.titleInspire h4{
+    position: relative;
+    font-size: 36px;
+    color: #030303;
+    font-family: "PlayfairDisplay-Bold";
+    text-align: center;
+}
+.titleInspire button.filter {
+    display: inherit;
+    margin: auto;
+    background: transparent;
+    border: none;
+    background-image: url();
+}
+.titleInspire button.filter {
+    display: inherit;
+    margin: auto;
+    background: transparent;
+    border: none;
+    background-image: url(../../../Asset//Images/arrow-down.png);
+    background-repeat: no-repeat;
+    background-position: 210px 11px;
+    width: 100%;
+    background-size: 10px;
+    outline: none;
+}

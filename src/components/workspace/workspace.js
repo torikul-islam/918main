@@ -13,15 +13,17 @@ const Workspace = ({ openModal, openMenu, handleOpenMenu }) => {
     return (
         <div>
             <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
-            <div className="row">
-                <div className="col-sm-4">
-                    <Itemcontainer />
-                </div>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-sm-5">
+                        <Itemcontainer />
+                    </div>
 
-                <div className="col-md-8">
-                    <Board />
-                </div>
+                    <div className="col-md-7">
+                        <Board />
+                    </div>
 
+                </div>
             </div>
 
         </div>

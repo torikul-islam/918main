@@ -69,68 +69,62 @@ const Itemcontainer = props => {
     }
 
     return (
-        <div className="row">
+        <div className="titleInspire">
+            <div className="row">
 
-            <div className="col">
-                <div>
-                    Be Inspire
-                 </div>
-                <div>
-                    <button onClick={openInsoireFilter}> Filter Inspire</button>
-                    <Modal
-                        isOpen={inspirefilter}
-                        childComp={<InspireModal />}
-                    />
+                <div className="col-sm-6">
+                    <h4>Be Inspire. </h4>
+                    <div>
+                        <button className="filter" onClick={openInsoireFilter}> Filter Inspire</button>
+                        <Modal
+                            isOpen={inspirefilter}
+                            childComp={<InspireModal />}
+                        />
+                    </div>
+                    <div>
+                        <div className="post-slide-main">
+                            <div className="workimage">
+                                <img src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
+                                <img src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
+                                <img src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
+                                <img src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
+
+                <div className="col-sm-6">
+                    <h4>Shop.</h4>
+                    <div>
+                        <button className="filter" onClick={openShopFilter}> Filter Shop</button>
+                        
+                        <Modal
+                            isOpen={shopFilter}
+                            childComp={<Shop />}
+                        />
+                    </div>
                     <div className="post-slide-main">
-                        <div className="container">
-                            <div className="col">
-                                {resource && resource.map((item, i) =>
-                                    <div className="col-sm-3" key={i}>
-                                        <div className="image-post-slide">
-                                            <img src={item.ref_img} alt="" />
-                                        </div>
-                                    </div>
-                                )}
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <div className="workimage">
+                                    <img src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
+                                    <img src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
+                                    <img src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
+                                    <img src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                </div>
+                            </div>
+                            <div className="col-sm-6">
+                                <div className="workimage">
+                                    <img src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
+                                    <img src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
+                                    <img src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
+                                    <img src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div className="col">
-                <div>
-                    Shop
-                </div>
-                <div>
-                    <button onClick={openShopFilter}> Filter Shop</button>
-                    <Modal
-                        isOpen={shopFilter}
-                        childComp={<Shop />}
-                    />
-                </div>
-
-                <div className="post-slide-main">
-                    <div className="container">
-                        <div className="col">
-                            {product && product.map((item, i) =>
-                                <div className="col-sm-3" key={i} >
-                                    <div className="image-post-slide" >
-                                        <img src={item.ref_img} alt="" />
-                                        <Modal
-                                            isOpen={shopFilter}
-                                            childComp={<Details />}
-                                        />
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     );
 };
