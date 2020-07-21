@@ -1,0 +1,47 @@
+ul.list-categroy-shop {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.list-categroy-shop li {
+    width: 20%;
+}
+ul.list-categroy-shop li button {
+    background: #e9e8e8;
+    border: none;
+    width: 200px;
+    margin-bottom: 21px;
+    padding: 15px 0;
+    font-size: 18px;
+    border-radius: 50px;
+    font-family: "Helvetica-light";
+    outline: none;
+}
+.colorStyle ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.colorStyle ul li {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 50px;
+}
+.colorStyle ul li.red {
+    background: #fd0000;
+}
+.colorStyle ul li.green {
+    background: #fd7d00;
+}
+.colorStyle ul li.yellow {
+    background: #fddc00;
+}
+.colorStyle ul li.black {
+    background: #3f8d20;
+}

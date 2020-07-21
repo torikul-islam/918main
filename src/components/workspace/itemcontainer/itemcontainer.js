@@ -38,8 +38,8 @@ const Itemcontainer = props => {
     const InspireModal = () => {
         return (
             <div className="inspirModal">
-                <div >
-                    <button onClick={closeInsoireFilter}>close modal</button>
+                <div className="btn-close-modal">
+                    <button onClick={closeInsoireFilter}><img src={require('../../../Asset/Icons/cross.png')} alt="cross.png" /></button>
                 </div>
                 <InspireFilter />
             </div>
@@ -50,8 +50,8 @@ const Itemcontainer = props => {
     const Shop = () => {
         return (
             <div className="shopModal">
-                <div >
-                    <button onClick={closeShopFilter}>close modal</button>
+                 <div className="btn-close-modal">
+                    <button onClick={closeShopFilter}><img src={require('../../../Asset/Icons/cross.png')} alt="cross.png" /></button>
                 </div>
                 <Shopfilter />
             </div>
@@ -97,7 +97,7 @@ const Itemcontainer = props => {
                     <h4>Shop.</h4>
                     <div>
                         <button className="filter" onClick={openShopFilter}> Filter Shop</button>
-                        
+
                         <Modal
                             isOpen={shopFilter}
                             childComp={<Shop />}
