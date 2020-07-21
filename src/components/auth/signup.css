@@ -20,7 +20,11 @@
   cursor: pointer;
 }
 .have-account {
-  margin-top: 75px;
+  margin-top: 65px;
+}
+.have-account h3 p {
+  font-size: 22px;
+  cursor: pointer;
 }
 .signup-left {
   max-width: 100%;
@@ -78,7 +82,7 @@ signup-bg .signup-left h2 {
   margin-bottom: 0;
 }
 .have-account h3 {
-  margin-top: 0;
+  margin-top: 5px;
   line-height: 25px;
 }
 .have-account h3 a {

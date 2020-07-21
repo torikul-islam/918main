@@ -10,7 +10,7 @@ body {
     background: #fafafa;
 }
 .no-padding{padding:0;}
-p {
+/* p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
@@ -51,7 +51,7 @@ a, a:hover, a:focus {
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
-}
+} */
 
 
 
