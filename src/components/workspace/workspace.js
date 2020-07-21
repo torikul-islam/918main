@@ -13,9 +13,17 @@ const Workspace = ({ openModal, openMenu, handleOpenMenu }) => {
     return (
         <div>
             <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
-                workspace page render here...
-                <Itemcontainer/>
-                <Board/>
+            <div className="row">
+                <div className="col-sm-4">
+                    <Itemcontainer />
+                </div>
+
+                <div className="col-md-8">
+                    <Board />
+                </div>
+
+            </div>
+
         </div>
     );
 }
