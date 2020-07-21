@@ -6,7 +6,10 @@ import InspiredSlider from './inspired/inspiredSlider';
 import resourceServices from '../services/resourceService';
 import productServices from '../services/productService';
 import ShopThreeSlide from './shop/shopThreeSlide';
+import piecesService from '../services/piecesService';
+import piecesGroup from '../utils/piecesGroup';
 import './home.css';
+
 
 
 
@@ -15,6 +18,30 @@ function Home(props) {
     const [shop, setShop] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
+    const [pieces, setPieces] = useState([]);
+    const [selectedItem, setSelectedItem] = useState(null);
+
+
+
+    useEffect(() => {
+        (async function () {
+            const { data } = await piecesService.getAllPieces();
+            const pieces = piecesGroup(data.results);
+            setPieces(pieces);
+            setSelectedItem(pieces[0].id);
+            getProductById(pieces[0].id)
+        })()
+    }, []);
+
+    async function getProductById(ids) {
+        const { data } = await productServices.getProductByPieceId(ids);
+        setShop(data.results);
+    }
+    function onItemSelect(item) {
+        setSelectedItem(item.id);
+        getProductById(item.id);
+        setCurrentPage(0);
+    }
 
 
     function onPageChange(val) {
@@ -27,9 +54,7 @@ function Home(props) {
 
     useEffect(() => {
         (async function () {
-            const { data } = await productServices.getAllProducts();
             const { data: resource } = await resourceServices.getAllResources();
-            setShop(data.results);
             setPost(resource.results);
         })()
     }, []);
@@ -46,13 +71,21 @@ function Home(props) {
     }
 
 
+
     return (
         <div>
             <HeaderHome data={post.slice(0, 1)}  {...props} />
             <SliderPost data={post.slice(1, 5)} />
             <InspiredSlider />
             <SliderPost data={post.slice(5, 9)} />
-            <ShopSlide data={shop} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
+            <ShopSlide
+                pieces={pieces}
+                selectedItem={selectedItem}
+                onItemSelect={onItemSelect}
+                data={shop}
+                currentPage={currentPage}
+                pageSize={pageSize}
+                onPageChange={onPageChange} />
             <SliderPost data={post.slice(9, 13)} />
             <ShopThreeSlide />
 

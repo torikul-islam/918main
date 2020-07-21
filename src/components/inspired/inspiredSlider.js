@@ -5,6 +5,7 @@ import GoBtn from '../common/goBtn';
 import { Link } from 'react-router-dom';
 import inspiredServices from '../../services/inspiredService';
 import piecesService from '../../services/piecesService';
+import piecesGroup from '../../utils/piecesGroup';
 import './inspiredSlider.css';
 
 
@@ -23,24 +24,19 @@ function InspiredSlider(props) {
             const pieces = piecesGroup(data.results);
             setPieces(pieces);
             setSelectedItem(pieces[0].id);
-            getPieces(pieces[0].id)
+            getInspiredByPiecesId(pieces[0].id)
         })()
     }, []);
 
-    function piecesGroup(arr) {
-        return arr.reduce((acc, cur) => {
-            const val = cur['piece_category']['name'];
-            const idx = acc.findIndex(x => x.name.toLowerCase() === val.toLowerCase())
-            if (idx === -1) {
-                acc.push(cur['piece_category'])
-            }
-            return acc;
-        }, [])
-    }
 
-    async function getPieces(id) {
+    async function getInspiredByPiecesId(id) {
         const { data } = await inspiredServices.getInspiredByRoomOrStyleId(`/?room_ids=${id}`);
         setInspired(data.results);
+    }
+    function onItemSelect(item) {
+        setSelectedItem(item.id);
+        getInspiredByPiecesId(item.id);
+        setCurrentPage(0);
     }
 
     useEffect(() => window.addEventListener("resize", handleResize));
@@ -61,11 +57,7 @@ function InspiredSlider(props) {
             setCurrentPage(currentPage + 1)
         }
     }
-    function onItemSelect(item) {
-        setSelectedItem(item.id);
-        getPieces(item.id);
-        setCurrentPage(0);
-    }
+
 
     const inspiredPaginate = inspired && paginate(inspired, currentPage, pageSize);
 
@@ -76,12 +68,11 @@ function InspiredSlider(props) {
                     <div className="col-sm-12">
                         <h4>Be Inspired</h4>
                         <ul>
-                            {pieces.map(item =>
-                                <li
-                                    onClick={() => onItemSelect(item)}
-                                    className={item.id === selectedItem ? 'disable active' : 'pointer'}
-                                    key={item.uuid}>{item.name.toUpperCase()}
-                                </li>)
+                            {pieces.map(item => <li
+                                onClick={() => onItemSelect(item)}
+                                className={item.id === selectedItem ? 'disable active' : 'pointer'}
+                                key={item.uuid}>{item.name.toUpperCase()}
+                            </li>)
                             }
                         </ul>
                     </div>

@@ -9,7 +9,7 @@ import './shopSlide.css';
 
 
 
-const ShopSlide = ({ data, currentPage, pageSize, onPageChange }) => {
+const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selectedItem, onItemSelect }) => {
     const paginateShop = data && paginate(data, currentPage, pageSize);
     return (
         <div className="shop-slider bg_shop">
@@ -18,12 +18,15 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange }) => {
                     <div className="col-sm-12">
                         <h4>Shop</h4>
                         <ul className="shopTab">
-                            <li>SOFA</li>
-                            <li>CHAIR</li>
-                            <li>RUGS</li>
-                            <li>ACCESSORIES</li>
-                            <li>LIGHTING</li>
-                            <li>ART</li>
+                            {pieces.map(item =>
+                                <li
+                                    onClick={() => onItemSelect(item)}
+                                    className={item.id === selectedItem ? 'disable active' : 'pointer'}
+                                    key={item.uuid} >
+                                    {item.name.toUpperCase()}
+                                </li>
+                            )}
+
                         </ul>
                     </div>
                 </div>
