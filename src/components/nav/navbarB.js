@@ -4,6 +4,11 @@ import './navbar.css';
 
 
 function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search }) {
+    const user = localStorage.getItem('token');
+    function clickLogout() {
+        localStorage.removeItem('token');
+        window.location = '/'
+    }
     return (
         <div className='container-fluid'>
             <div className='container-menu' id='menu'>
@@ -42,9 +47,12 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search }) {
                                 <li className="menu-item font-hel">
                                     <Link className="nav-link" to="/explore"   >Explore</Link>
                                 </li>
-                                <li className="menu-item signup" onClick={() => openModal('signup')}>
+                                {!user && <li className="menu-item signup" onClick={() => openModal('signup')}>
                                     <div className="nav-link" >Sign Up</div>
-                                </li>
+                                </li>}
+                                {user && <li className="menu-item signup" onClick={clickLogout}>
+                                    <div className="nav-link" >Logout</div>
+                                </li>}
                                 <span className="menu-icon">
                                     <li className="menu-item man">
                                         <Link className="nav-link" to="/account"  >
