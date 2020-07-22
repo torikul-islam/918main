@@ -16,15 +16,9 @@
 .list-furniture {
     margin-top: 40px;
 }
-/* .list-furniture h4:before {
-    content: "";
-    position: absolute;
-    width: 140px;
-    height: 3px;
+.list-furniture.shopHead h4:before {
     margin-left: -15px;
-    background: #d7d5d5;
-    top: 70px;
-} */
+}
 
 span.bar {
     width: 16%;

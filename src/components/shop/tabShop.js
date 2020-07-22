@@ -4,7 +4,7 @@ import './tabShop.css';
 
 const TabShop = ({ onItemSelect, selectedItem, pieces, }) => {
     return (
-        <div className="list-furniture">
+        <div className="list-furniture shopHead">
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
