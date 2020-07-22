@@ -30,10 +30,10 @@
   top: 14px;
 }
 
-.inspired-slider ul li.active {
+ ul li.active {
   position: relative;
 }
-.inspired-slider ul li.active::before {
+ ul li.active::before {
   position: absolute;
   left: 0;
   content: "";

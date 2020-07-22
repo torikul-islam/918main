@@ -42,6 +42,7 @@ span.bar {
     .list-furniture ul{
         display: flex;
         overflow: scroll;
+        white-space: nowrap;
     }
     .craete-text{
         margin-bottom: 0;
