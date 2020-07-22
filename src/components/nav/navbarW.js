@@ -35,21 +35,21 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                         </div>
                         <div className="menu-float">
                             <li className="menu-item font-hel">
-                                <NavLink className="nav-link" to="/workspace" exact >Workspace</NavLink>
+                                <Link className="nav-link" to="/workspace"  >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
-                                <NavLink className="nav-link" to="/explore" exact >Explore</NavLink>
+                                <Link className="nav-link" to="/explore"  >Explore</Link>
                             </li>
                             <li className="menu-item signup" onClick={() => openModal('signup')}>
                                 <div className="nav-link" >Sign Up</div>
                             </li>
                             <span className="menu-icon">
                                 <li className="menu-item man">
-                                    <NavLink className="nav-link" to="/account" exact>
+                                    <Link className="nav-link" to="/account">
                                         <img src={require('../../Asset/Images/man.png')} alt="man.png" />
-                                    </NavLink>
+                                    </Link>
                                 </li>
-                                <li className="menu-item shop" onClick={clickCard}>
+                                <li className="menu-item shop pointer" onClick={clickCard}>
                                     <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
                                 </li>
                             </span>
