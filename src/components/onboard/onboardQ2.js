@@ -17,7 +17,7 @@ const OnboardQ2 = (props) => {
                     </div>
                     <div className="dotList mt-0 mb-4">
                         <span className="active"></span>
-                        <span className=""></span>
+                        <span className="active"></span>
                         <span className=""></span>
                         <span className=""></span>
                     </div>

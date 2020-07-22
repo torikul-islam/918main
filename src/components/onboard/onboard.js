@@ -83,7 +83,7 @@ class Onboard extends Component {
     }
 
     openBoard = (no) => {
-        this.setState({ boardNo: no })
+        this.setState({ boardNo: no, checkBoxes: [] })
     }
 
     render() {

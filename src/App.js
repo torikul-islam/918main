@@ -28,7 +28,7 @@ import './App.css';
 
 
 function App(props) {
-  const [modal, setModal] = useState({ isOpen: false, name: null });
+  const [modal, setModal] = useState({ isOpen: true, name: 'createBoard' });
   const [openMenu, setOpenMenu] = useState(false);
   const [isCardOpen, setIsCardOpen] = useState(false);
   const [shoppingCard, setShoppingCard] = useState([]);
