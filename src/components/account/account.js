@@ -38,13 +38,14 @@ const Account = (props) => {
                                 <AccountLooks />
                             </div>
 
-                        <div className="col-md-3 bg-color">
-                            <div className="titles-section">
-                                <div className="account-title">
-                                    <h4>Account Information</h4>
-                                    <h5><span className="nameSpan"> Name:</span> <span>{user.username}</span></h5>
-                                    <div className="emaillabel">Email: </div>
-                                    <div className="email">{user.email}</div>
+                            <div className="col-md-3 bg-color">
+                                <div className="titles-section">
+                                    <div className="account-title">
+                                        <h4>Account Information</h4>
+                                        <h5>Name: <span>{user.username}</span></h5>
+                                        <div className="emaillabel">Email: </div>
+                                        <div className="email">{user.email}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
