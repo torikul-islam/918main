@@ -41,10 +41,7 @@ function AccountArticles() {
     const paginateArt = paginate(articles, currentPage, pageSize);
     return (
         <div className="account-slider">
-            <div className="col-sm-12">
-                <h3>Articles.</h3>
-            </div>
-
+            <h3>Articles.</h3>
             <div className='tab-index'>
                 <div className='slider'>
                     <div className='row'>
