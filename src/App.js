@@ -87,13 +87,14 @@ function App(props) {
           <Route path="/learn-more" render={(props) => <LearnPage {...props}
             openMenu={openMenu}
             openModal={openModal}
-            handleOpenMenu={handleOpenMenu} clickCard={clickCard} />} exact />
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard} />} exact />
 
           <Route path="/workspace" render={(props) => <Workspace {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
-            exact />} />
+            clickCard={clickCard} exact />} />
 
           <Route path="/explore" render={(props) => <Home {...props}
             openMenu={openMenu}
