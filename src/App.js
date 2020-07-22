@@ -50,7 +50,8 @@ function App(props) {
   function addShoppingCard(item) {
     const card = [...shoppingCard]
     item.quantity = 1;
-    setShoppingCard([item, ...card]);
+    const unique = [...new Set([item, ...card])];
+    setShoppingCard(unique);
   }
 
   function itemControl(item, ops) {
@@ -116,9 +117,9 @@ function App(props) {
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
-            addShoppingCard={addShoppingCard} />} exact />
+            addShoppingCard={addShoppingCard}
+            clickCard={clickCard} />} exact />
 
-          {/* <Route path="/account" component={Account} exact /> */}
           <Route path="/account" render={(props) => <Account {...props}
             openMenu={openMenu}
             openModal={openModal}
