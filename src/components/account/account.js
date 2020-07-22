@@ -29,7 +29,7 @@ const Account = (props) => {
                 <div className='container'>
                     <h4>My Likes</h4>
                     <div className='row'>
-                        <div className='col-sm-9'>
+                        <div className='col-md-9'>
                             <AccountProduct />
                             <AccountInspiration />
                             <AccountArticles />

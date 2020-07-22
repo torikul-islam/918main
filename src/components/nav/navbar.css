@@ -46,6 +46,7 @@ ul.home-menu li a {
     top: 0;
     padding-top: 0 !important;
     outline: none;
+    z-index: 999;
   }
   ul.home-menu li.logo {
     display: none;

@@ -1,0 +1,22 @@
+.account-slider .slider img {
+    width: 100% !important;
+    /* object-fit: contain; */
+}
+.account-slider .arrow-slide img {
+    width: 25px !important;
+    height: auto;
+}
+.account-slider .arrow-right.arrow-slide {
+    right: 0;
+}
+.account-slider .arrow-left.arrow-slide {
+    left: 0;
+}
+.account-title {
+    text-align: center;
+}
+@media screen and (max-width: 767px) and (min-width: 320px) {
+    .account-sidebar {
+        margin-top: 100px;
+    }
+}
