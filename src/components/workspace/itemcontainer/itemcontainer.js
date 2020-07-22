@@ -5,6 +5,7 @@ import Shopfilter from '../shopfilter/shopfilter';
 import resourceService from '../../../services/resourceService';
 import productService from '../../../services/productService';
 import Modal from '../../common/modal/modal';
+import Toggleswitch from '../../common/toggleswitch/toggleswitch';
 
 
 const Itemcontainer = props => {
@@ -75,7 +76,7 @@ const Itemcontainer = props => {
                 <div className="col-sm-6">
                     <h4>Be Inspire. </h4>
                     <div>
-                        <button className="filter" onClick={openInsoireFilter}> Filter Inspire</button>
+                        <button className="filter" onClick={openInsoireFilter}><h6>Filters</h6></button>
                         <Modal
                             isOpen={inspirefilter}
                             childComp={<InspireModal />}
@@ -94,9 +95,14 @@ const Itemcontainer = props => {
                 </div>
 
                 <div className="col-sm-6">
-                    <h4>Shop.</h4>
+                    <div className="row"> 
+                        <Toggleswitch className="col-sm-4"/>
+                        <div className="col-sm-8">
+                        <h4 >Shop.</h4>
+                        </div>
+                    </div>
                     <div>
-                        <button className="filter" onClick={openShopFilter}> Filter Shop</button>
+                        <button className="filter" onClick={openShopFilter}><h6>Filters</h6></button>
 
                         <Modal
                             isOpen={shopFilter}
