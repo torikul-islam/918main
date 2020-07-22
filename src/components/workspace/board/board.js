@@ -4,7 +4,7 @@ import './board.css';
 const Board = props => {
     return (
         <div className="dragDrop">
-            <div className="container">
+            <div className="container board-tilte">
                 <div className="boards-fiter">
                     <ul>
                         <li><h4>Boards</h4></li>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard }) {
+function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard,search }) {
     return (
         <div className='container-fluid'>
             <div className='container-menu' id='menu'>
@@ -21,10 +21,12 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard }) {
                     </button>
                     <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                         <ul className="home-menu">
+                            <div style={search=="null"? {visibility:"hidden"}:{visibility:"visible"}}>
                             <div className="search-float">
                                 <li className="search">
                                     <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                                 </li>
+                            </div>
                             </div>
                             <div className="logo-width">
                                 <li className='logo'>
