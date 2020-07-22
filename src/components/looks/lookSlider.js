@@ -20,18 +20,18 @@ function LookSlider({ data, currentPage, pageSize, onPageChange }) {
                     <div className='tab-index'>
                         <div className='slider'>
                             <div className='row'>
-                                {paginateResource && paginateResource.map((item, i) =>
+                                {/* {paginateResource && paginateResource.map((item, i) =>
                                     <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12' key={i}>
                                         <img src={item.ref_img} alt="" />
                                         <p>{item.retailer}</p>
                                     </div>
-                                )}
-                                <Pagination
+                                )} */}
+                                {/* <Pagination
                                     itemsCount={data.length}
                                     pageSize={pageSize}
                                     currentPage={currentPage}
                                     onPageChange={onPageChange}
-                                />
+                                /> */}
                             </div>
                         </div>
                     </div>
