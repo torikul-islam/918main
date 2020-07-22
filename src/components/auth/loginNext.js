@@ -24,7 +24,6 @@ function LoginNext(props) {
                     <img src={require('../../Asset/Icons/cross.png')} alt="" />
                 </div>
 
-
                 <div className='row'>
                     <div className='col-sm-7'>
                         <div className='mf-left'>

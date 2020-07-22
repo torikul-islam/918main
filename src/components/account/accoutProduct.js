@@ -26,6 +26,16 @@ function AccountProduct() {
             setCurrentPage(currentPage + 1)
         }
     }
+    useEffect(() => window.addEventListener("resize", handleResize));
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(4);
+        }
+    }
 
     const paginateProd = paginate(product, currentPage, pageSize);
     return (

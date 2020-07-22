@@ -21,7 +21,6 @@ const Account = (props) => {
     }, []);
 
 
-
     return (
         <>
             <NavbarB {...props} />

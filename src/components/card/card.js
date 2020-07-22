@@ -10,24 +10,24 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
         <>
             <div className={`shopping-card ${isCardOpen ? 'card-show' : ''}`}>
                 <div className="container">
-                <div className="heading_shop">
-                    <div className="row">
-                        <div className="col-md-1">
-                            <div className="arrowLeft" onClick={clickCard}>
-                                <img src={require('../../Asset/Icons/Arrow_right.png')} alt="Arrow_right.png" />
+                    <div className="heading_shop">
+                        <div className="row">
+                            <div className="col-md-1">
+                                <div className="arrowLeft" onClick={clickCard}>
+                                    <img src={require('../../Asset/Icons/Arrow_right.png')} alt="Arrow_right.png" />
+                                </div>
+                            </div>
+                            <div className="col-md-9">
+                                <div className="shopping-head text-center">
+                                    <h3>Your Shopping List</h3>
+                                </div>
+                            </div>
+                            <div className="col-md-2">
+                                <div className="arrowLayer">
+                                    <img src={require('../../Asset/Icons/Layer3.png')} alt="Layer3.png" />
+                                </div>
                             </div>
                         </div>
-                        <div className="col-md-9">
-                            <div className="shopping-head text-center">
-                                <h3>Your Shopping List</h3>
-                            </div>
-                        </div>
-                        <div className="col-md-2">
-                            <div className="arrowLayer">
-                                <img src={require('../../Asset/Icons/Layer3.png')} alt="Layer3.png" />
-                            </div>
-                        </div>
-                    </div>
                     </div>
                     <div className="row">
                         {shoppingCard && shoppingCard.map((item, i) =>
@@ -45,9 +45,9 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                                         <div className="priceProduct">${item.price}</div>
                                         <div className="quantity">
                                             Quantity
-                                         <span onClick={() => itemControl(item, '+')}>+</span>
-                                            {item.quantity}
                                             <span onClick={() => itemControl(item, '-')}>-</span>
+                                            {item.quantity}
+                                            <span onClick={() => itemControl(item, '+')}>+</span>
                                         </div>
                                         <LearMore />
                                     </div>

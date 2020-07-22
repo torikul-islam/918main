@@ -15,6 +15,12 @@ const OnboardQ1 = (props) => {
             <div className='onboard-q1'>
                 <div className="text-center onborad-margin" style={{ marginBottom: 100 }}>
                     <img src={require('../../Asset/Images/Logo.png')} className="img-fluid" alt="Responsive image" style={{ width: 160 }} />
+                    <div className="dotList">
+                        <span className="active"></span>
+                        <span className=""></span>
+                        <span className=""></span>
+                        <span className=""></span>
+                    </div>
                 </div>
 
                 <div className='onboard-q1-main'>

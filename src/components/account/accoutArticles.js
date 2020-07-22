@@ -27,6 +27,17 @@ function AccountArticles() {
         }
     }
 
+    useEffect(() => window.addEventListener("resize", handleResize));
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(4);
+        }
+    }
+
     const paginateArt = paginate(articles, currentPage, pageSize);
     return (
         <div className="account-slider">

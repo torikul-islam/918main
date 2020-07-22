@@ -37,17 +37,17 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search }) {
                             </div>
                             <div className="menu-float">
                                 <li className="menu-item font-hel">
-                                    <Link className="nav-link" to="/workspace" exact >Workspace</Link>
+                                    <Link className="nav-link" to="/workspace"   >Workspace</Link>
                                 </li>
                                 <li className="menu-item font-hel">
-                                    <Link className="nav-link" to="/explore" exact >Explore</Link>
+                                    <Link className="nav-link" to="/explore"   >Explore</Link>
                                 </li>
                                 <li className="menu-item signup" onClick={() => openModal('signup')}>
                                     <div className="nav-link" >Sign Up</div>
                                 </li>
                                 <span className="menu-icon">
                                     <li className="menu-item man">
-                                        <Link className="nav-link" to="/account" exact>
+                                        <Link className="nav-link" to="/account"  >
                                             <img src={require('../../Asset/Images/man.png')} alt="man.png" />
                                         </Link>
                                     </li>

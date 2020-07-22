@@ -3,7 +3,6 @@ import OnboardQ1 from './onboardQ1';
 import OnboardQ2 from './onboardQ2';
 import OnboardQ3 from './onboardQ3';
 import roomService from '../../services/roomServices';
-// import styleService from '../../services/styleServices';
 import styleServices from '../../services/styleServices';
 import roomServices from '../../services/roomServices';
 
@@ -83,14 +82,18 @@ class Onboard extends Component {
         this.setState({ checkBoxes, errors });
     }
 
+    openBoard = (no) => {
+        this.setState({ boardNo: no, checkBoxes: [] })
+    }
+
     render() {
         const { rooms, boardNo, filterRoom, errors, styles } = this.state;
 
         return (
             <>
                 {boardNo === 1 && <OnboardQ1 errors={errors} onCheck={this.onCheck} rooms={rooms} submitCheckbox={this.submitCheckbox} />}
-                {boardNo === 2 && <OnboardQ2 styles={styles} submitStyle={this.submitStyle} />}
-                {boardNo === 3 && <OnboardQ3  {...this.props} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
+                {boardNo === 2 && <OnboardQ2 {...this.props} openBoard={this.openBoard} styles={styles} submitStyle={this.submitStyle} />}
+                {boardNo === 3 && <OnboardQ3  {...this.props} openBoard={this.openBoard} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
             </>
         );
     }
