@@ -5,6 +5,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-bottom: 45px;
 
 }
 .text-fav{
@@ -57,4 +58,7 @@ li.saveSection .learn-more button {
     font-size: 20px;
     font-family: "Helvetica-Bold";
     margin-left: 10px;
+}
+ul.menu-name li.select_design {
+    margin-right: 15px;
 }
