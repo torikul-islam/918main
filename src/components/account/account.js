@@ -11,29 +11,32 @@ import './account.css';
 
 
 const Account = (props) => {
-    const [user, setUser] = useState(false)
+    const token = localStorage.getItem('token');
+
+    const [user, setUser] = useState({})
 
     useEffect(() => {
         (async function () {
             const { data } = await getUser();
             setUser(data);
         })()
-    }, []);
+    }, token);
 
 
     return (
         <>
             <NavbarB {...props} />
-            {user ? <div className='account-sidebar'>
-                <div className='container'>
-                    <h4>My Likes</h4>
-                    <div className='row'>
-                        <div className='col-md-9'>
-                            <AccountProduct />
-                            <AccountInspiration />
-                            <AccountArticles />
-                            <AccountLooks />
-                        </div>
+            {token ?
+                <div className='account-sidebar'>
+                    <div className='container'>
+                        <h4>My Likes</h4>
+                        <div className='row'>
+                            <div className='col-md-9'>
+                                <AccountProduct />
+                                <AccountInspiration />
+                                <AccountArticles />
+                                <AccountLooks />
+                            </div>
 
                         <div className="col-md-3 bg-color">
                             <div className="titles-section">
@@ -47,7 +50,6 @@ const Account = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
                 :
                 <div className="container">
                     <h3>Please! login to continue.</h3>
