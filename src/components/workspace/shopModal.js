@@ -78,7 +78,8 @@ const ShopModal = ({ product, products }) => {
                                     {paginateProd && paginateProd.map((item, i) =>
                                         <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                             <img src={item.ref_img} alt="" />
-                                            <p>{item.source}</p>
+                                            <h2>{item.retailer}</h2>
+                                            <h6>${item.price}</h6>
                                         </div>
                                     )}
 
