@@ -7,7 +7,7 @@ import paginate from '../../utils/paginate';
 
 function LookSlider({ data, currentPage, pageSize, onPageChange }) {
 
-    const paginateResource = paginate(data, currentPage, pageSize);
+    // const paginateResource = paginate(data, currentPage, pageSize);
 
     return (
         <div className='container'>
