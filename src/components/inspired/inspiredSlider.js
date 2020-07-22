@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from '../common/goBtn';
-import { Link } from 'react-router-dom';
 import inspiredServices from '../../services/inspiredService';
 import piecesService from '../../services/piecesService';
 import piecesGroup from '../../utils/piecesGroup';
@@ -27,7 +27,6 @@ function InspiredSlider(props) {
             getInspiredByPiecesId(pieces[0].id)
         })()
     }, []);
-
 
     async function getInspiredByPiecesId(id) {
         const { data } = await inspiredServices.getInspiredByRoomOrStyleId(`/?room_ids=${id}`);
@@ -72,8 +71,7 @@ function InspiredSlider(props) {
                                 onClick={() => onItemSelect(item)}
                                 className={item.id === selectedItem ? 'disable active' : 'pointer'}
                                 key={item.uuid}>{item.name.toUpperCase()}
-                            </li>)
-                            }
+                            </li>)}
                         </ul>
                     </div>
                 </div>

@@ -49,7 +49,7 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                                         <img src={require('../../Asset/Images/man.png')} alt="man.png" />
                                     </NavLink>
                                 </li>
-                                <li className="menu-item shop" onClick={clickCard}>
+                                <li className="menu-item shop pointer" onClick={clickCard}>
                                     <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
                                 </li>
                             </span>
