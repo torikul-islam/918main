@@ -1,16 +1,18 @@
 import React from 'react';
 import './detailmodal.css';
 import ProductDetailsTitle from '../../productDetails/productDetailsTitle';
-import  ShopTrending from '../../shop/shopTrending';
+import ShopTrending from '../../shop/shopTrending';
 import Looks from '../../looks/lookSlider';
-const DeataileModal = (data) =>{
+
+
+const DeataileModal = (data) => {
     return (
-        <div> 
-        <ProductDetailsTitle /> 
-        <ShopTrending/>
-        <Looks />
+        <div>
+            <ProductDetailsTitle />
+            {/* <ShopComponentTrending /> */}
+            <Looks />
         </div>
     )
 }
- 
+
 export default DeataileModal;
