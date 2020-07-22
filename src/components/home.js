@@ -70,8 +70,6 @@ function Home(props) {
         }
     }
 
-
-
     return (
         <div>
             <HeaderHome data={post.slice(0, 1)}  {...props} />
