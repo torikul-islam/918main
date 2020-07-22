@@ -19,6 +19,15 @@ class OnboardQ3 extends Component {
             <div className='container'>
                 <div className='onboard-q2'>
                     <div className='onboard-q1-main'>
+                        <div className="imageLeft">
+                            <img src={require('../../Asset/Icons/Arrow_right.png')} alt="Arrow_right.png" />
+                        </div>
+                        <div className="dotList mt-0 mb-4">
+                            <span className="active"></span>
+                            <span className=""></span>
+                            <span className=""></span>
+                            <span className=""></span>
+                        </div>
                         <div className='like-to-work'>
                             <h2>Are there specific pieces you're looking for?</h2>
                             <p>(Choose as many as you'd like.)</p>

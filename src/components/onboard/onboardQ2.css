@@ -1,5 +1,5 @@
 .onboard-q2 {
-  padding: 80px 50px 80px 50px;
+  padding: 60px 50px 80px 50px;
   max-width: 800px;
   max-height: 800px;
   margin: auto;
@@ -35,4 +35,32 @@ h6 {
 }
 .Skip-btn-style {
   padding: 20px;
+}
+
+span.active {
+  background-color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.dotList span {
+    border: 2px solid #cccdcb;
+    height: 10px;
+    width: 10px;
+    background-color: #cccdcb;
+    display: inline-block;
+    margin-right: 6px;
+    border-radius: 50px;
+}
+.dotList {
+    text-align: center;
+    margin-top: 25px;
+}
+.imageLeft img {
+  width: 15px;
+  height: auto;
+  cursor: pointer;
+}
+
+.imageLeft {
+  float: left;
 }

@@ -48,3 +48,6 @@ input::first-line {
 input {
   text-align: center;
 }
+.boardPadding {
+  padding: 25px 15px 0;
+}

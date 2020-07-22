@@ -20,8 +20,16 @@ class CreateBoard extends Component {
         return (
             <div className='container'>
                 <div className='create-board'>
-                    <div className='cb-back' onClick={closeModal}>
-                        <img src={require('../../Asset/Icons/cross.png')} alt="" />
+                    <div className='boardPadding'>
+                        <div className="imageLeft">
+                            <img src={require('../../Asset/Icons/Arrow_right.png')} alt="Arrow_right.png" />
+                        </div>
+                        <div className="dotList mt-0 mb-4">
+                            <span className="active"></span>
+                            <span className=""></span>
+                            <span className=""></span>
+                            <span className=""></span>
+                        </div>
                     </div>
                     <div className='form-cb-board'>
                         <h3>Sign up so we can save your boards!</h3>

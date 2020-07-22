@@ -24,8 +24,16 @@ class BoardName extends Component {
         return (
             <div className='container'>
                 <div className='board-name'>
-                    <div className='board-back' onClick={closeModal}>
-                        <img src={require('../../Asset/Icons/cross.png')} alt="" />
+                    <div className='boardPadding'>
+                        <div className="imageLeft">
+                            <img src={require('../../Asset/Icons/Arrow_right.png')} alt="Arrow_right.png" />
+                        </div>
+                        <div className="dotList mt-0 mb-4">
+                            <span className="active"></span>
+                            <span className=""></span>
+                            <span className=""></span>
+                            <span className=""></span>
+                        </div>
                     </div>
                     <div className='form-board'>
                         <h3>Name your board.</h3>
