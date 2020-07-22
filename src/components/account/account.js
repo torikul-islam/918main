@@ -39,7 +39,7 @@ const Account = (props) => {
                             <div className="titles-section">
                                 <div className="account-title">
                                     <h4>Account Information</h4>
-                                    <h5>Name: <span>{user.username}</span></h5>
+                                    <h5><span className="nameSpan"> Name:</span> <span>{user.username}</span></h5>
                                     <div className="emaillabel">Email: </div>
                                     <div className="email">{user.email}</div>
                                 </div>
