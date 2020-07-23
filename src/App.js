@@ -97,7 +97,9 @@ function App(props) {
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
-            clickCard={clickCard} exact />} />
+            clickCard={clickCard}
+            shoppingCard={shoppingCard}
+            isCardOpen={isCardOpen} itemControl={itemControl} exact />} />
 
           <Route path="/explore" render={(props) => <Home {...props}
             openMenu={openMenu}
@@ -124,9 +126,6 @@ function App(props) {
             shoppingCard={shoppingCard}
             isCardOpen={isCardOpen} itemControl={itemControl} />} exact />
 
-          {/* <Route path="/AboutUS" component={AboutUS} exact /> */}
-
-          {/* <Route path="/ContactUs" component={ContactUs} exact /> */}
 
           <Route path="/shop-more" render={(props) => <Shop {...props}
             openMenu={openMenu}
@@ -175,7 +174,7 @@ function App(props) {
           <Route path='/add-product' component={Addproduct} />
           <Route path='/add-resource' component={AddResource} />
           <Route path='/add-inspiration' component={AddInspiration} />
-         
+
         </Switch>
 
       </main>

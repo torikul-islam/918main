@@ -1,22 +1,26 @@
 ul.list-categroy {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inspired-fil {
+  background: #ffffff;
 }
 
 ul.list-categroy li {
-    width: 50%;
+  width: 50%;
 }
 ul.list-categroy li button {
-    background: #e9e8e8;
-    border: none;
-    width: 200px;
-    margin-bottom: 21px;
-    padding: 15px 0;
-    font-size: 18px;
-    border-radius: 50px;
-    font-family: "Helvetica-light";
-    outline: none;
+  background: #e9e8e8;
+  border: none;
+  width: 200px;
+  margin-bottom: 21px;
+  padding: 15px 0;
+  font-size: 18px;
+  border-radius: 50px;
+  font-family: "Helvetica-light";
+  outline: none;
 }
