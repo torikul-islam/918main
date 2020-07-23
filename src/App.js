@@ -23,6 +23,9 @@ import BoardName from './components/onboard/boardName';
 import CreateBoard from './components/onboard/createBoard';
 import Onboard from './components/onboard/onboard';
 import './App.css';
+import AddInspiration from './components/admin/addinspiration/addinspiration';
+import Addproduct from './components/admin/addproduct/addproduct';
+import AddResource from './components/admin/addresource/addresource';
 
 
 
@@ -169,6 +172,10 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
           <Route path='/admin' component={AdminHome} />
+          <Route path='/add-product' component={Addproduct} />
+          <Route path='/add-resource' component={AddResource} />
+          <Route path='/add-inspiration' component={AddInspiration} />
+         
         </Switch>
 
       </main>

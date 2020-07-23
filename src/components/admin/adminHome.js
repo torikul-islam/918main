@@ -8,8 +8,7 @@ class Adminhome extends Component {
         return (
             <div>
                 <Sidemenu />
-                {/* <Addproduct/> */}
-            
+                THis Admin dash
             </div>
         );
     }

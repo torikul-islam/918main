@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../admin/adminstyle.css';
 import '../fwstyle/font-awesome.min.css';
+import { Link } from 'react-router-dom';
 		
 class Sidemenu extends Component {
 
@@ -22,14 +23,7 @@ class Sidemenu extends Component {
 					</a>
 				</li>
 				<li>
-					<a href="#" data-toggle="collapse" aria-expanded="false">
-						<i className="fa fa-users"></i>
-						Products
-					</a>
-					<ul className="collapse list-unstyled" id="homeSubmenu">
-						<li>Add Product</li>
-						<li>Product List List</li>
-					</ul>
+					<Link to ="/admin"> Products</Link>
 				</li>
 				<li>
 					<a href="#" data-toggle="collapse" aria-expanded="false">
