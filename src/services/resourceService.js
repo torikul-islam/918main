@@ -5,6 +5,9 @@ function getAllResources() {
     return http.get('/resources/');
 };
 
+async function getResourcesByRoomStyle(url) {
+    return http.get('/resources/' + url)
+}
 
 
-export default { getAllResources }
+export default { getAllResources, getResourcesByRoomStyle }

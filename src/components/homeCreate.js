@@ -4,15 +4,31 @@ import './homeCreate.css';
 
 
 
-const HomeCreate = ({ data }) => {
+const HomeCreate = ({ data, rooms, styles, onSelectOption }) => {
     return (
 
         <div className='homecreate'>
             <div className="container">
                 <div className="list-furniture">
                     <ul>
-                        <li>ROOM</li>
-                        <li>STYLING</li>
+                        <li className="form-group col-sm-2">
+                            <select className="form-control" onChange={(e) => onSelectOption(e, 'rooms')}>
+                                <option value="">Room</option>
+                                {rooms.map((r, i) =>
+                                    <option key={i} id={r.pk} value={r.pk}>{r.name}</option>
+                                )}
+
+                            </select>
+                        </li>
+                        <li className="form-group col-sm-2">
+                            <select className="form-control" onChange={(e) => onSelectOption(e, 'styles')}>
+                                <option value="">Style</option>
+                                {styles.map((s, i) =>
+                                    <option key={i} id={s.pk} value={s.pk}>{s.name}</option>
+                                )}
+
+                            </select>
+                        </li>
                         <li>BUYER’S GUIDE</li>
                         <li>DESIGN 101</li>
                     </ul>
@@ -20,12 +36,12 @@ const HomeCreate = ({ data }) => {
                 <div className="row">
                     {data.map((item, i) =>
                         <div key={i}>
-                            <div className="col-sm-6" style={{float:"left"}}>
+                            <div className="col-sm-6" style={{ float: "left" }}>
                                 <div className="craete-img">
                                     <img src={item.ref_img} alt="" />
                                 </div>
                             </div>
-                            <div className="col-sm-6" key={i} style={{float:"right"}}>
+                            <div className="col-sm-6" key={i} style={{ float: "right" }}>
                                 <div className="craete-text" >
                                     <h5>{item.source}</h5>
                                     <h2>{item.title}</h2>
