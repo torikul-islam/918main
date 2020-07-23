@@ -40,7 +40,7 @@ const AboutStory = ({ openModal, data, openMenu, handleOpenMenu }) => {
                     <div className="about-img-section">
                         <div className="row">
                             <div className="col-sm-8">
-                                <div className="img-about">
+                                <div className="img-about2">
                                     <img src={require('../../Asset/Images/Aboutus-right.jpg')} alt="Aboutus-right.jpg" />
                                 </div>
                             </div>

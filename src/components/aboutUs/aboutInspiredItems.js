@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import LearnMore from '../common/learnButton';
+import {Link} from 'react-router-dom';
 import "./aboutInspiredItems.css";
+import GoBtn from '../common/goBtn';
+
 
 
 
@@ -73,7 +76,7 @@ class AboutInspiredItems extends Component {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <h4>Ready to get started?</h4>
-                                        <LearnMore />
+                                        <Link to='/workspace'> <GoBtn text='Create a Moodboard' /></Link>
                                     </div>
                                 </div>
                             </div>
