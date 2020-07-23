@@ -11,8 +11,7 @@ class Sidemenu extends Component {
 			<div>
 				<nav id="sidebar">
 					<div className="sidebar-header">
-						<h3>Admin Dashboard</h3>
-						<strong>AD</strong>
+						<h3><Link to='/admin'>Admin Dashboard</Link></h3>
 					</div>
 
 					<ul className="list-unstyled components">
