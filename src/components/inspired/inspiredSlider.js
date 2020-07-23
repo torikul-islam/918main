@@ -16,7 +16,10 @@ function InspiredSlider(props) {
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
     const [pieces, setPieces] = useState([]);
-    const [selectedItem, setSelectedItem] = useState(null)
+    const [selectedItem, setSelectedItem] = useState(null);
+
+
+
 
     useEffect(() => {
         (async function () {
@@ -38,7 +41,7 @@ function InspiredSlider(props) {
         setCurrentPage(0);
     }
 
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => window.addEventListener("resize", handleResize), []);
 
     function handleResize() {
         const width = window.innerWidth;

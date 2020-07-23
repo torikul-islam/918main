@@ -1,32 +1,43 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './tabShop.css';
 
-class TabShop extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
 
-    render() {
-        return (
-            <div className="list-furniture">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12">
-                            <h4>{this.props.title}</h4>
-                            <ul>
-                                <li>FURNITURE</li>
-                                <li>DECOR</li>
-                                <li>RUGS</li>
-                                <li>BED &amp; BATH</li>
-                                <li>LIGHTING</li>
-                            </ul>
-                        </div>
+
+const TabShop = ({ title, rooms, styles, onSelectOption }) => {
+
+
+    return (
+        <div className="list-furniture">
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12">
+                        <h4>{title}</h4>
+                        <ul>
+                            <li className="form-group col-sm-2">
+                                <select className="form-control" onChange={(e) => onSelectOption(e, 'rooms')}>
+                                    <option value="">Room</option>
+                                    {rooms.map((r, i) =>
+                                        <option key={i} id={r.pk} value={r.pk}>{r.name}</option>
+                                    )}
+
+                                </select>
+                            </li>
+
+                            <li className="form-group col-sm-2">
+                                <select className="form-control" id="styles" onChange={(e) => onSelectOption(e, 'styles')} >
+                                    <option value="">Style</option>
+                                    {styles.map((s, i) =>
+                                        <option key={i} id={s.pk} value={s.pk}>{s.name}</option>
+                                    )}
+
+                                </select>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default TabShop;

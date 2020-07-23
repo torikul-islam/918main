@@ -59,7 +59,7 @@ function Home(props) {
         })()
     }, []);
 
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => window.addEventListener("resize", handleResize), []);
 
     function handleResize() {
         const width = window.innerWidth;
@@ -86,7 +86,6 @@ function Home(props) {
                 onPageChange={onPageChange} />
             <SliderPost data={post.slice(9, 13)} />
             <ShopThreeSlide />
-
         </div>
     );
 }
