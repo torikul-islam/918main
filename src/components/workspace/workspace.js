@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './workspace.css';
 import NavbarB from '../nav/navbarB';
 import Board from './board/board';
-import Itemcontainer from './itemcontainer/itemcontainer';
 
 
 
@@ -16,7 +15,7 @@ const Workspace = ({ openModal, openMenu, handleOpenMenu }) => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4">
-                        <Itemcontainer />
+                      
                     </div>
 
                     <div className="col-md-8">
