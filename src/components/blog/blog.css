@@ -1,5 +1,8 @@
 .blog-area .paragraph {
     margin-bottom: 30px;
+    font-family: "Helvetica-Light";
+    font-size: 22px;
+    text-align: center;
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
 .text-blog-title h4 {

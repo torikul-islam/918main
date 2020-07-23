@@ -9,6 +9,7 @@ const ShopTrending = ({ data, onPageChange, currentPage, pageSize }) => {
     const paginateShop = data && paginate(data, currentPage, pageSize);
 
     return (
+        <div className="inspired-slider">
         <div className='container'>
             <TitleWithBer text='Trending' />
 
@@ -24,6 +25,7 @@ const ShopTrending = ({ data, onPageChange, currentPage, pageSize }) => {
                 </div>}
             </div>
         </div>
+         </div>
     );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import GoBtn from '../common/goBtn';
-
+import './products.css';
 
 
 
