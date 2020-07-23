@@ -9,7 +9,7 @@ class Adminhome extends Component {
             <div>
                 <Sidemenu />
                 {/* <Addproduct/> */}
-                <Adminhome />
+            
             </div>
         );
     }
