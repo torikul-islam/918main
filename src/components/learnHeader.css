@@ -79,4 +79,7 @@
     .header-learn {
         padding-top: 100px;
     }
+    .learn-text p{
+        padding: 0;
+    }
 }

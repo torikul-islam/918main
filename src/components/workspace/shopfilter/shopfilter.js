@@ -1,10 +1,7 @@
 import React from 'react';
 import './shopfilter.css';
-// import TabShop from '../../shop/tabShop';
-
-
 const Shopfilter = props => {
-    const removeIcon= <img style={styles.removeIcon} src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+    const removeIcon= <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
     return (
         <div className="shop-furniture">
             <div className="list-furniture">
@@ -21,13 +18,6 @@ const Shopfilter = props => {
                         <div className="col-sm-12">   
                             <h5>Products</h5>
                             <ul>
-                                {/* {pieces.map(item => <li
-                                onClick={() => onItemSelect(item)}
-                                className={item.id === selectedItem ? 'disable active' : 'pointer'}
-                                key={item.uuid} >
-                                {item.name.toUpperCase()}
-                            </li>
-                            )} */}
                                 <li>FURNITURE</li>
                                 <li>DECOR</li>
                                 <li>RUGS</li>
@@ -83,14 +73,5 @@ const Shopfilter = props => {
         </div>
     )
 }
-const styles={
-    removeIcon:{
-        width:13,
-         height:"auto",
-         margin:3
-    }
-}
-
-
 
 export default Shopfilter;
