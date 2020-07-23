@@ -1,4 +1,4 @@
-ul.list-categroy {
+ul.list-category {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -10,10 +10,10 @@ ul.list-categroy {
   background: #ffffff;
 }
 
-ul.list-categroy li {
+ul.list-category li {
   width: 50%;
 }
-ul.list-categroy li button {
+ul.list-category li button {
   background: #e9e8e8;
   border: none;
   width: 200px;

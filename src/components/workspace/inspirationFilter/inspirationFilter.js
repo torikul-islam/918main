@@ -24,7 +24,7 @@ const InspirationFilter = (props) => {
                     </ul>
                     <div className="tab-content">
                         <div id="home" className="container tab-pane active"><br />
-                            <ul className="list-categroy">
+                            <ul className="list-category">
                                 <li><button>Living Room</button></li>
                                 <li><button>Dining Room</button></li>
                                 <li><button>Bedroom</button></li>
@@ -36,8 +36,9 @@ const InspirationFilter = (props) => {
                                 <li><button>Kids’ Room</button></li>
                             </ul>
                         </div>
-                        <div id="menu1" className="container tab-pane fade"><br />
-                            <ul className="list-categroy">
+                        <div id="menu1" className="container tab-pane fade">
+                            <br />
+                            <ul className="list-category">
                                 <li><button>Farmhouse</button></li>
                                 <li><button>Casual</button></li>
                                 <li><button>Traditional</button></li>
