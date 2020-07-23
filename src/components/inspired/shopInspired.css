@@ -63,6 +63,7 @@
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .slider img {
     height: 190px;
+    width: 100%;
 }
 .arrow-slide img {
   height: auto !important;

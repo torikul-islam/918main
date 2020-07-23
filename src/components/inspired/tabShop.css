@@ -59,3 +59,10 @@ span.bar {
     }
     
 }
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    .list-furniture ul, .inspired-slider ul, ul.shopTab{
+        display: flex;
+        overflow: scroll;
+        white-space: nowrap;
+    }
+}

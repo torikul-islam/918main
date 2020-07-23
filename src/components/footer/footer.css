@@ -31,7 +31,7 @@ ul.contact-menu{
   margin-top: 4% !important;
 }
 ul.subscribe {
-  margin-top: 20% !important;
+  margin-top: 10% !important;
   cursor: pointer;
 }
 
@@ -93,5 +93,10 @@ ul.contact-menu{
 }
 ul.subscribe {
   margin-top: 0% !important;
+}
+}
+@media screen and (max-width: 1024px) and (min-width: 768px){
+  ul.subscribe {
+    margin-top: 12% !important;
 }
 }

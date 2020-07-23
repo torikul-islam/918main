@@ -12,7 +12,7 @@ class footer extends Component {
             <div id='footer'>
                 <div className='container-fluid'>
                     <div className='row footer-main'>
-                        <div className='col-sm-2 footer-left'>
+                        <div className='col-sm-3 footer-left'>
                             <h3>Quick Links</h3>
                             <ul className='footer-link'>
                                 <li className='footer-item'><Link to='/workspace' style={{ textDecoration: 'none', color:"#4f4f4f" }}>Moodboard Creator</Link></li>
@@ -22,13 +22,13 @@ class footer extends Component {
                             </ul>
                         </div>
 
-                        <div className='col-sm-8 footer-middle'>
+                        <div className='col-sm-6 footer-middle'>
                             <ul className="contact-menu">
                                 <li><Link to='/ContactUs' style={{ textDecoration: 'none', color:"#000" }}>Contact</Link></li>
                                 <li><Link to='/AboutUS' style={{ textDecoration: 'none', color:"#000" }}>About Us</Link></li>
                             </ul>
                         </div>
-                        <div className='col-sm-2 footer-right'>
+                        <div className='col-sm-3 footer-right'>
                             <ul className="subscribe">
                                 <li><img src={require('../../Asset/Images/mail.png')} alt="mail.png" /></li>
                                 <li className="sublist">Subscribe</li>
