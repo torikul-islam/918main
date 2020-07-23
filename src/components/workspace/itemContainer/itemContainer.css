@@ -1,0 +1,65 @@
+.inspirModal {
+  height: 500px;
+  width: 500px;
+  background-color: #fff;
+  padding: 25px 10px;
+  margin: auto;
+}
+
+.shopModal{
+  min-height:50vh;
+  width: 45%;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin: auto;
+}
+.image-post-slide {
+  text-align: center;
+}
+
+.workimage img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.titleInspire h4{
+  position: relative;
+  font-size: 36px;
+  color: #030303;
+  font-family: "PlayfairDisplay-Bold";
+  text-align: center;
+}
+.titleInspire button.filter {
+  display: inherit;
+  margin: auto;
+  background: transparent;
+  border: none;
+  background-image: url();
+}
+.titleInspire button.filter {
+  display: inherit;
+  margin: auto;
+  background: transparent;
+  border: none;
+  background-image: url(../../../Asset//Images/arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: 174px 8px;
+  width: 100%;
+  background-size: 10px;
+  outline: none;
+}
+.btn-close-modal button img {
+  width: 15px;
+  height: auto;
+}
+.btn-close-modal button {
+  border: none;
+  float: right;
+  margin-right: 12px;
+  margin-top: 5px;
+  outline: none;
+  background: none !important;
+}
+.shop-furniture .list-furniture ul {
+  margin: 0 0 10px !important;
+}
