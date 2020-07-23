@@ -13,9 +13,10 @@ class Sidemenu extends Component {
 					<div className="sidebar-header">
 						<h3><Link to='/admin'>Admin Dashboard</Link></h3>
 					</div>
+
 					<ul className="list-unstyled components">
 						<li className="active">
-							<Link to='/admin'>Dashboard</Link>Dashboard
+								<Link to='/admin'>Dashboard</Link>
 						</li>
 						<li>
 							<Link to="/add-product">Add Products</Link>
