@@ -24,8 +24,8 @@ class footer extends Component {
 
                         <div className='col-sm-6 footer-middle'>
                             <ul className="contact-menu">
-                                <li><Link to='/ContactUs' style={{ textDecoration: 'none', color:"#000" }}>Contact</Link></li>
-                                <li><Link to='/AboutUS' style={{ textDecoration: 'none', color:"#000" }}>About Us</Link></li>
+                                <li><Link to='/contact-us' style={{ textDecoration: 'none', color:"#000" }}>Contact</Link></li>
+                                <li><Link to='/about-us' style={{ textDecoration: 'none', color:"#000" }}>About Us</Link></li>
                             </ul>
                         </div>
                         <div className='col-sm-3 footer-right'>
