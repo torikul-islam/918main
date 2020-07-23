@@ -16,16 +16,16 @@ class Sidemenu extends Component {
 
 					<ul className="list-unstyled components">
 						<li className="activeadmin">
-								<Link to='/admin'>Dashboard</Link>
+								<Link to='/admin'><i className="fa fa-th-large"></i> Dashboard</Link>
 						</li>
 						<li>
-							<Link to="/add-product">Add Products</Link>
+							<Link to="/add-product"><i className="fa fa-users"></i> Add Products</Link>
 						</li>
 						<li>
-							<Link to="/add-resource">Add Resources</Link>
+							<Link to="/add-resource"><i className="fa fa-users"></i> Add Resources</Link>
 						</li>
 						<li>
-							<Link to="/add-inspiration">Add Inspiration</Link>
+							<Link to="/add-inspiration"><i className="fa fa-users"></i> Add Inspiration</Link>
 						</li>
 					</ul>
 				</nav>

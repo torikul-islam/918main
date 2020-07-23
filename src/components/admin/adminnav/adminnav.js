@@ -30,10 +30,10 @@ function NavbarAdmin() {
                             </div>
                             <div className="menu-float menu-floatadmin">
                                 <li className="menu-item font-hel">
-                                    <Link className="nav-link" to="/#"   >Workspace</Link>
+                                    <Link className="nav-link" to="/#"   >Account</Link>
                                 </li>
                                 <li className="menu-item font-hel">
-                                    <Link className="nav-link" to="/#"   >Explore</Link>
+                                    <Link className="nav-link" to="/#"   >Logout</Link>
                                 </li>
                             </div>
                         </ul>
