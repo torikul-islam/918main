@@ -11,77 +11,21 @@ class Sidemenu extends Component {
 			<div>
 				<nav id="sidebar">
 					<div className="sidebar-header">
-						<h3>Admin Dashboard</h3>
-						<strong>AD</strong>
+						<h3><Link to='/admin'>Admin Dashboard</Link></h3>
 					</div>
 
 					<ul className="list-unstyled components">
-						<li className="actives">
-							<a href="dashboard.html">
-								<i className="fa fa-th-large"></i>
-						Dashboard
-					</a>
+						<li className="active">
+								<Link to='/admin'>Dashboard</Link>
 						</li>
 						<li>
-							<Link to="/admin"> Products</Link>
+							<Link to="/add-product">Add Products</Link>
 						</li>
 						<li>
-							<a href="#" data-toggle="collapse" aria-expanded="false">
-								<i className="fa fa-users"></i>
-						Rooms
-					</a>
-							<ul className="collapse list-unstyled" id="pageSubmenu1">
-								<li>Add Rooms</li>
-								<li>Rooms List</li>
-							</ul>
+							<Link to="/add-resource">Add Resources</Link>
 						</li>
 						<li>
-							<a href="#" data-toggle="collapse" aria-expanded="false">
-								<i className="fa fa-users"></i>
-						Blog Posts
-					</a>
-							<ul className="collapse list-unstyled" id="pageSubmenu2">
-								<li>Add Posts</li>
-								<li>Posts List</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#">
-								<i className="fa fa-align-justify"></i>
-						Orders
-					</a>
-							<ul className="collapse list-unstyled" id="pageSubmenu3">
-								<li>Order List</li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fa fa-calculator"></i>
-						User
-					</a>
-							<ul className="collapse list-unstyled" id="pageSubmenu8">
-								<li>Add User</li>
-								<li>Result List</li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fa fa-cogs"></i>
-						Account Setting
-					</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fa fa-align-left"></i>
-						FAQ
-					</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fa fa-phone"></i>
-						Contact
-					</a>
+							<Link to="/add-inspiration">Add Inspiration</Link>
 						</li>
 					</ul>
 				</nav>
