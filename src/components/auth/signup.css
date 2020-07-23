@@ -29,7 +29,7 @@
 .signup-left {
   max-width: 100%;
   overflow: hidden;
-  padding: 35px 25px;
+  padding: 28px 25px;
   background: #f4f3f3;
   /* height: 100%; */
 }
@@ -96,7 +96,7 @@ signup-bg .signup-left h2 {
   font-size: 19px;
 }
 .signup-form {
-  padding: 107px 20px;
+  padding: 65px 20px;
   font-size: 18px;
   color: #030303;
   font-weight: lighter;

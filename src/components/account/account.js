@@ -52,8 +52,10 @@ const Account = (props) => {
                     </div>
                 </div>
                 :
-                <div className="container">
-                    <h3>Please! login to continue.</h3>
+                <div className="containerLogin">
+                    <div className="container">
+                        <h3>Please! login to continue.</h3>
+                    </div>
                 </div>
             }
         </>

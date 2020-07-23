@@ -130,3 +130,8 @@ h5{
 .category-list{
     height: 40%;
 }
+.removeIcon{
+    width:13;
+    height:auto;
+    margin:3;
+}
