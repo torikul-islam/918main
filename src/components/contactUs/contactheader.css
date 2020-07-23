@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+
+.contact-area {
+    background-image: url(../../Asset/Images/Layer\ 4.png
+    );
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-text h2 {
+    margin-top: 110px;
+    font-size: 32pt;
+    color: #111111;
+    font-family: "PlayfairDisplay";
+  }
+
+  .contact-text hr {
+    content: "";
+    width: 120px;
+    height: 3px;
+    background: #d7d5d5;  
+    margin: 0 auto;
+
+}
+/* .contact-text{
+    text-align: center
+} */

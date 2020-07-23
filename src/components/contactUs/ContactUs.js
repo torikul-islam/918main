@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import NavbarB from '../nav/navbarB';
 import '../contactUs/ContactUs.css';
 import LearnButton from '../common/learnButton';
-
+import HeaderInspired from "../../components/inspired/headerInspired";
+import Contactheader from "./contactheader";
 // class ContactUs extends Component {
     const ContactUs = ({openModal, data, openMenu, handleOpenMenu  }) => {
     
         return (
             <div>
-                <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
+                {/* <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/> */}
+                <Contactheader openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
                 <div className="container contact-form">
                     <form>
                         <h3 className="text-center">We’d love to hear from you!</h3>
