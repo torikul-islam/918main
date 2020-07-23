@@ -3,11 +3,11 @@ import NavbarB from '../nav/navbarB';
 import "./aboutStory.css"
 
 
-const AboutStory = ({ openModal, data, openMenu, handleOpenMenu }) => {
-
+const AboutStory = (props) => {
+    const { openModal, data, openMenu, handleOpenMenu } = props;
     return (
         <div>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <NavbarB {...props} />
             <div className="list-furniture about-us">
                 <div className="container">
                     <div className="row">

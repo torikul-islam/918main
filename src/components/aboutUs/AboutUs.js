@@ -10,8 +10,8 @@ class AboutUs extends Component {
     render() {
         return (
             <div>
-                <AboutStory />
-                <AboutInspiredItems />
+                <AboutStory {...this.props} />
+                <AboutInspiredItems {...this.props} />
             </div>
         );
     }

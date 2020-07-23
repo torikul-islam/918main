@@ -104,9 +104,26 @@ function App(props) {
             shoppingCard={shoppingCard}
             isCardOpen={isCardOpen} itemControl={itemControl} />} exact />
 
-          <Route path="/AboutUS" component={AboutUS} exact />
+          <Route path="/about-us" render={(props) => <AboutUS {...props}
+            openMenu={openMenu}
+            openModal={openModal}
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard}
+            shoppingCard={shoppingCard}
+            isCardOpen={isCardOpen} itemControl={itemControl} />} exact />
 
-          <Route path="/ContactUs" component={ContactUs} exact />
+
+          <Route path="/contact-us" render={(props) => <ContactUs {...props}
+            openMenu={openMenu}
+            openModal={openModal}
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard}
+            shoppingCard={shoppingCard}
+            isCardOpen={isCardOpen} itemControl={itemControl} />} exact />
+
+          {/* <Route path="/AboutUS" component={AboutUS} exact /> */}
+
+          {/* <Route path="/ContactUs" component={ContactUs} exact /> */}
 
           <Route path="/shop-more" render={(props) => <Shop {...props}
             openMenu={openMenu}
