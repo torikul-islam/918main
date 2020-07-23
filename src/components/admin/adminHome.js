@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import Sidemenu from './sidemenu/sidemenu';
-import NavbarAdmin from './adminnav/adminnav';
+// import Addproduct from './addproduct/addproduct';
 
 
 class Adminhome extends Component {
     render() {
         return (
             <div>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-sm-2">
-                            <Sidemenu />
-                        </div>
-                        <div className="col-sm-10">
-                            <NavbarAdmin />
-                        </div>
-                    </div>
-                </div>
+                <Sidemenu />
+                THis Admin dash
             </div>
         );
     }

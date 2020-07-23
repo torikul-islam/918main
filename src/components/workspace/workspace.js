@@ -1,34 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
+import './workspace.css';
 import NavbarB from '../nav/navbarB';
 import Board from './board/board';
-import ItemContainer from './itemContainer/itemContainer';
-import InspirationFilter from './inspirationFilter/inspirationFilter';
-import ShopFilter from './shopFilter/shopFilter';
-import Modal from '../common/modal/modal';
-import './workspace.css';
+import Itemcontainer from './itemcontainer/itemcontainer';
 
 
 
-const Workspace = (props) => {
-    const [modal, setModal] = useState({ isOpen: false, name: null });
+const Workspace = ({ openModal, openMenu, handleOpenMenu }) => {
 
 
-    function openModal(name) {
-        setModal({ isOpen: true, name: name })
-    };
 
-    function closeModal() {
-        setModal({ isOpen: false, name: null })
-    };
-
-    const { name, isOpen } = modal;
     return (
-        < >
-            <NavbarB  {...props} search={"null"} />
+        <div>
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} search={"null"} />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4">
-                        <ItemContainer openModal={openModal} />
+                        <Itemcontainer />
                     </div>
 
                     <div className="col-md-8">
@@ -37,9 +25,8 @@ const Workspace = (props) => {
 
                 </div>
             </div>
-            {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter openModal={openModal} closeModal={closeModal} />} />}
-            {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter closeModal={closeModal} />} />}
-        </>
+
+        </div>
     );
 }
 
