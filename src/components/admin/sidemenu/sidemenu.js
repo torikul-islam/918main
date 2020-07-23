@@ -13,13 +13,10 @@ class Sidemenu extends Component {
 					<div className="sidebar-header">
 						<h3><Link to='/admin'>Admin Dashboard</Link></h3>
 					</div>
-
 					<ul className="list-unstyled components">
 						<li className="active">
-							<a href="dashboard.html">
-								<i className="fa fa-th-large"></i>
-						Dashboard
-					</a>
+							<i className="fa fa-th-large"></i>
+							<Link to='/admin'>Dashboard</Link>Dashboard
 						</li>
 						<li>
 							<Link to="/add-product">Add Products</Link>
