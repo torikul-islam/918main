@@ -31,7 +31,7 @@ span.icon img {
     border: none;
     background: #eae9e9;
     border-radius: 50px;
-    padding: 12px 15px;
+    padding: 12px 50px 12px 25px;
 }
 select#cars, select#cars:focus {
     background: transparent;
@@ -59,6 +59,6 @@ li.saveSection .learn-more button {
     font-family: "Helvetica-Bold";
     margin-left: 10px;
 }
-ul.menu-name li.select_design {
-    margin-right: 15px;
+.text-fav ul.menu-name li.saveSection {
+    margin-left: -30px;
 }
