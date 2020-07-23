@@ -1,21 +1,21 @@
 import React from 'react';
 import './shopfilter.css';
 const Shopfilter = props => {
-    const removeIcon= <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+    const removeIcon = <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
     return (
         <div className="shop-furniture">
             <div className="list-furniture">
                 <div className="container">
                     <div className="row">
-                    <div className="float-left">
+                        <div className="float-left">
                             <ul>
-                            <li>{removeIcon}Bedroom</li>
-                            <li>{removeIcon}Office</li>
-                            <li>{removeIcon}Kitchen</li>
-                            <li>{removeIcon}Black</li>
+                                <li>{removeIcon}Bedroom</li>
+                                <li>{removeIcon}Office</li>
+                                <li>{removeIcon}Kitchen</li>
+                                <li>{removeIcon}Black</li>
                             </ul>
-                            </div>
-                        <div className="col-sm-12">   
+                        </div>
+                        <div className="col-sm-12">
                             <h5>Products</h5>
                             <ul>
                                 <li>FURNITURE</li>
@@ -25,8 +25,8 @@ const Shopfilter = props => {
                                 <li>LIGHTING</li>
                             </ul>
                             <hr />
-                            </div>
-                            <div className="category-list">
+                        </div>
+                        <div className="category-list">
                             <ul className="list-categroy-shop">
                                 <li><button>Living Room</button></li>
                                 <li><button>Dining Room</button></li>
@@ -39,16 +39,21 @@ const Shopfilter = props => {
                                 <li><button>Kids’ Room</button></li>
                             </ul>
                             <hr />
-                            </div>
-                            <div>
+                        </div>
+                        <div>
                             <div className="range-slider">
                                 <h5>Price</h5>
-                                <p>input image Jessan </p>
+                                <form>
+                                    <div className="form-group">
+                                        <label for="formControlRange">Example Range input</label>
+                                        <input type="range" class="form-control-range" id="formControlRange" />
+                                    </div>
+                                </form>
 
                             </div>
                             <hr />
                             <div className="colorStyle">
-                            <h5>Color</h5>
+                                <h5>Color</h5>
                                 <ul>
                                     <li className="red"></li>
                                     <li className="green"></li>

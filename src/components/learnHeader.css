@@ -21,7 +21,7 @@
 .learn-text h3 {
     font-size: 37px;
     color: #030303;
-    font-family: PlayfairDisplay-Regular;
+    font-family: "PlayfairDisplay-Regular";
     position: relative;
 }
 .learn-text h3:before {
