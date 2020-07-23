@@ -16,7 +16,7 @@ class Sidemenu extends Component {
 
 					<ul className="list-unstyled components">
 						<li className="activeadmin">
-								<Link to='/admin'>Dashboard</Link>
+							<Link to='/admin'>Dashboard</Link>
 						</li>
 						<li>
 							<Link to="/add-product">Add Products</Link>

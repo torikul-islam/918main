@@ -90,6 +90,7 @@ i, span {
 #sidebar ul li a {
     text-align: left;
     color: #000;
+    text-decoration: none;
 }
 
 #sidebar.active ul li a {
@@ -122,7 +123,10 @@ i, span {
     padding: 20px;
     background: #7386D5;
 }
-
+#sidebar .sidebar-header h3 a {
+    color: #fff;
+    text-decoration: none;
+}
 #sidebar .sidebar-header strong {
     display: none;
     font-size: 1.8em;
