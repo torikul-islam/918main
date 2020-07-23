@@ -1,0 +1,14 @@
+.send button{
+    background: #030303;
+    color: #fcfaf9;
+    border-radius: 50px;
+    padding: 8px 25px !important;
+    font-family: "Helvetica-bold";
+    border: none;
+    margin-top: 10px;
+    font-size: 24px;
+}
+.send{
+    text-align: center;
+}
+

@@ -4,6 +4,7 @@ import '../contactUs/ContactUs.css';
 import LearnButton from '../common/learnButton';
 import HeaderInspired from "../../components/inspired/headerInspired";
 import Contactheader from "./contactheader";
+import SendButton from '../common/sendButton';
 // class ContactUs extends Component {
     const ContactUs = ({openModal, data, openMenu, handleOpenMenu  }) => {
     
@@ -36,7 +37,7 @@ import Contactheader from "./contactheader";
                             <div className="col-sm-12">
                                 <div className=" btnCenter">
                                     <div className="form-group">
-                                        <LearnButton />
+                                        <SendButton/>
                                     </div>
                                 </div>
                             </div>
