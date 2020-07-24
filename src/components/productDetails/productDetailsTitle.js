@@ -20,8 +20,13 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                     <div className="col-sm-4">
                         <div className="image-fav">
                             <img src={product.ref_img} alt="" />
-                            <span className={`icon pointer ${product.is_like ? 'fill' : ''}`} onClick={() => clickProductLike(product)}>
-                                <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                            <span className='icon'>
+                                <i
+                                    onClick={() => clickProductLike(product)}
+                                    style={{ cursor: "pointer" }}
+                                    className={`fa-2x ${product.is_like ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                    aria-hidden="true"
+                                />
                             </span>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
   height: 100%;
   display: none;
   z-index: 999;
-  width: 25%;
+  width: 27%;
   padding: 25px;
 }
 .card-show {
@@ -77,4 +77,16 @@
 .Shopping-text .learn-more button {
   font-size: 16px !important;
   outline: none;
+}
+span.estimateTotal {
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+span.estimateTotal h6 {
+  text-align: center;
+  font-family: "helvetica-light";
+  font-size: 17px;
+  color: #111111;
 }
