@@ -39,13 +39,13 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                     <div className="row">
                         {shoppingCard && shoppingCard.map((item, i) =>
                             <div key={i}>
-                                <div className="col-md-6" >
+                                <div className="col-md-6 float-left" >
                                     <div className="shopping-img">
                                         <img src={item.ref_img} alt="" />
                                     </div>
                                 </div>
 
-                                <div className="col-md-6"  >
+                                <div className="col-md-6 float-right"  >
                                     <div className="Shopping-text">
                                         <p>{item.retailer}</p>
                                         <h5>{item.name}</h5>
@@ -58,12 +58,12 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                                         </div>
                                         <LearMore />
                                     </div>
+                                    <span className="estimateTotal"><h6>Estimate total: ${total()}</h6></span>
                                 </div>
                             </div>
                         )}
                     </div>
 
-                    <h6>Estimate total: ${total()}</h6>
                 </div>
 
             </div>
