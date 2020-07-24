@@ -5,11 +5,30 @@ ul.list-category {
   display: flex;
   flex-wrap: wrap;
 }
-
+.shop-furniture {
+  background: #ffffff;
+  padding: 30px 5px;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
 .inspired-fil {
   background: #ffffff;
+  padding: 30px 5px;
+  width: 53%;
+  margin: auto;
+  text-align: center;
 }
-
+.inspired-fil .cross-icon, .shop-furniture .cross-icon {
+    float: right;
+}
+.inspired-fil .cross-icon img, .shop-furniture .cross-icon img {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+    margin-top: -15px;
+    cursor: pointer;
+}
 ul.list-category li {
   width: 50%;
 }

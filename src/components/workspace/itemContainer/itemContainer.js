@@ -35,12 +35,12 @@ function ItemContainer(props) {
                         <Toggleswitch className="col-sm-4" />
                         <div className="col-sm-8">
                             <h4 >Shop.</h4>
-                        </div>
-                    </div>
                     <div>
-                        <button className="filter" onClick={() => openModal('shop')}>
+                        <button className="filter shopfilter" onClick={() => openModal('shop')}>
                             <h6>Filters</h6></button>
 
+                    </div>
+                        </div>
                     </div>
                     <div className="post-slide-main">
                         <div className="row">

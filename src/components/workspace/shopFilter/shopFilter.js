@@ -1,10 +1,6 @@
 import React from 'react';
 import './shopFilter.css';
 
-
-
-
-
 function ShopFilter(props) {
     const { openModal, closeModal } = props;
 
@@ -55,8 +51,9 @@ function ShopFilter(props) {
                             <div>
                                 <div className="range-slider">
                                     <h5>Price</h5>
-                                    <p>input image Jessan </p>
-
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" max="100" value="50" class="sliderRange" id="myRange" />
+                                    </div>
                                 </div>
                                 <hr />
                                 <div className="colorStyle">
