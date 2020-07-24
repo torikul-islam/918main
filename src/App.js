@@ -60,7 +60,7 @@ function App(props) {
   function itemControl(item, ops) {
     const card = [...shoppingCard];
     const index = card.findIndex(card => card.uuid === item.uuid);
-    if (ops === '-' && card[index].quantity > 0) {
+    if (ops === '-' && card[index].quantity > 1) {
       card[index].quantity -= 1;
     } else if (ops === '+') {
       card[index].quantity += 1;

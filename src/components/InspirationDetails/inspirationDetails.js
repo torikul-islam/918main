@@ -26,17 +26,24 @@ function InspirationDetails(props) {
 
     useEffect(() => {
         (async function () {
-            const { data } = await inspiredService.getUserInspirationLike();
-            setInspirationLike(data)
+            const token = localStorage.getItem('token');
+            if (token) {
+                const { data } = await inspiredService.getUserInspirationLike();
+                setInspirationLike(data)
+            }
         })()
     }, []);
 
 
     async function clickInspirationLike(item) {
         let form = new FormData();
-        form.set('inspiration', props.match.params.id)
-        const { data } = await inspiredService.createInspirationLike(form);
-        setInspirationLike([...inspirationLike, { uuid: null, inspiration: item }]);
+        form.set('inspiration', props.match.params.id);
+        const token = localStorage.getItem('token');
+        if (token) {
+            const { data } = await inspiredService.createInspirationLike(form);
+            setInspirationLike([...inspirationLike, { uuid: null, inspiration: item }]);
+        }
+
     }
 
     return (

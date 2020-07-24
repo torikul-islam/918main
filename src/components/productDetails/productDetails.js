@@ -23,16 +23,25 @@ function ProductDetails(props) {
 
     useEffect(() => {
         (async function () {
-            const { data } = await productServices.getUserProductLike();
-            setProductLike(data);
+            const token = localStorage.getItem('token');
+            if (token) {
+
+                const { data } = await productServices.getUserProductLike();
+                if (data) {
+                    setProductLike(data);
+                }
+            }
         })()
     }, []);
 
     async function clickProductLike(item) {
         let form = new FormData();
-        form.set('product', props.match.params.id)
-        const { data } = await productServices.createProductLike(form);
-        setProductLike([...productLike, { uuid: null, product: item }]);
+        form.set('product', props.match.params.id);
+        const token = localStorage.getItem('token');
+        if (token) {
+            const { data } = await productServices.createProductLike(form);
+            setProductLike([...productLike, { uuid: null, product: item }]);
+        }
     }
 
 
