@@ -49,6 +49,7 @@ a, a:hover, a:focus {
 #sidebar ul li a {
     text-align: left;
     color: #000;
+    text-decoration: none;
 }
 
 #sidebar.active ul li a {

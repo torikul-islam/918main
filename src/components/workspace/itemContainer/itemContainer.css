@@ -63,3 +63,6 @@
 .shop-furniture .list-furniture ul {
   margin: 0 0 10px !important;
 }
+.titleInspire button.filter.shopfilter {
+  background-position: 120px 8px;
+}
