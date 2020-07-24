@@ -45,9 +45,9 @@ function AccountProduct() {
         <div className="account-slider">
             <h3>Product.</h3>
             <div className='tab-index'>
-                <div className='slider'>
+                {paginateProd.length > 0 && <div className='slider'>
                     <div className='row'>
-                        {paginateProd && paginateProd.map((item, i) =>
+                        {paginateProd.map((item, i) =>
                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                 <img src={item.product.ref_img} alt="" />
                                 <h6>{item.product.retailer}</h6>
@@ -61,7 +61,7 @@ function AccountProduct() {
                             onPageChange={onPageChange}
                         />
                     </div>
-                </div>
+                </div>}
             </div>
             <hr />
         </div>

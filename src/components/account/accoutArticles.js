@@ -45,10 +45,10 @@ function AccountArticles() {
     return (
         <div className="account-slider">
             <h3>Articles.</h3>
-            <div className='tab-index'>
+            {paginateArt.length > 0 && <div className='tab-index'>
                 <div className='slider'>
                     <div className='row'>
-                        {paginateArt && paginateArt.map((item, i) =>
+                        {paginateArt.map((item, i) =>
                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                 <img src={item.resource.ref_img} alt="" />
                                 <h6>{item.resource.title}</h6>
@@ -63,7 +63,7 @@ function AccountArticles() {
                         />
                     </div>
                 </div>
-            </div>
+            </div>}
             <hr />
         </div>
     );
