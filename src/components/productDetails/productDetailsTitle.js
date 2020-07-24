@@ -4,8 +4,15 @@ import './products.css';
 
 
 
-const ProductDetailsTitle = ({ addShoppingCard, product }) => {
-
+const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProductLike }) => {
+    if (product) {
+        const isLike = productLike.some(el => el.product.uuid === product.uuid);
+        if (isLike) {
+            product['is_like'] = true;
+        } else {
+            product['is_like'] = false
+        }
+    }
     return (
         <div className='container-fluid mb-5'>
             <div className='container' >
@@ -13,7 +20,7 @@ const ProductDetailsTitle = ({ addShoppingCard, product }) => {
                     <div className="col-sm-4">
                         <div className="image-fav">
                             <img src={product.ref_img} alt="" />
-                            <span className="icon">
+                            <span className={`icon pointer ${product.is_like ? 'fill' : ''}`} onClick={() => clickProductLike(product)}>
                                 <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
                             </span>
                         </div>

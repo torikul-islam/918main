@@ -152,7 +152,7 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path="/inspired-details/:id" render={(props) => <InspirationDetails
+          <Route path="/inspired-details/:id/:roomId" render={(props) => <InspirationDetails
             {...props}
             openMenu={openMenu}
             openModal={openModal}
