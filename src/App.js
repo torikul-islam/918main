@@ -26,6 +26,7 @@ import './App.css';
 import AddInspiration from './components/admin/addinspiration/addinspiration';
 import Addproduct from './components/admin/addproduct/addproduct';
 import AddResource from './components/admin/addresource/addresource';
+import Editpages from './components/admin/editpages/editpages';
 
 
 
@@ -174,6 +175,7 @@ function App(props) {
           <Route path='/add-product' component={Addproduct} />
           <Route path='/add-resource' component={AddResource} />
           <Route path='/add-inspiration' component={AddInspiration} />
+          <Route path='/edit-pages' component={Editpages} />
 
         </Switch>
 
