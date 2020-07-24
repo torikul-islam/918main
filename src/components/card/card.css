@@ -78,12 +78,7 @@
   font-size: 16px !important;
   outline: none;
 }
-div.estimateTotal {
-  display: inline-block;
-  margin-top: 10px;
-  text-align: center;
-  width: 100%;
-}
+
 div.estimateTotal h6 {
   text-align: center;
   font-family: "helvetica-light";
@@ -95,6 +90,8 @@ div.estimateTotal {
   position: fixed;
   bottom: 0;
   background: #000;
-  padding: 13px 0 8px;
+  padding: 20px 20px 15px;
   border: 1px solid #000;
+  right: 0;
+  width: 27%;
 }
