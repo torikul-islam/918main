@@ -44,7 +44,6 @@ function ProductDetails(props) {
         }
     }
 
-
     return (
         <>
             <NavbarB  {...props} />

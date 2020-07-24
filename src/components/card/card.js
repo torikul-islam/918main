@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../card/card.css';
 import LearMore from '../common/learnButton'
 
@@ -6,6 +6,14 @@ import LearMore from '../common/learnButton'
 
 
 function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
+
+    function total() {
+        return shoppingCard.reduce((total, cur) => {
+            return total += cur.quantity * cur.price
+        }, 0)
+    }
+
+
     return (
         <>
             <div className={`shopping-card ${isCardOpen ? 'card-show' : ''}`}>
@@ -31,14 +39,14 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                     </div>
                     <div className="row">
                         {shoppingCard && shoppingCard.map((item, i) =>
-                            <>
-                                <div className="col-md-6">
+                            <div key={i}>
+                                <div className="col-md-6" >
                                     <div className="shopping-img">
                                         <img src={item.ref_img} alt="" />
                                     </div>
                                 </div>
 
-                                <div className="col-md-6" key={i}>
+                                <div className="col-md-6"  >
                                     <div className="Shopping-text">
                                         <p>{item.retailer}</p>
                                         <h5>{item.name}</h5>
@@ -52,10 +60,13 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                                         <LearMore />
                                     </div>
                                 </div>
-                            </>
+                            </div>
                         )}
                     </div>
+
+                    <h6>Estimate total: ${total()}</h6>
                 </div>
+
             </div>
         </>
     );

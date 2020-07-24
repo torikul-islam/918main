@@ -78,7 +78,9 @@ function App(props) {
     <>
       <main>
         <Card isCardOpen={isCardOpen}
-          clickCard={clickCard} shoppingCard={shoppingCard} itemControl={itemControl} />
+          clickCard={clickCard}
+          shoppingCard={shoppingCard}
+          itemControl={itemControl} />
         <Switch>
           <Route path="/" render={(props) => <Home {...props}
             openMenu={openMenu}
