@@ -41,15 +41,6 @@ function Shop(props) {
     }
 
 
-    // useEffect(() => {
-    //     (async function () {
-    //         const { data } = await productServices.getAllProducts();
-    //         setProduct(data.results);
-    //     })()
-    // }, []);
-
-
-
     function onPageChange(page) {
         if (page === '-') {
             setCurrentPage(currentPage - 1);

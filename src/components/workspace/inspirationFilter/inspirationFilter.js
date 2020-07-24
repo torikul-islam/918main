@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './inspirationFilter.css';
 
 
@@ -6,6 +6,15 @@ import './inspirationFilter.css';
 
 const InspirationFilter = (props) => {
     const { openModal, closeModal } = props
+    const [openTab, setOpenTab] = useState('room')
+    function clickTab(name) {
+        if (name === 'room') {
+            setOpenTab('room');
+        } else if (name === 'style') {
+            setOpenTab('style');
+        }
+    }
+
     return (
 
         <div className='container'>
@@ -16,14 +25,14 @@ const InspirationFilter = (props) => {
                 <div className="container">
                     <ul className="nav nav-tabs" role="tablist">
                         <li className="nav-item">
-                            <a className="nav-link active" data-toggle="tab" href="#home">Room</a>
+                            <div className={`nav-link pointer ${openTab === 'room' ? 'active disable' : ''}`} data-toggle="tab" onClick={() => clickTab('room')}>Room</div>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" data-toggle="tab" href="#menu1">Style</a>
+                            <div className={`nav-link pointer ${openTab === 'style' ? 'active disable' : ''}`} data-toggle="tab" onClick={() => clickTab('style')}>Style</div>
                         </li>
                     </ul>
                     <div className="tab-content">
-                        <div id="home" className="container tab-pane active"><br />
+                        <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
                             <ul className="list-category">
                                 <li><button>Living Room</button></li>
                                 <li><button>Dining Room</button></li>
@@ -36,7 +45,7 @@ const InspirationFilter = (props) => {
                                 <li><button>Kids’ Room</button></li>
                             </ul>
                         </div>
-                        <div id="menu1" className="container tab-pane fade">
+                        <div id="menu1" className={`container tab-pane ${openTab === 'style' ? 'active' : 'fade'}`}>
                             <br />
                             <ul className="list-category">
                                 <li><button>Farmhouse</button></li>

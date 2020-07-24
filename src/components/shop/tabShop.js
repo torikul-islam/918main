@@ -17,11 +17,7 @@ const TabShop = ({ onItemSelect, selectedItem, pieces, }) => {
                                 {item.name.toUpperCase()}
                             </li>
                             )}
-                            {/* <li>FURNITURE</li>
-                            <li>DECOR</li>
-                            <li>RUGS</li>
-                            <li>BED &amp; BATH</li>
-                            <li>LIGHTING</li> */}
+
                         </ul>
                     </div>
                 </div>

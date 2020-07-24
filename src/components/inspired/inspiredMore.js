@@ -94,10 +94,10 @@ function InspiredMore(props) {
             setSelectedItems(selected)
         }
         let url = '/';
-        Object.keys(selected).map((key, i) => {
-            if (selected[key] && i === 0) {
+        Object.keys(selected).map(key => {
+            if (selected[key] && url === '/') {
                 url += `?${key}=${selected[key]}`
-            } else if (selected[key] && i > 0) {
+            } else if (selected[key]) {
                 url += `&${key}=${selected[key]}`
             }
         })
