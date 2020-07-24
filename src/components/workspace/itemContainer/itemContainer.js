@@ -47,17 +47,19 @@ function ItemContainer(props) {
                             <div className="col-sm-6">
                                 <div className="workimage">
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop1.png')} alt="ins1.png" />
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop3.png')} alt="ins2.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop5.png')} alt="ins3.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop7.png')} alt="ins4.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop9.png')} alt="ins4.png" />
                                 </div>
                             </div>
                             <div className="col-sm-6">
                                 <div className="workimage">
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
-                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop2.png')} alt="ins1.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop4.png')} alt="ins2.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop6.png')} alt="ins3.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop8.png')} alt="ins4.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop10.png')} alt="ins4.png" />
                                 </div>
                             </div>
                         </div>
