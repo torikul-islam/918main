@@ -51,8 +51,8 @@ function ShopFilter(props) {
                             <div>
                                 <div className="range-slider">
                                     <h5>Price</h5>
-                                    <div class="slidecontainer">
-                                        <input type="range" min="1" max="100" value="50" class="sliderRange" id="myRange" />
+                                    <div className="slidecontainer">
+                                        <input type="range" min="1" max="100" value="50" className="sliderRange" id="myRange" />
                                     </div>
                                 </div>
                                 <hr />
