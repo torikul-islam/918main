@@ -13,7 +13,6 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
         }, 0)
     }
 
-
     return (
         <>
             <div className={`shopping-card ${isCardOpen ? 'card-show' : ''}`}>
