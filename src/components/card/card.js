@@ -1,6 +1,7 @@
 import React from 'react';
 import '../card/card.css';
 import LearMore from '../common/learnButton'
+import GoBtn from '../common/goBtn';
 
 
 
@@ -12,6 +13,8 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
             return total += cur.quantity * cur.price
         }, 0).toFixed(2)
     }
+
+
 
     return (
         <>
@@ -57,7 +60,10 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                                                 {item.quantity}
                                                 <span onClick={() => itemControl(item, '+')}>+</span>
                                             </div>
-                                            <LearMore />
+                                            <div onClick={() => window.open(item.ref_url, '_blank')} className="visit-retailer">
+                                                <GoBtn text='Visit retailer' />
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

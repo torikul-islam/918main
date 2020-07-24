@@ -16,7 +16,7 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
     return (
         <div className='container-fluid mb-5'>
             <div className='container' >
-                {product && <div className="row" >
+                {product.price && <div className="row" >
                     <div className="col-sm-4">
                         <div className="image-fav">
                             <img src={product.ref_img} alt="" />
@@ -32,7 +32,6 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                     </div>
                     <div className="col-sm-8">
                         <div className="text-fav text-center">
-                            <span>Product name</span>
                             <h4>{product.name}</h4>
                             <p>${product.price}</p>
                             <ul className="menu-name">

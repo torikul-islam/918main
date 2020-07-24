@@ -36,7 +36,8 @@
   font-size: 32px;
   color: #030303;
 }
-.arrowLeft, .arrowLayer {
+.arrowLeft,
+.arrowLayer {
   margin-top: 5px;
 }
 
@@ -47,7 +48,7 @@
   width: 100%;
   height: 100%;
 }
-.Shopping-text p{
+.Shopping-text p {
   color: #4f4f4f;
   font-family: "helvetica-light";
   font-size: 18px;
@@ -60,7 +61,8 @@
   color: #030303;
   text-align: center;
 }
-.Shopping-text .priceProduct, .quantity {
+.Shopping-text .priceProduct,
+.quantity {
   text-align: center;
   font-family: "helvetica-light";
   font-size: 16px;
@@ -94,4 +96,8 @@ div.estimateTotal {
   border: 1px solid #000;
   right: 0;
   width: 27%;
+}
+.visit-retailer button {
+  font-size: 11px;
+  padding: 5px 17px;
 }
