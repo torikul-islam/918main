@@ -17,8 +17,6 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
         }
     }
 
-    console.log('clied', inspired);
-
     return (
         <div className='container-fluid mb-5'>
             <div className='container' >
@@ -27,8 +25,13 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
                         <div className="col-sm-4">
                             <div className="image-fav">
                                 <img src={item.ref_img} alt="" />
-                                <span className={`icon pointer ${item.is_like ? 'fill' : ''}`} onClick={() => clickInspirationLike(item)}>
-                                    <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                                <span className='icon' >
+                                    <i
+                                        onClick={() => clickInspirationLike(item)}
+                                        style={{ cursor: "pointer" }}
+                                        className={`fa-2x ${item.is_like ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        aria-hidden="true"
+                                    />
                                 </span>
                             </div>
                         </div>
