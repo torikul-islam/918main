@@ -44,7 +44,13 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                                 <Link className="nav-link" to="/workspace"  >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
-                                <Link className="nav-link" to="/explore"  >Explore</Link>
+                            <select name="Explore" id="Explore">
+                                    <option value="Explore">Explore</option>
+                                    <option value="Explore">Explore</option>
+                                    <option value="Explore">Explore</option>
+                                    <option value="Explore"><Link className="nav-link" to="/explore"  >Explore</Link></option>
+                                </select>
+                                
                             </li>
                             {!user && <li className="menu-item signup" onClick={() => openModal('signup')}>
                                 <div className="nav-link" >Sign Up</div>
