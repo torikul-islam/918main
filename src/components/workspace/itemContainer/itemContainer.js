@@ -4,7 +4,7 @@ import './itemContainer.css';
 
 
 function ItemContainer(props) {
-    const { openModal, closeModal } = props;
+    const { openModal, closeModal, clickFilterImage } = props;
 
 
     return (
@@ -21,10 +21,10 @@ function ItemContainer(props) {
                     <div>
                         <div className="post-slide-main">
                             <div className="workimage">
-                                <img src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
-                                <img src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
-                                <img src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
-                                <img src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
+                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
+                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
+                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
                             </div>
                         </div>
                     </div>
@@ -46,18 +46,18 @@ function ItemContainer(props) {
                         <div className="row">
                             <div className="col-sm-6">
                                 <div className="workimage">
-                                    <img src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
-                                    <img src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
-                                    <img src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
-                                    <img src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
                                 </div>
                             </div>
                             <div className="col-sm-6">
                                 <div className="workimage">
-                                    <img src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
-                                    <img src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
-                                    <img src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
-                                    <img src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
+                                    <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" />
                                 </div>
                             </div>
                         </div>

@@ -6,12 +6,14 @@ import InspirationFilter from './inspirationFilter/inspirationFilter';
 import ShopFilter from './shopFilter/shopFilter';
 import Modal from '../common/modal/modal';
 import './workspace.css';
+import ShopModal from './shopModal';
 
 
 
 const Workspace = (props) => {
     const [modal, setModal] = useState({ isOpen: false, name: null });
-
+    const [product, setProduct] = useState({});
+    const [products, setProducts] = useState([]);
 
     function openModal(name) {
         setModal({ isOpen: true, name: name })
@@ -21,6 +23,10 @@ const Workspace = (props) => {
         setModal({ isOpen: false, name: null })
     };
 
+    function clickFilterImage(name, item) {
+        setModal({ isOpen: true, name: name })
+    }
+
     const { name, isOpen } = modal;
     return (
         < >
@@ -28,7 +34,7 @@ const Workspace = (props) => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4">
-                        <ItemContainer openModal={openModal} />
+                        <ItemContainer clickFilterImage={clickFilterImage} openModal={openModal} />
                     </div>
 
                     <div className="col-md-8">
@@ -38,6 +44,8 @@ const Workspace = (props) => {
                 </div>
             </div>
             {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal product={product} products={products} openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<ShopModal product={product} products={products} openModal={openModal} closeModal={closeModal} />} />}
             {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter closeModal={closeModal} />} />}
         </>
     );
