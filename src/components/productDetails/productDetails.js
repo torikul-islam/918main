@@ -11,7 +11,7 @@ import productServices from '../../services/productService';
 
 function ProductDetails(props) {
     const [product, setProduct] = useState({});
-
+    const [productLike, setProductLike] = useState([]);
 
     useEffect(() => {
         (async function () {
@@ -20,10 +20,40 @@ function ProductDetails(props) {
         })()
     }, [props.match.params.id]);
 
+
+    useEffect(() => {
+        (async function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+
+                const { data } = await productServices.getUserProductLike();
+                if (data) {
+                    setProductLike(data);
+                }
+            }
+        })()
+    }, []);
+
+    async function clickProductLike(item) {
+        let form = new FormData();
+        form.set('product', props.match.params.id);
+        const token = localStorage.getItem('token');
+        if (token) {
+            const { data } = await productServices.createProductLike(form);
+            setProductLike([...productLike, { uuid: null, product: item }]);
+        }
+    }
+
+
     return (
         <>
             <NavbarB  {...props} />
-            <ProductDetailsTitle addShoppingCard={props.addShoppingCard} product={product} />
+            <ProductDetailsTitle
+                clickProductLike={clickProductLike}
+                addShoppingCard={props.addShoppingCard}
+                product={product}
+                productLike={productLike}
+            />
             <ProductDetailsSlider />
             <ProductDetailsSliderPost />
         </>

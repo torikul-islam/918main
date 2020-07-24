@@ -14,5 +14,22 @@ function getProductByPieceId(ids) {
     return http.get(`products/?piece_ids=${ids}`);
 };
 
+function createProductLike(data) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.post('/user/product/likes/', data, {
+            headers: { "Authorization": `Token ${token}` }
+        });
+    }
+}
 
-export default { getAllProducts, getProductById, getProductByPieceId }
+function getUserProductLike() {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.get('/user/product/likes/', { headers: { "Authorization": `Token ${token}` } })
+    }
+}
+
+
+
+export default { getAllProducts, getProductById, getProductByPieceId, getUserProductLike, createProductLike }

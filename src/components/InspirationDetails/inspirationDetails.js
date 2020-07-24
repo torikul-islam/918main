@@ -10,20 +10,46 @@ import './inspirationDetails.css';
 
 function InspirationDetails(props) {
     const [inspired, setInspired] = useState([])
+    const [inspirationLike, setInspirationLike] = useState([]);
 
 
     useEffect(() => {
         (async function () {
-            const { data } = await inspiredService.getAllInspired();
-            setInspired(data.results);
+            const { data } = await inspiredService.getInspirationByRoomId(props.match.params.roomId);
+            if (data) {
+                const filter = data.results.filter(x => x.uuid === props.match.params.id);
+                setInspired(filter);
+            }
+        })()
+    }, [props.match.params.id]);
+
+
+    useEffect(() => {
+        (async function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const { data } = await inspiredService.getUserInspirationLike();
+                setInspirationLike(data)
+            }
         })()
     }, []);
 
 
+    async function clickInspirationLike(item) {
+        let form = new FormData();
+        form.set('inspiration', props.match.params.id);
+        const token = localStorage.getItem('token');
+        if (token) {
+            const { data } = await inspiredService.createInspirationLike(form);
+            setInspirationLike([...inspirationLike, { uuid: null, inspiration: item }]);
+        }
+
+    }
+
     return (
         <>
             <NavbarB  {...props} />
-            <InspirationTitle inspired={inspired.filter(x => x.uuid === props.match.params.id)} />
+            <InspirationTitle inspirationLike={inspirationLike} clickInspirationLike={clickInspirationLike} inspired={inspired} />
             <InspirationDetailsProduct {...props} />
             <InspirationAlsoLike {...props} />
         </>

@@ -61,7 +61,7 @@ function App(props) {
   function itemControl(item, ops) {
     const card = [...shoppingCard];
     const index = card.findIndex(card => card.uuid === item.uuid);
-    if (ops === '-' && card[index].quantity > 0) {
+    if (ops === '-' && card[index].quantity > 1) {
       card[index].quantity -= 1;
     } else if (ops === '+') {
       card[index].quantity += 1;
@@ -153,7 +153,7 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path="/inspired-details/:id" render={(props) => <InspirationDetails
+          <Route path="/inspired-details/:id/:roomId" render={(props) => <InspirationDetails
             {...props}
             openMenu={openMenu}
             openModal={openModal}

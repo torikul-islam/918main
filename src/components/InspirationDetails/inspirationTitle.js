@@ -7,7 +7,18 @@ import GoBtn from '../common/goBtn';
 
 
 
-function InspirationTitle({ inspired }) {
+function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
+    if (inspired.length > 0) {
+        const isLike = inspirationLike.some(el => el.inspiration.uuid === inspired[0].uuid);
+        if (isLike) {
+            inspired[0]['is_like'] = true;
+        } else {
+            inspired[0]['is_like'] = false
+        }
+    }
+
+    console.log('clied', inspired);
+
     return (
         <div className='container-fluid mb-5'>
             <div className='container' >
@@ -16,7 +27,7 @@ function InspirationTitle({ inspired }) {
                         <div className="col-sm-4">
                             <div className="image-fav">
                                 <img src={item.ref_img} alt="" />
-                                <span className="icon">
+                                <span className={`icon pointer ${item.is_like ? 'fill' : ''}`} onClick={() => clickInspirationLike(item)}>
                                     <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
                                 </span>
                             </div>
@@ -39,7 +50,6 @@ function InspirationTitle({ inspired }) {
                             </div>
                         </div>
                     </div>
-
                 )}
             </div>
         </div>

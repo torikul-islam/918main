@@ -40,7 +40,6 @@ function InspirationDetailsProduct(props) {
     }
 
     const paginateProd = paginate(product, currentPage, pageSize);
-
     return (
         <div className='container'>
             <div className='row'>
@@ -54,7 +53,7 @@ function InspirationDetailsProduct(props) {
                             <div className='row'>
                                 {paginateProd && paginateProd.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                        <Link to={`/inspired-details/${item.uuid}`}>
+                                        <Link to={`/product-details/${item.uuid}`}>
                                             <img src={item.ref_img} alt="" />
                                         </Link>
                                         <h6>{item.retailer}</h6>
