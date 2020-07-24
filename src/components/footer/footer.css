@@ -5,6 +5,7 @@
 }
 .footer-main {
   padding: 30px 0 20px;
+  margin-bottom: 0 !important;
 }
 
 #footer ul {
