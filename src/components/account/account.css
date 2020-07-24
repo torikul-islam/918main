@@ -38,6 +38,10 @@
     font-weight: bold;
     color: #4f4f4f;
 }
+.bg-color{
+background-color: #eae9e9;
+}
+
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .account-sidebar, .containerLogin {
         margin-top: 100px;

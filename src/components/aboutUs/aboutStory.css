@@ -34,15 +34,36 @@
     margin-top: 30px;
 }
 
+
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    .img-about img {
+        width: 100%;
+        height: 365px;
+    }
+    .img-about2 img {
+        width: 100%;
+        height:525px;
+    }
+}
+
 @media screen and (max-width: 767px) and (min-width: 320px){
     .list-furniture.about-us h4:before {
         width: 45%;
+    }
+
+    .list-furniture {
+        margin-top: 95px !important;
     }
     .text-about {
         margin-top: 0;
     }
     .img-about img {
         height: 245px;
+    }
+    .img-about2 img {
+        width: 100%;
+        height: 430px;
     }
     .about-img-section .text-about {
         margin-top: 30px;
