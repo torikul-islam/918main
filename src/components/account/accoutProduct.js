@@ -14,8 +14,9 @@ function AccountProduct() {
 
     useEffect(() => {
         (async function () {
-            const { data } = await productServices.getAllProducts();
-            setProduct(data.results);
+            const { data } = await productServices.getUserProductLike();
+            console.log(data);
+            setProduct(data);
         })()
     }, []);
 
@@ -36,8 +37,10 @@ function AccountProduct() {
             setPageSize(4);
         }
     }
-
-    const paginateProd = paginate(product, currentPage, pageSize);
+    let paginateProd = [];
+    if (product.length > 0) {
+        paginateProd = paginate(product, currentPage, pageSize);
+    }
     return (
         <div className="account-slider">
             <h3>Product.</h3>
@@ -46,9 +49,9 @@ function AccountProduct() {
                     <div className='row'>
                         {paginateProd && paginateProd.map((item, i) =>
                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                <img src={item.ref_img} alt="" />
-                                <h6>{item.retailer}</h6>
-                                <p>${item.price}</p>
+                                <img src={item.product.ref_img} alt="" />
+                                <h6>{item.product.retailer}</h6>
+                                <p>${item.product.price}</p>
                             </div>
                         )}
                         <Pagination

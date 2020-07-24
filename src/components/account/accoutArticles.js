@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '../common/pagination';
-import productServices from '../../services/productService';
+import resourceService from '../../services/resourceService';
 import paginate from '../../utils/paginate';
 
 
@@ -14,8 +14,8 @@ function AccountArticles() {
 
     useEffect(() => {
         (async function () {
-            const { data } = await productServices.getAllProducts();
-            setArticles(data.results);
+            const { data } = await resourceService.getUserResourceLike();
+            setArticles(data);
         })()
     }, []);
 
@@ -37,8 +37,11 @@ function AccountArticles() {
             setPageSize(4);
         }
     }
+    let paginateArt = [];
+    if (articles.length > 0) {
+        paginateArt = paginate(articles, currentPage, pageSize);
+    }
 
-    const paginateArt = paginate(articles, currentPage, pageSize);
     return (
         <div className="account-slider">
             <h3>Articles.</h3>
@@ -47,9 +50,9 @@ function AccountArticles() {
                     <div className='row'>
                         {paginateArt && paginateArt.map((item, i) =>
                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                <img src={item.ref_img} alt="" />
-                                <h6>{item.retailer}</h6>
-                                <p>${item.price}</p>
+                                <img src={item.resource.ref_img} alt="" />
+                                <h6>{item.resource.title}</h6>
+                                <p>{item.resource.source}</p>
                             </div>
                         )}
                         <Pagination

@@ -14,8 +14,8 @@ function AccountInspiration() {
 
     useEffect(() => {
         (async function () {
-            const { data } = await inspirationServices.getAllInspired();
-            setInspired(data.results);
+            const { data } = await inspirationServices.getUserInspirationLike();
+            setInspired(data);
         })()
     }, []);
 
@@ -37,7 +37,11 @@ function AccountInspiration() {
         }
     }
 
-    const paginateIns = paginate(inspired, currentPage, pageSize);
+    let paginateIns = [];
+    if (inspired.length > 0) {
+        paginateIns = paginate(inspired, currentPage, pageSize);
+    }
+
     return (
         <div className="account-slider">
             <h3>Inspiration.</h3>
@@ -46,9 +50,8 @@ function AccountInspiration() {
                     <div className='row'>
                         {paginateIns && paginateIns.map((item, i) =>
                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                <img src={item.ref_img} alt="" />
-                                <h6>{item.retailer}</h6>
-                                <p>${item.price}</p>
+                                <img src={item.inspiration.ref_img} alt="" />
+                                <h6>{item.inspiration.designed_by}</h6>
                             </div>
                         )}
                         <Pagination

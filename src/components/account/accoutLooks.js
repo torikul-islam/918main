@@ -41,7 +41,7 @@ function AccountLooks() {
     return (
         <div className="account-slider">
             <h3>Looks.</h3>
-            <div className='tab-index'>
+            {/* <div className='tab-index'>
                 <div className='slider'>
                     <div className='row'>
                         {paginateLooks && paginateLooks.map((item, i) =>
@@ -59,7 +59,7 @@ function AccountLooks() {
                         />
                     </div>
                 </div>
-            </div>
+            </div> */}
             <hr />
         </div>
     );
