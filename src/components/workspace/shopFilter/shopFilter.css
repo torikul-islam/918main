@@ -33,7 +33,7 @@ ul.list-categroy-shop li button {
 .colorStyle ul li {
   width: 45px;
   height: 45px;
-  margin-right: 10px;
+  margin: 0 12px 10px 14px  !important;
   float: left;
   border-radius: 50px;
 }
@@ -175,4 +175,26 @@ h5 {
   height: 25px;
   background: #4CAF50;
   cursor: pointer;
+}
+.productfurniture {
+  text-align: left !important;
+}
+.productfurniture ul {
+  text-align: left !important;
+}
+.productfurniture ul li:first-child {
+  margin-left: 0 !important;
+}
+.productfurniture h5, .colorStyle h5, .range-slider h5 {
+  font-size: 26px;
+  color: #111111;
+  font-family: "PlayfairDisplay-Bold";
+  margin: 20px 0 40px;
+}
+.colorStyle h5, .range-slider h5 {
+  text-align: left;
+  margin-left: 15px;
+}
+.shop-furniture .list-furniture {
+  margin-top: 10px;
 }

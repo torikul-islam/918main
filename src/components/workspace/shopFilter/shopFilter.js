@@ -24,14 +24,16 @@ function ShopFilter(props) {
                                 </ul>
                             </div>
                             <div className="col-sm-12">
-                                <h5>Products</h5>
-                                <ul>
-                                    <li>FURNITURE</li>
-                                    <li>DECOR</li>
-                                    <li>RUGS</li>
-                                    <li>BED &amp; BATH</li>
-                                    <li>LIGHTING</li>
-                                </ul>
+                                <div className="productfurniture">
+                                    <h5>Products</h5>
+                                    <ul>
+                                        <li>FURNITURE</li>
+                                        <li>DECOR</li>
+                                        <li>RUGS</li>
+                                        <li>BED &amp; BATH</li>
+                                        <li>LIGHTING</li>
+                                    </ul>
+                                </div>
                                 <hr />
                             </div>
                             <div className="category-list">

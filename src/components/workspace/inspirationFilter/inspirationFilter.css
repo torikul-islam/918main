@@ -18,6 +18,7 @@ ul.list-category {
   width: 53%;
   margin: auto;
   text-align: center;
+  min-height: 620px;
 }
 .inspired-fil .cross-icon, .shop-furniture .cross-icon {
     float: right;
@@ -42,4 +43,22 @@ ul.list-category li button {
   border-radius: 50px;
   font-family: "Helvetica-light";
   outline: none;
+}
+.nav-tabs .nav-link.active {
+  border-color: #d7d5d5 !important;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom-width: 6px !important;
+  color: #111111 !important;
+}
+.nav-tabs {
+  border-bottom: none !important;
+  outline: none;
+  font-size: 26px;
+  color: #111111;
+  font-family: "PlayfairDisplay-Bold"
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+  border-color:transparent ;
 }
