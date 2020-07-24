@@ -10,7 +10,7 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
     function total() {
         return shoppingCard.reduce((total, cur) => {
             return total += cur.quantity * cur.price
-        }, 0)
+        }, 0).toFixed(2)
     }
 
     return (
