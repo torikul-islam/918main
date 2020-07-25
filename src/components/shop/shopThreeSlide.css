@@ -3,11 +3,28 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+.ins-area-modal {
+  background: #fff;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .inspired {
   padding: 75px 0;
 }
+.inspired-modal {
+  padding: 0px 80px !important;
+}
 
 .slider img {
+  width: 100%;
+  height: 269px;
+  object-fit: cover;
+  object-position: 100% 0;
+}
+
+.slider-modal img {
   width: 100%;
   height: 269px;
   object-fit: cover;
@@ -28,6 +45,10 @@
   position: relative;
   margin-top: 25px;
 }
+.slider-modal {
+  position: relative;
+  margin-top: 25px;
+}
 .inspired h2.ins-title {
   color: #030303;
   font-family: "Playfair Display";
@@ -35,3 +56,5 @@
 .slide-desc h6{
   font-family: "Playfire Display";
 }
+
+

@@ -11,7 +11,7 @@ import InspiredMore from './components/inspired/inspiredMore';
 import Account from './components/account/account';
 import Blog from './components/blog/blog';
 import InspirationDetails from './components/InspirationDetails/inspirationDetails';
-import Looks from './components/looks/looks'
+import Looks from './components/looks/looks';
 import AdminHome from './components/admin/adminHome';
 import ProductDetails from './components/productDetails/productDetails';
 import LearnDetails from './components/learnDetails/learnDetails';

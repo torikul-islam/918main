@@ -52,10 +52,10 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                                 <div class="dropdown">
                                     <button class="dropbtn">Explore</button>
                                     <div class="dropdown-content">
-                                        <li className='dropdown-contents'><Link className="nav-link" to="/explore"  >Explore</Link></li>
-                                        <li className='dropdown-contents'> <Link className="nav-link" to="/inspired-more" >Be Inspire</Link></li>
-                                        <li className='dropdown-contents'><Link className="nav-link" to="/learn-more"  >Learn</Link></li>
-                                        <li className='dropdown-contents'><Link className="nav-link" to="/shop-more"  >Shop</Link></li>
+                                    <Link className="nav-link" to="/explore"  >Explore</Link>
+                                            <Link className="nav-link" to="/inspired-more" >Be Inspire</Link>
+                                            <Link className="nav-link" to="/learn-more"  >Learn</Link>
+                                            <Link className="nav-link" to="/shop-more"  >Shop</Link>
 
                                     </div>
                                 </div>

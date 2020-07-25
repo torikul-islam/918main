@@ -1,0 +1,19 @@
+ .cross-icon, .shop-furniture .cross-icon {
+    float: right;
+}
+.cross-icon img, .shop-furniture .cross-icon img {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.bg-white{
+    padding-top: 40px;
+}
+
+.image-fav-modal img {
+    width: 105%;
+    height: 300px;
+  }

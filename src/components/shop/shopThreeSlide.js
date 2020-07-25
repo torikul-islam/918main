@@ -10,15 +10,16 @@ class ShopThreeSlide extends Component {
         this.state = {}
     }
     render() {
+        console.log("Props dekh",this.props)
         return (
-            <div className='container-fluid ins-area'>
-                <div className='container inspired' >
+            <div className={this.props.pagename=="workspace"?'container-fluid ins-area-modal':'container-fluid ins-area'}>
+                <div className={this.props.pagename=="workspace"?'container inspired-modal':'container inspired'} >
                     <TitleWithBer text='Looks' />
 
                     <div className='tab-index'>
                         <div className='slider'>
                             <div className='row'>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12'>
+                                <div className='col-md-4 col-sm-12'>
                                     <img src={inspiredSlide} alt="" />
                                     <div className='slide-desc'> <h6>Mountain Chic</h6> </div>
                                 </div>

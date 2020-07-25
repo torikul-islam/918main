@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
-
-
+import "./workspace.css";
+import GoBtn from "../common/goBtn";
+import ShopThreeSlide from '../shop/shopThreeSlide';
 
 
 const ShopModal = ({ product, products, closeModal }) => {
@@ -42,8 +43,8 @@ const ShopModal = ({ product, products, closeModal }) => {
                 <div className='container' >
                     {product &&
                         <div className="row" key={product.uuid}>
-                            <div className="col-sm-4">
-                                <div className="image-fav">
+                            <div className="col-sm-3">
+                                <div className="image-fav-modal">
                                     <img src={product.ref_img} alt="" />
                                     <span className="icon">
                                         <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
@@ -63,14 +64,17 @@ const ShopModal = ({ product, products, closeModal }) => {
                                                 <option value="audi">Audi</option>
                                             </select>
                                         </li>
-
-                                    </ul>
-                                </div>
+                                        <li className="saveSection">
+                                    <GoBtn text='save' />
+                                </li>
+                            </ul>
+                            <GoBtn text='Add to shopping List' onClick={() =>console.log("Add to cart")} />
+                        </div> 
                             </div>
                         </div>
                     }
 
-                    <div className='row'>
+                    {/* <div className='row'>
                         <div className="account-slider">
                             <div className="col-sm-12">
                                 <h3>You may also like.</h3>
@@ -78,7 +82,7 @@ const ShopModal = ({ product, products, closeModal }) => {
 
                             <div className='tab-index'>
                                 <div className='slider'>
-                                    <div className='row'>
+                                    <div className='row'> */}
                                         {/* {paginateProd && paginateProd.map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                                 <img src={item.ref_img} alt="" />
@@ -87,7 +91,7 @@ const ShopModal = ({ product, products, closeModal }) => {
                                             </div>
                                         )} */}
 
-                                        <Pagination
+                                        {/* <Pagination
                                             itemsCount={products.length}
                                             pageSize={pageSize}
                                             currentPage={currentPage}
@@ -97,8 +101,10 @@ const ShopModal = ({ product, products, closeModal }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>I
+                    </div> */}
+
+                    <ShopThreeSlide pagename="workspace" />
+                </div>
         </div>
         </div>
     );
