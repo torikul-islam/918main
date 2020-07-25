@@ -7,11 +7,16 @@ import '../nav/navbar.css'
 
 function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
     const user = localStorage.getItem('token');
-
+    const [value, setValue] = useState("/");
     function clickLogout() {
         localStorage.removeItem('token');
         window.location = '/'
     }
+
+    const handledropdown = (event) => {
+        setValue(event.target.value)
+    }
+
     return (
         <div className='container-menu' id='menu'>
             <div className="logo-width display-for-mobile">
@@ -44,13 +49,16 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                                 <Link className="nav-link" to="/workspace"  >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
-                            <select name="Explore" id="Explore">
-                                    <option value="Explore">Explore</option>
-                                    <option value="Explore">Explore</option>
-                                    <option value="Explore">Explore</option>
-                                    <option value="Explore"><Link className="nav-link" to="/explore"  >Explore</Link></option>
-                                </select>
-                                
+                                <div class="dropdown">
+                                    <button class="dropbtn">Explore</button>
+                                    <div class="dropdown-content">
+                                        <li className='dropdown-contents'><Link className="nav-link" to="/explore"  >Explore</Link></li>
+                                        <li className='dropdown-contents'> <Link className="nav-link" to="/inspired-more" >Be Inspire</Link></li>
+                                        <li className='dropdown-contents'><Link className="nav-link" to="/learn-more"  >Learn</Link></li>
+                                        <li className='dropdown-contents'><Link className="nav-link" to="/shop-more"  >Shop</Link></li>
+
+                                    </div>
+                                </div>
                             </li>
                             {!user && <li className="menu-item signup" onClick={() => openModal('signup')}>
                                 <div className="nav-link" >Sign Up</div>
