@@ -14,6 +14,7 @@ import InspirationDetails from './components/InspirationDetails/inspirationDetai
 import Looks from './components/looks/looks'
 import AdminHome from './components/admin/adminHome';
 import ProductDetails from './components/productDetails/productDetails';
+import LearnDetails from './components/learnDetails/learnDetails';
 import Card from './components/card/card';
 import Modal from './components/common/modal/modal';
 import Signup from './components/auth/signup';
@@ -91,6 +92,12 @@ function App(props) {
             itemControl={itemControl} clickCard={clickCard} />} exact />
 
           <Route path="/learn-more" render={(props) => <LearnPage {...props}
+            openMenu={openMenu}
+            openModal={openModal}
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard} />} exact />
+
+          <Route path="/learn-details/:id/:roomId" render={(props) => <LearnDetails {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
