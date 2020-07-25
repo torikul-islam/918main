@@ -44,14 +44,16 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                                 <Link className="nav-link" to="/workspace"  >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
-                            <select name="Explore" id="Explore">
-                                    <option value="Explore">Explore</option>
-                                    <option value="Explore">Explore</option>
-                                    <option value="Explore">Explore</option>
-                                    <option value="Explore"><Link className="nav-link" to="/explore"  >Explore</Link></option>
-                                </select>
-                                
-                            </li>
+                                    <div class="dropdown">
+                                        <button class="dropbtn">Explore</button>
+                                        <div class="dropdown-content">
+                                            <Link className="nav-link" to="/explore"  >Explore</Link>
+                                            <Link className="nav-link" to="/inspired-more" >Be Inspire</Link>
+                                            <Link className="nav-link" to="/learn-more"  >Learn</Link>
+                                            <Link className="nav-link" to="/shop-more"  >Shop</Link>
+                                        </div>
+                                    </div>
+                                </li>
                             {!user && <li className="menu-item signup" onClick={() => openModal('signup')}>
                                 <div className="nav-link" >Sign Up</div>
                             </li>}
