@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './homePostTwo.css';
 
 
@@ -14,7 +15,9 @@ const HomePostTwo = ({ data }) => {
                             <div className="row">
                                 <div className="col-sm-5">
                                     <div className="craete-img">
-                                        <img src={item.ref_img} alt="" />
+                                        <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                            <img src={item.ref_img} alt="" />
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="col-sm-7">
