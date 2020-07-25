@@ -14,7 +14,6 @@ import InspirationDetails from './components/InspirationDetails/inspirationDetai
 import Looks from './components/looks/looks';
 import AdminHome from './components/admin/adminHome';
 import ProductDetails from './components/productDetails/productDetails';
-import LearnDetails from './components/learnDetails/learnDetails';
 import Card from './components/card/card';
 import Modal from './components/common/modal/modal';
 import Signup from './components/auth/signup';
@@ -79,10 +78,13 @@ function App(props) {
   return (
     <>
       <main>
+
         <Card isCardOpen={isCardOpen}
           clickCard={clickCard}
           shoppingCard={shoppingCard}
-          itemControl={itemControl} />
+          itemControl={itemControl}
+        />
+
         <Switch>
           <Route path="/" render={(props) => <Home {...props}
             openMenu={openMenu}
@@ -97,7 +99,7 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path="/learn-details/:id/:roomId" render={(props) => <LearnDetails {...props}
+          <Route path="/blog/:id/:roomId" render={(props) => <Blog {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
@@ -169,11 +171,6 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path="/blog" render={(props) => <Blog {...props}
-            openMenu={openMenu}
-            openModal={openModal}
-            handleOpenMenu={handleOpenMenu}
-            clickCard={clickCard} />} exact />
 
           <Route path="/looks" render={() => <Looks {...props}
             openMenu={openMenu}

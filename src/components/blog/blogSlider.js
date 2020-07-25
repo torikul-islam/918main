@@ -1,6 +1,7 @@
 import React from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
+import { Link } from 'react-router-dom';
 
 
 
@@ -28,7 +29,9 @@ function BlogSlider({ resource, currentPage, pageSize, onPageChange }) {
                             <div className='row'>
                                 {paginateResource && paginateResource.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                        <img src={item.ref_img} alt="" />
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                            <img src={item.ref_img} alt="" />
+                                        </Link>
                                         <h6>{Capitalize(item.title)}</h6>
                                         <p>{item.source}</p>
                                     </div>

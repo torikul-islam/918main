@@ -15,7 +15,7 @@ const HomePostTwo = ({ data }) => {
                             <div className="row">
                                 <div className="col-sm-5">
                                     <div className="craete-img">
-                                        <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
                                             <img src={item.ref_img} alt="" />
                                         </Link>
                                     </div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import NavbarB from '../nav/navbarB';
 import './blogHead.css';
+import { Link } from 'react-router-dom';
 
 
 
-const BlogHead = ({ data, product, ...rest }) => {
+const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest }) => {
+
     const Capitalize = (text) => {
         let lowercase = text.toLowerCase();
         if (typeof lowercase !== "string") return lowercase;
@@ -12,28 +14,42 @@ const BlogHead = ({ data, product, ...rest }) => {
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
     }
+
+    if (resource) {
+        const isLike = resourceLike.some(el => el.resource.uuid === resource.uuid);
+        if (isLike) {
+            resource['is_like'] = true;
+        } else {
+            resource['is_like'] = false
+        }
+    }
+
     return (
         <>
             <NavbarB {...rest} />
             <div div className="blog-area">
                 <div className="container">
                     <div className="row">
-                        {data.length > 0 && <div div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
+                        {resource && <div div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
-                                <h4>{Capitalize(data[0].title)}</h4>
+                                <h4>{Capitalize(resource.title)}</h4>
                             </div>
                         </div>}
                     </div>
                     <div className="row">
                         <div className="col-sm-8">
-                            {data.length > 0 && <div className="title-with-logo">
-                                <img src={data[0].ref_img} alt="" />
+                            {resource && <div className="title-with-logo">
+                                <img src={resource.ref_img} alt="" />
                                 <span className="favIcon">
-                                    <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                                    <i
+                                        onClick={() => clickResourceLike(resource)}
+                                        style={{ cursor: "pointer" }}
+                                        className={`fa-2x ${resource.is_like ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        aria-hidden="true"
+                                    />
                                 </span>
                                 <div className="pt-5 paragraph">
-                                    {data[0].content}
-
+                                    {resource.content}
                                 </div>
                             </div>}
                         </div>
@@ -43,7 +59,9 @@ const BlogHead = ({ data, product, ...rest }) => {
                             </div>
                             {product && product.map((item, i) =>
                                 <div className="product-price" key={i}>
-                                    <img src={item.ref_img} alt="" />
+                                    <Link to={`/product-details/${item.uuid}`}>
+                                        <img src={item.ref_img} alt="" />
+                                    </Link>
                                     <h4>{item.retailer}</h4>
                                     <h5>${item.price}</h5>
                                 </div>
