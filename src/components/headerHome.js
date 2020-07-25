@@ -91,7 +91,7 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
                             <div className="row">
                                 <div className="col-sm-8">
                                     <div className="image-bg">
-                                        <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
                                             <img src={item.ref_img} alt="" />
                                         </Link>
                                     </div>
