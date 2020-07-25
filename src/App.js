@@ -52,10 +52,13 @@ function App(props) {
   };
 
   function addShoppingCard(item) {
-    const card = [...shoppingCard]
+    let card = [...shoppingCard];
     item.quantity = 1;
-    const unique = [...new Set([item, ...card])];
-    setShoppingCard(unique);
+    const index = card.findIndex(x => x.uuid === item.uuid);
+    if (index === -1) {
+      card = [item, ...card]
+    }
+    setShoppingCard(card);
   }
 
   function itemControl(item, ops) {
