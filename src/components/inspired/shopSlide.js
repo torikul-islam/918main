@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const ShopSlide = ({ data }) => {
+const ShopSlide = ({ data, count }) => {
     return (
         <div className="post-slide-main">
             <div className="container">
