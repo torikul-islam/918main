@@ -1,24 +1,22 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState } from 'react';
 import HeaderInspired from './headerInspired';
 import ShopSlide from './shopSlide';
 import ShopInspired from './shopInspired';
 import TabShop from './tabShop';
-import resourceService from '../../services/resourceService';
+import inspiredService from '../../services/inspiredService';
 import productService from '../../services/productService';
-import moreService from '../../services/moreServices';
 import stylesService from '../../services/styleServices';
 import ShopThreeSlide from '../shop/shopThreeSlide';
-import '../inspired/inspired.css';
 import roomServices from '../../services/roomServices';
-import inspiredService from '../../services/inspiredService';
 import GoBtn from '../common/goBtn';
+import '../inspired/inspired.css';
 
 
 
 function InspiredMore(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
-    const [resource, setResource] = useState({ next: null, previous: null, results: [] });
+    const [inspired, setInspired] = useState({ next: null, previous: null, results: [] });
     const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [product, setProduct] = useState([]);
     const [rooms, setRooms] = useState([]);
@@ -28,8 +26,8 @@ function InspiredMore(props) {
 
     useEffect(() => {
         (async function () {
-            const { data } = await resourceService.getAllResources();
-            setResource(data);
+            const { data } = await inspiredService.getAllInspired();
+            setInspired(data);
             setSeeMore({ next: data.next, previous: null, results: [] });
         })()
     }, []);
@@ -105,13 +103,13 @@ function InspiredMore(props) {
     }
     async function getRoomStyleId(url) {
         const { data } = await inspiredService.getInspiredByRoomOrStyleId(url);
-        setResource(data);
+        setInspired(data);
         setSeeMore({ next: data.next, previous: null, results: [] });
     }
 
     async function clickSeeMore() {
         if (seeMore.next) {
-            const { data } = await resourceService.getAllResources(`/?${seeMore.next.split('?')[1]}`);
+            const { data } = await inspiredService.getAllInspired(`/?${seeMore.next.split('?')[1]}`);
             setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
         }
     }
@@ -119,13 +117,13 @@ function InspiredMore(props) {
         <>
             <HeaderInspired {...props} />
             <TabShop title='Be Inspired.' rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
-            <ShopSlide data={resource.results.slice(0, 4)} />
-            <ShopInspired data={resource.results.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
-            <ShopSlide data={resource.results.slice(8, 12)} />
+            <ShopSlide data={inspired.results.slice(0, 4)} />
+            <ShopInspired data={inspired.results.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
+            <ShopSlide data={inspired.results.slice(8, 12)} />
             <ShopThreeSlide />
-            <ShopSlide data={resource.results.slice(12, 16)} />
-            <ShopSlide data={resource.results.slice(16, 19)} />
-            <ShopSlide data={resource.results.slice(19, 23)} />
+            <ShopSlide data={inspired.results.slice(12, 16)} />
+            <ShopSlide data={inspired.results.slice(16, 19)} />
+            <ShopSlide data={inspired.results.slice(19, 23)} />
             {seeMore.results && <ShopSlide data={seeMore.results} />}
             <GoBtn text='See more' onClick={clickSeeMore} />
         </>

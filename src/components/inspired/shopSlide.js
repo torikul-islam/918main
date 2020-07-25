@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './shopSlide.css';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,8 +12,10 @@ const ShopSlide = ({ data }) => {
                     {data && data.map((item, i) =>
                         <div className="col-sm-3" key={i}>
                             <div className="image-post-slide">
-                                <img src={item.ref_img} alt="" />
-                                <h6>{item.source}</h6>
+                                <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
+                                    <img src={item.ref_img} alt="" />
+                                </Link>
+                                <h6>{item.designed_by}</h6>
                             </div>
                         </div>
                     )}

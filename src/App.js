@@ -22,11 +22,11 @@ import LoginNext from './components/auth/loginNext';
 import BoardName from './components/onboard/boardName';
 import CreateBoard from './components/onboard/createBoard';
 import Onboard from './components/onboard/onboard';
-import './App.css';
 import AddInspiration from './components/admin/addinspiration/addinspiration';
 import Addproduct from './components/admin/addproduct/addproduct';
 import AddResource from './components/admin/addresource/addresource';
 import Editpages from './components/admin/editpages/editpages';
+import './App.css';
 
 
 
