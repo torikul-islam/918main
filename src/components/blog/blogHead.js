@@ -37,7 +37,7 @@ const BlogHead = ({ data, product, ...rest }) => {
                                 </div>
                             </div>}
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-sm-3 s-t-a">
                             <div className="heading-prodcut pb-3">
                                 <h4>SHOP THIS ARTICLE</h4>
                             </div>

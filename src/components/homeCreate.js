@@ -4,7 +4,7 @@ import './homeCreate.css';
 
 
 
-const HomeCreate = ({ data, rooms, styles, onSelectOption }) => {
+const HomeCreate = ({ data, rooms, styles, onSelectOption ,compname}) => {
     return (
 
         <div className='homecreate'>
@@ -37,7 +37,7 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption }) => {
                     {data.map((item, i) =>
                         <div key={i}>
                             <div className="col-sm-6" style={{ float: "left" }}>
-                                <div className="craete-img">
+                                <div className={compname=="learn"?"craete-img-learn":"craete-img"}>
                                     <img src={item.ref_img} alt="" />
                                 </div>
                             </div>

@@ -27,9 +27,9 @@ class Sidemenu extends Component {
 						<li>
 							<Link to="/add-inspiration"><i className="fa fa-lightbulb-o"></i> Add Inspiration</Link>
 						</li>
-						<li>
-							<Link to="/edit-pages"><i className="fa fa-pencil-square-o"></i> Add Inspiration</Link>
-						</li>
+						{/* <li>
+							<Link to="/edit-pages"><i className="fa fa-pencil-square-o"></i> Edit Pages</Link>
+						</li> */}
 					
 					</ul>
 				</nav>

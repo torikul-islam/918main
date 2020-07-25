@@ -121,11 +121,11 @@ function InspiredMore(props) {
             <TabShop title='Be Inspired.' rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
             <ShopSlide data={resource.results.slice(0, 4)} />
             <ShopInspired data={resource.results.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
-            <ShopSlide data={resource.results.slice(8, 12)} />
+            <ShopSlide data={resource.results.slice(8, 12)} count={3}/>
             <ShopThreeSlide />
-            <ShopSlide data={resource.results.slice(12, 16)} />
-            <ShopSlide data={resource.results.slice(16, 19)} />
-            <ShopSlide data={resource.results.slice(19, 23)} />
+            <ShopSlide data={resource.results.slice(13, 17)} />
+            <ShopSlide data={resource.results.slice(18, 21)}  count={3}/>
+            <ShopSlide data={resource.results.slice(22, 26)} />
             {seeMore.results && <ShopSlide data={seeMore.results} />}
             <GoBtn text='See more' onClick={clickSeeMore} />
         </>

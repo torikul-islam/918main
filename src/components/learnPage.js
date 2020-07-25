@@ -25,7 +25,6 @@ function LearnPage(props) {
     const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
 
-
     useEffect(() => {
         (async function () {
             const { data } = await resourceService.getAllResources();
@@ -112,12 +111,12 @@ function LearnPage(props) {
             <NavbarB {...props} />
             <LearnHeader data={resource.results.slice(0, 1)} />
             <ThreeSlide data={resource.results.slice(1,)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
-            <HomeCreate data={resource.results.slice(1, 2)} rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
-            <PostSlideThree data={resource.results.slice(2, 5)} />
-            <HomePostTwo data={resource.results.slice(5, 7)} />
+            <HomeCreate data={resource.results.slice(1, 2)} rooms={rooms} styles={styles} onSelectOption={onSelectOption} compname="learn"/>
+            <PostSlideThree data={resource.results.slice(2, 5)} compname="learn" />
+            <HomePostTwo data={resource.results.slice(5, 7)}  />
             <HomePostTwo data={resource.results.slice(7, 9)} />
-            <PostSlideThree data={resource.results.slice(9, 12)} />
-            {seeMore.results && <PostSlideThree data={seeMore.results} />}
+            <PostSlideThree data={resource.results.slice(9, 12)} compname="learn"/>
+            {seeMore.results && <PostSlideThree data={seeMore.results} compname="learn"/>}
             <GoBtn text='See more' onClick={clickSeeMore} />
         </>
     );
