@@ -13,7 +13,9 @@ const SliderPost = ({ data }) => {
                     {data && data.map(item =>
                         <div className="col-sm-3" key={item.uuid}>
                             <div className="image-post-slide">
-                                <img src={item.ref_img || ""} alt="" />
+                                <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                    <img src={item.ref_img || ""} alt="" />
+                                </Link>
                                 <h6>{item.title || ""}</h6>
                                 <p>{item.source || ""}</p>
                             </div>
