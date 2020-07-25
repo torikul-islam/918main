@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Pagination from '../common/pagination';
 import resourceService from '../../services/resourceService';
 import paginate from '../../utils/paginate';
+import { Link } from 'react-router-dom';
 
 
 
@@ -54,7 +55,9 @@ function InspirationAlsoLike() {
                             <div className='row'>
                                 {paginateProd && paginateProd.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                        <img src={item.ref_img} alt="" />
+                                        <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                            <img src={item.ref_img} alt="" />
+                                        </Link>
                                         <p>{item.source}</p>
                                     </div>
                                 )}

@@ -25,7 +25,6 @@ function ProductDetails(props) {
         (async function () {
             const token = localStorage.getItem('token');
             if (token) {
-
                 const { data } = await productServices.getUserProductLike();
                 if (data) {
                     setProductLike(data);

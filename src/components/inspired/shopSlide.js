@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import './shopSlide.css';
+import { Link } from 'react-router-dom';
 
 
 
-const ShopSlide = ({ data ,count}) => {
+const ShopSlide = ({ data, count }) => {
     return (
         <div className="post-slide-main">
             <div className="container">
                 <div className="row">
                     {data && data.map((item, i) =>
                         <div className="col-sm-3" key={i}>
-                            <div className={count==3?"image-post-slide-three":"image-post-slide"}>
-                                <img src={item.ref_img} alt="" />
-                                <h6>{item.source}</h6>
+                            <div className="image-post-slide">
+                                <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
+                                    <img src={item.ref_img} alt="" />
+                                </Link>
+                                <h6>{item.designed_by}</h6>
                             </div>
                         </div>
                     )}

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import inspiredSlide from '../Asset/Images/inspired_slide_item.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './homeCreate.css';
 
 
 
-const HomeCreate = ({ data, rooms, styles, onSelectOption ,compname}) => {
+const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
     return (
 
         <div className='homecreate'>
@@ -37,8 +37,10 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption ,compname}) => {
                     {data.map((item, i) =>
                         <div key={i}>
                             <div className="col-sm-6" style={{ float: "left" }}>
-                                <div className={compname=="learn"?"craete-img-learn":"craete-img"}>
-                                    <img src={item.ref_img} alt="" />
+                                <div className={compname == "learn" ? "craete-img-learn" : "craete-img"}>
+                                    <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                        <img src={item.ref_img} alt="" />
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-sm-6" key={i} style={{ float: "right" }}>

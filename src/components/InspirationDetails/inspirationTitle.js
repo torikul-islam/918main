@@ -1,13 +1,12 @@
 import React from 'react';
-import inspiredSlide from '../../Asset/Images/inspired_slide_item.png';
-import SaveBtn from '../common/learnButton'
-import './inspirationTitle.css';
 import GoBtn from '../common/goBtn';
+import './inspirationTitle.css';
 
 
 
 
 function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
+
     if (inspired.length > 0) {
         const isLike = inspirationLike.some(el => el.inspiration.uuid === inspired[0].uuid);
         if (isLike) {

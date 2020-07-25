@@ -15,7 +15,6 @@ function AccountProduct() {
     useEffect(() => {
         (async function () {
             const { data } = await productServices.getUserProductLike();
-            console.log(data);
             setProduct(data);
         })()
     }, []);

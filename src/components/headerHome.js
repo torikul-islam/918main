@@ -36,35 +36,35 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-3">
-                        <NavLink to='/inspired-more' style={styles.squre}>
-                            <div className="icons-header-lights">
-                                <img src={require('../Asset/Images/light-bulb.png')} alt="light-bulb.png" />
-                                <h5>Be inspired.</h5>
-                            </div>
+                            <NavLink to='/inspired-more' style={styles.squre}>
+                                <div className="icons-header-lights">
+                                    <img src={require('../Asset/Images/light-bulb.png')} alt="light-bulb.png" />
+                                    <h5>Be inspired.</h5>
+                                </div>
                             </NavLink>
                         </div>
                         <div className="col-sm-3 padding-zero">
-                        <NavLink to='/learn-more' style={styles.squre}>
+                            <NavLink to='/learn-more' style={styles.squre}>
                                 <div className="learn icons-header-lights">
-                                <img src={require('../Asset/Images/learn.png')} alt="learn.png" />
-                                <h5>Learn.</h5>
-                            </div>
+                                    <img src={require('../Asset/Images/learn.png')} alt="learn.png" />
+                                    <h5>Learn.</h5>
+                                </div>
                             </NavLink>
                         </div>
                         <div className="col-sm-3 padding-right-zero">
-                        <NavLink to='/shop-more' style={styles.squre}>
-                            <div className="shop icons-header-lights">
-                                <img src={require('../Asset/Images/shop.png')} alt="shop.png" />
-                                <h5>Shop.</h5>
-                            </div>
+                            <NavLink to='/shop-more' style={styles.squre}>
+                                <div className="shop icons-header-lights">
+                                    <img src={require('../Asset/Images/shop.png')} alt="shop.png" />
+                                    <h5>Shop.</h5>
+                                </div>
                             </NavLink>
                         </div>
                         <div className="col-sm-3">
-                        <NavLink to='/workspace' style={styles.squre}>
-                            <div className="icons-header-lights">
-                                <img src={require('../Asset/Images/design.png')} alt="design.png" />
-                                <h5>Design.</h5>
-                            </div>
+                            <NavLink to='/workspace' style={styles.squre}>
+                                <div className="icons-header-lights">
+                                    <img src={require('../Asset/Images/design.png')} alt="design.png" />
+                                    <h5>Design.</h5>
+                                </div>
                             </NavLink>
                         </div>
                     </div>
@@ -91,7 +91,9 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
                             <div className="row">
                                 <div className="col-sm-8">
                                     <div className="image-bg">
-                                        <img src={item.ref_img} alt="" />
+                                        <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                            <img src={item.ref_img} alt="" />
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
@@ -112,10 +114,10 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
     );
 }
 
-const styles={
- squre:{
-    textDecoration: 'none'
- }
+const styles = {
+    squre: {
+        textDecoration: 'none'
+    }
 
 }
 

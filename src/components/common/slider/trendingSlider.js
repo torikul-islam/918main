@@ -1,5 +1,6 @@
 import React from 'react';
 import './slider.css';
+import { Link } from 'react-router-dom';
 
 
 const TrendingSlider = ({ data }) => {
@@ -9,8 +10,10 @@ const TrendingSlider = ({ data }) => {
             {data && data.map(item =>
                 <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid}>
                     <div className="image-slide">
-                        <img src={item.ref_img} alt="" />
-                        <h6>{item.source}</h6>
+                        <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
+                            <img src={item.ref_img} alt="" />
+                        </Link>
+                        <h6>{item.designed_by}</h6>
                     </div>
                 </div>
             )}
