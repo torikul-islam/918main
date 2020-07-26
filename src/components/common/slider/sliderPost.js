@@ -6,6 +6,15 @@ import './slider.css';
 
 
 const SliderPost = ({ data }) => {
+
+    const Capitalize = (text) => {
+        let lowercase = text.toLowerCase();
+        if (typeof lowercase !== "string") return lowercase;
+        return lowercase.split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+
     return (
         <section className="post-slide-main">
             <div className="container">
@@ -16,7 +25,9 @@ const SliderPost = ({ data }) => {
                                 <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
                                     <img src={item.ref_img || ""} alt="" />
                                 </Link>
-                                <h6>{item.title || ""}</h6>
+                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none',color:"#000" }}>
+                                <h6>{Capitalize(item.title) || ""}</h6>
+                                </Link>
                                 <p>{item.source || ""}</p>
                             </div>
                         </div>

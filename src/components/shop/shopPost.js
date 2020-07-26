@@ -14,7 +14,9 @@ const ShopPost = ({ data }) => {
                                 <Link to={`/product-details/${item.uuid}`}>
                                     <img src={item.ref_img} alt="" />
                                 </Link>
-                                <h6>{item.retailer}</h6>
+                                <Link to={`/product-details/${item.uuid}`} style={{ textDecoration: 'none',color:"#000" }}>
+                                    <h6>{item.retailer}</h6>
+                                </Link>
                                 <p>${item.price}</p>
                             </div>
                         </div>

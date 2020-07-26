@@ -92,7 +92,7 @@
   outline: none;
 }
 .own-design {
-  padding: 40px 0 30px;
+  padding: 40px 0 0px;
   position: relative;
 }
 .image-bg img {
@@ -108,11 +108,11 @@
   font-family: "PlayfairDisplay-Bold";
   font-size: 33px;
   line-height: normal;
-  text-transform: lowercase;
+  
 }
-.text-furniture h4::first-letter{
+/* .text-furniture h4::first-letter{
   text-transform: uppercase;
-}
+} */
 .width-color-fill {
   margin-top: 70px;
 }
