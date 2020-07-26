@@ -67,11 +67,14 @@ function InspiredSlider(props) {
                     <div className="col-sm-12">
                         <h4>Be Inspired</h4>
                         <ul>
-                            {rooms.map(item => <li
-                                onClick={() => onItemSelect(item)}
-                                className={item.pk === selectedItem ? 'disable active' : 'pointer'}
-                                key={item.uuid}>{item.name.toUpperCase()}
-                            </li>)}
+                            {rooms.map(item =>
+                                <li
+                                    onClick={() => onItemSelect(item)}
+                                    className={item.pk === selectedItem ? 'disable active' : 'pointer'}
+                                    key={item.uuid}>
+                                    {item.name.toUpperCase()}
+                                </li>
+                            )}
                         </ul>
                     </div>
                 </div>
