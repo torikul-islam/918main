@@ -31,7 +31,7 @@ const Workspace = (props) => {
     return (
         < >
             <NavbarB  {...props} search={"null"} />
-            <div className="container-fluid">
+            <div className="container-fluid page-content">
                 <div className="row">
                     <div className="col-sm-4">
                         <ItemContainer clickFilterImage={clickFilterImage} openModal={openModal} />

@@ -62,3 +62,46 @@ ul.list-category li button {
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
   border-color:transparent ;
 }
+
+/* @media 
+ul.list-category li button{
+
+} */
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  ul.list-category li button{
+    background: #e9e8e8;
+    border: none;
+    width: 140px;
+    margin-bottom: 21px;
+    padding: 15px 0;
+    font-size: 18px;
+    border-radius: 50px;
+    font-family: "Helvetica-light";
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  ul.list-category li button{
+    background: #e9e8e8;
+    border: none;
+    width: 120px;
+    margin-bottom: 21px;
+    padding: 15px 0;
+    font-size: 18px;
+    border-radius: 50px;
+    font-family: "Helvetica-light";
+    outline: none;
+  }
+  .inspired-fil {
+    background: #ffffff;
+    padding: 30px 5px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    min-height: 620px;
+}
+}
+
+
