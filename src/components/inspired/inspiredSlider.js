@@ -4,8 +4,7 @@ import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from '../common/goBtn';
 import inspiredServices from '../../services/inspiredService';
-import piecesService from '../../services/piecesService';
-import piecesGroup from '../../utils/piecesGroup';
+import roomServices from '../../services/roomServices';
 import './inspiredSlider.css';
 
 
@@ -15,29 +14,27 @@ function InspiredSlider(props) {
     const [inspired, setInspired] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
-    const [pieces, setPieces] = useState([]);
+    const [rooms, setRooms] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
-
 
 
 
     useEffect(() => {
         (async function () {
-            const { data } = await piecesService.getAllPieces();
-            const pieces = piecesGroup(data.results);
-            setPieces(pieces);
-            setSelectedItem(pieces[0].id);
-            getInspiredByPiecesId(pieces[0].id)
+            const { data } = await roomServices.getAllRooms();
+            setRooms(data.results);
+            setSelectedItem(data.results[0].pk);
+            getInspiredByPiecesId(data.results[0].pk)
         })()
     }, []);
 
     async function getInspiredByPiecesId(id) {
-        const { data } = await inspiredServices.getInspiredByRoomOrStyleId(`/?room_ids=${id}`);
+        const { data } = await roomServices.getRoomsByIds(id);
         setInspired(data.results);
     }
     function onItemSelect(item) {
-        setSelectedItem(item.id);
-        getInspiredByPiecesId(item.id);
+        setSelectedItem(item.pk);
+        getInspiredByPiecesId(item.pk);
         setCurrentPage(0);
     }
 
@@ -70,9 +67,9 @@ function InspiredSlider(props) {
                     <div className="col-sm-12">
                         <h4>Be Inspired</h4>
                         <ul>
-                            {pieces.map(item => <li
+                            {rooms.map(item => <li
                                 onClick={() => onItemSelect(item)}
-                                className={item.id === selectedItem ? 'disable active' : 'pointer'}
+                                className={item.pk === selectedItem ? 'disable active' : 'pointer'}
                                 key={item.uuid}>{item.name.toUpperCase()}
                             </li>)}
                         </ul>
@@ -87,8 +84,8 @@ function InspiredSlider(props) {
                                     <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
                                         <img src={item.ref_img} alt="" />
                                     </Link>
-                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none',color:"#000" }}>
-                                    <h6>{item.designed_by}</h6>
+                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none', color: "#000" }}>
+                                        <h6>{item.designed_by}</h6>
                                     </Link>
                                 </div>
                             </div>)}

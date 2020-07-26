@@ -7,7 +7,7 @@ function getAllRooms() {
 
 
 function getRoomsByIds(ids) {
-    return http.get(`/inspirations/?page=1&room_ids=${ids}`);
+    return http.get(`/inspirations/?room_ids=${ids}`);
 };
 
 

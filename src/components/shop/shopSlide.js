@@ -11,6 +11,7 @@ import './shopSlide.css';
 
 const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selectedItem, onItemSelect }) => {
     const paginateShop = data && paginate(data, currentPage, pageSize);
+
     return (
         <div className="shop-slider bg_shop">
             <div className="container">
@@ -20,13 +21,12 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selected
                         <ul className="shopTab">
                             {pieces.map(item =>
                                 <li
+                                    key={item.uuid} >
                                     onClick={() => onItemSelect(item)}
                                     className={item.name === selectedItem ? 'disable active' : 'pointer'}
-                                    key={item.uuid} >
                                     {item.name.toUpperCase()}
                                 </li>
                             )}
-
                         </ul>
                     </div>
                 </div>
