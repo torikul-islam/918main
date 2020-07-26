@@ -23,15 +23,20 @@ input[type="range"]:nth-child(2)::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-thumb {
   position: relative;
-  height: 15px;
-  width: 15px;
-  margin-top: -7px;
+  height: 57px;
+  width: 71px;
+  margin-top: -55px;
+  /* 
   background: #fff;
   border: 1px solid #003d7c;
-  border-radius: 25px;
-  z-index: 1;
+  border-radius: 25px;*/
+  background-image: url('../../../Asset/Images/rangeslide.png');
+  z-index: 1; 
 }
-
+.range-slider {
+  position: relative;
+  height: 125px;
+}
 input[type="range"]:nth-child(1)::-webkit-slider-thumb {
   z-index: 2;
 }
@@ -41,14 +46,19 @@ input[type="range"]:nth-child(1)::-webkit-slider-thumb {
   height: 60px;
   width: 210px;
   display: inline-block;
-  margin-top: -5px;
   margin-left: 20px;
 }
 .rangeslider input {
   position: absolute;
+  width: 100%;
+  left: 0;
+  height: 110px;
 }
 .rangeslider {
   position: absolute;
+  width: 100%;
+  left: 0;
+  top: 40px;
 }
 
 .rangeslider span {
