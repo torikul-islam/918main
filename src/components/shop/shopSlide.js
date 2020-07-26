@@ -21,7 +21,7 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selected
                             {pieces.map(item =>
                                 <li
                                     onClick={() => onItemSelect(item)}
-                                    className={item.id === selectedItem ? 'disable active' : 'pointer'}
+                                    className={item.name === selectedItem ? 'disable active' : 'pointer'}
                                     key={item.uuid} >
                                     {item.name.toUpperCase()}
                                 </li>
@@ -31,7 +31,7 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selected
                     </div>
                 </div>
                 <div className='slider-main'>
-                    {data && <div className='row'>
+                    {data && <div className='row' >
                         <Slider4 data={paginateShop} />
                         <Pagination
                             itemsCount={data.length}

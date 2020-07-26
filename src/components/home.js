@@ -7,7 +7,7 @@ import resourceServices from '../services/resourceService';
 import productServices from '../services/productService';
 import ShopThreeSlide from './shop/shopThreeSlide';
 import piecesService from '../services/piecesService';
-import piecesGroup from '../utils/piecesGroup';
+import shopPiecesGroup from '../utils/shopPiecesGroup';
 import './home.css';
 
 
@@ -26,10 +26,10 @@ function Home(props) {
     useEffect(() => {
         (async function () {
             const { data } = await piecesService.getAllPieces();
-            const pieces = piecesGroup(data.results);
+            const pieces = shopPiecesGroup(data.results);
             setPieces(pieces);
-            setSelectedItem(pieces[0].id);
-            getProductById(pieces[0].id)
+            setSelectedItem(pieces[0].name);
+            getProductById(pieces[0].ids)
         })()
     }, []);
 
@@ -37,9 +37,10 @@ function Home(props) {
         const { data } = await productServices.getProductByPieceId(ids);
         setShop(data.results);
     }
+
     function onItemSelect(item) {
-        setSelectedItem(item.id);
-        getProductById(item.id);
+        setSelectedItem(item.name);
+        getProductById(item.ids);
         setCurrentPage(0);
     }
 
@@ -69,6 +70,7 @@ function Home(props) {
             setPageSize(4)
         }
     }
+
 
     return (
         <div>

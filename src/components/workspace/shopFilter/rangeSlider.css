@@ -30,8 +30,8 @@ input[type="range"]::-webkit-slider-thumb {
   background: #fff;
   border: 1px solid #003d7c;
   border-radius: 25px;*/
-  background-image: url('../../../Asset/Images/rangeslide.png');
-  z-index: 1; 
+  background-image: url("../../../Asset/Images/rangeslide.png");
+  z-index: 1;
 }
 .range-slider {
   position: relative;
@@ -71,4 +71,28 @@ input[type="range"]:nth-child(1)::-webkit-slider-thumb {
   position: relative;
   float: right;
   margin-right: -5px;
+}
+
+#val1 {
+  -webkit-appearance: none;
+  outline: none;
+  width: 400px;
+  height: 3px;
+  background-color: #555;
+}
+
+body {
+  --thumbNumber: "5";
+}
+
+#va1::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: #5a5;
+}
+
+#val::-webkit-slider-thumb::before {
+  content: var(--thumbNumber);
 }

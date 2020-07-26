@@ -10,3 +10,4 @@ export default function piecesGroup(arr) {
         return acc;
     }, [])
 }
+
