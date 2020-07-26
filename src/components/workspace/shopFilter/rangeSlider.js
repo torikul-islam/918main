@@ -64,8 +64,8 @@ const RangeSlider = () => {
         <div className="rangeslider">
             <input onChange={(e) => onChange(e, 'one')} className="min" name="range_1" type="range" min={min} max={max} value={val1} />
             <input onChange={(e) => onChange(e, 'two')} className="max" name="range_1" type="range" min={min} max={max} value={val2} />
-            <span className="range_min light left">{min}</span>
-            <span className="range_max light right">{max}</span>
+            <span className="range_min light left">{val1}</span>
+            <span className="range_max light right">{val2}</span>
         </div>
     );
 }
