@@ -46,4 +46,8 @@
         font-family: "Helvetica";
         outline: none;
     }
+    .workimage img {
+        width: 48%;
+        margin-right: 5px;
   }
+}
