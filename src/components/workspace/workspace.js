@@ -11,7 +11,7 @@ import ShopModal from './shopModal';
 
 
 const Workspace = (props) => {
-    const [modal, setModal] = useState({ isOpen: false, name: null });
+    const [modal, setModal] = useState({ isOpen: true, name: 'shop' });
     const [product, setProduct] = useState({});
     const [products, setProducts] = useState([]);
 

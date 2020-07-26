@@ -1,8 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './shopFilter.css';
+
+
 
 function ShopFilter(props) {
     const { openModal, closeModal } = props;
+    let min = 0, max = 500
+    let [val1, setVal1] = useState(100);
+    let [val2, setVal2] = useState(300);
+
+
+    function onChange(e, slider) {
+
+        if (slider === 'one') {
+            setVal1(e.target.value);
+        } else {
+            setVal2(e.target.value);
+        }
+
+        if (slider === 'one') {
+            val1 = parseInt(e.target.value);
+            val2 = parseInt(val2);
+
+            if (val1 >= val2 && val2 < val2 - 3) {
+                setVal1(val1);
+                setVal2(val2 + 3);
+            } else if (val1 >= val2 - 3) {
+                setVal1(val1);
+                setVal2(val2 + 3);
+
+            } else if (val1 <= val2) {
+                setVal1(val1);
+                setVal2(val2);
+
+            } else {
+                setVal1(val1);
+                setVal2(val2);
+
+            }
+        } else if (slider === 'two') {
+            val1 = parseInt(val1);
+            val2 = parseInt(e.target.value);
+            if (val2 <= val1 && val1 < 3) {
+                setVal1(0);
+                setVal2(val2 + 3);
+
+            } else if (val2 <= 3) {
+                setVal1(0);
+                setVal2(3);
+
+            } else if (val2 <= val1) {
+                setVal1(val2 - 3);
+                setVal2(val2);
+
+            } else {
+                setVal1(val1);
+                setVal2(val2);
+
+            }
+        }
+    }
 
     const removeIcon = <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
     return (
@@ -50,11 +107,35 @@ function ShopFilter(props) {
                                 </ul>
                                 <hr />
                             </div>
+
                             <div>
                                 <div className="range-slider">
                                     <h5>Price</h5>
-                                    <div className="slidecontainer">
-                                        <input type="range" min="1" max="100" value="50" className="sliderRange" id="myRange" />
+                                    <div className="slidecontainer"
+                                    >
+                                        <input
+                                            onChange={(e) => onChange(e, 'one')}
+                                            type="range"
+                                            min={min}
+                                            max={max}
+                                            step='1'
+                                            value={val1}
+                                            className="sliderRange"
+                                            id="myRange"
+                                        />
+                                    </div>
+                                    <div className="slidecontainer"
+                                    >
+                                        <input
+                                            onChange={(e) => onChange(e, 'two')}
+                                            type="range"
+                                            min={min}
+                                            max={max}
+                                            step='1'
+                                            value={val2}
+                                            className="sliderRange"
+                                            id="myRange"
+                                        />
                                     </div>
                                 </div>
                                 <hr />
