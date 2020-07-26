@@ -33,11 +33,11 @@ const Workspace = (props) => {
             <NavbarB  {...props} search={"null"} />
             <div className="container-fluid page-content">
                 <div className="row">
-                    <div className="col-sm-4">
+                    <div className="col-md-4 col-sm-6">
                         <ItemContainer clickFilterImage={clickFilterImage} openModal={openModal} />
                     </div>
 
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-6">
                         <Board />
                     </div>
 

@@ -15,7 +15,7 @@ function ShopFilter(props) {
                 <div className="list-furniture">
                     <div className="container">
                         <div className="row">
-                            <div className="float-left">
+                            <div className="removeIcons float-left">
                                 <ul>
                                     <li>{removeIcon}Bedroom</li>
                                     <li>{removeIcon}Office</li>
