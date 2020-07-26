@@ -30,10 +30,11 @@
 .inspired-slider ul:before, ul.shopTab::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 102%;
   height: 3px;
   background: #d7d5d5;
   top: 36px;
+  left: -20px;
 }
 .inspired-slider ul li, ul.shopTab li {
   display: inline-block;
