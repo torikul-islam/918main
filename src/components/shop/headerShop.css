@@ -1,3 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 
 
+.home-area {
+    background-image: url(../../Asset/Images/Shop-head.png) !important;
+    width: 100%;
+    height: 85vh!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    text-align: center;
+  }
