@@ -11,6 +11,16 @@ import './headerHome.css';
 
 
 const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) => {
+
+
+    const Capitalize = (text) => {
+        let lowercase = text.toLowerCase();
+        if (typeof lowercase !== "string") return lowercase;
+        return lowercase.split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+
     return (
         <>
             <div className="home-area">
@@ -99,7 +109,9 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
                                 <div className="col-sm-4">
                                     <div className="text-furniture">
                                         <p>{item.source}</p>
-                                        <h4>{item.title}</h4>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none',color:"#000" }}>
+                                        <h4>{Capitalize(item.title)}</h4>
+                                        </Link>
                                         <span>{item.content}</span>
                                     </div>
                                 </div>

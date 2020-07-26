@@ -49,7 +49,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search }) {
                                         <button class="dropbtn">Explore</button>
                                         <div class="dropdown-content">
                                             <Link className="nav-link" to="/explore"  >Explore</Link>
-                                            <Link className="nav-link" to="/inspired-more" >Be Inspire</Link>
+                                            <Link className="nav-link" to="/inspired-more" >Be Inspired</Link>
                                             <Link className="nav-link" to="/learn-more"  >Learn</Link>
                                             <Link className="nav-link" to="/shop-more"  >Shop</Link>
                                         </div>

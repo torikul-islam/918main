@@ -87,7 +87,9 @@ function InspiredSlider(props) {
                                     <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
                                         <img src={item.ref_img} alt="" />
                                     </Link>
+                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none',color:"#000" }}>
                                     <h6>{item.designed_by}</h6>
+                                    </Link>
                                 </div>
                             </div>)}
                         <Pagination

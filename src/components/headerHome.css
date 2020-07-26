@@ -108,11 +108,11 @@
   font-family: "PlayfairDisplay-Bold";
   font-size: 33px;
   line-height: normal;
-  text-transform: lowercase;
+  
 }
-.text-furniture h4::first-letter{
+/* .text-furniture h4::first-letter{
   text-transform: uppercase;
-}
+} */
 .width-color-fill {
   margin-top: 70px;
 }

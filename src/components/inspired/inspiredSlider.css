@@ -25,7 +25,7 @@
 .inspired-more .go-btn {
   position: absolute;
   left: 45%;
-  top: 25px;
+  top: 16px;
 }
 .inspired-slider ul:before, ul.shopTab::before {
   content: "";
