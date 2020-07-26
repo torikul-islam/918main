@@ -1,0 +1,74 @@
+input[type="range"] {
+  width: 210px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 1px;
+  background: #003d7c;
+}
+
+input[type="range"]:nth-child(2)::-webkit-slider-runnable-track {
+  background: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  height: 57px;
+  width: 71px;
+  margin-top: -55px;
+  /* 
+  background: #fff;
+  border: 1px solid #003d7c;
+  border-radius: 25px;*/
+  background-image: url('../../../Asset/Images/rangeslide.png');
+  z-index: 1; 
+}
+.range-slider {
+  position: relative;
+  height: 125px;
+}
+input[type="range"]:nth-child(1)::-webkit-slider-thumb {
+  z-index: 2;
+}
+
+.rangeslider {
+  position: relative;
+  height: 60px;
+  width: 210px;
+  display: inline-block;
+  margin-left: 20px;
+}
+.rangeslider input {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 110px;
+}
+.rangeslider {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 40px;
+}
+
+.rangeslider span {
+  position: absolute;
+  margin-top: 30px;
+  left: 0;
+}
+
+.rangeslider .right {
+  position: relative;
+  float: right;
+  margin-right: -5px;
+}
