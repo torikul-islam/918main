@@ -108,7 +108,7 @@ function LearnPage(props) {
     async function clickSeeMore() {
         if (seeMore.next !== null) {
             const { data } = await resourceService.getResourcesByUrl(seeMore.next.split('?')[1]);
-            setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
+            setSeeMore({ next: data.next, previous: data.previous, results: [...data.result, ...seeMore.results] });
         }
     }
 
