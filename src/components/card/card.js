@@ -69,7 +69,7 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                                 </div>
                             )}
                         </div>
-                        <div className="estimateTotal"><h6><span className="float-left"> Estimate total:</span> <span className="float-right">${total()}</span></h6></div>
+                        <div className="estimateTotal"><h6><span className="float-left"> Estimated Subtotal:</span> <span className="float-right">${total()}</span></h6></div>
 
                     </div>
                 </div>
