@@ -9,7 +9,7 @@ const Slider4 = ({ data }) => {
         <>
             {data && data.map(item =>
                 <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid}>
-                    <div className="image-slide">
+                    <div className="image-slide-slider4">
                         <Link to={`/product-details/${item.uuid}`}>
                             <img src={item.ref_img} alt="" />
                             <h6>{item.retailer || item.designed_by}</h6>
