@@ -7,13 +7,13 @@ import './headerShop.css';
 
 
 
-const HeaderShop = ({ openModal, openMenu, handleOpenMenu, clickCard }) => {
+const HeaderShop = (props) => {
 
     return (
         <>
             <div className="home-area-shop">
                 <div className='container-fluid' >
-                    <NavbarW openMenu={openMenu} clickCard={clickCard} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+                    <NavbarW  {...props} />
                 </div>
                 <div className="container">
                     <div className='home-text'>

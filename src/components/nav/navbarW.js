@@ -40,7 +40,7 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch,
                             </li>
                             {searchData && <ul className='search-container'>
                                 {searchData.map((s, i) =>
-                                    <li className="search-item" key={i}>{s.title}</li>
+                                    <li className="search-item" key={i}>{s.title || s.name}</li>
                                 )}
                             </ul>}
 

@@ -18,6 +18,9 @@ function Shop(props) {
     const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [pieces, setPieces] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null)
+    const [searchData, setSearchData] = useState([]);
+
+
 
     useEffect(() => {
         (async function () {
@@ -75,14 +78,25 @@ function Shop(props) {
         }
     }
 
+    function handleSearch(e) {
+        if (e.target.value) {
+            const filter = product.results.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase()) || el.retailer.toLowerCase().includes(e.target.value.toLowerCase()));
+            console.log(filter);
+            setSearchData(filter);
+        } else {
+            setSearchData([])
+        }
+    }
+
     return (
         <>
-            <HeaderShop {...props} />
+            <HeaderShop {...props} handleSearch={handleSearch} searchData={searchData} />
             <TabShop
                 onItemSelect={onItemSelect}
                 selectedItem={selectedItem}
                 pieces={pieces}
-                title="Shop" />
+                title="Shop"
+            />
             <ShopPost data={product.results.slice(0, 4)} />
             <ShopTrending
                 data={product.results.slice(4,)}
