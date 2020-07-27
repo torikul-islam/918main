@@ -20,7 +20,7 @@ function Home(props) {
     const [pageSize, setPageSize] = useState(4);
     const [pieces, setPieces] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
-
+    const [searchData, setSearchData] = useState([])
 
 
     useEffect(() => {
@@ -77,9 +77,18 @@ function Home(props) {
     }
 
 
+    function handleSearch(e) {
+        if (e.target.value) {
+            const filter = post.filter(el => el.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            setSearchData(filter);
+        } else {
+            setSearchData([])
+        }
+    }
+
     return (
         <div>
-            <HeaderHome data={post.slice(0, 1)}  {...props} />
+            <HeaderHome searchData={searchData} handleSearch={handleSearch} data={post.slice(0, 1)}  {...props} />
             <SliderPost data={post.slice(1, 5)} />
             <InspiredSlider />
             <SliderPost data={post.slice(5, 9)} />

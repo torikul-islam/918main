@@ -77,6 +77,8 @@ function App(props) {
     setOpenMenu(!openMenu)
   }
 
+
+
   const { name, isOpen } = modal;
 
   return (
