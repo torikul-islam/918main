@@ -11,7 +11,7 @@ const HeaderShop = ({ openModal, openMenu, handleOpenMenu, clickCard }) => {
 
     return (
         <>
-            <div className="home-area">
+            <div className="home-area-shop">
                 <div className='container-fluid' >
                     <NavbarW openMenu={openMenu} clickCard={clickCard} handleOpenMenu={handleOpenMenu} openModal={openModal} />
                 </div>
