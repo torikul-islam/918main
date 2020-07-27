@@ -10,6 +10,11 @@ function getProductById(id) {
     return http.get(`/products/${id}/`);
 };
 
+function getProductByUrl(url) {
+    return http.get(`/products/?${url}`);
+};
+
+
 function getProductByPieceId(ids) {
     return http.get(`products/?piece_ids=${ids}`);
 };
@@ -32,4 +37,4 @@ function getUserProductLike() {
 
 
 
-export default { getAllProducts, getProductById, getProductByPieceId, getUserProductLike, createProductLike }
+export default { getAllProducts, getProductById, getProductByUrl, getProductByPieceId, getUserProductLike, createProductLike }

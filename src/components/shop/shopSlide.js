@@ -9,7 +9,7 @@ import './shopSlide.css';
 
 
 
-const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selectedItem, onItemSelect }) => {
+const ShopSlide = ({ data, count, currentPage, pageSize, onPageChange, pieces, selectedItem, onItemSelect }) => {
     const paginateShop = data && paginate(data, currentPage, pageSize);
 
     return (
@@ -19,14 +19,12 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selected
                     <div className="col-sm-12">
                         <h4>Shop</h4>
                         <ul className="shopTab">
-                            {pieces.map(item =>
-                                <li
-                                    key={item.uuid}
+                            {pieces.map(item => (
+                                <li key={item.uuid}
                                     onClick={() => onItemSelect(item)}
                                     className={item.name === selectedItem ? 'disable active' : 'pointer'} >
                                     {item.name.toUpperCase()}
-                                </li>
-
+                                </li>)
                             )}
                         </ul>
                     </div>
@@ -35,7 +33,7 @@ const ShopSlide = ({ data, currentPage, pageSize, onPageChange, pieces, selected
                     {data && <div className='row' >
                         <Slider4 data={paginateShop} />
                         <Pagination
-                            itemsCount={data.length}
+                            itemsCount={count}
                             currentPage={currentPage}
                             pageSize={pageSize}
                             onPageChange={onPageChange}

@@ -11,4 +11,8 @@ function getRoomsByIds(ids) {
 };
 
 
-export default { getAllRooms, getRoomsByIds }
+function getRoomByUrl(url) {
+    return http.get(`/inspirations/?${url}`);
+}
+
+export default { getAllRooms, getRoomsByIds, getRoomByUrl }

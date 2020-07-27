@@ -49,13 +49,13 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                                 <Link className="nav-link" to="/workspace"  >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
-                                <div class="dropdown">
-                                    <button class="dropbtn">Explore</button>
-                                    <div class="dropdown-content">
-                                    <Link className="nav-link" to="/explore"  >Explore</Link>
-                                            <Link className="nav-link" to="/inspired-more" >Be Inspired</Link>
-                                            <Link className="nav-link" to="/learn-more"  >Learn</Link>
-                                            <Link className="nav-link" to="/shop-more"  >Shop</Link>
+                                <div className="dropdown">
+                                    <button className="dropbtn">Explore</button>
+                                    <div className="dropdown-content">
+                                        <Link className="nav-link" to="/explore"  >Explore</Link>
+                                        <Link className="nav-link" to="/inspired-more" >Be Inspired</Link>
+                                        <Link className="nav-link" to="/learn-more"  >Learn</Link>
+                                        <Link className="nav-link" to="/shop-more"  >Shop</Link>
 
                                     </div>
                                 </div>

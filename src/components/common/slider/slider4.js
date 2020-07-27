@@ -12,8 +12,8 @@ const Slider4 = ({ data }) => {
                     <div className="image-slide">
                         <Link to={`/product-details/${item.uuid}`}>
                             <img src={item.ref_img} alt="" />
+                            <h6>{item.retailer || item.designed_by}</h6>
                         </Link>
-                        <h6>{item.retailer || item.designed_by}</h6>
                         {item.price && <p>${item.price}</p>}
                     </div>
                 </div>
