@@ -4,6 +4,7 @@ import GoBtn from './common/goBtn';
 import Socailicon from './common/socialicons/socailicon';
 import Subscribe from './common/socialicons/subscribe';
 import NavbarW from './nav/navbarW';
+import capitalize from '../utils/capitalize';
 import './headerHome.css';
 
 
@@ -11,15 +12,6 @@ import './headerHome.css';
 
 
 const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) => {
-
-
-    const Capitalize = (text) => {
-        let lowercase = text.toLowerCase();
-        if (typeof lowercase !== "string") return lowercase;
-        return lowercase.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    }
 
     return (
         <>
@@ -109,8 +101,8 @@ const HeaderHome = ({ openModal, data, openMenu, handleOpenMenu, clickCard }) =>
                                 <div className="col-sm-4">
                                     <div className="text-furniture">
                                         <p>{item.source}</p>
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none',color:"#000" }}>
-                                        <h4>{Capitalize(item.title)}</h4>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                            <h4>{capitalize(item.title)}</h4>
                                         </Link>
                                         <span>{item.content}</span>
                                     </div>

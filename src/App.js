@@ -96,17 +96,19 @@ function App(props) {
             shoppingCard={shoppingCard} isCardOpen={isCardOpen}
             itemControl={itemControl} clickCard={clickCard} />} exact />
 
+          <Route path="/blog/:id/:roomId" render={(props) => <Blog {...props}
+            openMenu={openMenu}
+            openModal={openModal}
+            handleOpenMenu={handleOpenMenu}
+            clickCard={clickCard} />} exact />
+
           <Route path="/learn-more" render={(props) => <LearnPage {...props}
             openMenu={openMenu}
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path="/blog/:id/:roomId" render={(props) => <Blog {...props}
-            openMenu={openMenu}
-            openModal={openModal}
-            handleOpenMenu={handleOpenMenu}
-            clickCard={clickCard} />} exact />
+
 
           <Route path="/workspace" render={(props) => <Workspace {...props}
             openMenu={openMenu}

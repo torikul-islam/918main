@@ -15,7 +15,7 @@ import './home.css';
 
 function Home(props) {
     const [post, setPost] = useState([]);
-    const [shop, setShop] = useState([]);
+    const [shop, setShop] = useState({ count: null, next: null, previous: null, results: [] });
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
     const [pieces, setPieces] = useState([]);
@@ -35,7 +35,7 @@ function Home(props) {
 
     async function getProductById(ids) {
         const { data } = await productServices.getProductByPieceId(ids);
-        setShop(data.results);
+        setShop({ count: data.count, next: data.next, previous: data.previous, results: data.results });
     }
 
     function onItemSelect(item) {
@@ -45,10 +45,15 @@ function Home(props) {
     }
 
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = shop.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && shop.next !== null) {
+                const { data } = await productServices.getProductByUrl(shop.next.split('?')[1]);
+                setShop({ count: data.count, next: data.next, previous: data.previous, results: [...shop.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
@@ -82,10 +87,12 @@ function Home(props) {
                 pieces={pieces}
                 selectedItem={selectedItem}
                 onItemSelect={onItemSelect}
-                data={shop}
+                data={shop.results}
+                count={shop.count}
                 currentPage={currentPage}
                 pageSize={pageSize}
                 onPageChange={onPageChange} />
+
             <SliderPost data={post.slice(9, 13)} />
             <ShopThreeSlide />
         </div>

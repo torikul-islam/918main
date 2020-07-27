@@ -7,3 +7,7 @@
 .disable {
   pointer-events: none;
 }
+.remove-u-line {
+  text-decoration: none !important;
+  color: #000000 !important;
+}

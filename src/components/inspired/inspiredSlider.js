@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from '../common/goBtn';
-import inspiredServices from '../../services/inspiredService';
 import roomServices from '../../services/roomServices';
 import './inspiredSlider.css';
 
@@ -11,12 +10,11 @@ import './inspiredSlider.css';
 
 
 function InspiredSlider(props) {
-    const [inspired, setInspired] = useState([]);
+    const [inspired, setInspired] = useState({ count: null, next: null, previous: null, results: [] });
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
     const [rooms, setRooms] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
-
 
 
     useEffect(() => {
@@ -30,7 +28,7 @@ function InspiredSlider(props) {
 
     async function getInspiredByPiecesId(id) {
         const { data } = await roomServices.getRoomsByIds(id);
-        setInspired(data.results);
+        setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
     }
     function onItemSelect(item) {
         setSelectedItem(item.pk);
@@ -49,16 +47,20 @@ function InspiredSlider(props) {
         }
     }
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = inspired.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && inspired.next !== null) {
+                const { data } = await roomServices.getRoomByUrl(inspired.next.split('?')[1]);
+                setInspired({ count: data.count, next: data.next, previous: data.previous, results: [...inspired.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
 
-
-    const inspiredPaginate = inspired && paginate(inspired, currentPage, pageSize);
+    const inspiredPaginate = paginate(inspired.results, currentPage, pageSize);
 
     return (
         <div className="inspired-slider">
@@ -66,7 +68,7 @@ function InspiredSlider(props) {
                 <div className="row">
                     <div className="col-sm-12">
                         <h4>Be Inspired</h4>
-                        <ul>
+                        <ul >
                             {rooms.map(item =>
                                 <li
                                     onClick={() => onItemSelect(item)}
@@ -84,16 +86,14 @@ function InspiredSlider(props) {
                         {inspiredPaginate.map(item =>
                             <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid} >
                                 <div className="image-slide">
-                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
+                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} className='remove-u-line' >
                                         <img src={item.ref_img} alt="" />
-                                    </Link>
-                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none', color: "#000" }}>
                                         <h6>{item.designed_by}</h6>
                                     </Link>
                                 </div>
                             </div>)}
                         <Pagination
-                            itemsCount={inspired.length}
+                            itemsCount={inspired.count}
                             currentPage={currentPage}
                             pageSize={pageSize}
                             onPageChange={onPageChange}

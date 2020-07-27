@@ -9,7 +9,7 @@ import './blog.css';
 
 function Blog(props) {
     const [pageSize, setPageSize] = useState(4);
-    const [resource, setResource] = useState([]);
+    const [resource, setResource] = useState({ count: null, next: null, previous: null, results: [] });
     const [resourceLike, setResourceLike] = useState([]);
     const [product, setProduct] = useState([]);
     const [currentPage, setCurrentPage] = useState(0)
@@ -18,7 +18,7 @@ function Blog(props) {
     useEffect(() => {
         (async function () {
             const { data } = await resourceService.getResourcesByRoomStyle(`?room_ids=${props.match.params.roomId}`);
-            setResource(data.results);
+            setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()
     }, [props.match.params.id]);
 
@@ -65,10 +65,15 @@ function Blog(props) {
         }
     }
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = resource.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && resource.next !== null) {
+                const { data } = await resourceService.getResourcesByUrl(resource.next.split('?')[1]);
+                setResource({ count: data.count, next: data.next, previous: data.previous, results: [...resource.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
@@ -79,11 +84,12 @@ function Blog(props) {
                 {...props}
                 clickResourceLike={clickResourceLike}
                 resourceLike={resourceLike}
-                resource={resource.find(x => x.uuid === props.match.params.id)}
+                resource={resource.results.find(x => x.uuid === props.match.params.id)}
                 product={product.slice(0, 4)}
             />
             <BlogSlider
-                resource={resource.filter(x => x.uuid !== props.match.params.id)}
+                count={resource.count}
+                resource={resource.results.filter(x => x.uuid !== props.match.params.id)}
                 currentPage={currentPage}
                 pageSize={pageSize}
                 onPageChange={onPageChange}

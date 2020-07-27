@@ -1,19 +1,14 @@
 import React from 'react';
 import NavbarB from '../nav/navbarB';
 import './blogHead.css';
+import capitalize from '../../utils/capitalize';
 import { Link } from 'react-router-dom';
 
 
 
 const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest }) => {
 
-    const Capitalize = (text) => {
-        let lowercase = text.toLowerCase();
-        if (typeof lowercase !== "string") return lowercase;
-        return lowercase.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    }
+
 
     if (resource) {
         const isLike = resourceLike.some(el => el.resource.uuid === resource.uuid);
@@ -32,7 +27,7 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
                     <div className="row">
                         {resource && <div div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
-                                <h4>{Capitalize(resource.title)}</h4>
+                                <h4>{capitalize(resource.title)}</h4>
                             </div>
                         </div>}
                     </div>
@@ -59,10 +54,10 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
                             </div>
                             {product && product.map((item, i) =>
                                 <div className="product-price" key={i}>
-                                    <Link to={`/product-details/${item.uuid}`}>
+                                    <Link to={`/product-details/${item.uuid}`} className='remove-u-line'>
                                         <img src={item.ref_img} alt="" />
+                                        <h4>{item.retailer}</h4>
                                     </Link>
-                                    <h4>{item.retailer}</h4>
                                     <h5>${item.price}</h5>
                                 </div>
                             )}
