@@ -8,6 +8,10 @@ function getInspirationByRoomId(roomId) {
     return http.get('/inspirations/?room_ids=' + roomId);
 };
 
+function getInspirationByUrl(url) {
+    return http.get('/inspirations/?' + url);
+};
+
 function getInspiredByRoomOrStyleId(endpoint) {
     return http.get('/inspirations' + endpoint);
 };
@@ -30,4 +34,4 @@ function getUserInspirationLike() {
 
 
 
-export default { getAllInspired, getInspiredByRoomOrStyleId, getInspirationByRoomId, createInspirationLike, getUserInspirationLike }
+export default { getAllInspired, getInspiredByRoomOrStyleId, getInspirationByUrl, getInspirationByRoomId, createInspirationLike, getUserInspirationLike }

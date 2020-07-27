@@ -49,7 +49,13 @@ function InspirationDetails(props) {
     return (
         <>
             <NavbarB  {...props} />
-            <InspirationTitle inspirationLike={inspirationLike} clickInspirationLike={clickInspirationLike} inspired={inspired} />
+
+            <InspirationTitle
+                inspirationLike={inspirationLike}
+                clickInspirationLike={clickInspirationLike}
+                inspired={inspired}
+            />
+
             <InspirationDetailsProduct {...props} />
             <InspirationAlsoLike {...props} />
         </>

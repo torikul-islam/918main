@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 
 function InspirationAlsoLike() {
     const [pageSize, setPageSize] = useState(4);
-    const [resource, setResource] = useState([]);
+    const [resource, setResource] = useState({ count: null, next: null, previous: null, results: [] });
     const [currentPage, setCurrentPage] = useState(0)
 
 
     useEffect(() => {
         (async function () {
             const { data } = await resourceService.getAllResources();
-            setResource(data.results);
+            setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()
     }, []);
 
@@ -31,16 +31,21 @@ function InspirationAlsoLike() {
         }
     }
 
+    async function onPageChange(val) {
+        const diff = resource.results.length - (currentPage * pageSize * 2);
 
-    function onPageChange(val) {
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && resource.next !== null) {
+                const { data } = await resourceService.getResourcesByUrl(resource.next.split('?')[1]);
+                setResource({ count: data.count, next: data.next, previous: data.previous, results: [...resource.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
 
-    const paginateProd = paginate(resource, currentPage, pageSize);
+    const paginateProd = paginate(resource.results, currentPage, pageSize);
 
     return (
         <div className='container'>
@@ -55,14 +60,14 @@ function InspirationAlsoLike() {
                             <div className='row'>
                                 {paginateProd && paginateProd.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                        <Link to={`/learn-details/${item.uuid}/${item.rooms[0]}`}>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                             <img src={item.ref_img} alt="" />
+                                            <p>{item.source}</p>
                                         </Link>
-                                        <p>{item.source}</p>
                                     </div>
                                 )}
                                 <Pagination
-                                    itemsCount={resource.length}
+                                    itemsCount={resource.count}
                                     pageSize={pageSize}
                                     currentPage={currentPage}
                                     onPageChange={onPageChange}

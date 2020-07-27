@@ -12,10 +12,10 @@ const ShopSlide = ({ data, count }) => {
                     {data && data.map((item, i) =>
                         <div className="col-sm-3" key={i}>
                             <div className="image-post-slide">
-                                <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
+                                <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
+                                    <h6>{item.designed_by}</h6>
                                 </Link>
-                                <h6>{item.designed_by}</h6>
                             </div>
                         </div>
                     )}

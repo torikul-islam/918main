@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
+import { Link } from 'react-router-dom';
 
 
 
 
-function LookSlider({ data, currentPage, pageSize, onPageChange }) {
+function LookSlider({ data, count, currentPage, pageSize, onPageChange }) {
 
-    // const paginateResource = paginate(data, currentPage, pageSize);
+    const paginateResource = paginate(data, currentPage, pageSize);
 
     return (
         <div className='container'>
@@ -20,18 +21,20 @@ function LookSlider({ data, currentPage, pageSize, onPageChange }) {
                     <div className='tab-index'>
                         <div className='slider'>
                             <div className='row'>
-                                {/* {paginateResource && paginateResource.map((item, i) =>
+                                {paginateResource && paginateResource.map((item, i) =>
                                     <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12' key={i}>
-                                        <img src={item.ref_img} alt="" />
-                                        <p>{item.retailer}</p>
+                                        <Link to={`/product-details/${item.uuid}`} className='remove-u-line'>
+                                            <img src={item.ref_img} alt="" />
+                                            <p>{item.retailer}</p>
+                                        </Link>
                                     </div>
-                                )} */}
-                                {/* <Pagination
-                                    itemsCount={data.length}
+                                )}
+                                <Pagination
+                                    itemsCount={count}
                                     pageSize={pageSize}
                                     currentPage={currentPage}
                                     onPageChange={onPageChange}
-                                /> */}
+                                />
                             </div>
                         </div>
                     </div>

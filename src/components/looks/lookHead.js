@@ -4,25 +4,40 @@ import './lookHead.css';
 
 
 
-const LookHead = ({openModal, data, openMenu, handleOpenMenu  }) => {
+const LookHead = ({ openModal, clickProductLike, productLike, product, openMenu, handleOpenMenu }) => {
+
+    if (product) {
+        const isLike = productLike.some(el => el.product.uuid === product.uuid);
+        if (isLike) {
+            product['is_like'] = true;
+        } else {
+            product['is_like'] = false
+        }
+    }
+
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/>
-            {data.length > 0 && <div className="look-head">
+            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            {product && <div className="look-head">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="heading-look">
-                                <h4>Awesome Title Here.</h4>
+                                <h4>{product.name}</h4>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="title-with-logo">
-                                <img src={data[0].ref_img} alt="" />
+                                <img src={product.ref_img} alt="" />
                                 <span className="favIcon">
-                                    <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                                    <i
+                                        onClick={() => clickProductLike(product)}
+                                        style={{ cursor: "pointer" }}
+                                        className={`fa-2x ${product.is_like ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        aria-hidden="true"
+                                    />
                                 </span>
                             </div>
                         </div>

@@ -180,6 +180,7 @@ function App(props) {
             openModal={openModal}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
+
           <Route path='/admin' component={AdminHome} />
           <Route path='/add-product' component={Addproduct} />
           <Route path='/add-resource' component={AddResource} />

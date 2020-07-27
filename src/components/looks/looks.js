@@ -8,15 +8,17 @@ import './looks.css';
 
 
 function Looks(props) {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({ count: null, next: null, previous: null, results: [] });
     const [pageSize, setPageSize] = useState(3);
     const [currentPage, setCurrentPage] = useState(0)
+    const [productLike, setProductLike] = useState([]);
+
 
 
     useEffect(() => {
         (async function () {
             const { data } = await productServices.getAllProducts();
-            setProduct(data.results);
+            setProduct({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()
     }, []);
 
@@ -31,11 +33,40 @@ function Looks(props) {
             setPageSize(3)
         }
     }
-    function onPageChange(val) {
+
+    async function onPageChange(val) {
+        const diff = product.results.length - (currentPage * pageSize * 2);
+
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && product.next !== null) {
+                const { data } = await productServices.getProductByUrl(product.next.split('?')[1]);
+                setProduct({ count: data.count, next: data.next, previous: data.previous, results: [...product.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
+        }
+    }
+
+    useEffect(() => {
+        (async function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const { data } = await productServices.getUserProductLike();
+                if (data) {
+                    setProductLike(data);
+                }
+            }
+        })()
+    }, []);
+
+    async function clickProductLike(item) {
+        let form = new FormData();
+        form.set('product', item.uuid);
+        const token = localStorage.getItem('token');
+        if (token) {
+            const { data } = await productServices.createProductLike(form);
+            setProductLike([...productLike, { uuid: null, product: item }]);
         }
     }
 
@@ -44,13 +75,16 @@ function Looks(props) {
         <>
             <LookHead
                 {...props}
-                data={product.slice(0, 1)}
+                clickProductLike={clickProductLike}
+                productLike={productLike}
+                product={product.results.length > 0 && product.results[0]}
             />
             <LookPost
-                product={product.slice(1, 9)}
+                product={product.results.slice(1, 9)}
             />
             <LookSlider
-                data={product}
+                data={product.results}
+                count={product.count}
                 currentPage={currentPage}
                 pageSize={pageSize}
                 onPageChange={onPageChange}

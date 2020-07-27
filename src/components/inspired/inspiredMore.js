@@ -16,7 +16,7 @@ import '../inspired/inspired.css';
 function InspiredMore(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
-    const [inspired, setInspired] = useState({ next: null, previous: null, results: [] });
+    const [inspired, setInspired] = useState({ count: null, next: null, previous: null, results: [] });
     const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [product, setProduct] = useState([]);
     const [rooms, setRooms] = useState([]);
@@ -27,7 +27,7 @@ function InspiredMore(props) {
     useEffect(() => {
         (async function () {
             const { data } = await inspiredService.getAllInspired();
-            setInspired(data);
+            setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
             setSeeMore({ next: data.next, previous: null, results: [] });
         })()
     }, []);
@@ -64,13 +64,20 @@ function InspiredMore(props) {
         }
     }
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = inspired.results.length - (currentPage * pageSize * 2);
+
         if (val === '-') {
-            setCurrentPage(currentPage - 1);
+            setCurrentPage(currentPage - 1)
         } else {
-            setCurrentPage(currentPage + 1);
+            if (diff < pageSize && inspired.next !== null) {
+                const { data } = await inspiredService.getInspirationByUrl(inspired.next.split('?')[1]);
+                setInspired({ count: data.count, next: data.next, previous: data.previous, results: [...inspired.results, ...data.results] });
+            }
+            setCurrentPage(currentPage + 1)
         }
     }
+
     function onSelectOption(e, name) {
         let selected = { ...selectedItems };
         let index = e.target.selectedIndex;
@@ -101,15 +108,16 @@ function InspiredMore(props) {
         })
         getRoomStyleId(url)
     }
+
     async function getRoomStyleId(url) {
         const { data } = await inspiredService.getInspiredByRoomOrStyleId(url);
-        setInspired(data);
+        setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         setSeeMore({ next: data.next, previous: null, results: [] });
     }
 
     async function clickSeeMore() {
         if (seeMore.next) {
-            const { data } = await inspiredService.getAllInspired(`/?${seeMore.next.split('?')[1]}`);
+            const { data } = await inspiredService.getInspirationByUrl(seeMore.next.split('?')[1]);
             setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
         }
     }
@@ -118,14 +126,22 @@ function InspiredMore(props) {
             <HeaderInspired {...props} />
             <TabShop title='Be Inspired.' rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
             <ShopSlide data={inspired.results.slice(0, 4)} />
-            <ShopInspired data={inspired.results.slice(4,)} pageSize={pageSize} currentPage={currentPage} onPageChange={onPageChange} />
+
+            <ShopInspired
+                data={inspired.results.slice(4,)}
+                count={inspired.count}
+                pageSize={pageSize}
+                currentPage={currentPage}
+                onPageChange={onPageChange}
+            />
+
             <ShopSlide data={inspired.results.slice(8, 12)} />
             <ShopThreeSlide />
             <ShopSlide data={inspired.results.slice(12, 16)} />
             <ShopSlide data={inspired.results.slice(16, 19)} />
             <ShopSlide data={inspired.results.slice(19, 23)} />
             {seeMore.results && <ShopSlide data={seeMore.results} />}
-            <GoBtn text='See more' onClick={clickSeeMore} />
+            {seeMore.next && <GoBtn text='See more' onClick={clickSeeMore} />}
         </>
     );
 }

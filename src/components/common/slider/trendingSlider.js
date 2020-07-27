@@ -10,10 +10,10 @@ const TrendingSlider = ({ data }) => {
             {data && data.map(item =>
                 <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid}>
                     <div className="image-slide">
-                        <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`}>
+                        <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                             <img src={item.ref_img} alt="" />
+                            <h6>{item.designed_by}</h6>
                         </Link>
-                        <h6>{item.designed_by}</h6>
                     </div>
                 </div>
             )}
