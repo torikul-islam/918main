@@ -5,7 +5,7 @@ import '../nav/navbar.css'
 
 
 
-function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
+function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch, searchData }) {
     const user = localStorage.getItem('token');
     const [value, setValue] = useState("/");
 
@@ -35,8 +35,13 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
                     <ul className="home-menu">
                         <div className="search-float">
                             <li className="search">
+                                <input type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
                                 <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                             </li>
+
+                            {searchData.map((s, i) =>
+                                <li>{s.title}</li>
+                            )}
                         </div>
                         <div className="logo-width">
                             <li className='logo'>
