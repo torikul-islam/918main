@@ -79,7 +79,7 @@ function Home(props) {
 
     function handleSearch(e) {
         if (e.target.value) {
-            const filter = post.filter(el => el.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            const filter = post.filter(el => el.source.toLowerCase().includes(e.target.value.toLowerCase()) || el.title.toLowerCase().includes(e.target.value.toLowerCase()));
             setSearchData(filter);
         } else {
             setSearchData([])

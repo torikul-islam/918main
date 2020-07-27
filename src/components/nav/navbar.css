@@ -29,12 +29,12 @@ ul.home-menu li a {
   .dropdown:hover .dropdown-content {
     display: block;
     padding-right: 18px;
-}
-ul.home-menu li {
-  display: block;
-  margin-right: 0px;
-  text-align: right;
-}
+  }
+  ul.home-menu li {
+    display: block;
+    margin-right: 0px;
+    text-align: right;
+  }
   div.menu-float {
     width: 79% !important;
     padding-top: 5px;
@@ -105,7 +105,7 @@ ul.home-menu li {
   .collapse.navbar-collapse.bg-lights.show {
     background: #f8f9fa !important;
   }
-  ul.home-menu li a{
+  ul.home-menu li a {
     text-align: right;
   }
 }
@@ -155,7 +155,7 @@ li.menu-item.font-hel .dropdown-content {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 110px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 20px;
 }
@@ -170,7 +170,9 @@ li.menu-item.font-hel .dropdown-content a {
 }
 
 /* Change color of dropdown links on hover */
-li.menu-item.font-hel .dropdown-content a:hover {background-color: #f1f1f1}
+li.menu-item.font-hel .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 /* Show the dropdown menu on hover */
 li.menu-item.font-hel .dropdown:hover .dropdown-content {
@@ -180,4 +182,9 @@ li.menu-item.font-hel .dropdown:hover .dropdown-content {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #ffffff00;
+}
+
+.search-container {
+  background: #f1f1f1 !important;
+  padding: 5px 10px;
 }
