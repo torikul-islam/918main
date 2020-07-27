@@ -2,10 +2,12 @@
 .img-about img {
     width: 100%;
     height: 450px;
+    object-fit: contain;
 }
 .img-about2 img {
     width: 74%;
     height: 700px;
+    object-fit: contain;
 }
 
 .text-about {
