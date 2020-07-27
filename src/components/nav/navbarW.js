@@ -8,6 +8,7 @@ import '../nav/navbar.css'
 function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu }) {
     const user = localStorage.getItem('token');
     const [value, setValue] = useState("/");
+
     function clickLogout() {
         localStorage.removeItem('token');
         window.location = '/'

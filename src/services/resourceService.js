@@ -10,6 +10,11 @@ async function getResourcesByRoomStyle(url) {
 }
 
 
+async function getResourcesByUrl(url) {
+    return http.get('/resources/?' + url)
+}
+
+
 async function createResourceLike(data) {
     const token = localStorage.getItem('token');
     if (token) {
@@ -29,4 +34,4 @@ async function getUserResourceLike() {
 
 
 
-export default { getAllResources, getResourcesByRoomStyle, getUserResourceLike, createResourceLike }
+export default { getAllResources, getResourcesByRoomStyle, getResourcesByUrl, getUserResourceLike, createResourceLike }

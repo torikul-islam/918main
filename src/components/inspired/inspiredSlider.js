@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from '../common/goBtn';
-import inspiredServices from '../../services/inspiredService';
 import roomServices from '../../services/roomServices';
 import './inspiredSlider.css';
 
@@ -87,7 +86,7 @@ function InspiredSlider(props) {
                         {inspiredPaginate.map(item =>
                             <div className="col-lg-3 col-md-3 col-sm-12" key={item.uuid} >
                                 <div className="image-slide">
-                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none', color: "#000" }}>
+                                    <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} className='remove-u-line' >
                                         <img src={item.ref_img} alt="" />
                                         <h6>{item.designed_by}</h6>
                                     </Link>

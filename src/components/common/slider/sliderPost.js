@@ -1,19 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GoBtn from '../goBtn';
+import capitalize from '../../../utils/capitalize';
 import './slider.css';
 
 
 
 const SliderPost = ({ data }) => {
-
-    const Capitalize = (text) => {
-        let lowercase = text.toLowerCase();
-        if (typeof lowercase !== "string") return lowercase;
-        return lowercase.split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    }
 
     return (
         <section className="post-slide-main">
@@ -22,13 +15,11 @@ const SliderPost = ({ data }) => {
                     {data && data.map(item =>
                         <div className="col-sm-3" key={item.uuid}>
                             <div className="image-post-slide">
-                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
-                                    <img src={item.ref_img || ""} alt="" />
+                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                    <img src={item.ref_img} alt="" />
+                                    <h6>{capitalize(item.title)}</h6>
                                 </Link>
-                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} style={{ textDecoration: 'none',color:"#000" }}>
-                                <h6>{Capitalize(item.title) || ""}</h6>
-                                </Link>
-                                <p>{item.source || ""}</p>
+                                <p>{item.source}</p>
                             </div>
                         </div>
                     )}

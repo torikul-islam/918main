@@ -76,7 +76,6 @@ function Home(props) {
         }
     }
 
-    console.log('shop', shop);
 
     return (
         <div>
