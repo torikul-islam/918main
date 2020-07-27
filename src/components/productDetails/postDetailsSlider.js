@@ -51,6 +51,10 @@ function ProductDetailsSlider(props) {
 
     return (
         <div className='container'>
+            <div className="slider-title">
+            <h3>You May Also Like.</h3>
+            </div>
+            
             <div className="slide-main">
                 <div className='row'>
                     <Slider4 data={paginateProd} />
