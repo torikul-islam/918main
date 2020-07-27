@@ -8,7 +8,7 @@ import './threeSlide.css';
 
 
 
-const ThreeSlide = ({ data, pageSize, currentPage, onPageChange }) => {
+const ThreeSlide = ({ data, count, pageSize, currentPage, onPageChange }) => {
     const paginateData = paginate(data, currentPage, pageSize);
     return (
         <div className='container-fluid ins-area'>
@@ -18,18 +18,18 @@ const ThreeSlide = ({ data, pageSize, currentPage, onPageChange }) => {
                 <div className='tab-index'>
                     <div className='slider'>
                         <div className='row'>
-                            {paginateData.map((item, i) =>
+                            {paginateData && paginateData.map((item, i) =>
                                 <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                         <img src={item.ref_img} alt="" />
+                                        <h3>{item.title}</h3>
                                     </Link>
-                                    <h3>{item.title}</h3>
                                     <p>{item.content.substr(0, 100)}</p>
                                     <div className='slide-desc'>{item.source}</div>
                                 </div>
                             )}
                             <Pagination
-                                itemsCount={data.length}
+                                itemsCount={count}
                                 pageSize={pageSize}
                                 currentPage={currentPage}
                                 onPageChange={onPageChange} />

@@ -108,8 +108,6 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-
-
           <Route path="/workspace" render={(props) => <Workspace {...props}
             openMenu={openMenu}
             openModal={openModal}

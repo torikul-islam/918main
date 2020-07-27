@@ -46,7 +46,9 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
                             <div className="col-sm-6" key={i} style={{ float: "right" }}>
                                 <div className="craete-text" >
                                     <h5>{item.source}</h5>
-                                    <h2>{item.title}</h2>
+                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                        <h2>{item.title}</h2>
+                                    </Link>
                                     <p>{item.content}</p>
                                     <div className="read-more">
                                         <button>Read More</button>

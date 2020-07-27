@@ -18,17 +18,18 @@ import GoBtn from './common/goBtn';
 
 function LearnPage(props) {
     const [pageSize, setPageSize] = useState(4);
-    const [resource, setResource] = useState({ next: null, previous: null, results: [] });
+    const [resource, setResource] = useState({ count: null, next: null, previous: null, results: [] });
     const [currentPage, setCurrentPage] = useState(0);
     const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [rooms, setRooms] = useState([]);
     const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
 
+
     useEffect(() => {
         (async function () {
             const { data } = await resourceService.getAllResources();
-            setResource(data);
+            setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
             setSeeMore({ next: data.next, previous: null, results: [] });
         })()
     }, []);
@@ -44,11 +45,16 @@ function LearnPage(props) {
     }, []);
 
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = resource.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
-            setCurrentPage(currentPage - 1);
+            setCurrentPage(currentPage - 1)
         } else {
-            setCurrentPage(currentPage + 1);
+            if (diff < pageSize && resource.next !== null) {
+                const { data } = await resourceService.getResourcesByUrl(resource.next.split('?')[1]);
+                setResource({ count: data.count, next: data.next, previous: data.previous, results: [...resource.results, ...data.results] });
+            }
+            setCurrentPage(currentPage + 1)
         }
     }
 
@@ -100,8 +106,8 @@ function LearnPage(props) {
     }
 
     async function clickSeeMore() {
-        if (seeMore.next) {
-            const { data } = await resourceService.getResourcesByRoomStyle(`/?${seeMore.next.split('?')[1]}`);
+        if (seeMore.next !== null) {
+            const { data } = await resourceService.getResourcesByUrl(seeMore.next.split('?')[1]);
             setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
         }
     }
@@ -110,8 +116,21 @@ function LearnPage(props) {
         <>
             <NavbarB {...props} />
             <LearnHeader data={resource.results.slice(0, 1)} />
-            <ThreeSlide data={resource.results.slice(1,)} currentPage={currentPage} pageSize={pageSize} onPageChange={onPageChange} />
-            <HomeCreate data={resource.results.slice(1, 2)} rooms={rooms} styles={styles} onSelectOption={onSelectOption} compname="learn" />
+            <ThreeSlide
+                data={resource.results.slice(1,)}
+                count={resource.count}
+                currentPage={currentPage}
+                pageSize={pageSize}
+                onPageChange={onPageChange}
+            />
+
+            <HomeCreate
+                data={resource.results.slice(1, 2)}
+                rooms={rooms}
+                styles={styles}
+                onSelectOption={onSelectOption}
+                compname="learn"
+            />
             <PostSlideThree data={resource.results.slice(2, 5)} compname="learn" />
             <HomePostTwo data={resource.results.slice(5, 7)} />
             <HomePostTwo data={resource.results.slice(7, 9)} />

@@ -13,6 +13,7 @@ function ProductDetails(props) {
     const [product, setProduct] = useState({});
     const [productLike, setProductLike] = useState([]);
 
+
     useEffect(() => {
         (async function () {
             const { data } = await productServices.getProductById(props.match.params.id);
@@ -47,13 +48,14 @@ function ProductDetails(props) {
         <>
             <NavbarB  {...props} />
             <ProductDetailsTitle
+                {...props}
                 clickProductLike={clickProductLike}
                 addShoppingCard={props.addShoppingCard}
                 product={product}
                 productLike={productLike}
             />
-            <ProductDetailsSlider />
-            <ProductDetailsSliderPost />
+            <ProductDetailsSlider {...props} />
+            <ProductDetailsSliderPost {...props} />
         </>
     );
 }

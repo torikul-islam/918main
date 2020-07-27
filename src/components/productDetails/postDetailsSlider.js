@@ -8,16 +8,16 @@ import paginate from '../../utils/paginate';
 
 
 
-function ProductDetailsSlider(params) {
+function ProductDetailsSlider(props) {
     const [pageSize, setPageSize] = useState(4);
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({ count: null, next: null, previous: null, results: [] });
     const [currentPage, setCurrentPage] = useState(0)
 
 
     useEffect(() => {
         (async function () {
             const { data } = await productService.getAllProducts();
-            setProduct(data.results);
+            setProduct({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()
     }, []);
 
@@ -33,15 +33,21 @@ function ProductDetailsSlider(params) {
         }
     }
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = product.results.length - (currentPage * pageSize * 2);
+
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && product.next !== null) {
+                const { data } = await productService.getProductByUrl(product.next.split('?')[1]);
+                setProduct({ count: data.count, next: data.next, previous: data.previous, results: [...product.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
 
-    const paginateProd = paginate(product, currentPage, pageSize);
+    const paginateProd = paginate(product.results.filter(x => x.uuid !== props.match.params.id), currentPage, pageSize);
 
     return (
         <div className='container'>
@@ -50,7 +56,7 @@ function ProductDetailsSlider(params) {
                     <Slider4 data={paginateProd} />
 
                     <Pagination
-                        itemsCount={product.length}
+                        itemsCount={product.count}
                         pageSize={pageSize}
                         currentPage={currentPage}
                         onPageChange={onPageChange}

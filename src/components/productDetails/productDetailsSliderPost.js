@@ -12,14 +12,14 @@ import { Link } from 'react-router-dom';
 function ProductDetailsSliderPost(data) {
 
     const [pageSize, setPageSize] = useState(4);
-    const [resource, setResource] = useState([]);
+    const [resource, setResource] = useState({ count: null, next: null, previous: null, results: [] });
     const [currentPage, setCurrentPage] = useState(0)
 
 
     useEffect(() => {
         (async function () {
             const { data } = await resourceService.getAllResources();
-            setResource(data.results);
+            setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()
     }, []);
 
@@ -35,17 +35,23 @@ function ProductDetailsSliderPost(data) {
         }
     }
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = resource.results.length - (currentPage * pageSize * 2);
+
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && resource.next !== null) {
+                const { data } = await resourceService.getResourcesByUrl(resource.next.split('?')[1]);
+                setResource({ count: data.count, next: data.next, previous: data.previous, results: [...resource.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
 
-    const paginateRes = paginate(resource, currentPage, pageSize);
+    const paginateRes = paginate(resource.results, currentPage, pageSize);
     return (
-        <div className="realted-product">
+        <div className="realted-resource">
             <div className="container">
                 <h3>Related content.</h3>
                 <div className="slide-main">
@@ -54,17 +60,17 @@ function ProductDetailsSliderPost(data) {
                         {paginateRes && paginateRes.map(item =>
                             <div className="col-sm-3" key={item.uuid}>
                                 <div className="image-post-slide">
-                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                         <img src={item.ref_img || ""} alt="" />
+                                        <h6>{item.title || ""}</h6>
                                     </Link>
-                                    <h6>{item.title || ""}</h6>
                                     <p>{item.source || ""}</p>
                                 </div>
                             </div>
                         )}
 
                         <Pagination
-                            itemsCount={resource.length}
+                            itemsCount={resource.count}
                             pageSize={pageSize}
                             currentPage={currentPage}
                             onPageChange={onPageChange}

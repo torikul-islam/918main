@@ -11,10 +11,10 @@ const PostSlideThree = ({ data, compname }) => {
                     {data && data.map((item, i) =>
                         <div className="col-sm-4" key={i}>
                             <div className={compname == "learn" ? "image-post-slide-learn" : "image-post-slide"}>
-                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
+                                    <h3>{item.title}</h3>
                                 </Link>
-                                <h3>{item.title}</h3>
                                 <p>{item.content}</p>
                                 <span>{item.source}</span>
                             </div>
