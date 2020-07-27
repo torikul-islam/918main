@@ -96,7 +96,7 @@ span.bar {
   width: 100%;
   height: 315px;
   background-color: #fff;
-  object-fit: contain;
+  object-fit: fill;
 }
 /* .image-slide-slider4 img {
   display: block;
@@ -110,11 +110,10 @@ span.bar {
   margin-top: 15px;
   font-size: 18px;
   font-family: "Playfair Display";
-  color: #4f4f4f;
 }
 .image-slide-slider4 p {
   color: #4f4f4f;
-  font-size: 20pt;
+  font-size: 15pt;
   font-family: "Helvetica-light";
 }
 .image-slide-slider4 span {
@@ -134,12 +133,12 @@ span.bar {
   .image-slide img {
     display: block;
     width: 100%;
-    height:225px;
+    height: 225px;
   }
 
   .image-slide-slider4 img {
     display: block;
     width: 100%;
-    height:225px;
+    height: 225px;
   }
 }

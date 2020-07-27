@@ -3,7 +3,7 @@
 }
 
 .image-post-slide p {
-  color: #4f4f4f;
+  /* color: #4f4f4f; */
   font-size: 20pt;
   font-family: "Helvetica-light";
 }
@@ -30,10 +30,10 @@
   top: 14px;
 }
 
- ul li.active {
+ul li.active {
   position: relative;
 }
- ul li.active::before {
+ul li.active::before {
   position: absolute;
   content: "";
   width: 65%;
