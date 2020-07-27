@@ -111,10 +111,11 @@ span.bar {
   font-size: 18px;
   font-family: "Playfair Display";
   color: #4f4f4f;
+  margin-bottom: 8px !important;
 }
 .image-slide-slider4 p {
   color: #4f4f4f;
-  font-size: 20pt;
+  font-size: 18px;
   font-family: "Helvetica-light";
 }
 .image-slide-slider4 span {
