@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LearnMore from '../common/learnButton';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./aboutInspiredItems.css";
 import GoBtn from '../common/goBtn';
 
@@ -22,7 +22,7 @@ class AboutInspiredItems extends Component {
                         <div className="about-icons">
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <Link  to='/inspired-more'>
+                                    <Link to='/inspired-more'>
                                         <div className="icons-header-lights">
                                             <img src={require('../../Asset/Images/light-bulb.png')} alt="inspired.png" />
                                             <h5>Be inspired.</h5>
@@ -37,12 +37,12 @@ class AboutInspiredItems extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                <Link to='/learn-more'>
-                                    <div className="icons-header-lights">
-                                        <img src={require('../../Asset/Images/learn.png')} alt="learn.png" />
-                                        <h5>Learn.</h5>
-                                    </div>
-                                </Link>
+                                    <Link to='/learn-more'>
+                                        <div className="icons-header-lights">
+                                            <img src={require('../../Asset/Images/learn.png')} alt="learn.png" />
+                                            <h5>Learn.</h5>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">
@@ -52,12 +52,12 @@ class AboutInspiredItems extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                <Link to='/shop-more'>
-                                    <div className="icons-header-lights">
-                                        <img src={require('../../Asset/Images/shop.png')} alt="shop.png" />
-                                        <h5>Shop.</h5>
-                                    </div>
-                                </Link>
+                                    <Link to='/shop-more'>
+                                        <div className="icons-header-lights">
+                                            <img src={require('../../Asset/Images/shop.png')} alt="shop.png" />
+                                            <h5>Shop.</h5>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">
@@ -67,12 +67,12 @@ class AboutInspiredItems extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                <Link to='/workspace'>
-                                    <div className="icons-header-lights">
-                                        <img src={require('../../Asset/Images/design.png')} alt="design.png" />
-                                        <h5>Design.</h5>
-                                    </div>
-                                </Link>    
+                                    <Link to='/workspace'>
+                                        <div className="icons-header-lights">
+                                            <img src={require('../../Asset/Images/design.png')} alt="design.png" />
+                                            <h5>Design.</h5>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-sm-9">
                                     <div className="iconLogo">

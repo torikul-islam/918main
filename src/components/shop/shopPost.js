@@ -11,10 +11,8 @@ const ShopPost = ({ data }) => {
                     {data && data.map(item =>
                         <div className="col-sm-3" key={item.uuid}>
                             <div className="image-post-slide">
-                                <Link to={`/product-details/${item.uuid}`}>
+                                <Link to={`/product-details/${item.uuid}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
-                                </Link>
-                                <Link to={`/product-details/${item.uuid}`} style={{ textDecoration: 'none',color:"#000" }}>
                                     <h6>{item.retailer}</h6>
                                 </Link>
                                 <p>${item.price}</p>

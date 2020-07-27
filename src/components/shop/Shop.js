@@ -13,7 +13,7 @@ import piecesGroup from '../../utils/piecesGroup';
 function Shop(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({ count: null, next: null, previous: null, results: [] });
 
     const [pieces, setPieces] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null)
@@ -31,7 +31,7 @@ function Shop(props) {
 
     async function getProductById(id) {
         const { data } = await productServices.getProductByPieceId(id);
-        setProduct(data.results);
+        setProduct({ count: data.count, next: data.next, previous: data.previous, results: data.results });
     }
 
     function onItemSelect(item) {
@@ -41,11 +41,17 @@ function Shop(props) {
     }
 
 
-    function onPageChange(page) {
-        if (page === '-') {
-            setCurrentPage(currentPage - 1);
+    async function onPageChange(val) {
+        const diff = product.results.length - (currentPage * pageSize * 2);
+
+        if (val === '-') {
+            setCurrentPage(currentPage - 1)
         } else {
-            setCurrentPage(currentPage + 1);
+            if (diff < pageSize && product.next !== null) {
+                const { data } = await productServices.getProductByUrl(product.next.split('?')[1]);
+                setProduct({ count: data.count, next: data.next, previous: data.previous, results: [...product.results, ...data.results] });
+            }
+            setCurrentPage(currentPage + 1)
         }
     }
 
@@ -68,12 +74,17 @@ function Shop(props) {
                 selectedItem={selectedItem}
                 pieces={pieces}
                 title="Shop" />
-            <ShopPost data={product.slice(0, 4)} />
-            <ShopTrending data={product.slice(4,)}
-                onPageChange={onPageChange} currentPage={currentPage} pageSize={pageSize} />
-            <ShopPost data={product.slice(4, 8)} />
-            <ShopPost data={product.slice(8, 12)} />
-            <ShopPost data={product.slice(12, 16)} />
+            <ShopPost data={product.results.slice(0, 4)} />
+            <ShopTrending
+                data={product.results.slice(4,)}
+                count={product.count - 4}
+                onPageChange={onPageChange}
+                currentPage={currentPage}
+                pageSize={pageSize}
+            />
+            <ShopPost data={product.results.slice(4, 8)} />
+            <ShopPost data={product.results.slice(8, 12)} />
+            <ShopPost data={product.results.slice(12, 16)} />
         </>
     )
 }
