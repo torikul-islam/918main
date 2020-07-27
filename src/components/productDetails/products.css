@@ -15,3 +15,13 @@
     color:#4f4f4f;
     padding-bottom: 14px;
 }
+
+.slider-title h3{
+font-family: "Playfair Display";
+padding-bottom: 30px;
+padding-top: 30px;
+}
+
+.bg-slider{
+    background-color:#ebeae8
+}

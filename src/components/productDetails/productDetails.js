@@ -54,7 +54,8 @@ function ProductDetails(props) {
                 product={product}
                 productLike={productLike}
             />
-            <ProductDetailsSlider {...props} />
+            <div className="bg-slider" > <ProductDetailsSlider {...props}/> </div>
+           
             <ProductDetailsSliderPost {...props} />
         </>
     );
