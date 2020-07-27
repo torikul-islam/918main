@@ -4,6 +4,7 @@ import ProductDetailsTitle from './productDetailsTitle';
 import ProductDetailsSlider from './postDetailsSlider';
 import ProductDetailsSliderPost from './productDetailsSliderPost';
 import productServices from '../../services/productService';
+import ShopThreeSlide from '../shop/shopThreeSlide';
 
 
 
@@ -54,9 +55,11 @@ function ProductDetails(props) {
                 product={product}
                 productLike={productLike}
             />
-            <div className="bg-slider" > <ProductDetailsSlider {...props}/> </div>
-           
+            <ProductDetailsSlider {...props} />
+
             <ProductDetailsSliderPost {...props} />
+
+            <ShopThreeSlide />
         </>
     );
 }

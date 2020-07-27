@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search }) {
+function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, handleSearch, searchData }) {
     const user = localStorage.getItem('token');
     function clickLogout() {
         localStorage.removeItem('token');
@@ -29,8 +29,14 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search }) {
                             <div style={search == "null" ? { visibility: "hidden" } : { visibility: "visible" }}>
                                 <div className="search-float">
                                     <li className="search">
+                                        <input type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
                                         <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                                     </li>
+                                    {searchData && <ul className='search-container'>
+                                        {searchData.map((s, i) =>
+                                            <li className="search-item" key={i}>{s.title}</li>
+                                        )}
+                                    </ul>}
                                 </div>
                             </div>
                             <div className="logo-width">

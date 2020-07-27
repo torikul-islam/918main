@@ -51,9 +51,9 @@ function ProductDetailsSliderPost(data) {
 
     const paginateRes = paginate(resource.results, currentPage, pageSize);
     return (
-        <div className="realted-resource">
+        <div className="realted-resource container-fluid">
             <div className="container">
-                <h3>Related content.</h3>
+                <h3 className='related-title'> Related content.</h3>
                 <div className="slide-main">
 
                     <div className="row">

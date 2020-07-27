@@ -38,11 +38,11 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch,
                                 <input type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
                                 <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                             </li>
-                            <ul className='search-container'>
+                            {searchData && <ul className='search-container'>
                                 {searchData.map((s, i) =>
                                     <li className="search-item" key={i}>{s.title}</li>
                                 )}
-                            </ul>
+                            </ul>}
 
                         </div>
                         <div className="logo-width">
