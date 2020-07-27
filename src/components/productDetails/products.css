@@ -21,7 +21,6 @@ font-family: "Playfair Display";
 padding-bottom: 30px;
 padding-top: 30px;
 }
-
-.bg-slider{
-    background-color:#ebeae8
+.image-post-slide h6{
+    font-size: 20px;
 }

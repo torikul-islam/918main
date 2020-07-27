@@ -47,7 +47,7 @@ function ProductDetails(props) {
 
     return (
         <>
-            <NavbarB  {...props} />
+            <NavbarB  {...props} search="null" />
             <ProductDetailsTitle
                 {...props}
                 clickProductLike={clickProductLike}
@@ -56,10 +56,8 @@ function ProductDetails(props) {
                 productLike={productLike}
             />
             <ProductDetailsSlider {...props} />
-
+            <ShopThreeSlide pagename="product_details" />
             <ProductDetailsSliderPost {...props} />
-
-            <ShopThreeSlide />
         </>
     );
 }

@@ -50,7 +50,8 @@ function ProductDetailsSlider(props) {
     const paginateProd = paginate(product.results.filter(x => x.uuid !== props.match.params.id), currentPage, pageSize);
 
     return (
-        <div className='container'>
+        <div className="container-fluid ins-area">
+            <div className='container'>
             <div className="slider-title">
             <h3>You May Also Like.</h3>
             </div>
@@ -68,6 +69,7 @@ function ProductDetailsSlider(props) {
                 </div>
 
             </div>
+        </div>
         </div>
 
     )
