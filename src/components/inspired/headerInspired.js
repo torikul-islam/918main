@@ -8,7 +8,7 @@ import Subscribe from '../common/socialicons/subscribe';
 
 const HeaderInspired = ({ clickCard, openMenu, openModal, handleOpenMenu }) => {
     return (
-        <div className="home-area">
+        <div className="inspired-area">
 
             <NavbarB
                 clickCard={clickCard}

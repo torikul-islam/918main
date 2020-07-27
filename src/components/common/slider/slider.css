@@ -36,7 +36,7 @@
 .image-post-slide img {
   width: 100%;
   height: 300px;
-  object-fit: fill;
+  object-fit: contain;
 }
 .image-post-slide {
   text-align: center;
@@ -66,7 +66,7 @@ span.bar {
   display: block;
   width: 100%;
   height: 315px;
-  object-fit: fill;
+  object-fit: contain;
 }
 .image-slide {
   text-align: center;
@@ -95,7 +95,7 @@ span.bar {
   width: 100%;
   height: 315px;
   background-color: #fff;
-  object-fit: fill;
+  object-fit: contain;
 }
 /* .image-slide-slider4 img {
   display: block;
