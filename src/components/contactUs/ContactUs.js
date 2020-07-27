@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
-import NavbarB from '../nav/navbarB';
-import '../contactUs/ContactUs.css';
-import LearnButton from '../common/learnButton';
-import HeaderInspired from "../../components/inspired/headerInspired";
+import React, { useEffect } from 'react';
 import Contactheader from "./contactheader";
 import SendButton from '../common/sendButton';
-// class ContactUs extends Component {
+import '../contactUs/ContactUs.css';
+
+
+
+
+
 const ContactUs = (props) => {
+
+    useEffect(() => window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    }), []);
 
     const { openModal, data, openMenu, handleOpenMenu } = props;
     return (
         <div>
-            {/* <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal}/> */}
             <Contactheader {...props} />
             <div className="container contact-form">
                 <form>

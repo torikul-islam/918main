@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import AboutStory from "./aboutStory";
 import AboutInspiredItems from "./aboutInspiredItems"
 import "./AboutUs.css"
 
+const AboutUs = (props) => {
+    useEffect(() => window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    }), []);
 
 
-
-class AboutUs extends Component {
-    render() {
-        return (
-            <div>
-                <AboutStory {...this.props} />
-                <AboutInspiredItems {...this.props} />
-            </div>
-        );
-    }
+    return (
+        <>
+            <AboutStory {...props} />
+            <AboutInspiredItems {...props} />
+        </>
+    );
 }
 
 export default AboutUs;
+
