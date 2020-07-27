@@ -6,6 +6,7 @@ import './products.css';
 
 const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProductLike }) => {
     if (product) {
+        console.log("Porduct props", product);
         const isLike = productLike.some(el => el.product.uuid === product.uuid);
         if (isLike) {
             product['is_like'] = true;
@@ -32,6 +33,7 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                     </div>
                     <div className="col-sm-8">
                         <div className="text-fav text-center">
+                            <h6>{product.retailer}</h6>
                             <h4>{product.name}</h4>
                             <p>${product.price}</p>
                             <ul className="menu-name">
@@ -42,10 +44,10 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                                     <option value="audi">Audi</option>
                                 </select></li>
                                 <li className="saveSection">
-                                    <GoBtn text='save' />
+                                    <GoBtn text='Save' />
                                 </li>
                             </ul>
-                            <GoBtn text='Add to shopping List' onClick={() => addShoppingCard(product)} />
+                            <GoBtn text='Add to Shopping List' onClick={() => addShoppingCard(product)} />
                         </div>
 
                     </div>

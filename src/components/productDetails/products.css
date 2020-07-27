@@ -1,9 +1,17 @@
  p{
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 2rem !important;
+    margin-top: 30px;
     
 }
 
 .mb-5, .my-5 {
     margin-top: 3em;
+}
+
+.text-fav h6{
+    font-family: "Helvetica";
+    font-size: 18px;
+    color:#4f4f4f;
+    padding-bottom: 14px;
 }
