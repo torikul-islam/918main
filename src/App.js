@@ -58,6 +58,7 @@ function App(props) {
     if (index === -1) {
       card = [item, ...card]
     }
+    setIsCardOpen(true);
     setShoppingCard(card);
   }
 

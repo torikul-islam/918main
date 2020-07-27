@@ -32,9 +32,8 @@ const TabShop = ({ title, rooms, styles, onSelectOption }) => {
 
                                 </select>
                             </li>
-
-                            <li>BUYER’S GUIDE</li>
-                            <li>DESIGN 101</li>
+                            <li>COLOR PALETTES</li>
+                            <li>LOOKS</li>
                         </ul>
                     </div>
                 </div>

@@ -8,7 +8,6 @@ import productService from '../../services/productService';
 import stylesService from '../../services/styleServices';
 import ShopThreeSlide from '../shop/shopThreeSlide';
 import roomServices from '../../services/roomServices';
-import GoBtn from '../common/goBtn';
 import '../inspired/inspired.css';
 
 
@@ -17,7 +16,6 @@ function InspiredMore(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [inspired, setInspired] = useState({ count: null, next: null, previous: null, results: [] });
-    const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [product, setProduct] = useState([]);
     const [rooms, setRooms] = useState([]);
     const [styles, setStyles] = useState([]);
@@ -28,7 +26,6 @@ function InspiredMore(props) {
         (async function () {
             const { data } = await inspiredService.getAllInspired();
             setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
-            setSeeMore({ next: data.next, previous: null, results: [] });
         })()
     }, []);
 
@@ -112,15 +109,9 @@ function InspiredMore(props) {
     async function getRoomStyleId(url) {
         const { data } = await inspiredService.getInspiredByRoomOrStyleId(url);
         setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
-        setSeeMore({ next: data.next, previous: null, results: [] });
     }
 
-    async function clickSeeMore() {
-        if (seeMore.next) {
-            const { data } = await inspiredService.getInspirationByUrl(seeMore.next.split('?')[1]);
-            setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
-        }
-    }
+
     return (
         <>
             <HeaderInspired {...props} />
@@ -140,8 +131,7 @@ function InspiredMore(props) {
             <ShopSlide data={inspired.results.slice(12, 16)} />
             <ShopSlide data={inspired.results.slice(16, 19)} />
             <ShopSlide data={inspired.results.slice(19, 23)} />
-            {seeMore.results && <ShopSlide data={seeMore.results} />}
-            {seeMore.next && <GoBtn text='See more' onClick={clickSeeMore} />}
+
         </>
     );
 }

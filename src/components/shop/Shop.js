@@ -7,6 +7,7 @@ import ShopTrending from './shopTrending';
 import ShopPost from './shopPost';
 import '../shop/Shop.css';
 import piecesGroup from '../../utils/piecesGroup';
+import GoBtn from '../common/goBtn';
 
 
 
@@ -14,7 +15,7 @@ function Shop(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [product, setProduct] = useState({ count: null, next: null, previous: null, results: [] });
-
+    const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [pieces, setPieces] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null)
 
@@ -24,7 +25,7 @@ function Shop(props) {
             const pieces = piecesGroup(data.results);
             setPieces(pieces);
             setSelectedItem(pieces[0].id);
-            getProductById(pieces[0].id)
+            getProductById(pieces[0].id);
         })()
     }, []);
 
@@ -32,6 +33,7 @@ function Shop(props) {
     async function getProductById(id) {
         const { data } = await productServices.getProductByPieceId(id);
         setProduct({ count: data.count, next: data.next, previous: data.previous, results: data.results });
+        setSeeMore({ next: data.next, previous: null, results: [] });
     }
 
     function onItemSelect(item) {
@@ -66,6 +68,13 @@ function Shop(props) {
         }
     }
 
+    async function clickSeeMore() {
+        if (seeMore.next !== null) {
+            const { data } = await productServices.getProductByUrl(seeMore.next.split('?')[1]);
+            setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
+        }
+    }
+
     return (
         <>
             <HeaderShop {...props} />
@@ -85,6 +94,8 @@ function Shop(props) {
             <ShopPost data={product.results.slice(4, 8)} />
             <ShopPost data={product.results.slice(8, 12)} />
             <ShopPost data={product.results.slice(12, 16)} />
+            {seeMore.results && <ShopPost data={seeMore.results} />}
+            <GoBtn text='See more' onClick={clickSeeMore} />
         </>
     )
 }
