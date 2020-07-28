@@ -16,7 +16,7 @@
 }
 .learn-text{
     text-align: center;
-    margin-top: 110px;
+    margin-top: 80px;
 }
 .learn-text h3 {
     font-size: 37px;
@@ -38,13 +38,15 @@
     font-family: "Helvetica-light";
     color: #4f4f4f;
     font-size: 18px;
-    margin-top: 50px;
+    margin-top: 65px;
+    margin-bottom: 30px;
 }
 .learn-text h2 {
     font-family: "PlayfairDisplay-Bold";
     color: #030303;
     font-size: 44px;
     text-transform: lowercase;
+    margin-bottom: 30px;
 }
 .learn-text h2::first-letter {
     text-transform: capitalize;
@@ -54,7 +56,7 @@
     color: #030303;
     font-size: 22px;
     line-height: normal;
-    padding: 0 80px;
+    padding: 10px 80px;
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
     .learn-text h2 {
