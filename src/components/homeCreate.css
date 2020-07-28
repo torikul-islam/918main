@@ -41,7 +41,7 @@
     color:#030303;
     font-size: 32px;
     font-family: "PlayfairDisplay-Bold";
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     margin: 20px 0;
 }
 .craete-text h2::first-letter{

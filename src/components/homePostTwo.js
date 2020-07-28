@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './homePostTwo.css';
+import capitalize from '../utils/capitalize';
 
 
 
@@ -24,7 +25,7 @@ const HomePostTwo = ({ data }) => {
                                     <div className="craete-text">
                                         <h5>{item.source}</h5>
                                         <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
-                                            <h2>{item.title}</h2>
+                                            <h2>{capitalize(item.title)}</h2>
                                         </Link>
                                         <p>{item.content}</p>
                                     </div>

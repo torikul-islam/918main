@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './postSlideThree.css';
+import capitalize from "../../utils/capitalize";
 
 
 const PostSlideThree = ({ data, compname }) => {
@@ -13,7 +14,7 @@ const PostSlideThree = ({ data, compname }) => {
                             <div className={compname == "learn" ? "image-post-slide-learn" : "image-post-slide"}>
                                 <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
-                                    <h3>{item.title}</h3>
+                                    <h3>{capitalize(item.title)}</h3>
                                 </Link>
                                 <p>{item.content}</p>
                                 <span>{item.source}</span>
