@@ -44,7 +44,10 @@ function LearnPage(props) {
         })()
     }, []);
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+      
     async function onPageChange(val) {
         const diff = resource.results.length - (currentPage * pageSize * 2);
         if (val === '-') {

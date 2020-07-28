@@ -1,5 +1,5 @@
 .shopping-card {
-  position: absolute;
+  position: fixed;
   right: 0;
   background: #ffffff;
   height: 100%;
@@ -7,7 +7,15 @@
   z-index: 999;
   width: 27%;
   padding: 25px;
+  overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
 }
+
+.shopping-card::-webkit-scrollbar {
+  display: none;
+}
+
 .card-show {
   display: block;
   opacity: 1;
@@ -99,5 +107,15 @@ div.estimateTotal {
 }
 .visit-retailer button {
   font-size: 11px;
-  padding: 5px 17px;
+  padding: 6px 17px;
+}
+.visit-retailer{
+  margin-top: 10px;
+}
+.cart-item{
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+.Shopping-text{
+  margin-top: 12px;
 }

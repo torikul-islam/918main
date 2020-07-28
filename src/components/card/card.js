@@ -42,7 +42,7 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                         </div>
                         <div className="row">
                             {shoppingCard && shoppingCard.map((item, i) =>
-                                <div key={i}>
+                                <div className="cart-item" key={i}>
                                     <div className="col-md-6 float-left" >
                                         <div className="shopping-img">
                                             <img src={item.ref_img} alt="" />
@@ -66,8 +66,11 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
 
                                         </div>
                                     </div>
+                                    
                                 </div>
+                                
                             )}
+                            <hr/>
                         </div>
                         <div className="estimateTotal"><h6><span className="float-left"> Estimated Subtotal:</span> <span className="float-right">${total()}</span></h6></div>
 

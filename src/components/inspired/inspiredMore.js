@@ -38,7 +38,10 @@ function InspiredMore(props) {
     }, []);
 
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+      
     useEffect(() => {
         (async function () {
             const { data } = await roomServices.getAllRooms();

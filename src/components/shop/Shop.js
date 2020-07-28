@@ -21,7 +21,10 @@ function Shop(props) {
     const [searchData, setSearchData] = useState([]);
 
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+      
     useEffect(() => {
         (async function () {
             const { data } = await piecesService.getAllPieces();
