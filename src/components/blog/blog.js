@@ -7,6 +7,7 @@ import './blog.css';
 
 
 
+
 function Blog(props) {
     const [pageSize, setPageSize] = useState(4);
     const [resource, setResource] = useState({ count: null, next: null, previous: null, results: [] });
@@ -94,6 +95,7 @@ function Blog(props) {
                 pageSize={pageSize}
                 onPageChange={onPageChange}
             />
+            
         </>
     );
 }

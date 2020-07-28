@@ -136,7 +136,7 @@ function LearnPage(props) {
             <HomePostTwo data={resource.results.slice(7, 9)} />
             <PostSlideThree data={resource.results.slice(9, 12)} compname="learn" />
             {seeMore.results && <PostSlideThree data={seeMore.results} compname="learn" />}
-            <GoBtn text='See more' onClick={clickSeeMore} />
+            <GoBtn text='See More' onClick={clickSeeMore} />
         </>
     );
 }

@@ -3,6 +3,8 @@ import NavbarB from '../nav/navbarB';
 import capitalize from '../../utils/capitalize';
 import { Link } from 'react-router-dom';
 import './blogHead.css';
+import SocialIcons from '../common/socialicons/socailicon';
+import Subscribe from '../common/socialicons/subscribe';
 
 
 
@@ -65,6 +67,8 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
                     </div>
                 </div >
             </div>
+            <SocialIcons/>
+            <Subscribe/>
         </>
     );
 }

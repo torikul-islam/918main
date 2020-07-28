@@ -3,6 +3,7 @@ import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import capitalize from '../../utils/capitalize';
 import { Link } from 'react-router-dom';
+import './blog.css';
 
 
 
@@ -16,7 +17,7 @@ function BlogSlider({ resource, count, currentPage, pageSize, onPageChange }) {
             <div className='row'>
                 <div className="account-slider">
                     <div className="col-sm-12">
-                        <h3>You may also like.</h3>
+                        <h3>You May Also Like.</h3>
                     </div>
 
                     <div className='tab-index'>
