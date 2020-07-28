@@ -1,16 +1,16 @@
-.form-product button {
+/* .form-product button {
     float: right;
     padding: 12px 14px;
     width: 6%;
-}
-.form-product .form-group {
-    float: left;
-    width: 93%;
-}
-.form-product .form-group input {
-    border: 1px solid #dadada;
-    padding: 25px 20px;
-}
+} */
+/* .form-product .form-group {
+  float: left;
+  width: 93%;
+} */
+/* .form-product .form-group input {
+  border: 1px solid #dadada;
+  padding: 25px 20px;
+} */
 .form-product h4 {
-    font-family: "PlayfairDisplay-Bold";
+  font-family: "PlayfairDisplay-Bold";
 }
