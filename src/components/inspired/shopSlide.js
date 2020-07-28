@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const ShopSlide = ({ data, count }) => {
+const ShopSlide = ({ data, count ,pagename}) => {
     return (
         <div className="post-slide-main">
             <div className="container">
@@ -14,7 +14,9 @@ const ShopSlide = ({ data, count }) => {
                             <div className="image-post-slide">
                                 <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
-                                    <h6>{item.designed_by}</h6>
+                                    <div className={pagename=="inspired"?"image-post-slide-ins":"image-post-slide"}>
+                                        <h6>{item.designed_by}</h6>
+                                    </div>
                                 </Link>
                             </div>
                         </div>

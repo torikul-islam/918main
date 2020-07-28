@@ -116,7 +116,7 @@ function InspiredMore(props) {
         <>
             <HeaderInspired {...props} />
             <TabShop title='Be Inspired.' rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
-            <ShopSlide data={inspired.results.slice(0, 4)} />
+            <ShopSlide data={inspired.results.slice(0, 4)} pagename="inspired" />
 
             <ShopInspired
                 data={inspired.results.slice(4,)}
@@ -126,11 +126,11 @@ function InspiredMore(props) {
                 onPageChange={onPageChange}
             />
 
-            <ShopSlide data={inspired.results.slice(8, 12)} />
+            <ShopSlide data={inspired.results.slice(8, 12)} pagename="inspired" />
             <ShopThreeSlide />
-            <ShopSlide data={inspired.results.slice(12, 16)} />
-            <ShopSlide data={inspired.results.slice(16, 19)} />
-            <ShopSlide data={inspired.results.slice(19, 23)} />
+            <ShopSlide data={inspired.results.slice(12, 16)} pagename="inspired" />
+            <ShopSlide data={inspired.results.slice(16, 19)} pagename="inspired"/>
+            <ShopSlide data={inspired.results.slice(19, 23)} pagename="inspired"/>
 
         </>
     );
