@@ -1,8 +1,8 @@
 import React from 'react';
 import NavbarB from '../nav/navbarB';
-import './blogHead.css';
 import capitalize from '../../utils/capitalize';
 import { Link } from 'react-router-dom';
+import './blogHead.css';
 
 
 
@@ -22,10 +22,10 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
     return (
         <>
             <NavbarB {...rest} />
-            <div div className="blog-area">
+            <div className="blog-area">
                 <div className="container">
                     <div className="row">
-                        {resource && <div div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
+                        {resource && <div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
                                 <h4>{capitalize(resource.title)}</h4>
                             </div>

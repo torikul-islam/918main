@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './learnHeader.css';
+import GoBtn from './common/goBtn';
 
 
 
@@ -18,7 +20,10 @@ const LearnHeader = ({ data }) => {
                                 <h2>{item.title}</h2>
                                 <p>{item.content.substr(0, 120)}</p>
                                 <div className="read-more">
-                                    <button>Learn More</button>
+                                    <Link to={`blog/${item.uuid}/${item.rooms[0]}`}>
+                                        <GoBtn text='Learn More' />
+                                        {/* <button>Learn More </button> */}
+                                    </Link>
                                 </div>
                             </div>
                         )}
