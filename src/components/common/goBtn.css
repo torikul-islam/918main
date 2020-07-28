@@ -9,6 +9,7 @@
 }
 .go-btn {
   text-align: center;
+  padding-bottom: 15px;
 }
 .go-btn button:focus {
   outline: none;

@@ -2,6 +2,7 @@ ul.home-menu {
   list-style: none;
   width: 100%;
   max-width: 100%;
+  position: relative;
 }
 
 ul.home-menu li {
@@ -21,6 +22,19 @@ ul.home-menu li a {
   color: #111111;
   font-size: 18px;
   font-family: "helvetica-light";
+}
+ul.search-container {
+  background: #dadada;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 65px 50px;
+  text-align: left;
+  line-height: 32px;
+  z-index: 999;
+  display: none;
 }
 @media screen and (max-width: 991px) and (min-width: 320px) {
   div.search-float {

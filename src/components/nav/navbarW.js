@@ -38,13 +38,13 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch,
                                 <input className="btn-srachw" type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
                                 <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                             </li>
-                            {searchData && <ul className='search-container'>
-                                {searchData.map((s, i) =>
-                                    <li className="search-item" key={i}>{s.title || s.name}</li>
-                                )}
-                            </ul>}
 
                         </div>
+                        {searchData && <ul className='search-container'>
+                            {searchData.map((s, i) =>
+                                <li className="search-item" key={i}>{s.title || s.name}</li>
+                            )}
+                        </ul>}
                         <div className="logo-width">
                             <li className='logo'>
                                 <Link className="nav-link" to="/" >
