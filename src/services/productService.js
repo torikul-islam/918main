@@ -35,6 +35,17 @@ function getUserProductLike() {
     }
 }
 
+function createProduct(data) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.post('/products/create/', data, {
+            headers: {
+                "Authorization": `Token ${token}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    }
+}
 
 
-export default { getAllProducts, getProductById, getProductByUrl, getProductByPieceId, getUserProductLike, createProductLike }
+export default { getAllProducts, getProductById, getProductByUrl, getProductByPieceId, getUserProductLike, createProductLike, createProduct }
