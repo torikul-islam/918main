@@ -184,7 +184,34 @@ li.menu-item.font-hel .dropdown:hover .dropdown-content {
   background-color: #ffffff00;
 }
 
-.search-container {
+/* .search-container {
   background: #f1f1f1 !important;
   padding: 5px 10px;
+} */
+ul.home-menu li.searchHandle input{
+    width: 85%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: 1.375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dadada;
+    border-radius: .25rem;
+    text-align: left;
+    outline: none;
+}
+
+ul.home-menu li.searchHandle{
+  position: relative;
+  width: 80%;
+}
+ul.home-menu li.searchHandle img {
+  /* position: absolute;
+  right: 10px;
+  top: 13px; */
+  width: 22px;
+  height: auto;
 }

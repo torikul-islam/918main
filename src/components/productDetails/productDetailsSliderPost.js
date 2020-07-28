@@ -52,33 +52,35 @@ function ProductDetailsSliderPost(data) {
 
     const paginateRes = paginate(resource.results, currentPage, pageSize);
     return (
-        <div className="realted-resource container-fluid">
-            <div className="container">
-                <h3 className='related-title'> Related content.</h3>
-                <div className="slide-main">
+        <div className="realted-resourced">
+            <div className="realted-resource container-fluid">
+                <div className="container">
+                    <h3 className='related-title'> Related content.</h3>
+                    <div className="slide-main">
 
-                    <div className="row">
-                        {paginateRes && paginateRes.map(item =>
-                            <div className="col-sm-3" key={item.uuid}>
-                                <div className="image-post-slide">
-                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
-                                        <img src={item.ref_img || ""} alt="" />
-                                        <h6>{capitalize(item.title) || ""}</h6>
-                                    </Link>
-                                    <p>{item.source || ""}</p>
+                        <div className="row">
+                            {paginateRes && paginateRes.map(item =>
+                                <div className="col-sm-3" key={item.uuid}>
+                                    <div className="image-post-slide">
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                            <img src={item.ref_img || ""} alt="" />
+                                            <h6>{capitalize(item.title) || ""}</h6>
+                                        </Link>
+                                        <p>{item.source || ""}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
 
-                        <Pagination
-                            itemsCount={resource.count}
-                            pageSize={pageSize}
-                            currentPage={currentPage}
-                            onPageChange={onPageChange}
-                        />
+                            <Pagination
+                                itemsCount={resource.count}
+                                pageSize={pageSize}
+                                currentPage={currentPage}
+                                onPageChange={onPageChange}
+                            />
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     );

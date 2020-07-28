@@ -6,9 +6,12 @@
 .related-title {
   
   font-family: "PlayfairDisplay-Bold";
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 40px;
+  padding-top: 45px;
 }
-.realted-product .slide-main .row {
+.realted-product .slide-main .row, .realted-resourced .slide-main .row{
   margin-bottom: 0 !important;
+}
+.realted-resourced{
+  background-color: #ebeae8;
 }

@@ -34,8 +34,8 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch,
                 <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                     <ul className="home-menu">
                         <div className="search-float">
-                            <li className="search">
-                                <input type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
+                            <li className="searchHandle">
+                                <input className="btn-srachw" type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
                                 <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                             </li>
                             {searchData && <ul className='search-container'>

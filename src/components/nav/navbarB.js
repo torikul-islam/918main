@@ -28,8 +28,8 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, handl
                         <ul className="home-menu">
                             <div style={search == "null" ? { visibility: "hidden" } : { visibility: "visible" }}>
                                 <div className="search-float">
-                                    <li className="search">
-                                        <input type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
+                                    <li className="searchHandle">
+                                        <input className="btn-srach" type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
                                         <img src={require('../../Asset/Images/search.png')} alt="search.png" />
                                     </li>
                                     {searchData && <ul className='search-container'>
