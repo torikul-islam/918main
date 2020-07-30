@@ -227,7 +227,7 @@ ul.home-menu li.searchHandle input {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #dadada;
+  border: none;
   /* border-radius: 0.25rem; */
   border-top-right-radius:0.25rem;
   border-bottom-right-radius: 0.25rem ;
@@ -244,8 +244,8 @@ ul.home-menu li.searchHandle {
   width: 80%;
 }
 ul.home-menu li.searchHandle img {
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   /* margin-right: 7px; */
   /* margin-top: 12px; */
   float: left;
@@ -254,4 +254,5 @@ ul.home-menu li.searchHandle img {
   padding: 13px 13px;
   border-bottom-left-radius: 0.25rem;
   border-top-left-radius:0.25rem ;
+  
 }
