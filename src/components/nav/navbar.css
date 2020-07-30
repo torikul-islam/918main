@@ -228,7 +228,9 @@ ul.home-menu li.searchHandle input {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #dadada;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
+  border-top-right-radius:0.25rem;
+  border-bottom-right-radius: 0.25rem ;
   text-align: left;
   outline: none;
   display: none;
@@ -242,10 +244,14 @@ ul.home-menu li.searchHandle {
   width: 80%;
 }
 ul.home-menu li.searchHandle img {
-  width: 22px;
-  height: auto;
-  margin-right: 7px;
-  margin-top: 12px;
+  width: 45px;
+  height: 45px;
+  /* margin-right: 7px; */
+  /* margin-top: 12px; */
   float: left;
   cursor: pointer;
+  background: #fff;
+  padding: 13px 13px;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius:0.25rem ;
 }
