@@ -93,24 +93,25 @@ const Addproduct = (props) => {
 						<NavbarAdmin />
 						<div className="form-product">
 							<h4>Add Products</h4>
-							<div className="forminput">
-							{message && <p>{message}</p>}
-							<form onSubmit={handleSubmit}>
-								{errors.response && <p style={{ color: 'red' }}>{errors.response}</p>}
-								<div className='col-sm-6'>
-									<Input name='name' type='text' label='Name' onChange={onChange} value={name || ''} error={errors['name']} />
-									<Input name='ref_url' type='text' label='Ref. URL' onChange={onChange} value={ref_url || ''} error={errors['ref_url']} />
-									<Input name='image_one_url' type='text' label='Image One URL' onChange={onChange} value={image_one_url || ''} error={errors['image_one_url']} />
-									<Input name='price' type='text' label='Price' onChange={onChange} value={price || ''} error={errors['price']} />
-									<Input name='retailer' type='text' label='Retailer' onChange={onChange} value={retailer || ''} error={errors['retailer']} />
-									<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
-									<Input name='tier' type='text' label='Tier' onChange={onChange} value={tier || ''} error={errors['tier']} />
-									<button type="submit" className="btn btn-primary">Submit</button>
-								</div>
-
-							</form>
+							<div >
+								{errors.response && <h6 style={{ color: 'red' }}>{errors.response}</h6>}
 							</div>
-							
+							<div className="forminput">
+								<form onSubmit={handleSubmit}>
+									<div className='col-sm-6'>
+										<Input name='name' type='text' label='Name' onChange={onChange} value={name || ''} error={errors['name']} />
+										<Input name='ref_url' type='text' label='Ref. URL' onChange={onChange} value={ref_url || ''} error={errors['ref_url']} />
+										<Input name='image_one_url' type='text' label='Image One URL' onChange={onChange} value={image_one_url || ''} error={errors['image_one_url']} />
+										<Input name='price' type='text' label='Price' onChange={onChange} value={price || ''} error={errors['price']} />
+										<Input name='retailer' type='text' label='Retailer' onChange={onChange} value={retailer || ''} error={errors['retailer']} />
+										<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
+										<Input name='tier' type='text' label='Tier' onChange={onChange} value={tier || ''} error={errors['tier']} />
+										<button type="submit" className="btn btn-primary">Submit</button>
+									</div>
+
+								</form>
+							</div>
+
 						</div>
 					</div>
 				</div>
