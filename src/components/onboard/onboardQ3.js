@@ -31,7 +31,7 @@ const OnboardQ3 = (props) => {
                                 {filterRoom && filterRoom.map((item, i) =>
                                     <div className='col-sm-3' key={i}>
                                         <div className='onboard-item'>
-                                            <img src={item.ref_img} alt="" onClick={() => clickPieces(item)} />
+                                            <img className='pointer' src={item.ref_img} alt="" onClick={() => clickPieces(item)} />
                                             <h6 className={`text-center ${selectedPieces.some(x => x === item.uuid) ? 'active' : ''}`}>{item.designed_by}</h6>
                                         </div>
                                     </div>

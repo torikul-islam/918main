@@ -4,11 +4,15 @@ import InspirationDetailsProduct from './inspirationDetailsProduct';
 import InspirationAlsoLike from './inspirationAlsoLike';
 import inspiredService from '../../services/inspiredService';
 import NavbarB from '../nav/navbarB'
+import Modal from '../common/modal/modal';
+import Signup from '../auth/signup';
+import Login from '../auth/login';
 import './inspirationDetails.css';
 
 
 
 function InspirationDetails(props) {
+    const [modal, setModal] = useState({ isOpen: false, name: null });
     const [inspired, setInspired] = useState([])
     const [inspirationLike, setInspirationLike] = useState([]);
 
@@ -32,7 +36,7 @@ function InspirationDetails(props) {
                 setInspirationLike(data)
             }
         })()
-    }, []);
+    }, [modal]);
 
 
     async function clickInspirationLike(item) {
@@ -43,8 +47,17 @@ function InspirationDetails(props) {
             const { data } = await inspiredService.createInspirationLike(form);
             setInspirationLike([...inspirationLike, { uuid: null, inspiration: item }]);
         }
-
     }
+
+    function openModal(name) {
+        setModal({ isOpen: true, name: name })
+    };
+
+    function closeModal() {
+        setModal({ isOpen: false, name: null })
+    };
+
+    const { isOpen, name } = modal;
 
     return (
         <>
@@ -54,10 +67,15 @@ function InspirationDetails(props) {
                 inspirationLike={inspirationLike}
                 clickInspirationLike={clickInspirationLike}
                 inspired={inspired}
+                openModal={openModal}
             />
 
             <InspirationDetailsProduct {...props} />
             <InspirationAlsoLike {...props} />
+
+            {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
+
         </>
     );
 }

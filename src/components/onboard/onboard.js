@@ -98,6 +98,8 @@ class Onboard extends Component {
 
     clickImage = (item) => {
         const ids = [...this.state.styleIds];
+        if (ids.length >= 3) return;
+
         const index = ids.findIndex(x => x === item.pk);
         if (index === -1) {
             ids.push(item.pk);
@@ -126,6 +128,9 @@ class Onboard extends Component {
                 {boardNo === 1 && <OnboardQ1 errors={errors} onCheck={this.onCheck} rooms={rooms} submitCheckbox={this.submitCheckbox} />}
                 {boardNo === 2 && <OnboardQ2 {...this.props} errors={errors} selectedImage={styleIds} clickImage={this.clickImage} openBoard={this.openBoard} styles={styles} submitStyle={this.submitStyle} />}
                 {boardNo === 3 && <OnboardQ3  {...this.props} clickPieces={this.clickPieces} selectedPieces={selectedPieces} openBoard={this.openBoard} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
+
+
+
             </>
         );
     }

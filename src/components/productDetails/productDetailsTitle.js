@@ -4,7 +4,7 @@ import './products.css';
 
 
 
-const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProductLike }) => {
+const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProductLike, openModal }) => {
     if (product) {
         console.log("Porduct props", product);
         const isLike = productLike.some(el => el.product.uuid === product.uuid);
@@ -14,6 +14,9 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
             product['is_like'] = false
         }
     }
+
+    const token = localStorage.getItem('token');
+
     return (
         <div className='container-fluid mb-5'>
             <div className='container' >
@@ -32,24 +35,34 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                         </div>
                     </div>
                     <div className="col-sm-6">
-                        <div className="text-fav text-center">
+                        {!token ? (<div className='text-fav text-center'>
                             <h6>{product.retailer}</h6>
                             <h4>{product.name}</h4>
                             <p>${product.price}</p>
-                            <ul className="menu-name">
-                                <li className="select_design"><select name="cars" id="cars">
-                                    <option value="Add to Board">Add to Board</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select></li>
-                                <li className="saveSection">
-                                    <GoBtn text='Save' />
-                                </li>
-                            </ul>
-                            <GoBtn text='Add to Shopping List' onClick={() => addShoppingCard(product)} />
-                        </div>
 
+                            <h6>Want to add this item to a moodboard ?</h6>
+                            <GoBtn text="Sign Up" type='button' onClick={() => openModal('signup')} />
+                        </div>)
+                            : (
+                                <div className="text-fav text-center">
+                                    <h6>{product.retailer}</h6>
+                                    <h4>{product.name}</h4>
+                                    <p>${product.price}</p>
+                                    <ul className="menu-name">
+                                        <li className="select_design"><select name="cars" id="cars">
+                                            <option value="Add to Board">Add to Board</option>
+                                            <option value="saab">Saab</option>
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </select></li>
+                                        <li className="saveSection">
+                                            <GoBtn text='Save' />
+                                        </li>
+                                    </ul>
+                                    <GoBtn text='Add to Shopping List' onClick={() => addShoppingCard(product)} />
+                                </div>
+                            )
+                        }
                     </div>
                 </div>}
             </div>

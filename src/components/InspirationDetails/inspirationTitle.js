@@ -5,7 +5,7 @@ import './inspirationTitle.css';
 
 
 
-function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
+function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, openModal }) {
 
     if (inspired.length > 0) {
         const isLike = inspirationLike.some(el => el.inspiration.uuid === inspired[0].uuid);
@@ -15,6 +15,8 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
             inspired[0]['is_like'] = false
         }
     }
+
+    const token = localStorage.getItem('token');
 
     return (
         <div className='container-fluid mb-5'>
@@ -35,21 +37,29 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike }) {
                             </div>
                         </div>
                         <div className="col-sm-8">
-                            <div className="text-fav text-center">
+                            {!token ? (<div className='text-fav text-center'>
                                 <span>Designed by </span>
                                 <h4>{item.designed_by}</h4>
-                                <ul className="menu-name">
-                                    <li className="select_design"><select name="cars" id="cars">
-                                        <option value="Add to Board">Add to Board</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select></li>
-                                    <li className="saveSection">
-                                        <GoBtn text='save' />
-                                    </li>
-                                </ul>
-                            </div>
+                                <h6>Want to add this item to a moodboard ?</h6>
+                                <GoBtn text="Sign Up" type='button' onClick={() => openModal('signup')} />
+                            </div>) :
+                                (<div className="text-fav text-center">
+                                    <span>Designed by </span>
+                                    <h4>{item.designed_by}</h4>
+                                    <ul className="menu-name">
+                                        <li className="select_design"><select name="cars" id="cars">
+                                            <option value="Add to Board">Add to Board</option>
+                                            <option value="saab">Saab</option>
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </select></li>
+                                        <li className="saveSection">
+                                            <GoBtn text='save' />
+                                        </li>
+                                    </ul>
+                                </div>)
+                            }
+
                         </div>
                     </div>
                 )}
