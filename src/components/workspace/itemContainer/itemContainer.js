@@ -5,7 +5,7 @@ import './itemContainer.css';
 
 function ItemContainer(props) {
     const { openModal, closeModal, clickFilterImage } = props;
-
+    const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
 
     return (
         <div className="titleInspire">
@@ -14,9 +14,8 @@ function ItemContainer(props) {
                     <h4>Be Inspire. </h4>
                     <div>
                         <button className="filter" onClick={() => openModal('inspired')}>
-                            <h6>Filters</h6>
+                            <h6>Filters {downarrow}</h6>
                         </button>
-
                     </div>
                     <div>
                         <div className="post-slide-main-item">
@@ -35,11 +34,11 @@ function ItemContainer(props) {
                         <Toggleswitch className="col-sm-4" />
                         <div className="col-sm-8">
                             <h4 >Shop.</h4>
-                    <div>
-                        <button className="filter" onClick={() => openModal('shop')}>
-                            <h6>Filters</h6></button>
+                            <div>
+                                <button className="filter shopfilter" onClick={() => openModal('shop')}>
+                                    <h6>Filters {downarrow}</h6></button>
 
-                    </div>
+                            </div>
                         </div>
                     </div>
                     <div className="post-slide-main-item">
@@ -54,7 +53,7 @@ function ItemContainer(props) {
                                 </div>
                             </div>
                             <div className="col-sm-6">
-                                <div className="workimage-shop">
+                                <div className="workimage">
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop2.png')} alt="ins1.png" />
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop4.png')} alt="ins2.png" />
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop6.png')} alt="ins3.png" />
