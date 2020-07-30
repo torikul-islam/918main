@@ -33,5 +33,16 @@ function getUserInspirationLike() {
 }
 
 
+function createInspiration(data) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.post('/inspirations/create/', data, {
+            headers: {
+                "Authorization": `Token ${token}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    }
+}
 
-export default { getAllInspired, getInspiredByRoomOrStyleId, getInspirationByUrl, getInspirationByRoomId, createInspirationLike, getUserInspirationLike }
+export default { getAllInspired, getInspiredByRoomOrStyleId, getInspirationByUrl, getInspirationByRoomId, createInspirationLike, createInspiration, getUserInspirationLike }

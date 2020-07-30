@@ -11,7 +11,7 @@ import productService from '../../../services/productService';
 const Addproduct = (props) => {
 	const [data, setData] = useState({ name: '', ref_url: '', image_one_url: '', price: '', retailer: '', colors: '', tier: '' });
 	const [errors, setErrors] = useState({});
-	const [success, setSuccess] = useState(null);
+	const [message, setMessage] = useState(null);
 
 
 
@@ -62,7 +62,7 @@ const Addproduct = (props) => {
 
 		try {
 			const { data: response } = await productService.createProduct(data);
-			setSuccess('Successfully submitted product!')
+			setMessage('Successfully submitted product!')
 			setData({ name: '', ref_url: '', image_one_url: '', price: '', retailer: '', colors: '', tier: '' });
 		} catch (ex) {
 			if (ex.response && ex.response.status === 403) {
@@ -93,7 +93,7 @@ const Addproduct = (props) => {
 						<NavbarAdmin />
 						<div className="form-product">
 							<h4>Add Products</h4>
-							{success && <p>{success}</p>}
+							{message && <p>{message}</p>}
 							<form onSubmit={handleSubmit}>
 								{errors.response && <p style={{ color: 'red' }}>{errors.response}</p>}
 								<div className='col-sm-6'>
