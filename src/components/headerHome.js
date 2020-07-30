@@ -9,22 +9,13 @@ import './headerHome.css';
 
 
 
-
-
-const HeaderHome = ({ openModal, data, searchData, openMenu, handleOpenMenu, clickCard, onChangeSearch }) => {
-
+const HeaderHome = (props) => {
+    const { data } = props;
     return (
         <>
             <div className="home-area">
                 <div className='container-fluid' >
-                    <NavbarW
-                        searchData={searchData}
-                        openMenu={openMenu}
-                        handleOpenMenu={handleOpenMenu}
-                        openModal={openModal}
-                        clickCard={clickCard}
-                        onChangeSearch={onChangeSearch}
-                    />
+                    <NavbarW {...props} />
                 </div>
 
                 <div className="container">

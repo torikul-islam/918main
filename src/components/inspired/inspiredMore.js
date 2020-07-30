@@ -123,11 +123,18 @@ function InspiredMore(props) {
             setSearchData([])
         }
     }
+
+    function clickSearchItem(item) {
+        props.history.push(`inspired-details/${item.uuid}/${item.rooms[0]}`);
+    }
+
     return (
         <>
             <HeaderInspired {...props}
                 onChangeSearch={onChangeSearch}
-                searchData={searchData} />
+                searchData={searchData}
+                clickSearchItem={clickSearchItem}
+            />
             <TabShop title='Be Inspired.' rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
             <ShopSlide data={inspired.results.slice(0, 4)} pagename="inspired" />
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onChangeSearch, searchData }) {
+function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onChangeSearch, clickSearchItem, searchData }) {
     const [openSearch, setOpenSearch] = useState(false)
 
     const user = localStorage.getItem('token');
@@ -13,7 +13,6 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
     }
 
     function handleSearch() {
-        console.log('click');
         setOpenSearch(!openSearch);
     }
 
@@ -42,7 +41,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                     </li>
                                     {searchData.length > 0 && <ul className='search-container'>
                                         {searchData.map((s, i) =>
-                                            <li className="search-item" key={i}>{s.title || s.name || s.designed_by}</li>
+                                            <li onClick={() => clickSearchItem(s)} className="search-item pointer" key={i}>{s.title || s.name || s.designed_by}</li>
                                         )}
                                     </ul>}
                                 </div>

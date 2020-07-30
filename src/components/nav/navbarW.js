@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../nav/navbar.css'
 
 
 
 
-function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearch, searchData }) {
+function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearch, searchData, clickSearchItem }) {
     const [openSearch, setOpenSearch] = useState(false)
 
     const user = localStorage.getItem('token');
@@ -42,7 +42,7 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                         </div>
                         {searchData.length > 0 && <ul className='search-container'>
                             {searchData.map((s, i) =>
-                                <li className="search-item" key={i}>{s.title || s.name || s.designed_by}</li>
+                                <li onClick={() => clickSearchItem(s)} className="search-item pointer" key={i}>{s.title || s.name || s.designed_by}</li>
                             )}
                         </ul>}
                         <div className="logo-width">
