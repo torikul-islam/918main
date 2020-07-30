@@ -36,7 +36,7 @@ const ShopModal = ({ product, products, closeModal }) => {
     }
     return (
         <div className='container'>
-            <div className='cross-icon' onClick={closeModal}>
+            <div className='cross-icon crossModal' onClick={closeModal}>
                 <img src={require('../../Asset/Icons/cross.png')} alt="" />
             </div>
             <div className='container-fluid mb-5 bg-white'>

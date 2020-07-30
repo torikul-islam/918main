@@ -198,6 +198,9 @@ h5 {
 .shop-furniture .list-furniture {
   margin-top: 10px;
 }
+.cross-icon.crossModal img {
+  margin-top: 70px;
+}
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .colorStyle ul li {
     margin-left: 10px !important;
