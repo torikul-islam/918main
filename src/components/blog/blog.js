@@ -14,7 +14,6 @@ function Blog(props) {
     const [resourceLike, setResourceLike] = useState([]);
     const [product, setProduct] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-    const [searchData, setSearchData] = useState([])
 
 
 
@@ -82,12 +81,7 @@ function Blog(props) {
     }
 
     function onChangeSearch(e) {
-        if (e.target.value) {
-            const filter = resource.results.filter(el => el.source.toLowerCase().includes(e.target.value.toLowerCase()) || el.title.toLowerCase().includes(e.target.value.toLowerCase()));
-            setSearchData(filter);
-        } else {
-            setSearchData([])
-        }
+
     }
 
     return (
@@ -95,7 +89,7 @@ function Blog(props) {
             <BlogHead
                 {...props}
                 onChangeSearch={onChangeSearch}
-                searchData={searchData}
+                searchData={[]}
                 clickResourceLike={clickResourceLike}
                 resourceLike={resourceLike}
                 resource={resource.results.find(x => x.uuid === props.match.params.id)}

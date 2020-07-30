@@ -91,9 +91,16 @@ function Shop(props) {
         }
     }
 
+    function clickSearchItem(item) {
+        props.history.push(`/product-details/${item.uuid}`)
+    }
+
     return (
         <>
-            <HeaderShop {...props} onChangeSearch={onChangeSearch} searchData={searchData} />
+            <HeaderShop {...props}
+                clickSearchItem={clickSearchItem}
+                onChangeSearch={onChangeSearch}
+                searchData={searchData} />
             <TabShop
                 onItemSelect={onItemSelect}
                 selectedItem={selectedItem}

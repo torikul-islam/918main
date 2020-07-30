@@ -54,12 +54,23 @@ function ProductDetails(props) {
     function closeModal() {
         setModal({ isOpen: false, name: null })
     };
+    function clickSearchItem(item) {
+
+    }
+    function onChangeSearch(item) {
+
+    }
 
     const { isOpen, name } = modal;
 
     return (
         <>
-            <NavbarB  {...props} search="null" />
+            <NavbarB  {...props}
+                searchData={[]}
+                clickSearchItem={clickSearchItem}
+                onChangeSearch={onChangeSearch}
+                search="null"
+            />
             <ProductDetailsTitle
                 {...props}
                 clickProductLike={clickProductLike}

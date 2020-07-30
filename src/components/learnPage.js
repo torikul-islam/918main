@@ -125,10 +125,15 @@ function LearnPage(props) {
         }
     }
 
+    function clickSearchItem(item) {
+        props.history.push(`/blog/${item.uuid}/${item.rooms[0]}`)
+    }
+
     return (
         <>
             <NavbarB
                 {...props}
+                clickSearchItem={clickSearchItem}
                 onChangeSearch={onChangeSearch}
                 searchData={searchData}
             />

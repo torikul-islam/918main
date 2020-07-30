@@ -56,12 +56,18 @@ function InspirationDetails(props) {
     function closeModal() {
         setModal({ isOpen: false, name: null })
     };
+    function onChangeSearch(item) {
+
+    }
 
     const { isOpen, name } = modal;
 
     return (
         <>
-            <NavbarB  {...props} />
+            <NavbarB  {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={[]}
+            />
 
             <InspirationTitle
                 inspirationLike={inspirationLike}
