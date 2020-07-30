@@ -7,7 +7,6 @@ import capitalize from '../utils/capitalize';
 
 const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
     return (
-
         <div className='homecreate'>
             <div className="container">
                 <div className="list-furniture">
