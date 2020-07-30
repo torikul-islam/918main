@@ -7,27 +7,24 @@ import capitalize from '../utils/capitalize';
 
 const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
     return (
-
         <div className='homecreate'>
             <div className="container">
                 <div className="list-furniture">
                     <ul>
                         <li className="form-group col-sm-2">
                             <select className="form-control" onChange={(e) => onSelectOption(e, 'rooms')}>
-                                <option value="">Room</option>
+                                <option value="">ROOM</option>
                                 {rooms.map((r, i) =>
-                                    <option key={i} id={r.pk} value={r.pk}>{r.name}</option>
+                                    <option key={i} id={r.pk} value={r.pk}>{r.name.toUpperCase()}</option>
                                 )}
-
                             </select>
                         </li>
                         <li className="form-group col-sm-2">
                             <select className="form-control" onChange={(e) => onSelectOption(e, 'styles')}>
-                                <option value="">Style</option>
+                                <option value="">STYLE</option>
                                 {styles.map((s, i) =>
-                                    <option key={i} id={s.pk} value={s.pk}>{s.name}</option>
+                                    <option key={i} id={s.pk} value={s.pk}>{s.name.toUpperCase()}</option>
                                 )}
-
                             </select>
                         </li>
                         <li>BUYER’S GUIDE</li>

@@ -65,6 +65,6 @@ span.active {
   float: left;
 }
 
-.active {
+.onboard-item > .active {
   color: red;
 }

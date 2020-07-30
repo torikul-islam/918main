@@ -15,9 +15,9 @@ const TabShop = ({ title, rooms, styles, onSelectOption }) => {
                         <ul>
                             <li className="form-group col-sm-2">
                                 <select className="form-control" onChange={(e) => onSelectOption(e, 'rooms')}>
-                                    <option value="">Room</option>
+                                    <option value="">ROOM</option>
                                     {rooms.map((r, i) =>
-                                        <option key={i} id={r.pk} value={r.pk}>{r.name}</option>
+                                        <option key={i} id={r.pk} value={r.pk}>{r.name.toUpperCase()}</option>
                                     )}
 
                                 </select>
@@ -25,9 +25,9 @@ const TabShop = ({ title, rooms, styles, onSelectOption }) => {
 
                             <li className="form-group col-sm-2">
                                 <select className="form-control" id="styles" onChange={(e) => onSelectOption(e, 'styles')} >
-                                    <option value="">Style</option>
+                                    <option value="">STYLE</option>
                                     {styles.map((s, i) =>
-                                        <option key={i} id={s.pk} value={s.pk}>{s.name}</option>
+                                        <option key={i} id={s.pk} value={s.pk}>{s.name.toUpperCase()}</option>
                                     )}
 
                                 </select>
