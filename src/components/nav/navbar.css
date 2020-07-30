@@ -30,7 +30,7 @@ ul.search-container {
   left: 0;
   right: 0;
   width: 100%;
-  padding: 65px 50px;
+  padding: 40px 50px;
   text-align: left;
   line-height: 32px;
   z-index: 999;
@@ -255,4 +255,7 @@ ul.home-menu li.searchHandle img {
   border-bottom-left-radius: 0.25rem;
   border-top-left-radius:0.25rem ;
   
+}
+ul.home-menu ul.search-container li.search-item{
+  display: block;
 }
