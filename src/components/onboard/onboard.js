@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import OnboardQ1 from './onboardQ1';
 import OnboardQ2 from './onboardQ2';
 import OnboardQ3 from './onboardQ3';
+import inspiredService from '../../services/inspiredService';
 import roomService from '../../services/roomServices';
 import styleServices from '../../services/styleServices';
 import roomServices from '../../services/roomServices';
@@ -13,7 +14,9 @@ class Onboard extends Component {
         super(props);
         this.state = {
             rooms: [],
+            styleIds: [],
             filterRoom: [],
+            selectedPieces: [],
             styles: [],
             errors: {},
             boardNo: 1,
@@ -58,10 +61,17 @@ class Onboard extends Component {
 
     submitStyle = async (e) => {
         e.preventDefault();
-        const { checkBoxes, errors } = this.state;
+        const { checkBoxes, errors, styleIds } = this.state;
+        if (styleIds.length === 0) {
+            errors['styles'] = 'Please! select at least one image.'
+            this.setState({ errors: errors });
+            return;
+        } else {
+            errors['styles'] = null;
+        }
 
         try {
-            const { data } = await roomServices.getRoomsByIds(checkBoxes.join(','));
+            const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')}&style_ids=${styleIds.join(',')}`);
             this.setState({ filterRoom: data.results, boardNo: 3 });
         } catch (ex) {
             errors['style'] = 'Failed to get styles';
@@ -86,14 +96,36 @@ class Onboard extends Component {
         this.setState({ boardNo: no, checkBoxes: [] })
     }
 
+    clickImage = (item) => {
+        const ids = [...this.state.styleIds];
+        const index = ids.findIndex(x => x === item.pk);
+        if (index === -1) {
+            ids.push(item.pk);
+        } else {
+            ids.splice(index, 1)
+        }
+        this.setState({ styleIds: ids });
+    }
+    clickPieces = (item) => {
+        const ids = [...this.state.selectedPieces];
+        console.log(ids);
+        const index = ids.findIndex(x => x === item.uuid);
+        if (index === -1) {
+            ids.push(item.uuid);
+        } else {
+            ids.splice(index, 1)
+        }
+        this.setState({ selectedPieces: ids });
+    }
+
     render() {
-        const { rooms, boardNo, filterRoom, errors, styles } = this.state;
+        const { rooms, boardNo, filterRoom, errors, styles, styleIds, selectedPieces } = this.state;
 
         return (
             <>
                 {boardNo === 1 && <OnboardQ1 errors={errors} onCheck={this.onCheck} rooms={rooms} submitCheckbox={this.submitCheckbox} />}
-                {boardNo === 2 && <OnboardQ2 {...this.props} openBoard={this.openBoard} styles={styles} submitStyle={this.submitStyle} />}
-                {boardNo === 3 && <OnboardQ3  {...this.props} openBoard={this.openBoard} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
+                {boardNo === 2 && <OnboardQ2 {...this.props} errors={errors} selectedImage={styleIds} clickImage={this.clickImage} openBoard={this.openBoard} styles={styles} submitStyle={this.submitStyle} />}
+                {boardNo === 3 && <OnboardQ3  {...this.props} clickPieces={this.clickPieces} selectedPieces={selectedPieces} openBoard={this.openBoard} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
             </>
         );
     }

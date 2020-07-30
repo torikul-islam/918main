@@ -21,8 +21,8 @@ const BoardName = (props) => {
         if (name.trim() === '') {
             setError("Name filed can't be empty!")
         } else {
-            localStorage.setItem('boardName', name)
-            props.openModal('createBoard')
+            localStorage.setItem('boardName', name);
+            window.location = '/workspace';
         }
     };
 

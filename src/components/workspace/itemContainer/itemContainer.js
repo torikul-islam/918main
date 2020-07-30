@@ -36,7 +36,7 @@ function ItemContainer(props) {
                         <div className="col-sm-8">
                             <h4 >Shop.</h4>
                     <div>
-                        <button className="filter shopfilter" onClick={() => openModal('shop')}>
+                        <button className="filter" onClick={() => openModal('shop')}>
                             <h6>Filters</h6></button>
 
                     </div>
