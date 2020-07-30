@@ -115,6 +115,7 @@ div.estimateTotal {
 .cart-item{
   margin-bottom: 8px;
   margin-top: 8px;
+  border-bottom: 1px solid #dadada;
 }
 .Shopping-text{
   margin-top: 12px;
