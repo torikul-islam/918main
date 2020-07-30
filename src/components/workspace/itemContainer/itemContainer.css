@@ -59,9 +59,9 @@
   margin: auto;
   background: transparent;
   border: none;
-  background-image: url(../../../Asset//Images/arrow-down.png);
+  /* background-image: url(../../../Asset/Images/arrow-down.png);
   background-repeat: no-repeat;
-  background-position: 174px 8px;
+  background-position: 174px 8px; */
   width: 100%;
   background-size: 10px;
   outline: none;
