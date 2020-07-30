@@ -5,7 +5,7 @@ import './onboardQ2.css';
 
 
 const OnboardQ2 = (props) => {
-    const { submitStyle, styles, openBoard } = props
+    const { submitStyle, styles, openBoard, clickImage, selectedImage, errors } = props
 
     return (
         <div className='container'>
@@ -25,15 +25,15 @@ const OnboardQ2 = (props) => {
                         <h2>Which images best represent your style?</h2>
                         <p> (Choose up to 3. Don't get stuck here! If you're unsure, we can help you figure it out later!)</p>
                     </div>
-
+                    {errors['styles'] && <p className='ck-error'>{errors['styles']}</p>}
                     <form onSubmit={submitStyle}>
                         <div className='row my-4 width_fixed'>
                             <div className='row'>
                                 {styles && styles.map((item, i) =>
                                     <div className='col-sm-3' key={i}>
-                                        <div className='onboard-item text-center'>
-                                            <img src={item.ref_img} alt="" />
-                                            <h6 className="text-center">{item.name}</h6>
+                                        <div className={`onboard-item text-center `} >
+                                            <img src={item.ref_img} className="pointer" alt="" onClick={() => clickImage(item)} />
+                                            <h6 className={`text-center ${selectedImage.some(x => x === item.pk) ? 'active' : ''}`}>{item.name}</h6>
                                         </div>
                                     </div>
                                 )}
