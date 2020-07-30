@@ -22,7 +22,6 @@ const LearnHeader = ({ data }) => {
                                 <div className="read-more">
                                     <Link to={`blog/${item.uuid}/${item.rooms[0]}`}>
                                         <GoBtn text='Learn More' />
-                                        {/* <button>Learn More </button> */}
                                     </Link>
                                 </div>
                             </div>
