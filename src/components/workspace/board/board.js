@@ -13,7 +13,9 @@ const Board = props => {
                     </ul>
                 </div>
                 <div className="middle-body"></div>
-                <div className="bottom-icons">
+                
+            </div>
+            <div className="bottom-icons">
                     <ul>
                         <li><img src={require('../../../Asset/Images/copypast.png')} alt="copypast.png" /></li>
                         <li><img src={require('../../../Asset/Images/delete.png')} alt="delete.png" /></li>
@@ -21,7 +23,6 @@ const Board = props => {
                         <li><img src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
                     </ul>
                 </div>
-            </div>
         </div>
     );
 };
