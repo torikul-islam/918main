@@ -12,9 +12,17 @@
   padding: 25px 20px;
 }
 .form-product h4 {
-  font-family: "PlayfairDisplay-Bold";
+  margin-bottom: 30px;
+}
+.forminput {
+  clear: both;
 }
 
 .form-resource label{
 font-family: "Helvetica";
+}
+.forminput .form-group input {
+  padding: 0 0 !important;
+  margin-bottom: 10px !important;
+  height: 25px;
 }

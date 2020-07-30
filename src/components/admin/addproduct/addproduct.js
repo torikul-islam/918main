@@ -98,17 +98,20 @@ const Addproduct = (props) => {
 							</div>
 							<div className="forminput">
 								<form onSubmit={handleSubmit}>
-									<div className='col-sm-6'>
-										<Input name='name' type='text' label='Name' onChange={onChange} value={name || ''} error={errors['name']} />
-										<Input name='ref_url' type='text' label='Ref. URL' onChange={onChange} value={ref_url || ''} error={errors['ref_url']} />
-										<Input name='image_one_url' type='text' label='Image One URL' onChange={onChange} value={image_one_url || ''} error={errors['image_one_url']} />
-										<Input name='price' type='text' label='Price' onChange={onChange} value={price || ''} error={errors['price']} />
-										<Input name='retailer' type='text' label='Retailer' onChange={onChange} value={retailer || ''} error={errors['retailer']} />
-										<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
-										<Input name='tier' type='text' label='Tier' onChange={onChange} value={tier || ''} error={errors['tier']} />
-										<button type="submit" className="btn btn-primary">Submit</button>
+									<div className="row">
+										<div className='col-sm-10'>
+											<Input name='name' type='text' label='Name' onChange={onChange} value={name || ''} error={errors['name']} />
+											<Input name='ref_url' type='text' label='Ref. URL' onChange={onChange} value={ref_url || ''} error={errors['ref_url']} />
+											<Input name='image_one_url' type='text' label='Image One URL' onChange={onChange} value={image_one_url || ''} error={errors['image_one_url']} />
+											<Input name='price' type='text' label='Price' onChange={onChange} value={price || ''} error={errors['price']} />
+											<Input name='retailer' type='text' label='Retailer' onChange={onChange} value={retailer || ''} error={errors['retailer']} />
+											<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
+											<Input name='tier' type='text' label='Tier' onChange={onChange} value={tier || ''} error={errors['tier']} />
+										</div>
+										<div className="col-sm-12">
+											<button type="submit" className="btn btn-primary">Submit</button>
+										</div>
 									</div>
-
 								</form>
 							</div>
 
