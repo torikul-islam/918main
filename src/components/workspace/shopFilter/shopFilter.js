@@ -28,7 +28,7 @@ function ShopFilter(props) {
                                     <li>{removeIcon}Black</li>
                                 </ul>
                             </div>
-                            {/* <div className="col-sm-12">
+                            <div className="col-sm-12">
                                 <div className="productfurniture">
                                     <h5>Products</h5>
                                     <ul>
@@ -40,8 +40,8 @@ function ShopFilter(props) {
                                     </ul>
                                 </div>
                                 <hr />
-                            </div> */}
-                            {/* <div className="category-list">
+                            </div>
+                            <div className="category-list">
                                 <ul className="list-categroy-shop">
                                     <li><button>Living Room</button></li>
                                     <li><button>Dining Room</button></li>
@@ -54,7 +54,7 @@ function ShopFilter(props) {
                                     <li><button>Kids’ Room</button></li>
                                 </ul>
                                 <hr />
-                            </div> */}
+                            </div>
 
                             <div>
                                 <div className="range-slider">
