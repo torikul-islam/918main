@@ -53,7 +53,7 @@ function ItemContainer(props) {
                                 </div>
                             </div>
                             <div className="col-sm-6">
-                                <div className="workimage">
+                                <div className="workimage-shop">
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop2.png')} alt="ins1.png" />
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop4.png')} alt="ins2.png" />
                                     <img onClick={() => clickFilterImage('shopImage', {})} src={require('../../../Asset/Images/shop6.png')} alt="ins3.png" />
