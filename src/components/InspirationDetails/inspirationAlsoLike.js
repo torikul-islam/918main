@@ -50,7 +50,7 @@ function InspirationAlsoLike() {
     return (
         <div className='container'>
             <div className='row'>
-                <div className="account-slider">
+                <div className="account-slider-ins-dtl">
                     <div className="col-sm-12">
                         <h3>You may also like.</h3>
                     </div>

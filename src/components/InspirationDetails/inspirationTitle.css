@@ -50,7 +50,7 @@ select#cars:focus {
   color: #030303;
   font-size: 30pt;
   font-family: "PlayfairDisplay-Bold";
-  margin: 5px 0 15px;
+  margin: 15px 0 30px;
 }
 .text-fav span {
   color: #4f4f4f;
@@ -65,4 +65,8 @@ li.saveSection .learn-more button {
 }
 .text-fav ul.menu-name li.saveSection {
   margin-left: -30px;
+}
+.inspire-ttl{
+margin-top: auto;
+margin-bottom: auto;
 }

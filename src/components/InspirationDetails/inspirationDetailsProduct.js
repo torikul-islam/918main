@@ -47,9 +47,10 @@ function InspirationDetailsProduct(props) {
 
     const paginateProd = paginate(product.results, currentPage, pageSize);
     return (
-        <div className='container'>
+        <div className="container-fluid ins-dt-area">
+            <div className='container'>
             <div className='row'>
-                <div className="account-slider">
+                <div className="account-slider-ins-dtl">
                     <div className="col-sm-12">
                         <h3>Related Product.</h3>
                     </div>
@@ -77,6 +78,7 @@ function InspirationDetailsProduct(props) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

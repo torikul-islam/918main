@@ -1,0 +1,32 @@
+
+.account-slider-ins-dtl .slider img {
+    width: 100% !important;
+    object-fit: initial;
+}
+.account-slider-ins-dtl .arrow-slide img {
+    width: 25px !important;
+    height: auto;
+}
+.account-slider-ins-dtl .arrow-right.arrow-slide {
+    right: -32px;
+}
+.account-slider-ins-dtl .arrow-left.arrow-slide {
+    left: -32px;
+}
+.account-slider-ins-dtl{
+    font-family: "Playfair Display";
+    margin-top: 10px;
+}
+
+.ins-dt-area {
+    background: #ebeae8;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: -18px;
+    margin-top: 100px;
+    padding-top: 40px;
+}
+
+.tab-index .slider p{
+    margin-top: 18px;
+}

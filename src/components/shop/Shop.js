@@ -8,7 +8,7 @@ import ShopPost from './shopPost';
 import '../shop/Shop.css';
 import piecesGroup from '../../utils/piecesGroup';
 import GoBtn from '../common/goBtn';
-
+import ShopThreeSlide from "./shopThreeSlide";
 
 
 function Shop(props) {
@@ -116,6 +116,7 @@ function Shop(props) {
                 pageSize={pageSize}
             />
             <ShopPost data={product.results.slice(4, 8)} />
+            <ShopThreeSlide/>
             <ShopPost data={product.results.slice(8, 12)} />
             <ShopPost data={product.results.slice(12, 16)} />
             {seeMore.results && <ShopPost data={seeMore.results} />}
