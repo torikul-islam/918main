@@ -11,7 +11,7 @@ import './headerHome.css';
 
 
 
-const HeaderHome = ({ openModal, data, searchData, openMenu, handleOpenMenu, clickCard, handleSearch }) => {
+const HeaderHome = ({ openModal, data, searchData, openMenu, handleOpenMenu, clickCard, onChangeSearch }) => {
 
     return (
         <>
@@ -23,7 +23,7 @@ const HeaderHome = ({ openModal, data, searchData, openMenu, handleOpenMenu, cli
                         handleOpenMenu={handleOpenMenu}
                         openModal={openModal}
                         clickCard={clickCard}
-                        handleSearch={handleSearch}
+                        onChangeSearch={onChangeSearch}
                     />
                 </div>
 

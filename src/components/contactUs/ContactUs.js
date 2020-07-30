@@ -15,10 +15,14 @@ const ContactUs = (props) => {
         behavior: "smooth"
     }), []);
 
+    function onChangeSearch(e) {
+
+    }
     const { openModal, data, openMenu, handleOpenMenu } = props;
     return (
         <div>
-            <Contactheader {...props} />
+            <Contactheader {...props} onChangeSearch={onChangeSearch}
+                searchData={[]} />
             <div className="container contact-form">
                 <form>
                     <h3 className="text-center">We’d love to hear from you!</h3>

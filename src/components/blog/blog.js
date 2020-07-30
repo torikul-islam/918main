@@ -13,7 +13,9 @@ function Blog(props) {
     const [resource, setResource] = useState({ count: null, next: null, previous: null, results: [] });
     const [resourceLike, setResourceLike] = useState([]);
     const [product, setProduct] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0)
+    const [currentPage, setCurrentPage] = useState(0);
+    const [searchData, setSearchData] = useState([])
+
 
 
     useEffect(() => {
@@ -79,10 +81,21 @@ function Blog(props) {
         }
     }
 
+    function onChangeSearch(e) {
+        if (e.target.value) {
+            const filter = resource.results.filter(el => el.source.toLowerCase().includes(e.target.value.toLowerCase()) || el.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            setSearchData(filter);
+        } else {
+            setSearchData([])
+        }
+    }
+
     return (
         <>
             <BlogHead
                 {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={searchData}
                 clickResourceLike={clickResourceLike}
                 resourceLike={resourceLike}
                 resource={resource.results.find(x => x.uuid === props.match.params.id)}
@@ -95,7 +108,7 @@ function Blog(props) {
                 pageSize={pageSize}
                 onPageChange={onPageChange}
             />
-            
+
         </>
     );
 }

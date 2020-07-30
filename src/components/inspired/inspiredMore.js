@@ -20,6 +20,7 @@ function InspiredMore(props) {
     const [rooms, setRooms] = useState([]);
     const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
+    const [searchData, setSearchData] = useState([])
 
 
     useEffect(() => {
@@ -40,8 +41,8 @@ function InspiredMore(props) {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
-      
+    }, [])
+
     useEffect(() => {
         (async function () {
             const { data } = await roomServices.getAllRooms();
@@ -114,10 +115,19 @@ function InspiredMore(props) {
         setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
     }
 
-
+    function onChangeSearch(e) {
+        if (e.target.value) {
+            const filter = inspired.results.filter(el => el.designed_by.toLowerCase().includes(e.target.value.toLowerCase()));
+            setSearchData(filter);
+        } else {
+            setSearchData([])
+        }
+    }
     return (
         <>
-            <HeaderInspired {...props} />
+            <HeaderInspired {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={searchData} />
             <TabShop title='Be Inspired.' rooms={rooms} styles={styles} onSelectOption={onSelectOption} />
             <ShopSlide data={inspired.results.slice(0, 4)} pagename="inspired" />
 
@@ -132,8 +142,8 @@ function InspiredMore(props) {
             <ShopSlide data={inspired.results.slice(8, 12)} pagename="inspired" />
             <ShopThreeSlide />
             <ShopSlide data={inspired.results.slice(12, 16)} pagename="inspired" />
-            <ShopSlide data={inspired.results.slice(16, 19)} pagename="inspired"/>
-            <ShopSlide data={inspired.results.slice(19, 23)} pagename="inspired"/>
+            <ShopSlide data={inspired.results.slice(16, 19)} pagename="inspired" />
+            <ShopSlide data={inspired.results.slice(19, 23)} pagename="inspired" />
 
         </>
     );

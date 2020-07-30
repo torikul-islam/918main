@@ -27,10 +27,16 @@ const Workspace = (props) => {
         setModal({ isOpen: true, name: name })
     }
 
+    function onChangeSearch() {
+
+    }
+
     const { name, isOpen } = modal;
     return (
         < >
-            <NavbarB  {...props} search={"null"} />
+            <NavbarB  {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={[]} search={"null"} />
             <div className="container-fluid page-content">
                 <div className="row">
                     <div className="col-md-4 col-sm-6">

@@ -10,10 +10,15 @@ const AboutUs = (props) => {
         behavior: "smooth"
     }), []);
 
+    function onChangeSearch(e) {
+
+    }
 
     return (
         <>
-            <AboutStory {...props} />
+            <AboutStory {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={[]} />
             <AboutInspiredItems {...props} />
         </>
     );

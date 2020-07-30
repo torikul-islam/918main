@@ -77,7 +77,7 @@ function Home(props) {
     }
 
 
-    function handleSearch(e) {
+    function onChangeSearch(e) {
         if (e.target.value) {
             const filter = post.filter(el => el.source.toLowerCase().includes(e.target.value.toLowerCase()) || el.title.toLowerCase().includes(e.target.value.toLowerCase()));
             setSearchData(filter);
@@ -88,7 +88,7 @@ function Home(props) {
 
     return (
         <div>
-            <HeaderHome searchData={searchData} handleSearch={handleSearch} data={post.slice(0, 1)}  {...props} />
+            <HeaderHome searchData={searchData} onChangeSearch={onChangeSearch} data={post.slice(0, 1)}  {...props} />
             <SliderPost data={post.slice(1, 5)} />
             <InspiredSlider />
             <SliderPost data={post.slice(5, 9)} />
