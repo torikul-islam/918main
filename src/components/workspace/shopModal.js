@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
-import "./workspace.css";
 import GoBtn from "../common/goBtn";
 import ShopThreeSlide from '../shop/shopThreeSlide';
+import colorImage from '../../Asset/Images/Color_Fill_10.png';
+import "./workspace.css";
+
 
 
 const ShopModal = ({ product, products, closeModal }) => {
@@ -65,16 +67,16 @@ const ShopModal = ({ product, products, closeModal }) => {
                                             </select>
                                         </li>
                                         <li className="saveSection">
-                                    <GoBtn text='save' />
-                                </li>
-                            </ul>
-                            <GoBtn text='Add to shopping List' onClick={() =>console.log("Add to cart")} />
-                        </div> 
+                                            <GoBtn text='save' />
+                                        </li>
+                                    </ul>
+                                    <GoBtn text='Add to shopping List' onClick={() => console.log("Add to cart")} />
+                                </div>
                             </div>
                         </div>
                     }
 
-                    {/* <div className='row'>
+                    <div className='row'>
                         <div className="account-slider">
                             <div className="col-sm-12">
                                 <h3>You may also like.</h3>
@@ -82,31 +84,29 @@ const ShopModal = ({ product, products, closeModal }) => {
 
                             <div className='tab-index'>
                                 <div className='slider'>
-                                    <div className='row'> */}
-                                        {/* {paginateProd && paginateProd.map((item, i) =>
+                                    <div className='row'>
+                                        {[0, 1, 2].map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                                <img src={item.ref_img} alt="" />
-                                                <h2>{item.retailer}</h2>
-                                                <h6>${item.price}</h6>
+                                                <img src={colorImage} alt="" />
+                                                <h2>Retailer</h2>
                                             </div>
-                                        )} */}
-
-                                        {/* <Pagination
-                                            itemsCount={products.length}
-                                            pageSize={pageSize}
-                                            currentPage={currentPage}
+                                        )}
+                                        <Pagination
+                                            itemsCount={10}
+                                            pageSize={4}
+                                            currentPage={0}
                                             onPageChange={onPageChange}
                                         />
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> */}
+                        </div >
+                    </div >
 
                     <ShopThreeSlide pagename="workspace" />
-                </div>
-        </div>
-        </div>
+                </div >
+            </div >
+        </div >
     );
 }
 
