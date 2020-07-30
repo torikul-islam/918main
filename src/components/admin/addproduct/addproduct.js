@@ -86,13 +86,14 @@ const Addproduct = (props) => {
 		<div>
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col-sm-2">
+					<div className="col-sm-3">
 						<Sidemenu />
 					</div>
-					<div className="col-sm-10">
+					<div className="col-sm-9">
 						<NavbarAdmin />
 						<div className="form-product">
 							<h4>Add Products</h4>
+							<div className="forminput">
 							{message && <p>{message}</p>}
 							<form onSubmit={handleSubmit}>
 								{errors.response && <p style={{ color: 'red' }}>{errors.response}</p>}
@@ -104,10 +105,12 @@ const Addproduct = (props) => {
 									<Input name='retailer' type='text' label='Retailer' onChange={onChange} value={retailer || ''} error={errors['retailer']} />
 									<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
 									<Input name='tier' type='text' label='Tier' onChange={onChange} value={tier || ''} error={errors['tier']} />
-									<button type="submit" className="btn btn-primary">Sign in</button>
+									<button type="submit" className="btn btn-primary">Submit</button>
 								</div>
 
 							</form>
+							</div>
+							
 						</div>
 					</div>
 				</div>

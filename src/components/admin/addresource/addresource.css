@@ -1,0 +1,12 @@
+.form-resource h4 {
+    font-family: "PlayfairDisplay-Bold";
+   
+  }
+  .form-resource .form-group {
+    float: left;
+    width: 93%;
+  }
+  .form-resource .form-group input {
+    border-bottom: 1px solid #dadada;
+    padding: 25px 20px;
+  }  

@@ -8,7 +8,7 @@ class Sidemenu extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container">
 				<nav id="sidebar">
 					<div className="sidebar-header">
 						<h3><Link to='/admin'>Admin Dashboard</Link></h3>

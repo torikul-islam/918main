@@ -89,13 +89,13 @@ const AddInspiration = (props) => {
 		<div>
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col-sm-2">
+					<div className="col-sm-3">
 						<Sidemenu />
 					</div>
-					<div className="col-sm-10">
+					<div className="col-sm-9">
 						<NavbarAdmin />
 						<div className="form-resource">
-							<h4>Add Resource</h4>
+							<h4>Add Inspiration</h4>
 							{message && <p>{message}</p>}
 							<form onSubmit={handleSubmit}>
 								{errors.response && <p style={{ color: 'red' }}>{errors.response}</p>}
