@@ -85,7 +85,7 @@ const ShopModal = ({ product, products, closeModal }) => {
                             <div className='tab-index'>
                                 <div className='slider'>
                                     <div className='row'>
-                                        {[0, 1, 2].map((item, i) =>
+                                        {[0, 1, 2, 3].map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                                 <img src={colorImage} alt="" />
                                                 <h2>Retailer</h2>

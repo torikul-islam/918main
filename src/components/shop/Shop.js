@@ -23,8 +23,8 @@ function Shop(props) {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
-      
+    }, [])
+
     useEffect(() => {
         (async function () {
             const { data } = await piecesService.getAllPieces();
@@ -81,7 +81,7 @@ function Shop(props) {
         }
     }
 
-    function handleSearch(e) {
+    function onChangeSearch(e) {
         if (e.target.value) {
             const filter = product.results.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase()) || el.retailer.toLowerCase().includes(e.target.value.toLowerCase()));
             console.log(filter);
@@ -93,7 +93,7 @@ function Shop(props) {
 
     return (
         <>
-            <HeaderShop {...props} handleSearch={handleSearch} searchData={searchData} />
+            <HeaderShop {...props} onChangeSearch={onChangeSearch} searchData={searchData} />
             <TabShop
                 onItemSelect={onItemSelect}
                 selectedItem={selectedItem}
