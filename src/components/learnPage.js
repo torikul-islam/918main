@@ -24,6 +24,7 @@ function LearnPage(props) {
     const [rooms, setRooms] = useState([]);
     const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
+    const [searchData, setSearchData] = useState([])
 
 
     useEffect(() => {
@@ -46,8 +47,8 @@ function LearnPage(props) {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
-      
+    }, [])
+
     async function onPageChange(val) {
         const diff = resource.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
@@ -115,9 +116,22 @@ function LearnPage(props) {
         }
     }
 
+    function onChangeSearch(e) {
+        if (e.target.value) {
+            const filter = resource.results.filter(el => el.source.toLowerCase().includes(e.target.value.toLowerCase()) || el.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            setSearchData(filter);
+        } else {
+            setSearchData([])
+        }
+    }
+
     return (
         <>
-            <NavbarB {...props} />
+            <NavbarB
+                {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={searchData}
+            />
             <LearnHeader data={resource.results.slice(0, 1)} />
             <ThreeSlide
                 data={resource.results.slice(1,)}

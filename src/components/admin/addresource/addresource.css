@@ -1,5 +1,5 @@
 .form-resource h4 {
-    font-family: "PlayfairDisplay-Bold";
+    margin-bottom: 30px;
    
   }
   .form-resource .form-group {
@@ -8,5 +8,8 @@
   }
   .form-resource .form-group input {
     border-bottom: 1px solid #dadada;
-    padding: 25px 20px;
+    padding: 0 0 !important;
+    margin-bottom: 10px !important;
+    height: 25px;
   }  
+ 

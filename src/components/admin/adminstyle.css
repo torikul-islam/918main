@@ -59,7 +59,9 @@ a:focus {
   text-align: center;
   font-size: 0.85em;
 }
-
+.row.maringZero, .panel-body .row {
+  margin-bottom: 0 !important;
+}
 #sidebar.active ul li a i {
   margin-right: 0;
   display: block;
@@ -94,6 +96,7 @@ a:focus {
 #sidebar ul.components {
   padding: 20px 0;
   border-bottom: 1px solid #47748b;
+  margin-bottom: 0;
 }
 
 #sidebar ul li a {

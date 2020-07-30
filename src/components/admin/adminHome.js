@@ -8,7 +8,7 @@ class Adminhome extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="row">
+                <div className="row maringZero">
                     <div className="col-sm-3">
                         <Sidemenu />
                     </div>

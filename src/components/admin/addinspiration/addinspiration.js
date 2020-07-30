@@ -99,16 +99,21 @@ const AddInspiration = (props) => {
 							{message && <p>{message}</p>}
 							<form onSubmit={handleSubmit}>
 								{errors.response && <p style={{ color: 'red' }}>{errors.response}</p>}
-								<div className='col-sm-6'>
-									<Input name='ref_img' type='text' label='Ref. image' onChange={onChange} value={ref_img || ''} error={errors['ref_img']} />
-									<Input name='ref_url' type='text' label='Ref. URL' onChange={onChange} value={ref_url || ''} error={errors['ref_url']} />
-									<Input name='rooms' type='text' label='Rooms' onChange={onChange} value={rooms || ''} error={errors['rooms']} />
-									<Input name='styles' type='text' label='Styles' onChange={onChange} value={styles || ''} error={errors['styles']} />
-									<Input name='designed_by' type='text' label='Designed by' onChange={onChange} value={designed_by || ''} error={errors['designed_by']} />
-									<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
-									<Input name='pieces' type='text' label='Pieces' onChange={onChange} value={pieces || ''} error={errors['pieces']} />
-									<Input name='direction' type='text' label='Direction' onChange={onChange} value={direction || ''} error={errors['direction']} />
-									<button type="submit" className="btn btn-primary">Submit</button>
+								<div className="row">
+									<div className='col-sm-12'>
+										<Input name='ref_img' type='text' label='Ref. image' onChange={onChange} value={ref_img || ''} error={errors['ref_img']} />
+										<Input name='ref_url' type='text' label='Ref. URL' onChange={onChange} value={ref_url || ''} error={errors['ref_url']} />
+										<Input name='rooms' type='text' label='Rooms' onChange={onChange} value={rooms || ''} error={errors['rooms']} />
+										<Input name='styles' type='text' label='Styles' onChange={onChange} value={styles || ''} error={errors['styles']} />
+										<Input name='designed_by' type='text' label='Designed by' onChange={onChange} value={designed_by || ''} error={errors['designed_by']} />
+										<Input name='colors' type='text' label='Colors' onChange={onChange} value={colors || ''} error={errors['colors']} />
+										<Input name='pieces' type='text' label='Pieces' onChange={onChange} value={pieces || ''} error={errors['pieces']} />
+										<Input name='direction' type='text' label='Direction' onChange={onChange} value={direction || ''} error={errors['direction']} />
+									</div>
+									<div className="col-sm-12">
+										<button type="submit" className="btn btn-primary">Submit</button>
+
+									</div>
 								</div>
 
 							</form>

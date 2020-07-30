@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, handleSearch, searchData }) {
+function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onChangeSearch, searchData }) {
+    const [openSearch, setOpenSearch] = useState(false)
+
     const user = localStorage.getItem('token');
     function clickLogout() {
         localStorage.removeItem('token');
         window.location = '/'
     }
+
+    function handleSearch() {
+        console.log('click');
+        setOpenSearch(!openSearch);
+    }
+
     return (
         <div className='container-fluid'>
             <div className='container-menu' id='menu'>
@@ -29,12 +37,12 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, handl
                             <div style={search == "null" ? { visibility: "hidden" } : { visibility: "visible" }}>
                                 <div className="search-float">
                                     <li className="searchHandle">
-                                        <img src={require('../../Asset/Images/search.png')} alt="search.png" />
-                                        <input className="btn-srach" type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
+                                        <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />
+                                        <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srach" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
                                     </li>
-                                    {searchData && <ul className='search-container'>
+                                    {searchData.length > 0 && <ul className='search-container'>
                                         {searchData.map((s, i) =>
-                                            <li className="search-item" key={i}>{s.title || s.name}</li>
+                                            <li className="search-item" key={i}>{s.title || s.name || s.designed_by}</li>
                                         )}
                                     </ul>}
                                 </div>

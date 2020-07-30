@@ -22,10 +22,15 @@ const Account = (props) => {
         })()
     }, token);
 
+    function onChangeSearch(e) {
+
+    }
 
     return (
         <>
-            <NavbarB {...props} />
+            <NavbarB {...props}
+                onChangeSearch={onChangeSearch}
+                searchData={[]} />
             {token ?
                 <div className='account-sidebar'>
                     <div className='container'>

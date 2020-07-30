@@ -70,6 +70,10 @@ function Looks(props) {
         }
     }
 
+    function onChangeSearch(e) {
+
+    }
+
 
     return (
         <>
@@ -77,6 +81,8 @@ function Looks(props) {
                 {...props}
                 clickProductLike={clickProductLike}
                 productLike={productLike}
+                onChangeSearch={onChangeSearch}
+                searchData={[]}
                 product={product.results.length > 0 && product.results[0]}
             />
             <LookPost

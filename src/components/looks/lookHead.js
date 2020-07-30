@@ -4,7 +4,8 @@ import './lookHead.css';
 
 
 
-const LookHead = ({ openModal, clickProductLike, productLike, product, openMenu, handleOpenMenu }) => {
+const LookHead = (props) => {
+    const { clickProductLike, productLike, product } = props;
 
     if (product) {
         const isLike = productLike.some(el => el.product.uuid === product.uuid);
@@ -17,7 +18,7 @@ const LookHead = ({ openModal, clickProductLike, productLike, product, openMenu,
 
     return (
         <>
-            <NavbarB openMenu={openMenu} handleOpenMenu={handleOpenMenu} openModal={openModal} />
+            <NavbarB {...props} />
             {product && <div className="look-head">
                 <div className="container">
                     <div className="row">

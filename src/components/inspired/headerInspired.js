@@ -6,16 +6,11 @@ import Subscribe from '../common/socialicons/subscribe';
 
 
 
-const HeaderInspired = ({ clickCard, openMenu, openModal, handleOpenMenu }) => {
+const HeaderInspired = (props) => {
     return (
         <div className="inspired-area">
 
-            <NavbarB
-                clickCard={clickCard}
-                openMenu={openMenu}
-                openModal={openModal}
-                handleOpenMenu={handleOpenMenu}
-            />
+            <NavbarB {...props} />
 
             <div className="container">
                 <div className='home-text'>
@@ -24,7 +19,7 @@ const HeaderInspired = ({ clickCard, openMenu, openModal, handleOpenMenu }) => {
                 </div>
             </div>
             <Socailicon />
-                <Subscribe />
+            <Subscribe />
         </div>
     );
 }

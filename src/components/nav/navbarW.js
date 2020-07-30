@@ -5,17 +5,17 @@ import '../nav/navbar.css'
 
 
 
-function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch, searchData }) {
-    const user = localStorage.getItem('token');
-    const [value, setValue] = useState("/");
+function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearch, searchData }) {
+    const [openSearch, setOpenSearch] = useState(false)
 
+    const user = localStorage.getItem('token');
     function clickLogout() {
         localStorage.removeItem('token');
         window.location = '/'
     }
 
-    const handledropdown = (event) => {
-        setValue(event.target.value)
+    function handleSearch() {
+        setOpenSearch(!openSearch);
     }
 
     return (
@@ -35,14 +35,14 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleSearch,
                     <ul className="home-menu">
                         <div className="search-float">
                             <li className="searchHandle">
-                                <img src={require('../../Asset/Images/search.png')} alt="search.png" />
-                                <input className="btn-srachw" type="text" onChange={(e) => handleSearch(e)} placeholder='Search...' />
+                                <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />
+                                <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srachw" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
                             </li>
 
                         </div>
-                        {searchData && <ul className='search-container'>
+                        {searchData.length > 0 && <ul className='search-container'>
                             {searchData.map((s, i) =>
-                                <li className="search-item" key={i}>{s.title || s.name}</li>
+                                <li className="search-item" key={i}>{s.title || s.name || s.designed_by}</li>
                             )}
                         </ul>}
                         <div className="logo-width">
