@@ -20,7 +20,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
         <div className='container-fluid'>
             <div className='container-menu' id='menu'>
                 <div className="logo-width display-for-mobile">
-                    <li className='logo'>
+                    <li className='logo-black'>
                         <Link className="nav-link" to="/" >
                             <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
                         </Link>
@@ -47,7 +47,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                 </div>
                             </div>
                             <div className="logo-width">
-                                <li className='logo'>
+                                <li className='logo-black'>
                                     <Link className="nav-link" to="/" >
                                         <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
                                     </Link>

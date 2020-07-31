@@ -131,6 +131,16 @@
   margin-right: 84px;
   margin-top: 20px; */
 }
+.home-menu .logo-black img {
+  width: 262px;
+  height: 65px;
+  /* margin-left: 50px;
+  margin-right: 84px;
+  margin-top: 20px; */
+}
+#menu > ul li.logo-black a.nav-link {
+  padding-top: 0;
+}
 #menu > ul li.logo a.nav-link {
   padding-top: 0;
 }
