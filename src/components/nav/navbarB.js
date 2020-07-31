@@ -33,7 +33,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                     </button>
                     <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
                         <ul className="home-menu">
-                            <div style={search == "null" ? { visibility: "hidden" } : { visibility: "visible" }}>
+                            <div style={search === "null" ? { visibility: "hidden" } : { visibility: "visible" }}>
                                 <div className="search-float">
                                     <li className="searchHandle">
                                         <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />

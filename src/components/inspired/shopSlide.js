@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './shopSlide.css';
 import { Link } from 'react-router-dom';
 
 
 
-const ShopSlide = ({ data, count ,pagename}) => {
+const ShopSlide = ({ data, pagename }) => {
     return (
         <div className="post-slide-main">
             <div className="container">
@@ -14,7 +14,7 @@ const ShopSlide = ({ data, count ,pagename}) => {
                             <div className="image-post-slide">
                                 <Link to={`/inspired-details/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
-                                    <div className={pagename=="inspired"?"image-post-slide-ins":"image-post-slide"}>
+                                    <div className={pagename === "inspired" ? "image-post-slide-ins" : "image-post-slide"}>
                                         <h6>{item.designed_by}</h6>
                                     </div>
                                 </Link>

@@ -66,7 +66,9 @@ function Looks(props) {
         const token = localStorage.getItem('token');
         if (token) {
             const { data } = await productServices.createProductLike(form);
-            setProductLike([...productLike, { uuid: null, product: item }]);
+            if (data) {
+                setProductLike([...productLike, { uuid: null, product: item }]);
+            }
         }
     }
 

@@ -62,8 +62,10 @@ const Addproduct = (props) => {
 
 		try {
 			const { data: response } = await productService.createProduct(data);
-			setMessage('Successfully submitted product!')
-			setData({ name: '', ref_url: '', image_one_url: '', price: '', retailer: '', colors: '', tier: '' });
+			if (response) {
+				setMessage('Successfully submitted product!')
+				setData({ name: '', ref_url: '', image_one_url: '', price: '', retailer: '', colors: '', tier: '' });
+			}
 		} catch (ex) {
 			if (ex.response && ex.response.status === 403) {
 				const errors = {};
@@ -93,7 +95,8 @@ const Addproduct = (props) => {
 						<NavbarAdmin />
 						<div className="form-product">
 							<h4>Add Products</h4>
-							<div >
+							<div>
+								{message && <h6 style={{ color: 'green' }}>{message}</h6>}
 								{errors.response && <h6 style={{ color: 'red' }}>{errors.response}</h6>}
 							</div>
 							<div className="forminput">

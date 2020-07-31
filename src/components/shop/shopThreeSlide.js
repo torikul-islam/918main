@@ -11,8 +11,8 @@ class ShopThreeSlide extends Component {
     }
     render() {
         return (
-            <div className={this.props.pagename=="workspace" || this.props.pagename=="product_details"?'container-fluid ins-area-modal':'container-fluid ins-area'}>
-                <div className={this.props.pagename=="workspace"?'container inspired-modal':'container inspired'} >
+            <div className={this.props.pagename === "workspace" || this.props.pagename === "product_details" ? 'container-fluid ins-area-modal' : 'container-fluid ins-area'}>
+                <div className={this.props.pagename === "workspace" ? 'container inspired-modal' : 'container inspired'} >
                     <TitleWithBer text='Looks' />
 
                     <div className='tab-index'>

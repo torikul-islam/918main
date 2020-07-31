@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavbarB from '../nav/navbarB';
 import './lookHead.css';
 

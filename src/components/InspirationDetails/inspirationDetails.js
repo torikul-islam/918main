@@ -18,7 +18,7 @@ function InspirationDetails(props) {
 
 
     useEffect(() => {
-        (async function () {
+        (async function (props) {
             const { data } = await inspiredService.getInspirationByRoomId(props.match.params.roomId);
             if (data) {
                 const filter = data.results.filter(x => x.uuid === props.match.params.id);
@@ -45,7 +45,9 @@ function InspirationDetails(props) {
         const token = localStorage.getItem('token');
         if (token) {
             const { data } = await inspiredService.createInspirationLike(form);
-            setInspirationLike([...inspirationLike, { uuid: null, inspiration: item }]);
+            if (data) {
+                setInspirationLike([...inspirationLike, { uuid: null, inspiration: item }]);
+            }
         }
     }
 

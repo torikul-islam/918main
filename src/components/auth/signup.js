@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import Input from '../common/input';
 import { signup } from '../../services/authServices';
 import './signup.css';

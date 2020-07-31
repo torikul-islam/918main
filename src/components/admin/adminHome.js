@@ -4,7 +4,7 @@ import NavbarAdmin from './adminnav/adminnav';
 import { Link } from "react-router-dom";
 
 
-class Adminhome extends Component {
+class AdminHome extends Component {
     render() {
         return (
             <div className="container-fluid">
@@ -22,21 +22,21 @@ class Adminhome extends Component {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <div className="single-dashboard-menu-wrapper">
-                                                    <Link to="/add-product"><a ><i className="fa fa-cubes"></i></a></Link>
-                                                    <Link to="/add-product"><a >Add Products</a></Link>
+                                                    <Link to="/add-product"><span ><i className="fa fa-cubes"></i></span></Link>
+                                                    <Link to="/add-product"><span>Add Products</span></Link>
 
                                                 </div>
                                             </div>
                                             <div className="col-md-4">
                                                 <div className="single-dashboard-menu-wrapper">
-                                                    <Link to="/add-resource"><a ><i className="fa fa-file-text"></i></a></Link>
-                                                    <Link to="/add-resource"><a >Add Resources</a></Link>
+                                                    <Link to="/add-resource"><span ><i className="fa fa-file-text"></i></span></Link>
+                                                    <Link to="/add-resource"><span >Add Resources</span></Link>
                                                 </div>
                                             </div>
                                             <div className="col-md-4">
                                                 <div className="single-dashboard-menu-wrapper">
-                                                    <Link to="/add-inspiration"><a ><i className="fa fa-lightbulb-o"></i></a></Link>
-                                                    <Link to="/add-inspiration"><a >Add Inspiration</a></Link>
+                                                    <Link to="/add-inspiration"><span ><i className="fa fa-lightbulb-o"></i></span></Link>
+                                                    <Link to="/add-inspiration"><span >Add Inspiration</span></Link>
 
                                                 </div>
                                             </div>
@@ -54,4 +54,4 @@ class Adminhome extends Component {
     }
 }
 
-export default Adminhome;
+export default AdminHome;

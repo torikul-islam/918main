@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
 import NavbarW from '../nav/navbarW';
 import './headerShop.css';
 

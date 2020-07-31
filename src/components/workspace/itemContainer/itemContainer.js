@@ -4,7 +4,7 @@ import './itemContainer.css';
 
 
 function ItemContainer(props) {
-    const { openModal, closeModal, clickFilterImage } = props;
+    const { openModal, clickFilterImage } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
 
     return (

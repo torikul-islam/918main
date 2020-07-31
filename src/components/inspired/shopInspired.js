@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TitleWithBer from '../shop/titleWithBer'
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';

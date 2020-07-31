@@ -7,7 +7,7 @@ import './boardName.css';
 
 
 const BoardName = (props) => {
-    const { closeModal, openModal } = props;
+    const { openModal } = props;
     const [name, setName] = useState('');
     const [error, setError] = useState(null);
 

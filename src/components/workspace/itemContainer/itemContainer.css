@@ -10,8 +10,8 @@
   margin: 30px 0 45px;
 }
 
-.shopModal{
-  min-height:50vh;
+.shopModal {
+  min-height: 50vh;
   width: 45%;
   background-color: #fff;
   padding: 5px 10px;
@@ -40,7 +40,7 @@
   object-fit: contain;
 } */
 
-.titleInspire h4{
+.titleInspire h4 {
   position: relative;
   font-size: 26px;
   color: #030303;
@@ -52,7 +52,6 @@
   margin: auto;
   background: transparent;
   border: none;
-  background-image: url();
 }
 .titleInspire button.filter {
   display: inherit;

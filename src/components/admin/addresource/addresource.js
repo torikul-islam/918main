@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Joi from 'joi-browser';
 import resourceService from '../../../services/resourceService';
 import Sidemenu from '../sidemenu/sidemenu';
@@ -65,8 +65,10 @@ const AddResource = (props) => {
 
 		try {
 			const { data: response } = await resourceService.createResource(data);
-			setMessage('Successfully submitted resource!')
-			setData({ name: '', ref_url: '', image_one_url: '', price: '', retailer: '', colors: '', piece: '', tier: '' });
+			if (response) {
+				setMessage('Successfully submitted resource!')
+				setData({ name: '', ref_url: '', image_one_url: '', price: '', retailer: '', colors: '', piece: '', tier: '' });
+			}
 		} catch (ex) {
 			if (ex.response && ex.response.status === 403) {
 				const errors = {};

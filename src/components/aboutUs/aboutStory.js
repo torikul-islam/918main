@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavbarB from '../nav/navbarB';
 import "./aboutStory.css"
 
 
 const AboutStory = (props) => {
-    const { openModal, data, openMenu, handleOpenMenu } = props;
     return (
         <div>
             <NavbarB {...props} />

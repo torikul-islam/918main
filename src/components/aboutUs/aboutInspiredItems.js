@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import LearnMore from '../common/learnButton';
 import { Link } from 'react-router-dom';
-import "./aboutInspiredItems.css";
 import GoBtn from '../common/goBtn';
+import "./aboutInspiredItems.css";
 
 
 
@@ -22,7 +21,7 @@ class AboutInspiredItems extends Component {
                         <div className="about-icons">
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <Link to='/inspired-more' style={{textDecoration:"none"}}>
+                                    <Link to='/inspired-more' style={{ textDecoration: "none" }}>
                                         <div className="icons-header-lights">
                                             <img src={require('../../Asset/Images/light-bulb.png')} alt="inspired.png" />
                                             <h5>Be inspired.</h5>
@@ -37,7 +36,7 @@ class AboutInspiredItems extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <Link to='/learn-more'style={{textDecoration:"none"}}>
+                                    <Link to='/learn-more' style={{ textDecoration: "none" }}>
                                         <div className="icons-header-lights" >
                                             <img src={require('../../Asset/Images/learn.png')} alt="learn.png" />
                                             <h5>Learn.</h5>
@@ -52,7 +51,7 @@ class AboutInspiredItems extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <Link to='/shop-more' style={{textDecoration:"none"}}>
+                                    <Link to='/shop-more' style={{ textDecoration: "none" }}>
                                         <div className="icons-header-lights">
                                             <img src={require('../../Asset/Images/shop.png')} alt="shop.png" />
                                             <h5>Shop.</h5>
@@ -67,7 +66,7 @@ class AboutInspiredItems extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-3">
-                                    <Link to='/workspace' style={{textDecoration:"none"}}>
+                                    <Link to='/workspace' style={{ textDecoration: "none" }}>
                                         <div className="icons-header-lights">
                                             <img src={require('../../Asset/Images/design.png')} alt="design.png" />
                                             <h5>Design.</h5>

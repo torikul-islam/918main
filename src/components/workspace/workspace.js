@@ -5,8 +5,8 @@ import ItemContainer from './itemContainer/itemContainer';
 import InspirationFilter from './inspirationFilter/inspirationFilter';
 import ShopFilter from './shopFilter/shopFilter';
 import Modal from '../common/modal/modal';
-import './workspace.css';
 import ShopModal from './shopModal';
+import './workspace.css';
 
 
 
@@ -14,6 +14,21 @@ const Workspace = (props) => {
     const [modal, setModal] = useState({ isOpen: false, name: null });
     const [product, setProduct] = useState({});
     const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        (async function () {
+            // call the backend server and set response array in setProduct const
+            setProduct([]);
+        })()
+    }, []);
+
+    useEffect(() => {
+        (async function () {
+            // call the backend server and set response array in setProducts const
+            setProducts([]);
+        })()
+    }, []);
+
 
     function openModal(name) {
         setModal({ isOpen: true, name: name })

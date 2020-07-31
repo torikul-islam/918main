@@ -99,6 +99,7 @@ function LearnPage(props) {
             } else if (selected[key]) {
                 url += `&${key}=${selected[key]}`
             }
+            return url;
         })
         getRoomStyleId(url)
     }

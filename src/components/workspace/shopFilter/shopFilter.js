@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import RangeSlider from './rangeSlider';
 import './shopFilter.css';
 
 
 
 function ShopFilter(props) {
-    const { openModal, closeModal } = props;
+    const { closeModal } = props;
 
 
 

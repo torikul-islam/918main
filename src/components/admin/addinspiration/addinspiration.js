@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Joi from 'joi-browser';
 import inspirationService from '../../../services/inspiredService';
 import Sidemenu from '../sidemenu/sidemenu';
@@ -65,8 +65,10 @@ const AddInspiration = (props) => {
 
 		try {
 			const { data: response } = await inspirationService.createInspiration(data);
-			setMessage('Successfully submitted inspiration!')
-			setData({ ref_img: '', ref_url: '', rooms: '', styles: '', designed_by: '', colors: '', pieces: '', direction: '' });
+			if (response) {
+				setMessage('Successfully submitted inspiration!')
+				setData({ ref_img: '', ref_url: '', rooms: '', styles: '', designed_by: '', colors: '', pieces: '', direction: '' });
+			}
 		} catch (ex) {
 			if (ex.response && ex.response.status === 403) {
 				const errors = {};

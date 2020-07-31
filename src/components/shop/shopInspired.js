@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import inspiredSlide from '../../Asset/Images/inspired_slide_item.png'
-import './shopInspired.css';
 import TitleWithBer from '../shop/titleWithBer'
+import './shopInspired.css';
+
 
 class ShopInspired extends Component {
     constructor(props) {

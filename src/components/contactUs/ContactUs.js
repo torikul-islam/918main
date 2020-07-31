@@ -18,7 +18,6 @@ const ContactUs = (props) => {
     function onChangeSearch(e) {
 
     }
-    const { openModal, data, openMenu, handleOpenMenu } = props;
     return (
         <div>
             <Contactheader {...props} onChangeSearch={onChangeSearch}

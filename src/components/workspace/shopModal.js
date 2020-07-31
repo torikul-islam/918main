@@ -14,7 +14,7 @@ const ShopModal = ({ product, products, closeModal }) => {
     const [pageSize, setPageSize] = useState(4);
 
     if (products.length > 0) {
-        const paginateProd = paginate(products, currentPage, pageSize);
+        paginate(products, currentPage, pageSize);
     }
 
     function onPageChange(val) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './homeCreate.css';
 import capitalize from '../utils/capitalize';
+import './homeCreate.css';
 
 
 
@@ -35,7 +35,7 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
                     {data.map((item, i) =>
                         <div key={i}>
                             <div className="col-sm-6" style={{ float: "left" }}>
-                                <div className={compname == "learn" ? "craete-img-learn" : "craete-img"}>
+                                <div className={compname === "learn" ? "craete-img-learn" : "craete-img"}>
                                     <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
                                         <img src={item.ref_img} alt="" />
                                     </Link>

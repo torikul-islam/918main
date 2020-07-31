@@ -18,7 +18,7 @@ function Blog(props) {
 
 
     useEffect(() => {
-        (async function () {
+        (async function (props) {
             const { data } = await resourceService.getResourcesByRoomStyle(`?room_ids=${props.match.params.roomId}`);
             setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()
@@ -43,7 +43,9 @@ function Blog(props) {
         const token = localStorage.getItem('token');
         if (token) {
             const { data } = await resourceService.createResourceLike(form);
-            setResourceLike([...resourceLike, { uuid: null, resource: item }]);
+            if (data) {
+                setResourceLike([...resourceLike, { uuid: null, resource: item }]);
+            }
         }
     }
 

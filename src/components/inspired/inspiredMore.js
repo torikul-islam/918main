@@ -4,7 +4,6 @@ import ShopSlide from './shopSlide';
 import ShopInspired from './shopInspired';
 import TabShop from './tabShop';
 import inspiredService from '../../services/inspiredService';
-import productService from '../../services/productService';
 import stylesService from '../../services/styleServices';
 import ShopThreeSlide from '../shop/shopThreeSlide';
 import roomServices from '../../services/roomServices';
@@ -16,7 +15,6 @@ function InspiredMore(props) {
     const [pageSize, setPageSize] = useState(4);
     const [currentPage, setCurrentPage] = useState(0);
     const [inspired, setInspired] = useState({ count: null, next: null, previous: null, results: [] });
-    const [product, setProduct] = useState([]);
     const [rooms, setRooms] = useState([]);
     const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
@@ -27,14 +25,6 @@ function InspiredMore(props) {
         (async function () {
             const { data } = await inspiredService.getAllInspired();
             setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
-        })()
-    }, []);
-
-
-    useEffect(() => {
-        (async function () {
-            const { data } = await productService.getAllProducts();
-            setProduct(data.results);
         })()
     }, []);
 
@@ -106,6 +96,7 @@ function InspiredMore(props) {
             } else if (selected[key]) {
                 url += `&${key}=${selected[key]}`
             }
+            return url;
         })
         getRoomStyleId(url)
     }

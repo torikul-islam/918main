@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider4 from '../common/slider/slider4';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';

@@ -1,7 +1,6 @@
 import React from 'react';
-import '../card/card.css';
-import LearMore from '../common/learnButton'
 import GoBtn from '../common/goBtn';
+import '../card/card.css';
 
 
 
@@ -63,14 +62,11 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
                                             <div onClick={() => window.open(item.ref_url, '_blank')} className="visit-retailer">
                                                 <GoBtn text='Visit retailer' />
                                             </div>
-
                                         </div>
                                     </div>
-                                    
                                 </div>
-                                
                             )}
-                            <hr/>
+                            <hr />
                         </div>
                         <div className="estimateTotal"><h6><span className="float-left"> Estimated Subtotal:</span> <span className="float-right">${total()}</span></h6></div>
 

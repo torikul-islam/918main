@@ -20,7 +20,7 @@ const Account = (props) => {
             const { data } = await getUser();
             setUser(data);
         })()
-    }, token);
+    }, [token]);
 
     function onChangeSearch(e) {
 

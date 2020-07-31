@@ -6,7 +6,7 @@ import './createBoard.css';
 
 
 function CreateBoard(props) {
-    const { closeModal, openModal } = props;
+    const { openModal } = props;
     const [loginBoard, setLoginBoard] = useState(false);
     const [user, setUser] = useState({ username: '', password: '', email: '' });
     const [errors, setErrors] = useState({});

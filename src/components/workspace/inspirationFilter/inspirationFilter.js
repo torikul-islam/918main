@@ -5,7 +5,7 @@ import './inspirationFilter.css';
 
 
 const InspirationFilter = (props) => {
-    const { openModal, closeModal } = props
+    const { closeModal } = props
     const [openTab, setOpenTab] = useState('room')
     function clickTab(name) {
         if (name === 'room') {
