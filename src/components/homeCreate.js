@@ -42,7 +42,7 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
                                 </div>
                             </div>
                             <div className="col-sm-6" key={i} style={{ float: "right" }}>
-                                <div className="craete-text" >
+                                <div className="craete-text-hero" >
                                     <h5>{item.source}</h5>
                                     <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                         <h2>{capitalize(item.title)}</h2>
