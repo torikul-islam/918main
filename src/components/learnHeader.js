@@ -5,8 +5,6 @@ import GoBtn from './common/goBtn';
 
 
 
-
-
 const LearnHeader = ({ data }) => {
     return (
         <div className="header-learn">

@@ -18,7 +18,7 @@ function Blog(props) {
 
 
     useEffect(() => {
-        (async function (props) {
+        (async function () {
             const { data } = await resourceService.getResourcesByRoomStyle(`?room_ids=${props.match.params.roomId}`);
             setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
         })()

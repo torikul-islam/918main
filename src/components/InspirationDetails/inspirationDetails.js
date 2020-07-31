@@ -18,7 +18,7 @@ function InspirationDetails(props) {
 
 
     useEffect(() => {
-        (async function (props) {
+        (async function () {
             const { data } = await inspiredService.getInspirationByRoomId(props.match.params.roomId);
             if (data) {
                 const filter = data.results.filter(x => x.uuid === props.match.params.id);
