@@ -8,9 +8,9 @@ class SocialIcons extends Component {
             <div>
                 <div className="social-icons">
                     <ul>
-                        <li><Link to=""><img src={require('../../../Asset/Icons/facebook.png')} alt="facebook.png" /></Link></li>
-                        <li><Link to=""><img src={require('../../../Asset/Icons/instagram.png')} alt="instagram.png" /></Link></li>
-                        <li><Link to=""><img src={require('../../../Asset/Icons/pinterest.png')} alt="pinterest.png" /></Link></li>
+                        <li><Link to="#"><img src={require('../../../Asset/Icons/facebook.png')} alt="facebook.png" /></Link></li>
+                        <li><Link to="#"><img src={require('../../../Asset/Icons/instagram.png')} alt="instagram.png" /></Link></li>
+                        <li><Link to="#"><img src={require('../../../Asset/Icons/pinterest.png')} alt="pinterest.png" /></Link></li>
                     </ul>
                 </div>
             </div>
