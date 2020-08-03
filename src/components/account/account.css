@@ -7,10 +7,10 @@
     height: auto;
 }
 .account-slider .arrow-right.arrow-slide {
-    right: 0px;
+    right: -30px;
 }
 .account-slider .arrow-left.arrow-slide {
-    left: 0px;
+    left: -30px;
 }
 .account-title {
     text-align: center;
