@@ -1,6 +1,7 @@
 .title-with-logo img {
     width: 100%;
     height: 700px;
+    object-fit: cover;
 }
 
 .title-with-logo span.favIcon img {
@@ -16,16 +17,18 @@
 
 .product-price img {
     width: 68%;
-    height: 250px;
+    height: auto;
+    object-fit: contain;
 }
 .product-price {
     text-align: center;
 }
 .text-blog-title h4 {
     color: #030303;
-    font-size: 36pt;
+    font-size: 30pt;
     text-align: center;
     font-family: "PlayfairDisplay-Bold"; 
+    margin-bottom: -45px;
 }
 .title-with-logo p {
     color: #030303;

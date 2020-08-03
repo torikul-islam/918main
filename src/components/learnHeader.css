@@ -45,12 +45,12 @@
     font-family: "PlayfairDisplay-Bold";
     color: #030303;
     font-size: 44px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     margin-bottom: 30px;
 }
-.learn-text h2::first-letter {
+/* .learn-text h2::first-letter {
     text-transform: capitalize;
-}
+} */
 .learn-text p {
     font-family: "Helvetica-light";
     color: #030303;

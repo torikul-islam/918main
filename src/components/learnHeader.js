@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './learnHeader.css';
 import GoBtn from './common/goBtn';
-
+import capitalize from '../utils/capitalize';
 
 
 const LearnHeader = ({ data }) => {
@@ -15,7 +15,7 @@ const LearnHeader = ({ data }) => {
                             <div className="learn-text" key={i}>
                                 <h3>Learn</h3>
                                 <h5>{item.source}</h5>
-                                <h2>{item.title}</h2>
+                                <h2>{capitalize(item.title)}</h2>
                                 <p>{item.content.substr(0, 120)}</p>
                                 <div className="read-more">
                                     <Link to={`blog/${item.uuid}/${item.rooms[0]}`}>

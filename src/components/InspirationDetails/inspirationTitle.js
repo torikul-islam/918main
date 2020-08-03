@@ -55,7 +55,7 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
                                             <option value="audi">Audi</option>
                                         </select></li>
                                         <li className="saveSection">
-                                            <GoBtn text='save' />
+                                            <GoBtn text='Save' />
                                         </li>
                                     </ul>
                                 </div>)
