@@ -23,10 +23,10 @@ const AboutStory = (props) => {
                             <div className="col-sm-4">
                                 <div className="text-about">
                                     <h2>Mission</h2>
-                                    <p>Lorem ipsum dolor <br />sit amet, consectetur
-                                    <br />adipiscing elit, sed <br />
-                                    do eiusmod tempor<br /> incididunt ut labore<br />
-                                    et dolore magna <br />aliqua.  </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore
+                                    et dolore magna aliqua.  </p>
                                 </div>
                             </div>
                             <div className="col-sm-8">
@@ -38,18 +38,21 @@ const AboutStory = (props) => {
                     </div>
                     <div className="about-img-section">
                         <div className="row">
-                            <div className="col-sm-8">
+                            <div className="col-sm-6">
                                 <div className="img-about2">
                                     <img src={require('../../Asset/Images/Aboutus-right.jpg')} alt="Aboutus-right.jpg" />
                                 </div>
                             </div>
-                            <div className="col-sm-4">
+                            <div className="col-sm-6">
                                 <div className="text-about">
                                     <h2>Our Story.</h2>
-                                    <p>Lorem ipsum dolor <br />sit amet, consectetur
-                                    <br />adipiscing elit, sed <br />
-                                    do eiusmod tempor<br /> incididunt ut labore<br />
-                                    et dolore magna <br />aliqua.  </p>
+                                    <p>Lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
                                 </div>
                             </div>
                         </div>
