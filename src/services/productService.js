@@ -16,7 +16,7 @@ function getProductByUrl(url) {
 
 
 function getProductByPieceId(ids) {
-    return http.get(`products/?piece_ids=${ids}`);
+    return http.get(`/products/?piece_ids=${ids}`);
 };
 
 function createProductLike(data) {
