@@ -32,14 +32,14 @@ import './App.css';
 
 
 function App(props) {
-  const [modal, setModal] = useState({ isOpen: false, name: null });
+  const [modal, setModal] = useState({ isOpen: false, name: null, isMoodBoard: false });
   const [openMenu, setOpenMenu] = useState(false);
   const [isCardOpen, setIsCardOpen] = useState(false);
   const [shoppingCard, setShoppingCard] = useState([]);
 
 
-  function openModal(name) {
-    setModal({ isOpen: true, name: name })
+  function openModal(name, isMoodBoard = false) {
+    setModal({ isOpen: true, name: name, isMoodBoard: isMoodBoard });
   };
 
   function closeModal() {
@@ -79,7 +79,8 @@ function App(props) {
 
 
 
-  const { name, isOpen } = modal;
+  const { name, isOpen, isMoodBoard } = modal;
+
 
   return (
     <>
@@ -193,8 +194,8 @@ function App(props) {
         </Switch>
 
       </main>
-      {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openModal} closeModal={closeModal} />} />}
-      {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openModal} closeModal={closeModal} />} />}
+      {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup isMoodBoard={isMoodBoard} openModal={openModal} closeModal={closeModal} />} />}
+      {name === 'login' && <Modal isOpen={isOpen} childComp={<Login isMoodBoard={isMoodBoard} openModal={openModal} closeModal={closeModal} />} />}
       {name === 'loginNext' && <Modal isOpen={isOpen} childComp={< LoginNext openModal={openModal} closeModal={closeModal} />} />}
       {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
       {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}

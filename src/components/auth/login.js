@@ -4,7 +4,7 @@ import { login } from '../../services/authServices';
 
 
 
-function Login({ openModal, closeModal }) {
+function Login({ openModal, closeModal, isMoodBoard }) {
     const [user, setUser] = useState({ username: '', password: '' });
     const [errors, setErrors] = useState(null);
     const [success, setSuccess] = useState(null);
@@ -22,7 +22,11 @@ function Login({ openModal, closeModal }) {
             const { data } = await login(user.username, user.password);
             localStorage.setItem('token', data.token);
             setSuccess("Logged you in, please wait...");
-            setTimeout(() => openModal('loginNext'), 3000)
+            if (isMoodBoard) {
+                window.location = '/workspace';
+            } else {
+                setTimeout(() => openModal('loginNext'), 3000);
+            }
         } catch (ex) {
             if (ex.response && ex.response.status === 400) {
                 setErrors("Invalid username or password!");
@@ -51,7 +55,7 @@ function Login({ openModal, closeModal }) {
                             </ul>
                             <div className='have-account'>
                                 <h6>Already have an account</h6>
-                                <h3 onClick={() => openModal('signup')}>
+                                <h3 onClick={() => openModal('signup', isMoodBoard)}>
                                     <p>Signup</p>
                                 </h3>
                             </div>

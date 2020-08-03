@@ -22,7 +22,12 @@ const BoardName = (props) => {
             setError("Name filed can't be empty!")
         } else {
             localStorage.setItem('boardName', name);
-            window.location = '/workspace';
+            const token = localStorage.getItem('token');
+            if (!token) {
+                openModal('signup', true);
+            } else {
+                window.location = '/workspace';
+            }
         }
     };
 

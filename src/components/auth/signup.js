@@ -6,6 +6,9 @@ import './signup.css';
 
 
 function Signup(props) {
+    const { closeModal, openModal, isMoodBoard } = props;
+
+
     const [user, setUser] = useState({ username: '', email: '', password: '' });
     const [errors, setErrors] = useState({});
     const [success, setSuccess] = useState(null);
@@ -23,7 +26,12 @@ function Signup(props) {
             const { data } = await signup(user.username, user.email, user.password);
             localStorage.setItem('token', data.token);
             setSuccess("Registration completed. You're redirecting...");
-            setTimeout(() => openModal('loginNext'), 3000)
+            if (isMoodBoard) {
+                console.log("print moodboard");
+                window.location = '/workspace';
+            } else {
+                setTimeout(() => openModal('loginNext'), 3000);
+            }
         } catch (ex) {
             if (ex.response && ex.response.status === 400) {
                 setErrors(ex.response.data);
@@ -33,7 +41,6 @@ function Signup(props) {
 
 
     const { username, password, email } = user;
-    const { closeModal, openModal } = props;
 
     return (
         <div className='container'>
@@ -54,7 +61,7 @@ function Signup(props) {
                             </ul>
                             <div className='have-account'>
                                 <h6>Already have an account</h6>
-                                <h3 onClick={() => openModal('login')}>
+                                <h3 onClick={() => openModal('login', isMoodBoard)}>
                                     <p>Login</p>
                                 </h3>
                             </div>

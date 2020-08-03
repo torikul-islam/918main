@@ -10,7 +10,7 @@ import './headerHome.css';
 
 
 const HeaderHome = (props) => {
-    const { data } = props;
+    const { data, openModal } = props;
     return (
         <>
             <div className="home-area">
@@ -75,8 +75,7 @@ const HeaderHome = (props) => {
                         </div>
                         <div className="col-sm-6">
                             <div className='moodboard'>
-
-                                <Link to='/workspace'> <GoBtn text='Create a Moodboard' /></Link>
+                                <GoBtn text='Create a Moodboard' onClick={() => openModal('loginNext')} />
                             </div>
                         </div>
                     </div>
