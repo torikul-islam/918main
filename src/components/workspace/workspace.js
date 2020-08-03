@@ -16,6 +16,10 @@ const Workspace = (props) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+    
+    useEffect(() => {
         (async function () {
             // call the backend server and set response array in setProduct const
             setProduct([]);
