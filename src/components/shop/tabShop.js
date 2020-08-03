@@ -12,7 +12,7 @@ const TabShop = ({ onItemSelect, selectedItem, pieces, }) => {
                         <ul>
                             {pieces.map(item => <li
                                 onClick={() => onItemSelect(item)}
-                                className={item.id === selectedItem ? 'disable active' : 'pointer'}
+                                className={item.name === selectedItem ? 'disable active' : 'pointer'}
                                 key={item.uuid} >
                                 {item.name.toUpperCase()}
                             </li>

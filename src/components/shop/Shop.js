@@ -5,10 +5,10 @@ import productServices from '../../services/productService';
 import piecesService from '../../services/piecesService';
 import ShopTrending from './shopTrending';
 import ShopPost from './shopPost';
-import '../shop/Shop.css';
-import piecesGroup from '../../utils/piecesGroup';
+import shopPiecesGroup from '../../utils/shopPiecesGroup';
 import GoBtn from '../common/goBtn';
 import ShopThreeSlide from "./shopThreeSlide";
+import '../shop/Shop.css';
 
 
 function Shop(props) {
@@ -28,10 +28,10 @@ function Shop(props) {
     useEffect(() => {
         (async function () {
             const { data } = await piecesService.getAllPieces();
-            const pieces = piecesGroup(data.results);
+            const pieces = shopPiecesGroup(data.results);
             setPieces(pieces);
-            setSelectedItem(pieces[0].id);
-            getProductById(pieces[0].id);
+            setSelectedItem(pieces[0].name);
+            getProductById(pieces[0].ids);
         })()
     }, []);
 
@@ -43,8 +43,8 @@ function Shop(props) {
     }
 
     function onItemSelect(item) {
-        setSelectedItem(item.id);
-        getProductById(item.id);
+        setSelectedItem(item.name);
+        getProductById(item.ids);
         setCurrentPage(0);
     }
 
@@ -116,7 +116,7 @@ function Shop(props) {
                 pageSize={pageSize}
             />
             <ShopPost data={product.results.slice(4, 8)} />
-            <ShopThreeSlide/>
+            <ShopThreeSlide />
             <ShopPost data={product.results.slice(8, 12)} />
             <ShopPost data={product.results.slice(12, 16)} />
             {seeMore.results && <ShopPost data={seeMore.results} />}
