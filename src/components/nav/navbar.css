@@ -146,6 +146,14 @@ ul.search-container {
     width: 21%;
   }
 }
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .logo-width.display-for-mobile {
+    width: 30%;
+  }
+  #menu .signup {
+    width: 34%;
+  }
+}
 @media screen and (max-width: 1024px) and (min-width: 992px) {
   div.menu-float {
     width: 48% !important;

@@ -298,7 +298,7 @@ div#menu {
   text-align: center;
 }
 .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
-  left: 22% !important;
+  left: 25% !important;
 }
 .inspired-slider ul, .shop-slider ul {
   overflow: scroll;
