@@ -1,5 +1,5 @@
 .onboard-q1 {
-  padding: 50px 50px 50px 50px;
+  padding: 50px 50px 140px 50px;
   max-width: 700px;
   max-height: 800px;
   min-height: 650px;
@@ -19,7 +19,7 @@
   margin: auto;
 }
 .like-to-work h2 {
-  font-size: 32px;
+  font-size: 30px;
   color: #010101;
   font-weight: 700;
   font-family: "Playfair Display";
@@ -44,7 +44,7 @@
   color: red;
 }
 .onboard-q1-main form {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   max-height: 450px;
   /* overflow-x: hidden; */
 }
