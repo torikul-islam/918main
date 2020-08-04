@@ -69,8 +69,13 @@
   height: auto !important;
 }
 }   
-/* @media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 767px) and (min-width: 320px){
   .slider img {
-    margin-left: 12%;
-  }
-} */
+    width: 100% !important;
+    object-fit: contain;
+    object-position: inherit;
+}
+.arrow-slide img {
+  width: 25px !important;
+}
+}
