@@ -70,7 +70,7 @@ class Onboard extends Component {
         }
 
         try {
-            const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')}&style_ids=${styleIds.join(',')}`);
+            const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')} `);
             this.setState({ filterRoom: data.results, boardNo: 3 });
         } catch (ex) {
             errors['style'] = 'Failed to get styles';
