@@ -83,7 +83,7 @@ class AboutInspiredItems extends Component {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <h4>Ready to get started?</h4>
-                                        <Link to='/workspace'> <GoBtn text='Create a Moodboard' /></Link>
+                                       <GoBtn text='Create a Moodboard' onClick={() => this.props.openModal('loginNext')} />
                                     </div>
                                 </div>
                             </div>
