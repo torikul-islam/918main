@@ -297,6 +297,12 @@ div#menu {
   padding-top: 0;
   line-height: normal;
 }
+.text-furniture h4 {
+  font-size: 22px;
+}
+.text-furniture span {
+  font-size: 17px;
+}
 .readytocreate {
   float: none;
 }
@@ -307,9 +313,10 @@ div#menu {
   left: 25% !important;
 }
 .inspired-slider ul, .shop-slider ul {
-  overflow: scroll;
+  overflow-x: scroll;
   display: flex;
   white-space: nowrap;
+  overflow-y: hidden;
 }
 .arrow-right.arrow-slide{
   right: 0;
@@ -327,8 +334,8 @@ div#menu {
   padding-top: 0;
 }
 .login-next .cross-icon img {
-  top: 20px !important;
-  right: 20px !important;
+  top: 4px !important;
+  right: 0px !important;
 }
 .form-board, .form-cb-board {
   padding-left: 20px !important;

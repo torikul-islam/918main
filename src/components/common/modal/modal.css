@@ -28,14 +28,27 @@
         padding: 55px 20px !important;
     }
     .mf-left h2 {
-        font-size: 30px !important;
+        font-size: 26px !important;
         text-align: center !important;
     }
     .mf-left p {
-        font-size: 24px !important;
+        font-size: 20px !important;
         letter-spacing: initial;
     }
     .onboard-item img {
         height: 166px !important;
+        object-fit: contain;
     }
+    .login-next {
+        width: 85%;
+    }
+    .row.my-4.width_fixed {
+        background: #fff;
+        margin: 0 !important;
+        width: 100%;
+    }
+    .imageLeft {
+        margin-left: 10px;
+    }
+    
 }

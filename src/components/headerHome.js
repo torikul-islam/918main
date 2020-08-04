@@ -30,7 +30,7 @@ const HeaderHome = (props) => {
             <div className="icon-books">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-3">
+                        <div className="col-md-3 col-6">
                             <NavLink to='/inspired-more' style={styles.squre}>
                                 <div className="icons-header-lights">
                                     <img src={require('../Asset/Images/light-bulb.png')} alt="light-bulb.png" />
@@ -38,7 +38,7 @@ const HeaderHome = (props) => {
                                 </div>
                             </NavLink>
                         </div>
-                        <div className="col-sm-3 padding-zero">
+                        <div className="col-md-3 col-6 padding-zero">
                             <NavLink to='/learn-more' style={styles.squre}>
                                 <div className="learn icons-header-lights">
                                     <img src={require('../Asset/Images/learn.png')} alt="learn.png" />
@@ -46,7 +46,7 @@ const HeaderHome = (props) => {
                                 </div>
                             </NavLink>
                         </div>
-                        <div className="col-sm-3 padding-right-zero">
+                        <div className="col-md-3 col-6 padding-right-zero">
                             <NavLink to='/shop-more' style={styles.squre}>
                                 <div className="shop icons-header-lights">
                                     <img src={require('../Asset/Images/shop.png')} alt="shop.png" />
@@ -54,7 +54,7 @@ const HeaderHome = (props) => {
                                 </div>
                             </NavLink>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="col-md-3 col-6">
                             <NavLink to='/workspace' style={styles.squre}>
                                 <div className="icons-header-lights">
                                     <img src={require('../Asset/Images/design.png')} alt="design.png" />
