@@ -11,6 +11,7 @@ import './account.css';
 
 
 const Account = (props) => {
+    const { data, openModal } = props;
     const token = localStorage.getItem('token');
 
     const [user, setUser] = useState({})
@@ -58,8 +59,10 @@ const Account = (props) => {
                 </div>
                 :
                 <div className="containerLogin">
-                    <div className="container">
-                        <h3>Please! login to continue.</h3>
+                    <div className="container" >
+                       <button className="redirection-btn" onClick={() => openModal('loginNext')}>
+                           <h3>Please! login to continue.</h3>
+                           </button>
                     </div>
                 </div>
             }
