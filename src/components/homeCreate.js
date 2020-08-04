@@ -11,7 +11,7 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
             <div className="container">
                 <div className="list-furniture">
                     <ul>
-                        <li className="form-group col-sm-2">
+                        <li className="form-group col-md-2 col-5">
                             <select className="form-control" onChange={(e) => onSelectOption(e, 'rooms')}>
                                 <option value="">ROOM</option>
                                 {rooms.map((r, i) =>
@@ -19,7 +19,7 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
                                 )}
                             </select>
                         </li>
-                        <li className="form-group col-sm-2">
+                        <li className="form-group col-md-2 col-5">
                             <select className="form-control" onChange={(e) => onSelectOption(e, 'styles')}>
                                 <option value="">STYLE</option>
                                 {styles.map((s, i) =>
