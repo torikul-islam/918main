@@ -6,7 +6,6 @@ import piecesService from '../../services/piecesService';
 import ShopTrending from './shopTrending';
 import ShopPost from './shopPost';
 import shopPiecesGroup from '../../utils/shopPiecesGroup';
-import GoBtn from '../common/goBtn';
 import ShopThreeSlide from "./shopThreeSlide";
 import '../shop/Shop.css';
 
