@@ -10,6 +10,10 @@ import GoBtn from '../common/goBtn';
 import ShopThreeSlide from "./shopThreeSlide";
 import '../shop/Shop.css';
 
+import InfiniteScroll from 'react-infinite-scroller';
+
+
+
 
 function Shop(props) {
     const [pageSize, setPageSize] = useState(4);
@@ -74,7 +78,7 @@ function Shop(props) {
         }
     }
 
-    async function clickSeeMore() {
+    async function loadFunc() {
         if (seeMore.next !== null) {
             const { data } = await productServices.getProductByUrl(seeMore.next.split('?')[1]);
             setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
@@ -119,8 +123,21 @@ function Shop(props) {
             <ShopThreeSlide />
             <ShopPost data={product.results.slice(8, 12)} />
             <ShopPost data={product.results.slice(12, 16)} />
-            {seeMore.results && <ShopPost data={seeMore.results} />}
-            <GoBtn text='See more' onClick={clickSeeMore} />
+
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={loadFunc}
+                hasMore={true || false}
+                loader={seeMore.next &&
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                }
+            >
+                <ShopPost data={seeMore.results} />
+            </InfiniteScroll>
         </>
     )
 }

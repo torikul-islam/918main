@@ -19,12 +19,12 @@ const ShopSlide = ({ data, count, currentPage, pageSize, onPageChange, pieces, s
                     <div className="col-sm-12">
                         <h4>Shop</h4>
                         <ul className="shopTab">
-                            {pieces.map(item => (
+                            {pieces.map(item =>
                                 <li key={item.uuid}
                                     onClick={() => onItemSelect(item)}
                                     className={item.name === selectedItem ? 'disable active' : 'pointer'} >
                                     {item.name.toUpperCase()}
-                                </li>)
+                                </li>
                             )}
                         </ul>
                     </div>
