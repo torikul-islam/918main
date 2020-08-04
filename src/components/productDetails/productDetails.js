@@ -34,8 +34,8 @@ function ProductDetails(props) {
 
     useEffect(() => {
         (async function () {
-            const { data } = await projectServices.getProject();
-            const board = localStorage.getItem('boardName');
+            let { data } = await projectServices.getProject();
+            let board = localStorage.getItem('boardName');
             if (board) {
                 data = [...data, { name: board }]
             }
