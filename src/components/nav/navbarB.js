@@ -47,7 +47,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                 </div>
                             </div>
                             <div className="logo-width">
-                                <li className='logo-black'>
+                                <li className='logo-black logoMobile'>
                                     <Link className="nav-link" to="/" >
                                         <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
                                     </Link>
