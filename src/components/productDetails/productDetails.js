@@ -4,6 +4,7 @@ import ProductDetailsTitle from './productDetailsTitle';
 import ProductDetailsSlider from './postDetailsSlider';
 import ProductDetailsSliderPost from './productDetailsSliderPost';
 import productServices from '../../services/productService';
+import projectServices from '../../services/projectService';
 import ShopThreeSlide from '../shop/shopThreeSlide';
 import Modal from '../common/modal/modal';
 import Signup from '../auth/signup';
@@ -16,6 +17,8 @@ function ProductDetails(props) {
     const [modal, setModal] = useState({ isOpen: false, name: null });
     const [product, setProduct] = useState({});
     const [productLike, setProductLike] = useState([]);
+    const [project, setProject] = useState([]);
+
 
 
     useEffect(() => {
@@ -29,6 +32,12 @@ function ProductDetails(props) {
         })()
     }, [props.match.params.id]);
 
+    useEffect(() => {
+        (async function () {
+            const { data } = await projectServices.getProject();
+            setProject(data);
+        })()
+    }, []);
 
     useEffect(() => {
         (async function () {
@@ -52,7 +61,10 @@ function ProductDetails(props) {
                 setProductLike([...productLike, { uuid: null, product: item }]);
             }
         }
-    }
+    };
+
+
+
     function openModal(name) {
         setModal({ isOpen: true, name: name })
     };
@@ -84,6 +96,7 @@ function ProductDetails(props) {
                 product={product}
                 productLike={productLike}
                 openModal={openModal}
+                project={project}
             />
             <ProductDetailsSlider {...props} />
             <ShopThreeSlide pagename="product_details" />
