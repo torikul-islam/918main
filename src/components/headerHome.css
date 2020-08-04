@@ -141,6 +141,9 @@
 #menu > ul li.logo-black a.nav-link {
   padding-top: 0;
 }
+ li.logo-black, li.logo  {
+  list-style: none;
+}
 #menu > ul li.logo a.nav-link {
   padding-top: 0;
 }
@@ -281,6 +284,9 @@ div#menu {
 /* div#menu {
   display: none;
 } */
+.logoMobile {
+  display: none !important;
+}
 .home-text h2 {
   font-size: 26pt;
   margin-top: 0;

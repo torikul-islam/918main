@@ -22,7 +22,7 @@ function NavbarAdmin() {
                     <div className="collapse navbar-collapse bg-lights" id="navbarNav">
                         <ul className="home-menu">
                             <div className="logo-width logo-widthadmin">
-                                <li className='logo'>
+                                <li className='logo logoMobile'>
                                     <Link className="nav-link" to="/" >
                                         <img src={require('../../../Asset/Images/Logo.png')} alt="Logo.png" />
                                     </Link>

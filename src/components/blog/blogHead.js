@@ -27,7 +27,7 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
             <div className="blog-area">
                 <div className="container">
                     <div className="row">
-                        {resource && <div className="col-md-8 c0l-sm-12 col-md-offset-2 pt-5 pb-5">
+                        {resource && <div className="col-md-8 col-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
                                 <h4>{capitalize(resource.title)}</h4>
                             </div>

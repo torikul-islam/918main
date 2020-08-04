@@ -14,7 +14,7 @@ function BlogSlider({ resource, count, currentPage, pageSize, onPageChange }) {
     const paginateResource = paginate(resource, currentPage, pageSize);
     return (
         <div className='container'>
-            <div className='row'>
+            <div className='row mzero'>
                 <div className="account-slider">
                     <div className="col-sm-12">
                         <h3>You May Also Like.</h3>

@@ -53,6 +53,23 @@
     .account-sidebar, .containerLogin {
         margin-top: 100px;
     }
+    .account-slider .arrow-right.arrow-slide{
+        right: 0;
+    }
+    .account-slider .arrow-left.arrow-slide{
+        left: 0;
+    }
+    .s-t-a {
+        margin-left: 0px !important;
+    }
+    .account-slider .slider img {
+        width: 100% !important;
+        object-fit: contain;
+        object-position: unset;
+    }
+    .account-slider .arrow-slide img {
+        width: 25px !important;
+    }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
     .account-sidebar, .containerLogin {
