@@ -26,7 +26,6 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
             data.append('budget', product.price);
             data.append('inspirations', 4);
             data.append('pieces', product.piece.id);
-
         }
         projectService.createProject(data);
     }
@@ -75,9 +74,7 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                                                 {project.map(item =>
                                                     <option key={item.uuid} value={item.name}>{item.name}</option>
                                                 )}
-                                                {/* <option value="saab">Saab</option>
-                                            <option value="mercedes">Mercedes</option>
-                                            <option value="audi">Audi</option> */}
+
                                             </select>
                                         </li>
                                         <li className="saveSection">

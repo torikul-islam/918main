@@ -8,6 +8,7 @@ import stylesService from '../../services/styleServices';
 import ShopThreeSlide from '../shop/shopThreeSlide';
 import roomServices from '../../services/roomServices';
 import '../inspired/inspired.css';
+import InfiniteScroll from 'react-infinite-scroller';
 
 
 
@@ -19,12 +20,14 @@ function InspiredMore(props) {
     const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
     const [searchData, setSearchData] = useState([])
+    const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
 
 
     useEffect(() => {
         (async function () {
             const { data } = await inspiredService.getAllInspired();
             setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
+            setSeeMore({ next: data.next, previous: null, results: [] });
         })()
     }, []);
 
@@ -104,6 +107,7 @@ function InspiredMore(props) {
     async function getRoomStyleId(url) {
         const { data } = await inspiredService.getInspiredByRoomOrStyleId(url);
         setInspired({ count: data.count, next: data.next, previous: data.previous, results: data.results });
+        setSeeMore({ next: data.next, previous: null, results: [] });
     }
 
     function onChangeSearch(e) {
@@ -112,6 +116,13 @@ function InspiredMore(props) {
             setSearchData(filter);
         } else {
             setSearchData([])
+        }
+    }
+
+    async function loadFunc() {
+        if (seeMore.next !== null) {
+            const { data } = await inspiredService.getInspirationByUrl(seeMore.next.split('?')[1]);
+            setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
         }
     }
 
@@ -143,6 +154,20 @@ function InspiredMore(props) {
             <ShopSlide data={inspired.results.slice(16, 19)} pagename="inspired" />
             <ShopSlide data={inspired.results.slice(19, 23)} pagename="inspired" />
 
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={loadFunc}
+                hasMore={true || false}
+                loader={seeMore.next &&
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                }
+            >
+                <ShopSlide data={seeMore.results} />
+            </InfiniteScroll>
         </>
     );
 }

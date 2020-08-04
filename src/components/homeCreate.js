@@ -49,7 +49,9 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
                                     </Link>
                                     <p>{item.content}</p>
                                     <div className="read-more">
-                                        <button>Read More</button>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                            <button>Read More</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

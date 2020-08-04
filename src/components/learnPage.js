@@ -10,6 +10,7 @@ import stylesService from '../services/styleServices';
 import NavbarB from './nav/navbarB';
 import './learnPage.css';
 import GoBtn from './common/goBtn';
+import InfiniteScroll from 'react-infinite-scroller';
 
 
 
@@ -117,6 +118,13 @@ function LearnPage(props) {
         }
     }
 
+    async function loadFunc() {
+        if (seeMore.next !== null) {
+            const { data } = await resourceService.getResourcesByUrl(seeMore.next.split('?')[1]);
+            setSeeMore({ next: data.next, previous: data.previous, results: [...seeMore.results, ...data.results] });
+        }
+    }
+
     function onChangeSearch(e) {
         if (e.target.value) {
             const filter = resource.results.filter(el => el.source.toLowerCase().includes(e.target.value.toLowerCase()) || el.title.toLowerCase().includes(e.target.value.toLowerCase()));
@@ -158,8 +166,20 @@ function LearnPage(props) {
             <HomePostTwo data={resource.results.slice(5, 7)} />
             <HomePostTwo data={resource.results.slice(7, 9)} />
             <PostSlideThree data={resource.results.slice(9, 12)} compname="learn" />
-            {seeMore.results && <PostSlideThree data={seeMore.results} compname="learn" />}
-            <GoBtn text='See More' onClick={clickSeeMore} />
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={loadFunc}
+                hasMore={true || false}
+                loader={seeMore.next &&
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                }
+            >
+                <PostSlideThree data={seeMore.results} />
+            </InfiniteScroll>
         </>
     );
 }
