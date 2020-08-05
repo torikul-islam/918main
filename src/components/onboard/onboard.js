@@ -107,24 +107,9 @@ class Onboard extends Component {
                 ids.push(item.pk);
             }
         } else {
-            ids.slice(index, 1);
-            // this.setState({ styleIds: ids, errors: errors });
+            ids = ids.filter(x => x !== item.pk);
         }
         this.setState({ styleIds: ids, errors: errors });
-
-        // if (ids.length >= 3) {
-        //     const index = ids.findIndex(x => x === item.pk);
-        //     ids.slice(index, 1);
-        //     this.setState({ styleIds: ids, errors: errors });
-        // } else {
-        //     const index = ids.findIndex(x => x === item.pk);
-        //     if (index === -1) {
-        //         ids.push(item.pk);
-        //     } else {
-        //         ids.splice(index, 1)
-        //     }
-        //     this.setState({ styleIds: ids, errors: errors });
-        // }
     }
     clickPieces = (item) => {
         const ids = [...this.state.selectedPieces];
