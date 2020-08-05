@@ -24,3 +24,22 @@ padding-top: 30px;
 .image-post-slide h6{
     font-size: 20px;
 }
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .text-fav ul.menu-name li.select_design{
+        padding:5px 27px 7px 5px;
+    }
+    select#cars, select#cars:focus{
+        font-size: 14px;
+    }
+    .go-btn button{
+        font-size: 14px;
+        padding: 7px 24px;
+    }
+    .text-fav ul.menu-name{
+        margin-bottom: 0px;
+    }
+    .text-fav ul.menu-name li.saveSection {
+   margin-left: -27px;
+    }
+  }
