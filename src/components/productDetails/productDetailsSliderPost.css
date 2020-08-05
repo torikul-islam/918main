@@ -15,3 +15,13 @@
 .realted-resourced{
   background-color: #ebeae8;
 }
+@media screen and (max-width: 767px) and (min-width: 320px){
+  .tab-index .slider h6{
+    margin-top:0px;
+    margin-bottom: 15px;
+  }
+  /* .image-slide-slider4 img{
+    width: 70%;
+    height: 204px;
+  } */
+}

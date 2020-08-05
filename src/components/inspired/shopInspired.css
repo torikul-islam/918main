@@ -71,7 +71,7 @@
 }   
 @media screen and (max-width: 767px) and (min-width: 320px){
   .slider img {
-    width: 100% !important;
+    width: 70% !important;
     object-fit: contain;
     object-position: inherit;
 }

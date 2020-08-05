@@ -42,4 +42,9 @@ padding-top: 30px;
     .text-fav ul.menu-name li.saveSection {
    margin-left: -27px;
     }
+    .image-post-slide img{
+        width: 75%;
+        height: 258px;
+        object-fit: cover;
+    }
   }
