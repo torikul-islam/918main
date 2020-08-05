@@ -13,7 +13,7 @@ const OnboardQ1 = (props) => {
     return (
         <div className='container'>
             <div className='onboard-q1'>
-                <div className="text-center onborad-margin" style={{ marginBottom: 100 }}>
+                <div className="text-center onborad-margin" style={{ marginBottom: 20 }}>
                     <img src={require('../../Asset/Images/Logo.png')} className="img-fluid" alt="" style={{ width: 160 }} />
                     <div className="dotList">
                         <span className="active"></span>

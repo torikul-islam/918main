@@ -1,5 +1,5 @@
 .onboard-q2 {
-  padding: 60px 50px 80px 50px;
+  padding: 30px 50px 60px 50px;
   max-width: 800px;
   max-height: 800px;
   margin: auto;
@@ -20,8 +20,8 @@
   text-align: center;
 }
 .onboard-item img {
-  width: 100%;
-  height: 115px;
+  width: 80%;
+  height: 90px;
 }
 
 h6 {
