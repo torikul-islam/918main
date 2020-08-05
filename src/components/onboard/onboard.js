@@ -100,7 +100,7 @@ class Onboard extends Component {
         const errors = { ...this.state.errors };
         errors['styles'] = null;
         let ids = [...this.state.styleIds];
-        let index = ids.findIndex(x => x == item.pk);
+        let index = ids.findIndex(x => x === item.pk);
 
         if (index === -1) {
             if (ids.length <= 2) {

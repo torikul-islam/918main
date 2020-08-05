@@ -8,9 +8,8 @@ import resourceService from '../services/resourceService';
 import roomServices from '../services/roomServices';
 import stylesService from '../services/styleServices';
 import NavbarB from './nav/navbarB';
-import './learnPage.css';
-import GoBtn from './common/goBtn';
 import InfiniteScroll from 'react-infinite-scroller';
+import './learnPage.css';
 
 
 
@@ -109,13 +108,6 @@ function LearnPage(props) {
         const { data } = await resourceService.getResourcesByRoomStyle(url);
         setResource(data);
         setSeeMore({ next: data.next, previous: null, results: [] });
-    }
-
-    async function clickSeeMore() {
-        if (seeMore.next !== null) {
-            const { data } = await resourceService.getResourcesByUrl(seeMore.next.split('?')[1]);
-            setSeeMore({ next: data.next, previous: data.previous, results: [...data.results, ...seeMore.results] });
-        }
     }
 
     async function loadFunc() {
