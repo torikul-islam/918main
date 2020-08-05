@@ -24,4 +24,18 @@
     width: 70%;
     height: 204px;
   } */
+  .image-fav{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .image-fav img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .image-slide-slider4 img{
+    margin-right: auto;
+    margin-left: auto;
+    width: 82%;
+  }
 }
