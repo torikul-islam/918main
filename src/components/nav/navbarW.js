@@ -42,7 +42,7 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                         </div>
                         {searchData.length > 0 && <ul className='search-container'>
                             {searchData.map((s, i) =>
-                                <li onClick={() => clickSearchItem(s)} className="search-item pointer" key={i}>{s.title || s.name || s.designed_by}</li>
+                                <li onClick={() => { clickSearchItem(s); handleOpenMenu() }} className="search-item pointer" key={i}>{s.title || s.name || s.designed_by}</li>
                             )}
                         </ul>}
                         <div className="logo-width">
@@ -53,13 +53,13 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                             </li>
                         </div>
                         <div className="menu-float">
-                            <li className="menu-item font-hel">
+                            <li className="menu-item font-hel" onClick={handleOpenMenu}>
                                 <Link className="nav-link" to="/workspace"  >Workspace</Link>
                             </li>
                             <li className="menu-item font-hel">
                                 <div className="dropdown">
                                     <button className="dropbtn">Explore</button>
-                                    <div className="dropdown-content">
+                                    <div className="dropdown-content" onClick={handleOpenMenu} >
                                         <Link className="nav-link" to="/explore"  >Explore</Link>
                                         <Link className="nav-link" to="/inspired-more" >Be Inspired</Link>
                                         <Link className="nav-link" to="/learn-more"  >Learn</Link>
@@ -68,19 +68,19 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                                     </div>
                                 </div>
                             </li>
-                            {!user && <li className="menu-item signup" onClick={() => openModal('signup')}>
-                                <div className="nav-link" >Sign Up</div>
+                            {!user && <li className="menu-item signup" onClick={() => { openModal('signup'); handleOpenMenu() }}>
+                                <div className="nav-link"  >Sign Up</div>
                             </li>}
-                            {user && <li className="menu-item signup" onClick={clickLogout}>
+                            {user && <li className="menu-item signup" onClick={() => { clickLogout(); handleOpenMenu() }}>
                                 <div className="nav-link" >Logout</div>
                             </li>}
                             <span className="menu-icon">
-                                <li className="menu-item man">
+                                <li className="menu-item man" onClick={handleOpenMenu} >
                                     <Link className="nav-link" to="/account">
                                         <img src={require('../../Asset/Images/man.png')} alt="man.png" />
                                     </Link>
                                 </li>
-                                <li className="menu-item shop pointer" onClick={clickCard}>
+                                <li className="menu-item shop pointer" onClick={() => { clickCard(); handleOpenMenu() }}>
                                     <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
                                 </li>
                             </span>
