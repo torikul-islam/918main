@@ -34,12 +34,15 @@ function ProductDetails(props) {
 
     useEffect(() => {
         (async function () {
-            let { data } = await projectServices.getProject();
-            let board = localStorage.getItem('boardName');
-            if (board) {
-                data = [...data, { name: board }]
+            const token = localStorage.getItem('token');
+            if (token) {
+                let { data } = await projectServices.getProject();
+                let board = localStorage.getItem('boardName');
+                if (board) {
+                    data = [...data, { name: board }]
+                }
+                setProject(data);
             }
-            setProject(data);
         })()
     }, []);
 

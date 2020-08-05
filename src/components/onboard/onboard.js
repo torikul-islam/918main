@@ -61,6 +61,7 @@ class Onboard extends Component {
     submitStyle = async (e) => {
         e.preventDefault();
         const { checkBoxes, errors, styleIds } = this.state;
+        console.log('box', checkBoxes);
         if (styleIds.length === 0) {
             errors['styles'] = 'Please! select at least one image.'
             this.setState({ errors: errors });
@@ -70,10 +71,10 @@ class Onboard extends Component {
         }
 
         try {
-            const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')} `);
+            const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')}`);
             this.setState({ filterRoom: data.results, boardNo: 3 });
         } catch (ex) {
-            errors['styles'] = 'Failed to get styles';
+            errors['style'] = 'Failed to get styles';
             this.setState({ errors });
         }
     };
@@ -98,16 +99,32 @@ class Onboard extends Component {
     clickImage = (item) => {
         const errors = { ...this.state.errors };
         errors['styles'] = null;
-        const ids = [...this.state.styleIds];
-        if (ids.length >= 3) return;
+        let ids = [...this.state.styleIds];
+        let index = ids.findIndex(x => x == item.pk);
 
-        const index = ids.findIndex(x => x === item.pk);
         if (index === -1) {
-            ids.push(item.pk);
+            if (ids.length <= 2) {
+                ids.push(item.pk);
+            }
         } else {
-            ids.splice(index, 1)
+            ids.slice(index, 1);
+            // this.setState({ styleIds: ids, errors: errors });
         }
         this.setState({ styleIds: ids, errors: errors });
+
+        // if (ids.length >= 3) {
+        //     const index = ids.findIndex(x => x === item.pk);
+        //     ids.slice(index, 1);
+        //     this.setState({ styleIds: ids, errors: errors });
+        // } else {
+        //     const index = ids.findIndex(x => x === item.pk);
+        //     if (index === -1) {
+        //         ids.push(item.pk);
+        //     } else {
+        //         ids.splice(index, 1)
+        //     }
+        //     this.setState({ styleIds: ids, errors: errors });
+        // }
     }
     clickPieces = (item) => {
         const ids = [...this.state.selectedPieces];

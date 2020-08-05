@@ -13,12 +13,15 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
 
     useEffect(() => {
         (async function () {
-            let { data } = await projectServices.getProject();
-            const board = localStorage.getItem('boardName');
-            if (board) {
-                data = [...data, { name: board }]
+            const token = localStorage.getItem('token');
+            if (token) {
+                let { data } = await projectServices.getProject();
+                const board = localStorage.getItem('boardName');
+                if (board) {
+                    data = [...data, { name: board }]
+                }
+                setProject(data);
             }
-            setProject(data);
         })()
     }, []);
 
