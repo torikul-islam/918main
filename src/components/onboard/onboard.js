@@ -73,7 +73,7 @@ class Onboard extends Component {
             const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')} `);
             this.setState({ filterRoom: data.results, boardNo: 3 });
         } catch (ex) {
-            errors['style'] = 'Failed to get styles';
+            errors['styles'] = 'Failed to get styles';
             this.setState({ errors });
         }
     };
@@ -96,6 +96,8 @@ class Onboard extends Component {
     }
 
     clickImage = (item) => {
+        const errors = { ...this.state.errors };
+        errors['styles'] = null;
         const ids = [...this.state.styleIds];
         if (ids.length >= 3) return;
 
@@ -105,11 +107,10 @@ class Onboard extends Component {
         } else {
             ids.splice(index, 1)
         }
-        this.setState({ styleIds: ids });
+        this.setState({ styleIds: ids, errors: errors });
     }
     clickPieces = (item) => {
         const ids = [...this.state.selectedPieces];
-        console.log(ids);
         const index = ids.findIndex(x => x === item.uuid);
         if (index === -1) {
             ids.push(item.uuid);
