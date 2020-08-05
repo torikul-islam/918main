@@ -278,6 +278,18 @@ div#menu {
 }
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
+  .shop-more .go-btn{
+    top:23px;
+  }
+  .slider_button .go-btn{
+    top:-1px !important;
+  }
+  /* .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
+    left: 32% !important;
+  } */
+  .inspired-more .go-btn {
+    top: 28px;
+}
   .home-area {
     height: 40vh;
 }
@@ -310,7 +322,7 @@ div#menu {
   text-align: center;
 }
 .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
-  left: 25% !important;
+  left: 30% !important;
 }
 .inspired-slider ul, .shop-slider ul {
   overflow-x: scroll;
