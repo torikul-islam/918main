@@ -18,6 +18,7 @@ function ProductDetails(props) {
     const [product, setProduct] = useState({});
     const [productLike, setProductLike] = useState([]);
     const [project, setProject] = useState([]);
+    const token = localStorage.getItem('token');
 
 
 
@@ -34,7 +35,6 @@ function ProductDetails(props) {
 
     useEffect(() => {
         (async function () {
-            const token = localStorage.getItem('token');
             if (token) {
                 let { data } = await projectServices.getProject();
                 let board = localStorage.getItem('boardName');
@@ -44,7 +44,7 @@ function ProductDetails(props) {
                 setProject(data);
             }
         })()
-    }, []);
+    }, [token]);
 
     useEffect(() => {
         (async function () {

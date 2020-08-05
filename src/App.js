@@ -51,6 +51,12 @@ function App(props) {
     setIsCardOpen(!isCardOpen);
   };
 
+  function clickOutside() {
+    if (isCardOpen) {
+      setIsCardOpen(false);
+    }
+  }
+
   function addShoppingCard(item) {
     let card = [...shoppingCard];
     item.quantity = 1;
@@ -86,7 +92,9 @@ function App(props) {
     <>
       <main>
 
-        <Card isCardOpen={isCardOpen}
+        <Card
+          clickOutside={clickOutside}
+          isCardOpen={isCardOpen}
           clickCard={clickCard}
           shoppingCard={shoppingCard}
           itemControl={itemControl}

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import GoBtn from '../common/goBtn';
 import '../card/card.css';
 
 
 
 
-function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
+function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }) {
+    let wrapperRef = useRef(null);
 
     function total() {
         return shoppingCard.reduce((total, cur) => {
@@ -13,11 +14,22 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl }) {
         }, 0).toFixed(2)
     }
 
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside, false);
+        return () => {
+            document.removeEventListener("click", handleClickOutside, false);
+        };
+    }, [isCardOpen]);
 
+    function handleClickOutside(event) {
+        if (!wrapperRef.current.contains(event.target)) {
+            clickOutside();
+        }
+    };
 
     return (
         <>
-            <div className={`shopping-card ${isCardOpen ? 'card-show' : ''}`}>
+            <div ref={wrapperRef} className={`shopping-card ${isCardOpen ? 'card-show' : ''}`}>
                 <div className="container">
                     <div className="shopincards">
                         <div className="heading_shop">

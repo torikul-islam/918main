@@ -9,11 +9,11 @@ import './inspirationTitle.css';
 function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, openModal }) {
     const [project, setProject] = useState([]);
     const [selectedValue, setSelectedValue] = useState(null);
+    const token = localStorage.getItem('token');
 
 
     useEffect(() => {
         (async function () {
-            const token = localStorage.getItem('token');
             if (token) {
                 let { data } = await projectServices.getProject();
                 const board = localStorage.getItem('boardName');
@@ -23,7 +23,7 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
                 setProject(data);
             }
         })()
-    }, []);
+    }, [token]);
 
 
     function addToBoard(product) {
@@ -51,7 +51,6 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
         }
     }
 
-    const token = localStorage.getItem('token');
 
     return (
         <div className='container-fluid mb-5'>
