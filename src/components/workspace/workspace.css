@@ -15,7 +15,7 @@
 
 .image-fav-modal img {
     width: 105%;
-    height: 300px;
+    height: 280px;
   }
 
 
@@ -54,4 +54,48 @@
 
 .hello{
     overflow: scroll;
+}
+.tab-index .small-slide{
+width: 70%;
+margin-left: auto;
+margin-right: auto;
+}
+
+.small-slide img{
+    height: 168px !important;
+}
+.small-slide .arrow-slide img{
+    height: 44px !important;
+}
+.shop-modal{
+    margin-bottom: -70px;
+}
+.shop-modal h3{
+    margin-left: 100px;
+}
+
+.inspired-modal {
+    width: 84% !important;
+}
+
+.inspired-modal .slider img {
+    width:180px;
+    height: 170px;
+}
+.inspired-modal .slider .arrow-slide img {
+    width:25px;
+   height: 44px;
+    
+}
+.small-slide h2{
+    font-size: 16px !important;
+}
+
+.shop-modal-title .menu-name {
+    margin-bottom: 20px !important;
+}
+
+.shop-modal-title .text-fav {
+    margin-top: 20px ;
+    margin-bottom: auto;
 }

@@ -45,6 +45,7 @@ const ShopModal = ({ product, products, closeModal }) => {
                 <div className='container' >
                     {product &&
                         <div className="row" key={product.uuid}>
+                            <div className="col-sm-2"></div>
                             <div className="col-sm-3">
                                 <div className="image-fav-modal">
                                     <img src={product.ref_img} alt="" />
@@ -53,7 +54,7 @@ const ShopModal = ({ product, products, closeModal }) => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="col-sm-8">
+                            <div className="col-sm-6 shop-modal-title">
                                 <div className="text-fav text-center">
                                     <span>Product Name </span>
                                     <h4>{product.name}</h4>
@@ -67,23 +68,23 @@ const ShopModal = ({ product, products, closeModal }) => {
                                             </select>
                                         </li>
                                         <li className="saveSection">
-                                            <GoBtn text='save' />
+                                            <GoBtn text='Save' />
                                         </li>
                                     </ul>
-                                    <GoBtn text='Add to shopping List' onClick={() => console.log("Add to cart")} />
+                                    <GoBtn text='Add to Shopping List' onClick={() => console.log("Add to cart")} />
                                 </div>
                             </div>
                         </div>
                     }
 
                     <div className='row'>
-                        <div className="account-slider">
+                        <div className="account-slider shop-modal">
                             <div className="col-sm-12">
                                 <h3>You may also like.</h3>
                             </div>
 
                             <div className='tab-index'>
-                                <div className='slider'>
+                                <div className='slider small-slide'>
                                     <div className='row'>
                                         {[0, 1, 2, 3].map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
