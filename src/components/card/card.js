@@ -29,7 +29,7 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }
 
     return (
         <>
-            <div ref={wrapperRef} className={`shopping-card ${isCardOpen ? 'card-show' : ''}`}>
+            <div ref={wrapperRef} className={`${isCardOpen ? 'shopping-card card-show' : 'shopping-card'}`}>
                 <div className="container">
                     <div className="shopincards">
                         <div className="heading_shop">
@@ -80,8 +80,12 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }
                             )}
                             <hr />
                         </div>
-                        <div className="estimateTotal"><h6><span className="float-left"> Estimated Subtotal:</span> <span className="float-right">${total()}</span></h6></div>
-
+                    </div>
+                </div>
+                <div className="estimateTotal">
+                    <div className='row'>
+                        <div className="col-sm-6"> Estimated Subtotal:</div>
+                        <div className="col-sm-6">${total()}</div>
                     </div>
                 </div>
             </div>

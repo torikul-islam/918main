@@ -69,7 +69,7 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                                 </div>
                             </li>
                             {!user && <li className="menu-item signup" onClick={() => { openModal('signup'); handleOpenMenu() }}>
-                                <div className="nav-link"  >Sign Up</div>
+                                <div className="nav-link">Sign Up</div>
                             </li>}
                             {user && <li className="menu-item signup" onClick={() => { clickLogout(); handleOpenMenu() }}>
                                 <div className="nav-link" >Logout</div>
