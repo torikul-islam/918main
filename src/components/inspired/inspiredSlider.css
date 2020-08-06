@@ -58,7 +58,9 @@ ul.shopTab li {
   background: #d7d5d5;
   top: 32px;
 }
-/* img{
-  object-fit: cover;
-  object-position: 100% 0;
-} */
+@media screen and (max-width: 767px) and (min-width: 320px) {
+.image-slide img {
+  width: 80%;
+  margin: auto;
+}
+}
