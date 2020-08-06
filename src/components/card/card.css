@@ -101,7 +101,7 @@ div.estimateTotal h6 {
   font-family: "helvetica-light";
   font-size: 20px;
   color: #fff;
-  line-height:20px;
+  line-height: 20px;
 }
 div.estimateTotal {
   position: fixed;
@@ -131,7 +131,7 @@ div.estimateTotal .margin-custom {
 }
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .shopping-card.card-show {
-    width: 60%;
+    width: 100%;
     height: 100%;
     z-index: 9999;
   }
@@ -143,13 +143,13 @@ div.estimateTotal .margin-custom {
   }
   h6.text-right.totalHeading {
     text-align: left !important;
-}
+  }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-.card-show {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  width: 48%;
-  z-index: 9999;
-}
+  .card-show {
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    width: 48%;
+    z-index: 9999;
+  }
 }
