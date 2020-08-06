@@ -295,7 +295,7 @@ div#menu {
     left: 32% !important;
   } */
   .inspired-more .go-btn {
-    top: 28px;
+    top: 28px !important;
 }
   .home-area {
     height: 40vh;
