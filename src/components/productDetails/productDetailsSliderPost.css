@@ -16,6 +16,9 @@
   background-color: #ebeae8;
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
+  .related-title {
+    text-align: center;
+  }
   .tab-index .slider h6{
     margin-top:0px;
     margin-bottom: 15px;
