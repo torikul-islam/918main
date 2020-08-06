@@ -6,10 +6,13 @@ import './inspirationTitle.css';
 
 
 
-function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, openModal }) {
+function InspirationTitle(props) {
+    const { inspired, inspirationLike, clickInspirationLike, openModal } = props
+
     const [project, setProject] = useState([]);
     const [selectedValue, setSelectedValue] = useState(null);
     const token = localStorage.getItem('token');
+    const [gotoBoard, setGotoBoard] = useState(false);
 
 
     useEffect(() => {
@@ -36,6 +39,7 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
             data.append('pieces', 1);
         }
         projectServices.createProject(data);
+        setGotoBoard(true);
     }
 
     function handleChange(event) {
@@ -81,19 +85,29 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
                                 (<div className="text-fav text-center">
                                     <span>Designed by </span>
                                     <h4>{item.designed_by}</h4>
-                                    <ul className="menu-name">
+                                    {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
-                                            <select name="cars" id="cars" onChange={handleChange}>
-                                                <option value="">Add to Board</option>
-                                                {project.map(item =>
-                                                    <option key={item.uuid} value={item.name}>{item.name}</option>
-                                                )}
+                                            <select name="cars" id="cars">
+                                                <option value="">Saved to {selectedValue}</option>
                                             </select>
                                         </li>
                                         <li className="saveSection">
-                                            <GoBtn text='Save' onClick={() => addToBoard(item)} />
+                                            <GoBtn text='Go to Board' onClick={() => props.history.push('/workspace')} />
                                         </li>
-                                    </ul>
+                                    </ul> :
+                                        <ul className="menu-name">
+                                            <li className="select_design">
+                                                <select name="cars" id="cars" onChange={handleChange}>
+                                                    <option value="">Add to Board</option>
+                                                    {project.map((item, i) =>
+                                                        <option key={i} value={item.name}>{item.name}</option>
+                                                    )}
+                                                </select>
+                                            </li>
+                                            <li className="saveSection">
+                                                <GoBtn text='Save' onClick={() => addToBoard(item)} />
+                                            </li>
+                                        </ul>}
                                 </div>)
                             }
 

@@ -19,9 +19,10 @@ function Login({ openModal, closeModal, isMoodBoard }) {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
+            setErrors(null);
             const { data } = await login(user.username, user.password);
-            localStorage.setItem('token', data.token);
             setSuccess("Logged you in, please wait...");
+            localStorage.setItem('token', data.token);
             if (isMoodBoard) {
                 window.location = '/workspace';
             } else {

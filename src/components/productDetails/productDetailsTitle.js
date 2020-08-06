@@ -5,8 +5,12 @@ import './products.css';
 
 
 
-const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProductLike, openModal, project }) => {
+const ProductDetailsTitle = (props) => {
+    const { addShoppingCard, product, productLike, clickProductLike, openModal, project } = props
+
     const [selectedValue, setSelectedValue] = useState(null);
+    const [gotoBoard, setGotoBoard] = useState(false);
+
 
     if (product) {
         const isLike = productLike.some(el => el.product.uuid === product.uuid);
@@ -28,6 +32,7 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
             data.append('pieces', product.piece.id);
         }
         projectService.createProject(data);
+        setGotoBoard(true);
     }
     function handleChange(event) {
         setSelectedValue(event.target.value)
@@ -67,20 +72,30 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
                                     <h6>{product.retailer}</h6>
                                     <h4>{product.name}</h4>
                                     <p>${product.price}</p>
-                                    <ul className="menu-name">
+                                    {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
-                                            <select name="cars" id="cars" onChange={handleChange}>
-                                                <option value=''>Add to Board</option>
-                                                {project.map(item =>
-                                                    <option key={item.uuid} value={item.name}>{item.name}</option>
-                                                )}
-
+                                            <select name="cars" id="cars">
+                                                <option value=''>Saved to {selectedValue}</option>
                                             </select>
                                         </li>
                                         <li className="saveSection">
-                                            <GoBtn text='Save' onClick={() => addToBoard(product)} />
+                                            <GoBtn text='Go to Board' onClick={() => props.history.push('/workspace')} />
                                         </li>
-                                    </ul>
+                                    </ul> :
+                                        <ul className="menu-name">
+                                            <li className="select_design">
+                                                <select name="cars" id="cars" onChange={handleChange}>
+                                                    <option value=''>Add to Board</option>
+                                                    {project.map(item =>
+                                                        <option key={item.uuid} value={item.name}>{item.name}</option>
+                                                    )}
+
+                                                </select>
+                                            </li>
+                                            <li className="saveSection">
+                                                <GoBtn text='Save' onClick={() => addToBoard(product)} />
+                                            </li>
+                                        </ul>}
                                     <GoBtn text='Add to Shopping List' onClick={() => addShoppingCard(product)} />
                                 </div>
                             )
