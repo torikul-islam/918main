@@ -131,10 +131,13 @@ div.estimateTotal .margin-custom {
 }
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .shopping-card.card-show {
-    width: 60%;
+    width: 80%;
     height: 100%;
     z-index: 9999;
   }
+  .text-fav {
+    float: none;
+}
   div.estimateTotal {
     width: 100%;
   }
