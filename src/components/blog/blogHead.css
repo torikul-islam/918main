@@ -1,6 +1,6 @@
 .title-with-logo img {
     width: 100%;
-    height: 700px;
+    height: auto;
     object-fit: contain;
 }
 
