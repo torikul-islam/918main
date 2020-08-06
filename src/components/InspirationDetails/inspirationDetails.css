@@ -1,7 +1,7 @@
 
 .account-slider-ins-dtl .slider img {
     width: 100% !important;
-    object-fit: initial;
+    object-fit: contain;
 }
 .account-slider-ins-dtl .arrow-slide img {
     width: 25px !important;

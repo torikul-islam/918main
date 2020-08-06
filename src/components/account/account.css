@@ -53,6 +53,11 @@
     .account-sidebar, .containerLogin {
         margin-top: 100px;
     }
+
+    .bg-color{
+        max-width: 80% !important;
+    }
+
     .account-slider .arrow-right.arrow-slide{
         right: 0;
     }
