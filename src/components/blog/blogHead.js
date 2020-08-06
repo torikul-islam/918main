@@ -67,8 +67,8 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
                     </div>
                 </div >
             </div>
-            <SocialIcons/>
-            <Subscribe/>
+            <SocialIcons />
+            <Subscribe />
         </>
     );
 }

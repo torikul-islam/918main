@@ -20,7 +20,7 @@ function InspirationDetailsProduct(props) {
         })()
     }, []);
 
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
 
     async function onPageChange(val) {
         const diff = product.results.length - (currentPage * pageSize * 2);
@@ -49,36 +49,36 @@ function InspirationDetailsProduct(props) {
     return (
         <div className="container-fluid ins-dt-area">
             <div className='container'>
-            <div className='row'>
-                <div className="account-slider-ins-dtl">
-                    <div className="col-sm-12">
-                        <h3>Related Product.</h3>
-                    </div>
+                <div className='row'>
+                    <div className="account-slider-ins-dtl">
+                        <div className="col-sm-12">
+                            <h3>Related Product.</h3>
+                        </div>
 
-                    <div className='tab-index'>
-                        <div className='slider'>
-                            <div className='row'>
-                                {paginateProd && paginateProd.map((item, i) =>
-                                    <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                        <Link to={`/product-details/${item.uuid}`} className='remove-u-line'>
-                                            <img src={item.ref_img} alt="" />
-                                            <h6>{item.retailer}</h6>
-                                        </Link>
-                                        <p>${item.price}</p>
-                                    </div>
-                                )}
-                                <Pagination
-                                    itemsCount={product.count}
-                                    pageSize={pageSize}
-                                    currentPage={currentPage}
-                                    onPageChange={onPageChange}
-                                />
+                        <div className='tab-index'>
+                            <div className='slider'>
+                                <div className='row'>
+                                    {paginateProd && paginateProd.map((item, i) =>
+                                        <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
+                                            <Link to={`/product-details/${item.uuid}`} className='remove-u-line'>
+                                                <img src={item.ref_img} alt="" />
+                                                <h6>{item.retailer}</h6>
+                                            </Link>
+                                            <p>${item.price}</p>
+                                        </div>
+                                    )}
+                                    <Pagination
+                                        itemsCount={product.count}
+                                        pageSize={pageSize}
+                                        currentPage={currentPage}
+                                        onPageChange={onPageChange}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 }
