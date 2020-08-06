@@ -14,6 +14,7 @@
 .craete-img-learn img {
     width: 100%;
     height: 640px;
+    object-fit: contain;
 }
 .craete-text {
     text-align: center;
