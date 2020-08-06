@@ -58,7 +58,7 @@ function Blog(props) {
     }, []);
 
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [resource]);
 
     function handleResize() {
         const width = window.innerWidth;

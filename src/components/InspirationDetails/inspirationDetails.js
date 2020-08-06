@@ -72,6 +72,7 @@ function InspirationDetails(props) {
             />
 
             <InspirationTitle
+                {...props}
                 inspirationLike={inspirationLike}
                 clickInspirationLike={clickInspirationLike}
                 inspired={inspired}

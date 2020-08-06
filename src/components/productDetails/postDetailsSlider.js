@@ -22,7 +22,7 @@ function ProductDetailsSlider(props) {
     }, []);
 
 
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [product]);
 
     function handleResize() {
         const width = window.innerWidth;
@@ -52,24 +52,24 @@ function ProductDetailsSlider(props) {
     return (
         <div className="container-fluid ins-area">
             <div className='container'>
-            <div className="slider-title">
-            <h3>You May Also Like.</h3>
-            </div>
-            
-            <div className="slide-main">
-                <div className='row'>
-                    <Slider4 data={paginateProd} />
-
-                    <Pagination
-                        itemsCount={product.count}
-                        pageSize={pageSize}
-                        currentPage={currentPage}
-                        onPageChange={onPageChange}
-                    />
+                <div className="slider-title">
+                    <h3>You May Also Like.</h3>
                 </div>
 
+                <div className="slide-main">
+                    <div className='row'>
+                        <Slider4 data={paginateProd} />
+
+                        <Pagination
+                            itemsCount={product.count}
+                            pageSize={pageSize}
+                            currentPage={currentPage}
+                            onPageChange={onPageChange}
+                        />
+                    </div>
+
+                </div>
             </div>
-        </div>
         </div>
 
     )

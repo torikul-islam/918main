@@ -12,8 +12,12 @@ const ShopPost = ({ data }) => {
                         <div className="col-sm-3" key={item.uuid}>
                             <div className="image-post-slide">
                                 <Link to={`/product-details/${item.uuid}`} className='remove-u-line'>
-                                    <img src={item.ref_img} alt="" />
-                                    <h6>{item.retailer}</h6>
+                                    <div>
+                                        <img src={item.ref_img} alt="" />
+                                    </div>
+                                    <div>
+                                        <h6>{item.retailer}</h6>
+                                    </div>
                                 </Link>
                                 <p>${item.price}</p>
                             </div>

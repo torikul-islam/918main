@@ -27,7 +27,6 @@ function Signup(props) {
             localStorage.setItem('token', data.token);
             setSuccess("Registration completed. You're redirecting...");
             if (isMoodBoard) {
-                console.log("print moodboard");
                 window.location = '/workspace';
             } else {
                 setTimeout(() => openModal('loginNext'), 3000);

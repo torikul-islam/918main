@@ -66,7 +66,7 @@ function Shop(props) {
         }
     }
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [product]);
 
     function handleResize() {
         const width = window.innerWidth;

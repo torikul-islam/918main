@@ -16,8 +16,12 @@ const SliderPost = ({ data }) => {
                         <div className="col-sm-3" key={item.uuid}>
                             <div className="image-post-slide">
                                 <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
-                                    <img src={item.ref_img} alt="" />
-                                    <h6>{capitalize(item.title)}</h6>
+                                    <div>
+                                        <img src={item.ref_img} alt="" />
+                                    </div>
+                                    <div>
+                                        <h6>{capitalize(item.title)}</h6>
+                                    </div>
                                 </Link>
                                 <p>{item.source}</p>
                             </div>

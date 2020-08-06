@@ -26,7 +26,7 @@ function AccountInspiration() {
             setCurrentPage(currentPage + 1)
         }
     }
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [inspired]);
 
     function handleResize() {
         const width = window.innerWidth;
