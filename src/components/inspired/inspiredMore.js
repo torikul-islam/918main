@@ -50,6 +50,7 @@ function InspiredMore(props) {
 
 
     function handleResize() {
+        console.log('resize');
         const width = window.innerWidth;
         if (width <= '767') {
             setPageSize(1);

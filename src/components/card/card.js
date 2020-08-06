@@ -84,8 +84,8 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }
                 </div>
                 <div className="estimateTotal">
                     <div className='row margin-custom'>
-                        <div className="col-sm-6"> <h6>Estimated Subtotal:</h6></div>
-                        <div className="col-sm-6"><h6 className="text-right totalHeading">${total()}</h6></div>
+                        <div className="col-sm-8"> <h6>Estimated Subtotal:</h6></div>
+                        <div className="col-sm-4"><h6 className="text-right totalHeading">${total()}</h6></div>
                     </div>
                 </div>
             </div>
