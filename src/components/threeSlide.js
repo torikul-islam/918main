@@ -13,7 +13,7 @@ const ThreeSlide = ({ data, count, pageSize, currentPage, onPageChange }) => {
     const paginateData = paginate(data, currentPage, pageSize);
     return (
         <div className='container-fluid ins-area'>
-            <div className='container inspired' >
+            <div className='container inspireds' >
                 <TitleWithBer text='Recommended Reading.' />
 
                 <div className='tab-index'>

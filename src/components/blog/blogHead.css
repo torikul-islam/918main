@@ -41,6 +41,7 @@
     text-align: center;
     font-family: "Helvetica-light";
 }
+
 .product-price h4 {
     color: #030303;
     font-family: "PlayfairDisplay-Bold"; 
@@ -64,4 +65,9 @@
     .mzero{
         margin: 0 !important;
     }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+.blog-area {
+    padding-top: 190px;
+}
 }

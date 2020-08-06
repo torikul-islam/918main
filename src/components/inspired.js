@@ -11,7 +11,7 @@ class Inspired extends Component {
     render() {
         return (
             <div className='container-fluid ins-area'>
-                <div className='container inspired' >
+                <div className='container inspireds' >
                     <h2 className='ins-title'>Be Inspired</h2>
 
                     <div className='tab-index'>

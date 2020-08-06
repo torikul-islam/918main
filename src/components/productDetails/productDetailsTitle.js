@@ -37,7 +37,7 @@ const ProductDetailsTitle = ({ addShoppingCard, product, productLike, clickProdu
     const token = localStorage.getItem('token');
 
     return (
-        <div className='container-fluid mb-5'>
+        <div className='container-fluid mb-5 marginnine'>
             <div className='container' >
                 {product.price && <div className="row" >
                     <div className="col-sm-6">

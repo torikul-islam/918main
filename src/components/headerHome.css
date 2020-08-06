@@ -241,12 +241,15 @@ div#menu {
   .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
     left: 37% !important;
   }
-  .arrow-left.arrow-slide {
+  /* .arrow-left.arrow-slide {
     left: 0 !important;
   }
   .arrow-right.arrow-slide {
     right: 0;
-  }
+  } */
+  .text-fav ul.menu-name li.select_design {
+    padding-left: 35px;
+}
   .homecreate.twoSlide .craete-text h2 {
     display: -webkit-box;
     -webkit-line-clamp: 3;

@@ -53,7 +53,7 @@ function InspirationTitle({ inspired, inspirationLike, clickInspirationLike, ope
 
 
     return (
-        <div className='container-fluid mb-5'>
+        <div className='container-fluid mb-5 marginnine'>
             <div className='container' >
                 {inspired.map(item =>
                     <div className="row" key={item.uuid}>

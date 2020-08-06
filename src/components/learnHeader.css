@@ -82,9 +82,15 @@
 }
 @media screen and (max-width: 1024px) and (min-width: 768px){
     .header-learn {
-        padding-top: 100px;
+        padding-top: 190px;
     }
     .learn-text p{
         padding: 0;
+    }
+    .learn-text h2 {
+        font-size: 30px;
+    }
+    .homecreate .craete-text-hero {
+        margin: 0;
     }
 }

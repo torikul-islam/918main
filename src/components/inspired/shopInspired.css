@@ -63,10 +63,49 @@
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .slider img {
     height: 190px;
-    width: 100%;
+    width: 100% !important;
 }
 .arrow-slide img {
   height: auto !important;
+  width: 25px !important;
+}
+li.logo-black.logoMobile {
+  display: none;
+}
+.inspired-modal {
+  width: 100% !important;
+}
+.shop-modal h3 {
+  margin-left: 85px;
+}
+.go-btn button {
+  font-size: 19px;
+}
+label.react-switch-label {
+  display: none;
+}
+.titleInspire h4 {
+  font-size: 19px;
+}
+.inspired-fil {
+  width: 60% !important;
+}
+.cross-icon img, .shop-furniture .cross-icon img {
+  margin-top: -45px;
+}
+/* .rangeslider input {
+  width: 46%;
+}
+span.range_max.light.right {
+  left: 43% !important;
+  position: inherit;
+} */
+.colorStyle ul li {
+  display: inline-block !important;
+  margin-left: 27px !important;
+}
+.colorStyle ul {
+  display: inherit !important;
 }
 }   
 @media screen and (max-width: 767px) and (min-width: 320px){

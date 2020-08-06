@@ -26,6 +26,9 @@ span.icon {
   height: 500px;
   object-fit: initial;
 }
+.marginnine{
+  margin-top: 190px !important;
+}
 span.icon img {
   width: 25px;
   height: 25px;

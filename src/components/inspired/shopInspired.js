@@ -10,7 +10,7 @@ const ShopInspired = ({ data, count, pageSize, currentPage, onPageChange }) => {
     const paginateDate = paginate(data, currentPage, pageSize);
     return (
         <div className='container-fluid ins-area'>
-            <div className='container inspired' >
+            <div className='container inspireds' >
                 <TitleWithBer text='Trending' />
                 <div className='tab-index slider'>
                     <div className="row">
