@@ -10,6 +10,13 @@
   top: 20%;
   opacity: 0.1;
 } */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .home-area {
   background-image: url(../Asset/Images/home-bg.png);
   width: 100%;
