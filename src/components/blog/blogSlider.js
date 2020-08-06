@@ -26,8 +26,12 @@ function BlogSlider({ resource, count, currentPage, pageSize, onPageChange }) {
                                 {paginateResource && paginateResource.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
                                         <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
-                                            <img src={item.ref_img} alt="" />
-                                            <h6>{capitalize(item.title)}</h6>
+                                            <div>
+                                                <img src={item.ref_img} alt="" />
+                                            </div>
+                                            <div>
+                                                <h6>{capitalize(item.title)}</h6>
+                                            </div>
                                         </Link>
                                         <p>{item.source}</p>
                                     </div>
