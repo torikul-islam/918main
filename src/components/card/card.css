@@ -134,6 +134,7 @@ div.estimateTotal .margin-custom {
     width: 80%;
     height: 100%;
     z-index: 9999;
+    top: 0;
   }
   .text-fav {
     float: none;
