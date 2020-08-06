@@ -13,7 +13,7 @@ const TabShop = ({ title, rooms, styles, onSelectOption }) => {
                     <div className="col-sm-12">
                         <h4>{title}</h4>
                         <ul>
-                            <li className="form-group col-md-2 col-5">
+                            <li className="form-group col-md-2 col-5 marginFlex">
                                 <select className="form-control" onChange={(e) => onSelectOption(e, 'rooms')}>
                                     <option value="">ROOM</option>
                                     {rooms.map((r, i) =>
@@ -23,7 +23,7 @@ const TabShop = ({ title, rooms, styles, onSelectOption }) => {
                                 </select>
                             </li>
 
-                            <li className="form-group col-md-2 col-5">
+                            <li className="form-group col-md-2 col-5 marginFlex">
                                 <select className="form-control" id="styles" onChange={(e) => onSelectOption(e, 'styles')} >
                                     <option value="">STYLE</option>
                                     {styles.map((s, i) =>
