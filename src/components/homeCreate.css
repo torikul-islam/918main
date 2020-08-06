@@ -13,7 +13,7 @@
 }
 .craete-img-learn img {
     width: 100%;
-    height: 640px;
+    height: auto;
     object-fit: contain;
 }
 .craete-text {
@@ -108,5 +108,9 @@
     }
     .list-furniture ul li {
         line-height: 40px;
+    }
+
+    .craete-text-hero{
+        margin: 70px 0px;
     }
 }
