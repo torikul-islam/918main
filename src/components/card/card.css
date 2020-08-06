@@ -134,6 +134,10 @@ div.estimateTotal .margin-custom {
     width: 100%;
     height: 100%;
     z-index: 9999;
+    top: 0;
+  }
+  .text-fav {
+    float: none;
   }
   div.estimateTotal {
     width: 100%;

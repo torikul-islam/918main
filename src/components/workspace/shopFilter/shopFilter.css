@@ -205,6 +205,9 @@ h5 {
   .colorStyle ul li {
     margin-left: 10px !important;
 }
+.cross-icon.crossModal img {
+  margin-top: 55px;
+}
 .colorStyle ul,  .removeIcons ul {
   display: inline-block !important;
 }
