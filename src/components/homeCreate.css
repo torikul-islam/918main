@@ -100,3 +100,12 @@
     font-size: 24px;
     line-height: normal;
 }
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+    li.form-group.marginFlex {
+        margin: 0;
+    }
+    .list-furniture ul li {
+        line-height: 40px;
+    }
+}
