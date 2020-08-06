@@ -20,7 +20,7 @@ function InspirationDetailsProduct(props) {
         })()
     }, []);
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [product]);
 
     async function onPageChange(val) {
         const diff = product.results.length - (currentPage * pageSize * 2);

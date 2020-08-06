@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import paginate from '../../utils/paginate';
 import Pagination from '../common/pagination';
+import { waitForDomChange } from '@testing-library/react';
 
 
 
@@ -25,7 +26,7 @@ function AccountLooks(props) {
             setCurrentPage(currentPage + 1)
         }
     }
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [looks]);
 
     function handleResize() {
         const width = window.innerWidth;

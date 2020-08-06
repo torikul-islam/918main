@@ -46,7 +46,7 @@ function InspiredMore(props) {
     }, []);
 
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [inspired]);
 
 
     function handleResize() {

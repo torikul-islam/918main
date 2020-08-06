@@ -6,7 +6,7 @@ import './paginate.css';
 
 const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
     const pageCount = Math.ceil(itemsCount / pageSize);
-    if (pageCount === 1 || pageCount === 0) return null;
+    if (pageCount <= 1) return null;
 
     return (
         <div className="arrows">

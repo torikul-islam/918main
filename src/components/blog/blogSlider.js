@@ -10,7 +10,6 @@ import './blog.css';
 
 function BlogSlider({ resource, count, currentPage, pageSize, onPageChange }) {
 
-
     const paginateResource = paginate(resource, currentPage, pageSize);
     return (
         <div className='container'>

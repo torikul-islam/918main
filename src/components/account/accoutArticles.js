@@ -27,7 +27,7 @@ function AccountArticles() {
         }
     }
 
-    useEffect(() => window.addEventListener("resize", handleResize));
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [articles]);
 
     function handleResize() {
         const width = window.innerWidth;
