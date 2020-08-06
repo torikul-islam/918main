@@ -338,7 +338,7 @@ div#menu {
   overflow-y: hidden;
 }
 .arrow-right.arrow-slide{
-  right: 0;
+  right: 0 !important;
 }
 .arrow-left.arrow-slide {
   left: 0px !important;
