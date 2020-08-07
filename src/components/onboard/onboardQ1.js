@@ -8,8 +8,9 @@ import './onboardQ1.css';
 
 
 const OnboardQ1 = (props) => {
-    const { rooms, submitCheckbox, onCheck, errors } = props;
+    const { rooms, submitCheckbox, onCheck, errors, checkBoxes } = props;
     const chunkRooms = chuckRooms(rooms);
+
     return (
         <div className='container'>
             <div className='onboard-q1'>
@@ -36,6 +37,7 @@ const OnboardQ1 = (props) => {
                                 <div className='col-sm-6' key={i} >
                                     {item.map(val =>
                                         <Checkbox
+                                            checked={checkBoxes.some(x => x === String(val.pk))}
                                             onChange={onCheck}
                                             key={val.uuid}
                                             id={val.pk}

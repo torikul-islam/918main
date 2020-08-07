@@ -93,7 +93,7 @@ class Onboard extends Component {
     }
 
     openBoard = (no) => {
-        this.setState({ boardNo: no, checkBoxes: [] })
+        this.setState({ boardNo: no });
     }
 
     clickImage = (item) => {
@@ -123,11 +123,11 @@ class Onboard extends Component {
     }
 
     render() {
-        const { rooms, boardNo, filterRoom, errors, styles, styleIds, selectedPieces } = this.state;
+        const { rooms, boardNo, filterRoom, errors, styles, styleIds, selectedPieces, checkBoxes } = this.state;
 
         return (
             <>
-                {boardNo === 1 && <OnboardQ1 errors={errors} onCheck={this.onCheck} rooms={rooms} submitCheckbox={this.submitCheckbox} />}
+                {boardNo === 1 && <OnboardQ1 errors={errors} onCheck={this.onCheck} rooms={rooms} checkBoxes={checkBoxes} submitCheckbox={this.submitCheckbox} />}
                 {boardNo === 2 && <OnboardQ2 {...this.props} errors={errors} selectedImage={styleIds} clickImage={this.clickImage} openBoard={this.openBoard} styles={styles} submitStyle={this.submitStyle} />}
                 {boardNo === 3 && <OnboardQ3  {...this.props} clickPieces={this.clickPieces} selectedPieces={selectedPieces} openBoard={this.openBoard} filterRoom={filterRoom.slice(0, 12)} onClick={this.handelClick} />}
 
