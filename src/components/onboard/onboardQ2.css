@@ -11,10 +11,17 @@
 .Skip-btn-style {
   cursor: pointer;
 }
+.width_fixed{
+  margin-bottom: 0px !important;
+}
 .onboard-q2-main {
   max-width: 625px;
   margin: auto;
 }
+/* .image-holder{
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+} */
 .onboard-item {
   margin: auto;
   text-align: center;
