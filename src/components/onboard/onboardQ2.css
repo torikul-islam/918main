@@ -20,9 +20,20 @@
   text-align: center;
 }
 .onboard-item img {
-  width: 80%;
+  width: 100%;
   height: 90px;
+  margin-bottom: 10px;
 }
+
+.onboard-q3 img {
+  width: 100% ;
+  height: 90px ;
+  margin-bottom: 10px ;
+ }
+
+ .q3-form, .q2-form {
+   padding: 0 10px;
+ }
 
 h6 {
   font-family: "Helvetica";

@@ -26,15 +26,15 @@ const OnboardQ2 = (props) => {
                         <p> (Choose up to 3. Don't get stuck here! If you're unsure, we can help you figure it out later!)</p>
                     </div>
                     {errors['styles'] && <p className='ck-error'>{errors['styles']}</p>}
-                    <form onSubmit={submitStyle}>
+                    <form onSubmit={submitStyle} className='q2-form'>
                         <div className='row my-4 width_fixed'>
                             <div className='row'>
                                 {styles && styles.map((item, i) =>
-                                    <div className='col-sm-3' key={i}>
-                                        <div className={`onboard-item text-center `} >
+                                    <div className='onboard-item text-center col-4 col-sm-3 col-md-3' key={i}>
+                                        <div>
                                             <img src={item.ref_img} className="pointer" alt="" onClick={() => clickImage(item)} />
-                                            <h6 className={`text-center ${selectedImage.some(x => x === item.pk) ? 'active' : ''}`}>{item.name}</h6>
                                         </div>
+                                        <h6 className={`text-center ${selectedImage.some(x => x === item.pk) ? 'active' : ''}`}>{item.name}</h6>
                                     </div>
                                 )}
                             </div>
@@ -43,8 +43,8 @@ const OnboardQ2 = (props) => {
                     </form>
 
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
 
