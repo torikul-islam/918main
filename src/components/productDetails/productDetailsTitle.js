@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GoBtn from '../common/goBtn';
 import projectService from '../../services/projectService';
 import './products.css';
@@ -20,6 +20,13 @@ const ProductDetailsTitle = (props) => {
             product['is_like'] = false
         }
     }
+    useEffect(() => window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    }), [props.match.params.id]);
+
+    useEffect(() => setGotoBoard(false), [product]);
 
     function addToBoard(product) {
         let data = new FormData();

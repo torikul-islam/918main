@@ -17,6 +17,12 @@ function InspirationDetails(props) {
     const [inspirationLike, setInspirationLike] = useState([]);
 
 
+    useEffect(() => window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    }), []);
+
     useEffect(() => {
         (async function () {
             const { data } = await inspiredService.getInspirationByRoomId(props.match.params.roomId);
