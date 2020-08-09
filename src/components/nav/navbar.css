@@ -50,6 +50,7 @@ ul.search-container {
   ul.home-menu li.searchHandle input{
     float: right !important;
     margin-top: 12px;
+    width: 80% !important;
   }
   ul.home-menu li.searchHandle{
     width: 100% !important;
