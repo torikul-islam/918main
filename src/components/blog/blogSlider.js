@@ -8,9 +8,9 @@ import './blog.css';
 
 
 
-function BlogSlider({ resource, count, currentPage, pageSize, onPageChange }) {
-
-    const paginateResource = paginate(resource, currentPage, pageSize);
+function BlogSlider(props) {
+    const { resource, count, currentPage, pageSize, onPageChange } = props;
+    const paginateResource = paginate(resource.filter(x => x.uuid !== props.match.params.id), currentPage, pageSize);
     return (
         <div className='container'>
             <div className='row mzero'>

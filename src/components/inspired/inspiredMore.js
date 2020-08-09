@@ -23,6 +23,9 @@ function InspiredMore(props) {
     const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
 
 
+
+
+
     useEffect(() => {
         (async function () {
             const { data } = await inspiredService.getAllInspired();
@@ -30,11 +33,6 @@ function InspiredMore(props) {
             setSeeMore({ next: data.next, previous: null, results: [] });
         })()
     }, []);
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
 
     useEffect(() => {
         (async function () {
@@ -45,6 +43,14 @@ function InspiredMore(props) {
         })()
     }, []);
 
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }, [])
 
     useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [inspired]);
 
@@ -160,9 +166,9 @@ function InspiredMore(props) {
                 loadMore={loadFunc}
                 hasMore={true || false}
                 loader={seeMore.next &&
-                    <div class="d-flex justify-content-center mb-3">
-                        <div class="spinner-border" role="status">
-                            <span class="sr-only">Loading...</span>
+                    <div className="d-flex justify-content-center mb-3">
+                        <div className="spinner-border" role="status">
+                            <span className="sr-only">Loading...</span>
                         </div>
                     </div>
                 }

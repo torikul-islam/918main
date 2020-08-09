@@ -16,13 +16,23 @@ function Blog(props) {
     const [currentPage, setCurrentPage] = useState(0);
 
 
-
     useEffect(() => {
-        (async function () {
-            const { data } = await resourceService.getResourcesByRoomStyle(`?room_ids=${props.match.params.roomId}`);
-            setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
-        })()
-    }, [props.match.params.id]);
+        getResourceByRoom(props.match.params.roomId);
+    }, []);
+
+
+    async function getResourceByRoom(id, page = 1, arr = []) {
+        const { data } = await resourceService.getResourcesByUrl(`page=${page}&room_ids=${id}`);
+        arr = [...arr, ...data.results]
+        if (data.next) {
+            const matched = data.next.match(/page=\d+/gi)[0];
+            const num = matched.split('=')[1];
+            getResourceByRoom(id, num, arr);
+        } else {
+            setResource({ count: data.count, next: data.next, previous: data.previous, results: arr });
+        }
+    }
+
 
 
     useEffect(() => {
@@ -89,7 +99,6 @@ function Blog(props) {
     function onChangeSearch(e) {
 
     }
-
     return (
         <>
             <BlogHead
@@ -98,17 +107,17 @@ function Blog(props) {
                 searchData={[]}
                 clickResourceLike={clickResourceLike}
                 resourceLike={resourceLike}
-                resource={resource.results.find(x => x.uuid === props.match.params.id)}
+                resource={resource.results}
                 product={product.slice(0, 4)}
             />
             <BlogSlider
-                count={resource.count}
-                resource={resource.results.filter(x => x.uuid !== props.match.params.id)}
+                {...props}
+                count={resource.count - 1}
+                resource={resource.results}
                 currentPage={currentPage}
                 pageSize={pageSize}
                 onPageChange={onPageChange}
             />
-
         </>
     );
 }

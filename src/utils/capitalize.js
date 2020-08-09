@@ -2,6 +2,7 @@
 
 
 function capitalize(text) {
+    if (text === undefined) return;
     let lowercase = text.toLowerCase();
     if (typeof lowercase !== "string") return lowercase;
     return lowercase.split(' ')

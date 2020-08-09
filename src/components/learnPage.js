@@ -22,7 +22,7 @@ function LearnPage(props) {
     const [currentPage, setCurrentPage] = useState(0);
     const [seeMore, setSeeMore] = useState({ next: null, previous: null, results: [] });
     const [rooms, setRooms] = useState([]);
-    const [styles, setStyles] = useState([]);
+    // const [styles, setStyles] = useState([]);
     const [selectedItems, setSelectedItems] = useState({ room_ids: null, style_ids: null })
     const [searchData, setSearchData] = useState([])
 
@@ -33,25 +33,22 @@ function LearnPage(props) {
             setResource({ count: data.count, next: data.next, previous: data.previous, results: data.results });
             setSeeMore({ next: data.next, previous: null, results: [] });
         })()
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
     }, []);
 
 
     useEffect(() => {
         (async function () {
             const { data } = await roomServices.getAllRooms();
-            const { data: styles } = await stylesService.getAllStyle();
             setRooms(data.results);
-            setStyles(styles.results);
+            // const { data: styles } = await stylesService.getAllStyle();
+            // setStyles(styles.results);
         })()
     }, []);
-
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    }, [])
 
     async function onPageChange(val) {
         const diff = resource.results.length - (currentPage * pageSize * 2);
@@ -154,7 +151,7 @@ function LearnPage(props) {
             <HomeCreate
                 data={resource.results.slice(1, 2)}
                 rooms={rooms}
-                styles={styles}
+                // styles={styles}
                 onSelectOption={onSelectOption}
                 compname="learn"
             />

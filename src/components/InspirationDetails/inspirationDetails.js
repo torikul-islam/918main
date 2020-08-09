@@ -23,15 +23,22 @@ function InspirationDetails(props) {
         behavior: "smooth"
     }), []);
 
+
     useEffect(() => {
-        (async function () {
-            const { data } = await inspiredService.getInspirationByRoomId(props.match.params.roomId);
-            if (data) {
-                const filter = data.results.filter(x => x.uuid === props.match.params.id);
-                setInspired(filter);
-            }
-        })()
+        getInspirationByRoom(props.match.params.roomId);
     }, [props.match.params.id]);
+
+
+    async function getInspirationByRoom(id, page = 1) {
+        const { data } = await inspiredService.getInspirationByUrl(`page=${page}&room_ids=${id}`);
+        let filter = data.results.filter(x => x.uuid === props.match.params.id);
+        if (filter.length === 0 && data.next) {
+            const matched = data.next.match(/page=\d+/gi)[0];
+            const num = matched.split('=')[1];
+            getInspirationByRoom(id, num)
+        }
+        setInspired(filter);
+    }
 
 
     useEffect(() => {

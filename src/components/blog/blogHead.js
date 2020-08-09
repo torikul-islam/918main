@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavbarB from '../nav/navbarB';
 import capitalize from '../../utils/capitalize';
 import { Link } from 'react-router-dom';
@@ -8,9 +8,9 @@ import Subscribe from '../common/socialicons/subscribe';
 
 
 
-const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest }) => {
-
-
+const BlogHead = (props) => {
+    let { resource, resourceLike, clickResourceLike, product, ...rest } = props;
+    resource = resource.find(x => x.uuid === props.match.params.id)
 
     if (resource) {
         const isLike = resourceLike.some(el => el.resource.uuid === resource.uuid);
@@ -29,7 +29,7 @@ const BlogHead = ({ resource, resourceLike, clickResourceLike, product, ...rest 
                     <div className="row">
                         {resource && <div className="col-md-8 col-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
-                                <h4>{capitalize(resource.title)}</h4>
+                                {resource && <h4> {capitalize(resource.title)}</h4>}
                             </div>
                         </div>}
                     </div>

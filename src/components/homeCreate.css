@@ -60,7 +60,7 @@
     font-family: "PlayfairDisplay-Bold";
     margin: 25px 0;
     line-height: normal;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     display: block;
     display: -webkit-box;
     -webkit-line-clamp: 2;

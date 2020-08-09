@@ -5,7 +5,7 @@ import './homeCreate.css';
 
 
 
-const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
+const HomeCreate = ({ data, rooms, onSelectOption, compname }) => {
     return (
         <div className='homecreate'>
             <div className="container">
@@ -19,14 +19,15 @@ const HomeCreate = ({ data, rooms, styles, onSelectOption, compname }) => {
                                 )}
                             </select>
                         </li>
-                        <li className="form-group col-md-2 col-5 marginFlex">
+                        {/* <li className="form-group col-md-2 col-5 marginFlex">
                             <select className="form-control" onChange={(e) => onSelectOption(e, 'styles')}>
                                 <option value="">STYLE</option>
                                 {styles.map((s, i) =>
                                     <option key={i} id={s.pk} value={s.pk}>{s.name.toUpperCase()}</option>
                                 )}
                             </select>
-                        </li>
+                        </li> */}
+                        <li>STYLE</li>
                         <li>BUYER’S GUIDE</li>
                         <li>DESIGN 101</li>
                     </ul>
