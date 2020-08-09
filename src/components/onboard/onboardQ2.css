@@ -11,18 +11,37 @@
 .Skip-btn-style {
   cursor: pointer;
 }
+.width_fixed{
+  margin-bottom: 0px !important;
+}
 .onboard-q2-main {
   max-width: 625px;
   margin: auto;
 }
+/* .image-holder{
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+} */
 .onboard-item {
   margin: auto;
   text-align: center;
 }
 .onboard-item img {
-  width: 80%;
+  width: 100%;
   height: 90px;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
+
+.onboard-q3 img {
+  width: 100% ;
+  height: 90px ;
+  margin-bottom: 10px ;
+ }
+
+ .q3-form, .q2-form {
+   padding: 0 10px;
+ }
 
 h6 {
   font-family: "Helvetica";
@@ -65,6 +84,6 @@ span.active {
   float: left;
 }
 
-.onboard-item > .active {
+.onboard-item > .active, .onboard-q3 > .active {
   color: red;
 }

@@ -8,7 +8,6 @@ const OnboardQ3 = (props) => {
     const { openModal, filterRoom, openBoard, selectedPieces, clickPieces } = props;
 
     return (
-
         <div className='container'>
             <div className='onboard-q2'>
                 <div className='onboard-q1-main'>
@@ -25,18 +24,16 @@ const OnboardQ3 = (props) => {
                         <h2>Are there specific pieces you're looking for?</h2>
                         <p>(Choose as many as you'd like.)</p>
                     </div>
-                    <form>
-                        <div className='row my-4 width_fixed'>
-                            <div className='row'>
-                                {filterRoom && filterRoom.map((item, i) =>
-                                    <div className='col-sm-3' key={i}>
-                                        <div className='onboard-item'>
-                                            <img className='pointer' src={item.ref_img} alt="" onClick={() => clickPieces(item)} />
-                                            <h6 className={`text-center ${selectedPieces.some(x => x === item.uuid) ? 'active' : ''}`}>{item.designed_by}</h6>
-                                        </div>
+                    <form className='q3-form'>
+                        <div className='row my-4 width_fixed a-auto'>
+                            {filterRoom.length === 0 ? <h5>No Pieces found</h5> : filterRoom.map((item, i) =>
+                                <div className='onboard-q3 col-4 col-sm-3 col-md-3' key={i}>
+                                    <div >
+                                        <img onClick={() => clickPieces(item)} className='pointer' src={item.ref_img} alt="" />
                                     </div>
-                                )}
-                            </div>
+                                    <h6 className={`text-center ${selectedPieces.some(x => x === item.pk) ? 'active' : ''}`}>{item.name}</h6>
+                                </div>
+                            )}
                         </div>
                         <GoBtn text='Next' onClick={() => openModal('boardName')} />
                         <div className="text-center">

@@ -46,7 +46,11 @@ function LearnPage(props) {
     }, []);
 
     useEffect(() => {
-        window.scrollTo(0, 0)
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
     }, [])
 
     async function onPageChange(val) {
@@ -163,9 +167,9 @@ function LearnPage(props) {
                 loadMore={loadFunc}
                 hasMore={true || false}
                 loader={seeMore.next &&
-                    <div class="d-flex justify-content-center mb-3">
-                        <div class="spinner-border" role="status">
-                            <span class="sr-only">Loading...</span>
+                    <div className="d-flex justify-content-center mb-3">
+                        <div className="spinner-border" role="status">
+                            <span className="sr-only">Loading...</span>
                         </div>
                     </div>
                 }

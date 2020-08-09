@@ -4,7 +4,8 @@ import OnboardQ2 from './onboardQ2';
 import OnboardQ3 from './onboardQ3';
 import roomService from '../../services/roomServices';
 import styleServices from '../../services/styleServices';
-import roomServices from '../../services/roomServices';
+import piecesService from '../../services/piecesService';
+
 
 
 
@@ -23,8 +24,9 @@ class Onboard extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.getRooms();
+
     }
 
     getRooms = async () => {
@@ -58,10 +60,10 @@ class Onboard extends Component {
         }
     };
 
+
     submitStyle = async (e) => {
         e.preventDefault();
         const { checkBoxes, errors, styleIds } = this.state;
-        console.log('box', checkBoxes);
         if (styleIds.length === 0) {
             errors['styles'] = 'Please! select at least one image.'
             this.setState({ errors: errors });
@@ -71,8 +73,9 @@ class Onboard extends Component {
         }
 
         try {
-            const { data } = await roomServices.getRoomByUrl(`room_ids=${checkBoxes.join(',')}`);
-            this.setState({ filterRoom: data.results, boardNo: 3 });
+            const { data } = await piecesService.getAllPieces();
+            const filterPieces = data.results.filter(x => checkBoxes.some(c => x.piece_category.id === Number(c)))
+            this.setState({ filterRoom: filterPieces, boardNo: 3 });
         } catch (ex) {
             errors['style'] = 'Failed to get styles';
             this.setState({ errors });
@@ -111,13 +114,14 @@ class Onboard extends Component {
         }
         this.setState({ styleIds: ids, errors: errors });
     }
+
     clickPieces = (item) => {
-        const ids = [...this.state.selectedPieces];
-        const index = ids.findIndex(x => x === item.uuid);
+        let ids = [...this.state.selectedPieces];
+        const index = ids.findIndex(x => x === item.pk);
         if (index === -1) {
-            ids.push(item.uuid);
+            ids.push(item.pk);
         } else {
-            ids.splice(index, 1)
+            ids = ids.filter(x => x !== item.pk)
         }
         this.setState({ selectedPieces: ids });
     }
