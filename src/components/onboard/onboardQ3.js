@@ -8,7 +8,6 @@ const OnboardQ3 = (props) => {
     const { openModal, filterRoom, openBoard, selectedPieces, clickPieces } = props;
 
     return (
-
         <div className='container'>
             <div className='onboard-q2'>
                 <div className='onboard-q1-main'>
@@ -29,8 +28,8 @@ const OnboardQ3 = (props) => {
                         <div className='row my-4 width_fixed a-auto'>
                             {filterRoom.length === 0 ? <h5>No Pieces found</h5> : filterRoom.map((item, i) =>
                                 <div className='onboard-q3 col-4 col-sm-3 col-md-3' key={i}>
-                                    <div>
-                                        <img className='pointer' src={item.ref_img} alt="" onClick={() => clickPieces(item)} />
+                                    <div >
+                                        <img onClick={() => clickPieces(item)} className='pointer' src={item.ref_img} alt="" />
                                     </div>
                                     <h6 className={`text-center ${selectedPieces.some(x => x === item.pk) ? 'active' : ''}`}>{item.name}</h6>
                                 </div>

@@ -26,6 +26,7 @@ class Onboard extends Component {
 
     async componentDidMount() {
         this.getRooms();
+
     }
 
     getRooms = async () => {
@@ -58,7 +59,6 @@ class Onboard extends Component {
             }
         }
     };
-
 
 
     submitStyle = async (e) => {
@@ -114,13 +114,14 @@ class Onboard extends Component {
         }
         this.setState({ styleIds: ids, errors: errors });
     }
+
     clickPieces = (item) => {
-        const ids = [...this.state.selectedPieces];
+        let ids = [...this.state.selectedPieces];
         const index = ids.findIndex(x => x === item.pk);
         if (index === -1) {
             ids.push(item.pk);
         } else {
-            ids.splice(index, 1)
+            ids = ids.filter(x => x !== item.pk)
         }
         this.setState({ selectedPieces: ids });
     }

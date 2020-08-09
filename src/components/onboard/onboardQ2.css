@@ -83,6 +83,6 @@ span.active {
   float: left;
 }
 
-.onboard-item > .active {
+.onboard-item > .active, .onboard-q3 > .active {
   color: red;
 }

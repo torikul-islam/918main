@@ -29,7 +29,7 @@ const OnboardQ2 = (props) => {
                     <form onSubmit={submitStyle} className='q2-form'>
                         <div className='row my-4 width_fixed'>
                             <div className='row'>
-                                {styles && styles.map((item, i) =>
+                                {styles.map((item, i) =>
                                     <div className='onboard-item text-center col-4 col-sm-3 col-md-3' key={i}>
                                         <div>
                                             <img src={item.ref_img} className="pointer" alt="" onClick={() => clickImage(item)} />
