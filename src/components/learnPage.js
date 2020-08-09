@@ -171,7 +171,7 @@ function LearnPage(props) {
                     </div>
                 }
             >
-                <PostSlideThree data={seeMore.results} />
+                <PostSlideThree data={seeMore.results} compname="learn"/>
             </InfiniteScroll>
         </>
     );
