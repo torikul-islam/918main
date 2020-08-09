@@ -24,7 +24,7 @@ span.icon {
 .image-fav img {
   width: 100%;
   height: 500px;
-  object-fit: initial;
+  object-fit: contain;
 }
 .marginnine{
   margin-top: 190px !important;
@@ -37,7 +37,7 @@ span.icon img {
   border: none;
   background: #eae9e9;
   border-radius: 50px;
-  padding: 13px 50px 13px 40px;
+  padding: 13px 50px 13px 27px;
 }
 select#cars,
 select#cars:focus {
@@ -47,7 +47,8 @@ select#cars:focus {
   outline: none;
   font-family: "Helvetica-light";
   font-size: 20px;
-  padding: 3px 15px;
+  padding: 3px 25px;
+  margin-right: 15px;
 }
 .text-fav h4 {
   color: #030303;

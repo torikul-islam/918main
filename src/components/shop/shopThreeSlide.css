@@ -56,5 +56,7 @@
 .slide-desc h6{
   font-family: "Playfire Display";
 }
-
+.container-fluid.ins-area-modal .titleBer .ins-title span.trending {
+  font-size: 1.75rem !important;
+}
 

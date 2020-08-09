@@ -160,9 +160,21 @@ ul.search-container {
     padding-top: 190px;
 }
 }
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .logo-width.display-for-mobile {
+    width: 80% !important;
+  }
+.logo-width.display-for-mobile img {
+  width: 75%;
+  float: right;
+}
+#menu button.navbar-toggler {
+  margin-top: -45px !important;
+}
+}
 @media screen and (max-width: 768px) and (min-width: 320px) {
   .logo-width.display-for-mobile {
-    width: 70%;
+    width: 60%;
   }
   #menu .signup {
     width: 34%;
@@ -173,10 +185,11 @@ ul.search-container {
 }
 @media screen and (max-width: 1024px) and (min-width: 992px) {
   div.menu-float {
-    width: 48% !important;
+    width: 45% !important;
   }
   div.logo-width {
-    width: 32% !important;
+    width: 35% !important;
+    margin-top: -15px !important;
   }
   div.search-float {
     width: 20% !important;
@@ -184,6 +197,19 @@ ul.search-container {
   #menu > ul li {
     padding-right: 0 !important;
   }
+  li.logo-black.logoMobile {
+    display: block !important;
+  }
+  li.menu-item.font-hel .dropbtn {
+    padding-right: 20px !important;
+    padding-left: 0px !important;
+}
+li.menu-item.man img, li.menu-item.shop img {
+  width: 25px !important;
+}
+ul.home-menu li.searchHandle, ul.home-menu li.searchHandle input{
+    width: 100% !important;
+}
 }
 li.menu-item.font-hel .dropbtn {
   background-color: #ffffff00;
