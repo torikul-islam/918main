@@ -6,7 +6,7 @@ import PostSlideThree from './common/postSlideThree';
 import HomePostTwo from './homePostTwo';
 import resourceService from '../services/resourceService';
 import roomServices from '../services/roomServices';
-import stylesService from '../services/styleServices';
+// import stylesService from '../services/styleServices';
 import NavbarB from './nav/navbarB';
 import InfiniteScroll from 'react-infinite-scroller';
 import './learnPage.css';

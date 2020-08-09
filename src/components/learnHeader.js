@@ -15,7 +15,9 @@ const LearnHeader = ({ data }) => {
                             <div className="learn-text" key={i}>
                                 <h3>Learn</h3>
                                 <h5>{item.source}</h5>
-                                <h2>{capitalize(item.title)}</h2>
+                                <Link to={`blog/${item.uuid}/${item.rooms[0]}`}>
+                                    <h2>{capitalize(item.title)}</h2>
+                                </Link>
                                 <p>{item.content.substr(0, 120)}</p>
                                 <div className="read-more">
                                     <Link to={`blog/${item.uuid}/${item.rooms[0]}`}>
