@@ -7,7 +7,6 @@ import './products.css';
 
 const ProductDetailsTitle = (props) => {
     const { addShoppingCard, product, productLike, clickProductLike, openModal, project } = props
-
     const [selectedValue, setSelectedValue] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
 

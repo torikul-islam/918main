@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import HeaderInspired from './headerInspired';
 import ShopSlide from './shopSlide';
+import ShopSlide3 from './shopSlide3';
 import ShopInspired from './shopInspired';
 import TabShop from './tabShop';
 import inspiredService from '../../services/inspiredService';
 import stylesService from '../../services/styleServices';
 import ShopThreeSlide from '../shop/shopThreeSlide';
 import roomServices from '../../services/roomServices';
-import '../inspired/inspired.css';
 import InfiniteScroll from 'react-infinite-scroller';
+import '../inspired/inspired.css';
 
 
 
@@ -149,7 +150,7 @@ function InspiredMore(props) {
 
             <ShopInspired
                 data={inspired.results.slice(4,)}
-                count={inspired.count}
+                count={inspired.count - 4}
                 pageSize={pageSize}
                 currentPage={currentPage}
                 onPageChange={onPageChange}
@@ -158,7 +159,7 @@ function InspiredMore(props) {
             <ShopSlide data={inspired.results.slice(8, 12)} pagename="inspired" />
             <ShopThreeSlide />
             <ShopSlide data={inspired.results.slice(12, 16)} pagename="inspired" />
-            <ShopSlide data={inspired.results.slice(16, 19)} pagename="inspired" />
+            <ShopSlide3 data={inspired.results.slice(16, 19)} pagename="inspired" />
             <ShopSlide data={inspired.results.slice(19, 23)} pagename="inspired" />
 
             <InfiniteScroll

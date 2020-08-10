@@ -41,6 +41,7 @@ function ProductDetails(props) {
                 if (board) {
                     data = [...data, { name: board }]
                 }
+                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
                 setProject(data);
             }
         })()
