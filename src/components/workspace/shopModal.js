@@ -56,8 +56,10 @@ const ShopModal = ({ product, products, closeModal }) => {
                             </div>
                             <div className="col-sm-6 shop-modal-title">
                                 <div className="text-fav text-center">
+                                    <h6>Retailer Name</h6>
                                     <span>Product Name </span>
-                                    <h4>{product.name}</h4>
+                                    {/* <h4>{product.name}</h4> */}
+                                    <p>$999</p>
                                     <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">

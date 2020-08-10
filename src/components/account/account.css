@@ -1,6 +1,7 @@
 .account-slider .slider img {
     width: 100% !important;
     object-fit: cover;
+    margin-bottom: 5px;
 }
 .account-slider .arrow-slide img {
     width: 25px !important;
