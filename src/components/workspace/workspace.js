@@ -15,23 +15,26 @@ const Workspace = (props) => {
     const [product, setProduct] = useState({});
     const [products, setProducts] = useState([]);
 
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-    
+
     useEffect(() => {
         (async function () {
-            // call the backend server and set response array in setProduct const
+            // call the backend server and set response array in setProduct
             setProduct([]);
         })()
     }, []);
 
     useEffect(() => {
         (async function () {
-            // call the backend server and set response array in setProducts const
+            // call the backend server and set response array in setProducts
             setProducts([]);
         })()
     }, []);
+
 
 
     function openModal(name) {
@@ -69,8 +72,8 @@ const Workspace = (props) => {
                 </div>
             </div>
             {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter openModal={openModal} closeModal={closeModal} />} />}
-            {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal product={product} products={products} openModal={openModal} closeModal={closeModal} />} />}
-            {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<ShopModal product={product} products={products} openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props} product={product} products={products} openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props} product={product} products={products} openModal={openModal} closeModal={closeModal} />} />}
             {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter closeModal={closeModal} />} />}
         </>
     );
