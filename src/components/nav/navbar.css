@@ -165,11 +165,13 @@ ul.search-container {
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .logo-width.display-for-mobile {
     width: 80% !important;
+    margin-top: 6px;
   }
 .logo-width.display-for-mobile img {
   width: 75%;
   float: right;
 }
+
 #menu button.navbar-toggler {
   margin-top: -45px !important;
 }
@@ -270,24 +272,34 @@ li.menu-item.font-hel .dropdown:hover .dropdown-content {
   padding: 5px 10px;
 } */
 ul.home-menu li.searchHandle input {
-  width: 85%;
+  width: 10%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 1.375rem 0.75rem;
+  padding: 1.375rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   float: left;
   color: #495057;
-  background-color: #fff;
+  background-color: transparent;
   background-clip: padding-box;
   border: none;
   /* border-radius: 0.25rem; */
-  border-top-right-radius:0.25rem;
-  border-bottom-right-radius: 0.25rem ;
+  border-radius: 50px;
   text-align: left;
   outline: none;
-  display: none;
-  transition: width 2s;
+  /* display: none; */
+  transition: all .5s;
+}
+ul.home-menu li.searchHandle:hover input.btn-srachw {
+  width: 80%;
+  padding-left: 2.5rem;
+  background-color:#fff;
+}
+ul.home-menu li.searchHandle:hover input.btn-srach {
+  width: 80%;
+  padding-left: 2.5rem;
+  background-color: #eae9e9;
+  color: #fff;
 }
 .btn-srach-width {
   display: block;
@@ -307,6 +319,9 @@ ul.home-menu li.searchHandle img {
   padding: 13px 13px;
   border-bottom-left-radius: 0.25rem;
   border-top-left-radius:0.25rem ;
+  position: absolute;
+  left: 1px;
+  top: 2px;
   
 }
 ul.home-menu ul.search-container li.search-item{
@@ -318,7 +333,12 @@ ul.home-menu ul.search-container li.search-item{
     padding-right: 0rem;
 }
 }
-
+@media screen and (max-width: 1014px) and (min-width: 992px) {
+  ul.home-menu .nav-link {
+    padding-left: 0px;
+    padding-right: 10px;
+}
+}
 @media screen and (max-width: 1023px) and (min-width: 768px){
 .logo-width.display-for-mobile img {
   width: 65% !important;

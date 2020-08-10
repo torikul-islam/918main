@@ -36,7 +36,7 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                         <div className="search-float">
                             <li className="searchHandle">
                                 <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />
-                                <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srachw" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
+                                <input className="btn-srachw" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
                             </li>
 
                         </div>

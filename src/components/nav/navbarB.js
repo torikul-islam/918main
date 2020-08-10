@@ -39,7 +39,9 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                 <div className="search-float">
                                     <li className="searchHandle">
                                         <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />
-                                        <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srach" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
+                                        {/* <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srach" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' /> */}
+                                        <input className="btn-srach" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
+
                                     </li>
                                     {searchData.length > 0 && <ul className='search-container'>
                                         {searchData.map((s, i) =>
