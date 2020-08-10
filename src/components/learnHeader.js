@@ -6,6 +6,7 @@ import capitalize from '../utils/capitalize';
 
 
 const LearnHeader = ({ data }) => {
+
     return (
         <div className="header-learn">
             <div className="container-fluid">
@@ -29,7 +30,8 @@ const LearnHeader = ({ data }) => {
                         <div className="col-sm-7">
                             <div className="learnbanner">
                                 <Link to={`blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
-                                    <img src={require('../Asset/Images/LearnBanner.png')} alt="LearnBanner.png" />
+                                    <img src={item.ref_img} alt="LearnBanner.png" />
+                                    {/* <img src={require('../Asset/Images/LearnBanner.png')} alt="LearnBanner.png" /> */}
                                 </Link>
                             </div>
                         </div>
