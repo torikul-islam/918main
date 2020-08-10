@@ -239,7 +239,7 @@ div#menu {
 /* end home menu css :start */
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
-    left: 37% !important;
+    left: 39% !important;
   }
   /* .arrow-left.arrow-slide {
     left: 0 !important;
@@ -277,8 +277,15 @@ div#menu {
     -webkit-line-clamp: 2 !important;
 }
 .social-icons{
-  right: 20px;
+  right: 5px;
   z-index: +1;
+}
+.text-furniture h4 {
+  font-size: 18px;
+}
+.ins-area .inspired {
+  padding-right: 15px !important;
+    padding-left: 15px !important;
 }
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
@@ -312,7 +319,7 @@ div#menu {
 .home-text h2 {
   font-size: 22pt;
   margin-top: 0;
-  padding-top: 70px;
+  padding-top: 100px;
 }
 .home-text p {
   font-size: 12pt;

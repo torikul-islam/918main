@@ -82,7 +82,7 @@
 }
 @media screen and (max-width: 1024px) and (min-width: 768px){
     .header-learn {
-        padding-top: 190px;
+        padding-top: 125px;
     }
     .learn-text p{
         padding: 0;
@@ -92,5 +92,27 @@
     }
     .homecreate .craete-text-hero {
         margin: 0;
+    }
+    .tab-index .slider h3 {
+        font-size: 16px;
+    }
+    .tab-index .arrow-slide {
+        top: 20%;
+    }
+    li.form-group.marginFlex select.form-control {
+        width: 100px !important;
+    }
+    .craete-text-hero h2 {
+        font-size: 20px;
+    }
+    .craete-text-hero p {
+        font-size: 18px;
+    }
+    .image-post-slide-learn p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 }

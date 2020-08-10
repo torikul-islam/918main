@@ -151,9 +151,9 @@ ul.search-container {
     width: 21%;
   }
  
-  #menu button.navbar-toggler {
+  /* #menu button.navbar-toggler {
     margin-top: -125px;
-}
+} */
   #menu .signup {
     width: 20% !important;
   }
@@ -310,4 +310,18 @@ ul.home-menu li.searchHandle img {
 }
 ul.home-menu ul.search-container li.search-item{
   display: block;
+}
+@media screen and (max-width: 1299px) and (min-width: 1025px) {
+  ul.home-menu .nav-link {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px){
+.logo-width.display-for-mobile img {
+  width: 65% !important;
+  float: left;
+  margin-top: 15px;
+}
 }
