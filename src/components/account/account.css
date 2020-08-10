@@ -79,12 +79,15 @@
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
     .account-sidebar, .containerLogin {
-        margin-top: 190px;
+        margin-top: 130px;
     }
     .bg-color {
         max-width: inherit !important;
         margin-left: 0;
         padding: 30px;
         overflow: hidden;
+    }
+    .account-sidebar h4 {
+        font-size: 26px;
     }
 }
