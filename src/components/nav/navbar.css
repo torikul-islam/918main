@@ -159,6 +159,7 @@ ul.search-container {
   }
   .home-text h2 {
     padding-top: 190px;
+    font-size: 40pt;
 }
 }
 @media screen and (max-width: 767px) and (min-width: 320px) {
