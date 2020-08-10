@@ -9,13 +9,13 @@ const LearnHeader = ({ data }) => {
     return (
         <div className="header-learn">
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col-sm-5">
-                        {data.map((item, i) =>
-                            <div className="learn-text" key={i}>
+                {data.map((item, i) =>
+                    <div className="row" key={i}>
+                        <div className="col-sm-5">
+                            <div className="learn-text">
                                 <h3>Learn</h3>
                                 <h5>{item.source}</h5>
-                                <Link to={`blog/${item.uuid}/${item.rooms[0]}`}>
+                                <Link to={`blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
                                     <h2>{capitalize(item.title)}</h2>
                                 </Link>
                                 <p>{item.content.substr(0, 120)}</p>
@@ -25,14 +25,16 @@ const LearnHeader = ({ data }) => {
                                     </Link>
                                 </div>
                             </div>
-                        )}
-                    </div>
-                    <div className="col-sm-7">
-                        <div className="learnbanner">
-                            <img src={require('../Asset/Images/LearnBanner.png')} alt="LearnBanner.png" />
+                        </div>
+                        <div className="col-sm-7">
+                            <div className="learnbanner">
+                                <Link to={`blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                    <img src={require('../Asset/Images/LearnBanner.png')} alt="LearnBanner.png" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );
