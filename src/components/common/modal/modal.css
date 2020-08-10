@@ -42,8 +42,17 @@
         letter-spacing: initial;
     }
     .onboard-item img {
-        height: 166px !important;
+        width: 110% !important;
+        height: 76px !important;
         object-fit: contain;
+    }
+    .onboard-q3 img{
+        width: 110% !important;
+        height: 76px !important;
+        object-fit: contain;   
+    }
+    .like-to-work h2{
+        font-size: 23px !important;
     }
     .login-next {
         width: 85%;
