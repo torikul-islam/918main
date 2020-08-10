@@ -18,6 +18,33 @@
     height: 280px;
   }
 
+  .shop-modal-title .text-fav span {
+font-family: "Playfair Display";
+font-size: 24px;
+  }
+  .shop-modal-title .text-fav h6 {
+    font-family: "Helvetica";
+    color: #808080;
+    font-size: 15px;
+    padding-bottom: 0px;
+      }
+ .shop-modal-title .text-fav p {
+ font-family: "Helvetica";
+ color: #808080;
+ font-size: 20px;
+ margin-top: 10px;
+ }
+
+ .shop-modal-title .text-fav .go-btn button{
+    font-size: 15px;
+ }
+
+ .shop-modal-title .text-fav select#cars{
+    font-size: 16px !important;
+    padding: 0px 7px !important;
+    margin-right: 6px !important;
+ }
+
 
   @media screen and (max-width: 1024px) and (min-width: 768px) {
     .page-content{
@@ -100,7 +127,7 @@ margin-right: auto;
 }
 
 .shop-modal-title .menu-name {
-    margin-bottom: 20px !important;
+    margin-bottom: 5px !important;
 }
 
 .shop-modal-title .text-fav {
