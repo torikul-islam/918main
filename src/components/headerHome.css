@@ -280,6 +280,9 @@ div#menu {
   right: 5px;
   z-index: +1;
 }
+.subs-icons{
+  z-index: +1;
+}
 .text-furniture h4 {
   font-size: 18px;
 }
@@ -377,6 +380,22 @@ div#menu {
   max-width: 100%;
 }
 .social-icons, .subs-icons{
-  display: none;
+  display: block;
+  
+}
+
+.social-icons a img {
+  width: 70%;
+}
+.social-icons ul li {
+  margin-bottom: 0px;
+}
+.subs-icons ul li.sbusc{
+  font-size: 15px;
+  margin-top: 53px;
+}
+.subs-icons ul li.img_subs img {
+  width: 16px;
+  height: 22px;
 }
 }
