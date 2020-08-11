@@ -349,7 +349,7 @@ div#menu {
   overflow-x: scroll;
   display: flex;
   white-space: nowrap;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .arrow-right.arrow-slide{
   right: 0 !important;
