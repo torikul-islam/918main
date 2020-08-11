@@ -8,14 +8,14 @@ import './signup.css';
 function Signup(props) {
     const { closeModal, openModal, isMoodBoard } = props;
 
-
     const [user, setUser] = useState({ username: '', email: '', password: '' });
     const [errors, setErrors] = useState({});
     const [success, setSuccess] = useState(null);
 
     function handleChange(e) {
-        const u = { ...user };
+        const u = { ...user, errors };
         u[e.target.id] = e.target.value;
+        errors[e.target.id] = null;
         setUser(u);
     }
 
