@@ -29,14 +29,14 @@ const BlogHead = (props) => {
                     <div className="row">
                         {resource && <div className="col-md-8 col-sm-12 col-md-offset-2 pt-5 pb-5">
                             <div className="text-blog-title">
-                                {resource && <h4> {capitalize(resource.title)}</h4>}
+                                {resource && <h4 className="pointer" onClick={() => window.open(resource.ref_url, '_blank')}> {capitalize(resource.title)}</h4>}
                             </div>
                         </div>}
                     </div>
                     <div className="row">
                         <div className="col-sm-8">
                             {resource && <div className="title-with-logo">
-                                <img src={resource.ref_img} alt="" />
+                                <img className="pointer" onClick={() => window.open(resource.ref_url, '_blank')} src={resource.ref_img} alt="" />
                                 <span className="favIcon">
                                     <i
                                         onClick={() => clickResourceLike(resource)}
