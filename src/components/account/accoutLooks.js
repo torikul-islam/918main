@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import paginate from '../../utils/paginate';
 import Pagination from '../common/pagination';
-import { waitForDomChange } from '@testing-library/react';
-
-
 
 
 function AccountLooks(props) {
