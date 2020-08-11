@@ -37,7 +37,6 @@ function ShopThreeSlide(props) {
     }
 
     const paginateLooks = paginate(looks, currentPage, pageSize);
-    console.log(paginateLooks);
     return (
         <div className={props.pagename === "workspace" || props.pagename === "product_details" ? 'container-fluid ins-area-modal' : 'container-fluid ins-area'}>
             <div className={props.pagename === "workspace" ? 'container inspired-modal' : 'container inspired'} >

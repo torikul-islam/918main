@@ -85,11 +85,11 @@ class Onboard extends Component {
     onCheck = (e) => {
         const id = e.target.id;
         const { checkBoxes, errors } = this.state;
-        const idx = checkBoxes.indexOf(id);
-        if (idx > -1) {
-            checkBoxes.splice(idx, 1);
-        } else {
+        const idx = checkBoxes.find(c => c === Number(id));
+        if (!idx && checkBoxes.length === 0) {
             checkBoxes.push(id)
+        } else if (checkBoxes[0] == id) {
+            checkBoxes.pop()
         }
         errors['checkbox'] = null
         this.setState({ checkBoxes, errors });
