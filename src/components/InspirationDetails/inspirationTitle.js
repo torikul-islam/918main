@@ -11,6 +11,7 @@ function InspirationTitle(props) {
 
     const [project, setProject] = useState([]);
     const [selectedValue, setSelectedValue] = useState(null);
+    const [error, setError] = useState(null);
     const token = localStorage.getItem('token');
     const [gotoBoard, setGotoBoard] = useState(false);
 
@@ -38,13 +39,17 @@ function InspirationTitle(props) {
             data.append('styles', product.styles[0]);
             data.append('inspirations', 4);
             data.append('pieces', 1);
+
+            projectServices.createProject(data);
+            setGotoBoard(true);
+        } else {
+            setError('Please! select one board')
         }
-        projectServices.createProject(data);
-        setGotoBoard(true);
     }
 
     function handleChange(event) {
-        setSelectedValue(event.target.value)
+        setSelectedValue(event.target.value);
+        setError(null);
     }
 
     if (inspired.length > 0) {
@@ -108,6 +113,7 @@ function InspirationTitle(props) {
                                             <li className="saveSection">
                                                 <GoBtn text='Save' onClick={() => addToBoard(item)} />
                                             </li>
+                                            {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>}
                                 </div>)
                             }

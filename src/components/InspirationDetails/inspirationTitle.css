@@ -26,6 +26,11 @@ span.icon {
   height: 500px;
   object-fit: contain;
 }
+.menu-name .board-error{
+  font-family: "Helvetica-light";
+  color: red;
+}
+
 /* .marginnine{
   margin-top: 190px !important;
 } */

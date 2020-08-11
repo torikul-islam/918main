@@ -8,6 +8,7 @@ import './products.css';
 const ProductDetailsTitle = (props) => {
     const { addShoppingCard, product, productLike, clickProductLike, openModal, project } = props
     const [selectedValue, setSelectedValue] = useState(null);
+    const [error, setError] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
 
 
@@ -36,12 +37,15 @@ const ProductDetailsTitle = (props) => {
             data.append('budget', product.price);
             data.append('inspirations', 4);
             data.append('pieces', product.piece.id);
+            projectService.createProject(data);
+            setGotoBoard(true);
+        } else {
+            setError('Please! select one board.')
         }
-        projectService.createProject(data);
-        setGotoBoard(true);
     }
     function handleChange(event) {
-        setSelectedValue(event.target.value)
+        setSelectedValue(event.target.value);
+        setError(null);
     }
 
 
@@ -95,12 +99,12 @@ const ProductDetailsTitle = (props) => {
                                                     {project.map(item =>
                                                         <option key={item.uuid} value={item.name}>{item.name}</option>
                                                     )}
-
                                                 </select>
                                             </li>
                                             <li className="saveSection">
                                                 <GoBtn text='Save' onClick={() => addToBoard(product)} />
                                             </li>
+                                            {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>}
                                     <GoBtn text='Add to Shopping List' onClick={() => addShoppingCard(product)} />
                                 </div>
