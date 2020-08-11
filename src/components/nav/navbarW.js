@@ -5,7 +5,7 @@ import '../nav/navbar.css'
 
 
 
-function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearch, searchData, clickSearchItem }) {
+function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, handleCloseMenu, onChangeSearch, searchData, clickSearchItem }) {
     const [openSearch, setOpenSearch] = useState(false)
 
     const user = localStorage.getItem('token');
@@ -18,12 +18,13 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
         setOpenSearch(!openSearch);
     }
 
+
     return (
         <div className='container-menu' id='menu'>
             <div className="logo-width display-for-mobile">
                 <li className='logo'>
                     <Link className="nav-link" to="/" >
-                        <img src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
+                        <img onClick={() => handleCloseMenu()} src={require('../../Asset/Images/logo-white.png')} alt="logo-white.png" />
                     </Link>
                 </li>
             </div>
@@ -36,9 +37,8 @@ function NavbarW({ openModal, clickCard, openMenu, handleOpenMenu, onChangeSearc
                         <div className="search-float">
                             <li className="searchHandle">
                                 <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />
-                                <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srachw" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
+                                <input className="btn-srachw" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
                             </li>
-
                         </div>
                         {searchData.length > 0 && <ul className='search-container'>
                             {searchData.map((s, i) =>

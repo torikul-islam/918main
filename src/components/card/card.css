@@ -156,4 +156,7 @@ div.estimateTotal .margin-custom {
     width: 48%;
     z-index: 9999;
   }
+  .shopping-card{
+    top: 0;
+  }
 }

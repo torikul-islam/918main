@@ -76,8 +76,20 @@
         width: 100%;
         height: 380px;
     }
+    .craete-text-hero h2 {
+        font-size: 20px;
+    }
+    .image-post-slide-learn p {
+        font-size: 18px;
+    }
+    .homecreate .craete-text-hero{
+        margin: 0;
+    }
     .header-learn {
         padding-top: 100px;
+    }
+    .learn-text {
+        margin-top:0px;
     }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px){

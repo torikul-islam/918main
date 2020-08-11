@@ -1,10 +1,11 @@
-import React, { useState, } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
 
-function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onChangeSearch, clickSearchItem, searchData }) {
+function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCard, search, onChangeSearch, clickSearchItem, searchData }) {
     const [openSearch, setOpenSearch] = useState(false)
+
 
     const user = localStorage.getItem('token');
     function clickLogout() {
@@ -16,15 +17,13 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
         setOpenSearch(!openSearch);
     }
 
-
-
     return (
         <div className='container-fluid' >
             <div className='container-menu' id='menu'>
                 <div className="logo-width display-for-mobile">
                     <li className='logo-black'>
                         <Link className="nav-link" to="/" >
-                            <img src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
+                            <img onClick={() => handleCloseMenu()} src={require('../../Asset/Images/Logo.png')} alt="Logo.png" />
                         </Link>
                     </li>
                 </div>
@@ -39,7 +38,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                 <div className="search-float">
                                     <li className="searchHandle">
                                         <img onClick={handleSearch} src={require('../../Asset/Images/search.png')} alt="search.png" />
-                                        <input style={openSearch ? { display: 'block' } : { display: 'none' }} className="btn-srach" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
+                                        <input className="btn-srach" type="text" onChange={(e) => onChangeSearch(e)} placeholder='Search...' />
                                     </li>
                                     {searchData.length > 0 && <ul className='search-container'>
                                         {searchData.map((s, i) =>
@@ -55,8 +54,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                     </Link>
                                 </li>
                             </div>
-                            <div className="menu-float" >
-
+                            <div className="menu-float">
                                 <li className="menu-item font-hel" onClick={handleOpenMenu}>
                                     <Link className="nav-link" to="/workspace" >Workspace</Link>
                                 </li>
@@ -71,7 +69,6 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, clickCard, search, onCha
                                         </div>
                                     </div>
                                 </li>
-
                                 {!user && <li className="menu-item signup" onClick={() => { openModal('signup'); handleOpenMenu() }}>
                                     <div className="nav-link"  >Sign Up</div>
                                 </li>}
