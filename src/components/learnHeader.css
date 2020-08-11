@@ -79,6 +79,9 @@
     .header-learn {
         padding-top: 100px;
     }
+    .learn-text {
+        margin-top:0px;
+    }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px){
     .header-learn {
