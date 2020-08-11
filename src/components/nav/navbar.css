@@ -325,6 +325,9 @@ ul.home-menu li.searchHandle:hover input.btn-srach {
 }
 ul.home-menu li.searchHandle {
   position: relative;
+  width: 10%;
+}
+ul.home-menu li.searchHandle:hover {
   width: 80%;
 }
 ul.home-menu li.searchHandle img {
