@@ -179,7 +179,9 @@ ul.search-container {
     width: 60%;
   }
   #menu .signup {
-    width: 34%;
+    width: 40%;
+    text-align: center;
+
   }
   /* .logo-black{
     display: none;

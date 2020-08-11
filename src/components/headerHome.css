@@ -238,9 +238,20 @@ div#menu {
 }
 /* end home menu css :start */
 @media screen and (max-width: 1024px) and (min-width: 768px){
-  .slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
+  .slider_button .go-btn {
+    left: 38% !important;
+    top: -12px;
+  }
+  .inspired-more .go-btn{
     left: 39% !important;
   }
+
+  .shop-more .go-btn{
+    left: 39% !important;
+  }
+
+
+
   /* .arrow-left.arrow-slide {
     left: 0 !important;
   }
@@ -322,7 +333,7 @@ div#menu {
 .home-text h2 {
   font-size: 22pt;
   margin-top: 0;
-  padding-top: 100px;
+  padding-top: 75px;
 }
 .home-text p {
   font-size: 12pt;
@@ -341,9 +352,22 @@ div#menu {
 .moodboard {
   text-align: center;
 }
-.slider_button .go-btn, .inspired-more .go-btn, .shop-more .go-btn {
-  left: 35% !important;
+.slider_button .go-btn {
+  left: 32% !important;
 }
+
+.inspired-more .go-btn{
+  left: 33% !important;
+}
+
+.shop-more .go-btn{
+  left: 32% !important;
+  top: 23px !important;
+
+}
+
+
+
 .inspired-slider ul, .shop-slider ul {
   overflow-x: scroll;
   display: flex;
