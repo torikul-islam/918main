@@ -362,4 +362,12 @@ ul.home-menu ul.search-container li.search-item{
   float: left;
   margin-top: 15px;
 }
+.logo-width.display-for-mobile {
+  width: 70% !important;
+  float: right;
+  margin-top: 5px;
+}
+#menu button.navbar-toggler {
+  margin-top: -65px !important;
+}
 }
