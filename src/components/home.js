@@ -106,7 +106,7 @@ function Home(props) {
                 onPageChange={onPageChange} />
 
             <SliderPost data={post.slice(9, 13)} />
-            <ShopThreeSlide />
+            <ShopThreeSlide  {...props} />
         </div>
     );
 }

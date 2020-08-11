@@ -1,51 +1,71 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import inspiredSlide from '../../Asset/Images/inspired_slide_item.png';
 import TitleWithBer from '../shop/titleWithBer';
 import './shopThreeSlide.css';
+import Pagination from '../common/pagination';
+import paginate from '../../utils/paginate';
 
 
-class ShopThreeSlide extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
+function ShopThreeSlide(props) {
+    const [currentPage, setCurrentPage] = useState(0);
+    const [pageSize, setPageSize] = useState(3);
+    const [looks, setLooks] = useState([]);
+
+    useEffect(() => {
+        setLooks(Array(20).fill().map((_, i) => i + 1));
+    }, [])
+
+
+
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
+
+    function handleResize() {
+        const width = window.innerWidth;
+        if (width <= '767') {
+            setPageSize(1);
+        } else {
+            setPageSize(3);
+        }
     }
-    render() {
-        return (
-            <div className={this.props.pagename === "workspace" || this.props.pagename === "product_details" ? 'container-fluid ins-area-modal' : 'container-fluid ins-area'}>
-                <div className={this.props.pagename === "workspace" ? 'container inspired-modal' : 'container inspired'} >
-                    <TitleWithBer text='Looks' />
 
-                    <div className='tab-index'>
-                        <div className='slider'>
-                            <div className='row'>
-                                <div className='col-md-4 col-sm-12'>
+    async function onPageChange(val) {
+        if (val === '-') {
+            setCurrentPage(currentPage - 1)
+        } else {
+            setCurrentPage(currentPage + 1)
+        }
+    }
+
+    const paginateLooks = paginate(looks, currentPage, pageSize);
+    console.log(paginateLooks);
+    return (
+        <div className={props.pagename === "workspace" || props.pagename === "product_details" ? 'container-fluid ins-area-modal' : 'container-fluid ins-area'}>
+            <div className={props.pagename === "workspace" ? 'container inspired-modal' : 'container inspired'} >
+                <TitleWithBer text='Looks' />
+                <div className='tab-index '>
+                    <div className='slider'>
+                        <div className='row'>
+                            {paginateLooks && paginateLooks.map((item, i) =>
+                                <div className='col-md-4 col-sm-12 looks' key={i}>
                                     <img src={inspiredSlide} alt="" />
                                     <div className='slide-desc'> <h6>Mountain Chic</h6> </div>
                                 </div>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12'>
-                                    <img src={inspiredSlide} alt="" />
-                                    <div className='slide-desc'> <h6>Mountain Chic</h6> </div>
-                                </div>
-                                <div className='col-xl-4 col-lg-4 col-md-4 col-sm-12'>
-                                    <img src={inspiredSlide} alt="" />
-                                    <div className='slide-desc'> <h6>Mountain Chic</h6> </div>
-                                </div>
-                                <div className="arrows">
-                                    <div className="arrow-left arrow-slide">
-                                        <img src={require('../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
-                                    </div>
-                                    <div className="arrow-right arrow-slide">
-                                        <img src={require('../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
-                                    </div>
-                                </div>
-                            </div>
+                            )}
+                            <Pagination
+                                itemsCount={looks.length}
+                                currentPage={currentPage}
+                                pageSize={pageSize}
+                                onPageChange={onPageChange}
+                            />
                         </div>
                     </div>
-
                 </div>
+
             </div>
-        );
-    }
+        </div>
+    );
 }
+
+
 
 export default ShopThreeSlide;

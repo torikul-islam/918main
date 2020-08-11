@@ -40,7 +40,11 @@
   position: absolute;
   top: 35%;
 }
-
+.looks img {
+  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
+}
 .slider {
   position: relative;
   margin-top: 25px;

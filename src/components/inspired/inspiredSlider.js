@@ -36,7 +36,7 @@ function InspiredSlider(props) {
         setCurrentPage(0);
     }
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [inspired]);
+    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
 
     function handleResize() {
         const width = window.innerWidth;
