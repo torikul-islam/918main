@@ -224,8 +224,12 @@ ul.search-container {
 li.menu-item.man img, li.menu-item.shop img {
   width: 25px !important;
 }
-ul.home-menu li.searchHandle, ul.home-menu li.searchHandle input{
+ul.home-menu li.searchHandle{
     width: 100% !important;
+}
+ul.home-menu li.searchHandle:hover input.btn-srach, ul.home-menu li.searchHandle:hover input.btn-srachw{
+  color: #000 !important;
+  width: 100% !important;
 }
 }
 li.menu-item.font-hel .dropbtn {
