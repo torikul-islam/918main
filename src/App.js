@@ -82,11 +82,13 @@ function App(props) {
   function handleOpenMenu() {
     setOpenMenu(!openMenu)
   }
-
-
+  function handleCloseMenu() {
+    if (openMenu) {
+      setOpenMenu(false);
+    } else return;
+  }
 
   const { name, isOpen, isMoodBoard } = modal;
-
 
   return (
     <>
@@ -104,6 +106,7 @@ function App(props) {
           <Route path="/" render={(props) => <Home {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             shoppingCard={shoppingCard} isCardOpen={isCardOpen}
             itemControl={itemControl} clickCard={clickCard} />} exact />
@@ -111,18 +114,21 @@ function App(props) {
           <Route path="/blog/:id/:roomId" render={(props) => <Blog {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
           <Route path="/learn-more" render={(props) => <LearnPage {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
           <Route path="/workspace" render={(props) => <Workspace {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard}
             shoppingCard={shoppingCard}
@@ -131,6 +137,7 @@ function App(props) {
           <Route path="/explore" render={(props) => <Home {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard}
             shoppingCard={shoppingCard}
@@ -139,6 +146,7 @@ function App(props) {
           <Route path="/about-us" render={(props) => <AboutUS {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard}
             shoppingCard={shoppingCard}
@@ -148,6 +156,7 @@ function App(props) {
           <Route path="/contact-us" render={(props) => <ContactUs {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard}
             shoppingCard={shoppingCard}
@@ -157,12 +166,14 @@ function App(props) {
           <Route path="/shop-more" render={(props) => <Shop {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
           <Route path="/product-details/:id" render={(props) => <ProductDetails {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             addShoppingCard={addShoppingCard}
             clickCard={clickCard} />} exact />
@@ -170,12 +181,14 @@ function App(props) {
           <Route path="/account" render={(props) => <Account {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
           <Route path="/inspired-more" render={(props) => <InspiredMore {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
@@ -183,6 +196,7 @@ function App(props) {
             {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
@@ -190,6 +204,7 @@ function App(props) {
           <Route path="/looks" render={() => <Looks {...props}
             openMenu={openMenu}
             openModal={openModal}
+            handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
