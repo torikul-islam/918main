@@ -77,7 +77,10 @@
         height: 380px;
     }
     .craete-text-hero h2 {
-        font-size: 24px;
+        font-size: 20px;
+    }
+    .image-post-slide-learn p {
+        font-size: 18px;
     }
     .homecreate .craete-text-hero{
         margin: 0;
