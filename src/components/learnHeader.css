@@ -76,6 +76,12 @@
         width: 100%;
         height: 380px;
     }
+    .craete-text-hero h2 {
+        font-size: 24px;
+    }
+    .homecreate .craete-text-hero{
+        margin: 0;
+    }
     .header-learn {
         padding-top: 100px;
     }
