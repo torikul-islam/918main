@@ -80,6 +80,9 @@ margin-bottom: auto;
 }
 }
 @media screen and (max-width: 767px) and (min-width: 320px){
+  span.icon {
+    right: 15%;
+  }
   .text-fav h4 {
     font-size: 18pt;
     margin: 10px 0;
