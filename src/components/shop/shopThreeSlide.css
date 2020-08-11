@@ -43,7 +43,7 @@
 .looks img {
   object-fit: contain;
   width: 100% !important;
-  height: 100% !important;
+  height: 315px !important;
 }
 .slider {
   position: relative;
