@@ -87,6 +87,24 @@ label.react-switch-label {
 .titleInspire h4 {
   font-size: 19px;
 }
+.tab-index .slider {
+  width: 95%; 
+}
+.tab-index .slider h6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 17px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+div.email {
+  font-size: 15px;
+}
+.home-area-shop {
+  height: 52vh!important;
+}
 .inspired-fil {
   width: 60% !important;
 }
