@@ -66,4 +66,10 @@ ul.shopTab li {
 .inspired-slider ul li, ul.shopTab li{
   height: 45px;
 }
+.inspired-slider ul:before{
+  width: 315%;
+}
+ ul.shopTab::before{
+  width: 225%;
+}
 }
