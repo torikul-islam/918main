@@ -405,7 +405,7 @@ div#menu {
   max-width: 100%;
 }
 .social-icons, .subs-icons{
-  display: block;
+  display: none;
   
 }
 
