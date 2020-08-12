@@ -51,7 +51,7 @@ function ShopThreeSlide(props) {
                             {paginateLooks && paginateLooks.map((item, i) =>
                                 <div className='col-md-4 col-sm-12 looks' key={i}>
                                     <img src={inspiredSlide} alt="" />
-                                    <div className='slide-desc'> <h6>Mountain Chic</h6> </div>
+                                    <div className='slide-desc'> <h6>Mountain Chic {item}</h6> </div>
                                 </div>
                             )}
                             <Pagination
