@@ -40,7 +40,7 @@ span.bar {
         display: flex;
         overflow-x: scroll;
         white-space: nowrap;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
 
     }
     .list-furniture.shopHead {
