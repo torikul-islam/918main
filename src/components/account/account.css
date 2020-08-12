@@ -2,6 +2,7 @@
     width: 100% !important;
     object-fit: cover;
     margin-bottom: 5px;
+    object-position: center;
 }
 .account-slider .arrow-slide img {
     width: 25px !important;
