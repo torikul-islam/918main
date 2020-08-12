@@ -25,7 +25,10 @@ function InspirationAlsoLike(props) {
         })
     }, [props.match.params.id]);
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [inspiration]);
+    useEffect(() => {
+        window.addEventListener("scroll", handleResize);
+        window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize)
+    });
 
     function handleResize() {
         const width = window.innerWidth;

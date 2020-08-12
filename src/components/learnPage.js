@@ -63,7 +63,11 @@ function LearnPage(props) {
         }
     }
 
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) });
+    useEffect(() => {
+        window.addEventListener("scroll", handleResize);
+        window.addEventListener("resize", handleResize);
+        window.addEventListener('load', handleResize)
+    });
 
     function handleResize() {
         const width = window.innerWidth;
@@ -171,7 +175,7 @@ function LearnPage(props) {
                     </div>
                 }
             >
-                <PostSlideThree data={seeMore.results} compname="learn"/>
+                <PostSlideThree data={seeMore.results} compname="learn" />
             </InfiniteScroll>
         </>
     );

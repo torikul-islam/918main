@@ -23,7 +23,11 @@ function AccountLooks(props) {
             setCurrentPage(currentPage + 1)
         }
     }
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [looks]);
+    useEffect(() => {
+        window.addEventListener("scroll", handleResize);
+        window.addEventListener("resize", handleResize);
+        window.addEventListener('load', handleResize)
+    });
 
     function handleResize() {
         const width = window.innerWidth;

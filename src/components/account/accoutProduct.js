@@ -26,7 +26,10 @@ function AccountProduct() {
             setCurrentPage(currentPage + 1)
         }
     }
-    useEffect(() => { window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize) }, [product]);
+    useEffect(() => {
+        window.addEventListener("scroll", handleResize);
+        window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize)
+    });
 
     function handleResize() {
         const width = window.innerWidth;
