@@ -6,12 +6,10 @@ import './titleWithBer.css';
 
 
 
-const TitleWithBer = ({ text,pagename }) => {
+const TitleWithBer = ({ text }) => {
     return (
         <div className="titleBer">
-            <div className={pagename=="account"?'ins-title-account':'ins-title'}><span className="trending">{text}</span> 
-            <span className={pagename=="account"?'ber-slide-account':"ber-slide"}></span>
-            </div>
+            <div className='ins-title'><span className="trending">{text}</span> <span className="ber-slide"></span></div>
         </div>
     );
 }

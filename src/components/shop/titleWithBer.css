@@ -4,26 +4,11 @@
     font-size: 36px;
     padding-top: 10px;
   }
-  .ins-title-account {
-    color: #030303;
-    font-family: 'PlayfairDisplay-Regular';
-    font-size: 28px;
-    padding-top: 1px;
-  }
   .ber-slide {
     display: inline-block;
     /* width: 61%; */
     height: 3px;
     background: #d7d5d5;
-    /* margin-left: 30px; */
-    display: flex;
-    margin-top: 45px;
-  }
-  .ber-slide-account {
-    display: none;
-    /* width: 61%; */
-    /* height: 3px;
-    background: #d7d5d5; */
     /* margin-left: 30px; */
     display: flex;
     margin-top: 45px;

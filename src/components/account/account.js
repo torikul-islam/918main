@@ -10,7 +10,6 @@ import Signup from '../auth/signup';
 import Login from '../auth/login';
 import Modal from '../common/modal/modal';
 import './account.css';
-import ShopThreeSlide from '../shop/shopThreeSlide';
 
 
 
@@ -66,8 +65,7 @@ const Account = (props) => {
                                 <AccountProduct />
                                 <AccountInspiration />
                                 <AccountArticles />
-                                {/* <AccountLooks /> */}
-                                <ShopThreeSlide  {...props} pagename="account"/>
+                                <AccountLooks />
                             </div>
 
                             <div className="col-md-3 bg-color">

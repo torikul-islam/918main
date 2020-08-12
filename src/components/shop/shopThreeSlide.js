@@ -38,9 +38,9 @@ function ShopThreeSlide(props) {
 
     const paginateLooks = paginate(looks, currentPage, pageSize);
     return (
-        <div className={props.pagename === "workspace" || props.pagename === "product_details" ||props.pagename=="account"? 'container-fluid ins-area-modal' : 'container-fluid ins-area'}>
-            <div className={props.pagename === "workspace" ? 'container inspired-modal' : 'container inspired' || props.pagename==='account'?'inspired-account':'container inspired'} >
-                <TitleWithBer text='Looks' pagename={props.pagename} />
+        <div className={props.pagename === "workspace" || props.pagename === "product_details" ? 'container-fluid ins-area-modal' : 'container-fluid ins-area'}>
+            <div className={props.pagename === "workspace" ? 'container inspired-modal' : 'container inspired'} >
+                <TitleWithBer text='Looks' />
                 <div className='tab-index '>
                     <div className='slider'>
                         <div className='row'>
