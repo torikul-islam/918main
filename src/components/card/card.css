@@ -185,3 +185,21 @@ div.estimateTotal .margin-custom {
     top: 0;
   }
 }
+@media screen and (max-width: 1300px) and (min-width: 1024px) {
+  div.estimateTotal {
+    width: 100%;
+    position: relative;
+  }
+  .shopincards.shopingpostion{
+    height: 91vh;
+  }
+}
+@media screen and (max-width: 1366px) and (min-width: 1301px) {
+  div.estimateTotal {
+    width: 100%;
+    position: relative;
+  }
+  .shopincards.shopingpostion{
+    height: 88vh;
+  }
+}
