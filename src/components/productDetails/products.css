@@ -32,8 +32,13 @@ padding-top: 30px;
     .text-fav ul.menu-name li.select_design{
         padding:5px 27px 7px 5px;
     }
-    select#cars, select#cars:focus{
+    select#cars, select#cars:focus {
         font-size: 14px;
+        background-image: url('../../Asset/Images/arrow-down.png');
+        -webkit-appearance: none;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 11px;
     }
     .go-btn button{
         font-size: 14px;
