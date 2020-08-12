@@ -63,11 +63,8 @@ ul.shopTab li {
   width: 80%;
   margin: auto;
 }
-.inspired-slider ul li, ul.shopTab li, .list-furniture ul li{
+.inspired-slider ul li, ul.shopTab li{
   height: 45px;
-}
-.list-furniture ul::-webkit-scrollbar {
-  display: none;
 }
 .inspired-slider ul:before{
   width: 315%;
