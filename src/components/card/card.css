@@ -146,12 +146,31 @@ div.estimateTotal .margin-custom {
   }
   div.estimateTotal {
     width: 100%;
+    position: relative;
   }
   .shopping-head h3 {
     font-size: 18px !important;
   }
   h6.text-right.totalHeading {
     text-align: left !important;
+  }
+  .shopincards.shopingpostion{
+    height: 82vh;
+  }
+}
+@media screen and (max-width: 359px) and (min-width: 320px) {
+  .shopincards.shopingpostion{
+    height: 79vh;
+  }
+}
+@media screen and (max-width: 374px) and (min-width: 360px) {
+  .shopincards.shopingpostion{
+    height: 81vh;
+  }
+}
+@media screen and (max-width: 450px) and (min-width: 414px) {
+  .shopincards.shopingpostion{
+    height: 83.7vh;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {

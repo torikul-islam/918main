@@ -31,7 +31,7 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }
         <>
             <div ref={wrapperRef} className={`${isCardOpen ? 'shopping-card card-show' : 'shopping-card'}`}>
                 <div className="container">
-                    <div className="shopincards">
+                    <div className="shopincards shopingpostion">
                         <div className="heading_shop">
                             <div className="row">
                                 <div className="col-md-1 col-1">
