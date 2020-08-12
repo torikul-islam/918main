@@ -170,7 +170,7 @@ div.estimateTotal .margin-custom {
 }
 @media screen and (max-width: 450px) and (min-width: 414px) {
   .shopincards.shopingpostion{
-    height: 83.7vh;
+    height: 83.7vh; 
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
