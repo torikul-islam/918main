@@ -135,6 +135,20 @@ h5 {
 .category-list {
   height: 40%;
 }
+.productfurniture .nav-pills .nav-link.active, .productfurniture .nav-pills .show>.nav-link {
+  background: transparent;
+  color: #000;
+}
+.productfurniture .nav-pills a {
+  color: #000;
+}
+.productfurniture .nav-pills a.nav-link {
+  padding: 0;
+}
+.tab-content ul.list-categroy-shop li {
+  margin-left: 0 !important;
+  margin-right: 34px;
+}
 .removeIcon {
   width: 13px;
   height: auto;

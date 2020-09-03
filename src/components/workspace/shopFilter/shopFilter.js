@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RangeSlider from './rangeSlider';
 import './shopFilter.css';
 
@@ -6,6 +6,20 @@ import './shopFilter.css';
 
 function ShopFilter(props) {
     const { closeModal } = props;
+    const [openTab, setOpenTab] = useState('furniture')
+    function clickTabs(name) {
+        if (name === 'furniture') {
+            setOpenTab('furniture');
+        } else if (name === 'decor') {
+            setOpenTab('decor');
+        } else if (name === 'rugs') {
+            setOpenTab('rugs');
+        } else if (name === 'bed') {
+            setOpenTab('bed');
+        } else if (name === 'lightings') {
+            setOpenTab('lightings');
+        }
+    }
 
 
 
@@ -31,31 +45,94 @@ function ShopFilter(props) {
                             <div className="col-sm-12">
                                 <div className="productfurniture">
                                     <h5>Products</h5>
-                                    <ul>
-                                        <li>FURNITURE</li>
-                                        <li>DECOR</li>
-                                        <li>RUGS</li>
-                                        <li>BED &amp; BATH</li>
-                                        <li>LIGHTING</li>
+                                    <ul className="nav nav-pills" role="tablist">
+                                        <li className="nav-item">
+                                            <a className={`nav-link ${openTab === 'furniture' ? 'active' : ''}`} data-toggle="pill" href="#furniture" onClick={() => clickTabs('furniture')}>FURNITURE</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className={`nav-link ${openTab === 'decor' ? 'active' : ''}`} data-toggle="pill" href="#decor" onClick={() => clickTabs('decor')}>DECOR</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className={`nav-link ${openTab === 'rugs' ? 'active' : ''}`} data-toggle="pill" href="#rugs" onClick={() => clickTabs('rugs')}>RUGS</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className={`nav-link ${openTab === 'bed' ? 'active' : ''}`} data-toggle="pill" href="#bedbath" onClick={() => clickTabs('bed')}>BED &amp; BATH</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className={`nav-link ${openTab === 'lightings' ? 'active' : ''}`} data-toggle="pill" href="#lightings" onClick={() => clickTabs('lightings')}>LIGHTING</a>
+                                        </li>
                                     </ul>
+                                    <hr />
+                                    <div className="tab-content">
+                                        <div id="furniture" className={`tab-pane category-list ${openTab === 'furniture' ? 'active' : 'fade'}`}><br />
+                                            <ul className="list-categroy-shop">
+                                                <li><button>Living Room</button></li>
+                                                <li><button>Dining Room</button></li>
+                                                <li><button>Bedroom</button></li>
+                                                <li><button>Office</button></li>
+                                                <li><button>Kitchen</button></li>
+                                                <li><button>Bathroom</button></li>
+                                                <li><button>Entryway</button></li>
+                                                <li><button>Outdoor</button></li>
+                                                <li><button>Kids’ Room</button></li>
+                                            </ul>
+                                            <hr />
+                                        </div>
+                                        <div id="decor" className={`tab-pane category-list ${openTab === 'decor' ? 'active' : 'fade'}`}><br />
+                                            <ul className="list-categroy-shop">
+                                                <li><button>Living Room</button></li>
+                                                <li><button>Dining Room</button></li>
+                                                <li><button>Bedroom</button></li>
+                                                <li><button>Office</button></li>
+                                                <li><button>Kitchen</button></li>
+                                                <li><button>Bathroom</button></li>
+                                                <li><button>Entryway</button></li>
+                                                <li><button>Outdoor</button></li>
+                                                <li><button>Kids’ Room</button></li>
+                                            </ul>
+                                        </div>
+                                        <div id="rugs" className={`tab-pane category-list ${openTab === 'rugs' ? 'active' : 'fade'}`}><br />
+                                            <ul className="list-categroy-shop">
+                                                <li><button>Living Room</button></li>
+                                                <li><button>Dining Room</button></li>
+                                                <li><button>Bedroom</button></li>
+                                                <li><button>Office</button></li>
+                                                <li><button>Kitchen</button></li>
+                                                <li><button>Bathroom</button></li>
+                                                <li><button>Entryway</button></li>
+                                                <li><button>Outdoor</button></li>
+                                                <li><button>Kids’ Room</button></li>
+                                            </ul>
+                                        </div>
+                                        <div id="bedbath" className={`tab-pane category-list ${openTab === 'bed' ? 'active' : 'fade'}`}><br />
+                                            <ul className="list-categroy-shop">
+                                                <li><button>Living Room</button></li>
+                                                <li><button>Dining Room</button></li>
+                                                <li><button>Bedroom</button></li>
+                                                <li><button>Office</button></li>
+                                                <li><button>Kitchen</button></li>
+                                                <li><button>Bathroom</button></li>
+                                                <li><button>Entryway</button></li>
+                                                <li><button>Outdoor</button></li>
+                                                <li><button>Kids’ Room</button></li>
+                                            </ul>
+                                        </div>
+                                        <div id="lightings" className={`tab-pane category-list ${openTab === 'lightings' ? 'active' : 'fade'}`}><br />
+                                            <ul className="list-categroy-shop">
+                                                <li><button>Living Room</button></li>
+                                                <li><button>Dining Room</button></li>
+                                                <li><button>Bedroom</button></li>
+                                                <li><button>Office</button></li>
+                                                <li><button>Kitchen</button></li>
+                                                <li><button>Bathroom</button></li>
+                                                <li><button>Entryway</button></li>
+                                                <li><button>Outdoor</button></li>
+                                                <li><button>Kids’ Room</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <hr />
                             </div>
-                            <div className="category-list">
-                                <ul className="list-categroy-shop">
-                                    <li><button>Living Room</button></li>
-                                    <li><button>Dining Room</button></li>
-                                    <li><button>Bedroom</button></li>
-                                    <li><button>Office</button></li>
-                                    <li><button>Kitchen</button></li>
-                                    <li><button>Bathroom</button></li>
-                                    <li><button>Entryway</button></li>
-                                    <li><button>Outdoor</button></li>
-                                    <li><button>Kids’ Room</button></li>
-                                </ul>
-                                <hr />
-                            </div>
-
                             <div>
                                 <div className="range-slider">
                                     <h5>Price</h5>
