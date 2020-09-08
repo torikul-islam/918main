@@ -48,4 +48,5 @@ function createProduct(data) {
 }
 
 
+
 export default { getAllProducts, getProductById, getProductByUrl, getProductByPieceId, getUserProductLike, createProductLike, createProduct }

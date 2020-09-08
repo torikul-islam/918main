@@ -25,5 +25,14 @@ function createProject(data) {
     }
 };
 
+function getUserProjectProduct() {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.get('/user/project/', {
+            headers: { "Authorization": `Token ${token}` }
+        })
+    }
+}
 
-export default { getProject, createProject }
+
+export default { getProject, createProject, getUserProjectProduct }

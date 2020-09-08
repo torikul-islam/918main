@@ -4,7 +4,7 @@ import paginate from '../../utils/paginate';
 import GoBtn from "../common/goBtn";
 import ShopThreeSlide from '../shop/shopThreeSlide';
 import projectServices from '../../services/projectService';
-import colorImage from '../../Asset/Images/Color_Fill_10.png';
+import productService from '../../services/productService';
 import "./workspace.css";
 import Modal from '../common/modal/modal';
 import Signup from '../auth/signup';
@@ -13,7 +13,7 @@ import Login from '../auth/login';
 
 
 const ShopModal = (props) => {
-    const { product, products, closeModal, openModal } = props;
+    const { product, closeModal, openModal } = props;
     const token = localStorage.getItem('token');
     const [shoModal, setShoModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
@@ -22,12 +22,8 @@ const ShopModal = (props) => {
     const [error, setError] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
     const [project, setProject] = useState([]);
+    const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
 
-
-
-    if (products.length > 0) {
-        paginate(products, currentPage, pageSize);
-    }
 
     function openShopModal(name) {
         setShoModal({ isOpen: true, name: name });
@@ -37,13 +33,27 @@ const ShopModal = (props) => {
         setShoModal({ isOpen: false, name: null })
     };
 
-    function onPageChange(val) {
+    async function onPageChange(val) {
+        const diff = products.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
+            if (diff < pageSize && products.next !== null) {
+                const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
+                setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
+            }
             setCurrentPage(currentPage + 1)
         }
     }
+
+    useEffect(() => {
+        (async function () {
+            const { data } = await productService.getAllProducts();
+            // call the backend server and set response array in setProducts
+            setProducts(data);
+        })()
+    }, []);
+
     function addToBoard(product) {
         let data = new FormData();
         if (selectedValue) {
@@ -95,6 +105,12 @@ const ShopModal = (props) => {
     }
     const { name, isOpen } = shoModal;
 
+
+    let paginateProducts = [];
+    if (products) {
+        paginateProducts = paginate(products.results, currentPage, pageSize);
+    }
+
     return (
         <div className='container'>
             <div className='cross-icon crossModal' onClick={closeModal}>
@@ -106,7 +122,7 @@ const ShopModal = (props) => {
                         <div className="col-sm-2"></div>
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
-                                <img src={product.ref_img} alt="" />
+                                <img src={product.product.ref_img} alt="" />
                                 <span className="icon">
                                     <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
                                 </span>
@@ -120,9 +136,9 @@ const ShopModal = (props) => {
                                 <GoBtn text="Sign Up" type='button' onClick={() => openShopModal('signup')} />
                             </div> :
                                 <div className="text-fav text-center">
-                                    <h6>Retailer Name</h6>
-                                    <span>Product Name </span>
-                                    <p>$999</p>
+                                    <h6>{product.product.retailer}</h6>
+                                    <span>{product.product.name}</span>
+                                    <p>${product.product.price}</p>
                                     {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">
@@ -165,30 +181,30 @@ const ShopModal = (props) => {
                             <div className='tab-index'>
                                 <div className='slider small-slide'>
                                     <div className='row'>
-                                        {[0, 1, 2, 3].map((item, i) =>
+                                        {paginateProducts && paginateProducts.map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                                <img src={colorImage} alt="" />
-                                                <h2>Retailer</h2>
+                                                <img src={item.ref_img} alt="" />
+                                                <h2>{item.retailer}</h2>
                                             </div>
                                         )}
                                         <Pagination
-                                            itemsCount={10}
-                                            pageSize={4}
-                                            currentPage={0}
+                                            itemsCount={products.count}
+                                            pageSize={pageSize}
+                                            currentPage={currentPage}
                                             onPageChange={onPageChange}
                                         />
                                     </div>
                                 </div>
                             </div>
-                        </div >
-                    </div >
+                        </div>
+                    </div>
 
                     <ShopThreeSlide pagename="workspace" />
-                </div >
-            </div >
+                </div>
+            </div>
             {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup openModal={openShopModal} closeModal={closeShopModal} />} />}
             {name === 'login' && <Modal isOpen={isOpen} childComp={<Login openModal={openShopModal} closeModal={closeShopModal} />} />}
-        </div >
+        </div>
     );
 }
 
