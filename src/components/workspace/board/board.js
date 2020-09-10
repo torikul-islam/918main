@@ -5,19 +5,20 @@ import Draggable from "react-draggable";
 
 
 
-const Board = props => {
+const Board = (props) => {
+    const { dragImage, addImageToDrag } = props;
     let [activeDrags, setActiveDrags] = useState(0);
 
-    function onStart() {
-        setActiveDrags(1)
-    }
-    function onStop() {
-        setActiveDrags(0)
-    }
+    // function onStart() {
+    //     setActiveDrags(1)
+    // }
+    // function onStop() {
+    //     setActiveDrags(0)
+    // }
 
 
-    const dragHandlers = { onStart: onStart, onStop: onStop };
-    console.log(activeDrags);
+    // const dragHandlers = { onStart: onStart, onStop: onStop };
+    // console.log(activeDrags);
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
@@ -31,13 +32,17 @@ const Board = props => {
                     </ul>
                 </div>
                 <div className="middle-body">
-                    <Draggable
+                    {/* <Draggable
+                        // disabled={false}
                         bounds='parent'
-                        onStart={onStart}
-                        onStop={onStop}
+                    // onStart={onStart}
+                    // onStop={onStop}
                     >
-                        <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
-                    </Draggable>
+                        <div classNam='drag-box'>
+                            drug me
+                            <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
+                        </div>
+                    </Draggable> */}
                 </div>
 
             </div>

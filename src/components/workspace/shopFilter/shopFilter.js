@@ -6,7 +6,9 @@ import './shopFilter.css';
 
 function ShopFilter(props) {
     const { closeModal } = props;
-    const [openTab, setOpenTab] = useState('furniture')
+    const [openTab, setOpenTab] = useState('furniture');
+
+
     function clickTabs(name) {
         if (name === 'furniture') {
             setOpenTab('furniture');

@@ -86,3 +86,16 @@
 .workspace-shop  img {
   width: 100%;
 }
+
+
+
+/* test css for dragging checking. must be delete later */
+#my-draggable-element {
+  width:100px;
+  height:100px;
+  background-color:#666;
+  color:white;
+  padding:10px 12px;
+  cursor:move;
+  position:relative; /* important (all position that's not `static`) */
+}

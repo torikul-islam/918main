@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Toggleswitch from '../../common/toggleswitch/toggleswitch';
 import './itemContainer.css';
 import Draggable from 'react-draggable';
@@ -9,6 +9,41 @@ function ItemContainer(props) {
     const { openModal, clickFilterImage, product, projectProduct } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
 
+
+    var selected = null,
+        x_pos = 0, y_pos = 0,
+        x_elem = 0, y_elem = 0;
+
+    useEffect(() => {
+        document.getElementById('my-draggable-element').onmousedown = function () {
+            console.log('this', this);
+            _drag_init(this);
+            return false;
+        };
+
+        document.onmousemove = _move_elem;
+        document.onmouseup = _destroy;
+    })
+
+    function _drag_init(elem) {
+        // Store the object of the element which needs to be moved
+        selected = elem;
+        x_elem = x_pos - selected.offsetLeft;
+        y_elem = y_pos - selected.offsetTop;
+    }
+
+    function _move_elem(e) {
+        x_pos = document.all ? window.event.clientX : e.pageX;
+        y_pos = document.all ? window.event.clientY : e.pageY;
+        if (selected !== null) {
+            selected.style.left = (x_pos - x_elem) + 'px';
+            selected.style.top = (y_pos - y_elem) + 'px';
+        }
+    }
+
+    function _destroy() {
+        selected = null;
+    }
 
 
     return (
@@ -48,11 +83,18 @@ function ItemContainer(props) {
                     <div className="post-slide-main-item">
                         <div className="row">
                             <div className="col-sm-6 workspace-shop">
-                                {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
+                                {/* {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
                                     <img key={i} className='shop-image' onClick={() => clickFilterImage('shopImage', item)}
                                         src={item.product.ref_img}
                                         alt="" />
-                                )}
+                                )} */}
+                                <div id="my-draggable-element">Drag me!</div>
+                                {/* <Draggable defaultPosition={{ x: 25, y: 25 }} style={{ position: 'absolute' }} >
+                                    <div className="box">
+                                        {"I have a default position of {x: 25, y: 25}, so I'm slightly offset."}
+                                    </div>
+                                </Draggable> */}
+
                                 {/* <div className="workimage-shop" style={{ position: 'absolute' }}>
                                     <Draggable>
                                         <img src={require('../../../Asset/Images/shop1.png')} alt="ins1.png" />

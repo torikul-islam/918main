@@ -16,6 +16,8 @@ const Workspace = (props) => {
     const [product, setProduct] = useState({});
     const [projectProduct, setProjectProduct] = useState({});
 
+    const [dragImage, setDragImage] = useState([]);
+
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -53,9 +55,11 @@ const Workspace = (props) => {
         setProduct(item)
     }
 
-    function onChangeSearch() {
-
+    function addImageToDrag(item) {
+        setDragImage([...dragImage, ...item]);
     }
+
+    function onChangeSearch() { }
 
     const { name, isOpen } = modal;
 
@@ -75,7 +79,10 @@ const Workspace = (props) => {
                     </div>
 
                     <div className="col-md-8 col-sm-6">
-                        <Board />
+                        <Board
+                            addImageToDrag={addImageToDrag}
+                            dragImage={dragImage}
+                        />
                     </div>
 
                 </div>
@@ -84,7 +91,10 @@ const Workspace = (props) => {
             {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props}
                 product={product}
                 openModal={openModal}
-                closeModal={closeModal} />} />}
+                closeModal={closeModal}
+
+            />}
+            />}
 
             {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props} product={product} openModal={openModal} closeModal={closeModal} />} />}
             {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter closeModal={closeModal} />} />}
