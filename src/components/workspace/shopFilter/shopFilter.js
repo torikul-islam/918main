@@ -70,7 +70,7 @@ function ShopFilter(props) {
                                             <a className={`nav-link ${openTab === 'lightings' ? 'active' : ''}`} data-toggle="pill" href="#lightings" onClick={() => clickTabs('lightings')}>LIGHTING</a>
                                         </li>
                                     </ul>
-                                    <hr />
+                                    
                                     <div className="tab-content">
                                         <div id="furniture" className={`tab-pane category-list ${openTab === 'furniture' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
