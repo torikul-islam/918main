@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RangeSlider from './rangeSlider';
 import './shopFilter.css';
-
+import roomServices from '../../../services/roomServices';
 
 
 function ShopFilter(props) {
     const { closeModal } = props;
-    const [openTab, setOpenTab] = useState('furniture');
-
-
+    const [openTab, setOpenTab] = useState('furniture')
+    const [rooms, setRooms] = useState([])
+    useEffect(() => {
+        (async function () {
+            const { data } = await roomServices.getAllRooms();
+            // call the backend server and set response array in setProducts
+            setRooms(data);
+        })()
+    }, []);
     function clickTabs(name) {
         if (name === 'furniture') {
             setOpenTab('furniture');
@@ -68,68 +74,39 @@ function ShopFilter(props) {
                                     <div className="tab-content">
                                         <div id="furniture" className={`tab-pane category-list ${openTab === 'furniture' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
-                                                <li><button>Living Room</button></li>
-                                                <li><button>Dining Room</button></li>
-                                                <li><button>Bedroom</button></li>
-                                                <li><button>Office</button></li>
-                                                <li><button>Kitchen</button></li>
-                                                <li><button>Bathroom</button></li>
-                                                <li><button>Entryway</button></li>
-                                                <li><button>Outdoor</button></li>
-                                                <li><button>Kids’ Room</button></li>
+                                                {rooms.results && rooms.results.map((item, i) =>
+                                                    <li> <button>{item.name}</button></li>
+                                                )}
+
                                             </ul>
                                             <hr />
                                         </div>
                                         <div id="decor" className={`tab-pane category-list ${openTab === 'decor' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
-                                                <li><button>Living Room</button></li>
-                                                <li><button>Dining Room</button></li>
-                                                <li><button>Bedroom</button></li>
-                                                <li><button>Office</button></li>
-                                                <li><button>Kitchen</button></li>
-                                                <li><button>Bathroom</button></li>
-                                                <li><button>Entryway</button></li>
-                                                <li><button>Outdoor</button></li>
-                                                <li><button>Kids’ Room</button></li>
+                                                {rooms.results && rooms.results.map((item, i) =>
+                                                    <li> <button>{item.name}</button></li>
+                                                )}
                                             </ul>
                                         </div>
                                         <div id="rugs" className={`tab-pane category-list ${openTab === 'rugs' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
-                                                <li><button>Living Room</button></li>
-                                                <li><button>Dining Room</button></li>
-                                                <li><button>Bedroom</button></li>
-                                                <li><button>Office</button></li>
-                                                <li><button>Kitchen</button></li>
-                                                <li><button>Bathroom</button></li>
-                                                <li><button>Entryway</button></li>
-                                                <li><button>Outdoor</button></li>
-                                                <li><button>Kids’ Room</button></li>
+                                                {rooms.results && rooms.results.map((item, i) =>
+                                                    <li> <button>{item.name}</button></li>
+                                                )}
                                             </ul>
                                         </div>
                                         <div id="bedbath" className={`tab-pane category-list ${openTab === 'bed' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
-                                                <li><button>Living Room</button></li>
-                                                <li><button>Dining Room</button></li>
-                                                <li><button>Bedroom</button></li>
-                                                <li><button>Office</button></li>
-                                                <li><button>Kitchen</button></li>
-                                                <li><button>Bathroom</button></li>
-                                                <li><button>Entryway</button></li>
-                                                <li><button>Outdoor</button></li>
-                                                <li><button>Kids’ Room</button></li>
+                                                {rooms.results && rooms.results.map((item, i) =>
+                                                    <li> <button>{item.name}</button></li>
+                                                )}
                                             </ul>
                                         </div>
                                         <div id="lightings" className={`tab-pane category-list ${openTab === 'lightings' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
-                                                <li><button>Living Room</button></li>
-                                                <li><button>Dining Room</button></li>
-                                                <li><button>Bedroom</button></li>
-                                                <li><button>Office</button></li>
-                                                <li><button>Kitchen</button></li>
-                                                <li><button>Bathroom</button></li>
-                                                <li><button>Entryway</button></li>
-                                                <li><button>Outdoor</button></li>
-                                                <li><button>Kids’ Room</button></li>
+                                                {rooms.results && rooms.results.map((item, i) =>
+                                                    <li> <button>{item.name}</button></li>
+                                                )}
                                             </ul>
                                         </div>
                                     </div>
