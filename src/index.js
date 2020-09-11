@@ -11,9 +11,7 @@ import './index.css';
 
 ReactDOM.render(
   <BrowserRouter >
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <App />
   </BrowserRouter>,
   document.getElementById('root')
 );
