@@ -84,7 +84,7 @@ ul.list-categroy-shop li button {
   float: left;
   border-radius: 50px;
 }
-.colorStyle ul li.red {
+/* .colorStyle ul li.red {
   background: #fd0000;
 }
 .colorStyle ul li.green {
@@ -127,7 +127,7 @@ ul.list-categroy-shop li button {
 }
 .colorStyle ul li.silver {
   background: #d8d5ce;
-}
+} */
 
 h5 {
   font-family: "Playfair Display";
