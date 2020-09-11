@@ -11,13 +11,15 @@
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
     "joi-browser": "^13.4.0",
+    "nouislider": "^14.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",
     "react-infinite-scroller": "^1.2.4",
     "react-nouislider": "^2.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "wnumb": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
