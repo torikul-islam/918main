@@ -16,7 +16,6 @@ function ItemContainer(props) {
 
 
     useEffect(() => {
-        const { room_ids, style_ids } = inspirationFilter;
         let url = '';
         Object.keys(inspirationFilter).map((item, i) => {
             if (inspirationFilter[item].length > 0 && i === 0) {
@@ -89,7 +88,7 @@ function ItemContainer(props) {
                         <div className="row">
                             {products.results && products.results.map((item, i) =>
                                 <Draggable key={i}>
-                                    <div className="col-sm-6 workspace-shop">
+                                    <div className="col-sm-6 workspace-shop priority">
                                         <div className="box boxoverlay">
                                             <img src={item.ref_img} alt="" />
                                         </div>
