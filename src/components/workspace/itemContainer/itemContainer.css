@@ -95,11 +95,12 @@
   height: auto;
   object-fit: contain;
 }
-  
- 
+
 .box{
   cursor: move;
   z-index: 8;
   position: relative;
  }
- 
+ .priority{
+  z-index: 10;
+ }
