@@ -65,7 +65,9 @@ function ItemContainer(props) {
 
                 <div className="col-sm-6">
                     <div className="row">
+                    <div className="col-sm-4">
                         <Toggleswitch className="col-sm-4" />
+                        </div>
                         <div className="col-sm-8">
                             <h4 >Shop.</h4>
                             <div>
