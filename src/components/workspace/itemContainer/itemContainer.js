@@ -97,10 +97,7 @@ function ItemContainer(props) {
 
                                 {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
                                     <Draggable>
-                                        <div className="box" key={i}>
-                                            <p>
-                                                without image
-                                           </p>
+                                        <div className="box boxoverlay" key={i}>
                                             <img src={item.product.ref_img} alt="" />
                                         </div>
                                     </Draggable>
