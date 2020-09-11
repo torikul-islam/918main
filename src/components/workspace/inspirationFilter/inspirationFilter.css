@@ -62,7 +62,9 @@ ul.list-category li button {
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
   border-color:transparent ;
 }
-
+ul.list-category li.activebtn button {
+  background: #979292;
+}
 /* @media 
 ul.list-category li button{
 

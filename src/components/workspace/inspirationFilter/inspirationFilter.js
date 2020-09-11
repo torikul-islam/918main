@@ -58,7 +58,7 @@ const InspirationFilter = (props) => {
                         <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
                             <ul className="list-category">
                                 {rooms.results && rooms.results.map((item, i) =>
-                                    <li className={inspirationIds.room_ids.some(id => id === item.pk) ? 'active' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
+                                    <li className={inspirationIds.room_ids.some(id => id === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
                         </div>
@@ -66,7 +66,7 @@ const InspirationFilter = (props) => {
                             <br />
                             <ul className="list-category">
                                 {style.results && style.results.map((item, i) =>
-                                    <li className={inspirationIds.style_ids.some(id => id === item.pk) ? 'active' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>
+                                    <li className={inspirationIds.style_ids.some(id => id === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
                         </div>
