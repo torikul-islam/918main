@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Toggleswitch from '../../common/toggleswitch/toggleswitch';
 import './itemContainer.css';
 import Draggable from 'react-draggable';
@@ -8,14 +8,16 @@ import Draggable from 'react-draggable';
 function ItemContainer(props) {
     const { openModal, clickFilterImage, product, projectProduct } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
-
+    let myRef = useRef()
 
     var selected = null,
         x_pos = 0, y_pos = 0,
         x_elem = 0, y_elem = 0;
 
-    useEffect(() => {
-        document.getElementById('my-draggable-element').onmousedown = function () {
+
+    function myRefFunc(e, id) {
+
+        document.getElementById(id).onmousedown = function () {
             console.log('this', this);
             _drag_init(this);
             return false;
@@ -23,9 +25,17 @@ function ItemContainer(props) {
 
         document.onmousemove = _move_elem;
         document.onmouseup = _destroy;
-    })
+    }
+
+    function mouseDown(e) {
+        _drag_init(e);
+        // document.onmousemove = _move_elem;
+        // document.onmouseup = _destroy;
+        return false;
+    }
 
     function _drag_init(elem) {
+        console.log('elem', elem)
         // Store the object of the element which needs to be moved
         selected = elem;
         x_elem = x_pos - selected.offsetLeft;
@@ -33,11 +43,12 @@ function ItemContainer(props) {
     }
 
     function _move_elem(e) {
-        x_pos = document.all ? window.event.clientX : e.pageX;
-        y_pos = document.all ? window.event.clientY : e.pageY;
+        x_pos = document.all ? window.event.clientX : e.target.pageX;
+        y_pos = document.all ? window.event.clientY : e.target.pageY;
         if (selected !== null) {
-            selected.style.left = (x_pos - x_elem) + 'px';
-            selected.style.top = (y_pos - y_elem) + 'px';
+            console.log(selected);
+            // selected.style.left = (x_pos - x_elem) + 'px';
+            // selected.style.top = (y_pos - y_elem) + 'px';
         }
     }
 
@@ -84,11 +95,30 @@ function ItemContainer(props) {
                         <div className="row">
                             <div className="col-sm-6 workspace-shop">
                                 {/* {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
+                                    <div onMouseDown={myRefFunc(item.uuid)} id={item.uuid}
+                                    >
+                                        <img key={i}
+                                            // onClick={() => clickFilterImage('shopImage', item)}
+                                            src={item.product.ref_img}
+                                            alt="" />
+                                    </div>
+
+                                )} */}
+                                {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
+                                    <Draggable defaultPosition={{ x: 25, y: 25 }} style={{ position: 'absolute' }} >
+                                        <div className="box" key={i}>
+                                            <img src={item.product.ref_img} alt="" />
+                                        </div>
+                                    </Draggable>
+                                )}
+
+
+                                {/* {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
                                     <img key={i} className='shop-image' onClick={() => clickFilterImage('shopImage', item)}
                                         src={item.product.ref_img}
                                         alt="" />
                                 )} */}
-                                <div id="my-draggable-element">Drag me!</div>
+
                                 {/* <Draggable defaultPosition={{ x: 25, y: 25 }} style={{ position: 'absolute' }} >
                                     <div className="box">
                                         {"I have a default position of {x: 25, y: 25}, so I'm slightly offset."}

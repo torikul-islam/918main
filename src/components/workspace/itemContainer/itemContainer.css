@@ -83,11 +83,20 @@
 .titleInspire button.filter.shopfilter {
   background-position: 120px 8px;
 }
-.workspace-shop  img {
-  width: 100%;
+.workspace-shop img {
+  width:100%;
+  /* height:100px; */
+  /* cursor:move;
+  z-index: 8;
+  position:relative;  */
 }
-
-
+  
+ 
+.box{
+  cursor: move;
+  z-index: 8;
+  position: relative;
+ }
 
 /* test css for dragging checking. must be delete later */
 #my-draggable-element {
@@ -97,5 +106,6 @@
   color:white;
   padding:10px 12px;
   cursor:move;
+  z-index: 8;
   position:relative; /* important (all position that's not `static`) */
 }
