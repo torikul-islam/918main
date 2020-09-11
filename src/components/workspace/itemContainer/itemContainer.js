@@ -94,6 +94,18 @@ function ItemContainer(props) {
                     <div className="post-slide-main-item">
                         <div className="row">
                             <div className="col-sm-6 workspace-shop">
+
+                                {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
+                                    <Draggable>
+                                        <div className="box" key={i}>
+                                            <p>
+                                                without image
+                                           </p>
+                                            <img src={item.product.ref_img} alt="" />
+                                        </div>
+                                    </Draggable>
+                                )}
+
                                 {/* {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
                                     <div onMouseDown={myRefFunc(item.uuid)} id={item.uuid}
                                     >
@@ -104,13 +116,7 @@ function ItemContainer(props) {
                                     </div>
 
                                 )} */}
-                                {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
-                                    <Draggable defaultPosition={{ x: 25, y: 25 }} style={{ position: 'absolute' }} >
-                                        <div className="box" key={i}>
-                                            <img src={item.product.ref_img} alt="" />
-                                        </div>
-                                    </Draggable>
-                                )}
+
 
 
                                 {/* {projectProduct.workspace_items && projectProduct.workspace_items.map((item, i) =>
