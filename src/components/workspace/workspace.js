@@ -15,7 +15,7 @@ const Workspace = (props) => {
     const [modal, setModal] = useState({ isOpen: false, name: null });
     const [product, setProduct] = useState({});
     const [projectProduct, setProjectProduct] = useState({});
-
+    const [inspirationFilter, setInspirationFilter] = useState({ room_ids: [], style_ids: [] })
     const [dragImage, setDragImage] = useState([]);
 
 
@@ -31,7 +31,6 @@ const Workspace = (props) => {
     }, []);
 
 
-
     useEffect(() => {
         (async function () {
             const { data } = await projectService.getUserProjectProduct();
@@ -40,6 +39,28 @@ const Workspace = (props) => {
         })()
     }, []);
 
+
+    function clickStyleItem(item) {
+        let styleIds = inspirationFilter.style_ids;
+        const found = styleIds.find(f => f === item.pk);
+        if (found) {
+            styleIds = styleIds.filter(x => x !== item.pk)
+        } else {
+            styleIds.push(item.pk)
+        }
+        setInspirationFilter({ style_ids: styleIds, room_ids: [...inspirationFilter.room_ids] })
+    }
+
+    function clickRoomItem(item) {
+        let roomIds = inspirationFilter.room_ids;
+        const found = roomIds.find(f => f === item.pk);
+        if (found) {
+            roomIds = roomIds.filter(x => x !== item.pk)
+        } else {
+            roomIds.push(item.pk)
+        }
+        setInspirationFilter({ room_ids: roomIds, style_ids: [...inspirationFilter.style_ids] })
+    }
 
 
     function openModal(name) {
@@ -75,6 +96,7 @@ const Workspace = (props) => {
                             projectProduct={projectProduct}
                             clickFilterImage={clickFilterImage}
                             openModal={openModal}
+                            inspirationFilter={inspirationFilter}
                         />
                     </div>
 
@@ -97,7 +119,13 @@ const Workspace = (props) => {
             />}
 
             {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props} product={product} openModal={openModal} closeModal={closeModal} />} />}
-            {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter closeModal={closeModal} />} />}
+            {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter
+                inspirationIds={inspirationFilter}
+                clickStyleItem={clickStyleItem}
+                clickRoomItem={clickRoomItem}
+                closeModal={closeModal}
+            />}
+            />}
         </>
     );
 }

@@ -8,19 +8,36 @@ import Draggable from 'react-draggable';
 
 
 function ItemContainer(props) {
-    const { openModal, clickFilterImage, product, projectProduct } = props;
+    const { openModal, clickFilterImage, product, projectProduct, inspirationFilter } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
 
 
+
     useEffect(() => {
-        (async function () {
-            const { data } = await inspirationService.getAllInspired();
-            // call the backend server and set response array in setProducts
-            setInspiration(data);
-        })()
-    }, []);
+        const { room_ids, style_ids } = inspirationFilter;
+        let url = '';
+        Object.keys(inspirationFilter).map((item, i) => {
+            if (inspirationFilter[item].length > 0 && i === 0) {
+                url += item + '=' + inspirationFilter[item].join(',')
+            } else if (inspirationFilter[item].length > 0 && i > 0) {
+                url += '&' + item + '=' + inspirationFilter[item].join(',')
+            }
+        })
+        if (url === '') {
+            (async function () {
+                const { data } = await inspirationService.getAllInspired();
+                setInspiration(data);
+            })()
+        } else {
+            (async function () {
+                const { data } = await inspirationService.getInspirationByUrl(url);
+                setInspiration(data);
+            })()
+        }
+
+    }, [inspirationFilter]);
 
     useEffect(() => {
         (async function () {
@@ -29,9 +46,6 @@ function ItemContainer(props) {
             setProducts(data);
         })()
     }, []);
-
-
-
 
 
     return (
@@ -54,10 +68,6 @@ function ItemContainer(props) {
                                         </div>
                                     </Draggable>
                                 )}
-                                {/* <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins1.png')} alt="ins1.png" />
-                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins2.png')} alt="ins2.png" />
-                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins3.png')} alt="ins3.png" />
-                                <img onClick={() => clickFilterImage('inspiredImage', {})} src={require('../../../Asset/Images/ins4.png')} alt="ins4.png" /> */}
                             </div>
                         </div>
                     </div>
@@ -65,9 +75,7 @@ function ItemContainer(props) {
 
                 <div className="col-sm-6">
                     <div className="row">
-                    <div className="col-sm-4">
                         <Toggleswitch className="col-sm-4" />
-                        </div>
                         <div className="col-sm-8">
                             <h4 >Shop.</h4>
                             <div>

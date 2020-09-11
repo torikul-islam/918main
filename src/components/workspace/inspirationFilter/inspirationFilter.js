@@ -7,10 +7,11 @@ import styleServices from '../../../services/styleServices';
 
 
 const InspirationFilter = (props) => {
-    const { closeModal } = props
+    const { closeModal, clickRoomItem, clickStyleItem, inspirationIds } = props
     const [openTab, setOpenTab] = useState('room');
     const [rooms, setRooms] = useState([]);
     const [style, setStyles] = useState([]);
+
 
     useEffect(() => {
         (async function () {
@@ -19,6 +20,7 @@ const InspirationFilter = (props) => {
         })()
     }, []);
 
+
     useEffect(() => {
         (async function () {
             const { data } = await roomServices.getAllRooms();
@@ -26,6 +28,8 @@ const InspirationFilter = (props) => {
             setRooms(data);
         })()
     }, []);
+
+
     function clickTab(name) {
         if (name === 'room') {
             setOpenTab('room');
@@ -54,7 +58,7 @@ const InspirationFilter = (props) => {
                         <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
                             <ul className="list-category">
                                 {rooms.results && rooms.results.map((item, i) =>
-                                    <li> <button>{item.name}</button></li>
+                                    <li className={inspirationIds.room_ids.some(id => id === item.pk) ? 'active' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
                         </div>
@@ -62,7 +66,7 @@ const InspirationFilter = (props) => {
                             <br />
                             <ul className="list-category">
                                 {style.results && style.results.map((item, i) =>
-                                    <li> <button>{item.name}</button></li>
+                                    <li className={inspirationIds.style_ids.some(id => id === item.pk) ? 'active' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
                         </div>
