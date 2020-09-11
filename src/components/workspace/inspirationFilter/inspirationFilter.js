@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './inspirationFilter.css';
+import roomServices from '../../../services/roomServices';
+import styleServices from '../../../services/styleServices';
 
 
 
 
 const InspirationFilter = (props) => {
     const { closeModal } = props
-    const [openTab, setOpenTab] = useState('room')
+    const [openTab, setOpenTab] = useState('room');
+    const [rooms, setRooms] = useState([]);
+    const [style, setStyles] = useState([]);
+
+    useEffect(() => {
+        (async function () {
+            const { data } = await styleServices.getAllStyle();
+            setStyles(data);
+        })()
+    }, []);
+
+    useEffect(() => {
+        (async function () {
+            const { data } = await roomServices.getAllRooms();
+            // call the backend server and set response array in setProducts
+            setRooms(data);
+        })()
+    }, []);
     function clickTab(name) {
         if (name === 'room') {
             setOpenTab('room');
@@ -34,32 +53,17 @@ const InspirationFilter = (props) => {
                     <div className="tab-content">
                         <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
                             <ul className="list-category">
-                                <li><button>Living Room</button></li>
-                                <li><button>Dining Room</button></li>
-                                <li><button>Bedroom</button></li>
-                                <li><button>Office</button></li>
-                                <li><button>Kitchen</button></li>
-                                <li><button>Bathroom</button></li>
-                                <li><button>Entryway</button></li>
-                                <li><button>Outdoor</button></li>
-                                <li><button>Kids’ Room</button></li>
+                                {rooms.results && rooms.results.map((item, i) =>
+                                    <li> <button>{item.name}</button></li>
+                                )}
                             </ul>
                         </div>
                         <div id="menu1" className={`container tab-pane ${openTab === 'style' ? 'active' : 'fade'}`}>
                             <br />
                             <ul className="list-category">
-                                <li><button>Farmhouse</button></li>
-                                <li><button>Casual</button></li>
-                                <li><button>Traditional</button></li>
-                                <li><button>Modern</button></li>
-                                <li><button>Bohemian</button></li>
-                                <li><button>Eclectic</button></li>
-                                <li><button>Glam</button></li>
-                                <li><button>Rustic</button></li>
-                                <li><button>Transitional</button></li>
-                                <li><button>Midcentury Modern</button></li>
-                                <li><button>Vintage</button></li>
-                                <li><button>Masculine</button></li>
+                                {style.results && style.results.map((item, i) =>
+                                    <li> <button>{item.name}</button></li>
+                                )}
                             </ul>
                         </div>
                     </div>
