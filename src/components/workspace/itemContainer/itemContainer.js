@@ -78,7 +78,7 @@ function ItemContainer(props) {
 
     async function onPageChangeInspired(val) {
         const diff = inspiration.results.length - (curPageInspired * inspiredPageSize * 2);
-        if (val === '-' && curPageInspired >= 0) {
+        if (val === '-') {
             setCurPageInspired(curPageInspired - 1)
         } else {
             if (diff < inspiredPageSize && inspiration.next !== null) {
@@ -90,15 +90,15 @@ function ItemContainer(props) {
     }
 
     async function onPageChangeProduct(val) {
-        const diff = products.results.length - (curPageProduct * productPageSize * 2);
-        if (val === '-' && curPageProduct >= 0) {
-            setProductPageSize(curPageProduct - 1)
+        const diff = products.results.length - (curPageProduct * productPageSize);
+        if (val === '-') {
+            setCurPageProduct(curPageProduct - 1)
         } else {
             if (diff < productPageSize && products.next !== null) {
                 const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
                 setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
             }
-            setProductPageSize(curPageInspired + 1)
+            setCurPageProduct(curPageInspired + 1)
         }
     }
 
