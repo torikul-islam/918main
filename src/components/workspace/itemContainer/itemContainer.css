@@ -52,12 +52,12 @@
 }
 .arrow-pag.left {
   position: absolute;
-  left: 25px;
+  left: 50px;
   bottom: -25px;
 }
 .arrow-pag.right {
   position: absolute;
-  right: 25px;
+  right: 50px;
   bottom: -25px;
 }
 .arrow-pag img {
