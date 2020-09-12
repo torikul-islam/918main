@@ -92,13 +92,13 @@ function ItemContainer(props) {
     async function onPageChangeProduct(val) {
         const diff = products.results.length - (curPageProduct * productPageSize * 2);
         if (val === '-' && curPageProduct >= 0) {
-            setCurPageProduct(curPageProduct - 1)
+            setProductPageSize(curPageProduct - 1)
         } else {
             if (diff < productPageSize && products.next !== null) {
                 const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
                 setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
             }
-            setCurPageProduct(curPageInspired + 1)
+            setProductPageSize(curPageInspired + 1)
         }
     }
 
