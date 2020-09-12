@@ -37,7 +37,7 @@ const InspirationFilter = (props) => {
             setOpenTab('style');
         }
     }
-
+    const removeIcon = <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
     return (
 
         <div className='container'>
@@ -54,6 +54,13 @@ const InspirationFilter = (props) => {
                             <div className={`nav-link pointer ${openTab === 'style' ? 'active disable' : ''}`} data-toggle="tab" onClick={() => clickTab('style')}>Style</div>
                         </li>
                     </ul>
+                    <div className="removeIconsinsp">
+                        <ul>
+                            <li>{removeIcon}Office</li>
+                            <li>{removeIcon}Office3</li>
+                            <li>{removeIcon}Office4</li>
+                        </ul>
+                    </div>
                     <div className="tab-content">
                         <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
                             <ul className="list-category">

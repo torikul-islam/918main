@@ -37,17 +37,8 @@ ul.list-categroy-shop li button {
   float: left;
   border-radius: 50px;
 }
-.colorStyle ul li.red {
-  background: #fd0000;
-}
-.colorStyle ul li.green {
-  background: #fd7d00;
-}
-.colorStyle ul li.yellow {
-  background: #fddc00;
-}
-.colorStyle ul li.black {
-  background: #3f8d20;
+.productfurniture .tab-content {
+  margin-top: 30px;
 }
 ul.list-categroy-shop {
   list-style: none;
@@ -229,8 +220,35 @@ h5 {
   height: 2px;
   background:rgba(0,0,0,.1);
   left: 0;
-  top: 34px;
+  top: 35px;
   content: "";
+}
+.list-furniture ul li.activecolor{
+  position: relative;
+}
+.list-furniture ul li.activecolor::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -9px 0 0 -10px;
+  height: 13px;
+  width: 24px;
+  border: solid #000;
+  border-width: 0 0 4px 4px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.shop-furniture .list-furniture .removeIcons ul li {
+  float: left;
+  margin: 10px 15px;
+}
+ul.list-categroy-shop li.activebtn button {
+  background: #979292;
 }
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .colorStyle ul li {

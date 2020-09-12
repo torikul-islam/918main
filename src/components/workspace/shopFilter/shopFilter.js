@@ -96,7 +96,7 @@ function ShopFilter(props) {
                                         <ul className="list-categroy-shop">
                                             {piecesCategory.results && piecesCategory.results.filter(item => item.uuid === selectedCategoryId)
                                                 .map(furniture => furniture.pieces.map((piece, idx) =>
-                                                    <li className={`${selectedPieces.some(p => p.pk === piece.pk) ? 'active' : ' '}`} key={idx}> <button onClick={() => handlePieces(piece)}>{piece.name}</button></li>
+                                                    <li className={`${selectedPieces.some(p => p.pk === piece.pk) ? 'activebtn' : ' '}`} key={idx}> <button onClick={() => handlePieces(piece)}>{piece.name}</button></li>
                                                 ))}
                                         </ul>
                                     </div>
@@ -124,7 +124,7 @@ function ShopFilter(props) {
                                     <h5>Color</h5>
                                     <ul>
                                         {colors.results && colors.results.map((item, i) =>
-                                            <li className={`${selectedColors.some(s => s.uuid === item.uuid) ? 'active' : ' '}`} onClick={() => handleColors(item)} style={{ background: `#${item.hex_value}` }} key={i}></li>
+                                            <li className={`${selectedColors.some(s => s.uuid === item.uuid) ? 'activecolor' : ' '}`} onClick={() => handleColors(item)} style={{ background: `#${item.hex_value}` }} key={i}></li>
                                         )}
                                     </ul>
                                 </div>
