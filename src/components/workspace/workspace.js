@@ -136,7 +136,10 @@ const Workspace = (props) => {
                             projectProduct={projectProduct}
                             clickFilterImage={clickFilterImage}
                             openModal={openModal}
-                            inspirationFilter={inspirationFilter}
+                            inspirationFilter={{
+                                style_ids: inspirationFilter.style_ids.map(i => i.pk),
+                                room_ids: inspirationFilter.room_ids.map(i => i.pk)
+                            }}
                             productFilter={{
                                 piece_ids: selectedPieces.map(x => x.pk),
                                 // color_ids: selectedColors,
