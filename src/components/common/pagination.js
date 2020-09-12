@@ -16,7 +16,7 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
             <div className={currentPage >= pageCount - 1 ? "arrow-right arrow-slide disabled " : "arrow-right arrow-slide"} onClick={() => onPageChange('+')} >
                 <img src={require('../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
             </div>
-        </div >
+        </div>
     );
 }
 
