@@ -58,7 +58,7 @@ const Board = (props) => {
                 </div>
                 <div className="middle-body">
                     {userProject.workspace_items && userProject.workspace_items.map((item, i) =>
-                        <Draggable key={i}>
+                        <Draggable key={i} bounds='parent'>
                             <div style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }} className="box boxoverlay">
                                 <img style={{ width: item.width, height: item.height }} src={item.product.ref_img} alt="" />
                             </div>
