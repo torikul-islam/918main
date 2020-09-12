@@ -10,13 +10,12 @@ import wNumb from 'wnumb';
 
 
 function ShopFilter(props) {
-    const { closeModal } = props;
+    const { closeModal, selectedPieces, priceRange, removePriceRange,
+        selectedColors, onChangeRange, handleColors, handlePieces } = props;
     const [selectedCategoryId, setSelectedCategoryId] = useState(null)
     const [piecesCategory, setPiecesCategory] = useState([]);
     const [colors, setColors] = useState([]);
-    const [selectedColors, setSelectedColors] = useState([]);
-    const [selectedPieces, setSelectedPieces] = useState([]);
-    const [priceRange, setPriceRange] = useState([]);
+
 
 
 
@@ -43,38 +42,6 @@ function ShopFilter(props) {
     function clickPiecesCategory(item) {
         setSelectedCategoryId(item.uuid)
     }
-    function handleColors(color) {
-        let colors = [...selectedColors];
-        const found = colors.find(item => item.uuid === color.uuid);
-        if (found) {
-            colors = colors.filter(c => c.uuid !== color.uuid)
-        } else {
-            colors.push(color)
-        }
-        setSelectedColors(colors);
-    }
-
-
-    function handlePieces(piece) {
-        let pieces = [...selectedPieces];
-        const found = pieces.find(item => item.pk === piece.pk);
-        if (found) {
-            pieces = pieces.filter(c => c.pk !== piece.pk)
-        } else {
-            pieces.push(piece)
-        }
-        setSelectedPieces(pieces);
-    }
-
-    function removePriceRange() {
-        setPriceRange([])
-    }
-
-    function onChange(range) {
-        setPriceRange(range)
-    }
-
-
 
     return (
 
@@ -88,14 +55,14 @@ function ShopFilter(props) {
                         <div className="row">
                             <div className="removeIcons float-left">
                                 <ul>
-                                    {selectedPieces.map((p, i) =>
+                                    {selectedPieces && selectedPieces.map((p, i) =>
                                         <li key={i}>
                                             <img onClick={() => handlePieces(p)}
                                                 className="removeIcon pointer"
                                                 src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
                                             {p.name}</li>
                                     )}
-                                    {selectedColors.map((c, i) =>
+                                    {selectedColors && selectedColors.map((c, i) =>
                                         <li key={i}>
                                             <img onClick={() => handleColors(c)}
                                                 className="removeIcon pointer"
@@ -104,7 +71,7 @@ function ShopFilter(props) {
                                         </li>
                                     )}
 
-                                    {priceRange.length > 1 && <li>
+                                    {priceRange && priceRange.length > 1 && <li>
                                         <img
                                             onClick={() => removePriceRange(priceRange)}
                                             className="removeIcon pointer"
@@ -148,7 +115,7 @@ function ShopFilter(props) {
                                                 prefix: '$',
                                                 decimals: 0
                                             })}
-                                            onChange={onChange}
+                                            onChange={onChangeRange}
                                         />
                                     </div>
                                 </div>

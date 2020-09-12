@@ -18,6 +18,11 @@ const Workspace = (props) => {
     const [inspirationFilter, setInspirationFilter] = useState({ room_ids: [], style_ids: [] })
     const [dragImage, setDragImage] = useState([]);
 
+    const [selectedColors, setSelectedColors] = useState([]);
+    const [selectedPieces, setSelectedPieces] = useState([]);
+    const [priceRange, setPriceRange] = useState([]);
+
+
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -63,6 +68,38 @@ const Workspace = (props) => {
     }
 
 
+    function handleColors(color) {
+        let colors = [...selectedColors];
+        const found = colors.find(item => item.uuid === color.uuid);
+        if (found) {
+            colors = colors.filter(c => c.uuid !== color.uuid)
+        } else {
+            colors.push(color)
+        }
+        setSelectedColors(colors);
+    }
+
+
+    function handlePieces(piece) {
+        let pieces = [...selectedPieces];
+        const found = pieces.find(item => item.pk === piece.pk);
+        if (found) {
+            pieces = pieces.filter(c => c.pk !== piece.pk)
+        } else {
+            pieces.push(piece)
+        }
+        setSelectedPieces(pieces);
+    }
+
+    function removePriceRange() {
+        setPriceRange([])
+    }
+
+    function onChangeRange(range) {
+        setPriceRange(range)
+    }
+
+
     function openModal(name) {
         setModal({ isOpen: true, name: name })
     };
@@ -97,6 +134,8 @@ const Workspace = (props) => {
                             clickFilterImage={clickFilterImage}
                             openModal={openModal}
                             inspirationFilter={inspirationFilter}
+
+
                         />
                     </div>
 
@@ -110,7 +149,15 @@ const Workspace = (props) => {
                 </div>
             </div>
             {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter
-                openModal={openModal} closeModal={closeModal} />} />}
+                handlePieces={handlePieces}
+                handleColors={handleColors}
+                onChangeRange={onChangeRange}
+                removePriceRange={removePriceRange}
+                selectedColors={selectedColors}
+                selectedPieces={selectedPieces}
+                priceRange={priceRange}
+                openModal={openModal}
+                closeModal={closeModal} />} />}
             {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props}
                 product={product}
                 openModal={openModal}
