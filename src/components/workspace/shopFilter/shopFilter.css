@@ -243,8 +243,9 @@ h5 {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.shop-furniture .list-furniture .removeIcons ul li{
+.shop-furniture .list-furniture .removeIcons ul li {
   float: left;
+  margin: 10px 15px;
 }
 ul.list-categroy-shop li.activebtn button {
   background: #979292;
