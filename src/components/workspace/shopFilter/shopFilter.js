@@ -76,7 +76,7 @@ function ShopFilter(props) {
                                             onClick={() => removePriceRange(priceRange)}
                                             className="removeIcon pointer"
                                             src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
-                                        {priceRange[0] + "-" + priceRange[1]}
+                                        {priceRange[0] + " - " + priceRange[1]}
                                     </li>}
                                 </ul>
                             </div>
@@ -124,7 +124,7 @@ function ShopFilter(props) {
                                     <h5>Color</h5>
                                     <ul>
                                         {colors.results && colors.results.map((item, i) =>
-                                            <li className={`${selectedColors.some(s => s === item.uuid) ? 'activecolor' : ' '}`} onClick={() => handleColors(item)} style={{ background: `#${item.hex_value}` }} key={i}></li>
+                                            <li className={`${selectedColors.some(s => s.uuid === item.uuid) ? 'activecolor' : ' '}`} onClick={() => handleColors(item)} style={{ background: `#${item.hex_value}` }} key={i}></li>
                                         )}
                                     </ul>
                                 </div>

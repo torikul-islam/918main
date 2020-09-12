@@ -77,7 +77,7 @@ const Workspace = (props) => {
         if (found) {
             colors = colors.filter(c => c.uuid !== color.uuid)
         } else {
-            colors.push(color.uuid)
+            colors.push(color)
         }
         setSelectedColors(colors);
     }
