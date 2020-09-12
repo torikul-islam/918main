@@ -92,7 +92,12 @@ function ShopFilter(props) {
                                             {p.name}</li>
                                     )}
                                     {selectedColors.map((c, i) =>
-                                        <li key={i}>{c.name}</li>
+                                        <li key={i}>
+                                            <img onClick={() => handleColors(c)}
+                                                className="removeIcon pointer"
+                                                src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+                                            {c.name}
+                                        </li>
                                     )}
 
                                     {/* <li>
