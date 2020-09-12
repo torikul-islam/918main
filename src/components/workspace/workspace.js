@@ -37,10 +37,14 @@ const Workspace = (props) => {
 
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
         (async function () {
-            const { data } = await projectService.getUserProjectProduct();
-            // call the backend server and set response array in setProducts
-            setProjectProduct(data);
+            if (token) {
+                const { data } = await projectService.getUserProjectProduct();
+                // call the backend server and set response array in setProducts
+                setProjectProduct(data);
+            }
+
         })()
     }, []);
 
