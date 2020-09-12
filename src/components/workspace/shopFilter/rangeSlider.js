@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import './rangeSlider.css';
 import Nouislider from 'react-nouislider';
 import "nouislider/distribute/nouislider.css";
+import './rangeSlider.css';
 import wNumb from 'wnumb';
 
 
 
-const RangeSlider = () => {
+const RangeSlider = (props) => {
+    let { updatePriceRange } = props;
+    let low, high;
+    function onChange(range) {
+        let [lowPrice, highPice] = range;
+        low = lowPrice;
+        high = highPice;
+    }
 
     return (
         <div className="rangeslider">
@@ -19,11 +26,8 @@ const RangeSlider = () => {
                     prefix: '$ ',
                     decimals: 0
                 })}
+                onChange={onChange}
             />
-            {/* <input onChange={(e) => onChange(e, 'one')} className="min" name="range_1" type="range" min={min} max={max} value={val1} />
-            <input onChange={(e) => onChange(e, 'two')} className="max" name="range_1" type="range" min={min} max={max} value={val2} />
-            <span className="range_min light left">{val1}</span>
-            <span className="range_max light right">{val2}</span> */}
         </div>
     );
 }

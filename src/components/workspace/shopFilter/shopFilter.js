@@ -1,22 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import RangeSlider from './rangeSlider';
+import React, { useState, useEffect, useRef } from 'react';
 import './shopFilter.css';
 import piecesServices from '../../../services/piecesService';
 import colorServices from '../../../services/colorsService'
+import Nouislider from 'react-nouislider';
+import "nouislider/distribute/nouislider.css";
+import './rangeSlider.css';
+import wNumb from 'wnumb';
 
 
 
 function ShopFilter(props) {
     const { closeModal } = props;
     const [openTab, setOpenTab] = useState('furniture');
-    const [furnitures, setFurnitures] = useState([]);
+    const [selectedCategoryId, setSelectedCategoryId] = useState(null)
+    const [piecesCategory, setPiecesCategory] = useState([]);
     const [colors, setColors] = useState([]);
+    const [selectedColors, setSelectedColors] = useState([]);
+    const [selectedPieces, setSelectedPieces] = useState([]);
+    const [priceRange, setPriceRange] = useState([]);
+    let slideRef = useRef(null)
+
+
     useEffect(() => {
         (async function () {
-            const { data } = await piecesServices.getAllPieces();
+            const { data } = await piecesServices.getAllPieceWithCategory();
             // call the backend server and set response array in setProducts
-            setFurnitures(data);
-            console.log(data.results[0].piece_category.name)
+            setPiecesCategory(data);
+            if (data.results.length > 0) {
+                setSelectedCategoryId(data.results[0].uuid)
+            }
         })()
     }, []);
     useEffect(() => {
@@ -24,30 +36,42 @@ function ShopFilter(props) {
             const { data } = await colorServices.getAllColors();
             // call the backend server and set response array in setProducts
             setColors(data);
-            
+
         })()
     }, []);
-    function clickTabs(name) {
-        if (name === 'furniture') {
-            setOpenTab('furniture');
-        } else if (name === 'accessories') {
-            setOpenTab('accessories');
-        } else if (name === 'lightings') {
-            setOpenTab('lightings');
-        } else if (name === 'rugs') {
-            setOpenTab('rugs');
-        } else if (name === 'bed') {
-            setOpenTab('bed');
-        } else if (name === 'paint') {
-            setOpenTab('paint');
-        } else if (name === 'outdoor') {
-            setOpenTab('outdoor');
+
+    function clickPiecesCategory(item) {
+        setSelectedCategoryId(item.uuid)
+    }
+    function handleColors(color) {
+        let colors = [...selectedColors];
+        const found = colors.find(item => item.uuid === color.uuid);
+        if (found) {
+            colors = colors.filter(c => c.uuid !== color.uuid)
+        } else {
+            colors.push(color)
         }
+        setSelectedColors(colors);
+    }
+
+
+    function handlePieces(piece) {
+        let pieces = [...selectedPieces];
+        const found = pieces.find(item => item.pk === piece.pk);
+        if (found) {
+            pieces = pieces.filter(c => c.pk !== piece.pk)
+        } else {
+            pieces.push(piece)
+        }
+        setSelectedPieces(pieces);
+    }
+
+    function removePriceRange() {
+
     }
 
 
 
-    const removeIcon = <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
     return (
 
         <div className='container'>
@@ -60,17 +84,43 @@ function ShopFilter(props) {
                         <div className="row">
                             <div className="removeIcons float-left">
                                 <ul>
-                                    <li>{removeIcon}Bedroom</li>
+                                    {selectedPieces.map((p, i) =>
+                                        <li key={i}>
+                                            <img onClick={() => handlePieces(p)}
+                                                className="removeIcon pointer"
+                                                src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+                                            {p.name}</li>
+                                    )}
+                                    {selectedColors.map((c, i) =>
+                                        <li key={i}>{c.name}</li>
+                                    )}
+
+                                    {/* <li>
+                                        <img
+                                            //  onClick={() => removePriceRange(priceRange)}
+                                            className="removeIcon pointer"
+                                            src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+                                        {slideRef.current && slideRef.current.slider.get()[0] - slideRef.current.slider.get()[1])}
+                                    </li> */}
+
+                                    {/* <li>{removeIcon}Bedroom</li>
                                     <li>{removeIcon}Office</li>
                                     <li>{removeIcon}Kitchen</li>
-                                    <li>{removeIcon}Black</li>
+                                    <li>{removeIcon}Black</li> */}
                                 </ul>
                             </div>
                             <div className="col-sm-12">
                                 <div className="productfurniture">
                                     <h5>Products</h5>
                                     <ul className="nav nav-pills" role="tablist">
-                                        <li className="nav-item">
+                                        {piecesCategory.results && piecesCategory.results.map((item, i) =>
+                                            <li
+                                                onClick={() => clickPiecesCategory(item)}
+                                                className={`nav-item pointer ${selectedCategoryId === item.uuid ? 'active disable' : ''}`}
+                                                key={i}>{item.name}</li>
+                                        )}
+
+                                        {/* <li className="nav-item">
                                             <a className={`nav-link ${openTab === 'furniture' ? 'active' : ''}`} data-toggle="pill" href="#furniture" onClick={() => clickTabs('furniture')}>Furniture</a>
                                         </li>
                                         <li className="nav-item">
@@ -90,11 +140,19 @@ function ShopFilter(props) {
                                         </li>
                                         <li className="nav-item">
                                             <a className={`nav-link ${openTab === 'outdoor' ? 'active' : ''}`} data-toggle="pill" href="#outdoor" onClick={() => clickTabs('outdoor')}>Outdoor</a>
-                                        </li>
+                                        </li> */}
                                     </ul>
 
                                     <div className="tab-content">
-                                        <div id="furniture" className={`tab-pane category-list ${openTab === 'furniture' ? 'active' : 'fade'}`}><br />
+                                        <ul className="list-categroy-shop">
+                                            {piecesCategory.results && piecesCategory.results.filter(item => item.uuid === selectedCategoryId)
+                                                .map(furniture => furniture.pieces.map((piece, idx) =>
+                                                    <li className={`${selectedPieces.some(p => p.pk === piece.pk) ? 'active' : ' '}`} key={idx}> <button onClick={() => handlePieces(piece)}>{piece.name}</button></li>
+                                                ))}
+                                        </ul>
+
+
+                                        {/* <div id="furniture" className={`tab-pane category-list ${openTab === 'furniture' ? 'active' : 'fade'}`}><br />
                                             <ul className="list-categroy-shop">
                                                 {furnitures.results && furnitures.results.map((item, i) =>
                                                     <li> <button>{item.name}</button></li>
@@ -144,36 +202,35 @@ function ShopFilter(props) {
                                                     <li> <button>{item.name}</button></li>
                                                 )}
                                             </ul>
-                                        </div>
+                                        </div>*/}
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 <div className="range-slider">
                                     <h5>Price</h5>
-                                    <RangeSlider />
+                                    <div className="rangeslider">
+                                        <Nouislider
+                                            range={{ min: 0, max: 20000 }}
+                                            start={[0, 10000]}
+                                            tooltips
+                                            format={wNumb({
+                                                thousand: ',',
+                                                prefix: '$ ',
+                                                decimals: 0
+                                            })}
+                                            // onSlide={onSlide}
+                                            ref={slideRef}
+                                        />
+                                    </div>
                                 </div>
                                 <hr />
                                 <div className="colorStyle">
                                     <h5>Color</h5>
                                     <ul>
                                         {colors.results && colors.results.map((item, i) =>
-                                            <li>{item.hex_value}</li>
+                                            <li className={`${selectedColors.some(s => s.uuid === item.uuid) ? 'active' : ' '}`} onClick={() => handleColors(item)} style={{ background: `#${item.hex_value}` }} key={i}></li>
                                         )}
-                                        {/* <li className="red"></li>
-                                        <li className="green"></li>
-                                        <li className="yellow"></li>
-                                        <li className="green"></li>
-                                        <li className="blue"></li>
-                                        <li className="purple"></li>
-                                        <li className="pink"></li>
-                                        <li className="black"></li>
-                                        <li className="brown"></li>
-                                        <li className="grey"></li>
-                                        <li className="offwhite"></li>
-                                        <li className="white"></li>
-                                        <li className="golden"></li>
-                                        <li className="silver"></li> */}
                                     </ul>
                                 </div>
                             </div>
