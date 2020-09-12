@@ -4,6 +4,7 @@ import inspirationService from '../../../services/inspiredService';
 import productService from '../../../services/productService';
 import './itemContainer.css';
 import Draggable from 'react-draggable';
+import paginate from '../../../utils/paginate';
 
 
 
@@ -12,6 +13,12 @@ function ItemContainer(props) {
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
+    const [curPageInspired, setCurPageInspired] = useState(0);
+    const [inspiredPageSize, setInspiredPageSize] = useState(3);
+
+    const [curPageProduct, setCurPageProduct] = useState(0);
+    const [productPageSize, setProductPageSize] = useState(14);
+
 
 
     useEffect(() => {
@@ -69,6 +76,34 @@ function ItemContainer(props) {
 
     }, [productFilter]);
 
+    async function onPageChangeInspired(val) {
+        const diff = inspiration.results.length - (curPageInspired * inspiredPageSize * 2);
+        if (val === '-' && curPageInspired >= 0) {
+            setCurPageInspired(curPageInspired - 1)
+        } else {
+            if (diff < inspiredPageSize && inspiration.next !== null) {
+                const { data } = await inspirationService.getInspirationByUrl(inspiration.next.split('?')[1]);
+                setInspiration({ count: data.count, next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
+            }
+            setCurPageInspired(curPageInspired + 1)
+        }
+    }
+
+    async function onPageChangeProduct(val) {
+        const diff = products.results.length - (curPageProduct * productPageSize * 2);
+        if (val === '-' && curPageProduct >= 0) {
+            setCurPageProduct(curPageProduct - 1)
+        } else {
+            if (diff < productPageSize && products.next !== null) {
+                const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
+                setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
+            }
+            setCurPageProduct(curPageInspired + 1)
+        }
+    }
+
+    let insPaginate = paginate(inspiration.results, curPageInspired, inspiredPageSize);
+    let prodPaginate = paginate(products.results, curPageProduct, productPageSize);
 
     return (
         <div className="titleInspire">
@@ -83,7 +118,7 @@ function ItemContainer(props) {
                     <div>
                         <div className="post-slide-main-item">
                             <div className="workimage-ins">
-                                {inspiration && inspiration.results.slice(0, 3).map((item, i) =>
+                                {insPaginate && insPaginate.map((item, i) =>
                                     <Draggable key={i}>
                                         <div className="box boxoverlay">
                                             <img src={item.ref_img} alt="" />
@@ -92,10 +127,10 @@ function ItemContainer(props) {
                                 )}
                             </div>
                             <div className="arrows">
-                                <div className="arrow-pag left">
+                                <div onClick={() => onPageChangeInspired("-")} className="arrow-pag left">
                                     <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
                                 </div>
-                                <div className="arrow-pag right" >
+                                <div onClick={() => onPageChangeInspired("+")} className="arrow-pag right" >
                                     <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
                                 </div>
                             </div>
@@ -117,7 +152,7 @@ function ItemContainer(props) {
                     </div>
                     <div className="post-slide-main-item">
                         <div className="row">
-                            {products.results && products.results.slice(0, 14).map((item, i) =>
+                            {prodPaginate && prodPaginate.map((item, i) =>
                                 <Draggable key={i}>
                                     <div className="col-sm-6 workspace-shop priority">
                                         <div className="box boxoverlay">
@@ -128,10 +163,10 @@ function ItemContainer(props) {
                             )}
                         </div>
                         <div className="arrows">
-                            <div className="arrow-pag left">
+                            <div onClick={() => onPageChangeProduct('-')} className="arrow-pag left">
                                 <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
                             </div>
-                            <div className="arrow-pag right" >
+                            <div onClick={() => onPageChangeProduct('+')} className="arrow-pag right" >
                                 <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
                             </div>
                         </div>
