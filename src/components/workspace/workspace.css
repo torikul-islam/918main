@@ -17,10 +17,12 @@
     width: 105%;
     height: 280px;
   }
-
-  .shop-modal-title .text-fav span {
-font-family: "Playfair Display";
-font-size: 24px;
+.container-fluid.page-content{
+    overflow-x: hidden;
+}
+.shop-modal-title .text-fav span {
+    font-family: "Playfair Display";
+    font-size: 24px;
   }
   .shop-modal-title .text-fav h6 {
     font-family: "Helvetica";
