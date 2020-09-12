@@ -4,6 +4,7 @@ ul.list-category {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  clear: both;
 }
 .shop-furniture {
   background: #ffffff;
@@ -36,7 +37,7 @@ ul.list-category li {
 ul.list-category li button {
   background: #e9e8e8;
   border: none;
-  width: 200px;
+  width: 250px;
   margin-bottom: 21px;
   padding: 15px 0;
   font-size: 18px;
@@ -75,7 +76,7 @@ ul.list-category li.activebtn button {
   margin-right: 20px;
 }
 .removeIconsinsp {
-  margin: 20px 0 40px;
+  padding: 0px 0 50px;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {

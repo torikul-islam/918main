@@ -55,9 +55,12 @@ const InspirationFilter = (props) => {
                             <div className={`nav-link pointer ${openTab === 'style' ? 'active disable' : ''}`} data-toggle="tab" onClick={() => clickTab('style')}>Style</div>
                         </li>
                     </ul>
-                    <div className="removeIconsinsp">
+                    
+                    <div className="tab-content">
+                        <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
+                        <div className="removeIconsinsp">
                         <ul>
-                            {inspirationIds.room_ids && inspirationIds.room_ids.map((item, i) =>
+                        {inspirationIds.room_ids && inspirationIds.room_ids.map((item, i) =>
                                 <li key={i}>
                                     <img
                                         onClick={() => clickRoomItem(item)}
@@ -67,6 +70,20 @@ const InspirationFilter = (props) => {
                                     {item.name}</li>
                             )
                             }
+                            </ul>
+                            </div>
+                            <br/>
+                            <ul className="list-category">
+                                {rooms.results && rooms.results.map((item, i) =>
+                                    <li className={inspirationIds.room_ids.some(r => r.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
+                                )}
+                            </ul>
+                            
+                        </div>
+                        <div id="menu1" className={`container tab-pane ${openTab === 'style' ? 'active' : 'fade'}`}>
+                            <br />
+                            <div className="removeIconsinsp">
+                            <ul>
                             {inspirationIds.style_ids && inspirationIds.style_ids.map((item, i) =>
                                 <li key={i}>
                                     <img
@@ -77,21 +94,10 @@ const InspirationFilter = (props) => {
                                     {item.name}</li>
                             )
                             }
-                            {/* <li>{removeIcon}Office</li>
-                            <li>{removeIcon}Office3</li>
-                            <li>{removeIcon}Office4</li> */}
-                        </ul>
-                    </div>
-                    <div className="tab-content">
-                        <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
-                            <ul className="list-category">
-                                {rooms.results && rooms.results.map((item, i) =>
-                                    <li className={inspirationIds.room_ids.some(r => r.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
-                                )}
+
                             </ul>
-                        </div>
-                        <div id="menu1" className={`container tab-pane ${openTab === 'style' ? 'active' : 'fade'}`}>
-                            <br />
+                            </div>
+                            <br/>
                             <ul className="list-category">
                                 {style.results && style.results.map((item, i) =>
                                     <li className={inspirationIds.style_ids.some(s => s.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>
