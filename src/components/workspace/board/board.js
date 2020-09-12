@@ -1,6 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import projectService from '../../../services/projectService';
 import './board.css';
-import Draggable from "react-draggable";
+import Draggable from 'react-draggable';
 
 
 
@@ -8,6 +9,26 @@ import Draggable from "react-draggable";
 const Board = (props) => {
     const { dragImage, addImageToDrag } = props;
     let [activeDrags, setActiveDrags] = useState(0);
+    const [userProject, setUserProject] = useState({});
+
+
+
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        (async function () {
+            if (token) {
+                let { data } = await projectService.getUserProjectProduct();
+                // call the backend server and set response array in setProducts
+                setUserProject(data);
+            }
+        })()
+    }, []);
+
+
+
+
+
 
     // function onStart() {
     //     setActiveDrags(1)
@@ -19,30 +40,30 @@ const Board = (props) => {
 
     // const dragHandlers = { onStart: onStart, onStop: onStop };
     // console.log(activeDrags);
+
+    console.log('project', userProject);
+
+
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
                 <div className="boards-fiter">
                     <ul>
                         <li><h4>Boards</h4></li>
-                        <li><button className="filter">My Living Room</button></li>
+                        <li><button className="filter">{userProject.name}</button></li>
                         <li className="float-right">
                             <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
                         </li>
                     </ul>
                 </div>
                 <div className="middle-body">
-                    {/* <Draggable
-                        // disabled={false}
-                        bounds='parent'
-                    // onStart={onStart}
-                    // onStop={onStop}
-                    >
-                        <div classNam='drag-box'>
-                            drug me
-                            <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
-                        </div>
-                    </Draggable> */}
+                    {userProject.workspace_items && userProject.workspace_items.map((item, i) =>
+                        <Draggable key={i}>
+                            <div style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }} className="box boxoverlay">
+                                <img style={{ width: item.width, height: item.height }} src={item.product.ref_img} alt="" />
+                            </div>
+                        </Draggable>
+                    )}
                 </div>
 
             </div>

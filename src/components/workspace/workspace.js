@@ -44,7 +44,6 @@ const Workspace = (props) => {
                 // call the backend server and set response array in setProducts
                 setProjectProduct(data);
             }
-
         })()
     }, []);
 

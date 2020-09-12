@@ -14,9 +14,6 @@ function ItemContainer(props) {
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
 
 
-    console.log('product filter', productFilter);
-    console.log('inspiration filter', inspirationFilter);
-
     useEffect(() => {
         let url = '';
         let i = 0;
