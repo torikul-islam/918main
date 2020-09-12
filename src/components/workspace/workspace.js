@@ -109,7 +109,8 @@ const Workspace = (props) => {
 
                 </div>
             </div>
-            {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter
+                openModal={openModal} closeModal={closeModal} />} />}
             {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props}
                 product={product}
                 openModal={openModal}
