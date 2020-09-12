@@ -90,15 +90,16 @@ function ItemContainer(props) {
     }
 
     async function onPageChangeProduct(val) {
-        const diff = products.results.length - (curPageProduct * productPageSize);
+        const diff = products.results.length - (curPageProduct * productPageSize * 2);
         if (val === '-') {
             setCurPageProduct(curPageProduct - 1)
         } else {
+            console.log('fuck', diff, productPageSize);
             if (diff < productPageSize && products.next !== null) {
                 const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
                 setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
             }
-            setCurPageProduct(curPageInspired + 1)
+            setCurPageProduct(curPageProduct + 1)
         }
     }
 
