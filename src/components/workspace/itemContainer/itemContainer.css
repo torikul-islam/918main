@@ -23,7 +23,7 @@
 
 .workimage-ins img {
   width: 100%;
-  height: auto;
+  height: 200px;
   margin-bottom: 20px;
   object-fit: contain;
 }
@@ -107,7 +107,7 @@
 }
 .workspace-shop img {
   width:100%; 
-  height: auto;
+  height: 70px;
   object-fit: contain;
 }
 
