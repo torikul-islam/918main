@@ -18,7 +18,7 @@ function ShopFilter(props) {
     const [selectedColors, setSelectedColors] = useState([]);
     const [selectedPieces, setSelectedPieces] = useState([]);
     const [priceRange, setPriceRange] = useState([]);
-    let slideRef = useRef(null)
+
 
 
     useEffect(() => {
@@ -67,10 +67,12 @@ function ShopFilter(props) {
     }
 
     function removePriceRange() {
-
+        setPriceRange([])
     }
 
-
+    function onChange(range) {
+        setPriceRange(range)
+    }
 
     return (
 
@@ -100,13 +102,13 @@ function ShopFilter(props) {
                                         </li>
                                     )}
 
-                                    {/* <li>
+                                    {priceRange.length > 1 && <li>
                                         <img
-                                            //  onClick={() => removePriceRange(priceRange)}
+                                            onClick={() => removePriceRange(priceRange)}
                                             className="removeIcon pointer"
                                             src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
-                                        {slideRef.current && slideRef.current.slider.get()[0] - slideRef.current.slider.get()[1])}
-                                    </li> */}
+                                        {priceRange[0] + "-" + priceRange[1]}
+                                    </li>}
 
                                     {/* <li>{removeIcon}Bedroom</li>
                                     <li>{removeIcon}Office</li>
@@ -217,15 +219,14 @@ function ShopFilter(props) {
                                     <div className="rangeslider">
                                         <Nouislider
                                             range={{ min: 0, max: 20000 }}
-                                            start={[0, 10000]}
+                                            start={[priceRange[0] || 0, priceRange[1] || 500]}
                                             tooltips
                                             format={wNumb({
                                                 thousand: ',',
-                                                prefix: '$ ',
+                                                prefix: '$',
                                                 decimals: 0
                                             })}
-                                            // onSlide={onSlide}
-                                            ref={slideRef}
+                                            onChange={onChange}
                                         />
                                     </div>
                                 </div>
