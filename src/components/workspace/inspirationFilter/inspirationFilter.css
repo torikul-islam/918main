@@ -65,10 +65,18 @@ ul.list-category li button {
 ul.list-category li.activebtn button {
   background: #979292;
 }
-/* @media 
-ul.list-category li button{
-
-} */
+.removeIconsinsp ul {
+  margin: 0;
+  padding: 0;
+}
+.removeIconsinsp ul li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+}
+.removeIconsinsp {
+  margin: 20px 0 40px;
+}
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   ul.list-category li button{
