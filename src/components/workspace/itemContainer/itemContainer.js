@@ -126,8 +126,9 @@ function ItemContainer(props) {
                                     </Draggable>
                                 )}
                             </div>
+
                             <div className="arrows">
-                                <div onClick={() => onPageChangeInspired("-")} className="arrow-pag left">
+                                <div onClick={() => onPageChangeInspired("-")} className={`arrow-pag left ${curPageInspired <= 0 ? 'disabled' : ' '} `}>
                                     <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
                                 </div>
                                 <div onClick={() => onPageChangeInspired("+")} className="arrow-pag right" >
@@ -163,7 +164,7 @@ function ItemContainer(props) {
                             )}
                         </div>
                         <div className="arrows">
-                            <div onClick={() => onPageChangeProduct('-')} className="arrow-pag left">
+                            <div onClick={() => onPageChangeProduct('-')} className={`arrow-pag left ${curPageProduct <= 0 ? 'disabled' : ' '}`}>
                                 <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
                             </div>
                             <div onClick={() => onPageChangeProduct('+')} className="arrow-pag right" >
