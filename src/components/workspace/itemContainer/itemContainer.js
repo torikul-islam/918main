@@ -8,18 +8,22 @@ import Draggable from 'react-draggable';
 
 
 function ItemContainer(props) {
-    const { openModal, clickFilterImage, product, projectProduct, inspirationFilter } = props;
+    const { openModal, inspirationFilter, productFilter } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
 
 
+    console.log('product filter', productFilter);
+    console.log('inspiration filter', inspirationFilter);
 
     useEffect(() => {
         let url = '';
-        Object.keys(inspirationFilter).map((item, i) => {
+        let i = 0;
+        Object.keys(inspirationFilter).map((item) => {
             if (inspirationFilter[item].length > 0 && i === 0) {
                 url += item + '=' + inspirationFilter[item].join(',')
+                i += 1;
             } else if (inspirationFilter[item].length > 0 && i > 0) {
                 url += '&' + item + '=' + inspirationFilter[item].join(',')
             }
@@ -39,12 +43,34 @@ function ItemContainer(props) {
     }, [inspirationFilter]);
 
     useEffect(() => {
-        (async function () {
-            const { data } = await productService.getAllProducts();
-            // call the backend server and set response array in setProducts
-            setProducts(data);
-        })()
-    }, []);
+        let url = '';
+        let i = 0
+        Object.keys(productFilter).map((item,) => {
+            if (productFilter[item].length > 0 && i === 0) {
+                url += item + '=' + productFilter[item].join(',');
+                i += 1;
+            } else if (productFilter[item].length > 0 && i > 0) {
+                url += '&' + item + '=' + productFilter[item].join(',');
+
+            }
+        })
+
+        if (url === '') {
+            (async function () {
+                const { data } = await productService.getAllProducts();
+                setProducts(data);
+            })()
+        } else {
+            (async function () {
+                const { data } = await productService.getProductByUrl(url);
+                setProducts(data);
+            })()
+        }
+
+
+
+
+    }, [productFilter]);
 
 
     return (

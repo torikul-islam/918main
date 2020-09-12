@@ -37,7 +37,8 @@ const InspirationFilter = (props) => {
             setOpenTab('style');
         }
     }
-    const removeIcon = <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+    const removeIcon =
+        <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
     return (
 
         <div className='container'>
@@ -56,16 +57,36 @@ const InspirationFilter = (props) => {
                     </ul>
                     <div className="removeIconsinsp">
                         <ul>
-                            <li>{removeIcon}Office</li>
+                            {inspirationIds.room_ids && inspirationIds.room_ids.map((item, i) =>
+                                <li key={i}>
+                                    <img
+                                        onClick={() => clickRoomItem(item)}
+                                        className="removeIcon pointer"
+                                        src={require('../../../Asset/Icons/cross.png')}
+                                        alt="cross.png" />
+                                    {item.name}</li>
+                            )
+                            }
+                            {inspirationIds.style_ids && inspirationIds.style_ids.map((item, i) =>
+                                <li key={i}>
+                                    <img
+                                        onClick={() => clickStyleItem(item)}
+                                        className="removeIcon pointer"
+                                        src={require('../../../Asset/Icons/cross.png')}
+                                        alt="cross.png" />
+                                    {item.name}</li>
+                            )
+                            }
+                            {/* <li>{removeIcon}Office</li>
                             <li>{removeIcon}Office3</li>
-                            <li>{removeIcon}Office4</li>
+                            <li>{removeIcon}Office4</li> */}
                         </ul>
                     </div>
                     <div className="tab-content">
                         <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
                             <ul className="list-category">
                                 {rooms.results && rooms.results.map((item, i) =>
-                                    <li className={inspirationIds.room_ids.some(id => id === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
+                                    <li className={inspirationIds.room_ids.some(r => r.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
                         </div>
@@ -73,7 +94,7 @@ const InspirationFilter = (props) => {
                             <br />
                             <ul className="list-category">
                                 {style.results && style.results.map((item, i) =>
-                                    <li className={inspirationIds.style_ids.some(id => id === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>
+                                    <li className={inspirationIds.style_ids.some(s => s.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
                         </div>

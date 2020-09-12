@@ -47,22 +47,22 @@ const Workspace = (props) => {
 
     function clickStyleItem(item) {
         let styleIds = inspirationFilter.style_ids;
-        const found = styleIds.find(f => f === item.pk);
+        const found = styleIds.find(f => f.pk === Number(item.pk));
         if (found) {
-            styleIds = styleIds.filter(x => x !== item.pk)
+            styleIds = styleIds.filter(x => x.pk !== Number(item.pk))
         } else {
-            styleIds.push(item.pk)
+            styleIds.push(item)
         }
         setInspirationFilter({ style_ids: styleIds, room_ids: [...inspirationFilter.room_ids] })
     }
 
     function clickRoomItem(item) {
         let roomIds = inspirationFilter.room_ids;
-        const found = roomIds.find(f => f === item.pk);
+        const found = roomIds.find(f => f.pk === Number(item.pk));
         if (found) {
-            roomIds = roomIds.filter(x => x !== item.pk)
+            roomIds = roomIds.filter(x => x.pk !== Number(item.pk))
         } else {
-            roomIds.push(item.pk)
+            roomIds.push(item)
         }
         setInspirationFilter({ room_ids: roomIds, style_ids: [...inspirationFilter.style_ids] })
     }
@@ -74,7 +74,7 @@ const Workspace = (props) => {
         if (found) {
             colors = colors.filter(c => c.uuid !== color.uuid)
         } else {
-            colors.push(color)
+            colors.push(color.uuid)
         }
         setSelectedColors(colors);
     }
@@ -82,9 +82,9 @@ const Workspace = (props) => {
 
     function handlePieces(piece) {
         let pieces = [...selectedPieces];
-        const found = pieces.find(item => item.pk === piece.pk);
+        const found = pieces.find(item => item.pk === Number(piece.pk));
         if (found) {
-            pieces = pieces.filter(c => c.pk !== piece.pk)
+            pieces = pieces.filter(c => c.pk !== Number(piece.pk))
         } else {
             pieces.push(piece)
         }
@@ -134,8 +134,12 @@ const Workspace = (props) => {
                             clickFilterImage={clickFilterImage}
                             openModal={openModal}
                             inspirationFilter={inspirationFilter}
-
-
+                            productFilter={{
+                                piece_ids: selectedPieces.map(x => x.pk),
+                                // color_ids: selectedColors,
+                                price_lower_bound: priceRange[0] ? [priceRange[0].substr(1).replace(',', '')] : [],
+                                price_upper_bound: priceRange[1] ? [priceRange[1].substr(1).replace(',', '')] : []
+                            }}
                         />
                     </div>
 
@@ -158,6 +162,7 @@ const Workspace = (props) => {
                 priceRange={priceRange}
                 openModal={openModal}
                 closeModal={closeModal} />} />}
+
             {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props}
                 product={product}
                 openModal={openModal}
