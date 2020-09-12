@@ -83,7 +83,7 @@ function ItemContainer(props) {
                     <div>
                         <div className="post-slide-main-item">
                             <div className="workimage-ins">
-                                {inspiration && inspiration.results.map((item, i) =>
+                                {inspiration && inspiration.results.slice(0, 3).map((item, i) =>
                                     <Draggable key={i}>
                                         <div className="box boxoverlay">
                                             <img src={item.ref_img} alt="" />
@@ -109,7 +109,7 @@ function ItemContainer(props) {
                     </div>
                     <div className="post-slide-main-item">
                         <div className="row">
-                            {products.results && products.results.map((item, i) =>
+                            {products.results && products.results.slice(0, 14).map((item, i) =>
                                 <Draggable key={i}>
                                     <div className="col-sm-6 workspace-shop priority">
                                         <div className="box boxoverlay">
