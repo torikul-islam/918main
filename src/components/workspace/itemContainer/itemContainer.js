@@ -94,7 +94,6 @@ function ItemContainer(props) {
         if (val === '-') {
             setCurPageProduct(curPageProduct - 1)
         } else {
-            console.log('fuck', diff, productPageSize);
             if (diff < productPageSize && products.next !== null) {
                 const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
                 setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });

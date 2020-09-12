@@ -25,25 +25,6 @@ const Board = (props) => {
         })()
     }, []);
 
-
-
-
-
-
-    // function onStart() {
-    //     setActiveDrags(1)
-    // }
-    // function onStop() {
-    //     setActiveDrags(0)
-    // }
-
-
-    // const dragHandlers = { onStart: onStart, onStop: onStop };
-    // console.log(activeDrags);
-
-    console.log('project', userProject);
-
-
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
