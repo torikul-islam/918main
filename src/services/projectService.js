@@ -49,4 +49,15 @@ function getUserProjectProduct() {
 }
 
 
-export default { getProject, createProject, getUserProjectProduct, addedItemToWorkspace }
+function workspaceItemDelete(uuid) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.delete(`/project/workspace/item/${uuid}/`, {
+            headers: { "Authorization": `Token ${token}` }
+        })
+    }
+
+}
+
+
+export default { getProject, createProject, getUserProjectProduct, addedItemToWorkspace, workspaceItemDelete }

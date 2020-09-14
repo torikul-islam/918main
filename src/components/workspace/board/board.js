@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import projectService from '../../../services/projectService';
 import Draggable from 'react-draggable';
 import './board.css';
+import productService from '../../../services/productService';
 
 
 
@@ -26,6 +27,13 @@ const Board = (props) => {
 
     function handleBoardItem(item) {
         setSelectedBoardItem(item)
+    }
+
+    async function handleDeleteItem(item) {
+        let originalProject = { ...userProject }
+        originalProject.workspace_items = originalProject.workspace_items.filter(el => el.uuid !== item.uuid);
+        setUserProject(originalProject)
+        await projectService.workspaceItemDelete(item.uuid);
     }
 
     return (
@@ -56,7 +64,7 @@ const Board = (props) => {
             <div className="bottom-icons">
                 <ul>
                     <li><img src={require('../../../Asset/Images/copypast.png')} alt="copypast.png" /></li>
-                    <li><img src={require('../../../Asset/Images/delete.png')} alt="delete.png" /></li>
+                    <li><img onClick={() => handleDeleteItem(selectedBoardItem)} src={require('../../../Asset/Images/delete.png')} alt="delete.png" /></li>
                     <li><img src={require('../../../Asset/Images/uparrwo.png')} alt="uparrwo.png" /></li>
                     <li><img src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
                 </ul>
