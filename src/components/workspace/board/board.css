@@ -55,6 +55,7 @@ div.boards-fiter li img {
 .middle-body{
     min-height: 600px;
     float: left;
+    width: 100%;
 }
 
 .board-tilte{
