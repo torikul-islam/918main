@@ -34,6 +34,25 @@
   margin-bottom: 0;
   border-bottom: 1px solid #e7e7e7;
 }
+/* width */
+.titleInspire .post-slide-main-item::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.titleInspire .post-slide-main-item::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.titleInspire .post-slide-main-item::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.titleInspire .post-slide-main-item::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .post-slide-main-item .workimage-ins.row img {
   height: 110px;
 }
