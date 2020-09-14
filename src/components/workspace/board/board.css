@@ -41,6 +41,7 @@ div.boards-fiter li img {
 }
 .bottom-icons{
     text-align: center;
+    clear: both;
 }
 .bottom-icons img {
     width: 12px;
