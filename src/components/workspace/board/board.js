@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import projectService from '../../../services/projectService';
-import './board.css';
 import Draggable from 'react-draggable';
+import './board.css';
 
 
 

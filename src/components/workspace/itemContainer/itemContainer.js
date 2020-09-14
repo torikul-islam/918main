@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import inspirationService from '../../../services/inspiredService';
 import productService from '../../../services/productService';
-import './itemContainer.css';
-import Draggable from 'react-draggable';
-import paginate from '../../../utils/paginate';
 import InfiniteScroll from 'react-infinite-scroller';
+import './itemContainer.css';
 
 
 
@@ -13,11 +11,6 @@ function ItemContainer(props) {
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
-    const [curPageInspired, setCurPageInspired] = useState(0);
-    const [inspiredPageSize, setInspiredPageSize] = useState(3);
-
-    const [curPageProduct, setCurPageProduct] = useState(0);
-    const [productPageSize, setProductPageSize] = useState(14);
 
 
 
@@ -79,6 +72,7 @@ function ItemContainer(props) {
         }
     }
     async function loadProductFunc() {
+        console.log('load more');
         if (products.next !== null) {
             const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
             setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
@@ -103,6 +97,7 @@ function ItemContainer(props) {
                                 pageStart={0}
                                 loadMore={loadInspiredFunc}
                                 hasMore={true || false}
+                                useWindow={false}
                                 loader={inspiration.next &&
                                     <div class="d-flex justify-content-center mb-3">
                                         <div class="spinner-border" role="status">
@@ -136,11 +131,11 @@ function ItemContainer(props) {
                         </div>
                     </div>
                     <div className="post-slide-main-item">
-                        {/* <div className="row"> */}
                         <InfiniteScroll
                             pageStart={0}
                             loadMore={loadProductFunc}
                             hasMore={true || false}
+                            useWindow={false}
                             loader={products.next &&
                                 <div class="d-flex justify-content-center mb-3">
                                     <div class="spinner-border" role="status">
@@ -158,7 +153,6 @@ function ItemContainer(props) {
                                 )}
                             </div>
                         </InfiniteScroll>
-                        {/* </div> */}
                     </div>
                 </div>
             </div>
