@@ -67,6 +67,7 @@ const ShopModal = (props) => {
             data.append('height', 150);
             data.append('product', product.uuid);
             projectServices.addedItemToWorkspace(data);
+            localStorage.setItem('boardItem', product.uuid)
             setGotoBoard(true);
         } else {
             setError('Please! select one board.');

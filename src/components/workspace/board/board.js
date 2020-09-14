@@ -10,7 +10,7 @@ const Board = (props) => {
     const { dragImage, addImageToDrag } = props;
     let [activeDrags, setActiveDrags] = useState(0);
     const [userProject, setUserProject] = useState({});
-
+    const isBoardItemAdded = localStorage.getItem('boardItem');
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -21,7 +21,7 @@ const Board = (props) => {
                 setUserProject(data);
             }
         })()
-    }, []);
+    }, [isBoardItemAdded]);
 
     return (
         <div className="dragDrop">

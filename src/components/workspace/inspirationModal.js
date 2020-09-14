@@ -80,6 +80,7 @@ const InspirationModal = (props) => {
             data.append('height', 150);
             data.append('inspiration', inspiration.uuid);
             projectServices.addedItemToWorkspace(data);
+            localStorage.setItem('boardItem', inspiration.uuid)
             setGotoBoard(true);
         } else {
             setError('Please! select one board.');
