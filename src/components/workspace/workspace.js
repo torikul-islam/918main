@@ -152,6 +152,8 @@ const Workspace = (props) => {
 
                     <div className="col-md-8 col-sm-6">
                         <Board
+                            // itemAddedToWorkspace={itemAddedToWorkspace}
+                            // isItemAddToWorkspace={false}
                             addImageToDrag={addImageToDrag}
                             dragImage={dragImage}
                         />

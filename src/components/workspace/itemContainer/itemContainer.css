@@ -36,8 +36,8 @@
 }
 /* width */
 .titleInspire .post-slide-main-item::-webkit-scrollbar {
-  width: 10px;
-}
+  width: 5px;
+ }
 
 /* Track */
 .titleInspire .post-slide-main-item::-webkit-scrollbar-track {
