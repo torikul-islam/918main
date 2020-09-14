@@ -138,28 +138,29 @@ function ItemContainer(props) {
                         </div>
                     </div>
                     <div className="post-slide-main-item">
-                        <div className="row">
-
-                            <InfiniteScroll
-                                pageStart={0}
-                                loadMore={loadProductFunc}
-                                hasMore={true || false}
-                                loader={products.next &&
-                                    <div class="d-flex justify-content-center mb-3">
-                                        <div class="spinner-border" role="status">
-                                            <span class="sr-only">Loading...</span>
-                                        </div>
+                        {/* <div className="row"> */}
+                        <InfiniteScroll
+                            pageStart={0}
+                            loadMore={loadProductFunc}
+                            hasMore={true || false}
+                            loader={products.next &&
+                                <div class="d-flex justify-content-center mb-3">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
                                     </div>
-                                }
-                            >
-                                <div className="workimage-ins">
-                                    {products.results && products.results.map((item, i) =>
+                                </div>
+                            }
+                        >
+                            <div className="workimage-ins row" >
+                                {products.results && products.results.map((item, i) =>
+                                    <div className='col-sm-6'>
                                         <img key={i} onClick={() => clickFilterImage('shopImage', item)}
                                             src={item.ref_img} alt="" />
-                                    )}
-                                </div>
-                            </InfiniteScroll>
-                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </InfiniteScroll>
+                        {/* </div> */}
                     </div>
                 </div>
             </div>
