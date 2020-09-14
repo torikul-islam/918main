@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Toggleswitch from '../../common/toggleswitch/toggleswitch';
 import inspirationService from '../../../services/inspiredService';
 import productService from '../../../services/productService';
 import './itemContainer.css';
@@ -120,14 +119,20 @@ function ItemContainer(props) {
                                 </div>
                             </InfiniteScroll>
 
-
+                            <div className="arrows">
+                                <div className="arrow-pag left">
+                                    <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
+                                </div>
+                                <div className="arrow-pag right" >
+                                    <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="col-sm-6">
                     <div className="row">
-                        <Toggleswitch className="col-sm-4" />
                         <div className="col-sm-8">
                             <h4 >Shop.</h4>
                             <div>
@@ -161,6 +166,14 @@ function ItemContainer(props) {
                             </div>
                         </InfiniteScroll>
                         {/* </div> */}
+                        <div className="arrows">
+                                <div className="arrow-pag left">
+                                    <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
+                                </div>
+                                <div className="arrow-pag right" >
+                                    <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>

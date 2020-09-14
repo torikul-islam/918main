@@ -37,8 +37,7 @@ const InspirationFilter = (props) => {
             setOpenTab('style');
         }
     }
-    const removeIcon =
-        <img className="removeIcon" src={require('../../../Asset/Icons/cross.png')} alt="cross.png" />
+
     return (
 
         <div className='container'>
