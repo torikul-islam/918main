@@ -27,7 +27,13 @@
   margin-bottom: 20px;
   object-fit: contain;
 }
-
+.titleInspire .post-slide-main-item {
+  height: 625px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e7e7e7;
+}
 .post-slide-main-item .workimage-ins.row img {
   height: 110px;
 }

@@ -119,14 +119,7 @@ function ItemContainer(props) {
                                 </div>
                             </InfiniteScroll>
 
-                            <div className="arrows">
-                                <div className="arrow-pag left">
-                                    <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
-                                </div>
-                                <div className="arrow-pag right" >
-                                    <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -166,14 +159,6 @@ function ItemContainer(props) {
                             </div>
                         </InfiniteScroll>
                         {/* </div> */}
-                        <div className="arrows">
-                                <div className="arrow-pag left">
-                                    <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
-                                </div>
-                                <div className="arrow-pag right" >
-                                    <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
-                                </div>
-                            </div>
                     </div>
                 </div>
             </div>
