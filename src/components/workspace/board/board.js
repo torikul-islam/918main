@@ -90,9 +90,9 @@ const Board = (props) => {
                                 <option key={i} value={item.uuid}>{item.name}</option>
                             )}
                         </select>
-                        <li className="float-right">
+                        {/* <li className="float-right">
                             <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className="middle-body">

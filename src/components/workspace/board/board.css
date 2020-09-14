@@ -57,7 +57,10 @@ div.boards-fiter li img {
     float: left;
     width: 100%;
 }
-
+.boards-fiter select {
+    border: none;
+    outline: none;
+}
 .board-tilte{
     margin: 7px !important;
 }
