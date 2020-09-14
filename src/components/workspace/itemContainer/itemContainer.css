@@ -62,6 +62,10 @@
   border: none;
   width: auto;
   height: auto;
+  padding: 3px;
+}
+.select-board-item {
+  background: #888888;
 }
 .box.boxoverlay::before {
   position: absolute;
