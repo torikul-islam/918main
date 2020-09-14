@@ -10,9 +10,9 @@ div.boards-fiter button.filter {
     border: none;
     background-image: url(../../../Asset//Images/arrow-down.png);
     background-repeat: no-repeat;
-    background-position: 66px 12px;
+    background-position: 135px 12px;
     width: 100%;
-    background-size: 10px;
+    background-size: 13px;
     outline: none;
     padding-right: 25px;
     font-size: 18px;
@@ -53,6 +53,7 @@ div.boards-fiter li img {
 }
 .middle-body{
     min-height: 600px;
+    float: left;
 }
 
 .board-tilte{
