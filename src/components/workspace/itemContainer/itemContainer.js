@@ -5,11 +5,12 @@ import productService from '../../../services/productService';
 import './itemContainer.css';
 import Draggable from 'react-draggable';
 import paginate from '../../../utils/paginate';
+import InfiniteScroll from 'react-infinite-scroller';
 
 
 
 function ItemContainer(props) {
-    const { openModal, inspirationFilter, productFilter } = props;
+    const { openModal, clickFilterImage, inspirationFilter, productFilter } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
@@ -55,7 +56,6 @@ function ItemContainer(props) {
                 i += 1;
             } else if (productFilter[item].length > 0 && i > 0) {
                 url += '&' + item + '=' + productFilter[item].join(',');
-
             }
         })
 
@@ -70,46 +70,29 @@ function ItemContainer(props) {
                 setProducts(data);
             })()
         }
-
-
-
-
     }, [productFilter]);
 
-    async function onPageChangeInspired(val) {
-        const diff = inspiration.results.length - (curPageInspired * inspiredPageSize * 2);
-        if (val === '-') {
-            setCurPageInspired(curPageInspired - 1)
-        } else {
-            if (diff < inspiredPageSize && inspiration.next !== null) {
-                const { data } = await inspirationService.getInspirationByUrl(inspiration.next.split('?')[1]);
-                setInspiration({ count: data.count, next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
-            }
-            setCurPageInspired(curPageInspired + 1)
+
+    async function loadInspiredFunc() {
+        if (inspiration.next !== null) {
+            const { data } = await inspirationService.getInspirationByUrl(inspiration.next.split('?')[1]);
+            setInspiration({ next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
+        }
+    }
+    async function loadProductFunc() {
+        if (products.next !== null) {
+            const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
+            setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
         }
     }
 
-    async function onPageChangeProduct(val) {
-        const diff = products.results.length - (curPageProduct * productPageSize * 2);
-        if (val === '-') {
-            setCurPageProduct(curPageProduct - 1)
-        } else {
-            if (diff < productPageSize && products.next !== null) {
-                const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
-                setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
-            }
-            setCurPageProduct(curPageProduct + 1)
-        }
-    }
 
-    let insPaginate = paginate(inspiration.results, curPageInspired, inspiredPageSize);
-    let prodPaginate = paginate(products.results, curPageProduct, productPageSize);
 
     return (
         <div className="titleInspire">
             <div className="row">
                 <div className="col-sm-6">
-                    <h4>Be Inspire. </h4>
+                    <h4>Be Inspired. </h4>
                     <div>
                         <button className="filter" onClick={() => openModal('inspired')}>
                             <h6>Filters {downarrow}</h6>
@@ -117,24 +100,27 @@ function ItemContainer(props) {
                     </div>
                     <div>
                         <div className="post-slide-main-item">
-                            <div className="workimage-ins">
-                                {insPaginate && insPaginate.map((item, i) =>
-                                    <Draggable key={i}>
-                                        <div className="box boxoverlay">
-                                            <img src={item.ref_img} alt="" />
+                            <InfiniteScroll
+                                pageStart={0}
+                                loadMore={loadInspiredFunc}
+                                hasMore={true || false}
+                                loader={inspiration.next &&
+                                    <div class="d-flex justify-content-center mb-3">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only">Loading...</span>
                                         </div>
-                                    </Draggable>
-                                )}
-                            </div>
+                                    </div>
+                                }
+                            >
+                                <div className="workimage-ins">
+                                    {inspiration.results && inspiration.results.map((item, i) =>
+                                        <img key={i} onClick={() => clickFilterImage('inspiredImage', item)}
+                                            src={item.ref_img} alt="" />
+                                    )}
+                                </div>
+                            </InfiniteScroll>
 
-                            <div className="arrows">
-                                <div onClick={() => onPageChangeInspired("-")} className={`arrow-pag left ${curPageInspired <= 0 ? 'disabled' : ' '} `}>
-                                    <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
-                                </div>
-                                <div onClick={() => onPageChangeInspired("+")} className="arrow-pag right" >
-                                    <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -153,23 +139,26 @@ function ItemContainer(props) {
                     </div>
                     <div className="post-slide-main-item">
                         <div className="row">
-                            {prodPaginate && prodPaginate.map((item, i) =>
-                                <Draggable key={i}>
-                                    <div className="col-sm-6 workspace-shop priority">
-                                        <div className="box boxoverlay">
-                                            <img src={item.ref_img} alt="" />
+
+                            <InfiniteScroll
+                                pageStart={0}
+                                loadMore={loadProductFunc}
+                                hasMore={true || false}
+                                loader={products.next &&
+                                    <div class="d-flex justify-content-center mb-3">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only">Loading...</span>
                                         </div>
                                     </div>
-                                </Draggable>
-                            )}
-                        </div>
-                        <div className="arrows">
-                            <div onClick={() => onPageChangeProduct('-')} className={`arrow-pag left ${curPageProduct <= 0 ? 'disabled' : ' '}`}>
-                                <img src={require('../../../Asset/Images/arrow-left.png')} alt="arrow-left.png" />
-                            </div>
-                            <div onClick={() => onPageChangeProduct('+')} className="arrow-pag right" >
-                                <img src={require('../../../Asset/Images/arrow-right.png')} alt="arrow-right.png" />
-                            </div>
+                                }
+                            >
+                                <div className="workimage-ins">
+                                    {products.results && products.results.map((item, i) =>
+                                        <img key={i} onClick={() => clickFilterImage('shopImage', item)}
+                                            src={item.ref_img} alt="" />
+                                    )}
+                                </div>
+                            </InfiniteScroll>
                         </div>
                     </div>
                 </div>

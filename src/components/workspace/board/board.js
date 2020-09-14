@@ -12,8 +12,6 @@ const Board = (props) => {
     const [userProject, setUserProject] = useState({});
 
 
-
-
     useEffect(() => {
         const token = localStorage.getItem('token');
         (async function () {
@@ -41,7 +39,8 @@ const Board = (props) => {
                     {userProject.workspace_items && userProject.workspace_items.map((item, i) =>
                         <Draggable key={i} bounds='parent'>
                             <div style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }} className="box boxoverlay">
-                                <img style={{ width: item.width, height: item.height }} src={item.product.ref_img} alt="" />
+                                <img style={{ width: item.width, height: item.height }}
+                                    src={(item.product && item.product.ref_img) || (item.inspiration && item.inspiration.ref_img)} alt="" />
                             </div>
                         </Draggable>
                     )}

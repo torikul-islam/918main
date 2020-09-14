@@ -25,6 +25,20 @@ function createProject(data) {
     }
 };
 
+function addedItemToWorkspace(data) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.post('/project/workspace/item/', data, {
+            headers: {
+                "Authorization": `Token ${token}`,
+                'Content-Type': 'multipart/form-data'
+            },
+
+        });
+    }
+
+}
+
 function getUserProjectProduct() {
     const token = localStorage.getItem('token');
     if (token) {
@@ -35,4 +49,4 @@ function getUserProjectProduct() {
 }
 
 
-export default { getProject, createProject, getUserProjectProduct }
+export default { getProject, createProject, getUserProjectProduct, addedItemToWorkspace }

@@ -8,6 +8,7 @@ import ShopFilter from './shopFilter/shopFilter';
 import Modal from '../common/modal/modal';
 import ShopModal from './shopModal';
 import './workspace.css';
+import InspirationModal from './inspirationModal';
 
 
 
@@ -73,9 +74,9 @@ const Workspace = (props) => {
 
     function handleColors(color) {
         let colors = [...selectedColors];
-        const found = colors.find(item => item.uuid === color.uuid);
+        const found = colors.find(item => item.pk === Number(color.pk));
         if (found) {
-            colors = colors.filter(c => c.uuid !== color.uuid)
+            colors = colors.filter(c => c.pk !== Number(color.pk))
         } else {
             colors.push(color)
         }
@@ -142,7 +143,7 @@ const Workspace = (props) => {
                             }}
                             productFilter={{
                                 piece_ids: selectedPieces.map(x => x.pk),
-                                // color_ids: selectedColors,
+                                color_ids: selectedColors.map(c => c.pk),
                                 price_lower_bound: priceRange[0] ? [priceRange[0].substr(1).replace(',', '')] : [],
                                 price_upper_bound: priceRange[1] ? [priceRange[1].substr(1).replace(',', '')] : []
                             }}
@@ -177,7 +178,13 @@ const Workspace = (props) => {
             />}
             />}
 
-            {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props} product={product} openModal={openModal} closeModal={closeModal} />} />}
+            {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<InspirationModal
+                {...props}
+                inspirationItem={product}
+                openModal={openModal}
+                closeModal={closeModal}
+            />}
+            />}
             {name === 'inspired' && <Modal isOpen={isOpen} childComp={<InspirationFilter
                 inspirationIds={inspirationFilter}
                 clickStyleItem={clickStyleItem}

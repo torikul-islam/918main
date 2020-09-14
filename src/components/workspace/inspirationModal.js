@@ -13,15 +13,17 @@ import Login from '../auth/login';
 
 
 const InspirationModal = (props) => {
-    const { product, closeModal, openModal } = props;
+    const { inspirationItem, closeModal, openModal } = props;
     const token = localStorage.getItem('token');
     const [inspirationModal, setInspirationModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
     const [selectedValue, setSelectedValue] = useState(null);
+    const [selectedProject, setSelectedProject] = useState(null);
     const [error, setError] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] });
+    const [project, setProject] = useState([]);
 
 
     function openShopModal(name) {
@@ -39,7 +41,7 @@ const InspirationModal = (props) => {
         } else {
             if (diff < pageSize && inspiration.next !== null) {
                 const { data } = await inspirationService.getAllInspired(inspiration.next.split('?')[1]);
-                setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
+                setInspiration({ count: data.count, next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
             }
             setCurrentPage(currentPage + 1)
         }
@@ -53,27 +55,46 @@ const InspirationModal = (props) => {
         })()
     }, []);
 
-    function addToBoard(product) {
+    useEffect(() => {
+        (async function () {
+            if (token) {
+                let { data } = await projectServices.getUserProjectProduct();
+                // let board = localStorage.getItem('boardName');
+                // if (board) {
+                //     data = [...data, { name: board }]
+                // }
+                // data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                setProject(data);
+            }
+        })()
+    }, [token]);
+
+    function addToBoard(inspiration) {
         let data = new FormData();
         if (selectedValue) {
-            data.append('name', selectedValue);
-            data.append('room', 1);
-            data.append('styles', 1);
-            data.append('budget', 1);
-            data.append('inspirations', 4);
-            data.append('pieces', 1);
-            projectServices.createProject(data);
+            data.append('project', selectedProject);
+            data.append('x_percent', .5);
+            data.append('y_percent', .5);
+            data.append('z', 0);
+            data.append('width', 200);
+            data.append('height', 150);
+            data.append('inspiration', inspiration.uuid);
+            projectServices.addedItemToWorkspace(data);
             setGotoBoard(true);
         } else {
             setError('Please! select one board.');
         }
     }
 
-    function handleChange(event) {
-        setSelectedValue(event.target.value);
+    function handleChange(e) {
+        // const found = project.find(x => x.uuid === e.target.value);
+        // if (found) {
+        setSelectedProject(project.uuid);
+        setSelectedValue(project.name);
         setError(null);
-    }
+        // }
 
+    }
 
 
     useEffect(() => {
@@ -93,7 +114,7 @@ const InspirationModal = (props) => {
 
 
     let paginateInspiration = [];
-    if (products) {
+    if (inspiration.results) {
         paginateInspiration = paginate(inspiration.results, currentPage, pageSize);
     }
 
@@ -104,11 +125,11 @@ const InspirationModal = (props) => {
             </div>
             <div className='container-fluid mb-5 bg-white'>
                 <div className='container' >
-                    {product && <div className="row" key={product.uuid}>
+                    {inspirationItem && <div className="row" key={inspirationItem.uuid}>
                         <div className="col-sm-2"></div>
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
-                                <img src={product.product.ref_img} alt="" />
+                                <img src={inspirationItem.ref_img} alt="" />
                                 <span className="icon">
                                     <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
                                 </span>
@@ -116,15 +137,12 @@ const InspirationModal = (props) => {
                         </div>
                         <div className="col-sm-6 shop-modal-title">
                             {!token ? <div className='text-fav text-center'>
-                                <h6>Retailer Name</h6>
-                                <span>Product Name </span>
+                                <h6>Designed by</h6>
                                 <h6>Want to add this item to a moodboard ?</h6>
                                 <GoBtn text="Sign Up" type='button' onClick={() => openShopModal('signup')} />
                             </div> :
                                 <div className="text-fav text-center">
-                                    <h6>{product.product.retailer}</h6>
-                                    <span>{product.product.name}</span>
-                                    <p>${product.product.price}</p>
+                                    <h6>{inspirationItem.designed_by}</h6>
                                     {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">
@@ -138,15 +156,15 @@ const InspirationModal = (props) => {
                                         :
                                         <ul className="menu-name">
                                             <li className="select_design">
-                                                <select name="cars" id="cars" onChange={handleChange}>
+                                                {project && <select name="cars" id="cars" onChange={handleChange}>
                                                     <option value=''>Add to Board</option>
-                                                    {project.map(item =>
-                                                        <option key={item.uuid} value={item.name}>{item.name}</option>
-                                                    )}
-                                                </select>
+                                                    {/* {project.map(item => */}
+                                                    <option key={project.uuid} value={project.uuid}>{project.name}</option>
+                                                    {/* )} */}
+                                                </select>}
                                             </li>
                                             <li className="saveSection">
-                                                <GoBtn text='Save' onClick={() => addToBoard(product)} />
+                                                <GoBtn text='Save' onClick={() => addToBoard(inspirationItem)} />
                                             </li>
                                             {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>
