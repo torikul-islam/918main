@@ -146,8 +146,8 @@ function ItemContainer(props) {
                         >
                             <div className="workimage-ins row" >
                                 {products.results && products.results.map((item, i) =>
-                                    <div className='col-sm-6'>
-                                        <img key={i} onClick={() => clickFilterImage('shopImage', item)}
+                                    <div className='col-sm-6' key={i} >
+                                        <img onClick={() => clickFilterImage('shopImage', item)}
                                             src={item.ref_img} alt="" />
                                     </div>
                                 )}

@@ -8,7 +8,7 @@ import './board.css';
 
 const Board = (props) => {
     const { dragImage, addImageToDrag } = props;
-    let [activeDrags, setActiveDrags] = useState(0);
+    const [selectedBoardItem, setSelectedBoardItem] = useState({});
     const [userProject, setUserProject] = useState({});
     const isBoardItemAdded = localStorage.getItem('boardItem');
 
@@ -22,6 +22,11 @@ const Board = (props) => {
             }
         })()
     }, [isBoardItemAdded]);
+
+
+    function handleBoardItem(item) {
+        setSelectedBoardItem(item)
+    }
 
     return (
         <div className="dragDrop">
@@ -38,7 +43,8 @@ const Board = (props) => {
                 <div className="middle-body">
                     {userProject.workspace_items && userProject.workspace_items.map((item, i) =>
                         <Draggable key={i} bounds='parent'>
-                            <div style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }} className="box boxoverlay">
+                            <div onClick={() => handleBoardItem(item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
+                                className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
                                 <img style={{ width: item.width, height: item.height }}
                                     src={(item.product && item.product.ref_img) || (item.inspiration && item.inspiration.ref_img)} alt="" />
                             </div>

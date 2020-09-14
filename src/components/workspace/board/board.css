@@ -67,3 +67,7 @@ div.boards-fiter li img {
 h4{
 font-family: "Helvetica-Bold";
 }
+
+.select-item-board {
+    border: 1px solid red;
+}
