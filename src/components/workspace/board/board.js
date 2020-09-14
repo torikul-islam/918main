@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import projectService from '../../../services/projectService';
 import Draggable from 'react-draggable';
 import './board.css';
-import productService from '../../../services/productService';
 
 
 
 
 const Board = (props) => {
     const { dragImage, addImageToDrag } = props;
+    const token = localStorage.getItem('token');
     const [selectedBoardItem, setSelectedBoardItem] = useState({});
     const [userProject, setUserProject] = useState({});
+    const [projectBoardName, setProjectBoardName] = useState([]);
     const isBoardItemAdded = localStorage.getItem('boardItem');
+    const [activeBoard, setActiveBoard] = useState(null);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -22,11 +24,33 @@ const Board = (props) => {
                 setUserProject(data);
             }
         })()
-    }, [isBoardItemAdded]);
+    }, [isBoardItemAdded, activeBoard]);
 
 
     function handleBoardItem(item) {
-        setSelectedBoardItem(item)
+        setSelectedBoardItem(item);
+
+    }
+
+    useEffect(() => {
+        (async function () {
+            if (token) {
+                let { data } = await projectService.getAllProjectName();
+                let board = localStorage.getItem('boardName');
+                if (board) {
+                    data = [...data, { name: board }]
+                }
+                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                setProjectBoardName(data);
+            }
+        }
+        )()
+    }, [token]);
+
+
+    function handleChangeBoardName(e) {
+        projectService.activeProject(e.target.value);
+        setActiveBoard(e.target.value);
     }
 
     async function handleDeleteItem(item) {
@@ -53,13 +77,19 @@ const Board = (props) => {
         setUserProject(originProject)
     }
 
+
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
                 <div className="boards-fiter">
+
                     <ul>
                         <li><h4>Boards</h4></li>
-                        <li><button className="filter">{userProject.name}</button></li>
+                        <select onChange={handleChangeBoardName}>
+                            {projectBoardName.map((item, i) =>
+                                <option key={i} value={item.uuid}>{item.name}</option>
+                            )}
+                        </select>
                         <li className="float-right">
                             <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
                         </li>

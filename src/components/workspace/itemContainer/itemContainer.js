@@ -72,14 +72,11 @@ function ItemContainer(props) {
         }
     }
     async function loadProductFunc() {
-        console.log('load more');
         if (products.next !== null) {
             const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
             setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
         }
     }
-
-
 
     return (
         <div className="titleInspire">
@@ -99,9 +96,9 @@ function ItemContainer(props) {
                                 hasMore={true || false}
                                 useWindow={false}
                                 loader={inspiration.next &&
-                                    <div class="d-flex justify-content-center mb-3">
-                                        <div class="spinner-border" role="status">
-                                            <span class="sr-only">Loading...</span>
+                                    <div key={1} className="d-flex justify-content-center mb-3">
+                                        <div className="spinner-border" role="status">
+                                            <span className="sr-only">Loading...</span>
                                         </div>
                                     </div>
                                 }
@@ -137,9 +134,9 @@ function ItemContainer(props) {
                             hasMore={true || false}
                             useWindow={false}
                             loader={products.next &&
-                                <div class="d-flex justify-content-center mb-3">
-                                    <div class="spinner-border" role="status">
-                                        <span class="sr-only">Loading...</span>
+                                <div key={1} className="d-flex justify-content-center mb-3">
+                                    <div className="spinner-border" role="status">
+                                        <span className="sr-only">Loading...</span>
                                     </div>
                                 </div>
                             }

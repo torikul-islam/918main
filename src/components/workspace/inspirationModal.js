@@ -13,7 +13,8 @@ import Login from '../auth/login';
 
 
 const InspirationModal = (props) => {
-    const { inspirationItem, closeModal, openModal } = props;
+    let { inspirationItem, closeModal, openModal } = props;
+    const [updateInspiration, setUpdateInspiration] = useState({})
     const token = localStorage.getItem('token');
     const [inspirationModal, setInspirationModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
@@ -33,6 +34,10 @@ const InspirationModal = (props) => {
     function closeShopModal() {
         setInspirationModal({ isOpen: false, name: null })
     };
+
+    useEffect(() => {
+        setUpdateInspiration(inspirationItem)
+    }, [inspirationItem])
 
     async function onPageChange(val) {
         const diff = inspiration.results.length - (currentPage * pageSize * 2);
@@ -111,8 +116,12 @@ const InspirationModal = (props) => {
             setPageSize(4)
         }
     }
-    const { name, isOpen } = inspirationModal;
 
+    function handleInspiration(item) {
+        setUpdateInspiration(item);
+    }
+
+    const { name, isOpen } = inspirationModal;
 
     let paginateInspiration = [];
     if (inspiration.results) {
@@ -126,11 +135,11 @@ const InspirationModal = (props) => {
             </div>
             <div className='container-fluid mb-5 bg-white'>
                 <div className='container' >
-                    {inspirationItem && <div className="row" key={inspirationItem.uuid}>
+                    {updateInspiration && <div className="row" key={updateInspiration.uuid}>
                         <div className="col-sm-2"></div>
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
-                                <img src={inspirationItem.ref_img} alt="" />
+                                <img src={updateInspiration.ref_img} alt="" />
                                 <span className="icon">
                                     <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
                                 </span>
@@ -143,7 +152,7 @@ const InspirationModal = (props) => {
                                 <GoBtn text="Sign Up" type='button' onClick={() => openShopModal('signup')} />
                             </div> :
                                 <div className="text-fav text-center">
-                                    <h6>{inspirationItem.designed_by}</h6>
+                                    <h6>{updateInspiration.designed_by}</h6>
                                     {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">
@@ -165,7 +174,7 @@ const InspirationModal = (props) => {
                                                 </select>}
                                             </li>
                                             <li className="saveSection">
-                                                <GoBtn text='Save' onClick={() => addToBoard(inspirationItem)} />
+                                                <GoBtn text='Save' onClick={() => addToBoard(updateInspiration)} />
                                             </li>
                                             {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>
@@ -188,7 +197,7 @@ const InspirationModal = (props) => {
                                     <div className='row'>
                                         {paginateInspiration && paginateInspiration.map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                                <img src={item.ref_img} alt="" />
+                                                <img onClick={() => handleInspiration(item)} src={item.ref_img} alt="" />
                                                 <h2>{item.retailer}</h2>
                                             </div>
                                         )}

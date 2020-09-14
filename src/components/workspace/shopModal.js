@@ -15,6 +15,7 @@ import "./workspace.css";
 const ShopModal = (props) => {
     const { product, closeModal, openModal } = props;
     const token = localStorage.getItem('token');
+    const [updateProduct, setUpdateProduct] = useState({});
     const [shoModal, setShoModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
@@ -33,6 +34,11 @@ const ShopModal = (props) => {
     function closeShopModal() {
         setShoModal({ isOpen: false, name: null })
     };
+
+    useEffect(() => {
+        setUpdateProduct(product);
+    }, [product])
+
 
     async function onPageChange(val) {
         const diff = products.results.length - (currentPage * pageSize * 2);
@@ -108,6 +114,11 @@ const ShopModal = (props) => {
             setPageSize(4)
         }
     }
+
+    function handleProduct(item) {
+        setUpdateProduct(item);
+    }
+
     const { name, isOpen } = shoModal;
 
 
@@ -123,11 +134,11 @@ const ShopModal = (props) => {
             </div>
             <div className='container-fluid mb-5 bg-white'>
                 <div className='container' >
-                    {product && <div className="row" key={product.uuid}>
+                    {updateProduct && <div className="row" key={updateProduct.uuid}>
                         <div className="col-sm-2"></div>
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
-                                <img src={product.ref_img} alt="" />
+                                <img src={updateProduct.ref_img} alt="" />
                                 <span className="icon">
                                     <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
                                 </span>
@@ -141,9 +152,9 @@ const ShopModal = (props) => {
                                 <GoBtn text="Sign Up" type='button' onClick={() => openShopModal('signup')} />
                             </div> :
                                 <div className="text-fav text-center">
-                                    <h6>{product.retailer}</h6>
-                                    <span>{product.name}</span>
-                                    <p>${product.price}</p>
+                                    <h6>{updateProduct.retailer}</h6>
+                                    <span>{updateProduct.name}</span>
+                                    <p>${updateProduct.price}</p>
                                     {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">
@@ -165,7 +176,7 @@ const ShopModal = (props) => {
                                                 </select>
                                             </li>
                                             <li className="saveSection">
-                                                <GoBtn text='Save' onClick={() => addToBoard(product)} />
+                                                <GoBtn text='Save' onClick={() => addToBoard(updateProduct)} />
                                             </li>
                                             {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>
@@ -188,7 +199,7 @@ const ShopModal = (props) => {
                                     <div className='row'>
                                         {paginateProducts && paginateProducts.map((item, i) =>
                                             <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                                <img src={item.ref_img} alt="" />
+                                                <img onClick={() => handleProduct(item)} src={item.ref_img} alt="" />
                                                 <h2>{item.retailer}</h2>
                                             </div>
                                         )}

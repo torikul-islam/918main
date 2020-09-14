@@ -48,6 +48,23 @@ function getUserProjectProduct() {
     }
 }
 
+function getAllProjectName() {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.get('/projects/', {
+            headers: { "Authorization": `Token ${token}` }
+        })
+    }
+}
+
+function activeProject(uuid) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.put(`/projects/set_active/${uuid}/`, {}, {
+            headers: { "Authorization": `Token ${token}` }
+        })
+    }
+}
 
 function workspaceItemDelete(uuid) {
     const token = localStorage.getItem('token');
@@ -60,4 +77,4 @@ function workspaceItemDelete(uuid) {
 }
 
 
-export default { getProject, createProject, getUserProjectProduct, addedItemToWorkspace, workspaceItemDelete }
+export default { getProject, createProject, activeProject, getAllProjectName, getUserProjectProduct, addedItemToWorkspace, workspaceItemDelete }
