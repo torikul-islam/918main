@@ -63,10 +63,10 @@ const Board = (props) => {
             </div>
             <div className="bottom-icons">
                 <ul>
-                    <li><img src={require('../../../Asset/Images/copypast.png')} alt="copypast.png" /></li>
-                    <li><img onClick={() => handleDeleteItem(selectedBoardItem)} src={require('../../../Asset/Images/delete.png')} alt="delete.png" /></li>
-                    <li><img src={require('../../../Asset/Images/uparrwo.png')} alt="uparrwo.png" /></li>
-                    <li><img src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Copy workspace item"><img src={require('../../../Asset/Images/copypast.png')} alt="copypast.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Delete item from workspace"><img onClick={() => handleDeleteItem(selectedBoardItem)} src={require('../../../Asset/Images/delete.png')} alt="delete.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Move forward (in front of other item z-axis)" ><img src={require('../../../Asset/Images/uparrwo.png')} alt="uparrwo.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Move backward (behind other items z-axis)"><img src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
                 </ul>
             </div>
         </div>
