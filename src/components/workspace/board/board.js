@@ -36,6 +36,23 @@ const Board = (props) => {
         await projectService.workspaceItemDelete(item.uuid);
     }
 
+    function handleCopyItem(item) {
+        let originalProject = { ...userProject };
+        originalProject.workspace_items = [...originalProject.workspace_items, { ...item, uuid: originalProject.workspace_items.length }];
+        setUserProject(originalProject)
+    }
+
+    function handleZAxis(type, item) {
+        let originProject = { ...userProject };
+        const index = originProject.workspace_items.findIndex(el => el.uuid === item.uuid);
+        if (type === 'up') {
+            originProject.workspace_items[index].z += 1;
+        } else {
+            originProject.workspace_items[index].z -= 1;
+        }
+        setUserProject(originProject)
+    }
+
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
@@ -63,10 +80,10 @@ const Board = (props) => {
             </div>
             <div className="bottom-icons">
                 <ul>
-                    <li data-toggle="tooltip" data-placement="top" title="Copy workspace item"><img src={require('../../../Asset/Images/copypast.png')} alt="copypast.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Copy workspace item"><img onClick={() => handleCopyItem(selectedBoardItem)} src={require('../../../Asset/Images/copypast.png')} alt="copypast.png" /></li>
                     <li data-toggle="tooltip" data-placement="top" title="Delete item from workspace"><img onClick={() => handleDeleteItem(selectedBoardItem)} src={require('../../../Asset/Images/delete.png')} alt="delete.png" /></li>
-                    <li data-toggle="tooltip" data-placement="top" title="Move forward (in front of other item z-axis)" ><img src={require('../../../Asset/Images/uparrwo.png')} alt="uparrwo.png" /></li>
-                    <li data-toggle="tooltip" data-placement="top" title="Move backward (behind other items z-axis)"><img src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Move forward (in front of other item z-axis)" ><img onClick={() => handleZAxis('up', selectedBoardItem)} src={require('../../../Asset/Images/uparrwo.png')} alt="uparrwo.png" /></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Move backward (behind other items z-axis)"><img onClick={() => handleZAxis('down', selectedBoardItem)} src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
                 </ul>
             </div>
         </div>
