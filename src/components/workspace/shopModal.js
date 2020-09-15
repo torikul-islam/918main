@@ -26,6 +26,9 @@ const ShopModal = (props) => {
     const [project, setProject] = useState([]);
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
     const [productLike, setProductLike] = useState([]);
+    const [projectBoardName, setProjectBoardName] = useState([]);
+    const [userProject, setUserProject] = useState({});
+
 
 
     function openShopModal(name) {
@@ -53,6 +56,33 @@ const ShopModal = (props) => {
         })()
     }, []);
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        (async function () {
+            if (token) {
+                let { data } = await projectServices.getUserProjectProduct();
+                // call the backend server and set response array in setProducts
+                setUserProject(data);
+            }
+        })()
+    }, []);
+
+    useEffect(() => {
+        (async function () {
+            if (token) {
+                let { data } = await projectServices.getAllProjectName();
+                let board = localStorage.getItem('boardName');
+                if (board) {
+                    data = [{ name: userProject.name, uuid: userProject.uuid }, ...data, { name: board, uuid: 1 }]
+                }
+                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                setProjectBoardName(data);
+            }
+        }
+        )()
+    }, [token]);
+
+
 
     async function onPageChange(val) {
         const diff = products.results.length - (currentPage * pageSize * 2);
@@ -77,6 +107,7 @@ const ShopModal = (props) => {
     }, []);
 
     function addToBoard(product) {
+        console.log('product', product);
         let data = new FormData();
         if (selectedValue) {
             data.append('project', selectedProject);
@@ -95,20 +126,26 @@ const ShopModal = (props) => {
     }
 
     function handleChange(e) {
-        setSelectedValue(project.name);
-        setSelectedProject(e.target.value)
-        setError(null);
+        const found = projectBoardName.find(x => x.uuid === e.target.value);
+        if (found) {
+            setSelectedProject(e.target.value);
+            setSelectedValue(found.name);
+            setError(null);
+        }
+        projectServices.activeProject(e.target.value);
     }
+
 
     useEffect(() => {
         (async function () {
             if (token) {
-                let { data } = await projectServices.getUserProjectProduct();
-                // let board = localStorage.getItem('boardName');
-                // if (board) {
-                // data = [...data, { name: board }]
-                // data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProject(data);
+                let { data } = await projectServices.getAllProjectName();
+                let board = localStorage.getItem('boardName');
+                if (board) {
+                    data = [...data, { name: board }]
+                }
+                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                setProjectBoardName([{ uuid: userProject.uuid, name: userProject.name }, ...data]);
             }
         }
         )()
@@ -145,9 +182,7 @@ const ShopModal = (props) => {
         }
     };
 
-
     const { name, isOpen } = shoModal;
-
 
     let paginateProducts = [];
     if (products) {
@@ -201,10 +236,9 @@ const ShopModal = (props) => {
                                         <ul className="menu-name">
                                             <li className="select_design">
                                                 <select name="cars" id="cars" onChange={handleChange}>
-                                                    <option value=''>Add to Board</option>
-                                                    {/* {project.map(item => */}
-                                                    <option key={project.uuid} value={project.uuid}>{project.name}</option>
-                                                    {/* )} */}
+                                                    {projectBoardName.map((item, i) =>
+                                                        <option key={i} value={item.uuid}>{item.name}</option>
+                                                    )}
                                                 </select>
                                             </li>
                                             <li className="saveSection">

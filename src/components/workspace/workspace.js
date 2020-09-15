@@ -130,7 +130,7 @@ const Workspace = (props) => {
             <NavbarB  {...props}
                 onChangeSearch={onChangeSearch}
                 searchData={[]} search={"null"} />
-            <div className="container-fluid page-content for-desktop">
+            <div className="container-fluid page-content">
                 <div className="row">
                     <div className="col-md-4 col-sm-12">
                         <ItemContainer
@@ -152,8 +152,6 @@ const Workspace = (props) => {
 
                     <div className="col-md-8 col-sm-12">
                         <Board
-                            // itemAddedToWorkspace={itemAddedToWorkspace}
-                            // isItemAddToWorkspace={false}
                             addImageToDrag={addImageToDrag}
                             dragImage={dragImage}
                         />
@@ -162,7 +160,7 @@ const Workspace = (props) => {
                 </div>
             </div>
 
-            <div className="container-fluid page-content for-mobile">
+            {/* <div className="container-fluid page-content for-mobile">
                 <div className="row">
                 <div className="col-sm-12">
                         <Board
@@ -191,7 +189,7 @@ const Workspace = (props) => {
                     
 
                 </div>
-            </div>
+            </div> */}
             {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter
                 handlePieces={handlePieces}
                 handleColors={handleColors}

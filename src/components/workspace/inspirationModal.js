@@ -26,6 +26,8 @@ const InspirationModal = (props) => {
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] });
     const [inspirationLike, setInspirationLike] = useState([]);
     const [project, setProject] = useState([]);
+    const [projectBoardName, setProjectBoardName] = useState([]);
+    const [userProject, setUserProject] = useState({});
 
 
 
@@ -40,6 +42,19 @@ const InspirationModal = (props) => {
     useEffect(() => {
         setUpdateInspiration(inspirationItem)
     }, [inspirationItem])
+
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        (async function () {
+            if (token) {
+                let { data } = await projectServices.getUserProjectProduct();
+                // call the backend server and set response array in setProducts
+                setUserProject(data);
+            }
+        })()
+    }, []);
+
 
     async function onPageChange(val) {
         const diff = inspiration.results.length - (currentPage * pageSize * 2);
@@ -75,15 +90,16 @@ const InspirationModal = (props) => {
     useEffect(() => {
         (async function () {
             if (token) {
-                let { data } = await projectServices.getUserProjectProduct();
-                // let board = localStorage.getItem('boardName');
-                // if (board) {
-                //     data = [...data, { name: board }]
-                // }
-                // data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProject(data);
+                let { data } = await projectServices.getAllProjectName();
+                let board = localStorage.getItem('boardName');
+                if (board) {
+                    data = [...data, { name: board }]
+                }
+                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                setProjectBoardName([{ name: userProject.name, uuid: userProject.uuid }, ...data]);
             }
-        })()
+        }
+        )()
     }, [token]);
 
     function addToBoard(inspiration) {
@@ -105,15 +121,14 @@ const InspirationModal = (props) => {
     }
 
     function handleChange(e) {
-        // const found = project.find(x => x.uuid === e.target.value);
-        // if (found) {
-        setSelectedProject(project.uuid);
-        setSelectedValue(project.name);
-        setError(null);
-        // }
-
+        const found = projectBoardName.find(x => x.uuid === e.target.value);
+        if (found) {
+            setSelectedProject(e.target.value);
+            setSelectedValue(found.name);
+            setError(null);
+        }
+        projectServices.activeProject(e.target.value);
     }
-
 
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
@@ -194,12 +209,11 @@ const InspirationModal = (props) => {
                                         :
                                         <ul className="menu-name">
                                             <li className="select_design">
-                                                {project && <select name="cars" id="cars" onChange={handleChange}>
-                                                    <option value=''>Add to Board</option>
-                                                    {/* {project.map(item => */}
-                                                    <option key={project.uuid} value={project.uuid}>{project.name}</option>
-                                                    {/* )} */}
-                                                </select>}
+                                                <select name="cars" id="cars" onChange={handleChange}>
+                                                    {projectBoardName.map((item, i) =>
+                                                        <option key={i} value={item.uuid}>{item.name}</option>
+                                                    )}
+                                                </select>
                                             </li>
                                             <li className="saveSection">
                                                 <GoBtn text='Save' onClick={() => addToBoard(updateInspiration)} />
