@@ -24,7 +24,9 @@ const InspirationModal = (props) => {
     const [error, setError] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] });
+    const [inspirationLike, setInspirationLike] = useState([]);
     const [project, setProject] = useState([]);
+
 
 
     function openShopModal(name) {
@@ -57,6 +59,16 @@ const InspirationModal = (props) => {
             const { data } = await inspirationService.getAllInspired();
             // call the backend server and set response array in setProducts
             setInspiration(data);
+        })()
+    }, []);
+
+    useEffect(() => {
+        (async function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const { data } = await inspirationService.getUserInspirationLike();
+                setInspirationLike(data)
+            }
         })()
     }, []);
 
@@ -105,7 +117,8 @@ const InspirationModal = (props) => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
-        window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize)
+        window.addEventListener("resize", handleResize);
+        window.addEventListener('load', handleResize)
     });
 
     function handleResize() {
@@ -119,6 +132,16 @@ const InspirationModal = (props) => {
 
     function handleInspiration(item) {
         setUpdateInspiration(item);
+    }
+
+    async function handleInspirationLike(inspiration) {
+        let form = new FormData();
+        setInspirationLike([...inspirationLike, { inspiration }])
+        form.set('inspiration', inspiration.uuid);
+        const token = localStorage.getItem('token');
+        if (token) {
+            await inspirationService.createInspirationLike(form);
+        }
     }
 
     const { name, isOpen } = inspirationModal;
@@ -140,8 +163,13 @@ const InspirationModal = (props) => {
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
                                 <img src={updateInspiration.ref_img} alt="" />
-                                <span className="icon">
-                                    <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                                <span className='icon'>
+                                    <i
+                                        onClick={() => handleInspirationLike(updateInspiration)}
+                                        style={{ cursor: "pointer" }}
+                                        className={`fa-2x ${inspirationLike.some(el => el.inspiration.uuid === updateInspiration.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        aria-hidden="true"
+                                    />
                                 </span>
                             </div>
                         </div>

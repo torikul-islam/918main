@@ -25,6 +25,7 @@ const ShopModal = (props) => {
     const [gotoBoard, setGotoBoard] = useState(false);
     const [project, setProject] = useState([]);
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
+    const [productLike, setProductLike] = useState([]);
 
 
     function openShopModal(name) {
@@ -38,6 +39,19 @@ const ShopModal = (props) => {
     useEffect(() => {
         setUpdateProduct(product);
     }, [product])
+
+
+    useEffect(() => {
+        (async function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const { data } = await productService.getUserProductLike();
+                if (data) {
+                    setProductLike(data);
+                }
+            }
+        })()
+    }, []);
 
 
     async function onPageChange(val) {
@@ -103,7 +117,8 @@ const ShopModal = (props) => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
-        window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize)
+        window.addEventListener("resize", handleResize);
+        window.addEventListener('load', handleResize)
     });
 
     function handleResize() {
@@ -118,6 +133,18 @@ const ShopModal = (props) => {
     function handleProduct(item) {
         setUpdateProduct(item);
     }
+
+
+    async function handleProductLike(product) {
+        let form = new FormData();
+        form.set('product', product.uuid);
+        setProductLike([...productLike, { product }]);
+        const token = localStorage.getItem('token');
+        if (token) {
+            await productService.createProductLike(form);
+        }
+    };
+
 
     const { name, isOpen } = shoModal;
 
@@ -139,8 +166,13 @@ const ShopModal = (props) => {
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
                                 <img src={updateProduct.ref_img} alt="" />
-                                <span className="icon">
-                                    <img src={require('../../Asset/Images/fav.png')} alt="fav.png" />
+                                <span className='icon'>
+                                    <i
+                                        onClick={() => handleProductLike(updateProduct)}
+                                        style={{ cursor: "pointer" }}
+                                        className={`fa-2x ${productLike.some(el => el.product.uuid === updateProduct.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        aria-hidden="true"
+                                    />
                                 </span>
                             </div>
                         </div>
