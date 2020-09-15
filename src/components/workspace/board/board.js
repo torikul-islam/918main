@@ -98,8 +98,12 @@ const Board = (props) => {
                         </ul>
                     </div>
                     <div className="middle-body">
+                    <div className="textmiddle">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <h4>Click on any image to add it</h4>
+                    </div>
                         {userProject.workspace_items && userProject.workspace_items.map((item, i) =>
-                            <Draggable key={i} bounds='parent'>
+                            <Draggable key={i}>
                                 <div onClick={() => handleBoardItem(item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
                                     className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
                                     <img style={{ width: item.width, height: item.height }}
