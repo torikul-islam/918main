@@ -93,7 +93,13 @@ font-family: "Helvetica-Bold";
 .select-item-board {
     border: 1px solid red;
 }
-
+.textmiddle {
+    text-align: center;
+    transform: translatey(200px);
+}
+.textmiddle i {
+    font-size: 26px;
+}
 @media screen and (max-width: 767px) and (min-width: 320px){
     .bottom-icons, .designerHelp{
         width: inherit !important;

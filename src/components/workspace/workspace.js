@@ -160,36 +160,7 @@ const Workspace = (props) => {
                 </div>
             </div>
 
-            {/* <div className="container-fluid page-content for-mobile">
-                <div className="row">
-                <div className="col-sm-12">
-                        <Board
-                            addImageToDrag={addImageToDrag}
-                            dragImage={dragImage}
-                        />
-                    </div>
-                    <div className="col-sm-12">
-                        <ItemContainer
-                            projectProduct={projectProduct}
-                            clickFilterImage={clickFilterImage}
-                            openModal={openModal}
-                            inspirationFilter={{
-                                style_ids: inspirationFilter.style_ids.map(i => i.pk),
-                                room_ids: inspirationFilter.room_ids.map(i => i.pk)
-                            }}
-                            productFilter={{
-                                piece_ids: selectedPieces.map(x => x.pk),
-                                color_ids: selectedColors.map(c => c.pk),
-                                price_lower_bound: priceRange[0] ? [priceRange[0].substr(1).replace(',', '')] : [],
-                                price_upper_bound: priceRange[1] ? [priceRange[1].substr(1).replace(',', '')] : []
-                            }}
-                        />
-                    </div>
 
-                    
-
-                </div>
-            </div> */}
             {name === 'shop' && <Modal isOpen={isOpen} childComp={<ShopFilter
                 handlePieces={handlePieces}
                 handleColors={handleColors}
