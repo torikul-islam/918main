@@ -96,7 +96,7 @@ const InspirationModal = (props) => {
                     data = [...data, { name: board }]
                 }
                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProjectBoardName([{ name: userProject.name, uuid: userProject.uuid }, ...data]);
+                setProjectBoardName(data);
             }
         }
         )()

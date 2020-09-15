@@ -145,7 +145,7 @@ const ShopModal = (props) => {
                     data = [...data, { name: board }]
                 }
                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProjectBoardName([{ uuid: userProject.uuid, name: userProject.name }, ...data]);
+                setProjectBoardName(data);
             }
         }
         )()
