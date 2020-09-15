@@ -103,10 +103,11 @@ function ItemContainer(props) {
                                     </div>
                                 }
                             >
-                                <div className="workimage-ins">
+                                <div className="workimage-ins mobilescroll">
                                     {inspiration.results && inspiration.results.map((item, i) =>
                                         <img key={i} onClick={() => clickFilterImage('inspiredImage', item)}
                                             src={item.ref_img} alt="" />
+                                            
                                     )}
                                 </div>
                             </InfiniteScroll>
@@ -141,7 +142,7 @@ function ItemContainer(props) {
                                 </div>
                             }
                         >
-                            <div className="workimage-ins row" >
+                            <div className="workimage-ins mobilescroll row" >
                                 {products.results && products.results.map((item, i) =>
                                     <div className='col-sm-6' key={i} >
                                         <img onClick={() => clickFilterImage('shopImage', item)}

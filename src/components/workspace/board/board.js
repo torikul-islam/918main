@@ -79,11 +79,12 @@ const Board = (props) => {
 
 
     return (
+        <>
         <div className="dragDrop">
             <div className="container board-tilte">
                 <div className="boards-fiter">
 
-                    <ul>
+                    <ul className="for-desktop">
                         <li><h4>Boards</h4></li>
                         <select onChange={handleChangeBoardName}>
                             {projectBoardName.map((item, i) =>
@@ -116,7 +117,23 @@ const Board = (props) => {
                     <li data-toggle="tooltip" data-placement="top" title="Move backward (behind other items z-axis)"><img onClick={() => handleZAxis('down', selectedBoardItem)} src={require('../../../Asset/Images/downarrow.png')} alt="downarrow.png" /></li>
                 </ul>
             </div>
+            <div className="designerHelp">
+                <button type="button">Desinger Help</button>
+                </div>
+                
         </div>
+        <ul className="for-mobile">
+                        <li><h4>Boards</h4></li>
+                        <select onChange={handleChangeBoardName}>
+                            {projectBoardName.map((item, i) =>
+                                <option key={i} value={item.uuid}>{item.name}</option>
+                            )}
+                        </select>
+                        {/* <li className="float-right">
+                            <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
+                        </li> */}
+                    </ul>
+                    </>
     );
 };
 

@@ -270,8 +270,37 @@ ul.list-categroy-shop li.activebtn button {
 }
 .titleInspire button.filter, .titleInspire button.filter.shopfilter {
   background-position: 200px 8px;
+  text-align: left;
+  margin-top: 30px;
 }
-.react-switch-label{
-  display: none
+.titleInspire button.filter h6, .titleInspire button.filter.shopfilter h6 {
+  font-size: 22px;
+}
+
+.titleInspire .post-slide-main-item{
+  margin-top: 5px;
+  height: auto;
+}
+ul.for-mobile {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  text-align: right;
+}
+ul.for-mobile li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.workimage-ins.mobilescroll {
+  display: flex;
+  overflow-x: scroll;
+  white-space: nowrap;
+  flex-wrap: inherit;
+}
+.workimage-ins img {
+  width: 80%;
+  margin-right: 20px;
 }
 }

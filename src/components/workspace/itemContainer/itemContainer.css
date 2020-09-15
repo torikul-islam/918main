@@ -147,8 +147,8 @@
   z-index: 10;
  }
  @media screen and (max-width: 767px) and (min-width: 320px){
-  .titleInspire h4 {
-    margin-top: 35px;
+  .container-fluid.page-content.for-mobile .titleInspire h4 {
+    display: none;
 }
 .shop-furniture .list-furniture ul.list-categroy-shop li {
   width: 46% !important;

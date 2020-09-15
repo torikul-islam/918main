@@ -61,6 +61,22 @@ div.boards-fiter li img {
     border: none;
     outline: none;
 }
+.designerHelp button {
+    border: none;
+    background: #000;
+    color: #fff;
+    padding: 10px 21px;
+    border-radius: 50px;
+    outline: none;
+}
+.designerHelp {
+    float: right;
+    width: 14%;
+}
+.bottom-icons {
+    width: 86%;
+    float: left;
+}
 .board-tilte{
     margin: 7px !important;
 }
@@ -76,4 +92,11 @@ font-family: "Helvetica-Bold";
 
 .select-item-board {
     border: 1px solid red;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px){
+    .bottom-icons, .designerHelp{
+        width: inherit !important;
+}
+
 }
