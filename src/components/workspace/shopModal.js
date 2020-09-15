@@ -67,20 +67,7 @@ const ShopModal = (props) => {
         })()
     }, []);
 
-    useEffect(() => {
-        (async function () {
-            if (token) {
-                let { data } = await projectServices.getAllProjectName();
-                let board = localStorage.getItem('boardName');
-                if (board) {
-                    data = [{ name: userProject.name, uuid: userProject.uuid }, ...data, { name: board, uuid: 1 }]
-                }
-                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProjectBoardName(data);
-            }
-        }
-        )()
-    }, [token]);
+
 
 
 
