@@ -50,7 +50,34 @@
     color: red !important;
     font-family: 'Helvetica-light' !important;
 }
+.container-fluid.page-content.for-mobile {
+    display: none;
+}
 
+@media screen and (max-width: 767px) and (min-width: 320px) {
+.container-fluid.page-content.for-desktop {
+    display: none;
+}
+.container-fluid.page-content.for-mobile {
+    display: block;
+}
+.dragDrop {
+    min-height: 600px;
+}
+.middle-body {
+    min-height: 500px;
+}
+.bottom-icons {
+    transform: rotate(270deg);
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    z-index: 999;
+}
+.bottom-icons img {
+    transform: rotate(270deg);
+}
+}
   @media screen and (max-width: 1023px) and (min-width: 768px) {
     .page-content{
         margin-top: 190px;

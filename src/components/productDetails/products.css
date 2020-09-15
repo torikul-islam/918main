@@ -32,6 +32,9 @@ padding-top: 30px;
     .text-fav ul.menu-name li.select_design{
         padding:5px 27px 7px 5px;
     }
+    .shop-modal-title .text-fav select#cars {
+        padding-right: 20px !important;
+    }
     select#cars, select#cars:focus {
         font-size: 14px;
         background-image: url('../../Asset/Images/arrow-down.png');
