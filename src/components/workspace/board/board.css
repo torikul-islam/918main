@@ -98,5 +98,28 @@ font-family: "Helvetica-Bold";
     .bottom-icons, .designerHelp{
         width: inherit !important;
 }
-
+}
+@media screen and (max-width: 1020px) and (min-width: 768px){
+    .bottom-icons {
+        width: 70%;
+    }
+    .designerHelp {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 1021px){
+    .bottom-icons {
+        width: 78%;
+    }
+    .designerHelp {
+        width: 22%;
+    }
+}
+@media screen and (max-width: 1366px) and (min-width: 1025px){
+    .bottom-icons {
+        width: 83%;
+    }
+    .designerHelp {
+        width: 17%;
+    }
 }
