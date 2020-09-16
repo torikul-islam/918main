@@ -84,7 +84,6 @@ const Board = (props) => {
             <div className="dragDrop">
                 <div className="container board-tilte">
                     <div className="boards-fiter">
-
                         <ul className="for-desktop">
                             <li><h4>Boards</h4></li>
                             <select onChange={handleChangeBoardName}>
@@ -95,6 +94,16 @@ const Board = (props) => {
                             {/* <li className="float-right">
                             <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
                         </li> */}
+                        </ul>
+
+                        <ul className="for-mobile">
+                            <li><h4>Boards</h4></li>
+                            <select onChange={handleChangeBoardName}>
+                                {projectBoardName.map((item, i) =>
+                                    <option key={i} value={item.uuid}>{item.name}</option>
+                                )}
+                            </select>
+
                         </ul>
                     </div>
                     {userProject.workspace_items && <div className="middle-body">

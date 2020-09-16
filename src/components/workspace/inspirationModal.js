@@ -96,6 +96,9 @@ const InspirationModal = (props) => {
                     data = [...data, { name: board }]
                 }
                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                if (data.length > 0) {
+                    setSelectedValue(data[0].name)
+                }
                 setProjectBoardName(data);
             }
         }
