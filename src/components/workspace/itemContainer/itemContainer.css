@@ -146,6 +146,11 @@
  .priority{
   z-index: 10;
  }
+ .widthshopImage {
+  width: 45%;
+  float: left;
+  margin-left: 5px;
+}
  @media screen and (max-width: 767px) and (min-width: 320px){
   .container-fluid.page-content.for-mobile .titleInspire h4 {
     display: none;
@@ -167,5 +172,12 @@
 }
 .range-slider {
   padding-right: 50px;
+}
+.widthshopImage {
+  width: 100%;
+  margin-left: 0px;
+}
+.styleformobile .titleInspire h4 {
+  display: none;
 }
 }

@@ -131,7 +131,7 @@ const Workspace = (props) => {
                 onChangeSearch={onChangeSearch}
                 searchData={[]} search={"null"} />
             <div className="container-fluid page-content">
-                <div className="row">
+                <div className="row styleformobile">
                     <div className="col-md-4 col-sm-12">
                         <ItemContainer
                             projectProduct={projectProduct}

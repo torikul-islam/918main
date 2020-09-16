@@ -77,6 +77,9 @@
 .bottom-icons img {
     transform: rotate(270deg);
 }
+.styleformobile {
+    flex-direction: column-reverse;
+}
 }
   @media screen and (max-width: 1023px) and (min-width: 768px) {
     .page-content{

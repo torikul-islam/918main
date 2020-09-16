@@ -144,7 +144,7 @@ function ItemContainer(props) {
                         >
                             <div className="workimage-ins mobilescroll row" >
                                 {products.results && products.results.map((item, i) =>
-                                    <div className='col-sm-6' key={i} >
+                                    <div className='widthshopImage' key={i} >
                                         <img onClick={() => clickFilterImage('shopImage', item)}
                                             src={item.ref_img} alt="" />
                                     </div>
