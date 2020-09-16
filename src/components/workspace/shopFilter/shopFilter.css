@@ -298,9 +298,11 @@ ul.for-mobile li {
   overflow-x: scroll;
   white-space: nowrap;
   flex-wrap: inherit;
+  overflow-y: hidden;
 }
 .workimage-ins img {
-  width: 80%;
+  width: 100%;
   margin-right: 20px;
+  height: 200px;
 }
 }

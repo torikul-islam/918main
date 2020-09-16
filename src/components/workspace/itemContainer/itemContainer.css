@@ -152,6 +152,9 @@
   float: left;
   margin-left: 5px;
 }
+.loading {
+  display: none;
+}
  @media screen and (max-width: 767px) and (min-width: 320px){
   .container-fluid.page-content.for-mobile .titleInspire h4 {
     display: none;
@@ -179,7 +182,7 @@
 }
 .widthshopImage {
   width: 100%;
-  margin-left: 0px;
+  margin-left: 20px;
   min-width: 80%;
 }
 .styleformobile .titleInspire h4 {
@@ -188,5 +191,13 @@
 .post-slide-main-item .workimage-ins.row img {
   width: 100%;
   height: 200px;
+}
+.loading {
+  padding: 10px 30px 10px 15px;
+  transform: translateY(35%);
+  display: block;
+}
+.loading i{
+  font-size: 30px;
 }
 }

@@ -119,6 +119,7 @@ function ItemContainer(props) {
                                         <img key={i} onClick={() => clickFilterImage('inspiredImage', item)}
                                             src={item.ref_img} alt="" />
                                     )}
+                                    <div className="loading"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
                                 </div>
                             </InfiniteScroll>
 
@@ -156,8 +157,9 @@ function ItemContainer(props) {
                                     <div className='widthshopImage' key={i} >
                                         <img onClick={() => clickFilterImage('shopImage', item)}
                                             src={item.ref_img} alt="" />
-                                    </div>
+                                    </div>                                    
                                 )}
+                                <div className="loading"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
                             </div>
                         </InfiniteScroll>
                     </div>
