@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import projectService from '../../../services/projectService';
-import Draggable from 'react-draggable';
 import './board.css';
-
+import { Rnd } from 'react-rnd'
 
 
 
@@ -79,146 +78,6 @@ const Board = (props) => {
     }
 
 
-    const [isDragging, setIsDragging] = useState(false);
-    const [original, setOriginal] = useState({ originalX: 0, originalY: 0, })
-    const [translate, setTranslate] = useState({ translateX: 0, translateY: 0, })
-    const [lastTranslate, setLastTranslate] = useState({ lastTranslateX: 0, lastTranslateY: 0, })
-
-
-
-    useEffect(() => {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseup', handleMouseUp);
-    });
-
-    function handleMouseDown({ clientX, clientY }) {
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('mouseup', handleMouseUp);
-
-        if (props.onDragStart) {
-            props.onDragStart();
-        }
-
-        setOriginal({ originalX: clientX, originalY: clientY, })
-        setIsDragging(true)
-
-        // this.setState({
-        //     originalX: clientX,
-        //     originalY: clientY,
-        //     isDragging: true
-        // });
-    };
-
-
-    function handleMouseMove({ clientX, clientY }) {
-        // const { isDragging } = this.state;
-        // const { onDrag } = this.props;
-
-        if (!isDragging) {
-            return;
-        }
-
-        setTranslate({
-            translateX: clientX - original.originalX + lastTranslate.lastTranslateX,
-            translateY: clientY - original.originalY + lastTranslate.lastTranslateY
-        })
-        if (props.ondrag) {
-            props.onDrag({
-                translateX: translate.translateX,
-                translateY: translate.translateY
-            });
-        }
-
-        // this.setState(prevState => ({
-        //     translateX: clientX - prevState.originalX + prevState.lastTranslateX,
-        //     translateY: clientY - prevState.originalY + prevState.lastTranslateY
-        // }), () => {
-        //     if (onDrag) {
-        //         onDrag({
-        //             translateX: this.state.translateX,
-        //             translateY: this.state.translateY
-        //         });
-        //     }
-        // });
-
-
-    };
-
-    function handleMouseUp() {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseup', handleMouseUp);
-
-        setOriginal({
-            originalX: 0,
-            originalY: 0,
-        })
-
-        setLastTranslate({
-            lastTranslateX: translate.translateX,
-            lastTranslateY: translate.translateY,
-        })
-        setIsDragging(false)
-
-        if (props.onDragEnd) {
-            props.onDragEnd();
-        }
-
-        // this.setState({
-        //     originalX: 0,
-        //     originalY: 0,
-        //     lastTranslateX: this.state.translateX,
-        //     lastTranslateY: this.state.translateY,
-
-        //     isDragging: false
-        // },
-        //     () => {
-        //         if (this.props.onDragEnd) {
-        //             this.props.onDragEnd();
-        //         }
-        //     }
-        // );
-    };
-
-
-    let handleRef = useRef(null)
-    let [dragStartLeft, setdragStartLeft] = useState(0)
-    let [dragStartTop, setdragStartTop] = useState(0)
-    let [dragStartX, setdragStartX] = useState(0)
-    let [dragStartY, setdragStartY] = useState(0)
-    // let [dragStartLeft, setdragStartLeft] = useState(0)
-
-
-
-
-    function initialiseDrag(event) {
-        const { target, clientX, clientY } = event;
-        const { offsetTop, offsetLeft } = target;
-        const { left, top } = handleRef.current.getBoundingClientRect();
-        console.log('inint', handleRef);
-        setdragStartLeft(left - offsetLeft)
-        setdragStartTop(top - offsetTop)
-        setdragStartX(clientX)
-        setdragStartY(clientY)
-
-        // this.dragStartLeft = left - offsetLeft;
-        // this.dragStartTop = top - offsetTop;
-        // this.dragStartX = clientX;
-        // this.dragStartY = clientY;
-        window.addEventListener('mousemove', startDragging, false);
-        window.addEventListener('mouseup', stopDragging, false);
-    }
-
-    function startDragging({ clientX, clientY }) {
-        document.getElementById("test").style.transform = `translate(${dragStartLeft + clientX - dragStartX}px, ${dragStartTop + clientY - dragStartY}px)`;
-    }
-
-    function stopDragging() {
-        window.removeEventListener('mousemove', startDragging, false);
-        window.removeEventListener('mouseup', stopDragging, false);
-    }
-
-
-
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
@@ -236,10 +95,6 @@ const Board = (props) => {
                     </ul>
                 </div>
 
-                <div id="test" onMouseDown={initialiseDrag}
-                    ref={handleRef}>
-                    DragMe
-                </div>
 
                 {userProject.workspace_items && <div className="middle-body">
                     {userProject.workspace_items.length === 0 ?
@@ -249,7 +104,7 @@ const Board = (props) => {
                         </div>
                         :
                         userProject.workspace_items.map((item, i) =>
-                            <Draggable key={i}>
+                            <Rnd key={i}>
                                 <div onClick={() => handleBoardItem(item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
                                     className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
                                     <div>
@@ -258,7 +113,7 @@ const Board = (props) => {
 
                                     </div>
                                 </div>
-                            </Draggable>
+                            </Rnd>
                         )}
                 </div>}
 
