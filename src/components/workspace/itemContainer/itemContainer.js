@@ -3,6 +3,8 @@ import inspirationService from '../../../services/inspiredService';
 import productService from '../../../services/productService';
 import InfiniteScroll from 'react-infinite-scroller';
 import './itemContainer.css';
+import HorizontalScroll from 'react-scroll-horizontal'
+import ReactList from 'react-list';
 
 
 
@@ -11,7 +13,7 @@ function ItemContainer(props) {
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
-
+    const [hasMore, setHasMore] = useState(true);
 
 
     useEffect(() => {
@@ -78,6 +80,15 @@ function ItemContainer(props) {
         }
     }
 
+    useEffect(() => {
+        if (window.innerWidth <= 768) {
+            setHasMore(false)
+        }
+        console.log('width', window.innerWidth);
+    })
+
+
+
     return (
         <div className="titleInspire">
             <div className="row">
@@ -93,7 +104,7 @@ function ItemContainer(props) {
                             <InfiniteScroll
                                 pageStart={0}
                                 loadMore={loadInspiredFunc}
-                                hasMore={true || false}
+                                hasMore={hasMore}
                                 useWindow={false}
                                 loader={inspiration.next &&
                                     <div key={1} className="d-flex justify-content-center mb-3">
@@ -107,11 +118,9 @@ function ItemContainer(props) {
                                     {inspiration.results && inspiration.results.map((item, i) =>
                                         <img key={i} onClick={() => clickFilterImage('inspiredImage', item)}
                                             src={item.ref_img} alt="" />
-                                            
                                     )}
                                 </div>
                             </InfiniteScroll>
-
 
                         </div>
                     </div>
@@ -132,7 +141,7 @@ function ItemContainer(props) {
                         <InfiniteScroll
                             pageStart={0}
                             loadMore={loadProductFunc}
-                            hasMore={true || false}
+                            hasMore={hasMore}
                             useWindow={false}
                             loader={products.next &&
                                 <div key={1} className="d-flex justify-content-center mb-3">
