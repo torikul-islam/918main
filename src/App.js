@@ -128,6 +128,7 @@ function App(props) {
           <Route path="/workspace" render={(props) => <Workspace {...props}
             openMenu={openMenu}
             openModal={openModal}
+            addShoppingCard={addShoppingCard}
             handleCloseMenu={handleCloseMenu}
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard}

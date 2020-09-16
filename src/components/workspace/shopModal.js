@@ -13,7 +13,7 @@ import "./workspace.css";
 
 
 const ShopModal = (props) => {
-    const { product, closeModal, openModal } = props;
+    const { product, closeModal, openModal, addShoppingCard } = props;
     const token = localStorage.getItem('token');
     const [updateProduct, setUpdateProduct] = useState({});
     const [shoModal, setShoModal] = useState({ isOpen: false, name: null });
@@ -234,7 +234,7 @@ const ShopModal = (props) => {
                                             {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>
                                     }
-                                    <GoBtn text='Add to Shopping List' onClick={() => console.log("Add to cart")} />
+                                    <GoBtn text='Add to Shopping List' onClick={() => { closeModal(); addShoppingCard(updateProduct) }} />
                                 </div>
                             }
                         </div>

@@ -221,7 +221,7 @@ const InspirationModal = (props) => {
                                             {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>
                                     }
-                                    <GoBtn text='Add to Shopping List' onClick={() => console.log("Add to cart")} />
+                                    {/* <GoBtn text='Add to Shopping List' onClick={() => console.log("Add to cart")} /> */}
                                 </div>
                             }
                         </div>

@@ -13,6 +13,7 @@ import InspirationModal from './inspirationModal';
 
 
 const Workspace = (props) => {
+    const { addShoppingCard } = props;
     const [modal, setModal] = useState({ isOpen: false, name: null });
     const [product, setProduct] = useState({});
     const [projectProduct, setProjectProduct] = useState({});
@@ -173,10 +174,10 @@ const Workspace = (props) => {
                 closeModal={closeModal} />} />}
 
             {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props}
+                addShoppingCard={addShoppingCard}
                 product={product}
                 openModal={openModal}
                 closeModal={closeModal}
-
             />}
             />}
 
