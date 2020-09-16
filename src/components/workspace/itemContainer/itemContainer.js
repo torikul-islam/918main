@@ -3,8 +3,6 @@ import inspirationService from '../../../services/inspiredService';
 import productService from '../../../services/productService';
 import InfiniteScroll from 'react-infinite-scroller';
 import './itemContainer.css';
-import HorizontalScroll from 'react-scroll-horizontal'
-import ReactList from 'react-list';
 
 
 
@@ -157,7 +155,7 @@ function ItemContainer(props) {
                                     <div className='widthshopImage' key={i} >
                                         <img onClick={() => clickFilterImage('shopImage', item)}
                                             src={item.ref_img} alt="" />
-                                    </div>                                    
+                                    </div>
                                 )}
                                 <div className="loading"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
                             </div>
