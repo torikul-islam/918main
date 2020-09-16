@@ -14,6 +14,7 @@ function InspirationTitle(props) {
     const [error, setError] = useState(null);
     const token = localStorage.getItem('token');
     const [gotoBoard, setGotoBoard] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
 
 
     useEffect(() => {
@@ -31,25 +32,50 @@ function InspirationTitle(props) {
     }, [token]);
 
 
-    function addToBoard(product) {
+    function addToBoard(inspiration) {
         let data = new FormData();
         if (selectedValue) {
-            data.append('name', selectedValue);
-            data.append('room', product.rooms[0]);
-            data.append('styles', product.styles[0]);
-            data.append('inspirations', 4);
-            data.append('pieces', 1);
-
-            projectServices.createProject(data);
+            data.append('project', selectedProject);
+            data.append('x_percent', .5);
+            data.append('y_percent', .5);
+            data.append('z', 0);
+            data.append('width', 200);
+            data.append('height', 150);
+            data.append('inspiration', inspiration.uuid);
+            projectServices.addedItemToWorkspace(data);
             setGotoBoard(true);
         } else {
-            setError('Please! select one board')
+            setError('Please! select one board.');
         }
+
+
+        // let data = new FormData();
+        // if (selectedValue) {
+        //     data.append('name', selectedValue);
+        //     data.append('room', product.rooms[0]);
+        //     data.append('styles', product.styles[0]);
+        //     data.append('inspirations', 4);
+        //     data.append('pieces', 1);
+
+        //     projectServices.createProject(data);
+        //     setGotoBoard(true);
+        // } else {
+        //     setError('Please! select one board')
+        // }
     }
 
-    function handleChange(event) {
-        setSelectedValue(event.target.value);
-        setError(null);
+    function handleChange(e) {
+        const found = project.find(x => x.uuid === e.target.value);
+        if (found) {
+            setSelectedProject(e.target.value);
+            setSelectedValue(found.name);
+            setError(null);
+        }
+        projectServices.activeProject(e.target.value);
+
+
+        // setSelectedValue(event.target.value);
+        // setError(null);
     }
 
     if (inspired.length > 0) {
@@ -106,7 +132,7 @@ function InspirationTitle(props) {
                                                 <select name="cars" id="cars" onChange={handleChange}>
                                                     <option value="">Add to Board</option>
                                                     {project.map((item, i) =>
-                                                        <option key={i} value={item.name}>{item.name}</option>
+                                                        <option key={i} value={item.uuid}>{item.name}</option>
                                                     )}
                                                 </select>
                                             </li>

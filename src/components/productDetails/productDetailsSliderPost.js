@@ -27,7 +27,8 @@ function ProductDetailsSliderPost(data) {
 
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
-        window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize)
+        window.addEventListener("resize", handleResize);
+        window.addEventListener('load', handleResize)
     });
 
     function handleResize() {

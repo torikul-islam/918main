@@ -10,6 +10,7 @@ const ProductDetailsTitle = (props) => {
     const [selectedValue, setSelectedValue] = useState(null);
     const [error, setError] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
 
 
     if (product) {
@@ -31,21 +32,47 @@ const ProductDetailsTitle = (props) => {
     function addToBoard(product) {
         let data = new FormData();
         if (selectedValue) {
-            data.append('name', selectedValue);
-            data.append('room', product.piece.rooms[0]);
-            data.append('styles', product.piece.piece_category);
-            data.append('budget', product.price);
-            data.append('inspirations', 4);
-            data.append('pieces', product.piece.id);
-            projectService.createProject(data);
+            data.append('project', selectedProject);
+            data.append('x_percent', .5);
+            data.append('y_percent', .5);
+            data.append('z', 1);
+            data.append('width', 200);
+            data.append('height', 150);
+            data.append('product', product.uuid);
+            projectService.addedItemToWorkspace(data);
             setGotoBoard(true);
         } else {
-            setError('Please! select one board.')
+            setError('Please! select one board.');
         }
+
+
+        // let data = new FormData();
+        // if (selectedValue) {
+        //     data.append('name', selectedValue);
+        //     data.append('room', product.piece.rooms[0]);
+        //     data.append('styles', product.piece.piece_category);
+        //     data.append('budget', product.price);
+        //     data.append('inspirations', 4);
+        //     data.append('pieces', product.piece.id);
+        //     projectService.createProject(data);
+        //     setGotoBoard(true);
+        // } else {
+        //     setError('Please! select one board.')
+        // }
     }
-    function handleChange(event) {
-        setSelectedValue(event.target.value);
-        setError(null);
+    function handleChange(e) {
+        const found = project.find(x => x.uuid === e.target.value);
+        if (found) {
+            setSelectedProject(e.target.value);
+            setSelectedValue(found.name);
+            setError(null);
+        }
+        projectService.activeProject(e.target.value);
+
+
+
+        // setSelectedValue(event.target.value);
+        // setError(null);
     }
 
 
@@ -97,7 +124,7 @@ const ProductDetailsTitle = (props) => {
                                                 <select name="cars" id="cars" onChange={handleChange}>
                                                     <option value=''>Add to Board</option>
                                                     {project.map(item =>
-                                                        <option key={item.uuid} value={item.name}>{item.name}</option>
+                                                        <option key={item.uuid} value={item.uuid}>{item.name}</option>
                                                     )}
                                                 </select>
                                             </li>

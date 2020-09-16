@@ -43,8 +43,8 @@ const OnboardQ2 = (props) => {
                     </form>
 
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }
 

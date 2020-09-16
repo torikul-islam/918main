@@ -94,7 +94,6 @@ const ShopModal = (props) => {
     }, []);
 
     function addToBoard(product) {
-        console.log('product', product);
         let data = new FormData();
         if (selectedValue) {
             data.append('project', selectedProject);
