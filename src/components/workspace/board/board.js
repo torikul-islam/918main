@@ -84,7 +84,7 @@ const Board = (props) => {
             <div className="dragDrop">
                 <div className="container board-tilte">
                     <div className="boards-fiter">
-                        <ul className="for-desktop">
+                        <ul className="for-desktops">
                             <li><h4>Boards</h4></li>
                             <select onChange={handleChangeBoardName}>
                                 {projectBoardName.map((item, i) =>
@@ -94,17 +94,7 @@ const Board = (props) => {
                             {/* <li className="float-right">
                             <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
                         </li> */}
-                        </ul>
-
-                        <ul className="for-mobile">
-                            <li><h4>Boards</h4></li>
-                            <select onChange={handleChangeBoardName}>
-                                {projectBoardName.map((item, i) =>
-                                    <option key={i} value={item.uuid}>{item.name}</option>
-                                )}
-                            </select>
-
-                        </ul>
+                        </ul>                       
                     </div>
                     {userProject.workspace_items && <div className="middle-body">
                         {userProject.workspace_items.length === 0 ?
@@ -141,17 +131,7 @@ const Board = (props) => {
                 </div>
 
             </div>
-            <ul className="for-mobile">
-                <li><h4>Boards</h4></li>
-                <select onChange={handleChangeBoardName}>
-                    {projectBoardName.map((item, i) =>
-                        <option key={i} value={item.uuid}>{item.name}</option>
-                    )}
-                </select>
-                {/* <li className="float-right">
-                            <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
-                        </li> */}
-            </ul>
+            
         </>
     );
 };
