@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import projectService from '../../../services/projectService';
+import Draggable from 'react-draggable';
 import './board.css';
-import { Rnd } from 'react-rnd'
 
 
 
@@ -78,6 +78,8 @@ const Board = (props) => {
     }
 
 
+
+
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
@@ -95,7 +97,6 @@ const Board = (props) => {
                     </ul>
                 </div>
 
-
                 {userProject.workspace_items && <div className="middle-body">
                     {userProject.workspace_items.length === 0 ?
                         <div className="textmiddle">
@@ -104,7 +105,7 @@ const Board = (props) => {
                         </div>
                         :
                         userProject.workspace_items.map((item, i) =>
-                            <Rnd key={i}>
+                            <Draggable key={i}>
                                 <div onClick={() => handleBoardItem(item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
                                     className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
                                     <div>
@@ -113,7 +114,7 @@ const Board = (props) => {
 
                                     </div>
                                 </div>
-                            </Rnd>
+                            </Draggable>
                         )}
                 </div>}
 
