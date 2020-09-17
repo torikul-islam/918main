@@ -23,11 +23,10 @@ const Board = (props) => {
                 setUserProject(data);
             }
         })()
-    }, [isBoardItemAdded, activeBoard]);
+    }, [isBoardItemAdded, activeBoard,]);
 
 
     function handleBoardItem(item) {
-        console.log('image clicked');
         setSelectedBoardItem(item);
 
     }
@@ -37,11 +36,14 @@ const Board = (props) => {
             if (token) {
                 let { data } = await projectService.getAllProjectName();
                 let board = localStorage.getItem('boardName');
-                if (board) {
-                    data = [...data, { name: board }]
+                if (data && board) {
+                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
+                    setProjectBoardName([{ ...firstIdx }, ...data]);
+                } else {
+                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                    setProjectBoardName(data);
                 }
-                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProjectBoardName(data);
             }
         }
         )()
@@ -86,14 +88,11 @@ const Board = (props) => {
                 <div className="boards-fiter">
                     <ul className="for-desktops">
                         <li><h4>Boards</h4></li>
-                        <select onChange={handleChangeBoardName}>
+                        <select onChange={handleChangeBoardName} value={userProject.uuid} >
                             {projectBoardName.map((item, i) =>
                                 <option key={i} value={item.uuid}>{item.name}</option>
                             )}
                         </select>
-                        {/* <li className="float-right">
-                            <img src={require('../../../Asset/Images/upicon.png')} alt="upicon.png" />
-                        </li> */}
                     </ul>
                 </div>
 
@@ -111,7 +110,6 @@ const Board = (props) => {
                                     <div>
                                         <img style={{ width: item.width, height: item.height }}
                                             src={(item.product && item.product.ref_img) || (item.inspiration && item.inspiration.ref_img)} alt="" />
-
                                     </div>
                                 </div>
                             </Draggable>

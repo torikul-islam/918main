@@ -38,11 +38,15 @@ function ProductDetails(props) {
             if (token) {
                 let { data } = await projectServices.getProject();
                 let board = localStorage.getItem('boardName');
-                if (board) {
-                    data = [...data, { name: board }]
+
+                if (data && board) {
+                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
+                    setProject([{ ...firstIdx }, ...data]);
+                } else {
+                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                    setProject(data);
                 }
-                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProject(data);
             }
         })()
     }, [token]);

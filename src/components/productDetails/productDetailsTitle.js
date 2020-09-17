@@ -70,9 +70,6 @@ const ProductDetailsTitle = (props) => {
         projectService.activeProject(e.target.value);
 
 
-
-        // setSelectedValue(event.target.value);
-        // setError(null);
     }
 
 

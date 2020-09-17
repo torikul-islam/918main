@@ -53,7 +53,7 @@ const InspirationModal = (props) => {
                 setUserProject(data);
             }
         })()
-    }, []);
+    }, [setSelectedValue, localStorage.getItem('boardItem')]);
 
 
     async function onPageChange(val) {
@@ -92,14 +92,18 @@ const InspirationModal = (props) => {
             if (token) {
                 let { data } = await projectServices.getAllProjectName();
                 let board = localStorage.getItem('boardName');
-                if (board) {
-                    data = [...data, { name: board }]
-                }
-                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                if (data.length > 0) {
+                if (data && board) {
+                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
+                    setProjectBoardName([{ ...firstIdx }, ...data]);
+                    setSelectedValue(firstIdx.name);
+                    setSelectedProject(firstIdx.uuid)
+                } else {
+                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                    setProjectBoardName(data);
                     setSelectedValue(data[0].name)
+                    setSelectedProject(data[0].uuid)
                 }
-                setProjectBoardName(data);
             }
         }
         )()
@@ -115,6 +119,7 @@ const InspirationModal = (props) => {
             data.append('width', 200);
             data.append('height', 150);
             data.append('inspiration', inspiration.uuid);
+            projectServices.activeProject(inspiration.uuid);
             projectServices.addedItemToWorkspace(data);
             localStorage.setItem('boardItem', inspiration.uuid)
             setGotoBoard(true);
@@ -130,7 +135,7 @@ const InspirationModal = (props) => {
             setSelectedValue(found.name);
             setError(null);
         }
-        projectServices.activeProject(e.target.value);
+        // projectServices.activeProject(e.target.value);
     }
 
     useEffect(() => {

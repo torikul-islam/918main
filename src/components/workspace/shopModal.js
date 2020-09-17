@@ -23,7 +23,6 @@ const ShopModal = (props) => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [error, setError] = useState(null);
     const [gotoBoard, setGotoBoard] = useState(false);
-    const [project, setProject] = useState([]);
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
     const [productLike, setProductLike] = useState([]);
     const [projectBoardName, setProjectBoardName] = useState([]);
@@ -65,7 +64,7 @@ const ShopModal = (props) => {
                 setUserProject(data);
             }
         })()
-    }, []);
+    }, [localStorage.getItem('boardItem'), setSelectedProject]);
 
 
 
@@ -103,6 +102,7 @@ const ShopModal = (props) => {
             data.append('width', 200);
             data.append('height', 150);
             data.append('product', product.uuid);
+            projectServices.activeProject(product.uuid);
             projectServices.addedItemToWorkspace(data);
             localStorage.setItem('boardItem', product.uuid)
             setGotoBoard(true);
@@ -118,7 +118,7 @@ const ShopModal = (props) => {
             setSelectedValue(found.name);
             setError(null);
         }
-        projectServices.activeProject(e.target.value);
+        // projectServices.activeProject(e.target.value);
     }
 
 
@@ -127,14 +127,18 @@ const ShopModal = (props) => {
             if (token) {
                 let { data } = await projectServices.getAllProjectName();
                 let board = localStorage.getItem('boardName');
-                if (board) {
-                    data = [...data, { name: board }]
-                }
-                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                if (data.length > 0) {
+                if (board && board) {
+                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
+                    setProjectBoardName([{ ...firstIdx }, ...data])
+                    setSelectedValue(firstIdx.name)
+                    setSelectedProject(firstIdx.uuid)
+                } else {
+                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
                     setSelectedValue(data[0].name)
+                    setProjectBoardName(data);
+                    setSelectedProject(data[0].uuid)
                 }
-                setProjectBoardName(data);
             }
         }
         )()
