@@ -99,7 +99,7 @@ const Board = (props) => {
                 {userProject.workspace_items && <div className="middle-body">
                     {userProject.workspace_items.length === 0 ?
                         <div className="textmiddle">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            <i className="fa fa-plus-circle" aria-hidden="true"></i>
                             <h4>Click on any image to add it</h4>
                         </div>
                         :

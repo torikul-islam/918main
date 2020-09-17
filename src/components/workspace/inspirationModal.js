@@ -154,6 +154,7 @@ const InspirationModal = (props) => {
     }
 
     function handleInspiration(item) {
+        setGotoBoard(false)
         setUpdateInspiration(item);
     }
 

@@ -161,6 +161,7 @@ const ShopModal = (props) => {
     }
 
     function handleProduct(item) {
+        setGotoBoard(false)
         setUpdateProduct(item);
     }
 
