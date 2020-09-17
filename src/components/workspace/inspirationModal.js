@@ -53,7 +53,7 @@ const InspirationModal = (props) => {
                 setUserProject(data);
             }
         })()
-    }, [setSelectedValue, localStorage.getItem('boardItem')]);
+    }, [selectedValue, localStorage.getItem('boardItem')]);
 
 
     async function onPageChange(val) {
@@ -109,7 +109,7 @@ const InspirationModal = (props) => {
         )()
     }, [token]);
 
-    function addToBoard(inspiration) {
+    async function addToBoard(inspiration) {
         let data = new FormData();
         if (selectedValue) {
             data.append('project', selectedProject);
@@ -119,8 +119,8 @@ const InspirationModal = (props) => {
             data.append('width', 200);
             data.append('height', 150);
             data.append('inspiration', inspiration.uuid);
-            projectServices.activeProject(inspiration.uuid);
-            projectServices.addedItemToWorkspace(data);
+            await projectServices.activeProject(inspiration.uuid);
+            await projectServices.addedItemToWorkspace(data);
             localStorage.setItem('boardItem', inspiration.uuid)
             setGotoBoard(true);
         } else {

@@ -88,7 +88,7 @@ const Board = (props) => {
                 <div className="boards-fiter">
                     <ul className="for-desktops">
                         <li><h4>Boards</h4></li>
-                        <select onChange={handleChangeBoardName} value={userProject.uuid} >
+                        <select onChange={handleChangeBoardName} value={userProject.uuid}>
                             {projectBoardName.map((item, i) =>
                                 <option key={i} value={item.uuid}>{item.name}</option>
                             )}

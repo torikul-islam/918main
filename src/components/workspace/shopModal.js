@@ -64,7 +64,7 @@ const ShopModal = (props) => {
                 setUserProject(data);
             }
         })()
-    }, [localStorage.getItem('boardItem'), setSelectedProject]);
+    }, [localStorage.getItem('boardItem'), selectedProject]);
 
 
 
@@ -92,7 +92,7 @@ const ShopModal = (props) => {
         })()
     }, []);
 
-    function addToBoard(product) {
+    async function addToBoard(product) {
         let data = new FormData();
         if (selectedValue) {
             data.append('project', selectedProject);
@@ -102,8 +102,8 @@ const ShopModal = (props) => {
             data.append('width', 200);
             data.append('height', 150);
             data.append('product', product.uuid);
-            projectServices.activeProject(product.uuid);
-            projectServices.addedItemToWorkspace(data);
+            await projectServices.activeProject(product.uuid);
+            await projectServices.addedItemToWorkspace(data);
             localStorage.setItem('boardItem', product.uuid)
             setGotoBoard(true);
         } else {
