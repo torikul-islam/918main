@@ -128,7 +128,7 @@ const Board = (props) => {
                 </ul>
             </div>
             <div className="designerHelp">
-                <button type="button">Desinger Help</button>
+                <button type="button">Designer Help</button>
             </div>
         </div>
     );

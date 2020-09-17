@@ -113,6 +113,10 @@ font-family: "Helvetica-Bold";
     bottom: -60px;
     right: 0;
 }
+.designerHelp button {
+    font-size: 15px;
+    padding: 7px 14px;
+}
 }
 @media screen and (max-width: 1020px) and (min-width: 768px){
     .bottom-icons {
