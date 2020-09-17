@@ -11,7 +11,7 @@ import piecesService from '../../services/piecesService';
 
 class Onboard extends Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {
             rooms: [],
             styleIds: [],

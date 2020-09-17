@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import projectService from '../../services/projectService';
 import GoBtn from '../common/goBtn';
 import Input from '../common/input';
 import './boardName.css';
@@ -16,12 +17,19 @@ const BoardName = (props) => {
         setName(e.target.value);
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
         if (name.trim() === '') {
             setError("Name filed can't be empty!")
         } else {
             localStorage.setItem('boardName', name);
+            let data = new FormData();
+            data.append('name', name);
+            data.append('room', 1);
+            data.append('styles', 1);
+            data.append('inspirations', 1);
+            data.append('pieces', 10);
+            await projectService.createProject(data)
             const token = localStorage.getItem('token');
             if (!token) {
                 openModal('signup', true);
