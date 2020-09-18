@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/home';
 import Workspace from './components/workspace/workspace';
@@ -26,6 +26,8 @@ import AddInspiration from './components/admin/addinspiration/addinspiration';
 import Addproduct from './components/admin/addproduct/addproduct';
 import AddResource from './components/admin/addresource/addresource';
 import Editpages from './components/admin/editpages/editpages';
+import { createProductCart, getUserProductCart } from './services/cartService';
+import CartContext from './context/cartContext';
 import './App.css';
 
 
@@ -60,13 +62,35 @@ function App(props) {
   function addShoppingCard(item) {
     let card = [...shoppingCard];
     item.quantity = 1;
-    const index = card.findIndex(x => x.uuid === item.uuid);
+    const index = card.findIndex(x => x.product.uuid === item.uuid);
     if (index === -1) {
-      card = [item, ...card]
+      card.push({ uuid: card.length, quantity: 1, product: item });
+      saveCart(item);
     }
     setIsCardOpen(true);
     setShoppingCard(card);
   }
+
+  //fetch user product shopping cart
+  useEffect(() => {
+    (async function () {
+      const { data } = await getUserProductCart();
+      data.forEach(el => {
+        el.quantity = 1;
+      });
+      setShoppingCard(data);
+    })()
+  }, []);
+
+
+  // save user cart to backend
+  async function saveCart(item) {
+    let form = new FormData();
+    form.set('product', item.uuid)
+    await createProductCart(form)
+  }
+
+
 
   function itemControl(item, ops) {
     const card = [...shoppingCard];
@@ -91,9 +115,8 @@ function App(props) {
   const { name, isOpen, isMoodBoard } = modal;
 
   return (
-    <>
+    <CartContext.Provider value={{ shoppingCard, setShoppingCard }}>
       <main>
-
         <Card
           clickOutside={clickOutside}
           isCardOpen={isCardOpen}
@@ -225,7 +248,7 @@ function App(props) {
       {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
       {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />}
       <Footer />
-    </>
+    </CartContext.Provider>
   );
 }
 

@@ -1,12 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import GoBtn from '../common/goBtn';
+import CartContext from '../../context/cartContext';
+import { deleteProductCart } from '../../services/cartService';
 import '../card/card.css';
 
 
 
 
-function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }) {
+function Card({ isCardOpen, clickCard, itemControl, clickOutside }) {
     let wrapperRef = useRef(null);
+    const { shoppingCard, setShoppingCard } = useContext(CartContext);
 
     function total() {
         return shoppingCard.reduce((total, cur) => {
@@ -26,6 +29,15 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }
             clickOutside();
         }
     };
+
+    async function handleDeleteCartItem(item) {
+        let myCarts = [...shoppingCard];
+        myCarts.filter(p => p.uuid !== item.uuid);
+        setShoppingCard(myCarts);
+
+        // call backend server for delete cart item
+        await deleteProductCart(item.uuid);
+    }
 
     return (
         <>
@@ -56,22 +68,27 @@ function Card({ isCardOpen, clickCard, shoppingCard, itemControl, clickOutside }
                                 <div className="cart-item" key={i}>
                                     <div className="col-md-6 float-left" >
                                         <div className="shopping-img">
-                                            <img src={item.ref_img} alt="" />
+                                            <img src={item.product.ref_img} alt="" />
                                         </div>
                                     </div>
 
                                     <div className="col-md-6 float-right"  >
                                         <div className="Shopping-text">
-                                            <p>{item.retailer}</p>
-                                            <h5>{item.name}</h5>
+                                            <p>{item.product.retailer}</p>
+                                            <h5>{item.product.name}</h5>
                                             <div className="priceProduct">${item.price}</div>
                                             <div className="quantity">
                                                 Quantity
-                                            <span onClick={() => itemControl(item, '-')}>-</span>
+                                            <span onClick={() => itemControl(item, '-')}>
+                                                    -
+                                            </span>
                                                 {item.quantity}
-                                                <span onClick={() => itemControl(item, '+')}>+</span>
+                                                <span onClick={() => itemControl(item, '+')}>
+                                                    +
+                                                </span>
+                                                <span onClick={() => handleDeleteCartItem(item)}>del</span>
                                             </div>
-                                            <div onClick={() => window.open(item.ref_url, '_blank')} className="visit-retailer">
+                                            <div onClick={() => window.open(item.product.ref_url, '_blank')} className="visit-retailer">
                                                 <GoBtn text='Visit retailer' />
                                             </div>
                                         </div>
