@@ -31,9 +31,8 @@ function Card({ isCardOpen, clickCard, itemControl, clickOutside }) {
     };
 
     async function handleDeleteCartItem(item) {
-        let myCarts = [...shoppingCard];
-        myCarts.filter(p => p.uuid !== item.uuid);
-        setShoppingCard(myCarts);
+        const filterCart = shoppingCard.filter(p => p.uuid !== item.uuid);
+        setShoppingCard(filterCart);
 
         // call backend server for delete cart item
         await deleteProductCart(item.uuid);
@@ -86,7 +85,9 @@ function Card({ isCardOpen, clickCard, itemControl, clickOutside }) {
                                                 <span onClick={() => itemControl(item, '+')}>
                                                     +
                                                 </span>
-                                                <span onClick={() => handleDeleteCartItem(item)}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                                                <span onClick={() => handleDeleteCartItem(item)}>
+                                                    <i className="fa fa-trash" aria-hidden="true"></i>
+                                                </span>
                                             </div>
                                             <div onClick={() => window.open(item.product.ref_url, '_blank')} className="visit-retailer">
                                                 <GoBtn text='Visit retailer' />
