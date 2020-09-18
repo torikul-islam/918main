@@ -9,6 +9,7 @@ import Modal from '../common/modal/modal';
 import ShopModal from './shopModal';
 import InspirationModal from './inspirationModal';
 import WorkspaceContext from '../../context/workspaceContext';
+import inspiredService from '../../services/inspiredService';
 import './workspace.css';
 
 
@@ -26,30 +27,47 @@ const Workspace = (props) => {
     const [selectedPieces, setSelectedPieces] = useState([]);
     const [priceRange, setPriceRange] = useState([]);
 
-    const [projectBoards, setProjectBoards] = useState([]);
+    const [projects, setProjects] = useState([]);
+    const [gotoBoard, setGotoBoard] = useState(false);
+
+    const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] });
+    const [modalItem, setModalItem] = useState({})
 
 
 
+    // fetch all project
     useEffect(() => {
         (async function () {
             if (token) {
-                let { data } = await projectService.getAllProjectName();
-                let board = localStorage.getItem('boardName');
-                if (data && board) {
-                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-                    setProjectBoards([{ ...firstIdx }, ...data]);
-                } else {
-                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                    setProjectBoards(data);
+                let { data } = await projectService.getProject();
+                // let board = localStorage.getItem('boardName');
+                if (data) {
+                    // const firstIdx = data.find(b => (b.name.toLowerCase() === board.toLowerCase()) && b.is_active == false);
+                    const findActive = data.find(a => a.is_active === true);
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && findActive.name.toLowerCase() !== x.name.toLowerCase());
+                    setProjects([{ ...findActive }, ...data]);
                 }
+                //  else {
+                //     data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+                //     setProjects(data);
+                // }
             }
         }
         )()
-    }, [token]);
+    }, []);
+
+
+    // fet all inspiration
+    useEffect(() => {
+        (async function () {
+            const { data } = await inspiredService.getAllInspired();
+            // call the backend server and set response array in setProducts
+            setInspirations(data);
+        })()
+    }, []);
 
     async function handleChangeProjectBoards(e) {
-        let activeChanged = [...projectBoards];
+        let activeChanged = [...projects];
         activeChanged.forEach(p => {
             if (p.uuid === e.target.value) {
                 p.is_active = true
@@ -57,8 +75,53 @@ const Workspace = (props) => {
                 p.is_active = false;
             }
         });
-        setProjectBoards(activeChanged);
+        setProjects(activeChanged);
         await projectService.activeProject(e.target.value)
+    }
+
+    async function addedItemProjectBoards(item, type) {
+        if (!type) return;
+        const defaultProps = {
+            x_percent: 0.5,
+            y_percent: 0.5,
+            z: 1,
+            width: 200.0,
+            height: 150.0
+        };
+        let form = new FormData();
+        let oldBoards = [...projects];
+        const idx = oldBoards.findIndex(b => b.is_active === true);
+        if (type === 'product') {
+            oldBoards[idx].workspace_items.push({ ...defaultProps, product: item, inspiration: null });
+
+            form.append('project', oldBoards[idx].uuid);
+            form.append('x_percent', defaultProps.x_percent);
+            form.append('y_percent', defaultProps.y_percent);
+            form.append('z', defaultProps.z);
+            form.append('width', defaultProps.width);
+            form.append('height', defaultProps.height);
+            form.append('product', item.uuid);
+            await projectService.addedItemToWorkspace(form);
+            setGotoBoard(true);
+
+        } else if (type === 'inspiration') {
+            oldBoards[idx].workspace_items.push({ ...defaultProps, inspiration: item, product: null });
+
+            form.append('project', oldBoards[idx].uuid);
+            form.append('x_percent', defaultProps.x_percent);
+            form.append('y_percent', defaultProps.y_percent);
+            form.append('z', defaultProps.z);
+            form.append('width', defaultProps.width);
+            form.append('height', defaultProps.height);
+            form.append('inspiration', item.uuid);
+            await projectService.addedItemToWorkspace(form);
+            setGotoBoard(true);
+
+            // await projectServices.activeProject(inspiration.uuid);
+
+            // localStorage.setItem('boardItem', inspiration.uuid)
+        }
+        setProjects(oldBoards)
     }
 
 
@@ -66,24 +129,24 @@ const Workspace = (props) => {
         window.scrollTo(0, 0)
     }, [])
 
-    useEffect(() => {
-        (async function () {
-            // call the backend server and set response array in setProduct
-            setProduct([]);
-        })()
-    }, []);
+    // useEffect(() => {
+    //     (async function () {
+    //         // call the backend server and set response array in setProduct
+    //         setProduct([]);
+    //     })()
+    // }, []);
 
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        (async function () {
-            if (token) {
-                const { data } = await projectService.getUserProjectProduct();
-                // call the backend server and set response array in setProducts
-                setProjectProduct(data);
-            }
-        })()
-    }, []);
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    //     (async function () {
+    //         if (token) {
+    //             const { data } = await projectService.getUserProjectProduct();
+    //             // call the backend server and set response array in setProducts
+    //             setProjectProduct(data);
+    //         }
+    //     })()
+    // }, []);
 
 
     function clickStyleItem(item) {
@@ -150,8 +213,8 @@ const Workspace = (props) => {
     };
 
     function clickFilterImage(name, item) {
+        setModalItem(item);
         setModal({ isOpen: true, name: name })
-        setProduct(item)
     }
 
     function addImageToDrag(item) {
@@ -162,8 +225,12 @@ const Workspace = (props) => {
 
     const { name, isOpen } = modal;
 
+
     return (
-        <WorkspaceContext.Provider value={{ projectBoards, handleChangeProjectBoards }}>
+        <WorkspaceContext.Provider value={{
+            projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard,
+            inspirations, setInspirations, modalItem, setModalItem
+        }}>
             <>
                 <NavbarB  {...props}
                     onChangeSearch={onChangeSearch}
@@ -219,7 +286,6 @@ const Workspace = (props) => {
 
                 {name === 'inspiredImage' && <Modal isOpen={isOpen} childComp={<InspirationModal
                     {...props}
-                    inspirationItem={product}
                     openModal={openModal}
                     closeModal={closeModal}
                 />}

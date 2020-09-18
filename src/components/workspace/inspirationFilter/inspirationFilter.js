@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './inspirationFilter.css';
 import roomServices from '../../../services/roomServices';
 import styleServices from '../../../services/styleServices';
+import WorkspaceContext from '../../../context/workspaceContext';
 
 
 
@@ -11,6 +12,7 @@ const InspirationFilter = (props) => {
     const [openTab, setOpenTab] = useState('room');
     const [rooms, setRooms] = useState([]);
     const [style, setStyles] = useState([]);
+
 
 
     useEffect(() => {
@@ -54,49 +56,49 @@ const InspirationFilter = (props) => {
                             <div className={`nav-link pointer ${openTab === 'style' ? 'active disable' : ''}`} data-toggle="tab" onClick={() => clickTab('style')}>Style</div>
                         </li>
                     </ul>
-                    
+
                     <div className="tab-content">
                         <div id="home" className={`container tab-pane ${openTab === 'room' ? 'active' : 'fade'}`}><br />
-                        <div className="removeIconsinsp">
-                        <ul>
-                        {inspirationIds.room_ids && inspirationIds.room_ids.map((item, i) =>
-                                <li key={i}>
-                                    <img
-                                        onClick={() => clickRoomItem(item)}
-                                        className="removeIcon pointer"
-                                        src={require('../../../Asset/Icons/cross.png')}
-                                        alt="cross.png" />
-                                    {item.name}</li>
-                            )
-                            }
-                            </ul>
+                            <div className="removeIconsinsp">
+                                <ul>
+                                    {inspirationIds.room_ids && inspirationIds.room_ids.map((item, i) =>
+                                        <li key={i}>
+                                            <img
+                                                onClick={() => clickRoomItem(item)}
+                                                className="removeIcon pointer"
+                                                src={require('../../../Asset/Icons/cross.png')}
+                                                alt="cross.png" />
+                                            {item.name}</li>
+                                    )
+                                    }
+                                </ul>
                             </div>
-                            <br/>
+                            <br />
                             <ul className="list-category">
                                 {rooms.results && rooms.results.map((item, i) =>
                                     <li className={inspirationIds.room_ids.some(r => r.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickRoomItem(item)}>{item.name}</button></li>
                                 )}
                             </ul>
-                            
+
                         </div>
                         <div id="menu1" className={`container tab-pane ${openTab === 'style' ? 'active' : 'fade'}`}>
                             <br />
                             <div className="removeIconsinsp">
-                            <ul>
-                            {inspirationIds.style_ids && inspirationIds.style_ids.map((item, i) =>
-                                <li key={i}>
-                                    <img
-                                        onClick={() => clickStyleItem(item)}
-                                        className="removeIcon pointer"
-                                        src={require('../../../Asset/Icons/cross.png')}
-                                        alt="cross.png" />
-                                    {item.name}</li>
-                            )
-                            }
+                                <ul>
+                                    {inspirationIds.style_ids && inspirationIds.style_ids.map((item, i) =>
+                                        <li key={i}>
+                                            <img
+                                                onClick={() => clickStyleItem(item)}
+                                                className="removeIcon pointer"
+                                                src={require('../../../Asset/Icons/cross.png')}
+                                                alt="cross.png" />
+                                            {item.name}</li>
+                                    )
+                                    }
 
-                            </ul>
+                                </ul>
                             </div>
-                            <br/>
+                            <br />
                             <ul className="list-category">
                                 {style.results && style.results.map((item, i) =>
                                     <li className={inspirationIds.style_ids.some(s => s.pk === item.pk) ? 'activebtn' : ' '} key={i}> <button onClick={() => clickStyleItem(item)}>{item.name}</button></li>

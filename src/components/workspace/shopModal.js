@@ -38,59 +38,59 @@ const ShopModal = (props) => {
         setShoModal({ isOpen: false, name: null })
     };
 
-    useEffect(() => {
-        setUpdateProduct(product);
-    }, [product])
+    // useEffect(() => {
+    //     setUpdateProduct(product);
+    // }, [product])
 
 
-    useEffect(() => {
-        (async function () {
-            const token = localStorage.getItem('token');
-            if (token) {
-                const { data } = await productService.getUserProductLike();
-                if (data) {
-                    setProductLike(data);
-                }
-            }
-        })()
-    }, []);
+    // useEffect(() => {
+    //     (async function () {
+    //         const token = localStorage.getItem('token');
+    //         if (token) {
+    //             const { data } = await productService.getUserProductLike();
+    //             if (data) {
+    //                 setProductLike(data);
+    //             }
+    //         }
+    //     })()
+    // }, []);
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        (async function () {
-            if (token) {
-                let { data } = await projectServices.getUserProjectProduct();
-                // call the backend server and set response array in setProducts
-                setUserProject(data);
-            }
-        })()
-    }, [localStorage.getItem('boardItem'), selectedProject]);
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    //     (async function () {
+    //         if (token) {
+    //             let { data } = await projectServices.getUserProjectProduct();
+    //             // call the backend server and set response array in setProducts
+    //             setUserProject(data);
+    //         }
+    //     })()
+    // }, [localStorage.getItem('boardItem'), selectedProject]);
 
 
 
 
 
     async function onPageChange(val) {
-        const diff = products.results.length - (currentPage * pageSize * 2);
-        if (val === '-') {
-            setCurrentPage(currentPage - 1)
-        } else {
-            if (diff < pageSize && products.next !== null) {
-                const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
-                setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
-            }
-            setCurrentPage(currentPage + 1)
-        }
+        // const diff = products.results.length - (currentPage * pageSize * 2);
+        // if (val === '-') {
+        //     setCurrentPage(currentPage - 1)
+        // } else {
+        //     if (diff < pageSize && products.next !== null) {
+        //         const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
+        //         setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
+        //     }
+        //     setCurrentPage(currentPage + 1)
+        // }
     }
 
 
-    useEffect(() => {
-        (async function () {
-            const { data } = await productService.getAllProducts();
-            // call the backend server and set response array in setProducts
-            setProducts(data);
-        })()
-    }, []);
+    // useEffect(() => {
+    //     (async function () {
+    //         const { data } = await productService.getAllProducts();
+    //         // call the backend server and set response array in setProducts
+    //         setProducts(data);
+    //     })()
+    // }, []);
 
     async function addToBoard(product) {
         let data = new FormData();
@@ -122,27 +122,27 @@ const ShopModal = (props) => {
     }
 
 
-    useEffect(() => {
-        (async function () {
-            if (token) {
-                let { data } = await projectServices.getAllProjectName();
-                let board = localStorage.getItem('boardName');
-                if (board && board) {
-                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-                    setProjectBoardName([{ ...firstIdx }, ...data])
-                    setSelectedValue(firstIdx.name)
-                    setSelectedProject(firstIdx.uuid)
-                } else {
-                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                    setSelectedValue(data[0].name)
-                    setProjectBoardName(data);
-                    setSelectedProject(data[0].uuid)
-                }
-            }
-        }
-        )()
-    }, [token]);
+    // useEffect(() => {
+    //     (async function () {
+    //         if (token) {
+    //             let { data } = await projectServices.getAllProjectName();
+    //             let board = localStorage.getItem('boardName');
+    //             if (board && board) {
+    //                 const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
+    //                 data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
+    //                 setProjectBoardName([{ ...firstIdx }, ...data])
+    //                 setSelectedValue(firstIdx.name)
+    //                 setSelectedProject(firstIdx.uuid)
+    //             } else {
+    //                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+    //                 setSelectedValue(data[0].name)
+    //                 setProjectBoardName(data);
+    //                 setSelectedProject(data[0].uuid)
+    //             }
+    //         }
+    //     }
+    //     )()
+    // }, [token]);
 
 
     useEffect(() => {

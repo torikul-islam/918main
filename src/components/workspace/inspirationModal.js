@@ -14,8 +14,7 @@ import WorkspaceContext from '../../context/workspaceContext';
 
 
 const InspirationModal = (props) => {
-    let { inspirationItem, closeModal, openModal } = props;
-    const [updateInspiration, setUpdateInspiration] = useState({})
+    let { closeModal, openModal } = props;
     const token = localStorage.getItem('token');
     const [inspirationModal, setInspirationModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
@@ -23,15 +22,17 @@ const InspirationModal = (props) => {
     const [selectedValue, setSelectedValue] = useState(null);
     const [selectedProject, setSelectedProject] = useState(null);
     const [error, setError] = useState(null);
-    const [gotoBoard, setGotoBoard] = useState(false);
-    const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] });
+    // const [gotoBoard, setGotoBoard] = useState(false);
+    // const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] });
     const [inspirationLike, setInspirationLike] = useState([]);
     const [project, setProject] = useState([]);
     const [userProject, setUserProject] = useState({});
 
 
-    const workspaceContext = useContext(WorkspaceContext);
-    const { projectBoards, handleChangeProjectBoards } = workspaceContext
+
+    const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard,
+        inspirations, setInspirations, modalItem, setModalItem }
+        = useContext(WorkspaceContext);
 
     function openShopModal(name) {
         setInspirationModal({ isOpen: true, name: name });
@@ -41,43 +42,43 @@ const InspirationModal = (props) => {
         setInspirationModal({ isOpen: false, name: null })
     };
 
-    useEffect(() => {
-        setUpdateInspiration(inspirationItem)
-    }, [inspirationItem])
+    // useEffect(() => {
+    //     // setUpdateInspiration(inspirationItem)
+    // }, [inspirationItem])
 
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        (async function () {
-            if (token) {
-                let { data } = await projectServices.getUserProjectProduct();
-                // call the backend server and set response array in setProducts
-                setUserProject(data);
-            }
-        })()
-    }, [selectedValue, localStorage.getItem('boardItem')]);
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    //     (async function () {
+    //         if (token) {
+    //             let { data } = await projectServices.getUserProjectProduct();
+    //             // call the backend server and set response array in setProducts
+    //             setUserProject(data);
+    //         }
+    //     })()
+    // }, [selectedValue, localStorage.getItem('boardItem')]);
 
 
     async function onPageChange(val) {
-        const diff = inspiration.results.length - (currentPage * pageSize * 2);
+        const diff = inspirations.results.length - (currentPage * pageSize * 2);
         if (val === '-') {
             setCurrentPage(currentPage - 1)
         } else {
-            if (diff < pageSize && inspiration.next !== null) {
-                const { data } = await inspirationService.getAllInspired(inspiration.next.split('?')[1]);
-                setInspiration({ count: data.count, next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
+            if (diff < pageSize && inspirations.next !== null) {
+                const { data } = await inspirationService.getAllInspired(inspirations.next.split('?')[1]);
+                setInspirations({ count: data.count, next: data.next, previous: data.previous, results: [...inspirations.results, ...data.results] });
             }
             setCurrentPage(currentPage + 1)
         }
     }
 
-    useEffect(() => {
-        (async function () {
-            const { data } = await inspirationService.getAllInspired();
-            // call the backend server and set response array in setProducts
-            setInspiration(data);
-        })()
-    }, []);
+    // useEffect(() => {
+    //     (async function () {
+    //         const { data } = await inspirationService.getAllInspired();
+    //         // call the backend server and set response array in setProducts
+    //         setInspirations(data);
+    //     })()
+    // }, []);
 
     useEffect(() => {
         (async function () {
@@ -90,7 +91,7 @@ const InspirationModal = (props) => {
     }, []);
 
 
-    async function addToBoard(inspiration) {
+    async function addToBoard(inspirations) {
         let data = new FormData();
         if (selectedValue) {
             data.append('project', selectedProject);
@@ -99,18 +100,18 @@ const InspirationModal = (props) => {
             data.append('z', 0);
             data.append('width', 200);
             data.append('height', 150);
-            data.append('inspiration', inspiration.uuid);
-            await projectServices.activeProject(inspiration.uuid);
+            data.append('inspirations', inspirations.uuid);
+            await projectServices.activeProject(inspirations.uuid);
             await projectServices.addedItemToWorkspace(data);
-            localStorage.setItem('boardItem', inspiration.uuid)
-            setGotoBoard(true);
+            localStorage.setItem('boardItem', inspirations.uuid)
+            // setGotoBoard(true);
         } else {
             setError('Please! select one board.');
         }
     }
 
     function handleChange(e) {
-        const found = projectBoards.find(x => x.uuid === e.target.value);
+        const found = projects.find(x => x.uuid === e.target.value);
         if (found) {
             setSelectedProject(e.target.value);
             setSelectedValue(found.name);
@@ -135,14 +136,14 @@ const InspirationModal = (props) => {
     }
 
     function handleInspiration(item) {
-        setGotoBoard(false)
-        setUpdateInspiration(item);
+        // setGotoBoard(false)
+        setModalItem(item);
     }
 
-    async function handleInspirationLike(inspiration) {
+    async function handleInspirationLike(inspirations) {
         let form = new FormData();
-        setInspirationLike([...inspirationLike, { inspiration }])
-        form.set('inspiration', inspiration.uuid);
+        setInspirationLike([...inspirationLike, { inspirations }])
+        form.set('inspirations', inspirations.uuid);
         const token = localStorage.getItem('token');
         if (token) {
             await inspirationService.createInspirationLike(form);
@@ -152,8 +153,8 @@ const InspirationModal = (props) => {
     const { name, isOpen } = inspirationModal;
 
     let paginateInspiration = [];
-    if (inspiration.results) {
-        paginateInspiration = paginate(inspiration.results, currentPage, pageSize);
+    if (inspirations.results) {
+        paginateInspiration = paginate(inspirations.results, currentPage, pageSize);
     }
 
     return (
@@ -163,16 +164,16 @@ const InspirationModal = (props) => {
             </div>
             <div className='container-fluid mb-5 bg-white'>
                 <div className='container' >
-                    {updateInspiration && <div className="row" key={updateInspiration.uuid}>
+                    {modalItem && <div className="row" key={modalItem.uuid}>
                         <div className="col-sm-2"></div>
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
-                                <img src={updateInspiration.ref_img} alt="" />
+                                <img src={modalItem.ref_img} alt="" />
                                 <span className='icon'>
                                     <i
-                                        onClick={() => handleInspirationLike(updateInspiration)}
+                                        onClick={() => handleInspirationLike(modalItem)}
                                         style={{ cursor: "pointer" }}
-                                        className={`fa-2x ${inspirationLike.some(el => el.inspiration.uuid === updateInspiration.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        className={`fa-2x ${inspirationLike.some(el => el.inspiration.uuid === modalItem.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
                                         aria-hidden="true"
                                     />
                                 </span>
@@ -185,11 +186,11 @@ const InspirationModal = (props) => {
                                 <GoBtn text="Sign Up" type='button' onClick={() => openShopModal('signup')} />
                             </div> :
                                 <div className="text-fav text-center">
-                                    <h6>{updateInspiration.designed_by}</h6>
+                                    <h6>{modalItem.designed_by}</h6>
                                     {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">
-                                                <option value=''>Saved to {selectedValue}</option>
+                                                <option value=''>Saved to {projects.find(p => p.is_active === true).name}</option>
                                             </select>
                                         </li>
                                         <li className="saveSection">
@@ -198,21 +199,21 @@ const InspirationModal = (props) => {
                                     </ul>
                                         :
                                         <ul className="menu-name">
-                                            {projectBoards.length > 0 &&
+                                            {projects.length > 0 &&
                                                 <>
                                                     <li className="select_design">
-                                                        <select name="cars" id="cars" onChange={handleChangeProjectBoards} value={projectBoards.find(x => x.is_active === true).uuid}>
-                                                            {projectBoards.map((item, i) =>
+                                                        <select name="cars" id="cars" onChange={(e) => handleChangeProjectBoards(e)} value={projects.find(x => x.is_active === true).uuid}>
+                                                            {projects.map((item, i) =>
                                                                 <option key={i} value={item.uuid}>{item.name}</option>
                                                             )}
                                                         </select>
                                                     </li>
                                                     <li className="saveSection">
-                                                        <GoBtn text='Save' onClick={() => addToBoard(updateInspiration)} />
+                                                        <GoBtn text='Save' onClick={() => addedItemProjectBoards(modalItem, 'inspiration')} />
                                                     </li>
                                                 </>
                                             }
-                                            {error && <h6 className='board-error'>{error}</h6>}
+                                            {/* {error && <h6 className='board-error'>{error}</h6>} */}
                                         </ul>
                                     }
                                     {/* <GoBtn text='Add to Shopping List' onClick={() => console.log("Add to cart")} /> */}
@@ -232,13 +233,13 @@ const InspirationModal = (props) => {
                                 <div className='slider small-slide'>
                                     <div className='row'>
                                         {paginateInspiration && paginateInspiration.map((item, i) =>
-                                            <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
+                                            <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12 pointer' key={i}>
                                                 <img onClick={() => handleInspiration(item)} src={item.ref_img} alt="" />
                                                 <h2>{item.retailer}</h2>
                                             </div>
                                         )}
                                         <Pagination
-                                            itemsCount={inspiration.count}
+                                            itemsCount={inspirations.count}
                                             pageSize={pageSize}
                                             currentPage={currentPage}
                                             onPageChange={onPageChange}

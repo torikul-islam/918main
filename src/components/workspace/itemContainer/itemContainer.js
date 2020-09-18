@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import inspirationService from '../../../services/inspiredService';
 import productService from '../../../services/productService';
 import InfiniteScroll from 'react-infinite-scroller';
 import './itemContainer.css';
+import WorkspaceContext from '../../../context/workspaceContext';
 
 
 
 function ItemContainer(props) {
     const { openModal, clickFilterImage, inspirationFilter, productFilter } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
-    const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] })
+    // const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] })
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
     const [hasMore, setHasMore] = useState(true);
 
+    const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard,
+        inspirations, setInspirations, modalItem, setModalItem } = useContext(WorkspaceContext);
 
     useEffect(() => {
         let url = '';
@@ -28,16 +31,16 @@ function ItemContainer(props) {
         if (url === '') {
             (async function () {
                 const { data } = await inspirationService.getAllInspired();
-                setInspiration(data);
+                setInspirations(data);
             })()
         } else {
             (async function () {
                 const { data } = await inspirationService.getInspirationByUrl(url);
-                setInspiration(data);
+                setInspirations(data);
             })()
         }
 
-    }, [inspirationFilter]);
+    }, []);
 
     useEffect(() => {
         let url = '';
@@ -62,15 +65,16 @@ function ItemContainer(props) {
                 setProducts(data);
             })()
         }
-    }, [productFilter]);
+    }, []);
 
 
     async function loadInspiredFunc() {
-        if (inspiration.next !== null) {
-            const { data } = await inspirationService.getInspirationByUrl(inspiration.next.split('?')[1]);
-            setInspiration({ next: data.next, previous: data.previous, results: [...inspiration.results, ...data.results] });
+        if (inspirations.next !== null) {
+            const { data } = await inspirationService.getInspirationByUrl(inspirations.next.split('?')[1]);
+            setInspirations({ next: data.next, previous: data.previous, results: [...inspirations.results, ...data.results] });
         }
     }
+
     async function loadProductFunc() {
         if (products.next !== null) {
             const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
@@ -104,7 +108,7 @@ function ItemContainer(props) {
                                 loadMore={loadInspiredFunc}
                                 hasMore={hasMore}
                                 useWindow={false}
-                                loader={inspiration.next &&
+                                loader={inspirations.next &&
                                     <div key={1} className="d-flex justify-content-center mb-3">
                                         <div className="spinner-border" role="status">
                                             <span className="sr-only">Loading...</span>
@@ -113,7 +117,7 @@ function ItemContainer(props) {
                                 }
                             >
                                 <div className="workimage-ins mobilescroll">
-                                    {inspiration.results && inspiration.results.map((item, i) =>
+                                    {inspirations.results && inspirations.results.map((item, i) =>
                                         <img key={i} onClick={() => clickFilterImage('inspiredImage', item)}
                                             src={item.ref_img} alt="" />
                                     )}

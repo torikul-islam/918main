@@ -11,24 +11,24 @@ const Board = (props) => {
     const token = localStorage.getItem('token');
     const [selectedBoardItem, setSelectedBoardItem] = useState({});
     const [userProject, setUserProject] = useState({});
-    // const [projectBoards, setProjectBoards] = useState([]);
+    // const [projects, setProjectBoards] = useState([]);
     const isBoardItemAdded = localStorage.getItem('boardItem');
     const [activeBoard, setActiveBoard] = useState(null);
 
-    const { projectBoards, handleChangeProjectBoards } = useContext(WorkspaceContext);
-    // const { projectBoards, handleChangeProjectBoards } = workspaceContext;
+    const { projects, handleChangeProjectBoards } = useContext(WorkspaceContext);
+    // const { projects, handleChangeProjectBoards } = workspaceContext;
 
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        (async function () {
-            if (token) {
-                let { data } = await projectService.getUserProjectProduct();
-                // call the backend server and set response array in setProducts
-                setUserProject(data);
-            }
-        })()
-    }, [isBoardItemAdded, activeBoard,]);
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    //     (async function () {
+    //         if (token) {
+    //             let { data } = await projectService.getUserProjectProduct();
+    //             // call the backend server and set response array in setProducts
+    //             setUserProject(data);
+    //         }
+    //     })()
+    // }, [isBoardItemAdded, activeBoard,]);
 
 
     function handleBoardItem(e, item) {
@@ -93,34 +93,34 @@ const Board = (props) => {
                 <div className="boards-fiter">
                     <ul className="for-desktops">
                         <li><h4>Boards</h4></li>
-                        {projectBoards.length > 0 && <select onChange={handleChangeProjectBoards} value={projectBoards.find(x => x.is_active === true).uuid}>
-                            {projectBoards.map((item, i) =>
+                        {projects.length > 0 && <select onChange={handleChangeProjectBoards} value={projects.find(x => x.is_active === true).uuid}>
+                            {projects.map((item, i) =>
                                 <option key={i} value={item.uuid}>{item.name}</option>
                             )}
                         </select>}
                     </ul>
                 </div>
-
-                {userProject.workspace_items && <div className="middle-body">
-                    {userProject.workspace_items.length === 0 ?
-                        <div className="textmiddle">
-                            <i className="fa fa-plus-circle" aria-hidden="true"></i>
-                            <h4>Click on any image to add it</h4>
-                        </div>
-                        :
-                        userProject.workspace_items.map((item, i) =>
-                            <Draggable key={i} bounds='parent'>
-                                <div onTouchStart={(e) => handleBoardItem(e, item)} onClick={(e) => handleBoardItem(e, item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
-                                    className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
-                                    <div>
-                                        <img style={{ width: item.width, height: item.height }}
-                                            src={(item.product && item.product.ref_img) || (item.inspiration && item.inspiration.ref_img)} alt="" />
+                {projects.filter(p => (p.is_active === true)).map((item, i) =>
+                    <div className="middle-body" key={i}>
+                        {item.workspace_items.length === 0 ?
+                            <div className="textmiddle">
+                                <i className="fa fa-plus-circle" aria-hidden="true"></i>
+                                <h4>Click on any image to add it</h4>
+                            </div>
+                            :
+                            item.workspace_items.map((item, i) =>
+                                <Draggable key={i} bounds='parent'>
+                                    <div onTouchStart={(e) => handleBoardItem(e, item)} onClick={(e) => handleBoardItem(e, item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
+                                        className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
+                                        <div>
+                                            <img style={{ width: item.width, height: item.height }}
+                                                src={(item.product && item.product.ref_img) || (item.inspiration && item.inspiration.ref_img)} alt="" />
+                                        </div>
                                     </div>
-                                </div>
-                            </Draggable>
-                        )}
-                </div>}
-
+                                </Draggable>
+                            )}
+                    </div>
+                )}
             </div>
             <div className="bottom-icons">
                 <ul>
@@ -133,7 +133,7 @@ const Board = (props) => {
             <div className="designerHelp">
                 <button type="button">Designer Help</button>
             </div>
-        </div >
+        </div>
     );
 };
 
