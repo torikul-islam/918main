@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from "../common/goBtn";
 import ShopThreeSlide from '../shop/shopThreeSlide';
-import projectServices from '../../services/projectService';
 import productService from '../../services/productService';
 import Modal from '../common/modal/modal';
 import Signup from '../auth/signup';
 import Login from '../auth/login';
+import WorkspaceContext from '../../context/workspaceContext';
 import "./workspace.css";
 
 
 
 const ShopModal = (props) => {
-    const { product, closeModal, openModal, addShoppingCard } = props;
+    const { closeModal, openModal, addShoppingCard } = props;
     const token = localStorage.getItem('token');
-    const [updateProduct, setUpdateProduct] = useState({});
     const [shoModal, setShoModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
-    const [selectedValue, setSelectedValue] = useState(null);
-    const [selectedProject, setSelectedProject] = useState(null);
-    const [error, setError] = useState(null);
-    const [gotoBoard, setGotoBoard] = useState(false);
-    const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
     const [productLike, setProductLike] = useState([]);
-    const [projectBoardName, setProjectBoardName] = useState([]);
-    const [userProject, setUserProject] = useState({});
 
+
+    const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard, setGotoBoard,
+        modalItem, setModalItem, products, setProducts }
+        = useContext(WorkspaceContext);
 
 
     function openShopModal(name) {
@@ -38,111 +34,19 @@ const ShopModal = (props) => {
         setShoModal({ isOpen: false, name: null })
     };
 
-    // useEffect(() => {
-    //     setUpdateProduct(product);
-    // }, [product])
-
-
-    // useEffect(() => {
-    //     (async function () {
-    //         const token = localStorage.getItem('token');
-    //         if (token) {
-    //             const { data } = await productService.getUserProductLike();
-    //             if (data) {
-    //                 setProductLike(data);
-    //             }
-    //         }
-    //     })()
-    // }, []);
-
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     (async function () {
-    //         if (token) {
-    //             let { data } = await projectServices.getUserProjectProduct();
-    //             // call the backend server and set response array in setProducts
-    //             setUserProject(data);
-    //         }
-    //     })()
-    // }, [localStorage.getItem('boardItem'), selectedProject]);
-
-
-
-
 
     async function onPageChange(val) {
-        // const diff = products.results.length - (currentPage * pageSize * 2);
-        // if (val === '-') {
-        //     setCurrentPage(currentPage - 1)
-        // } else {
-        //     if (diff < pageSize && products.next !== null) {
-        //         const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
-        //         setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
-        //     }
-        //     setCurrentPage(currentPage + 1)
-        // }
-    }
-
-
-    // useEffect(() => {
-    //     (async function () {
-    //         const { data } = await productService.getAllProducts();
-    //         // call the backend server and set response array in setProducts
-    //         setProducts(data);
-    //     })()
-    // }, []);
-
-    async function addToBoard(product) {
-        let data = new FormData();
-        if (selectedValue) {
-            data.append('project', selectedProject);
-            data.append('x_percent', .5);
-            data.append('y_percent', .5);
-            data.append('z', 1);
-            data.append('width', 200);
-            data.append('height', 150);
-            data.append('product', product.uuid);
-            await projectServices.activeProject(product.uuid);
-            await projectServices.addedItemToWorkspace(data);
-            localStorage.setItem('boardItem', product.uuid)
-            setGotoBoard(true);
+        const diff = products.results.length - (currentPage * pageSize * 2);
+        if (val === '-') {
+            setCurrentPage(currentPage - 1)
         } else {
-            setError('Please! select one board.');
+            if (diff < pageSize && products.next !== null) {
+                const { data } = await productService.getProductByUrl(products.next.split('?')[1]);
+                setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
+            }
+            setCurrentPage(currentPage + 1)
         }
     }
-
-    function handleChange(e) {
-        const found = projectBoardName.find(x => x.uuid === e.target.value);
-        if (found) {
-            setSelectedProject(e.target.value);
-            setSelectedValue(found.name);
-            setError(null);
-        }
-        // projectServices.activeProject(e.target.value);
-    }
-
-
-    // useEffect(() => {
-    //     (async function () {
-    //         if (token) {
-    //             let { data } = await projectServices.getAllProjectName();
-    //             let board = localStorage.getItem('boardName');
-    //             if (board && board) {
-    //                 const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-    //                 data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-    //                 setProjectBoardName([{ ...firstIdx }, ...data])
-    //                 setSelectedValue(firstIdx.name)
-    //                 setSelectedProject(firstIdx.uuid)
-    //             } else {
-    //                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-    //                 setSelectedValue(data[0].name)
-    //                 setProjectBoardName(data);
-    //                 setSelectedProject(data[0].uuid)
-    //             }
-    //         }
-    //     }
-    //     )()
-    // }, [token]);
 
 
     useEffect(() => {
@@ -162,7 +66,7 @@ const ShopModal = (props) => {
 
     function handleProduct(item) {
         setGotoBoard(false)
-        setUpdateProduct(item);
+        setModalItem(item);
     }
 
 
@@ -190,16 +94,16 @@ const ShopModal = (props) => {
             </div>
             <div className='container-fluid mb-5 bg-white'>
                 <div className='container' >
-                    {updateProduct && <div className="row" key={updateProduct.uuid}>
+                    {modalItem && <div className="row" key={modalItem.uuid}>
                         <div className="col-sm-2"></div>
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
-                                <img src={updateProduct.ref_img} alt="" />
+                                <img src={modalItem.ref_img} alt="" />
                                 <span className='icon'>
                                     <i
-                                        onClick={() => handleProductLike(updateProduct)}
+                                        onClick={() => handleProductLike(modalItem)}
                                         style={{ cursor: "pointer" }}
-                                        className={`fa-2x ${productLike.some(el => el.product.uuid === updateProduct.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        className={`fa-2x ${productLike.some(el => el.product.uuid === modalItem.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
                                         aria-hidden="true"
                                     />
                                 </span>
@@ -213,13 +117,13 @@ const ShopModal = (props) => {
                                 <GoBtn text="Sign Up" type='button' onClick={() => openShopModal('signup')} />
                             </div> :
                                 <div className="text-fav text-center">
-                                    <h6>{updateProduct.retailer}</h6>
-                                    <span>{updateProduct.name}</span>
-                                    <p>${updateProduct.price}</p>
+                                    <h6>{modalItem.retailer}</h6>
+                                    <span>{modalItem.name}</span>
+                                    <p>${modalItem.price}</p>
                                     {gotoBoard ? <ul className="menu-name">
                                         <li className="select_design">
                                             <select name="cars" id="cars">
-                                                <option value=''>Saved to {selectedValue}</option>
+                                                <option value=''>Saved to {projects.find(p => p.is_active === true).name}</option>
                                             </select>
                                         </li>
                                         <li className="saveSection">
@@ -228,20 +132,25 @@ const ShopModal = (props) => {
                                     </ul>
                                         :
                                         <ul className="menu-name">
-                                            <li className="select_design">
-                                                <select name="cars" id="cars" onChange={handleChange}>
-                                                    {projectBoardName.map((item, i) =>
-                                                        <option key={i} value={item.uuid}>{item.name}</option>
-                                                    )}
-                                                </select>
-                                            </li>
-                                            <li className="saveSection">
-                                                <GoBtn text='Save' onClick={() => addToBoard(updateProduct)} />
-                                            </li>
-                                            {error && <h6 className='board-error'>{error}</h6>}
+                                            {projects.length > 0 &&
+                                                <>
+                                                    <li className="select_design">
+                                                        <select name="cars" id="cars"
+                                                            onChange={(e) => handleChangeProjectBoards(e)}
+                                                            value={projects.find(x => x.is_active === true).uuid}>
+                                                            {projects.map((item, i) =>
+                                                                <option key={i} value={item.uuid}>{item.name}</option>
+                                                            )}
+                                                        </select>
+                                                    </li>
+                                                    <li className="saveSection">
+                                                        <GoBtn text='Save' onClick={() => addedItemProjectBoards(modalItem, 'product')} />
+                                                    </li>
+                                                </>
+                                            }
                                         </ul>
                                     }
-                                    <GoBtn text='Add to Shopping List' onClick={() => { closeModal(); addShoppingCard(updateProduct) }} />
+                                    <GoBtn text='Add to Shopping List' onClick={() => { closeModal(); addShoppingCard(modalItem) }} />
                                 </div>
                             }
                         </div>
@@ -258,7 +167,7 @@ const ShopModal = (props) => {
                                 <div className='slider small-slide'>
                                     <div className='row'>
                                         {paginateProducts && paginateProducts.map((item, i) =>
-                                            <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
+                                            <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12 pointer' key={i}>
                                                 <img onClick={() => handleProduct(item)} src={item.ref_img} alt="" />
                                                 <h2>{item.retailer}</h2>
                                             </div>

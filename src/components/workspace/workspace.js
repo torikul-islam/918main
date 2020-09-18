@@ -11,6 +11,7 @@ import InspirationModal from './inspirationModal';
 import WorkspaceContext from '../../context/workspaceContext';
 import inspiredService from '../../services/inspiredService';
 import './workspace.css';
+import productService from '../../services/productService';
 
 
 
@@ -31,6 +32,9 @@ const Workspace = (props) => {
     const [gotoBoard, setGotoBoard] = useState(false);
 
     const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] });
+    const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
+
+
     const [modalItem, setModalItem] = useState({})
 
 
@@ -63,6 +67,14 @@ const Workspace = (props) => {
             const { data } = await inspiredService.getAllInspired();
             // call the backend server and set response array in setProducts
             setInspirations(data);
+        })()
+    }, []);
+
+    useEffect(() => {
+        (async function () {
+            // call the backend server and set response array in setProduct
+            const { data } = await productService.getAllProducts()
+            setProducts(data);
         })()
     }, []);
 
@@ -228,8 +240,8 @@ const Workspace = (props) => {
 
     return (
         <WorkspaceContext.Provider value={{
-            projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard,
-            inspirations, setInspirations, modalItem, setModalItem
+            projects, setProjects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard, setGotoBoard,
+            inspirations, setInspirations, modalItem, setModalItem, products, setProducts
         }}>
             <>
                 <NavbarB  {...props}

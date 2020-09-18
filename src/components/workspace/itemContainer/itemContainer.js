@@ -10,12 +10,9 @@ import WorkspaceContext from '../../../context/workspaceContext';
 function ItemContainer(props) {
     const { openModal, clickFilterImage, inspirationFilter, productFilter } = props;
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
-    // const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] })
-    const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] })
     const [hasMore, setHasMore] = useState(true);
 
-    const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard,
-        inspirations, setInspirations, modalItem, setModalItem } = useContext(WorkspaceContext);
+    const { inspirations, setInspirations, products, setProducts } = useContext(WorkspaceContext);
 
     useEffect(() => {
         let url = '';
@@ -86,7 +83,6 @@ function ItemContainer(props) {
         if (window.innerWidth <= 768) {
             setHasMore(false)
         }
-        console.log('width', window.innerWidth);
     })
 
 

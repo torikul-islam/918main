@@ -1,88 +1,44 @@
 import React, { useState, useEffect, useContext } from 'react';
 import projectService from '../../../services/projectService';
 import Draggable from 'react-draggable';
-import './board.css';
 import WorkspaceContext from '../../../context/workspaceContext';
+import './board.css';
 
 
 
-const Board = (props) => {
-    const { dragImage, addImageToDrag } = props;
-    const token = localStorage.getItem('token');
+const Board = () => {
     const [selectedBoardItem, setSelectedBoardItem] = useState({});
-    const [userProject, setUserProject] = useState({});
-    // const [projects, setProjectBoards] = useState([]);
-    const isBoardItemAdded = localStorage.getItem('boardItem');
-    const [activeBoard, setActiveBoard] = useState(null);
+    const { projects, setProjects, handleChangeProjectBoards } = useContext(WorkspaceContext);
 
-    const { projects, handleChangeProjectBoards } = useContext(WorkspaceContext);
-    // const { projects, handleChangeProjectBoards } = workspaceContext;
-
-
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     (async function () {
-    //         if (token) {
-    //             let { data } = await projectService.getUserProjectProduct();
-    //             // call the backend server and set response array in setProducts
-    //             setUserProject(data);
-    //         }
-    //     })()
-    // }, [isBoardItemAdded, activeBoard,]);
 
 
     function handleBoardItem(e, item) {
         e.preventDefault();
         setSelectedBoardItem(item);
-
-    }
-
-    // useEffect(() => {
-    //     (async function () {
-    //         if (token) {
-    //             let { data } = await projectService.getAllProjectName();
-    //             let board = localStorage.getItem('boardName');
-    //             if (data && board) {
-    //                 const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-    //                 data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-    //                 setProjectBoards([{ ...firstIdx }, ...data]);
-    //             } else {
-    //                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-    //                 setProjectBoards(data);
-    //             }
-    //         }
-    //     }
-    //     )()
-    // }, [token]);
-
-
-    function handleChangeBoardName(e) {
-        projectService.activeProject(e.target.value);
-        setActiveBoard(e.target.value);
     }
 
     async function handleDeleteItem(item) {
-        let originalProject = { ...userProject }
+        let originalProject = { ...projects }
         originalProject.workspace_items = originalProject.workspace_items.filter(el => el.uuid !== item.uuid);
-        setUserProject(originalProject)
+        setProjects(originalProject)
         await projectService.workspaceItemDelete(item.uuid);
     }
 
     function handleCopyItem(item) {
-        let originalProject = { ...userProject };
+        let originalProject = { ...projects };
         originalProject.workspace_items = [...originalProject.workspace_items, { ...item, uuid: originalProject.workspace_items.length }];
-        setUserProject(originalProject)
+        setProjects(originalProject)
     }
 
     function handleZAxis(type, item) {
-        let originProject = { ...userProject };
+        let originProject = { ...projects };
         const index = originProject.workspace_items.findIndex(el => el.uuid === item.uuid);
         if (type === 'up') {
             originProject.workspace_items[index].z += 1;
         } else {
             originProject.workspace_items[index].z -= 1;
         }
-        setUserProject(originProject)
+        setProjects(originProject)
     }
 
 

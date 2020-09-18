@@ -3,13 +3,12 @@ import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from "../common/goBtn";
 import ShopThreeSlide from '../shop/shopThreeSlide';
-import projectServices from '../../services/projectService';
 import inspirationService from '../../services/inspiredService';
-import "./workspace.css";
 import Modal from '../common/modal/modal';
 import Signup from '../auth/signup';
 import Login from '../auth/login';
 import WorkspaceContext from '../../context/workspaceContext';
+import "./workspace.css";
 
 
 
@@ -19,14 +18,7 @@ const InspirationModal = (props) => {
     const [inspirationModal, setInspirationModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(4);
-    const [selectedValue, setSelectedValue] = useState(null);
-    const [selectedProject, setSelectedProject] = useState(null);
-    const [error, setError] = useState(null);
-    // const [gotoBoard, setGotoBoard] = useState(false);
-    // const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] });
     const [inspirationLike, setInspirationLike] = useState([]);
-    const [project, setProject] = useState([]);
-    const [userProject, setUserProject] = useState({});
 
 
 
@@ -42,22 +34,6 @@ const InspirationModal = (props) => {
         setInspirationModal({ isOpen: false, name: null })
     };
 
-    // useEffect(() => {
-    //     // setUpdateInspiration(inspirationItem)
-    // }, [inspirationItem])
-
-
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     (async function () {
-    //         if (token) {
-    //             let { data } = await projectServices.getUserProjectProduct();
-    //             // call the backend server and set response array in setProducts
-    //             setUserProject(data);
-    //         }
-    //     })()
-    // }, [selectedValue, localStorage.getItem('boardItem')]);
-
 
     async function onPageChange(val) {
         const diff = inspirations.results.length - (currentPage * pageSize * 2);
@@ -72,13 +48,6 @@ const InspirationModal = (props) => {
         }
     }
 
-    // useEffect(() => {
-    //     (async function () {
-    //         const { data } = await inspirationService.getAllInspired();
-    //         // call the backend server and set response array in setProducts
-    //         setInspirations(data);
-    //     })()
-    // }, []);
 
     useEffect(() => {
         (async function () {
@@ -90,35 +59,6 @@ const InspirationModal = (props) => {
         })()
     }, []);
 
-
-    async function addToBoard(inspirations) {
-        let data = new FormData();
-        if (selectedValue) {
-            data.append('project', selectedProject);
-            data.append('x_percent', .5);
-            data.append('y_percent', .5);
-            data.append('z', 0);
-            data.append('width', 200);
-            data.append('height', 150);
-            data.append('inspirations', inspirations.uuid);
-            await projectServices.activeProject(inspirations.uuid);
-            await projectServices.addedItemToWorkspace(data);
-            localStorage.setItem('boardItem', inspirations.uuid)
-            // setGotoBoard(true);
-        } else {
-            setError('Please! select one board.');
-        }
-    }
-
-    function handleChange(e) {
-        const found = projects.find(x => x.uuid === e.target.value);
-        if (found) {
-            setSelectedProject(e.target.value);
-            setSelectedValue(found.name);
-            setError(null);
-        }
-        // projectServices.activeProject(e.target.value);
-    }
 
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
@@ -136,7 +76,6 @@ const InspirationModal = (props) => {
     }
 
     function handleInspiration(item) {
-        // setGotoBoard(false)
         setModalItem(item);
     }
 
@@ -202,7 +141,8 @@ const InspirationModal = (props) => {
                                             {projects.length > 0 &&
                                                 <>
                                                     <li className="select_design">
-                                                        <select name="cars" id="cars" onChange={(e) => handleChangeProjectBoards(e)} value={projects.find(x => x.is_active === true).uuid}>
+                                                        <select name="cars" id="cars" onChange={(e) => handleChangeProjectBoards(e)}
+                                                            value={projects.find(x => x.is_active === true).uuid}>
                                                             {projects.map((item, i) =>
                                                                 <option key={i} value={item.uuid}>{item.name}</option>
                                                             )}
@@ -213,7 +153,6 @@ const InspirationModal = (props) => {
                                                     </li>
                                                 </>
                                             }
-                                            {/* {error && <h6 className='board-error'>{error}</h6>} */}
                                         </ul>
                                     }
                                     {/* <GoBtn text='Add to Shopping List' onClick={() => console.log("Add to cart")} /> */}
