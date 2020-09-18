@@ -82,8 +82,11 @@ const ShopModal = (props) => {
 
     async function handleProductLike(product) {
         let form = new FormData();
-        form.set('product', product.uuid);
+        let likes = [...productLike];
+        likes.push({ uuid: likes.length, product: product })
         setProductLike([...productLike, { product }]);
+
+        form.set('product', product.uuid);
         const token = localStorage.getItem('token');
         if (token) {
             await productService.createProductLike(form);

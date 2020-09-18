@@ -80,7 +80,9 @@ const InspirationModal = (props) => {
     }
 
     async function handleInspirationLike(inspirations) {
-        setInspirationLike([...inspirationLike, { inspirations }])
+        let likes = [...inspirationLike];
+        likes.push({ uuid: likes.length, inspiration: inspirations })
+        setInspirationLike(likes)
 
         let form = new FormData();
         form.set('inspiration', inspirations.uuid);
