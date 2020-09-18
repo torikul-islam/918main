@@ -60,7 +60,7 @@ function App(props) {
     }
   }
 
-  function addShoppingCard(item) {
+  async function addShoppingCard(item) {
     let card = [...shoppingCard];
     item.quantity = 1;
     const index = card.findIndex(x => x.product.uuid === item.uuid);
@@ -69,7 +69,6 @@ function App(props) {
       saveCart(item);
     }
     setIsCardOpen(true);
-    setShoppingCard(card);
   }
 
   //fetch user product shopping cart
@@ -90,7 +89,12 @@ function App(props) {
   async function saveCart(item) {
     let form = new FormData();
     form.set('product', item.uuid)
-    await createProductCart(form)
+    await createProductCart(form);
+    const { data } = await getUserProductCart();
+    data.forEach(el => {
+      el.quantity = 1;
+    });
+    setShoppingCard(data);
   }
 
 
