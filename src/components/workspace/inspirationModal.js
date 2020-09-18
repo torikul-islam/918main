@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Pagination from '../common/pagination';
 import paginate from '../../utils/paginate';
 import GoBtn from "../common/goBtn";
@@ -9,6 +9,7 @@ import "./workspace.css";
 import Modal from '../common/modal/modal';
 import Signup from '../auth/signup';
 import Login from '../auth/login';
+import WorkspaceContext from '../../context/workspaceContext';
 
 
 
@@ -26,10 +27,11 @@ const InspirationModal = (props) => {
     const [inspiration, setInspiration] = useState({ count: null, next: null, previous: null, results: [] });
     const [inspirationLike, setInspirationLike] = useState([]);
     const [project, setProject] = useState([]);
-    const [projectBoardName, setProjectBoardName] = useState([]);
     const [userProject, setUserProject] = useState({});
 
 
+    const workspaceContext = useContext(WorkspaceContext);
+    const { projectBoards, handleChangeProjectBoards } = workspaceContext
 
     function openShopModal(name) {
         setInspirationModal({ isOpen: true, name: name });
@@ -87,27 +89,6 @@ const InspirationModal = (props) => {
         })()
     }, []);
 
-    useEffect(() => {
-        (async function () {
-            if (token) {
-                let { data } = await projectServices.getAllProjectName();
-                let board = localStorage.getItem('boardName');
-                if (data && board) {
-                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-                    setProjectBoardName([{ ...firstIdx }, ...data]);
-                    setSelectedValue(firstIdx.name);
-                    setSelectedProject(firstIdx.uuid)
-                } else {
-                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                    setProjectBoardName(data);
-                    setSelectedValue(data[0].name)
-                    setSelectedProject(data[0].uuid)
-                }
-            }
-        }
-        )()
-    }, [token]);
 
     async function addToBoard(inspiration) {
         let data = new FormData();
@@ -129,7 +110,7 @@ const InspirationModal = (props) => {
     }
 
     function handleChange(e) {
-        const found = projectBoardName.find(x => x.uuid === e.target.value);
+        const found = projectBoards.find(x => x.uuid === e.target.value);
         if (found) {
             setSelectedProject(e.target.value);
             setSelectedValue(found.name);
@@ -217,16 +198,20 @@ const InspirationModal = (props) => {
                                     </ul>
                                         :
                                         <ul className="menu-name">
-                                            <li className="select_design">
-                                                <select name="cars" id="cars" onChange={handleChange}>
-                                                    {projectBoardName.map((item, i) =>
-                                                        <option key={i} value={item.uuid}>{item.name}</option>
-                                                    )}
-                                                </select>
-                                            </li>
-                                            <li className="saveSection">
-                                                <GoBtn text='Save' onClick={() => addToBoard(updateInspiration)} />
-                                            </li>
+                                            {projectBoards.length > 0 &&
+                                                <>
+                                                    <li className="select_design">
+                                                        <select name="cars" id="cars" onChange={handleChangeProjectBoards} value={projectBoards.find(x => x.is_active === true).uuid}>
+                                                            {projectBoards.map((item, i) =>
+                                                                <option key={i} value={item.uuid}>{item.name}</option>
+                                                            )}
+                                                        </select>
+                                                    </li>
+                                                    <li className="saveSection">
+                                                        <GoBtn text='Save' onClick={() => addToBoard(updateInspiration)} />
+                                                    </li>
+                                                </>
+                                            }
                                             {error && <h6 className='board-error'>{error}</h6>}
                                         </ul>
                                     }

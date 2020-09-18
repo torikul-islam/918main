@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import projectService from '../../../services/projectService';
-import Draggable, { DraggableCore } from 'react-draggable';
+import Draggable from 'react-draggable';
 import './board.css';
+import WorkspaceContext from '../../../context/workspaceContext';
 
 
 
@@ -10,9 +11,13 @@ const Board = (props) => {
     const token = localStorage.getItem('token');
     const [selectedBoardItem, setSelectedBoardItem] = useState({});
     const [userProject, setUserProject] = useState({});
-    const [projectBoardName, setProjectBoardName] = useState([]);
+    // const [projectBoards, setProjectBoards] = useState([]);
     const isBoardItemAdded = localStorage.getItem('boardItem');
     const [activeBoard, setActiveBoard] = useState(null);
+
+    const { projectBoards, handleChangeProjectBoards } = useContext(WorkspaceContext);
+    // const { projectBoards, handleChangeProjectBoards } = workspaceContext;
+
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -32,23 +37,23 @@ const Board = (props) => {
 
     }
 
-    useEffect(() => {
-        (async function () {
-            if (token) {
-                let { data } = await projectService.getAllProjectName();
-                let board = localStorage.getItem('boardName');
-                if (data && board) {
-                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-                    setProjectBoardName([{ ...firstIdx }, ...data]);
-                } else {
-                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                    setProjectBoardName(data);
-                }
-            }
-        }
-        )()
-    }, [token]);
+    // useEffect(() => {
+    //     (async function () {
+    //         if (token) {
+    //             let { data } = await projectService.getAllProjectName();
+    //             let board = localStorage.getItem('boardName');
+    //             if (data && board) {
+    //                 const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
+    //                 data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
+    //                 setProjectBoards([{ ...firstIdx }, ...data]);
+    //             } else {
+    //                 data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
+    //                 setProjectBoards(data);
+    //             }
+    //         }
+    //     }
+    //     )()
+    // }, [token]);
 
 
     function handleChangeBoardName(e) {
@@ -88,11 +93,11 @@ const Board = (props) => {
                 <div className="boards-fiter">
                     <ul className="for-desktops">
                         <li><h4>Boards</h4></li>
-                        <select onChange={handleChangeBoardName} value={userProject.uuid}>
-                            {projectBoardName.map((item, i) =>
+                        {projectBoards.length > 0 && <select onChange={handleChangeProjectBoards} value={projectBoards.find(x => x.is_active === true).uuid}>
+                            {projectBoards.map((item, i) =>
                                 <option key={i} value={item.uuid}>{item.name}</option>
                             )}
-                        </select>
+                        </select>}
                     </ul>
                 </div>
 
@@ -128,7 +133,7 @@ const Board = (props) => {
             <div className="designerHelp">
                 <button type="button">Designer Help</button>
             </div>
-        </div>
+        </div >
     );
 };
 
