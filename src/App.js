@@ -34,6 +34,7 @@ import './App.css';
 
 
 function App(props) {
+  const token = localStorage.getItem('token')
   const [modal, setModal] = useState({ isOpen: false, name: null, isMoodBoard: false });
   const [openMenu, setOpenMenu] = useState(false);
   const [isCardOpen, setIsCardOpen] = useState(false);
@@ -74,11 +75,13 @@ function App(props) {
   //fetch user product shopping cart
   useEffect(() => {
     (async function () {
-      const { data } = await getUserProductCart();
-      data.forEach(el => {
-        el.quantity = 1;
-      });
-      setShoppingCard(data);
+      if (token) {
+        const { data } = await getUserProductCart();
+        data.forEach(el => {
+          el.quantity = 1;
+        });
+        setShoppingCard(data);
+      }
     })()
   }, []);
 
