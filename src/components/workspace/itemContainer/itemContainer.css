@@ -183,7 +183,7 @@
 .widthshopImage {
   width: 100%;
   margin-left: 20px;
-  min-width: 80%;
+  min-width: 50%;
 }
 .styleformobile .titleInspire h4 {
   display: none;
