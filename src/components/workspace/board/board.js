@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import projectService from '../../../services/projectService';
-import Draggable from 'react-draggable';
+import Draggable, { DraggableCore } from 'react-draggable';
 import './board.css';
 
 
@@ -26,7 +26,8 @@ const Board = (props) => {
     }, [isBoardItemAdded, activeBoard,]);
 
 
-    function handleBoardItem(item) {
+    function handleBoardItem(e, item) {
+        e.preventDefault();
         setSelectedBoardItem(item);
 
     }
@@ -81,7 +82,6 @@ const Board = (props) => {
 
 
 
-
     return (
         <div className="dragDrop">
             <div className="container board-tilte">
@@ -104,8 +104,8 @@ const Board = (props) => {
                         </div>
                         :
                         userProject.workspace_items.map((item, i) =>
-                            <Draggable key={i}>
-                                <div onClick={() => handleBoardItem(item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
+                            <Draggable key={i} bounds='parent'>
+                                <div onTouchStart={(e) => handleBoardItem(e, item)} onClick={(e) => handleBoardItem(e, item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
                                     className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
                                     <div>
                                         <img style={{ width: item.width, height: item.height }}
