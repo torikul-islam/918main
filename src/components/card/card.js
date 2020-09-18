@@ -86,7 +86,7 @@ function Card({ isCardOpen, clickCard, itemControl, clickOutside }) {
                                                 <span onClick={() => itemControl(item, '+')}>
                                                     +
                                                 </span>
-                                                <span onClick={() => handleDeleteCartItem(item)}>del</span>
+                                                <span onClick={() => handleDeleteCartItem(item)}><i className="fa fa-trash" aria-hidden="true"></i></span>
                                             </div>
                                             <div onClick={() => window.open(item.product.ref_url, '_blank')} className="visit-retailer">
                                                 <GoBtn text='Visit retailer' />
