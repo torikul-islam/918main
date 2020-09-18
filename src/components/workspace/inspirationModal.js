@@ -80,9 +80,10 @@ const InspirationModal = (props) => {
     }
 
     async function handleInspirationLike(inspirations) {
-        let form = new FormData();
         setInspirationLike([...inspirationLike, { inspirations }])
-        form.set('inspirations', inspirations.uuid);
+
+        let form = new FormData();
+        form.set('inspiration', inspirations.uuid);
         const token = localStorage.getItem('token');
         if (token) {
             await inspirationService.createInspirationLike(form);
@@ -108,14 +109,14 @@ const InspirationModal = (props) => {
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
                                 <img src={modalItem.ref_img} alt="" />
-                                <span className='icon'>
+                                {inspirationLike.length > 0 && <span className='icon'>
                                     <i
                                         onClick={() => handleInspirationLike(modalItem)}
                                         style={{ cursor: "pointer" }}
-                                        className={`fa-2x ${inspirationLike.some(el => el.inspiration.uuid === modalItem.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        className={`fa-2x ${inspirationLike.some(el => el.inspiration.uuid === modalItem.uuid) ? 'fa fa-heart disable' : 'fa fa-heart-o'}`}
                                         aria-hidden="true"
                                     />
-                                </span>
+                                </span>}
                             </div>
                         </div>
                         <div className="col-sm-6 shop-modal-title">

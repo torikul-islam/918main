@@ -34,6 +34,16 @@ const ShopModal = (props) => {
         setShoModal({ isOpen: false, name: null })
     };
 
+    useEffect(() => {
+        (async function () {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const { data } = await productService.getUserProductLike();
+                setProductLike(data)
+            }
+        })()
+    }, []);
+
 
     async function onPageChange(val) {
         const diff = products.results.length - (currentPage * pageSize * 2);
@@ -99,14 +109,14 @@ const ShopModal = (props) => {
                         <div className="col-sm-3">
                             <div className="image-fav-modal">
                                 <img src={modalItem.ref_img} alt="" />
-                                <span className='icon'>
+                                {productLike.length > 0 && <span className='icon'>
                                     <i
                                         onClick={() => handleProductLike(modalItem)}
                                         style={{ cursor: "pointer" }}
-                                        className={`fa-2x ${productLike.some(el => el.product.uuid === modalItem.uuid) ? 'fa fa-heart' : 'fa fa-heart-o'}`}
+                                        className={`fa-2x ${productLike.some(el => el.product.uuid === modalItem.uuid) ? 'fa fa-heart disable' : 'fa fa-heart-o'}`}
                                         aria-hidden="true"
                                     />
-                                </span>
+                                </span>}
                             </div>
                         </div>
                         <div className="col-sm-6 shop-modal-title">
