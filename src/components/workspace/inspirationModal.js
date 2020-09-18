@@ -13,7 +13,7 @@ import "./workspace.css";
 
 
 const InspirationModal = (props) => {
-    let { closeModal, openModal } = props;
+    let { closeModal } = props;
     const token = localStorage.getItem('token');
     const [inspirationModal, setInspirationModal] = useState({ isOpen: false, name: null });
     const [currentPage, setCurrentPage] = useState(0);

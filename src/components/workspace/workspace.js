@@ -12,6 +12,7 @@ import WorkspaceContext from '../../context/workspaceContext';
 import inspiredService from '../../services/inspiredService';
 import './workspace.css';
 import productService from '../../services/productService';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -19,8 +20,6 @@ const Workspace = (props) => {
     const { addShoppingCard } = props;
     const token = localStorage.getItem('token');
     const [modal, setModal] = useState({ isOpen: false, name: null });
-    const [product, setProduct] = useState({});
-    const [projectProduct, setProjectProduct] = useState({});
     const [inspirationFilter, setInspirationFilter] = useState({ room_ids: [], style_ids: [] })
     const [dragImage, setDragImage] = useState([]);
 
@@ -141,24 +140,6 @@ const Workspace = (props) => {
         window.scrollTo(0, 0)
     }, [])
 
-    // useEffect(() => {
-    //     (async function () {
-    //         // call the backend server and set response array in setProduct
-    //         setProduct([]);
-    //     })()
-    // }, []);
-
-
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     (async function () {
-    //         if (token) {
-    //             const { data } = await projectService.getUserProjectProduct();
-    //             // call the backend server and set response array in setProducts
-    //             setProjectProduct(data);
-    //         }
-    //     })()
-    // }, []);
 
 
     function clickStyleItem(item) {
@@ -221,6 +202,7 @@ const Workspace = (props) => {
     };
 
     function closeModal() {
+        setGotoBoard(false);
         setModal({ isOpen: false, name: null })
     };
 
@@ -251,7 +233,6 @@ const Workspace = (props) => {
                     <div className="row styleformobile">
                         <div className="col-md-4 col-sm-12">
                             <ItemContainer
-                                projectProduct={projectProduct}
                                 clickFilterImage={clickFilterImage}
                                 openModal={openModal}
                                 inspirationFilter={{
@@ -290,7 +271,6 @@ const Workspace = (props) => {
 
                 {name === 'shopImage' && <Modal isOpen={isOpen} childComp={<ShopModal {...props}
                     addShoppingCard={addShoppingCard}
-                    product={product}
                     openModal={openModal}
                     closeModal={closeModal}
                 />}
@@ -315,4 +295,4 @@ const Workspace = (props) => {
 }
 
 
-export default Workspace;
+export default withRouter(Workspace);

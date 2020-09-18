@@ -125,7 +125,7 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path="/workspace" component={(props) => <Workspace {...props}
+          <Route path="/workspace" render={(props) => <Workspace {...props}
             openMenu={openMenu}
             openModal={openModal}
             addShoppingCard={addShoppingCard}
