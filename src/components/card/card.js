@@ -76,7 +76,7 @@ function Card({ isCardOpen, clickCard, itemControl, clickOutside }) {
                                         <div className="Shopping-text">
                                             <p>{item.product.retailer}</p>
                                             <h5>{item.product.name}</h5>
-                                            <div className="priceProduct">${item.price}</div>
+                                            <div className="priceProduct">${item.product.price}</div>
                                             <div className="quantity">
                                                 Quantity
                                             <span onClick={() => itemControl(item, '-')}>
