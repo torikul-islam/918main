@@ -45,9 +45,7 @@ const Workspace = (props) => {
         (async function () {
             if (token) {
                 let { data } = await projectService.getProject();
-                // let board = localStorage.getItem('boardName');
                 if (data.length > 0) {
-                    // const firstIdx = data.find(b => (b.name.toLowerCase() === board.toLowerCase()) && b.is_active == false);
                     let findActive = data.find(a => a.is_active === true);
                     if (!findActive) {
                         findActive = { ...data[0], is_active: true };
@@ -55,10 +53,7 @@ const Workspace = (props) => {
                     data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && findActive.name.toLowerCase() !== x.name.toLowerCase());
                     setProjects([{ ...findActive }, ...data]);
                 }
-                //  else {
-                //     data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                //     setProjects(data);
-                // }
+
             }
         }
         )()

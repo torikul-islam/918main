@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import NavbarB from '../nav/navbarB';
 import ProductDetailsTitle from './productDetailsTitle';
 import ProductDetailsSlider from './postDetailsSlider';
@@ -9,6 +9,7 @@ import ShopThreeSlide from '../shop/shopThreeSlide';
 import Modal from '../common/modal/modal';
 import Signup from '../auth/signup';
 import Login from '../auth/login';
+import WorkspaceContext from '../../context/workspaceContext';
 
 
 
@@ -20,6 +21,9 @@ function ProductDetails(props) {
     const [project, setProject] = useState([]);
     const token = localStorage.getItem('token');
 
+
+    const works = useContext(WorkspaceContext);
+    console.log('works', works);
 
 
     useEffect(() => {
@@ -33,22 +37,23 @@ function ProductDetails(props) {
         })()
     }, [props.match.params.id]);
 
+
+
     useEffect(() => {
         (async function () {
             if (token) {
                 let { data } = await projectServices.getProject();
-                let board = localStorage.getItem('boardName');
-
-                if (data && board) {
-                    const firstIdx = data.find(b => b.name.toLowerCase() === board.toLowerCase())
-                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && firstIdx.uuid !== x.uuid);
-                    setProject([{ ...firstIdx }, ...data]);
-                } else {
-                    data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                    setProject(data);
+                if (data.length > 0) {
+                    let findActive = data.find(a => a.is_active === true);
+                    if (!findActive) {
+                        findActive = { ...data[0], is_active: true };
+                    }
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && findActive.name.toLowerCase() !== x.name.toLowerCase());
+                    setProject([{ ...findActive }, ...data]);
                 }
             }
-        })()
+        }
+        )()
     }, [token]);
 
     useEffect(() => {

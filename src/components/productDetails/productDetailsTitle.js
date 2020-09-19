@@ -32,7 +32,7 @@ const ProductDetailsTitle = (props) => {
     function addToBoard(product) {
         let data = new FormData();
         if (selectedValue) {
-            data.append('project', selectedProject);
+            data.append('project', project.find(p => p.is_active === true).uuid);
             data.append('x_percent', .5);
             data.append('y_percent', .5);
             data.append('z', 1);
@@ -44,21 +44,6 @@ const ProductDetailsTitle = (props) => {
         } else {
             setError('Please! select one board.');
         }
-
-
-        // let data = new FormData();
-        // if (selectedValue) {
-        //     data.append('name', selectedValue);
-        //     data.append('room', product.piece.rooms[0]);
-        //     data.append('styles', product.piece.piece_category);
-        //     data.append('budget', product.price);
-        //     data.append('inspirations', 4);
-        //     data.append('pieces', product.piece.id);
-        //     projectService.createProject(data);
-        //     setGotoBoard(true);
-        // } else {
-        //     setError('Please! select one board.')
-        // }
     }
     function handleChange(e) {
         const found = project.find(x => x.uuid === e.target.value);
@@ -68,8 +53,6 @@ const ProductDetailsTitle = (props) => {
             setError(null);
         }
         projectService.activeProject(e.target.value);
-
-
     }
 
 
