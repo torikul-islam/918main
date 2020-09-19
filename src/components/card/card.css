@@ -155,17 +155,18 @@ div.estimateTotal .margin-custom {
     text-align: left !important;
   }
   .shopincards.shopingpostion{
-    height: 82vh;
+    height: 83vh;
+    overflow: scroll;
   }
 }
 @media screen and (max-width: 359px) and (min-width: 320px) {
   .shopincards.shopingpostion{
-    height: 79vh;
+    height: 81vh;
   }
 }
 @media screen and (max-width: 374px) and (min-width: 360px) {
   .shopincards.shopingpostion{
-    height: 81vh;
+    height: 83vh;
   }
 }
 @media screen and (max-width: 450px) and (min-width: 414px) {
@@ -191,7 +192,8 @@ div.estimateTotal .margin-custom {
     position: relative;
   }
   .shopincards.shopingpostion{
-    height: 91vh;
+    height: 92vh;
+    overflow: scroll;
   }
 }
 @media screen and (max-width: 1366px) and (min-width: 1301px) {
@@ -200,6 +202,7 @@ div.estimateTotal .margin-custom {
     position: relative;
   }
   .shopincards.shopingpostion{
-    height: 88vh;
+    height: 89vh;
+    overflow: scroll;
   }
 }
