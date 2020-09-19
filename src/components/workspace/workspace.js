@@ -46,9 +46,12 @@ const Workspace = (props) => {
             if (token) {
                 let { data } = await projectService.getProject();
                 // let board = localStorage.getItem('boardName');
-                if (data) {
+                if (data.length > 0) {
                     // const firstIdx = data.find(b => (b.name.toLowerCase() === board.toLowerCase()) && b.is_active == false);
-                    const findActive = data.find(a => a.is_active === true);
+                    let findActive = data.find(a => a.is_active === true);
+                    if (!findActive) {
+                        findActive = { ...data[0], is_active: true };
+                    }
                     data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && findActive.name.toLowerCase() !== x.name.toLowerCase());
                     setProjects([{ ...findActive }, ...data]);
                 }
@@ -104,8 +107,12 @@ const Workspace = (props) => {
         let form = new FormData();
         let oldBoards = [...projects];
         const idx = oldBoards.findIndex(b => b.is_active === true);
+
         if (type === 'product') {
-            oldBoards[idx].workspace_items.push({ ...defaultProps, product: item, inspiration: null });
+            oldBoards[idx].workspace_items.push({
+                ...defaultProps, product: item, inspiration: null,
+                uuid: oldBoards[idx].workspace_items.length
+            });
 
             form.append('project', oldBoards[idx].uuid);
             form.append('x_percent', defaultProps.x_percent);
@@ -118,7 +125,10 @@ const Workspace = (props) => {
             setGotoBoard(true);
 
         } else if (type === 'inspiration') {
-            oldBoards[idx].workspace_items.push({ ...defaultProps, inspiration: item, product: null });
+            oldBoards[idx].workspace_items.push({
+                ...defaultProps, inspiration: item, product: null,
+                uuid: oldBoards[idx].workspace_items.length
+            });
 
             form.append('project', oldBoards[idx].uuid);
             form.append('x_percent', defaultProps.x_percent);

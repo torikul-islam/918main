@@ -18,14 +18,14 @@ const Board = () => {
     }
 
     async function handleDeleteItem(item) {
-        console.log('item', item);
         let originalProject = [...projects];
         const idx = originalProject.findIndex(p => p.is_active === true);
+
         if (idx !== -1) {
-            let element = originalProject[idx].workspace_items;
-            element = element.filter(el => el.uuid !== item.uuid);
+            originalProject[idx].workspace_items = originalProject[idx].workspace_items.filter(el => el.uuid !== item.uuid);
         }
-        setProjects(originalProject)
+        setProjects(originalProject);
+
         await projectService.workspaceItemDelete(item.uuid);
     }
 
@@ -50,7 +50,6 @@ const Board = () => {
         }
         setProjects(originProject)
     }
-
 
     return (
         <div className="dragDrop">
