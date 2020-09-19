@@ -45,7 +45,7 @@ function LoginNext(props) {
                             <div className='skip'>
                                 <h6>
                                     You can also skip the questions and just get started.
-                                    </h6>
+                                </h6>
                                 <GoBtn text='Go' onClick={clickBoard} />
                             </div>
                             <div className='continue'>

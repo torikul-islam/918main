@@ -7,7 +7,7 @@ import './slider.css';
 
 
 const SliderPost = ({ data }) => {
-
+    console.log(data);
     return (
         <section className="post-slide-main">
             <div className="container">
@@ -15,7 +15,7 @@ const SliderPost = ({ data }) => {
                     {data && data.map(item =>
                         <div className="col-md-3 c0l-3" key={item.uuid}>
                             <div className="image-post-slide">
-                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                     <div>
                                         <img src={item.ref_img} alt="" />
                                     </div>

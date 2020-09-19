@@ -85,7 +85,7 @@ const HeaderHome = (props) => {
                             <div className="row">
                                 <div className="col-sm-8">
                                     <div className="image-bg">
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`}>
                                             <img src={item.ref_img} alt="" />
                                         </Link>
                                     </div>

@@ -94,6 +94,7 @@ function Home(props) {
         props.history.push(`/blog/${item.uuid}/${item.rooms[0]}`)
     }
 
+
     return (
         <div>
             <HeaderHome searchData={searchData} clickSearchItem={clickSearchItem} onChangeSearch={onChangeSearch} data={post.slice(0, 1)}  {...props} />

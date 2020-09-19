@@ -104,7 +104,6 @@ function Blog(props) {
 
     }
 
-
     return (
         <>
             <BlogHead

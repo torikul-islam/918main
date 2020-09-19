@@ -24,7 +24,7 @@ function BlogSlider(props) {
                             <div className='row'>
                                 {paginateResource && paginateResource.map((item, i) =>
                                     <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                             <div>
                                                 <img src={item.ref_img} alt="" />
                                             </div>

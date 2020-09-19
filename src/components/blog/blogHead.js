@@ -65,7 +65,7 @@ const BlogHead = (props) => {
                             )}
                         </div>
                     </div>
-                </div >
+                </div>
             </div>
             <SocialIcons />
             <Subscribe />
