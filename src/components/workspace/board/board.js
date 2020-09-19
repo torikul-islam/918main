@@ -18,6 +18,8 @@ const Board = () => {
     }
 
     async function handleDeleteItem(item) {
+        if (Object.keys(item).length === 0) return;
+
         let originalProject = [...projects];
         const idx = originalProject.findIndex(p => p.is_active === true);
 
@@ -30,6 +32,8 @@ const Board = () => {
     }
 
     function handleCopyItem(item) {
+        if (Object.keys(item).length === 0) return;
+
         let originalProject = [...projects];
         const idx = originalProject.findIndex(p => p.is_active === true);
 
@@ -41,6 +45,8 @@ const Board = () => {
     }
 
     function handleZAxis(type, item) {
+        if (Object.keys(item).length === 0) return;
+
         let originProject = [...projects];
         const index = originProject.findIndex(el => el.is_active === true);
         if (type === 'up') {
