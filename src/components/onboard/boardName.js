@@ -66,7 +66,6 @@ const BoardName = (props) => {
                             placeholder='Enter Name'
                             error={error}
                         />
-
                         <div className='next-btn'>
                             <GoBtn text='Next' type='submit' />
                         </div>

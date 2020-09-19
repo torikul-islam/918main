@@ -12,7 +12,6 @@ import Account from './components/account/account';
 import Blog from './components/blog/blog';
 import InspirationDetails from './components/InspirationDetails/inspirationDetails';
 import Looks from './components/looks/looks';
-import AdminHome from './components/admin/adminHome';
 import ProductDetails from './components/productDetails/productDetails';
 import Card from './components/card/card';
 import Modal from './components/common/modal/modal';
@@ -22,10 +21,6 @@ import LoginNext from './components/auth/loginNext';
 import BoardName from './components/onboard/boardName';
 import CreateBoard from './components/onboard/createBoard';
 import Onboard from './components/onboard/onboard';
-import AddInspiration from './components/admin/addinspiration/addinspiration';
-import Addproduct from './components/admin/addproduct/addproduct';
-import AddResource from './components/admin/addresource/addresource';
-import Editpages from './components/admin/editpages/editpages';
 import { createProductCart, getUserProductCart } from './services/cartService';
 import CartContext from './context/cartContext';
 import './App.css';
@@ -82,7 +77,7 @@ function App(props) {
         setShoppingCard(data);
       }
     })()
-  }, []);
+  }, [token]);
 
 
   // save user cart to backend
@@ -239,18 +234,13 @@ function App(props) {
             handleOpenMenu={handleOpenMenu}
             clickCard={clickCard} />} exact />
 
-          <Route path='/admin' component={AdminHome} />
-          <Route path='/add-product' component={Addproduct} />
-          <Route path='/add-resource' component={AddResource} />
-          <Route path='/add-inspiration' component={AddInspiration} />
-          <Route path='/edit-pages' component={Editpages} />
 
         </Switch>
 
       </main>
       {name === 'signup' && <Modal isOpen={isOpen} childComp={<Signup isMoodBoard={isMoodBoard} openModal={openModal} closeModal={closeModal} />} />}
       {name === 'login' && <Modal isOpen={isOpen} childComp={<Login isMoodBoard={isMoodBoard} openModal={openModal} closeModal={closeModal} />} />}
-      {name === 'loginNext' && <Modal isOpen={isOpen} childComp={< LoginNext openModal={openModal} closeModal={closeModal} />} />}
+      {name === 'loginNext' && <Modal isOpen={isOpen} childComp={<LoginNext openModal={openModal} closeModal={closeModal} />} />}
       {name === 'boardName' && <Modal isOpen={isOpen} childComp={<BoardName openModal={openModal} closeModal={closeModal} />} />}
       {name === 'createBoard' && <Modal isOpen={isOpen} childComp={<CreateBoard openModal={openModal} closeModal={closeModal} />} />}
       {name === 'onboard' && <Modal isOpen={isOpen} childComp={<Onboard openModal={openModal} closeModal={closeModal} />} />}

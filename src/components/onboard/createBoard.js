@@ -102,7 +102,6 @@ function CreateBoard(props) {
                                     type='password'
                                     error={errors['password'] && errors['password'][0]}
                                 />
-
                             </div>
                             <div className='cb-btn'>
                                 <GoBtn text='Create Board' type='submit' />
