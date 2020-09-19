@@ -91,7 +91,7 @@ function Home(props) {
         }
     }
     function clickSearchItem(item) {
-        props.history.push(`/blog/${item.uuid}/${item.rooms[0]}`)
+        props.history.push(`/blog/${item.uuid}/${item.rooms[0].id}`)
     }
 
 

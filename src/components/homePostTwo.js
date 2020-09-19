@@ -16,7 +16,7 @@ const HomePostTwo = ({ data }) => {
                             <div className="row">
                                 <div className="col-sm-5">
                                     <div className="craete-img">
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`}>
                                             <img src={item.ref_img} alt="" />
                                         </Link>
                                     </div>
@@ -24,7 +24,7 @@ const HomePostTwo = ({ data }) => {
                                 <div className="col-sm-7">
                                     <div className="craete-text">
                                         <h5>{item.source}</h5>
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                             <h2>{capitalize(item.title)}</h2>
                                         </Link>
                                         <p>{item.content}</p>

@@ -21,7 +21,7 @@ const ThreeSlide = ({ data, count, pageSize, currentPage, onPageChange }) => {
                         <div className='row'>
                             {paginateData && paginateData.map((item, i) =>
                                 <div className='col-xl-3 col-lg-3 col-md-3 col-sm-12' key={i}>
-                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                    <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                         <img src={item.ref_img} alt="" />
                                         <h3>{capitalize(item.title)}</h3>
                                     </Link>

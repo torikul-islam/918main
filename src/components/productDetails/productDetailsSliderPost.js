@@ -66,7 +66,7 @@ function ProductDetailsSliderPost(data) {
                             {paginateRes && paginateRes.map(item =>
                                 <div className="col-sm-3" key={item.uuid}>
                                     <div className="image-post-slide">
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                             <div>
                                                 <img src={item.ref_img || ""} alt="" />
                                             </div>
