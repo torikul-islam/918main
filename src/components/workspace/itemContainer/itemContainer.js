@@ -94,7 +94,7 @@ function ItemContainer(props) {
                     <h4>Be Inspired.</h4>
                     <div>
                         <button className="filter" onClick={() => openModal('inspired')}>
-                            <h6>Filters{downarrow}</h6>
+                            <h6>Filters {downarrow}</h6>
                         </button>
                     </div>
                     <div>
