@@ -7,7 +7,6 @@ import './slider.css';
 
 
 const SliderPost = ({ data }) => {
-    console.log(data);
     return (
         <section className="post-slide-main">
             <div className="container">
