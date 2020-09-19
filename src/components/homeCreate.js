@@ -37,7 +37,7 @@ const HomeCreate = ({ data, rooms, onSelectOption, compname }) => {
                         <div key={i}>
                             <div className="col-sm-6" style={{ float: "left" }}>
                                 <div className={compname === "learn" ? "craete-img-learn" : "craete-img"}>
-                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`}>
+                                    <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`}>
                                         <img src={item.ref_img} alt="" />
                                     </Link>
                                 </div>
@@ -45,12 +45,12 @@ const HomeCreate = ({ data, rooms, onSelectOption, compname }) => {
                             <div className="col-sm-6" key={i} style={{ float: "right" }}>
                                 <div className="craete-text-hero" >
                                     <h5>{item.source}</h5>
-                                    <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                    <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                         <h2>{capitalize(item.title)}</h2>
                                     </Link>
                                     <p>{item.content}</p>
                                     <div className="read-more">
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                             <button>Read More</button>
                                         </Link>
                                     </div>

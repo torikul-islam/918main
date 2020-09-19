@@ -12,7 +12,7 @@ const PostSlideThree = ({ data, compname }) => {
                     {data && data.map((item, i) =>
                         <div className="col-sm-4" key={i}>
                             <div className={compname === "learn" ? "image-post-slide-learn" : "image-post-slide"}>
-                                <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                     <img src={item.ref_img} alt="" />
                                     <h3>{capitalize(item.title)}</h3>
                                 </Link>

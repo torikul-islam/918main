@@ -93,7 +93,7 @@ const HeaderHome = (props) => {
                                 <div className="col-sm-4">
                                     <div className="text-furniture">
                                         <p>{item.source}</p>
-                                        <Link to={`/blog/${item.uuid}/${item.rooms[0]}`} className='remove-u-line'>
+                                        <Link to={`/blog/${item.uuid}/${item.rooms[0].id}`} className='remove-u-line'>
                                             <h4>{capitalize(item.title)}</h4>
                                         </Link>
                                         <span>{item.content}</span>
