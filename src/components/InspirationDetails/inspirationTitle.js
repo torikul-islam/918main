@@ -16,26 +16,28 @@ function InspirationTitle(props) {
     const [gotoBoard, setGotoBoard] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
 
-
     useEffect(() => {
         (async function () {
             if (token) {
                 let { data } = await projectServices.getProject();
-                const board = localStorage.getItem('boardName');
-                if (board) {
-                    data = [...data, { name: board }]
+                if (data.length > 0) {
+                    let findActive = data.find(a => a.is_active === true);
+                    if (!findActive) {
+                        findActive = { ...data[0], is_active: true };
+                    }
+                    data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && findActive.name.toLowerCase() !== x.name.toLowerCase());
+                    setProject([{ ...findActive }, ...data]);
                 }
-                data = data.filter((x, i, a) => a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i);
-                setProject(data);
             }
-        })()
+        }
+        )()
     }, [token]);
 
 
     function addToBoard(inspiration) {
         let data = new FormData();
         if (selectedValue) {
-            data.append('project', selectedProject);
+            data.append('project', project.find(p => p.is_active === true).uuid);
             data.append('x_percent', .5);
             data.append('y_percent', .5);
             data.append('z', 0);
@@ -47,21 +49,6 @@ function InspirationTitle(props) {
         } else {
             setError('Please! select one board.');
         }
-
-
-        // let data = new FormData();
-        // if (selectedValue) {
-        //     data.append('name', selectedValue);
-        //     data.append('room', product.rooms[0]);
-        //     data.append('styles', product.styles[0]);
-        //     data.append('inspirations', 4);
-        //     data.append('pieces', 1);
-
-        //     projectServices.createProject(data);
-        //     setGotoBoard(true);
-        // } else {
-        //     setError('Please! select one board')
-        // }
     }
 
     function handleChange(e) {
@@ -72,10 +59,6 @@ function InspirationTitle(props) {
             setError(null);
         }
         projectServices.activeProject(e.target.value);
-
-
-        // setSelectedValue(event.target.value);
-        // setError(null);
     }
 
     if (inspired.length > 0) {
