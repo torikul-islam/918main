@@ -62,7 +62,7 @@ const Workspace = (props) => {
             }
         }
         )()
-    }, []);
+    }, [token]);
 
 
     // fetch all inspiration
