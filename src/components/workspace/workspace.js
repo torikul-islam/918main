@@ -30,9 +30,11 @@ const Workspace = (props) => {
     const [projects, setProjects] = useState([]);
     const [gotoBoard, setGotoBoard] = useState(false);
 
+    const [inspirationFilterId, setInspirationFilterId] = useState(null);
+    const [productFilterId, setProductFilterId] = useState(null);
+
     const [inspirations, setInspirations] = useState({ count: null, next: null, previous: null, results: [] });
     const [products, setProducts] = useState({ count: null, next: null, previous: null, results: [] });
-
 
     const [modalItem, setModalItem] = useState({})
 
@@ -60,7 +62,7 @@ const Workspace = (props) => {
     }, []);
 
 
-    // fet all inspiration
+    // fetch all inspiration
     useEffect(() => {
         (async function () {
             const { data } = await inspiredService.getAllInspired();
@@ -150,6 +152,7 @@ const Workspace = (props) => {
         } else {
             styleIds.push(item)
         }
+        setInspirationFilterId(item.pk)
         setInspirationFilter({ style_ids: styleIds, room_ids: [...inspirationFilter.room_ids] })
     }
 
@@ -161,6 +164,7 @@ const Workspace = (props) => {
         } else {
             roomIds.push(item)
         }
+        setInspirationFilterId(item.pk)
         setInspirationFilter({ room_ids: roomIds, style_ids: [...inspirationFilter.style_ids] })
     }
 
@@ -173,6 +177,7 @@ const Workspace = (props) => {
         } else {
             colors.push(color)
         }
+        setProductFilterId(color.pk)
         setSelectedColors(colors);
     }
 
@@ -185,6 +190,7 @@ const Workspace = (props) => {
         } else {
             pieces.push(piece)
         }
+        setProductFilterId(piece.pk)
         setSelectedPieces(pieces);
     }
 
@@ -193,6 +199,7 @@ const Workspace = (props) => {
     }
 
     function onChangeRange(range) {
+        setProductFilterId(Math.random() * 10)
         setPriceRange(range)
     }
 
@@ -223,7 +230,7 @@ const Workspace = (props) => {
     return (
         <WorkspaceContext.Provider value={{
             projects, setProjects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard, setGotoBoard,
-            inspirations, setInspirations, modalItem, setModalItem, products, setProducts
+            productFilterId, inspirations, setInspirations, modalItem, setModalItem, products, setProducts, inspirationFilterId
         }}>
             <>
                 <NavbarB  {...props}

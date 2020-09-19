@@ -22,7 +22,7 @@ const InspirationModal = (props) => {
 
 
 
-    const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard,
+    const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard, setGotoBoard,
         inspirations, setInspirations, modalItem, setModalItem }
         = useContext(WorkspaceContext);
 
@@ -76,6 +76,7 @@ const InspirationModal = (props) => {
     }
 
     function handleInspiration(item) {
+        setGotoBoard(false);
         setModalItem(item);
     }
 

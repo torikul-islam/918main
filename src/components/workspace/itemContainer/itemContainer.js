@@ -12,7 +12,7 @@ function ItemContainer(props) {
     const downarrow = <img className="filter-open" src={require('../../../Asset/Images/arrow-down.png')} alt="cross.png" />
     const [hasMore, setHasMore] = useState(true);
 
-    const { inspirations, setInspirations, products, setProducts } = useContext(WorkspaceContext);
+    const { inspirations, setInspirations, products, setProducts, inspirationFilterId, productFilterId } = useContext(WorkspaceContext);
 
     useEffect(() => {
         let url = '';
@@ -37,7 +37,7 @@ function ItemContainer(props) {
             })()
         }
 
-    }, []);
+    }, [inspirationFilterId]);
 
     useEffect(() => {
         let url = '';
@@ -62,7 +62,7 @@ function ItemContainer(props) {
                 setProducts(data);
             })()
         }
-    }, []);
+    }, [productFilterId]);
 
 
     async function loadInspiredFunc() {

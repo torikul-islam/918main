@@ -18,29 +18,38 @@ const Board = () => {
     }
 
     async function handleDeleteItem(item) {
-        let originalProject = { ...projects }
-        originalProject.workspace_items = originalProject.workspace_items.filter(el => el.uuid !== item.uuid);
+        console.log('item', item);
+        let originalProject = [...projects];
+        const idx = originalProject.findIndex(p => p.is_active === true);
+        if (idx !== -1) {
+            let element = originalProject[idx].workspace_items;
+            element = element.filter(el => el.uuid !== item.uuid);
+        }
         setProjects(originalProject)
         await projectService.workspaceItemDelete(item.uuid);
     }
 
     function handleCopyItem(item) {
-        let originalProject = { ...projects };
-        originalProject.workspace_items = [...originalProject.workspace_items, { ...item, uuid: originalProject.workspace_items.length }];
+        let originalProject = [...projects];
+        const idx = originalProject.findIndex(p => p.is_active === true);
+
+        if (idx !== -1) {
+            let element = originalProject[idx].workspace_items;
+            element.push({ ...item, uuid: element.length });
+        }
         setProjects(originalProject)
     }
 
     function handleZAxis(type, item) {
-        let originProject = { ...projects };
-        const index = originProject.workspace_items.findIndex(el => el.uuid === item.uuid);
+        let originProject = [...projects];
+        const index = originProject.findIndex(el => el.is_active === true);
         if (type === 'up') {
-            originProject.workspace_items[index].z += 1;
+            originProject[index].workspace_items.find(x => x.uuid === item.uuid).z += 1;
         } else {
-            originProject.workspace_items[index].z -= 1;
+            originProject[index].workspace_items.find(x => x.uuid === item.uuid).z -= 1;
         }
         setProjects(originProject)
     }
-
 
 
     return (
