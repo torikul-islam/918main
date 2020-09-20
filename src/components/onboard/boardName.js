@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import projectService from '../../services/projectService';
 import GoBtn from '../common/goBtn';
 import Input from '../common/input';
@@ -12,29 +12,44 @@ const BoardName = (props) => {
     const [name, setName] = useState('');
     const [error, setError] = useState(null);
 
-
     function onChange(e) {
         setName(e.target.value);
+        setError(null);
     }
+
 
     async function handleSubmit(e) {
         e.preventDefault();
+        const { data } = await projectService.getProject();
         if (name.trim() === '') {
             setError("Name filed can't be empty!")
         } else {
-            localStorage.setItem('boardName', name);
-            let data = new FormData();
-            data.append('name', name);
-            data.append('room', 1);
-            data.append('styles', 1);
-            data.append('inspirations', 1);
-            data.append('pieces', 10);
-            await projectService.createProject(data)
-            const token = localStorage.getItem('token');
-            if (!token) {
-                openModal('signup', true);
+            const exists = data.find(p => p.name.toLowerCase() === name.toLowerCase());
+            if (exists) {
+                setError("You have already created a board with the given name. Please choose a different one!.")
             } else {
-                window.location = '/workspace';
+                let form = new FormData();
+                form.append('name', name);
+                form.append('room', 1);
+                form.append('styles', 1);
+                form.append('inspirations', 1);
+                form.append('pieces', 10);
+                try {
+                    const newProject = await projectService.createProject(form);
+                    const token = localStorage.getItem('token');
+                    if (!token) {
+                        openModal('signup', true);
+                    } else {
+                        window.location = '/workspace';
+                    }
+                } catch (ex) {
+                    if (ex.response && (ex.response.status >= 500 && ex.response.status < 600)) {
+                        setError("Unfortunately! The server is not responding at this moment. Please try again later.")
+                    } else {
+                        setError('Something wrong happened! try with correct information.')
+                    }
+                }
+
             }
         }
     };
