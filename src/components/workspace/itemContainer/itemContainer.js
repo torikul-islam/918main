@@ -78,14 +78,19 @@ function ItemContainer(props) {
             setProducts({ count: data.count, next: data.next, previous: data.previous, results: [...products.results, ...data.results] });
         }
     }
-
     useEffect(() => {
+        window.addEventListener("scroll", handleHasMore);
+        window.addEventListener("resize", handleHasMore);
+        window.addEventListener('load', handleHasMore)
+    });
+
+    function handleHasMore() {
         if (window.innerWidth <= 768) {
             setHasMore(false)
+        } else {
+            setHasMore(true)
         }
-    })
-
-
+    }
 
     return (
         <div className="titleInspire">

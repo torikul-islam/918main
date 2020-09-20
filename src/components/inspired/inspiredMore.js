@@ -55,12 +55,12 @@ function InspiredMore(props) {
 
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
-        window.addEventListener("resize", handleResize); window.addEventListener('load', handleResize)
+        window.addEventListener("resize", handleResize);
+        window.addEventListener('load', handleResize)
     });
 
 
     function handleResize() {
-        console.log('resize');
         const width = window.innerWidth;
         if (width <= '767') {
             setPageSize(1);
