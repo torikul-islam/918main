@@ -65,6 +65,14 @@ function activeProject(uuid) {
         })
     }
 }
+function updateWorkspaceItem(itemUuid, data) {
+    const token = localStorage.getItem('token');
+    if (token) {
+        return http.patch(`/project/workspace/item/${itemUuid}/`, data, {
+            headers: { "Authorization": `Token ${token}` }
+        })
+    }
+}
 
 function workspaceItemDelete(uuid) {
     const token = localStorage.getItem('token');
@@ -77,4 +85,4 @@ function workspaceItemDelete(uuid) {
 }
 
 
-export default { getProject, createProject, activeProject, getAllProjectName, getUserProjectProduct, addedItemToWorkspace, workspaceItemDelete }
+export default { getProject, updateWorkspaceItem, createProject, activeProject, getAllProjectName, getUserProjectProduct, addedItemToWorkspace, workspaceItemDelete }

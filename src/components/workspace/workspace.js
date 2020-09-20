@@ -53,7 +53,6 @@ const Workspace = (props) => {
                     data = data.filter((x, i, a) => (a.findIndex(t => (t.name.toLowerCase() === x.name.toLowerCase())) === i) && findActive.name.toLowerCase() !== x.name.toLowerCase());
                     setProjects([{ ...findActive }, ...data]);
                 }
-
             }
         }
         )()
@@ -102,13 +101,7 @@ const Workspace = (props) => {
         let form = new FormData();
         let oldBoards = [...projects];
         const idx = oldBoards.findIndex(b => b.is_active === true);
-
         if (type === 'product') {
-            oldBoards[idx].workspace_items.push({
-                ...defaultProps, product: item, inspiration: null,
-                uuid: oldBoards[idx].workspace_items.length
-            });
-
             form.append('project', oldBoards[idx].uuid);
             form.append('x_percent', defaultProps.x_percent);
             form.append('y_percent', defaultProps.y_percent);
@@ -116,15 +109,14 @@ const Workspace = (props) => {
             form.append('width', defaultProps.width);
             form.append('height', defaultProps.height);
             form.append('product', item.uuid);
-            await projectService.addedItemToWorkspace(form);
+
+            const { data } = await projectService.addedItemToWorkspace(form);
+
+            oldBoards[idx].workspace_items.push({ ...data, product: item, inspiration: null });
+
             setGotoBoard(true);
 
         } else if (type === 'inspiration') {
-            oldBoards[idx].workspace_items.push({
-                ...defaultProps, inspiration: item, product: null,
-                uuid: oldBoards[idx].workspace_items.length
-            });
-
             form.append('project', oldBoards[idx].uuid);
             form.append('x_percent', defaultProps.x_percent);
             form.append('y_percent', defaultProps.y_percent);
@@ -132,12 +124,12 @@ const Workspace = (props) => {
             form.append('width', defaultProps.width);
             form.append('height', defaultProps.height);
             form.append('inspiration', item.uuid);
-            await projectService.addedItemToWorkspace(form);
+
+            const { data } = await projectService.addedItemToWorkspace(form);
+
+            oldBoards[idx].workspace_items.push({ ...data, inspiration: item, product: null });
+
             setGotoBoard(true);
-
-            // await projectServices.activeProject(inspiration.uuid);
-
-            // localStorage.setItem('boardItem', inspiration.uuid)
         }
         setProjects(oldBoards)
     }

@@ -31,20 +31,39 @@ const Board = () => {
         await projectService.workspaceItemDelete(item.uuid);
     }
 
-    function handleCopyItem(item) {
+    async function handleCopyItem(item) {
         if (Object.keys(item).length === 0) return;
 
         let originalProject = [...projects];
-        const idx = originalProject.findIndex(p => p.is_active === true);
+        let form = new FormData();
+        const idx = originalProject.findIndex(b => b.is_active === true);
 
-        if (idx !== -1) {
-            let element = originalProject[idx].workspace_items;
-            element.push({ ...item, uuid: element.length });
+        if (item.product !== null) {
+            form.append('project', originalProject[idx].uuid);
+            form.append('x_percent', item.x_percent);
+            form.append('y_percent', item.y_percent);
+            form.append('z', item.z);
+            form.append('width', item.width);
+            form.append('height', item.height);
+            form.append('product', item.product.uuid);
+            const { data } = await projectService.addedItemToWorkspace(form)
+            originalProject[idx].workspace_items.push({ ...data, product: item.product, inspiration: null })
+
+        } else if (item.inspiration !== null) {
+            form.append('project', originalProject[idx].uuid);
+            form.append('x_percent', item.x_percent);
+            form.append('y_percent', item.y_percent);
+            form.append('z', item.z);
+            form.append('width', item.width);
+            form.append('height', item.height);
+            form.append('inspiration', item.inspiration.uuid);
+            const { data } = await projectService.addedItemToWorkspace(form)
+            originalProject[idx].workspace_items.push({ ...data, product: null, inspiration: item.inspiration })
         }
         setProjects(originalProject)
     }
 
-    function handleZAxis(type, item) {
+    async function handleZAxis(type, item) {
         if (Object.keys(item).length === 0) return;
 
         let originProject = [...projects];
@@ -55,6 +74,28 @@ const Board = () => {
             originProject[index].workspace_items.find(x => x.uuid === item.uuid).z -= 1;
         }
         setProjects(originProject)
+
+        const updateZIndex = {
+            z: item.z,
+            x_percent: item.x,
+            y_percent: item.y
+
+        }
+        await projectService.updateWorkspaceItem(item.uuid, updateZIndex)
+    }
+
+    async function handleStop(e, data, item) {
+        let originProject = [...projects];
+        const index = originProject.findIndex(el => el.is_active === true);
+        const updateValue = {
+            z: item.z,
+            x_percent: data.x,
+            y_percent: data.y
+        }
+        originProject[index].workspace_items.filter(x => x.uuid === item.uuid).x_percent = data.x;
+        originProject[index].workspace_items.filter(x => x.uuid === item.uuid).y_percent = data.y;
+
+        await projectService.updateWorkspaceItem(item.uuid, updateValue)
     }
 
     return (
@@ -79,8 +120,13 @@ const Board = () => {
                             </div>
                             :
                             item.workspace_items.map((item, i) =>
-                                <Draggable key={i} bounds='parent'>
-                                    <div onTouchStart={(e) => handleBoardItem(e, item)} onClick={(e) => handleBoardItem(e, item)} style={{ left: item.x_percent, top: item.y_percent, zIndex: item.z }}
+                                <Draggable key={i} bounds='parent'
+                                    onStop={(e, data) => handleStop(e, data, item)}
+                                    position={null}
+                                    defaultPosition={{ x: item.x_percent, y: item.y_percent, z: 100 }}
+                                >
+                                    <div style={{ zIndex: item.z }} onTouchStart={(e) => handleBoardItem(e, item)}
+                                        onClick={(e) => handleBoardItem(e, item)}
                                         className={`box boxoverlay ${selectedBoardItem.uuid === item.uuid ? "select-board-item" : ' '}`}>
                                         <div>
                                             <img style={{ width: item.width, height: item.height }}
@@ -103,7 +149,7 @@ const Board = () => {
             <div className="designerHelp">
                 <button type="button">Designer Help</button>
             </div>
-        </div>
+        </div >
     );
 };
 
