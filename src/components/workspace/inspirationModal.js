@@ -137,7 +137,7 @@ const InspirationModal = (props) => {
                                                 <option value=''>Saved to {projects.find(p => p.is_active === true).name}</option>
                                             </select>
                                         </li>
-                                        <li className="saveSection">
+                                        <li className={`saveSection ${gotoBoard ? 'add' : ''}`}>
                                             <GoBtn text='Go to Board' onClick={() => closeModal()} />
                                         </li>
                                     </ul>
