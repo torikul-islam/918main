@@ -77,8 +77,8 @@ const Board = () => {
 
         const updateZIndex = {
             z: item.z,
-            x_percent: item.x,
-            y_percent: item.y
+            x_percent: item.x_percent,
+            y_percent: item.y_percent
 
         }
         await projectService.updateWorkspaceItem(item.uuid, updateZIndex)
@@ -92,8 +92,11 @@ const Board = () => {
             x_percent: data.x,
             y_percent: data.y
         }
+
         originProject[index].workspace_items.filter(x => x.uuid === item.uuid).x_percent = data.x;
         originProject[index].workspace_items.filter(x => x.uuid === item.uuid).y_percent = data.y;
+
+        setProjects(originProject)
 
         await projectService.updateWorkspaceItem(item.uuid, updateValue)
     }
@@ -120,10 +123,11 @@ const Board = () => {
                             </div>
                             :
                             item.workspace_items.map((item, i) =>
-                                <Draggable key={i} bounds='parent'
+                                <Draggable key={i}
+                                    bounds='parent'
                                     onStop={(e, data) => handleStop(e, data, item)}
                                     position={null}
-                                    defaultPosition={{ x: item.x_percent, y: item.y_percent, z: 100 }}
+                                    defaultPosition={{ x: item.x_percent, y: item.y_percent }}
                                 >
                                     <div style={{ zIndex: item.z }} onTouchStart={(e) => handleBoardItem(e, item)}
                                         onClick={(e) => handleBoardItem(e, item)}
@@ -149,7 +153,7 @@ const Board = () => {
             <div className="designerHelp">
                 <button type="button">Designer Help</button>
             </div>
-        </div >
+        </div>
     );
 };
 
