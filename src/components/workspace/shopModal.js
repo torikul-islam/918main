@@ -20,7 +20,6 @@ const ShopModal = (props) => {
     const [pageSize, setPageSize] = useState(4);
     const [productLike, setProductLike] = useState([]);
 
-
     const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard, setGotoBoard,
         modalItem, setModalItem, products, setProducts }
         = useContext(WorkspaceContext);
@@ -63,6 +62,9 @@ const ShopModal = (props) => {
         window.addEventListener("scroll", handleResize);
         window.addEventListener("resize", handleResize);
         window.addEventListener('load', handleResize)
+        window.addEventListener('mousewheel', handleResize)
+        window.addEventListener('mousemove', handleResize)
+        window.addEventListener('loadeddata', handleResize)
     });
 
     function handleResize() {

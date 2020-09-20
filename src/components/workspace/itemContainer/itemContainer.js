@@ -82,6 +82,7 @@ function ItemContainer(props) {
         window.addEventListener("scroll", handleHasMore);
         window.addEventListener("resize", handleHasMore);
         window.addEventListener('load', handleHasMore)
+        window.addEventListener('loadeddata', handleHasMore)
     });
 
     function handleHasMore() {

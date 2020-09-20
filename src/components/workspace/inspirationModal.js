@@ -21,7 +21,6 @@ const InspirationModal = (props) => {
     const [inspirationLike, setInspirationLike] = useState([]);
 
 
-
     const { projects, handleChangeProjectBoards, addedItemProjectBoards, gotoBoard, setGotoBoard,
         inspirations, setInspirations, modalItem, setModalItem }
         = useContext(WorkspaceContext);
@@ -59,11 +58,13 @@ const InspirationModal = (props) => {
         })()
     }, []);
 
-
     useEffect(() => {
         window.addEventListener("scroll", handleResize);
         window.addEventListener("resize", handleResize);
         window.addEventListener('load', handleResize)
+        window.addEventListener('mousewheel', handleResize)
+        window.addEventListener('mousemove', handleResize)
+        window.addEventListener('loadeddata', handleResize)
     });
 
     function handleResize() {
