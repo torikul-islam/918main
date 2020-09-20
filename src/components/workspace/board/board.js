@@ -71,7 +71,9 @@ const Board = () => {
         if (type === 'up') {
             originProject[index].workspace_items.find(x => x.uuid === item.uuid).z += 1;
         } else {
-            originProject[index].workspace_items.find(x => x.uuid === item.uuid).z -= 1;
+            if (originProject[index].workspace_items.find(x => x.uuid === item.uuid).z > 0) {
+                originProject[index].workspace_items.find(x => x.uuid === item.uuid).z -= 1;
+            } else return;
         }
         setProjects(originProject)
 
