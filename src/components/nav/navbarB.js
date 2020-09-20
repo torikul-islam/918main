@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import NavbarContext from '../../context/navbarContext';
 import './navbar.css';
 
 
-function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCard, search, onChangeSearch, clickSearchItem, searchData }) {
+function NavbarB({ openModal, handleCloseMenu, clickCard, search, onChangeSearch, clickSearchItem, searchData }) {
     const [openSearch, setOpenSearch] = useState(false)
-
-
     const user = localStorage.getItem('token');
+
+    const { openNavToggle, setOpenNavToggle, isCardOpen } = useContext(NavbarContext);
+
+    function handleNavToggle() {
+        if (isCardOpen) {
+            setOpenNavToggle(false);
+            return;
+        }
+        setOpenNavToggle(!openNavToggle);
+    }
+
     function clickLogout() {
         localStorage.removeItem('token');
         window.location = '/'
@@ -16,6 +26,8 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCa
     function handleSearch() {
         setOpenSearch(!openSearch);
     }
+
+
 
     return (
         <div className='container-fluid' >
@@ -29,10 +41,10 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCa
                 </div>
 
                 <nav className="navbar-expand-lg navbar-light">
-                    <button onClick={handleOpenMenu} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button onClick={handleNavToggle} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div style={openMenu ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openMenu ? 'show' : ''}`} id="navbarNav">
+                    <div style={openNavToggle ? { display: 'block' } : { display: 'none' }} className={`collapse navbar-collapse bg-lights ${openNavToggle ? 'show' : ''}`} id="navbarNav">
                         <ul className="home-menu">
                             <div style={search === "null" ? { visibility: "hidden" } : { visibility: "visible" }}>
                                 <div className="search-float">
@@ -42,7 +54,7 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCa
                                     </li>
                                     {searchData.length > 0 && <ul className='search-container'>
                                         {searchData.map((s, i) =>
-                                            <li onClick={() => { clickSearchItem(s); handleOpenMenu() }} className="search-item pointer" key={i}>{s.title || s.name || s.designed_by}</li>
+                                            <li onClick={() => { clickSearchItem(s); handleNavToggle() }} className="search-item pointer" key={i}>{s.title || s.name || s.designed_by}</li>
                                         )}
                                     </ul>}
                                 </div>
@@ -55,13 +67,13 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCa
                                 </li>
                             </div>
                             <div className="menu-float">
-                                <li className="menu-item font-hel" onClick={handleOpenMenu}>
+                                <li className="menu-item font-hel" onClick={handleNavToggle}>
                                     <Link className="nav-link" to="/workspace" >Workspace</Link>
                                 </li>
                                 <li className="menu-item font-hel">
                                     <div className="dropdown">
                                         <button className="dropbtn">Explore</button>
-                                        <div className="dropdown-content" onClick={handleOpenMenu} >
+                                        <div className="dropdown-content" onClick={handleNavToggle} >
                                             <Link className="nav-link" to="/explore"  >Explore</Link>
                                             <Link className="nav-link" to="/inspired-more" >Be Inspired</Link>
                                             <Link className="nav-link" to="/learn-more"  >Learn</Link>
@@ -69,19 +81,19 @@ function NavbarB({ openModal, openMenu, handleOpenMenu, handleCloseMenu, clickCa
                                         </div>
                                     </div>
                                 </li>
-                                {!user && <li className="menu-item signup" onClick={() => { openModal('signup'); handleOpenMenu() }}>
+                                {!user && <li className="menu-item signup" onClick={() => { openModal('signup'); handleNavToggle() }}>
                                     <div className="nav-link"  >Sign Up</div>
                                 </li>}
-                                {user && <li className="menu-item signup" onClick={() => { clickLogout(); handleOpenMenu() }}>
+                                {user && <li className="menu-item signup" onClick={() => { clickLogout(); handleNavToggle() }}>
                                     <div className="nav-link">Logout</div>
                                 </li>}
                                 <span className="menu-icon">
-                                    <li className="menu-item man" onClick={handleOpenMenu}>
+                                    <li className="menu-item man" onClick={handleNavToggle}>
                                         <Link className="nav-link" to="/account"  >
                                             <img src={require('../../Asset/Images/man.png')} alt="man.png" />
                                         </Link>
                                     </li>
-                                    <li className="menu-item shop pointer" onClick={() => { clickCard(); handleOpenMenu() }}>
+                                    <li className="menu-item shop pointer" onClick={() => { clickCard(); handleNavToggle() }}>
                                         <img src={require('../../Asset/Images/black_shoping.png')} alt="black_shoping.png" />
                                     </li>
                                 </span>
